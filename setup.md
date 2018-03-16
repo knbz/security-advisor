@@ -73,6 +73,7 @@ You can also drill down into specific images to find out more information, such 
 {: #setup_certificates}
 
 To get started with monitoring of certificates, create an instance of {{site.data.keyword.cloudcerts_long_notm}} and import your SSL certificates.
+
 Learn more about [{{site.data.keyword.cloudcerts_long_notm}}](/docs/services/certificate-manager/index.html#gettingstarted).
 {:shortdesc}
 

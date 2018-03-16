@@ -99,7 +99,7 @@ When you set up Security Advisor, the following actions take place:
 <br/>
 To install the Security Advisor components:
 
-1.  Download and extract the [installation package](https://github.com/Bluemix-Docs/security-advisor/blob/staging/installation.tar.gz?raw=true).
+1.  Download and extract the [installation package](https://github.com/IBM-Bluemix-Docs/security-advisor/blob/master/installation.tar.gz?raw=true).
 2.  From the same command line window as the previous section, navigate to the extracted archive location and install the package.
 
     ```

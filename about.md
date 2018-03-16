@@ -30,18 +30,18 @@ Security Advisor also offers a trial preview capability that runs on your {{site
 
 Learn about different concepts that you can use, track, and visualize in Security Advisor.
 
-**Finding**
+**Finding**  
 A finding is a priority security issue that is created when raw events are processed. Findings are made up of the key pieces of information that are needed to identify the who, what, when and where. As a security admin, use Security Advisor reports of findings to prioritize and react to the detected situation.
 
-**Key Performance Indicator (KPI)**
+**Key Performance Indicator (KPI)**  
 A Key Performance Indicator is triggered when a finding's value is out of bounds from the range of acceptable performance for specific security controls on services and workloads.
 
-**Service CRN**
+**Service CRN**  
 The Service CRN identifies the {{site.data.keyword.Bluemix_notm}} service involved in the finding.
 
 - For {{site.data.keyword.cloudcerts_short}} findings, the service CRN is the Certificate Manager instance CRN.
 - For Network Analytics findings, the service CRN is the Kubernetes cluster CRN.
 - For Vulnerability Advisor findings, the service CRN is the Container CRN.
 
-**Resource CRN**
+**Resource CRN**  
 The resource CRN identifies the resource involved in the finding.

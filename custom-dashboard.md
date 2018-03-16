@@ -36,6 +36,8 @@ You can use the findings API to:
 
 You can customize two dashboard sections: Network and Compute. To add security data to the sections, post the relevant API payloads to the Findings API endpoint: `http://grafeas.ng.bluemix.net/v1alpha1/`.
 
+For access to the Findings API, [post in dW Answers with the `securityadvisor` tag](https://developer.ibm.com/answers/search.html?f=&type=question&q=securityadvisor).
+
 For more information about the Findings API, see the [swagger documentation](http://grafeas.ng.bluemix.net/ui/).
 
 ## Example of customizing the dashboard
@@ -46,6 +48,7 @@ In this example, you have an application that is running {{site.data.keyword.con
 Before you begin:
 *  Get the {{site.data.keyword.Bluemix_notm}} account ID by using the `bx account list` [command](/docs/cli/reference/bluemix_cli/bx_cli.html#bluemix_account_list).
 *  Fetch the IAM token by using the `bx iam oauth-tokens` [command](/docs/cli/reference/bluemix_cli/bx_cli.html#bluemix_iam_oauth_tokens). Use this in the `--header` of each API request.
+* Request access to Findings API by [posting in dW Answers with the `securityadvisor` tag](https://developer.ibm.com/answers/search.html?f=&type=question&q=securityadvisor).
 
 Steps:
 
