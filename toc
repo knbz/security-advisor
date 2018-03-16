@@ -16,5 +16,5 @@ Security Advisor
 
     {: .navgroup id="reference"}
     troubleshooting.md
-    rellinks.md
+    sa_rellinks.md
     {: .navgroup-end}
