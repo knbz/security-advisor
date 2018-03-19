@@ -15,7 +15,7 @@ lastupdated: "2018-03-16"
 {:tip: .tip}
 {:download: .download}
 
-# Setting up IBM Cloud Security Advisor
+# Setting up Security Advisor
 {: #setup}
 With Security Advisor, you can use a variety of detection capabilities to find and alert you about suspicious network activity.
 {:shortdesc}
