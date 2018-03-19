@@ -7,6 +7,7 @@ Security Advisor
     {: .navgroup id="learn"}
     index.md
     about.md
+    network-analytics.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -15,6 +16,9 @@ Security Advisor
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    troubleshooting.md
     sa_rellinks.md
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    troubleshooting.md
     {: .navgroup-end}
