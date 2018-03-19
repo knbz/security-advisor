@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-03-16"
+lastupdated: "2018-03-18"
 
 ---
 
@@ -15,14 +15,15 @@ lastupdated: "2018-03-16"
 {:tip: .tip}
 {:download: .download}
 
-
 # Setting up monitoring of suspicious clients and server IPs for a Kubernetes cluster
 {: #cluster_install}
 
-To try out the Security Advisor network analysis feature, install the Security Advisor components in a Kubernetes cluster that is deployed to {{site.data.keyword.containerlong_notm}}. Then, you can see network insights and alerts in the Security Advisor dashboard.
+To try out the Security Advisor Network Analytics feature, install the Security Advisor components in a Kubernetes cluster that is deployed to {{site.data.keyword.containerlong_notm}}. Then, you can see network insights and alerts in the Security Advisor dashboard.
 {:shortdesc}
 
 > **Note:** This feature of Security Advisor is a technology preview.
+
+[Learn more about Network Analytics](network-analytics.md) in IBM Cloud Security Advisor.
 
 Learn how to use Security Advisor in your cluster:
 * [Prerequisites](#cluster_prereqs)
