@@ -15,7 +15,7 @@ lastupdated: "2018-03-16"
 {:tip: .tip}
 {:download: .download}
 
-# About IBM Cloud Security Advisor
+# About Security Advisor
 {: #about}
 
 With {{site.data.keyword.Bluemix}} Security Advisor security admins can find, prioritize and manage security issues in their cloud applications and workloads.
