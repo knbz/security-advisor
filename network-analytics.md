@@ -24,8 +24,8 @@ The network analytics preview feature consists of three modules:
 
 3. **Security Advisor dashboard**: Findings and KPIs from the analytics backend are presented in two cards:
 
-   - **Suspicious server IPs card**: This card shows KPIs and Findings regarding suspicious external IPs accessed by a client that is running as part of the cluster, such as when a workload approaches a server that is suspected to distribute malware. Learn more about [suspicious server IPs](#suspicious-server-ips).
-   - **Suspicious Clients card**: This card shows KPIs and Findings regarding suspicious external clients that are accessing the cluster, such as when a member of a botnet approaches one of the cluster IPs. Learn more about [suspicious clients](#suspicious-clients).
+   - **Suspicious server IPs card (outgoing traffic)**: This card shows KPIs and Findings regarding suspicious external IPs accessed by a client that is running as part of the cluster, such as when a workload approaches a server that is suspected to distribute malware. Learn more about [suspicious server IPs](#suspicious-server-ips).
+   - **Suspicious Clients card (incoming traffic)**: This card shows KPIs and Findings regarding suspicious external clients that are accessing the cluster, such as when a member of a botnet approaches one of the cluster IPs. Learn more about [suspicious clients](#suspicious-clients).
 
 ## Data collection
 {: data-collection}
@@ -37,7 +37,7 @@ Information that is collected includes the IP addresses of the peers that are co
 
 Network monitoring works as part of the cluster with other services such as {{site.data.keyword.loganalysisshort_notm}} so that you can focus on the business logic. You can review the network monitoring insights in your Security Advisor dashboard.
 
-## Suspicious server IPs
+## Suspicious server IPs (outgoing traffic)
 {: suspicious-server-ips}
 
 The Security Advisor dashboard includes a suspicious server IP card that summarizes various information about communications in which the cluster acts as a client that approaches an external server.
@@ -49,10 +49,10 @@ Analyzed communication might produce a finding such as:
 
 - The cluster URL or one of its IPs has poor reputation. Review a poor reputation to check that the cluster is not compromised or otherwise engaged in unacceptable activity.
 
-## Suspicious clients
+## Suspicious clients (incoming traffic)
 {: suspicious-clients}
 
-The Security Advisor dashboard includes a suspicious client card that summarizes various information about communications in which the cluster acts as a server that approaches by an external client.
+The Security Advisor dashboard includes a suspicious client card that summarizes various information about communications in which the cluster acts as a server that is approached by an external client.
 {: shortdesc}
 
 Analyzed communication might produce a finding such as:
