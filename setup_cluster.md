@@ -29,7 +29,7 @@ Learn how to use Security Advisor in your cluster:
 * [Prerequisites](#cluster_prereqs)
 * [Logging in to your cluster](#login)
 * [Installing Security Advisor components](#cluster_components)
-* [Removing Security Advisor components from your cluster](#cluster_uninstall)
+* [Removing Security Advisor components](#cluster_uninstall)
 
 ## Prerequisites
 {: #cluster_prereqs}
@@ -45,7 +45,7 @@ Before you begin:
 * [Kubernetes CLI (kubectl)](https://kubernetes.io/docs/tasks/tools/install-kubectl/) v1.7 or above
 * [Kubernetes Helm (package manager)](https://docs.helm.sh/using_helm/#from-script)
 * [A free or standard Kubernetes cluster](https://console.bluemix.net/containers-kubernetes/catalog/cluster) in the **US South** region of {{site.data.keyword.Bluemix_notm}}
-* Identify the {{site.data.keyword.Bluemix_notm}} account owner to complete the [installation steps](#cluster_components)
+* Identify the {{site.data.keyword.Bluemix_notm}} account owner to complete the installation steps
 
 ## Logging in to your cluster
 {: #login}
@@ -110,7 +110,7 @@ To install the Security Advisor components:
 
 3.  Verify that the components are installed properly by checking the [Security Advisor dashboard](https://console.bluemix.net/security/advisor/#!/dashboard).
 
-## Removing Security Advisor components from your Kubernetes cluster
+## Removing Security Advisor components
 {: #cluster_uninstall}
 
 Remove the Security Advisor components from your cluster and the service ID and API key from your {{site.data.keyword.Bluemix_notm}} account.
