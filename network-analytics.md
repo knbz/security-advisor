@@ -11,7 +11,7 @@ lastupdated: "2018-03-19"
 {:screen: .screen}
 
 # Network Analytics
-{: network-analytics}
+{: #network-analytics}
 
 With {{site.data.keyword.Bluemix}} Security Advisor, you can gain insight into potentially hazardous network communication that is related to your {{site.data.keyword.containerlong_notm}} Kubernetes clusters. To preview this network analytics capability, select **Preview** from the Security Advisor [Getting Started page](https://console.bluemix.net/security/advisor/#!/overview).
 {: shortdesc}
@@ -28,7 +28,7 @@ The network analytics preview feature consists of three modules:
    - **Suspicious Clients card (incoming traffic)**: This card shows KPIs and Findings regarding suspicious external clients that are accessing the cluster, such as when a member of a botnet approaches one of the cluster IPs. Learn more about [suspicious clients](#suspicious-clients).
 
 ## Data collection
-{: data-collection}
+{: #data-collection}
 
 Security Advisor can help protect your cluster by adding network monitoring. Deployed as part of your cluster, network monitoring is used to provide information about cluster communications. To enable Network Analytics, metadata is collected about each network communication between the cluster and external entities.
 {: shortdesc}
@@ -38,7 +38,7 @@ Information that is collected includes the IP addresses of the peers that are co
 Network monitoring works as part of the cluster with other services such as {{site.data.keyword.loganalysisshort_notm}} so that you can focus on the business logic. You can review the network monitoring insights in your Security Advisor dashboard.
 
 ## Suspicious server IPs (outgoing traffic)
-{: suspicious-server-ips}
+{: #suspicious-server-ips}
 
 The Security Advisor dashboard includes a suspicious server IP card that summarizes various information about communications in which the cluster acts as a client that approaches an external server.
 {: shortdesc}
@@ -50,7 +50,7 @@ Analyzed communication might produce a finding such as:
 - The cluster URL or one of its IPs has poor reputation. Review a poor reputation to check that the cluster is not compromised or otherwise engaged in unacceptable activity.
 
 ## Suspicious clients (incoming traffic)
-{: suspicious-clients}
+{: #suspicious-clients}
 
 The Security Advisor dashboard includes a suspicious client card that summarizes various information about communications in which the cluster acts as a server that is approached by an external client.
 {: shortdesc}
