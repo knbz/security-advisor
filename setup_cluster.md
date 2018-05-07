@@ -23,7 +23,7 @@ To try out the Security Advisor Network Analytics feature, install the Security 
 
 > **Note:** This feature of Security Advisor is a technology preview.
 
-[Learn more about Network Analytics](network-analytics.md) in IBM Cloud Security Advisor.
+[Learn more about Network Analytics](network-analytics.html) in IBM Cloud Security Advisor.
 
 Learn how to use Security Advisor in your cluster:
 * [Prerequisites](#cluster_prereqs)
