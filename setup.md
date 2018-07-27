@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-03-16"
+  years: 2014, 2018
+lastupdated: "2018-07-27"
 
 ---
 
-{:new_window: target="_blank"}
+{:new_window: target="blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -15,48 +15,64 @@ lastupdated: "2018-03-16"
 {:tip: .tip}
 {:download: .download}
 
-# Setting up Security Advisor
+# Setting up {{site.data.keyword.security-advisor_short}}
 {: #setup}
-With Security Advisor, you can use a variety of detection capabilities to find and alert you about suspicious network activity.
+
+With {{site.data.keyword.security-advisor_long}}, you can continuously monitor your apps for suspicious activity. You can also detect future vulnerabilities such as expired certificates. When vulnerabilities are found, you are alerted via the service dashboard.
 {:shortdesc}
 
-## Setting up monitoring of vulnerabilities in container images
+## Monitoring vulnerabilities in container images
 {: #setup_images}
 
-To get started with monitoring of container images, push Docker container images to an IBM Cloud Container Registry namespace created in your IBM Cloud account.
-
-Learn more about [IBM Cloud Container Registry](/docs/services/Registry/index.html#index).
+A Docker image is the base of every container that you create. The image might contain your app, its configuration, and any dependencies that are required. An image is typically stored in a registry. By using {{site.data.keyword.registryshort_notm}}, you have access to Vulnerability Advisor which continuously scans your images for potential security issues. If issues are found, you are alerted and can view a comprehensive report in your {{site.data.keyword.security-advisor_short}} dashboard.
 {:shortdesc}
 
-1. Using the IBM Cloud CLI, login to your account:
+Learn more about [{{site.data.keyword.registryshort_notm}}](/docs/services/Registry/index.html#index).
+
+
+**Before you begin**
+
+Before you can get started with registry, be sure that you have the following CLIs and plugins installed:
+- [The {{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://clis.ng.bluemix.net/ui/home.html)
+- The container-registry plug-in.
+
+    ```
+    ibmcloud plugin install container-registry -r Bluemix
+    ```
+    {: pre}
+
+</br>
+**Creating a namespace**
+
+1. Log in to your account by using the CLI.
 
    ```
    bx login --sso
    ```
    {: pre}
 
-2. Login to the IBM Cloud Container Registry using the CR plug-in:
+2. Log in to {{site.data.keyword.registryshort_notm}}.
 
    ```
    bx cr login
    ```
    {: pre}
 
-3. Optional: Create a namespace or use an existing one. To create a namespace:
+3. Optional: Create a namespace. You can always use an existing one.
 
    ```
    bx cr namespace-add
    ```
    {: pre}
 
-3. Tag an image to be pushed to the namespace in the Container Registry, e.g. in US South:
+3. Tag an image.
 
    ```
    docker tag <image>:<tag> registry.ng.bluemix.net/<namespace>/<image>:<tag>
    ```
    {: pre}
 
-5. Push the image:
+5. Push the image.
 
    ```
    docker push registry.ng.bluemix.net/<namespace>/<image>:<tag>
@@ -64,28 +80,24 @@ Learn more about [IBM Cloud Container Registry](/docs/services/Registry/index.ht
    {: pre}
 
 
+After you push images to your {{site.data.keyword.registryshort_notm}} namespace, information about the images, such as the severity of the identified vulnerabilities and configuration issues, is then shown in the **Compute** card. You can also drill down into specific images to find out more information, such as description of all the known vulnerabilities and configuration issues that were identified.
 
-After you push images to your Container Registry namespace, information about the images, such as the severity of the identified vulnerabilities and configuration issues, is then shown in the **Compute** card.
+</br>
 
-You can also drill down into specific images to find out more information, such as description of all the known vulnerabilities and configuration issues that were identified.
-
-## Setting up monitoring of certificates
+## Monitoring certificates
 {: #setup_certificates}
 
-To get started with monitoring of certificates, create an instance of {{site.data.keyword.cloudcerts_long_notm}} and import your SSL certificates.
-
-Learn more about [{{site.data.keyword.cloudcerts_long_notm}}](/docs/services/certificate-manager/index.html#gettingstarted).
+Did you know that {{site.data.keyword.cloudcerts_long_notm}} can help to monitor and manage your SSL/TLS certificates? By integrating {{site.data.keyword.cloudcerts_short}} and {{site.data.keyword.security-advisor_short}}, you can get alerts and reminders about when you might need to update your certificates and other information. This can help prevent future vulnerabilities.
 {:shortdesc}
+
+You can learn more about [{{site.data.keyword.cloudcerts_long_notm}}](/docs/services/certificate-manager/index.html#gettingstarted).
 
 1. In the {{site.data.keyword.Bluemix_notm}} catalog, search for "{{site.data.keyword.cloudcerts_short}}".
 2. Give your service instance a name, or use the preset name.
 3. Click **Create**.
 4. To import your organization's certificates into {{site.data.keyword.cloudcerts_short}}, click **Import Certificate**.
 
+Now that you've imported your certificates, information such as expiration times and expired certificates, is shown on the **Certificates** card in the {{site.data.keyword.security-advisor_short}} dashboard. By clicking on the card, you can get more specific information about the certificates, such as which service instance that the certificates belong to. You can also see any steps that you can take to fix the security vulnerabilities.
 
-
-After you import certificates, information about certificates, such as expired certificates and certificates that are about to expired, is then shown in the **Certificates** card.
-
-You can also drill down into specific certificates to find out more information, such as the instance that the certificate belongs to as well as remediation steps.
 
 
