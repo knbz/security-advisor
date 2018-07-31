@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-03-16"
+lastupdated: "2018-07-31"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-03-16"
 # Troubleshooting
 {: #troubleshooting}
 
-If you have problems when you are using {{site.data.keyword.security-advisor_long}}, consider these techniques for troubleshooting and getting help.
+If you have problems while you're working with {{site.data.keyword.security-advisor_long}}, consider these techniques for troubleshooting and getting help.
 {: shortdesc}
 
 
@@ -27,11 +27,10 @@ If you have problems when you are using {{site.data.keyword.security-advisor_lon
 
 
 
-You can get help by searching for information or by asking questions through a forum.
+You can get help by searching for information or by asking questions through a forum. You can also open a support ticket. When you are using the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.Bluemix_notm}} development teams.
 {: shortdesc}
 
-When you are using the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.security-advisor_short}} development team.
 
-Post your question on [dW Answers](https://developer.ibm.com/answers/search.html?f=&type=question&q=securityadvisor&q=ibm-cloud). Include the `securityadvisor` and `ibm-cloud` tags.
+* For questions about the service and getting started instructions, use the <a href="https://developer.ibm.com/answers/search.html?f=&type=question&redirect=search%2Fsearch&sort=relevance&q=appid%20[bluemix]" target="_blank">dW Answers <img src="../../icons/launch-glyph.svg" alt="External link icon"></a> forum. Be sure to include the `securityadvisor` and `ibm-cloud` tags.
 
-For more information about using the forums, see [Getting help](https://console.bluemix.net/docs/support/index.html#getting-help).
+For more information about getting support, see [How do I get the support that I need?](/docs/get-support/howtogetsupport.html#getting-customer-support).
