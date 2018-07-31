@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-07-27"
+lastupdated: "2018-07-31"
 
 ---
 
@@ -23,7 +23,7 @@ Hit the ground running with {{site.data.keyword.Bluemix}} {{site.data.keyword.se
 
 1. Log into <a href="https://console.bluemix.net" target="_blank">{{site.data.keyword.Bluemix_notm}}<img src="../../icons/launch-glyph.svg" alt="External link icon"></a>.
 2. Navigate to the **Security** category.
-3. Select the {{site.data.keyword.security-advisor_short}} tile. A dashboard opens where you can view security information for the preconfigured integrated tools such as your
+3. Select the {{site.data.keyword.security-advisor_short}} tile. A dashboard opens where you can view security information for the preconfigured integrated tools such as your Compute and Networking services.
 
 Don't have any tools yet? Get up and running quickly with just a few [setup steps](setup.html).
 

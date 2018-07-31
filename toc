@@ -2,7 +2,7 @@
 {:topicgroup: .topicgroup}
 
 {: .toc subcollection="security-advisor" audience="security" href="/docs/services/security-advisor/index.html"}
-Security Advisor
+IBM Cloud Security Advisor
 
     {: .navgroup id="learn"}
     index.md
