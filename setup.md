@@ -2,11 +2,11 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-07-27"
+lastupdated: "2018-08-22"
 
 ---
 
-{:new_window: target="blank"}
+{:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -18,7 +18,7 @@ lastupdated: "2018-07-27"
 # Setting up {{site.data.keyword.security-advisor_short}}
 {: #setup}
 
-With {{site.data.keyword.security-advisor_long}}, you can continuously monitor your apps for suspicious activity. You can also detect future vulnerabilities such as expired certificates. When vulnerabilities are found, you are alerted via the service dashboard.
+With {{site.data.keyword.security-advisor_long}}, you can continuously monitor your apps for security risks and threats. When vulnerabilities are found, you are alerted via the service dashboard.
 {:shortdesc}
 
 ## Monitoring vulnerabilities in container images
@@ -80,7 +80,7 @@ Before you can get started with registry, be sure that you have the following CL
    {: pre}
 
 
-After you push images to your {{site.data.keyword.registryshort_notm}} namespace, information about the images, such as the severity of the identified vulnerabilities and configuration issues, is then shown in the **Compute** card. You can also drill down into specific images to find out more information, such as description of all the known vulnerabilities and configuration issues that were identified.
+After you push images to your {{site.data.keyword.registryshort_notm}} namespace, information about the images, such as the severity of the identified vulnerabilities and configuration issues, is then shown in the **Images with Vulnerabilities** card in the service dashboard. You can also drill down into specific images to find out more information, such as description of all the known vulnerabilities and configuration issues that were identified.
 
 </br>
 

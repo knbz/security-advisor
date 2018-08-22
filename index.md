@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-07-31"
+lastupdated: "2018-08-22"
 
 ---
 
@@ -18,14 +18,10 @@ lastupdated: "2018-07-31"
 # Getting started tutorial
 {: #index}
 
-Hit the ground running with {{site.data.keyword.Bluemix}} {{site.data.keyword.security-advisor_long}} (experimental).
+You can use {{site.data.keyword.security-advisor_long}} (Beta) to help monitor the security of your {{site.data.keyword.Bluemix_notm}} apps and workloads.
 {:shortdesc}
 
-1. Log into <a href="https://console.bluemix.net" target="_blank">{{site.data.keyword.Bluemix_notm}}<img src="../../icons/launch-glyph.svg" alt="External link icon"></a>.
-2. Navigate to the **Security** category.
-3. Select the {{site.data.keyword.security-advisor_short}} tile. A dashboard opens where you can view security information for the preconfigured integrated tools such as your compute services.
-
-Don't have any tools yet? Get up and running quickly with just a few [setup steps](setup.html).
+{{site.data.keyword.security-advisor_short}} is provided as part of the {{site.data.keyword.Bluemix_notm}} catalog. You do not need to provision a service instance which means that you can get started with the service quickly.
 
 You can monitor:
 
@@ -33,7 +29,32 @@ You can monitor:
 - Vulnerabilities in container images that are stored in {{site.data.keyword.registrylong_notm}}
 - Suspicious clients and server IPs communicating with a Kubernetes cluster in {{site.data.keyword.containerlong_notm}} (preview)
 
-You can also [learn more](about.html) about how {{site.data.keyword.security-advisor_short}} can help you, and provide user feedback in [developerWorks](troubleshooting.html#getting-help-and-support) to help enhance the service as it develops.
+Ready to get started? Get to the service dashboard in one of the following way:
+
+<ul>
+  <li>By using the tile:
+    <ol>
+      <li>Log into <a href="https://console.bluemix.net" target="_blank">{{site.data.keyword.Bluemix_notm}}<img src="../../icons/launch-glyph.svg" alt="External link icon"></a>.</li>
+      <li>Navigate to the **Catalog** and click **Security and Identity**.</li>
+      <li>Select the {{site.data.keyword.security-advisor_short}} tile. A dashboard opens where you can view security information for the preconfigured integrated tools such as vulnerability advisor and certificate manager.</li>
+    </ol>
+  </li>
+  <li>By using the menu:
+    <ol>
+      <li>Log into <a href="https://console.bluemix.net" target="_blank">{{site.data.keyword.Bluemix_notm}}<img src="../../icons/launch-glyph.svg" alt="External link icon"></a>.</li>
+      <li>From your dashboard, click the hamburger menu to expand your options.</li>
+      <li>Click **Security**. The security dashboard opens.</li>
+      <li>Click **Launch Advisor** to get started.</li>
+    </ol>
+  </li>
+</ul>
+
+There are a few cards in your dashboard that are pre-populated with information about specific services. You can always add cards to create a more holistic view of the service that you want to monitor.
+
+Now that you have an instance of the service, [learn more](about.html) about how {{site.data.keyword.security-advisor_short}} can help you. You can also send user feedback by using [developerWorks](ts_index.html) to contribute ideas for the service as it develops.
+
+Don't see what you're looking for? Hit the ground running with just a few [steps](setup.html).
+{: tip}
 
 ## Availability
 {: #availability}

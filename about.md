@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-07-31"
+lastupdated: "2018-08-22"
 
 ---
 
@@ -21,9 +21,9 @@ lastupdated: "2018-07-31"
 With {{site.data.keyword.security-advisor_long}} security admins can find, prioritize, and manage security issues in their cloud applications and workloads.
 {:shortdesc}
 
-{{site.data.keyword.security-advisor_short}} centralizes the insights of {{site.data.keyword.Bluemix_notm}} services such as Vulnerability Advisor, and {{site.data.keyword.cloudcerts_short}}. You can manage security events and apply analytics to create findings that unify and improve your security management processes on {{site.data.keyword.Bluemix_notm}}.
+{{site.data.keyword.security-advisor_short}} centralizes the insights services such as Vulnerability Advisor, and {{site.data.keyword.cloudcerts_short}} in {{site.data.keyword.Bluemix_notm}}. You can manage security events and apply analytics to create findings that unify and improve your security management processes on {{site.data.keyword.Bluemix_notm}}.
 
-{{site.data.keyword.security-advisor_short}} also offers a trial preview capability that runs on your {{site.data.keyword.containerlong_notm}} cluster to gather net-flow data that can detect communication with suspicious clients and server IPs.
+{{site.data.keyword.security-advisor_short}} also offers a trial network analytics capability that runs on your {{site.data.keyword.containerlong_notm}} cluster to gather net-flow data that can detect communication with suspicious clients and server IPs.
 
 ## Key concepts
 {: #concepts}
@@ -31,7 +31,7 @@ With {{site.data.keyword.security-advisor_long}} security admins can find, prior
 Learn about different concepts that you might use while working with {{site.data.keyword.security-advisor_short}}.
 
 **Finding**  
-A finding is a priority security issue that is created when raw events are processed. Findings are made up of the key pieces of information that are needed to identify the who, what, when, and where. As a security admin, use {{site.data.keyword.security-advisor_short}} reports of findings to prioritize and react to the detected situation.
+A finding is a priority security issue that is created when raw events are processed. Findings are made up of the key pieces of information that are needed to identify the who, what, when, and where. As a security admin, you can use {{site.data.keyword.security-advisor_short}} findings to prioritize and react to detected situations.
 
 **Key Performance Indicator (KPI)**  
 A Key Performance Indicator is triggered when a finding's value is out of bounds from the range of acceptable performance for specific security controls on services and workloads.
@@ -58,4 +58,4 @@ The Service CRN identifies the {{site.data.keyword.Bluemix_notm}} service involv
   </tr>
 
 **Resource CRN**  
-The resource CRN identifies the resource involved in the finding.
+The resource CRN identifies the specific resource that is involved in the finding.
