@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-28"
+lastupdated: "2018-09-04"
 
 ---
 
@@ -37,9 +37,9 @@ Learn about different concepts that you might use while working with {{site.data
   <dt>Key Performance Indicator (KPI)</dt>
     <dd>A Key Performance Indicator is triggered when a finding's value is out of bounds from the range of acceptable performance for specific security controls on services and workloads.</dd>
   <dt>Note</dt>
-    <dd>You can create notes to categorize the findings that you come across while analyzing. A note can occur multiple times across different projects.</dd>
+    <dd>You can create notes to categorize the findings that you come across while analyzing. A note can occur multiple times across different providers.</dd>
   <dt>Occurrence</dt>
-    <dd>An occurrence describes project-specific details of a note. The occurrence contains the vulnerability details, remediation steps, and other general information.</dd>
+    <dd>An occurrence describes provider-specific details of a note. The occurrence contains the vulnerability details, remediation steps, and other general information.</dd>
   <dt>Service CRN</dt>
     <dd>The Service CRN identifies the {{site.data.keyword.Bluemix_notm}} service involved in the finding.</br>
       <table>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-22"
+lastupdated: "2018-09-04"
 
 ---
 
@@ -29,7 +29,7 @@ You can monitor:
 - Vulnerabilities in container images that are stored in {{site.data.keyword.registrylong_notm}}
 - Suspicious clients and server IPs communicating with a Kubernetes cluster in {{site.data.keyword.containerlong_notm}} (preview)
 
-Ready to get started? Get to the service dashboard in one of the following way:
+Ready to get started? Get to the service dashboard in one of the following ways:
 
 <ul>
   <li>By using the tile:

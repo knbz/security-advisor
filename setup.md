@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-08-28"
+lastupdated: "2018-09-04"
 
 ---
 
@@ -80,7 +80,7 @@ Before you can get started with registry, be sure that you have the following CL
    {: pre}
 
 
-After you push images to your {{site.data.keyword.registryshort_notm}} namespace, information about the images, such as the severity of the identified vulnerabilities and configuration issues, is then shown in the **Images with Vulnerabilities** card in the service dashboard. You can also drill down into specific images to find out more information, such as description of all the known vulnerabilities and configuration issues that were identified.
+After you push images to your {{site.data.keyword.registryshort_notm}} namespace, information about any vulnerabilities found is shown in the **Images with Vulnerabilities** card in the service dashboard. You can also drill down into specific images to find out more information, such as description of all the known vulnerabilities and configuration issues that were identified.
 
 </br>
 
