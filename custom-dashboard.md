@@ -22,14 +22,14 @@ lastupdated: "2018-09-05"
 {{site.data.keyword.security-advisor_long}} provides a findings API that can be used to unify and improve security management on IBM Cloud. You can use the Findings APIs to register new finding types for your partner services and custom security tools. After the metadata is registered, the tools can send any occurrences of findings as KPIs and events by using the APIs. The findings are displayed as a separate card in the {{site.data.keyword.security-advisor_short}} dashboard.
 {: shortdesc}
 
-{{site.data.keyword.security-advisor_short}} APIs follow Grafeas like artifact metadata API specification to store, query, and retrieve critical metadata for the findings that are reported by all security tools and services.
+{{site.data.keyword.security-advisor_short}} APIs follow [Grafeas](https://grafeas.io/) like artifact metadata API specification to store, query, and retrieve critical metadata for the findings that are reported by all security tools and services.
 
 ## Integrating your own tools
 {: #integrate}
 
 **Before you begin**
 
-1. Log in to IBM Cloud.
+1. Log in to {{site.data.keyword.Bluemix_notm}}.
 
   ```
   ibmcloud login
