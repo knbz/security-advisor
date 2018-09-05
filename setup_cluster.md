@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-03-18"
+lastupdated: "2018-09-05"
 
 ---
 
@@ -18,18 +18,18 @@ lastupdated: "2018-03-18"
 # Setting up monitoring of suspicious clients and server IPs for a Kubernetes cluster
 {: #cluster_install}
 
-To try out the Security Advisor Network Analytics feature, install the Security Advisor components in a Kubernetes cluster that is deployed to {{site.data.keyword.containerlong_notm}}. Then, you can see network insights and alerts in the Security Advisor dashboard.
+To try out the Network Analytics feature, install the {{site.data.keyword.security-advisor_short}} components in a Kubernetes cluster that is deployed to {{site.data.keyword.containerlong_notm}}. Then, you can see network insights and alerts in the {{site.data.keyword.security-advisor_short}} dashboard.
 {:shortdesc}
 
-> **Note:** This feature of Security Advisor is a technology preview.
+**Note:** This feature of {{site.data.keyword.security-advisor_short}} is a technology preview.
 
-[Learn more about Network Analytics](network-analytics.html) in IBM Cloud Security Advisor.
+[Learn more about Network Analytics](network-analytics.html) in {{site.data.keyword.security-advisor_short}}.
 
-Learn how to use Security Advisor in your cluster:
+Learn how to use {{site.data.keyword.security-advisor_short}} in your cluster:
 * [Prerequisites](#cluster_prereqs)
 * [Logging in to your cluster](#login)
-* [Installing Security Advisor components](#cluster_components)
-* [Removing Security Advisor components](#cluster_uninstall)
+* [Installing {{site.data.keyword.security-advisor_short}} components](#cluster_components)
+* [Removing {{site.data.keyword.security-advisor_short}} components](#cluster_uninstall)
 
 ## Prerequisites
 {: #cluster_prereqs}
@@ -85,20 +85,20 @@ Before you begin:
     ```
     {: pre}
 
-> **Note:** Keep this command line window open and continue.
+**Note:** Keep this command line window open and continue.
 
 ## Installing Security Advisor components
 {: #cluster_components}
 
-> **Note:** The installer must be executed by the {{site.data.keyword.Bluemix_notm}} account owner.
+**Note:** The installer must be executed by the {{site.data.keyword.Bluemix_notm}} account owner.
 
-When you set up Security Advisor, the following actions take place:
+When you set up {{site.data.keyword.security-advisor_short}}, the following actions take place:
 1. Cluster metadata is collected and used to complete the installation of worker node IP addresses, subnets, Ingress URL and IP address, cluster CRN, Log Analysis endpoint, space, and token.
 2. An IAM service ID and API key are generated in your {{site.data.keyword.Bluemix_notm}} account so that your cluster can be identified by Security Advisor. If you have more than one cluster, run the installation for each cluster to generate service IDs and API keys for each cluster.
-3. The Security Advisor components are deployed in the **monitoring** namespace in your cluster.
+3. The {{site.data.keyword.security-advisor_short}} components are deployed in the **monitoring** namespace in your cluster.
 
 <br/>
-To install the Security Advisor components:
+To install the {{site.data.keyword.security-advisor_short}} components:
 
 1.  Download and extract the [installation package](https://github.com/IBM-Bluemix-Docs/security-advisor/blob/master/installation.tar.gz?raw=true).
 2.  From the same command line window as the previous section, navigate to the extracted archive location and install the package.
@@ -108,12 +108,12 @@ To install the Security Advisor components:
     ```
     {: pre}
 
-3.  Verify that the components are installed properly by checking the [Security Advisor dashboard](https://console.bluemix.net/security/advisor/#!/dashboard).
+3.  Verify that the components are installed properly by checking the [{{site.data.keyword.security-advisor_short}} dashboard](https://console.bluemix.net/security-advisor/#/dashboard).
 
-## Removing Security Advisor components
+## Removing {{site.data.keyword.security-advisor_short}} components
 {: #cluster_uninstall}
 
-Remove the Security Advisor components from your cluster and the service ID and API key from your {{site.data.keyword.Bluemix_notm}} account.
+Remove the {{site.data.keyword.security-advisor_short}} components from your cluster and the service ID and API key from your {{site.data.keyword.Bluemix_notm}} account.
 
 1.  Log in to {{site.data.keyword.Bluemix_notm}}.
 

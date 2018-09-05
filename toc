@@ -2,7 +2,7 @@
 {:topicgroup: .topicgroup}
 
 {: .toc subcollection="security-advisor" audience="security" arm="4033739" href="/docs/services/security-advisor/index.html"}
-Security Advisor
+IBM Cloud Security Advisor
 
     {: .navgroup id="learn"}
     index.md
@@ -12,7 +12,8 @@ Security Advisor
 
     {: .navgroup id="howto"}
     setup.md
-    custom-dashboard.md
+    setup_cluster.md
+    iam.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
@@ -20,5 +21,5 @@ Security Advisor
     {: .navgroup-end}
 
     {: .navgroup id="help"}
-    troubleshooting.md
+    ts_index.md
     {: .navgroup-end}

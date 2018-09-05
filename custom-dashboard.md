@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-03-16"
+lastupdated: "2018-09-05"
 
 ---
 
@@ -15,316 +15,363 @@ lastupdated: "2018-03-16"
 {:tip: .tip}
 {:download: .download}
 
-# Customizing the dashboard
-{: #custom_dashboard}
+# Integrating your own security tools
+{: #custom}
 
-With the custom dashboard experimental feature in IBM Cloud Security Advisor, you can customize the visualization of Network and Compute related security findings.
-{:shortdesc}
 
-Security Advisor pulls findings from other {{site.data.keyword.Bluemix}} APIs such as Vulnerability Advisor, and {{site.data.keyword.cloudcerts_short}}. For example, Security Advisor might display findings of a server that is infected with malware, a container with vulnerabilities, and related metadata.
+{{site.data.keyword.security-advisor_long}} provides a findings API that can be used to unify and improve security management on IBM Cloud. You can use the Findings APIs to register new finding types for your partner services and custom security tools. After the metadata is registered, the tools can send any occurrences of findings as KPIs and events by using the APIs. The findings are displayed as a separate card in the {{site.data.keyword.security-advisor_short}} dashboard.
+{: shortdesc}
 
-You can use the findings API to:
-  - Register new finding types
-  - Map finding types to UI cards by using meta data
-  - Record occurrences of findings as KPIs and events
-  - Organize data under logical tiles
+{{site.data.keyword.security-advisor_short}} APIs follow [Grafeas](https://grafeas.io/) like artifact metadata API specification to store, query, and retrieve critical metadata for the findings that are reported by all security tools and services.
 
-<br/>
+## Integrating your own tools
+{: #integrate}
 
-## Using the custom dashboard
-{: #using}
+**Before you begin**
 
-You can customize two dashboard sections: Network and Compute. To add security data to the sections, post the relevant API payloads to the Findings API endpoint: `http://grafeas.ng.bluemix.net/v1alpha1/`.
+1. Log in to {{site.data.keyword.Bluemix_notm}}.
 
-For access to the Findings API, [post in dW Answers with the `securityadvisor` tag](https://developer.ibm.com/answers/search.html?f=&type=question&q=securityadvisor).
+  ```
+  ibmcloud login
+  ```
+  {: codeblock}
 
-For more information about the Findings API, see the [swagger documentation](http://grafeas.ng.bluemix.net/ui/).
+2. Get your account ID. Ensure that your ID has been assigned the **Manager** [IAM role](https://console.bluemix.net/iam/#/users). For more information about service roles, check out the [{{site.data.keyword.security-advisor_short}} access policies](/docs/services/security-advisor/iam.html).
 
-## Example of customizing the dashboard
+  ```
+  ibmcloud account list org-account ORG_NAME [--guid]
+  ```
+  {: codeblock}
+
+3. Get your IAM token. The token is used in the `--header` of each API request.
+
+  ```
+  ibmcloud iam oauth-tokens
+  ```
+  {: codeblock}
+
+</br>
+
+**Adding and monitoring findings**
+
+1. Register a new type of Finding by creating a note. To create the note, use the [Findings API](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Notes/createNote).
+
+  Example request:
+
+  ```
+  curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account id>/providers/my-custom-tool/notes" -H "accept: application/json" -H "Authorization: <iam-token>" -H "Content-Type: application/json" -d "{ \"kind\": \"FINDING\", \"short_description\": \"My security tool finding\", \"long_description\": \"See what my custom security tool found\", \"provider_id\": \"my-custom-tool\", \"id\": \"my-custom-tool-findings-type\", \"reported_by\": { \"id\": \"my-custom-tool\", \"title\": \"My Custom Security Tool\" }, \"finding\": { \"severity\": \"MEDIUM\", \"next_steps\": [ { \"title\": \"Learn why this is reported as a risk\" } ] } }"
+  ```
+  {: codeblock}
+
+  <table>
+    <thead>
+      <th colspan=2><img src="images/idea.png" alt="More information icon"/> Understanding this commands components </th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>kind</code></td>
+        <td><code>FINDING</code></td>
+      </tr>
+      <tr>
+        <td><code>short_description</code></td>
+        <td>A description, no more than a couple words, that summarizes the finding.</td>
+      </tr>
+      <tr>
+        <td><code>long_description</code></td>
+        <td>A longer description that contains more detail about the finding.</td>
+      </tr>
+      <tr>
+        <td><code>provider_id</code></td>
+        <td>Your custom security tool.</td>
+      </tr>
+      <tr>
+        <td><code>id</code></td>
+        <td>An ID for the type of finding that your security tool found.</td>
+      </tr>
+      <tr>
+        <td><code>reported_by</code><ul><li><code>id</code></li><li><code>title</code></li></ul></td>
+        <td></br><ul><li>The ID of the security tool that reported the finding.</li><li>The title of the security tool that reported the finding.</li></ul></td>
+      </tr>
+      <tr>
+        <td><code>finding</code> <ul><li><code>severity</code></li> <li><code>next steps</code></li> <li><code>title</code></li></ul></td>
+        <td></br><ul><li>The level of urgency that the finding presents.</li> <li>The steps that can be taken to remediate the issue.</li> <li>The title of the finding.</li></ul></td>
+      </tr>
+    </tbody>
+  </table>
+
+  Example response:
+
+  ```
+    {
+    "author": {
+      "account_id": "account id",
+      "email": "email id",
+      "id": "IBM ID",
+      "kind": "user"
+    },
+    "context": {
+      "account_id": "account id"
+    },
+    "create_time": "2018-09-04T10:57:56.913871Z",
+    "create_timestamp": 1536058676914,
+    "finding": {
+      "next_steps": [
+        {
+          "title": "Learn why this is reported as a risk"
+        }
+      ],
+      "severity": "MEDIUM"
+    },
+    "id": "my-custom-tool-findings-type",
+    "kind": "FINDING",
+    "long_description": "See what my custom security tool found",
+    "name": "<account id>/providers/my-custom-tool/notes/my-custom-tool-findings-type",
+    "provider_id": "my-custom-tool",
+    "provider_name": "<account id>/providers/my-custom-tool",
+    "reported_by": {
+      "id": "my-custom-tool",
+      "title": "My Custom Security Tool"
+    },
+    "shared": true,
+    "short_description": "My security tool finding",
+    "update_time": "2018-09-04T10:57:56.913890Z",
+    "update_timestamp": 1536058676914,
+    "update_week_date": "2018-W36-2"
+  }
+  ```
+  {: codeblock}
+
+2. Create a new finding by posting an [occurrence](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Occurrences/createOccurrence).
+
+  ```
+  curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account-id>/providers/my-custom-tool/occurrences" -H "accept: application/json" -H "Authorization: <iam-token>" -H "Replace-If-Exists: true" -H "Content-Type: application/json" -d "{\t\"note_name\": \"<account-id>/providers/my-custom-tool/notes/my-custom-tool-findings-type\",\t\"kind\": \"FINDING\",\t\"remediation\": \"how to resolve this\",\t\"provider_id\": \"my-custom-tool\",\t\"id\": \"my-custom-tool-finding-2\",\t\"context\": {\t\t\"region\": \"location\",\t\t\"resource_id\": \"pluginId\",\t\t\"resource_name\": \"www.myapp.com\",\t\t\"resource_type\": \"worker\",\t\t\"service_name\": \"application\"\t},\t\"finding\": {\t\t\"severity\": \"HIGH\",\t\t\"next_steps\": [{\t\t\t\"url\": \"Details URL\"\t\t}]\t}}"
+  ```
+  {: codeblock}
+
+  <table>
+    <thead>
+      <th colspan=2><img src="images/idea.png" alt="More information icon"/> Understanding this commands components </th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>note_name</code></td>
+        <td><code>&lt;account id&gt;/providers/my-custom-tool/notes/my-custom-tool-findings-type</code></td>
+      </tr>
+      <tr>
+        <td><code>kind</code></td>
+        <td><code>FINDING</code></td>
+      </tr>
+      <tr>
+        <td><code>remediation</code></td>
+        <td>The steps that need to be taken to resolve the issue.</td>
+      </tr>
+      <tr>
+        <td><code>provider_id</code></td>
+        <td>Your custom security tool.</td>
+      </tr>
+      <tr>
+        <td><code>id</code></td>
+        <td>An ID for the type of finding that your security tool found.</td>
+      </tr>
+      <tr>
+        <td><code>context</code><ul><li><code>region</code></li><li><code>resource_id</code></li> <li><code>resource_name</code></li> <li><code>resource_type</code></li> <li><code>service_name</code></li></ul></td>
+        <td></br><ul><li><code>The location in which the finding occurred</code></li><li><code>The ID for the specific resource.</code></li> <li><code>The name of the resource.</code></li> <li><code>The type of resource.</code></li> <li><code>The name of the service.</code></li></ul></td>
+      </tr>
+      <tr>
+        <td><code>finding</code> <ul><li><code>severity</code></li> <li><code>next steps</code></li> <li><code>url</code></li></ul></td>
+        <td></br><ul><li>The level of urgency that the finding presents.</li> <li>The steps that can be taken to remediate the issue.</li> <li>A URL where the details of the finding can be found.</li></ul></td>
+      </tr>
+    </tbody>
+  </table>
+
+  Example response:
+
+  ```
+    {
+    "author": {
+      "account_id": "account id",
+      "email": "email id ",
+      "id": "user id",
+      "kind": "user"
+    },
+    "context": {
+      "account_id": "account id",
+      "region": "location",
+      "resource_id": "pluginId",
+      "resource_name": "www.myapp.com",
+      "resource_type": "worker",
+      "service_name": "application"
+    },
+    "create_time": "2018-09-04T11:32:14.564809Z",
+    "create_timestamp": 1536060734565,
+    "finding": {
+      "next_steps": [
+        {
+          "title": "Learn why this is reported as a risk",
+          "url": "Details URL"
+        }
+      ],
+      "severity": "HIGH"
+    },
+    "id": "my-custom-tool-finding-1",
+    "kind": "FINDING",
+    "long_description": "See what my custom security tool found",
+    "name": "<account id>/providers/my-custom-tool/occurrences/my-custom-tool-finding-1",
+    "note_name": "<account id>/providers/my-custom-tool/notes/my-custom-tool-findings-type",
+    "provider_id": "my-custom-tool",
+    "provider_name": "<account id>/providers/my-custom-tool",
+    "remediation": "how to resolve this",
+    "reported_by": {
+      "id": "my-custom-tool",
+      "title": "My Custom Security Tool"
+    },
+    "short_description": "My security tool finding",
+    "update_time": "2018-09-04T11:32:14.564828Z",
+    "update_timestamp": 1536060734565,
+    "update_week_date": "2018-W36-2"
+  }
+  ```
+  {: codeblock}
+
+3. Define the card in the dashboard to display your finding by creating a [note](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Notes/createNote).
+
+  ```
+  curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account id>/providers/my-custom-tool/notes" -H "accept: application/json" -H "Authorization: <iam token>" -H "Content-Type: application/json" -d "{ \"kind\": \"CARD\", \"provider_id\": \"my-custom-tool\", \"id\": \"custom-tool-card\", \"short_description\": \"security risk found by my custom tool\", \"long_description\": \"Details about why this is security risk to be fixed\", \"reported_by\": { \"id\": \"my-custom-tool\", \"title\": \"My Security Tool\" }, \"card\": { \"section\": \"My Security Tools\", \"title\": \"My Security Tool Findings\", \"finding_note_names\": [ \"providers/my-custom-tool/notes/my-custom-tool-findings-type\" ], \"elements\": [ { \"kind\": \"NUMERIC\", \"text\": \"Count of findings reported by my security tool\", \"default_time_range\": \"1d\", \"value_type\": { \"kind\": \"FINDING_COUNT\", \"finding_note_names\": [ \"providers/my-custom-tool/notes/my-custom-tool-findings-type\" ] } } ] } }"
+  ```
+  {: codeblock}
+
+  <table>
+    <thead>
+      <th colspan=2><img src="images/idea.png" alt="More information icon"/> Understanding this commands components </th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>kind</code></td>
+        <td><code>CARD</code></td>
+      </tr>
+      <tr>
+        <td><code>provider_id</code></td>
+        <td>Your custom security tool.</td>
+      </tr>
+      <tr>
+        <td><code>id</code></td>
+        <td>An ID for the type of finding that your security tool found.</td>
+      </tr>
+      <tr>
+        <td><code>short_description</code></td>
+        <td>A description, no more than a couple words, that summarizes the finding.</td>
+      </tr>
+      <tr>
+        <td><code>long_description</code></td>
+        <td>A longer description that contains more detail about the finding.</td>
+      </tr>
+      <tr>
+        <td><code>reported_by</code><ul><li><code>id</code></li><li><code>title</code></li></ul></td>
+        <td></br><ul><li>The ID of the security tool that reported the finding.</li><li>The title of the security tool that reported the finding.</li></ul></td>
+      </tr>
+      <tr>
+        <td><code>card</code> <ul><li><code>section</code></li> <li><code>title</code></li> <li><code>finding_note_names</code></li></ul></td>
+        <td></br><ul><li>The section that the card fits into.</li> <li>The title of the card</li> <li><code>providers/<provider_id>/notes/my-custom-tool-findings-type</code></li></ul></td>
+      </tr>
+      <tr>
+        <td><code>elements</code> <ul><li><code>kind</code></li> <li><code>text</code></li> <li><code>default_time_range</code></li></ul></td>
+        <td></br><ul><li>The type of element.</li> <li>The text that you want to display</li> <li>The amount of time that you want to check.</li></ul></td>
+      </tr>
+      <tr>
+        <td><code>value_type</code> <ul><li><code>kind</code></li> <li><code>finding_note_names</code></li></ul></td>
+        <td></br><ul><li>The type of value</li> <li>The name of the findings that you want to see in your card.</li></ul></td>
+      </tr>
+    </tbody>
+  </table>
+
+  Example response:
+  ```
+    {
+    "author": {
+      "account_id": "<account id",
+      "email": "email id",
+      "id": "user id",
+      "kind": "user"
+    },
+    "card": {
+      "elements": [
+        {
+          "default_time_range": "1d",
+          "kind": "NUMERIC",
+          "text": "Count of findings reported by my security tool",
+          "value_type": {
+            "finding_note_names": [
+              "providers/my-custom-tool/notes/my-custom-tool-findings-type"
+            ],
+            "kind": "FINDING_COUNT"
+          }
+        }
+      ],
+      "finding_note_names": [
+        "providers/my-custom-tool/notes/my-custom-tool-findings-type"
+      ],
+      "section": "My Security Tools",
+      "title": "My Security Tool Findings"
+    },
+    "context": {
+      "account_id": "<account id>"
+    },
+    "create_time": "2018-09-04T11:49:36.056047Z",
+    "create_timestamp": 1536061776056,
+    "id": "custom-tool-card",
+    "kind": "CARD",
+    "long_description": "Details about why this is security risk to be fixed",
+    "name": "<account id>/providers/my-custom-tool/notes/custom-tool-card",
+    "provider_id": "my-custom-tool",
+    "provider_name": "<account id>/providers/my-custom-tool",
+    "reported_by": {
+      "id": "my-custom-tool",
+      "title": "My Security Tool"
+    },
+    "shared": true,
+    "short_description": "security risk found by my custom tool",
+    "update_time": "2018-09-04T11:49:36.056066Z",
+    "update_timestamp": 1536061776056,
+    "update_week_date": "2018-W36-2"
+  }
+  ```
+  {: codeblock}
+
+4. Navigate to your service dashboard to see the card that you created.
+
+## Example scenario
 {: #example}
 
-In this example, you have an application that is running {{site.data.keyword.containershort_notm}} Kubernetes cluster with the name `cloudkingdom`. One of the pods in this cluster is sending an abnormal amount of data to external servers. You want to capture this finding in your Security Advisor custom dashboard, so you use the Findings API.
+Why would you want to create customizations? Say you have an application that is running a {{site.data.keyword.containershort_notm}} cluster with the name `cloudkingdom`. One of the pods in the cluster is sending an abnormal amount of data to external servers. You want to capture this finding in your {{site.data.keyword.security-advisor_short}} dashboard.
 
-Before you begin:
-*  Get the {{site.data.keyword.Bluemix_notm}} account ID by using the `bx account list` [command](/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_account_list).
-*  Fetch the IAM token by using the `bx iam oauth-tokens` [command](/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_iam_oauth_tokens). Use this in the `--header` of each API request.
-* Request access to Findings API by [posting in dW Answers with the `securityadvisor` tag](https://developer.ibm.com/answers/search.html?f=&type=question&q=securityadvisor).
+If you custom tool monitors and detects the abnormal amount of data that is being transferred, then the tool sends the finding to {{site.data.keyword.security-advisor_short}}.
 
-Steps:
+Example payload:
 
-1.  Create a project by posting a `curl` request to the Findings API. Note the `id` in the response, which you use in the next step to target the project in the Findings API endpoint.
+```
+{
+	"note_name": "<account id>/providers/my-custom-tool/notes/my-custom-tool-findings-type",
+	"kind": "FINDING",
+	"remediation": "How to resolve Data leakage threat",
+	"provider_id": "my-custom-tool",
+	"id": "my-custom-tool-finding-2",
+	"context": {
+		"region": "location",
+		"resource_id": "cluster crn",
+		"resource_name": "cloudkingdom",
+		"resource_type": "container",
+		"service_name": "kubernetess service"
+	},
+	"finding": {
+		"severity": "HIGH",
+		"next_steps": [{
+			"title": "Investigate which process are running in your cluster. If you suspect one of your pods was hacked, restart it, and look for image vulnerabilities",
+                        "url":"https://console.bluemix.net/containers-kubernetes/clusters"
+		}],
+                "short_description": "One of the pods in your cluster appears to be leaking an excessive amount of data",
+                "long_description": "One of the pods in your cluster is approaching external servers and sending them data in volumes that exceed that pod’s normal behavior"
+	}
 
-    **Request:**
-
-    ```
-    curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Authorization: <iam-token>'\
-    -d '{ "id": "my-security-advisor", "name": "my-security-advisor", "shared": false }'\
-    'https://grafeas.ng.bluemix.net/v1alpha1/projects'
-    ```
-    {: codeblock}
-
-    **Response:**
-
-    ```
-    {
-      "id": "my-security-advisor",
-      "name": "projects/my-security-advisor",
-      "shared": false
-    }
-    ```
-    {: screen}
-
-2.  Create a `note` and give it an `id` such as `notes-2` that you use in next step to capture occurences.
-
-    **Request:**
-
-    ```
-    curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' \
-    --header 'Authorization: <iam-token>' \
-     -d '{
-       "kind": "FINDING",
-       "id": "notes-2",
-       "reported_by": {
-           "id": "outlier",
-           "title": "Security Advisor"
-       },
-       "finding":
-           {
-               "severity":
-                   "HIGH",
-               "next_steps":
-                   [
-                       {
-                           "title": "Investigate which process are running in your cluster. If you suspect one of your pods was hacked, restart it, and look for image vulnerabilities"
-                       }]
-           }
-       ,
-       "short_description": "One of the pods in your cluster appears to be leaking an excessive amount of data",
-       "long_description": "One of the pods in your cluster is approaching external servers and sending them data in volumes that exceed that pod’s normal behavior"
-    }' 'https://grafeas.ng.bluemix.net/v1alpha1/projects/my-security-advisor/notes'
-    ```
-    {: codeblock}
-
-    **Response:**
-
-    ```
-     {
-      "create_time": "2018-03-14T12:09:31.442042Z",
-      "create_timestamp": 1521029371.442042,
-      "finding": {
-        "next_steps": [
-          {
-            "title": "Investigate which process are running in your cluster. If you suspect one of your pods was hacked, restart it, and look for image vulnerabilities"
-          }
-        ],
-        "severity": "HIGH"
-      },
-      "id": "notes-2",
-      "kind": "FINDING",
-      "long_description": "One of the pods in your cluster is approaching external servers and sending them data in volumes that exceed that pod\u2019s normal behavior",
-      "name": "projects/my-security-advisor/notes/notes-2",
-      "project_doc_id": "2436eb67dafff1627d2fb3d92bda7fcd/projects/my-security-advisor",
-      "project_id": "my-security-advisor",
-      "reported_by": {
-        "id": "outlier",
-        "title": "Security Advisor"
-      },
-      "shared": true,
-      "short_description": "One of the pods in your cluster appears to be leaking an excessive amount of data",
-      "update_time": "2018-03-14T12:09:31.442042Z",
-      "update_timestamp": 1521029371.442042,
-      "update_week_date": "2018-W11-3"
-    }
-    ```
-    {: screen}
-
-3.  Capture the `occurrences` of the finding. Replace `"<account-id>"` under `"context"` with your {{site.data.keyword.Bluemix_notm}} account ID.
-
-    **Request:**
-
-    ```
-    curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Authorization: <iam-token>' \
-     -d '{
-       "kind": "FINDING",
-       "id": "occurrence2",
-       "note_name": "projects/my-security-advisor/notes/notes-2",
-
-       "context": {
-           "region": "dal10",
-           "account_id": "<account-id>",
-           "resource_name": "cloudkingdom-pod",
-           "resource_type": "Pod",
-           "service_crn": "crn:v1:staging:public:containers-kubernetes:dal10:a/2436eb67dafff1627d2fb3d92bda7fcd:39438df3496a49e8aa39eb556ab15b0e::",
-           "service_name": "Kubernetes Cluster"
-       },
-       "finding": {
-           "certainty": "HIGH",
-           "network": {
-               "direction": "Outbound",
-               "protocol": "Ethernet/IPv4/TCP"
-           },
-           "data_transferred": {
-               "client_bytes": 983412
-           }
-       }
-    }' 'https://grafeas.ng.bluemix.net/v1alpha1/projects/my-security-advisor/occurrences'
-    ```
-    {: codeblock}
-
-    **Response:**
-
-    ```
-    {
-      "context": {
-        "account_id": "<account-id>",
-        "region": "dal10",
-        "resource_name": "cloudkingdom-pod",
-        "resource_type": "Pod",
-        "service_crn": "crn:v1:staging:public:containers-kubernetes:dal10:a/2436eb67dafff1627d2fb3d92bda7fcd:39438df3496a49e8aa39eb556ab15b0e::",
-        "service_name": "Kubernetes Cluster"
-      },
-      "create_time": "2018-03-14T12:10:43.446982Z",
-      "create_timestamp": 1521029443.446982,
-      "finding": {
-        "certainty": "high",
-        "data_transferred": {
-          "client_bytes": 983412
-        },
-        "network": {
-          "direction": "Outbound",
-          "protocol": "Ethernet/IPv4/TCP"
-        },
-        "next_steps": [
-          {
-            "title": "Investigate which process are running in your cluster. If you suspect one of your pods was hacked, restart it, and look for image vulnerabilities"
-          }
-        ],
-        "severity": "high"
-      },
-      "id": "occurrence2",
-      "kind": "FINDING",
-      "long_description": "One of the pods in your cluster is approaching external servers and sending them data in volumes that exceed that pod\u2019s normal behavior",
-      "name": "projects/my-security-advisor/occurrences/occurrence2",
-      "note_doc_id": "2436eb67dafff1627d2fb3d92bda7fcd/projects/my-security-advisor/notes/notes-2",
-      "note_name": "projects/my-security-advisor/notes/notes-2",
-      "project_doc_id": "2436eb67dafff1627d2fb3d92bda7fcd/projects/my-security-advisor",
-      "project_id": "my-security-advisor",
-      "reported_by": {
-        "id": "outlier",
-        "title": "Security Advisor"
-      },
-      "short_description": "One of the pods in your cluster appears to be leaking an excessive amount of data",
-      "update_time": "2018-03-14T12:10:43.446982Z",
-      "update_timestamp": 1521029443.446982,
-      "update_week_date": "2018-W11-3"
-    }
-    ```
-    {: screen}
-
-4.  Create a card to show the findings that are captured for `notes-2` occurrences.
-
-    **Request:**
-
-    ```
-    curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Authorization: <iam-token>' \
-     -d '{
-       "kind": "CARD",
-       "id": "data-leakage-card",
-       "short_description": "Data Leakage",
-       "long_description": "Data Leakage card",
-       "shared": false,
-
-       "card": {
-           "section": "Network",
-           "title": "Data Leakage",
-           "finding_note_names": [
-               "projects/my-security-advisor/notes/notes-2"
-           ],
-           "elements": [
-               {
-                   "kind": "NUMERIC",
-                   "text": "Excessive data",
-                   "value_type": {
-                       "kind": "FINDING_COUNT",
-                       "finding_note_names": [
-                           "projects/my-security-advisor/notes/notes-2"
-                       ]
-                   }
-               },
-               {
-                   "kind": "TIME_SERIES",
-                   "text": "Dala Leakage History",
-                   "default_interval": "1d",
-                   "default_time_range": "1w",
-                   "value_types": [
-                       {
-                           "kind": "FINDING_COUNT",
-                           "finding_note_names": [
-                               "projects/my-security-advisor/notes/notes-2"
-                           ],
-                           "text": "Excessive"
-                       }
-                   ]
-               }
-           ]
-       }
-     }' 'https://grafeas.ng.bluemix.net/v1alpha1/projects/my-security-advisor/notes'
-    ```
-    {: codeblock}
-
-    **Response:**
-
-    ```
-    {
-      "card": {
-        "elements": [
-          {
-            "kind": "NUMERIC",
-            "text": "Excessive data",
-            "value_type": {
-              "finding_note_names": [
-                "projects/my-security-advisor/notes/notes-2"
-              ],
-              "kind": "FINDING_COUNT"
-            }
-          },
-          {
-            "default_interval": "1d",
-            "default_time_range": "1w",
-            "kind": "TIME_SERIES",
-            "text": "Dala Leakage History",
-            "value_types": [
-              {
-                "finding_note_names": [
-                  "projects/my-security-advisor/notes/notes-2"
-                ],
-                "kind": "FINDING_COUNT",
-                "text": "Excessive"
-              }
-            ]
-          }
-        ],
-        "finding_note_names": [
-          "projects/my-security-advisor/notes/notes-2"
-        ],
-        "section": "Network",
-        "title": "Data Leakage"
-      },
-      "create_time": "2018-03-14T12:09:04.366685Z",
-      "create_timestamp": 1521029344.366685,
-      "id": "data-leakage-card",
-      "kind": "CARD",
-      "long_description": "Data Leakage card",
-      "name": "projects/my-security-advisor/notes/data-leakage-card",
-      "project_doc_id": "2436eb67dafff1627d2fb3d92bda7fcd/projects/my-security-advisor",
-      "project_id": "my-security-advisor",
-      "shared": false,
-      "short_description": "Data Leakage",
-      "update_time": "2018-03-14T12:09:04.366685Z",
-      "update_timestamp": 1521029344.366685,
-      "update_week_date": "2018-W11-3"
-    }
-    ```
-    {: screen}
-
-5.  Verify that your card is in the [Security Advisor Custom Dashboard](https://console.bluemix.net/security/advisor/#!/custom-dashboard).
+}
+```
+{: codeblock}

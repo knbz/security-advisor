@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-03-16"
+lastupdated: "2018-09-05"
 
 ---
 
@@ -18,9 +18,9 @@ lastupdated: "2018-03-16"
 # Related links
 {: #sa_rellinks}
 
-You can use the following related links to learn more about and interact with {{site.data.keyword.Bluemix}} Security Advisor.
+You can use the following related links to learn more about and interact with  {{site.data.keyword.security-advisor_long}}.
 {:shortdesc}
 
 Links related to the user interface:
-* [Security Advisor dashboard](https://console.ng.bluemix.net/security/advisor/#!/dashboard)
-* Customize your Security Advisor dashboard with the [Grafeas API](http://grafeas.ng.bluemix.net/ui/)
+* [{{site.data.keyword.security-advisor_short}} dashboard](https://console.bluemix.net/security-advisor/#/dashboard)
+* The [Grafeas spec](https://console.bluemix.net/apidocs/security-advisor)
