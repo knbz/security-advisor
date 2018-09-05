@@ -23,4 +23,4 @@ You can use the following related links to learn more about and interact with  {
 
 Links related to the user interface:
 * [{{site.data.keyword.security-advisor_short}} dashboard](https://console.bluemix.net/security-advisor/#/dashboard)
-* The [Grafeas spec](http://grafeas.ng.bluemix.net/ui/)
+* The [Grafeas spec](https://console.bluemix.net/apidocs/security-advisor)
