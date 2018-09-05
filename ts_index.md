@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-09-04"
+lastupdated: "2018-09-05"
 
 ---
 
@@ -55,3 +55,44 @@ There are two reasons that the widgets might not load:
 
 {: tsResolve}
 To resolve the issue, refresh the page to reload the information. If you have encountered the known issue, your information loads. If you do not have the correct permissions for the account, the page remains blank. If the page remains blank, contact your account administrator to verify your permissions.
+
+</br>
+## You can't create a custom solution occurrence
+{: #custom-occurrence}
+
+{: tsSymptoms}
+You try to create a custom solution occurrence but the information doesn't show in a browser and you receive no error message.
+
+{: tsCauses}
+You have encountered a known issue. Creating the occurrence failed because the name that you chose already exists.
+
+{: tsResolve}
+Choose another name for your occurrence.
+
+</br>
+
+## KPI is missing
+{: #kpi-missing}
+
+{: tsSymptoms}
+You do not see any KPI on your **Suspicious server IPs card**.
+
+{: tsCauses}
+You have encountered a known issue.
+
+{: tsResolve}
+This issue cannot be resolved.
+
+</br>
+
+## The latest details do not show
+{: #kpi-missing}
+
+{: tsSymptoms}
+You do not see the latest details on your **Images with vulnerabilities** card.
+
+{: tsCauses}
+You have encountered a known issue. Occasionally, the information does not update the first time a page loads.
+
+{: tsResolve}
+To resolve the issue, click the refresh icon.

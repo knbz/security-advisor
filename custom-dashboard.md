@@ -50,6 +50,7 @@ lastupdated: "2018-09-05"
   ```
   {: codeblock}
 
+</br>
 
 **Adding and monitoring findings**
 
@@ -89,11 +90,11 @@ lastupdated: "2018-09-05"
       </tr>
       <tr>
         <td><code>reported_by</code><ul><li><code>id</code></li><li><code>title</code></li></ul></td>
-        <td><ul><li>The ID of the security tool that reported the finding.</li><li>The title of the security tool that reported the finding.</li></ul></td>
+        <td></br><ul><li>The ID of the security tool that reported the finding.</li><li>The title of the security tool that reported the finding.</li></ul></td>
       </tr>
       <tr>
         <td><code>finding</code> <ul><li><code>severity</code></li> <li><code>next steps</code></li> <li><code>title</code></li></ul></td>
-        <td><ul><li>The level of urgency that the finding presents.</li> <li>The steps that can be taken to remediate the issue.</li> <li>The title of the finding.</li></ul></td>
+        <td></br><ul><li>The level of urgency that the finding presents.</li> <li>The steps that can be taken to remediate the issue.</li> <li>The title of the finding.</li></ul></td>
       </tr>
     </tbody>
   </table>
@@ -174,11 +175,11 @@ lastupdated: "2018-09-05"
       </tr>
       <tr>
         <td><code>context</code><ul><li><code>region</code></li><li><code>resource_id</code></li> <li><code>resource_name</code></li> <li><code>resource_type</code></li> <li><code>service_name</code></li></ul></td>
-        <td><ul><li><code>The location in which the finding occurred</code></li><li><code>The ID for the specific resource.</code></li> <li><code>The name of the resource.</code></li> <li><code>The type of resource.</code></li> <li><code>The name of the service.</code></li></ul></td>
+        <td></br><ul><li><code>The location in which the finding occurred</code></li><li><code>The ID for the specific resource.</code></li> <li><code>The name of the resource.</code></li> <li><code>The type of resource.</code></li> <li><code>The name of the service.</code></li></ul></td>
       </tr>
       <tr>
         <td><code>finding</code> <ul><li><code>severity</code></li> <li><code>next steps</code></li> <li><code>url</code></li></ul></td>
-        <td><ul><li>The level of urgency that the finding presents.</li> <li>The steps that can be taken to remediate the issue.</li> <li>A URL where the details of the finding can be found.</li></ul></td>
+        <td></br><ul><li>The level of urgency that the finding presents.</li> <li>The steps that can be taken to remediate the issue.</li> <li>A URL where the details of the finding can be found.</li></ul></td>
       </tr>
     </tbody>
   </table>
@@ -266,19 +267,19 @@ lastupdated: "2018-09-05"
       </tr>
       <tr>
         <td><code>reported_by</code><ul><li><code>id</code></li><li><code>title</code></li></ul></td>
-        <td><ul><li>The ID of the security tool that reported the finding.</li><li>The title of the security tool that reported the finding.</li></ul></td>
+        <td></br><ul><li>The ID of the security tool that reported the finding.</li><li>The title of the security tool that reported the finding.</li></ul></td>
       </tr>
       <tr>
         <td><code>card</code> <ul><li><code>section</code></li> <li><code>title</code></li> <li><code>finding_note_names</code></li></ul></td>
-        <td><ul><li>The section that the card fits into.</li> <li>The title of the card</li> <li><code>providers/<provider_id>/notes/my-custom-tool-findings-type</code></li></ul></td>
+        <td></br><ul><li>The section that the card fits into.</li> <li>The title of the card</li> <li><code>providers/<provider_id>/notes/my-custom-tool-findings-type</code></li></ul></td>
       </tr>
       <tr>
         <td><code>elements</code> <ul><li><code>kind</code></li> <li><code>text</code></li> <li><code>default_time_range</code></li></ul></td>
-        <td><ul><li>The type of element.</li> <li>The text that you want to display</li> <li>The amount of time that you want to check.</li></ul></td>
+        <td></br><ul><li>The type of element.</li> <li>The text that you want to display</li> <li>The amount of time that you want to check.</li></ul></td>
       </tr>
       <tr>
         <td><code>value_type</code> <ul><li><code>kind</code></li> <li><code>finding_note_names</code></li></ul></td>
-        <td><ul><li>The type of value</li> <li>The name of the findings that you want to see in your card.</li></ul></td>
+        <td></br><ul><li>The type of value</li> <li>The name of the findings that you want to see in your card.</li></ul></td>
       </tr>
     </tbody>
   </table>
