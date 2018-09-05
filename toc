@@ -13,6 +13,7 @@ IBM Cloud Security Advisor
     {: .navgroup id="howto"}
     setup.md
     setup_cluster.md
+    custom-dashboard.md
     iam.md
     {: .navgroup-end}
 
