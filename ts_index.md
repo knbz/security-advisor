@@ -14,6 +14,9 @@ lastupdated: "2018-09-05"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:tsSymptoms: .tsSymptoms}
+{:tsCauses: .tsCauses}
+{:tsResolve: .tsResolve}
 
 # Troubleshooting
 {: #troubleshooting}
