@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-07-27"
+lastupdated: "2018-09-05"
 
 ---
 
@@ -108,7 +108,7 @@ To install the {{site.data.keyword.security-advisor_short}} components:
     ```
     {: pre}
 
-3.  Verify that the components are installed properly by checking the [{{site.data.keyword.security-advisor_short}} dashboard](https://console.bluemix.net/security/advisor/#!/dashboard).
+3.  Verify that the components are installed properly by checking the [{{site.data.keyword.security-advisor_short}} dashboard](https://console.bluemix.net/security-advisor/#/dashboard).
 
 ## Removing {{site.data.keyword.security-advisor_short}} components
 {: #cluster_uninstall}

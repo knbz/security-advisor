@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-09-04"
+lastupdated: "2018-09-05"
 
 ---
 
@@ -63,7 +63,6 @@ lastupdated: "2018-09-04"
   {: codeblock}
 
   <table>
-  <caption> Understanding your options</caption>
     <thead>
       <th colspan=2><img src="images/idea.png" alt="More information icon"/> Understanding this commands components </th>
     </thead>
@@ -149,7 +148,6 @@ lastupdated: "2018-09-04"
   {: codeblock}
 
   <table>
-  <caption> Understanding the options</caption>
     <thead>
       <th colspan=2><img src="images/idea.png" alt="More information icon"/> Understanding this commands components </th>
     </thead>
@@ -242,7 +240,6 @@ lastupdated: "2018-09-04"
   {: codeblock}
 
   <table>
-  <caption> Understanding the commands options</caption>
     <thead>
       <th colspan=2><img src="images/idea.png" alt="More information icon"/> Understanding this commands components </th>
     </thead>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-09-04"
+lastupdated: "2018-09-05"
 
 ---
 
@@ -27,7 +27,7 @@ You can monitor:
 
 - Certificates that you manage with {{site.data.keyword.cloudcerts_long_notm}}
 - Vulnerabilities in container images that are stored in {{site.data.keyword.registrylong_notm}}
-- Suspicious clients and server IPs communicating with a Kubernetes cluster in {{site.data.keyword.containerlong_notm}} (preview)
+- Suspicious clients and server IPs that communicate with a cluster in {{site.data.keyword.containerlong_notm}} (preview)
 
 Ready to get started? Get to the service dashboard in one of the following ways:
 
