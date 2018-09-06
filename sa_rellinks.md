@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-09-05"
+lastupdated: "2018-09-06"
 
 ---
 
@@ -24,4 +24,4 @@ You can use the following related links to learn more about and interact with  {
 Links related to the user interface:
 * [{{site.data.keyword.security-advisor_short}} dashboard](https://console.bluemix.net/security-advisor/#/dashboard)
 * The [Findings API](https://console.bluemix.net/apidocs/security-advisor)
-* The [Grafeas spec](http://grafeas.ng.bluemix.net/ui/)
+* The [Grafeas spec](https://grafeas.io/)
