@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-09-05"
+lastupdated: "2018-09-11"
 
 ---
 
@@ -144,7 +144,7 @@ lastupdated: "2018-09-05"
 2. Create a new finding by posting an [occurrence](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Occurrences/createOccurrence).
 
   ```
-  curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account-id>/providers/my-custom-tool/occurrences" -H "accept: application/json" -H "Authorization: <iam-token>" -H "Replace-If-Exists: true" -H "Content-Type: application/json" -d "{\t\"note_name\": \"<account-id>/providers/my-custom-tool/notes/my-custom-tool-findings-type\",\t\"kind\": \"FINDING\",\t\"remediation\": \"how to resolve this\",\t\"provider_id\": \"my-custom-tool\",\t\"id\": \"my-custom-tool-finding-2\",\t\"context\": {\t\t\"region\": \"location\",\t\t\"resource_id\": \"pluginId\",\t\t\"resource_name\": \"www.myapp.com\",\t\t\"resource_type\": \"worker\",\t\t\"service_name\": \"application\"\t},\t\"finding\": {\t\t\"severity\": \"HIGH\",\t\t\"next_steps\": [{\t\t\t\"url\": \"Details URL\"\t\t}]\t}}"
+  curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account id>/providers/my-custom-tool/notes" -H "accept: application/json" -H "Authorization: <iam-token>" -H "Content-Type: application/json" -d "{ \"kind\": \"FINDING\", \"short_description\": \"My security tool finding\", \"long_description\": \"See what my custom security tool found\", \"provider_id\": \"my-custom-tool\", \"id\": \"my-custom-tool-findings-type\", \"reported_by\": { \"id\": \"my-custom-tool\", \"title\": \"My Custom Security Tool\" }, \"finding\": { \"severity\": \"MEDIUM\", \"next_steps\": [ { \"title\": \"Learn why this is reported as a risk\" } ] } }" 
   ```
   {: codeblock}
 
