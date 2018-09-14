@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-09-05"
+lastupdated: "2018-09-14"
 
 ---
 
@@ -37,27 +37,6 @@ You can get help by searching for information or by asking questions through a f
 * For questions about the service and getting started instructions, use the <a href="https://developer.ibm.com/answers/search.html?f=&type=question&redirect=search%2Fsearch&sort=relevance&q=appid%20[bluemix]" target="_blank">dW Answers <img src="../../icons/launch-glyph.svg" alt="External link icon"></a> forum. Be sure to include the `security-advisor` and `ibm-cloud` tags.
 
 For more information about getting support, see [How do I get the support that I need?](/docs/get-support/howtogetsupport.html#getting-customer-support).
-
-
-## The dashboard doesn't load
-{: #dashboard}
-
-{: tsSymptoms}
-You log in to the {{site.data.keyword.security-advisor_short}} dashboard and you see a error message.
-
-```
-Unable to load widgets
-```
-{: codeblock}
-
-{: tsCauses}
-There are two reasons that the widgets might not load:
-
-* You do not have the correct permissions to access the dashboard information.
-* You have encountered a known issue.
-
-{: tsResolve}
-To resolve the issue, refresh the page to reload the information. If you have encountered the known issue, your information loads. If you do not have the correct permissions for the account, the page remains blank. If the page remains blank, contact your account administrator to verify your permissions.
 
 </br>
 ## You can't create a custom solution occurrence
