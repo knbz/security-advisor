@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-09-05"
+lastupdated: "2018-10-01"
 
 ---
 
@@ -18,12 +18,13 @@ lastupdated: "2018-09-05"
 # Setting up monitoring of suspicious clients and server IPs for a Kubernetes cluster
 {: #cluster_install}
 
-To try out the Network Analytics feature, install the {{site.data.keyword.security-advisor_short}} components in a Kubernetes cluster that is deployed to {{site.data.keyword.containerlong_notm}}. Then, you can see network insights and alerts in the {{site.data.keyword.security-advisor_short}} dashboard.
+To try out the Network Analytics feature, install the {{site.data.keyword.security-advisor_short}} components in a cluster that is deployed to {{site.data.keyword.containerlong_notm}}. Then, you can see network insights and alerts in the {{site.data.keyword.security-advisor_short}} dashboard.
 {:shortdesc}
 
-**Note:** This feature of {{site.data.keyword.security-advisor_short}} is a technology preview.
+This feature of {{site.data.keyword.security-advisor_short}} is a technology preview.
+{: tip}
 
-[Learn more about Network Analytics](network-analytics.html) in {{site.data.keyword.security-advisor_short}}.
+Want to learn more about Network Analytics in {{site.data.keyword.security-advisor_short}}, [check out the docs](network-analytics.html).
 
 Learn how to use {{site.data.keyword.security-advisor_short}} in your cluster:
 * [Prerequisites](#cluster_prereqs)
@@ -53,21 +54,21 @@ Before you begin:
 1.  Log in to {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login -a https://api.ng.bluemix.net --sso
+    ibmcloud login -a https://api.ng.bluemix.net --sso
     ```
     {: pre}
 
 2.  List all of the clusters in the account to get the name of the cluster.
 
     ```
-    bx cs clusters
+    ibmcloud ks clusters
     ```
     {: pre}
 
 3.  Target your CLI to the cluster.
 
     ```
-    bx cs cluster-config <cluster-name-or-id>
+    ibmcloud ks cluster-config <cluster-name-or-id>
     ```
     {: pre}
 
@@ -90,7 +91,8 @@ Before you begin:
 ## Installing Security Advisor components
 {: #cluster_components}
 
-**Note:** The installer must be executed by the {{site.data.keyword.Bluemix_notm}} account owner.
+The installer must be executed by the {{site.data.keyword.Bluemix_notm}} account owner.
+{: tip}
 
 When you set up {{site.data.keyword.security-advisor_short}}, the following actions take place:
 1. Cluster metadata is collected and used to complete the installation of worker node IP addresses, subnets, Ingress URL and IP address, cluster CRN, Log Analysis endpoint, space, and token.
@@ -118,21 +120,21 @@ Remove the {{site.data.keyword.security-advisor_short}} components from your clu
 1.  Log in to {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login -a https://api.ng.bluemix.net --sso
+    ibmcloud login -a https://api.ng.bluemix.net --sso
     ```
     {: pre}
 
 2.  List all of the clusters in the account to get the name of the cluster.
 
     ```
-    bx cs clusters
+    ibmcloud ks clusters
     ```
     {: pre}
 
 3.  Target your CLI to the cluster.
 
     ```
-    bx cs cluster-config <cluster-name-or-id>
+    ibmcloud ks cluster-config <cluster-name-or-id>
     ```
     {: pre}
 
