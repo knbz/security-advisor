@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-10-01"
+lastupdated: "2018-10-02"
 
 ---
 
@@ -24,13 +24,8 @@ To try out the Network Analytics feature, install the {{site.data.keyword.securi
 This feature of {{site.data.keyword.security-advisor_short}} is a technology preview.
 {: tip}
 
-Want to learn more about Network Analytics in {{site.data.keyword.security-advisor_short}}, [check out the docs](network-analytics.html).
+Want to learn more about Network Analytics in {{site.data.keyword.security-advisor_short}}? [Check out the docs](network-analytics.html).
 
-Learn how to use {{site.data.keyword.security-advisor_short}} in your cluster:
-* [Prerequisites](#cluster_prereqs)
-* [Logging in to your cluster](#login)
-* [Installing {{site.data.keyword.security-advisor_short}} components](#cluster_components)
-* [Removing {{site.data.keyword.security-advisor_short}} components](#cluster_uninstall)
 
 ## Prerequisites
 {: #cluster_prereqs}
@@ -86,7 +81,8 @@ Before you begin:
     ```
     {: pre}
 
-**Note:** Keep this command line window open and continue.
+Keep this command line window open and continue.
+{: tip}
 
 ## Installing Security Advisor components
 {: #cluster_components}
