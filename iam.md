@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-22"
+lastupdated: "2018-10-02"
 
 ---
 
@@ -30,7 +30,7 @@ For more information about IAM, see [IAM Access](/docs/iam/users_roles.html).
 Every user that accesses an instance of the {{site.data.keyword.security-advisor_short}} service in your account must be assigned an access policy with an IAM user role defined. The policy determines which actions that a user can perform within the context of that specific service instance.
 {: shortdesc}
 
-To view the {{site.data.keyword.security-advisor_short}} dashboard, you must be assigned either the `Administrator` or `Editor` platform role.
+To view the {{site.data.keyword.security-advisor_short}} dashboard, you must be assigned at least the `Viewer` platform role and the `Reader` service role for the account that you want to view.
 {: tip}
 
 The actions are customized and defined by the {{site.data.keyword.Bluemix_notm}} service as operations that are allowed to be performed in the service. The actions are then mapped to IAM service user roles. In the following table, the actions and required permissions for {{site.data.keyword.security-advisor_short}} are mapped.
