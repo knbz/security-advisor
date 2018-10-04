@@ -1,0 +1,86 @@
+---
+
+copyright:
+  years: 2017, 2018
+lastupdated: "2018-10-04"
+
+---
+
+{:new_window: target="_blank"}
+{:shortdesc: .shortdesc}
+{:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+
+
+# {{site.data.keyword.cloudaccesstrailshort}} events
+{: #at_events}
+
+You can view, manage, and audit user-initiated activities made in your {{site.data.keyword.security-advisor_long}} service instance by using the {{site.data.keyword.cloudaccesstrailshort}} service.
+{: shortdesc}
+
+For more information about how the service works, see the [{{site.data.keyword.cloudaccesstrailshort}} docs](/docs/services/cloud-activity-tracker/index.html).
+
+
+## Where to view events
+{: #monitor}
+
+Events are available in the {{site.data.keyword.cloudaccesstrailshort}} **account domain** that is available in the {{site.data.keyword.Bluemix_notm}} region where the events are generated.
+
+1. Log in to your {{site.data.keyword.Bluemix_notm}} account.
+2. From the catalog, provision an instance of the {{site.data.keyword.cloudaccesstrailshort}} service in the same account as your instance of {{site.data.keyword.security-advisor_long}}.
+3. On the **Manage** tab of the {{site.data.keyword.cloudaccesstrailshort}} dashboard, click the **View in Kibana**.
+4. Set the time frame that you want to view logs for. The default is 15 min.
+5. In the **Available Fields** list, click **type**. Click the magnifying glass icon for **Activity Tracker** to limit the logs to only those tracked by the service.
+6. You can use the other available fields to narrow your search.
+
+For users other than the account owner to view logs, you must use the premium plan. To let other users view events, see [Granting permissions to see account events](/docs/services/cloud-activity-tracker/how-to/grant_permissions.html#grant_permissions).
+{: tip}
+
+## List of events
+{: #events}
+
+Check out the following table for a list of the events that are sent to {{site.data.keyword.cloudaccesstrailshort}}.
+{: shortdesc}
+
+<table>
+  <tr>
+    <th>Action</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>security-advisor.metadata.read</code></td>
+    <td>View a previously created note or notes.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.metadata.write</code></td>
+    <td>Create a note.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.metadata.delete</code></td>
+    <td>Delete a note.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.metadata.update</code></td>
+    <td>Update a note.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.findings.read</code></td>
+    <td>View one or more occurrences.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.findings.write</code></td>
+    <td>Create an occurrence.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.findings.delete</code></td>
+    <td>Delete an occurrence.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.findings.update</code></td>
+    <td>Update an occurrence.</td>
+  </tr>
+</table>
