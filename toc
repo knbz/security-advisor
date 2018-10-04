@@ -19,6 +19,7 @@ IBM Cloud Security Advisor
 
     {: .navgroup id="reference"}
     sa_rellinks.md
+    at-events.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
