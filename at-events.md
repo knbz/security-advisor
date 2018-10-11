@@ -83,20 +83,4 @@ Check out the following table for a list of the events that are sent to {{site.d
     <td><code>security-advisor.findings.update</code></td>
     <td>Update an occurrence.</td>
   </tr>
-  <tr>
-    <td><code>security-advisor.custom-solution.read</code></td>
-    <td>Read custom solutions that have been added to the service.</td>
-  </tr>
-  <tr>
-    <td><code>security-advisor.custom-solution.write</code></td>
-    <td>Add a custom solution to the service.</td>
-  </tr>
-  <tr>
-    <td><code>security-advisor.custom-solution.update</code></td>
-    <td>Update an existing custom solution within the service.</td>
-  </tr>
-  <tr>
-    <td><code>security-advisor.custom-solution.delete</code></td>
-    <td>Delete a custom solution from the service.</td>
-  </tr>
 </table>
