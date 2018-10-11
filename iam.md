@@ -101,34 +101,6 @@ The actions are customized and defined by the {{site.data.keyword.Bluemix_notm}}
     <td> </td>
     <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
   </tr>
-  <tr>
-    <td><code>security-advisor.custom-solution.read</code></td>
-    <td>Read custom solutions that have been added to the service.</td>
-    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
-  </tr>
-  <tr>
-    <td><code>security-advisor.custom-solution.write</code></td>
-    <td>Add a custom solution to the service.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
-  </tr>
-  <tr>
-    <td><code>security-advisor.custom-solution.update</code></td>
-    <td>Update an existing custom solution within the service.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
-  </tr>
-  <tr>
-    <td><code>security-advisor.custom-solution.delete</code></td>
-    <td>Delete a custom solution from the service.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
-  </tr>
 </table>
 
 ## API mappings
