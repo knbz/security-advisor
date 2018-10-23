@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-02"
+lastupdated: "2018-10-23"
 
 ---
 
@@ -30,18 +30,14 @@ For more information about IAM, see [IAM Access](/docs/iam/users_roles.html).
 Every user that accesses an instance of the {{site.data.keyword.security-advisor_short}} service in your account must be assigned an access policy with an IAM user role defined. The policy determines which actions that a user can perform within the context of that specific service instance.
 {: shortdesc}
 
-To view the {{site.data.keyword.security-advisor_short}} dashboard, you must be assigned at least the `Viewer` platform role and the `Reader` service role for the account that you want to view.
-{: tip}
-
 The actions are customized and defined by the {{site.data.keyword.Bluemix_notm}} service as operations that are allowed to be performed in the service. The actions are then mapped to IAM service user roles. In the following table, the actions and required permissions for {{site.data.keyword.security-advisor_short}} are mapped.
 
-<table>
-<caption>Roles required for actions</caption>
-<col width="35%">
-<col width="35%">
-<col width="10%">
-<col width="10%">
-<col width="10%">
+<table><caption>Which roles can perform which actions?</caption>
+  <col width="43%">
+  <col width="42%">
+  <col width="5%">
+  <col width="5%">
+  <col width="5%">
   <tr>
     <th>Action</th>
     <th>Explanation</th>
@@ -101,6 +97,34 @@ The actions are customized and defined by the {{site.data.keyword.Bluemix_notm}}
   <tr>
     <td><code>security-advisor.metadata.update</code></td>
     <td>Update metadata.</td>
+    <td> </td>
+    <td> </td>
+    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.read</code></td>
+    <td>Read custom solutions that have been added to the service.</td>
+    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
+    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
+    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.write</code></td>
+    <td>Add a custom solution to the service.</td>
+    <td> </td>
+    <td> </td>
+    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.update</code></td>
+    <td>Update an existing custom solution within the service.</td>
+    <td> </td>
+    <td> </td>
+    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.delete</code></td>
+    <td>Delete a custom solution from the service.</td>
     <td> </td>
     <td> </td>
     <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
