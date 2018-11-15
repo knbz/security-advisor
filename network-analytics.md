@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-22"
+lastupdated: "2018-11-15"
 
 ---
 
@@ -34,7 +34,16 @@ The network analytics preview feature consists of three modules:
 {{site.data.keyword.security-advisor_short}} can help protect your cluster by adding network monitoring. Deployed as part of your cluster, network monitoring is used to provide information about cluster communications. To enable Network Analytics, network flow information is collected about the communication that takes place between the cluster and external entities.
 {: shortdesc}
 
-Information that is collected includes the IP addresses of the peers that are communicating, the ports that they use, the set of protocols that are being used, the amount of data that is transferred, a set of protocol-specific parameters, and various time stamps. **The actual data that is exchanged is not collected**.
+The following information is collected:
+
+* The IP address of the peers that are communicating
+* The ports that they use
+* The set of protocols that are being used
+* The amount of data that is transferred
+* A set of protocol-specific parameters
+* Various time stamps.
+
+**The actual data that is exchanged is not collected**.
 
 Network monitoring works as part of the cluster with other services such as {{site.data.keyword.loganalysisshort_notm}} so that you can focus on the business logic. You can review the network monitoring insights in your {{site.data.keyword.security-advisor_short}} dashboard.
 

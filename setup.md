@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-04"
+lastupdated: "2018-11-15"
 
 ---
 
@@ -24,7 +24,7 @@ With {{site.data.keyword.security-advisor_long}}, you can continuously monitor y
 ## Monitoring vulnerabilities in container images
 {: #setup_images}
 
-A Docker image is the base of every container that you create. The image might contain your app, its configuration, and any dependencies that are required. An image is typically stored in a registry. By using {{site.data.keyword.registryshort_notm}}, you have access to Vulnerability Advisor which continuously scans your images for potential security issues. If issues are found, you are alerted and can view a comprehensive report in your {{site.data.keyword.security-advisor_short}} dashboard.
+A Docker image is the base of every container that you create. The image might contain your app, its configuration, and any dependencies that are required. An image is typically stored in a registry. By using {{site.data.keyword.registryshort_notm}}, you have access to Vulnerability Advisor, which continuously scans your images for potential security issues. If issues are found, you are alerted and can view a comprehensive report in your {{site.data.keyword.security-advisor_short}} dashboard.
 {:shortdesc}
 
 Learn more about [{{site.data.keyword.registryshort_notm}}](/docs/services/Registry/index.html#index).
@@ -87,7 +87,7 @@ After you push images to your {{site.data.keyword.registryshort_notm}} namespace
 ## Monitoring certificates
 {: #setup_certificates}
 
-Did you know that {{site.data.keyword.cloudcerts_long_notm}} can help to monitor and manage your SSL/TLS certificates? By integrating {{site.data.keyword.cloudcerts_short}} and {{site.data.keyword.security-advisor_short}}, you can get alerts and reminders about when you might need to update your certificates and other information. This can help prevent future vulnerabilities.
+Did you know that {{site.data.keyword.cloudcerts_long_notm}} can help to monitor and manage your SSL/TLS certificates? By integrating {{site.data.keyword.cloudcerts_short}} and {{site.data.keyword.security-advisor_short}}, you can get alerts and reminders about when you might need to update your certificates and other information, which can help prevent future vulnerabilities.
 {:shortdesc}
 
 You can learn more about [{{site.data.keyword.cloudcerts_long_notm}}](/docs/services/certificate-manager/index.html#gettingstarted).
@@ -97,4 +97,4 @@ You can learn more about [{{site.data.keyword.cloudcerts_long_notm}}](/docs/serv
 3. Click **Create**.
 4. To import your organization's certificates into {{site.data.keyword.cloudcerts_short}}, click **Import Certificate**.
 
-Now that you've imported your certificates, information such as expiration times and expired certificates, is shown on the **Certificates** card in the {{site.data.keyword.security-advisor_short}} dashboard. By clicking on the card, you can get more specific information about the certificates, such as which service instance that the certificates belong to. You can also see any steps that you can take to fix the security vulnerabilities.
+Now that your certificates are imported, information such as expiration times and expired certificates, is shown on the **Certificates** card in the {{site.data.keyword.security-advisor_short}} dashboard. By clicking the card, you can get more specific information about the certificates, such as which service instance that the certificates belong to. You can also see any steps that you can take to fix the security vulnerabilities.

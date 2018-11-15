@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-10-23"
+lastupdated: "2018-11-15"
 
 ---
 
@@ -35,7 +35,7 @@ lastupdated: "2018-10-23"
   ```
   {: codeblock}
 
-2. Get your account ID. Ensure that your ID has been assigned the **Manager** [IAM role](https://console.bluemix.net/iam/#/users). For more information about service roles, check out the [{{site.data.keyword.security-advisor_short}} access policies](/docs/services/security-advisor/iam.html).
+2. Get your account ID. Ensure that your ID is assigned the **Manager** [IAM role](https://console.bluemix.net/iam/#/users). For more information about service roles, check out the [{{site.data.keyword.security-advisor_short}} access policies](/docs/services/security-advisor/iam.html).
 
   ```
   ibmcloud account list org-account ORG_NAME [--guid]
@@ -73,7 +73,7 @@ lastupdated: "2018-10-23"
       </tr>
       <tr>
         <td><code>short_description</code></td>
-        <td>A description, no more than a couple words, that summarizes the finding.</td>
+        <td>A short description that summarizes the finding; no more than a couple of words.</td>
       </tr>
       <tr>
         <td><code>long_description</code></td>
@@ -140,7 +140,7 @@ lastupdated: "2018-10-23"
   ```
   {: codeblock}
 
-2. Create a new finding by posting an [occurrence](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Occurrences/createOccurrence).
+2. Create a finding by posting an [occurrence](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Occurrences/createOccurrence).
 
   ```
   curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account-id>/providers/my-custom-tool/occurrences" -H "accept: application/json" -H "Authorization: <iam-token>" -H "Replace-If-Exists: true" -H "Content-Type: application/json" -d "{ \"note_name\": \"<account-id>/providers/my-custom-tool/notes/my-custom-tool-findings-type\", \"kind\": \"FINDING\", \"remediation\": \"how to resolve this\", \"provider_id\": \"my-custom-tool\", \"id\": \"my-custom-tool-finding-1\", \"context\": { \"region\": \"location\", \"resource_id\": \"pluginId\", \"resource_name\": \"www.myapp.com\", \"resource_type\": \"worker\", \"service_name\": \"application\" }, \"finding\": { \"severity\": \"HIGH\", \"next_steps\": [{ \"url\": \"Details URL\" }] }}"
@@ -341,9 +341,9 @@ lastupdated: "2018-10-23"
 ## Example scenario
 {: #example}
 
-Why would you want to create customizations? Say you have an application that is running a {{site.data.keyword.containershort_notm}} cluster with the name `cloudkingdom`. One of the pods in the cluster is sending an abnormal amount of data to external servers. You want to capture this finding in your {{site.data.keyword.security-advisor_short}} dashboard.
+Why would you want to create customizations? Say that you have an application that is running a {{site.data.keyword.containershort_notm}} cluster with the name `cloudkingdom`. One of the pods in the cluster is sending an abnormal amount of data to external servers. You want to capture this finding in your {{site.data.keyword.security-advisor_short}} dashboard.
 
-If you custom tool monitors and detects the abnormal amount of data that is being transferred, then the tool sends the finding to {{site.data.keyword.security-advisor_short}}.
+If your custom tool monitors and detects the abnormal amount of data that is being transferred, then the tool sends the finding to {{site.data.keyword.security-advisor_short}}.
 
 Example payload:
 
