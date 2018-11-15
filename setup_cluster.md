@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-10-02"
+lastupdated: "2018-11-15"
 
 ---
 
@@ -32,13 +32,13 @@ Want to learn more about Network Analytics in {{site.data.keyword.security-advis
 
 Before you begin:
 
-* Mac, Linux or Windows 10 developer workstation
+* Mac, Linux, or Windows 10 developer workstation
   * Windows 10: [enable the Linux Subsystem feature](https://win10faq.com/install-run-ubuntu-bash-windows-10/)
-* [Node.js](https://nodejs.org/en/) 6 or above
+* [Node.js](https://nodejs.org/en/) 6 or higher
 * [jQ](https://stedolan.github.io/jq/download/)
-* [{{site.data.keyword.Bluemix_notm}} Command Line Interface](https://console.bluemix.net/docs/cli/reference/bluemix_cli/get_started.html#getting-started) v0.6.5 or above
+* [{{site.data.keyword.Bluemix_notm}} Command Line Interface](https://console.bluemix.net/docs/cli/reference/bluemix_cli/get_started.html#getting-started) v0.6.5 or higher
 * [{{site.data.keyword.containerlong_notm}} CLI plug-in](https://console.bluemix.net/docs/containers/cs_cli_install.html#cs_cli_install)
-* [Kubernetes CLI (kubectl)](https://kubernetes.io/docs/tasks/tools/install-kubectl/) v1.7 or above
+* [Kubernetes CLI (kubectl)](https://kubernetes.io/docs/tasks/tools/install-kubectl/) v1.7 or higher
 * [Kubernetes Helm (package manager)](https://docs.helm.sh/using_helm/#from-script)
 * [A free or standard Kubernetes cluster](https://console.bluemix.net/containers-kubernetes/catalog/cluster) in the **US South** region of {{site.data.keyword.Bluemix_notm}}
 * Identify the {{site.data.keyword.Bluemix_notm}} account owner to complete the installation steps
