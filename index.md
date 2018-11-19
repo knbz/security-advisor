@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-15"
+lastupdated: "2018-11-19"
 
 ---
 
@@ -34,7 +34,7 @@ Ready to get started? Get to the service dashboard in one of the following ways:
 <ul>
   <li>By using the tile:
     <ol>
-      <li>Log in to <a href="https://console.bluemix.net" target="_blank">{{site.data.keyword.Bluemix_notm}}<img src="../../icons/launch-glyph.svg" alt="External link icon"></a>.</li>
+      <li>Log in to <a href="https://console.bluemix.net/catalog/" target="_blank">{{site.data.keyword.Bluemix_notm}}<img src="../../icons/launch-glyph.svg" alt="External link icon"></a>.</li>
       <li>Navigate to the **Catalog** and click **Security and Identity**.</li>
       <li>Select the {{site.data.keyword.security-advisor_short}} tile. A dashboard opens where you can view security information for the preconfigured integrated tools such as vulnerability advisor and certificate manager.</li>
     </ol>
@@ -43,8 +43,8 @@ Ready to get started? Get to the service dashboard in one of the following ways:
     <ol>
       <li>Log in to <a href="https://console.bluemix.net" target="_blank">{{site.data.keyword.Bluemix_notm}}<img src="../../icons/launch-glyph.svg" alt="External link icon"></a>.</li>
       <li>From your dashboard, click the hamburger menu to expand your options.</li>
-      <li>Click **Security**. The security dashboard opens.</li>
-      <li>Click **Launch Advisor** to get started.</li>
+      <li>Click **Security**. An overview of the security dashboard opens.</li>
+      <li>Click **Getting Started** in the navigation to see general overview information about the service, or click **Dashboard** if you prefer to learn by seeing the service in action.</li>
     </ol>
   </li>
 </ul>
