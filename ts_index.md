@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-15"
+lastupdated: "2018-11-19"
 
 ---
 
@@ -69,7 +69,7 @@ This issue cannot be resolved.
 </br>
 
 ## The latest details do not show
-{: #kpi-missing}
+{: #latest-details}
 
 {: tsSymptoms}
 You do not see the latest details on your **Images with vulnerabilities** card.
