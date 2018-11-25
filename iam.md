@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-23"
+lastupdated: "2018-11-25"
 
 ---
 
@@ -41,93 +41,96 @@ The actions are customized and defined by the {{site.data.keyword.Bluemix_notm}}
   <tr>
     <th>Action</th>
     <th>Explanation</th>
-    <th>Reader</th>
-    <th>Writer</th>
-    <th>Manager</th>
   </tr>
   <tr>
     <td><code>security-advisor.findings.read</code></td>
     <td>View security report findings.</td>
-    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
+    <td>Reader, Writer, Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.write</code></td>
     <td>Generate security report findings.</td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
+    <td>Writer, Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.delete</code></td>
     <td>Delete security report findings.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
+    <td>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.update</code></td>
     <td>Edit security report findings.</td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
+    <td>Writer, Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.read</code></td>
     <td>View metadata.</td>
-    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
+    <td>Reader, Writer, Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.delete</code></td>
     <td>Delete metadata.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
+    <td>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.write</code></td>
     <td>Generate metadata.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
+    <td>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.update</code></td>
     <td>Update metadata.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
+    <td>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.read</code></td>
     <td>Read custom solutions that have been added to the service.</td>
-    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
+    <td>Reader, Writer, Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.write</code></td>
     <td>Add a custom solution to the service.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
+    <td>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.update</code></td>
     <td>Update an existing custom solution within the service.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
+    <td>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.delete</code></td>
     <td>Delete a custom solution from the service.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Feature available" style="width:32px;" /></td>
+    <td>Manager</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.read</code></td>
+    <td>View the partner solutions that you have added to your service instance.</td>
+    <td>Reader, Writer, Manager</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.write</code></td>
+    <td>Add a partner solution to your service instance.</td>
+    <td>Manager</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.update</code></td>
+    <td>Update a partner solution in your service instance.</td>
+    <td>Manager</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.delete</code></td>
+    <td>Delete a partner solution from your service instance.</td>
+    <td>Manager</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.analytics.enable</code></td>
+    <td>Enable network and audit analytics from the service.</td>
+    <td>Manager</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.analytics.disable</code></td>
+    <td>Disable network and audit analytics from the service.</td>
+    <td>Manager</td>
   </tr>
 </table>
 
