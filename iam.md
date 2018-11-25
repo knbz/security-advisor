@@ -33,11 +33,6 @@ Every user that accesses an instance of the {{site.data.keyword.security-advisor
 The actions are customized and defined by the {{site.data.keyword.Bluemix_notm}} service as operations that are allowed to be performed in the service. The actions are then mapped to IAM service user roles. In the following table, the actions and required permissions for {{site.data.keyword.security-advisor_short}} are mapped.
 
 <table><caption>Which roles can perform which actions?</caption>
-  <col width="43%">
-  <col width="42%">
-  <col width="5%">
-  <col width="5%">
-  <col width="5%">
   <tr>
     <th>Action</th>
     <th>Explanation</th>
