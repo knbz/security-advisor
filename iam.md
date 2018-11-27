@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-11-25"
+lastupdated: "2018-11-27"
 
 ---
 
@@ -118,13 +118,28 @@ The actions are customized and defined by the {{site.data.keyword.Bluemix_notm}}
     <td>Manager</td>
   </tr>
   <tr>
-    <td><code>security-advisor.analytics.enable</code></td>
-    <td>Enable network and audit analytics from the service.</td>
+    <td><code>security-advisor.network-insights.enable</code></td>
+    <td>Enable network insights that are provided by the service.</td>
     <td>Manager</td>
   </tr>
   <tr>
-    <td><code>security-advisor.analytics.disable</code></td>
-    <td>Disable network and audit analytics from the service.</td>
+    <td><code>security-advisor.network-insights.disable</code></td>
+    <td>Disable network insights that are provided by the service.</td>
+    <td>Manager</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.activity-insights.enable</code></td>
+    <td>Enable activity insights that are provided by the service.</td>
+    <td>Manager</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.activity-insights.disable</code></td>
+    <td>Disable activity insights that are provided by the service.</td>
+    <td>Manager</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.insights-cos.create</code></td>
+    <td>Create a Cloud Object Storage instance for network and activity insights.</td>
     <td>Manager</td>
   </tr>
 </table>
