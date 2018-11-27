@@ -40,12 +40,12 @@ The actions are customized and defined by the {{site.data.keyword.Bluemix_notm}}
   <tr>
     <td><code>security-advisor.findings.read</code></td>
     <td>View security report findings.</td>
-    <td>Reader, Writer, Manager</td>
+    <td>Reader</br>Writer</br>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.write</code></td>
     <td>Generate security report findings.</td>
-    <td>Writer, Manager</td>
+    <td>Writer</br>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.delete</code></td>
@@ -55,12 +55,12 @@ The actions are customized and defined by the {{site.data.keyword.Bluemix_notm}}
   <tr>
     <td><code>security-advisor.findings.update</code></td>
     <td>Edit security report findings.</td>
-    <td>Writer, Manager</td>
+    <td>Writer</br>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.read</code></td>
     <td>View metadata.</td>
-    <td>Reader, Writer, Manager</td>
+    <td>Reader</br>Writer</br>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.delete</code></td>
@@ -80,7 +80,7 @@ The actions are customized and defined by the {{site.data.keyword.Bluemix_notm}}
   <tr>
     <td><code>security-advisor.custom-solution.read</code></td>
     <td>Read custom solutions that have been added to the service.</td>
-    <td>Reader, Writer, Manager</td>
+    <td>Reader</br>Writer</br>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.write</code></td>
@@ -100,7 +100,7 @@ The actions are customized and defined by the {{site.data.keyword.Bluemix_notm}}
   <tr>
     <td><code>security-advisor.partner-solution.read</code></td>
     <td>View the partner solutions that you have added to your service instance.</td>
-    <td>Reader, Writer, Manager</td>
+    <td>Reader</br>Writer</br>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.partner-solution.write</code></td>
