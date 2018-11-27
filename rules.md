@@ -25,6 +25,130 @@ As an account administrator, you can create your own rule packages or download a
 Not sure how activity insights and rules fit together? Check out [Activity insights](activity-insights.html).
 {: tip}
 
+</br>
+
+
+## Understanding rule packages
+{: #packages}
+
+As an account admin, you can quickly start monitoring your accounts by taking advantage of rule packages.
+{: shortdesc}
+
+The service offers rule packages that are associated with specific {{site.data.keyword.Bluemix_notm}} services including:
+
+* {{site.data.keyword.containerlong_notm}}
+* IBM Cloud Identity and Access Management (IAM)
+* IBM Cloud Certificate Manager
+* IBM Cloud App ID
+* IBM Cloud Key Protect
+* IBM Cloud Object Store (COS)
+
+
+You can update existing or create new packages to tailor the rules to your organization's needs. Ready to get started? Check out [Adding rule packages](rules.html).
+{: tip}
+
+
+**What is a rule?**
+
+A rule is the combination of conditions and a single event. You can use rules, or the combination of rules to trigger findings that can display in your Security Advisor dashboard.
+
+Example:
+
+```
+	{
+		"comment": "Dormant Rule: Very high risk AppID activity... ",
+		"dormant": true,
+		"conditions": { 	… },
+		"event": { … }
+		"type": "aggregate"
+	}
+```
+{: screen}
+
+In addition to a condition and an event, rules can also contain the fields that are found in the following table.
+
+<table>
+	<tr>
+		<th colspan=2><img src="images/idea.png" alt="light bulb icon"/> Understanding the components of a rule</th>
+	</tr>
+	<tr>
+		<td><code>comment</code></td>
+		<td>Always ignored.</td>
+	</tr>
+	<tr>
+		<td><code>dormant</code></td>
+		<td>A Boolean field that if true, is ignored. If the value is false or undefined, the rule is used.</td>
+	</tr>
+	<tr>
+		<td><code>type</code></td>
+		<td>Options include: <code>aggregate</code>, <code>coincident</code>, and <code>boolean</code>. If the type is not assigned <code>aggregate</code> or <code>coincident</code>, then it is evaluated as <code>boolean</code>.</td>
+	</tr>
+</table>
+
+</br>
+
+**What is a condition?**
+
+A basic condition is a building block that is composed of three components. The blocks are bound by using `any` and `all` operators and can be nested. An `all` operator is the equivalent of `and` while `any` is equal to `or`.
+
+Example:
+
+```
+	"conditions": {
+		"all": [{
+			"any": [{
+				"fact": "action",
+				"operator": "equal",
+				"value": "iam-groups.group.delete"
+			},
+			{
+				"fact": "action",
+				"operator": "equal",
+				"value": "iam-groups.member.delete"
+			}]
+		}
+	}
+```
+{: screen}
+
+<table>
+	<tr>
+		<th colspan=2><img src="images/idea.png" alt="light bulb icon"/> Understanding the components of a condition</th>
+	</tr>
+	<tr>
+		<td><code>fact</code></td>
+		<td>The Activity Tracker CADF event that is being inspected.</td>
+	</tr>
+	<tr>
+		<td><code>operator</code></td>
+		<td>Options include: <code>equal</code>, <code>notEqual</code>, <code>lessThan</code>, <code>greaterThan</code>, <code>in</code>, and <code>notIn</code></td>
+	</tr>
+	<tr>
+		<td><code>value</code></td>
+		<td>SHAWNA: WHAT IS THIS?</td>
+	</tr>
+</table>
+
+</br>
+
+**What is an event?**
+
+An event is composed of two fields: `type` and `params.findingType`. The first is a unique identifier for a rule, while `params.findingType` is the name of the finding that is issued to the service. The finding name allows for the finding to be displayed on the Security Advisor dashboard.
+
+Example:
+
+```
+	{
+		"conditions": { 	… },
+		"event": {
+			"type": "IKS high risk API",
+			"params": {"findingType": "IKS-high-risk"}
+		}
+	}
+```
+{: screen}
+
+</br>
 
 ## Understanding rule types
 {: #rule-types}
