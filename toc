@@ -1,18 +1,17 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="security-advisor" audience="security" arm="4033739" href="/docs/services/security-advisor/index.html"}
+{: .toc subcollection="security-advisor" audience="security" arm="4033739" href="/docs/services/security-advisor/index.html" path="services/security-advisor"}
 IBM Cloud Security Advisor
 
     {: .navgroup id="learn"}
     index.md
     about.md
-    network-analytics.md
+    network-analytics
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
     setup.md
-    setup_cluster.md
     custom-dashboard.md
     iam.md
     {: .navgroup-end}
