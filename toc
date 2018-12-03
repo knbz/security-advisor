@@ -13,7 +13,6 @@ IBM Cloud Security Advisor
 
     {: .navgroup id="howto"}
     setup.md
-    custom-dashboard.md
     iam.md
     at-events.md
     {: .navgroup-end}
@@ -22,6 +21,7 @@ IBM Cloud Security Advisor
     [Findings API](https://console.bluemix.net/apidocs/security-advisor)
     [Grafeas spec](http://grafeas.ng.bluemix.net/ui/)
     [Service dashboard](https://console.bluemix.net/security-advisor/#/dashboard)
+    [Blogs](https://www.ibm.com/blogs/bluemix/tag/security-advisor/)
     {: .navgroup-end}
 
     {: .navgroup id="help"}

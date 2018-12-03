@@ -15,26 +15,22 @@ lastupdated: "2018-12-03"
 {:tip: .tip}
 {:download: .download}
 
-## Integrating your security tools
+## Partner solutions
 {: #setup_custom}
 
+Partner solutions are a way to extend your security by creating a link between {{site.data.keyword.containershort_notm}} and other security tools outside of IBM Cloud.
+{: shortdesc}
 
-There are times that you might already have have a tool that you use internally. You can integrate those tools such as, Aqua or Twistlock, with {{site.data.keyword.security-advisor_short}}.
-{:shortdesc}
-
+## Integrating partners through the GUI
 
 **Before you begin**
 
-* Prior to integrating custom tools, you must sign an agreement with the {{site.data.keyword.security-advisor_short}} offering team.
-* You must have an {{site.data.keyword.Bluemix_notm}} account.
-* You must have a Partner Service account.
-* You must share your metamodel with the {{site.data.keyword.security-advisor_short}} team.
+* Ensure that you have an account with the partner that you want to integrate.
 
-**Note**: {{site.data.keyword.security-advisor_short}} does not persist any credentials that are related to the partner service. Enterprise users must authenticate by using SAML to both {{site.data.keyword.Bluemix_notm}} and to the business partner.
+**Integrating**
 
-1. Log into the partner service and get a unique URL.
-2. Log into {{site.data.keyword.Bluemix_notm}}.
-3. Click **Business Partner Add On**. A screen displays. Fill out the information including the URL that you obtained in step 1. When you finish, {{site.data.keyword.security-advisor_short}} creates the artifacts that are required for integration such as the service ID, API key, account ID, and metadata. The `writer` role is assigned.
-4. The {{site.data.keyword.security-advisor_short}} team calls you to deliver the information that was generated.
-5. You configure the customer account in the **Integration tab** of the business partner service.
-6. With the integration in place, you can start posting occurrences to {{site.data.keyword.security-advisor_short}} and view the findings in the service dashboard.
+1. Provide a name for your connection.
+2. Click **Next**.
+3. Verify that you give permission for the service to generate a service ID and API key and create the connection with the service by clicking **Next**.
+4. Click **Done**.
+5. Go to your service dashboard to review a test finding that was sent to {{site.data.keyword.containershort_notm}} by the partner.

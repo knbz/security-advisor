@@ -44,10 +44,10 @@ For more detailed information about network analytics, see [Network analytics](n
 ## Partner solutions
 {: #partner}
 
-Partner solutions are a way to extend your security by creating a link between Security Advisor and other security tools outside of IBM Cloud.
+Partner solutions are a way to extend your security by creating a link between {{site.data.keyword.containershort_notm}} and other security tools outside of IBM Cloud.
 {: shortdesc}
 
-Security Advisor is currently partnered with the following companies:
+{{site.data.keyword.containershort_notm}} is currently partnered with the following companies:
 
 **Neuvector**
 
@@ -67,7 +67,6 @@ SHAWNA: Is this a thing? Can they do that?
 
 You might already have a security tool that you depend on. You can integrate that tool with the security advisor dashboard so that all of your security information is centralized in one place!
 {: shortdesc}
-
 
 
 
