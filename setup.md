@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-11-15"
+lastupdated: "2018-12-03"
 
 ---
 
@@ -15,16 +15,24 @@ lastupdated: "2018-11-15"
 {:tip: .tip}
 {:download: .download}
 
-# Setting up {{site.data.keyword.security-advisor_short}}
+# Taking advantage of pre-integrated services
 {: #setup}
 
-With {{site.data.keyword.security-advisor_long}}, you can continuously monitor your apps for security risks and threats. When vulnerabilities are found, you are alerted via the service dashboard.
-{:shortdesc}
+{{site.data.keyword.security-advisor_short}} comes with several pre-populated cards that can help you to monitor for security risks and threats.
+{: shortdesc}
+
+The following services {{site.data.keyword.security-advisor_short}} automatically creates a card for:
+
+* {{site.data.keyword.registrylong_notm}}
+* {{site.data.keyword.cloudcerts_long_notm}}
+
+Although you do not have to do anything to create the connection between {{site.data.keyword.security-advisor_short}} and the services, you must have instances of the services configured.
+
 
 ## Monitoring vulnerabilities in container images
 {: #setup_images}
 
-A Docker image is the base of every container that you create. The image might contain your app, its configuration, and any dependencies that are required. An image is typically stored in a registry. By using {{site.data.keyword.registryshort_notm}}, you have access to Vulnerability Advisor, which continuously scans your images for potential security issues. If issues are found, you are alerted and can view a comprehensive report in your {{site.data.keyword.security-advisor_short}} dashboard.
+With {{site.data.keyword.registryshort_notm}}, you have access to Vulnerability Advisor, which continuously scans the images in your {{site.data.keyword.registryshort_notm}} instance for potential security issues. If issues are found, you are alerted and can view a comprehensive report in your {{site.data.keyword.security-advisor_short}} dashboard.
 {:shortdesc}
 
 Learn more about [{{site.data.keyword.registryshort_notm}}](/docs/services/Registry/index.html#index).
@@ -33,13 +41,13 @@ Learn more about [{{site.data.keyword.registryshort_notm}}](/docs/services/Regis
 **Before you begin**
 
 Before you can get started with registry, be sure that you have the following CLIs and plugins installed:
-- [The {{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://clis.ng.bluemix.net/ui/home.html)
-- The container-registry plug-in.
+* [The {{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://clis.ng.bluemix.net/ui/home.html)
+* The container-registry plug-in.
 
-    ```
-    ibmcloud plugin install container-registry -r Bluemix
-    ```
-    {: pre}
+  ```
+  ibmcloud plugin install container-registry -r Bluemix
+  ```
+  {: pre}
 
 </br>
 **Creating a namespace**
@@ -47,21 +55,21 @@ Before you can get started with registry, be sure that you have the following CL
 1. Log in to your account by using the CLI.
 
    ```
-   bx login --sso
+   ibmcloud login --sso
    ```
    {: pre}
 
 2. Log in to {{site.data.keyword.registryshort_notm}}.
 
    ```
-   bx cr login
+   ibmcloud cr login
    ```
    {: pre}
 
 3. Optional: Create a namespace. You can always use an existing one.
 
    ```
-   bx cr namespace-add
+   ibmcloud cr namespace-add
    ```
    {: pre}
 
@@ -80,7 +88,7 @@ Before you can get started with registry, be sure that you have the following CL
    {: pre}
 
 
-After you push images to your {{site.data.keyword.registryshort_notm}} namespace, information about any vulnerabilities found is shown in the **Images with Vulnerabilities** card in the service dashboard. You can also drill down into specific images to find out more information, such as description of all the known vulnerabilities and configuration issues that were identified.
+After you push images to your {{site.data.keyword.registryshort_notm}} namespace, information about any vulnerabilities found is shown in the **Images with Vulnerabilities** card in the service dashboard. You can also drill down into specific images to find out more information, such as a description of all of the identified vulnerabilities and configuration issues.
 
 </br>
 
