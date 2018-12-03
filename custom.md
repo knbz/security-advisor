@@ -15,7 +15,7 @@ lastupdated: "2018-12-03"
 {:tip: .tip}
 {:download: .download}
 
-## Custom security tools
+# Custom security tools
 {: #setup_custom}
 
 There are times that you might already have have a tool that you use. You can integrate those tools such as, Neuvector, with {{site.data.keyword.security-advisor_short}}.

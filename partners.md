@@ -15,7 +15,7 @@ lastupdated: "2018-12-03"
 {:tip: .tip}
 {:download: .download}
 
-## Partner solutions
+# Partner solutions
 {: #setup_custom}
 
 Partner solutions are a way to extend your security by creating a link between {{site.data.keyword.containershort_notm}} and other security tools outside of IBM Cloud.
