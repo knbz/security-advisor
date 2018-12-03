@@ -26,7 +26,7 @@ The following services {{site.data.keyword.security-advisor_short}} automaticall
 * {{site.data.keyword.registrylong_notm}}
 * {{site.data.keyword.cloudcerts_long_notm}}
 
-Although you do not have to do anything to create the connection between {{site.data.keyword.security-advisor_short}} and the services, you must have instances of the services configured.
+Although you do not have to do anything to create the connection between {{site.data.keyword.security-advisor_short}} and the services, you must have instances of the services configured with information.
 
 
 ## Monitoring vulnerabilities in container images
@@ -54,38 +54,38 @@ Before you can get started with registry, be sure that you have the following CL
 
 1. Log in to your account by using the CLI.
 
-   ```
-   ibmcloud login --sso
-   ```
-   {: pre}
+  ```
+  ibmcloud login --sso
+  ```
+  {: pre}
 
 2. Log in to {{site.data.keyword.registryshort_notm}}.
 
-   ```
-   ibmcloud cr login
-   ```
-   {: pre}
+  ```
+  ibmcloud cr login
+  ```
+  {: pre}
 
 3. Optional: Create a namespace. You can always use an existing one.
 
-   ```
-   ibmcloud cr namespace-add
-   ```
-   {: pre}
+  ```
+  ibmcloud cr namespace-add
+  ```
+  {: pre}
 
 3. Tag an image.
 
-   ```
-   docker tag <image>:<tag> registry.ng.bluemix.net/<namespace>/<image>:<tag>
-   ```
-   {: pre}
+  ```
+  docker tag <image>:<tag> registry.ng.bluemix.net/<namespace>/<image>:<tag>
+  ```
+  {: pre}
 
 5. Push the image.
 
-   ```
-   docker push registry.ng.bluemix.net/<namespace>/<image>:<tag>
-   ```
-   {: pre}
+  ```
+  docker push registry.ng.bluemix.net/<namespace>/<image>:<tag>
+  ```
+  {: pre}
 
 
 After you push images to your {{site.data.keyword.registryshort_notm}} namespace, information about any vulnerabilities found is shown in the **Images with Vulnerabilities** card in the service dashboard. You can also drill down into specific images to find out more information, such as a description of all of the identified vulnerabilities and configuration issues.
@@ -98,7 +98,8 @@ After you push images to your {{site.data.keyword.registryshort_notm}} namespace
 Did you know that {{site.data.keyword.cloudcerts_long_notm}} can help to monitor and manage your SSL/TLS certificates? By integrating {{site.data.keyword.cloudcerts_short}} and {{site.data.keyword.security-advisor_short}}, you can get alerts and reminders about when you might need to update your certificates and other information, which can help prevent future vulnerabilities.
 {:shortdesc}
 
-You can learn more about [{{site.data.keyword.cloudcerts_long_notm}}](/docs/services/certificate-manager/index.html#gettingstarted).
+You can learn more about [{{site.data.keyword.cloudcerts_long_notm}}](/docs/services/certificate-manager/index.html#gettingstarted) by reading the docs.
+{: tip}
 
 1. In the {{site.data.keyword.Bluemix_notm}} catalog, search for "{{site.data.keyword.cloudcerts_short}}".
 2. Give your service instance a name, or use the preset name.

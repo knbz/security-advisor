@@ -66,17 +66,17 @@ Need help creating and configuring a cluster? Try running through this [tutorial
 
 1.  Log in to {{site.data.keyword.Bluemix_notm}}.
 
-    ```
-    ibmcloud login -a https://api.ng.bluemix.net --sso
-    ```
-    {: pre}
+  ```
+  ibmcloud login -a https://api.ng.bluemix.net --sso
+  ```
+  {: pre}
 
 2.  List all of the clusters in the account to get the name of the cluster that you want to work with.
 
-    ```
-    ibmcloud ks clusters
-    ```
-    {: pre}
+  ```
+  ibmcloud ks clusters
+  ```
+  {: pre}
 
 3.  Target your CLI to the cluster.
 
@@ -89,7 +89,7 @@ Need help creating and configuring a cluster? Try running through this [tutorial
 
   2. Use the output of the previous command to set the path to the local Kubernetes configuration file as an environment variable.
 
-    Example:
+  Example:
 
     ```
     export KUBECONFIG=/Users/<user_name>/.bluemix/plugins/container-service/clusters/<cluster_name>/kube-config-prod-dal10-<cluster_name>.yml
@@ -98,10 +98,10 @@ Need help creating and configuring a cluster? Try running through this [tutorial
 
 4.  Install tiller to your cluster so that you can work with Helm charts.
 
-    ```
-    helm init
-    ```
-    {: pre}
+  ```
+  helm init
+  ```
+  {: pre}
 
 Be sure to keep this command line window open as you continue.
 {: tip}
