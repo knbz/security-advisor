@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-12-03"
+lastupdated: "2018-12-04"
 
 ---
 
@@ -49,16 +49,15 @@ Partner solutions are a way to extend your security by creating a link between {
 
 {{site.data.keyword.containershort_notm}} is currently partnered with the following companies:
 
-**Neuvector**
+**NeuVector**
 
-[Neuvector](https://neuvector.com/) provides a highly integrated, automated security platform for Kubernetes and Red Hat OpenShift that allows you to monitor and protect container network traffic. Specifically, East-West network traffic.
+[NeuVector](https://neuvector.com/) provides a highly integrated, automated security platform for Kubernetes and Red Hat OpenShift that allows you to monitor and protect container network traffic. Specifically, East-West network traffic.
 
-With Neuvector, you can detect network threats and violations to prevent attacks of your container based applications. Through monitoring, you can prevent exploits and breakouts by detecting root privilege escalations, port scans, reverse shells, and suspicious file system activity in your containers and hosts.
+With NeuVector, you can detect network threats and violations to prevent attacks of your container based applications. Through monitoring, you can prevent exploits and breakouts by detecting root privilege escalations, port scans, reverse shells, and suspicious file system activity in your containers and hosts.
 
 Interested in partnering with Security Advisor? Reach out to our team!
 {: tip}
 
-SHAWNA: Is this a thing? Can they do that?
 
 </br>
 
