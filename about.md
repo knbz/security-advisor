@@ -69,12 +69,12 @@ Check out the following image to see the way that Security Advisor components fi
     <dd>Application security is important. Each day we see news articles that announce a new data breach or hack. Security risks will always be a part of development and although attacks can be impossible to plan for, one way to prevent them is to monitor your security solutions. For example:
     <ul><li>Risks that are related to your container images that are in use, through Vulnerability Advisor.</li>
     <li>Certificate expiry alerts provided by IBM Cloud Certificate Manager.</li>
-    <li>Network security issues relating to suspicious clients or servers contacting your IBM Cloud Kubernetes Service deployments.<li></ul></dd>
+    <li>Network security issues relating to suspicious clients or servers contacting your IBM Cloud Kubernetes Service deployments.</li></ul></dd>
   <dt>Centralized security management</dt>
     <dd>You can see a consolidated view to of all of your IBM Cloud security services and integrated partner services. You can select and subscribe to different services from the IBM Cloud catalog.</dd>
   <dt>Threat detection</dt>
     <dd>Security Advisor leverages the information that is gathered by IBM X-Force, other IBM Cloud services, and partner solutions to detect risks and threats before they become a security issue.</dd>
-</dt>
+</dl>
 
 
 ### The Findings API
