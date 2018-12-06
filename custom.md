@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-12-03"
+lastupdated: "2018-12-06"
 
 ---
 
@@ -133,16 +133,16 @@ You can integrate your security tools by using the {{site.data.keyword.security-
     </thead>
     <tbody>
       <tr>
+        <td><code>note_name</code></td>
+        <td><code>&lt;account id&gt;/providers/my-custom-tool/notes/my-custom-tool-findings-type</code></td>
+      </tr>
+      <tr>
         <td><code>kind</code></td>
         <td><code>FINDING</code></td>
       </tr>
       <tr>
-        <td><code>short_description</code></td>
-        <td>A short description that summarizes the finding; no more than a couple of words.</td>
-      </tr>
-      <tr>
-        <td><code>long_description</code></td>
-        <td>A longer description that contains more detail about the finding.</td>
+        <td><code>remediation</code></td>
+        <td>The steps that need to be taken to resolve the issue.</td>
       </tr>
       <tr>
         <td><code>provider_id</code></td>
@@ -153,12 +153,12 @@ You can integrate your security tools by using the {{site.data.keyword.security-
         <td>An ID for the type of finding that your security tool found.</td>
       </tr>
       <tr>
-        <td><code>reported_by</code><ul><li><code>id</code></li><li><code>title</code></li></ul></td>
-        <td></br><ul><li>The ID of the security tool that reported the finding.</li><li>The title of the security tool that reported the finding.</li></ul></td>
+        <td><code>context</code><ul><li><code>region</code></li><li><code>resource_id</code></li> <li><code>resource_name</code></li> <li><code>resource_type</code></li> <li><code>service_name</code></li></ul></td>
+        <td></br><ul><li><code>The location in which the finding occurred</code></li><li><code>The ID for the specific resource.</code></li> <li><code>The name of the resource.</code></li> <li><code>The type of resource.</code></li> <li><code>The name of the service.</code></li></ul></td>
       </tr>
       <tr>
-        <td><code>finding</code> <ul><li><code>severity</code></li> <li><code>next_steps</code></li> <li><code>title</code></li></ul></td>
-        <td></br><ul><li>The level of urgency that the finding presents.</li> <li>The steps that can be taken to remediate the issue.</li> <li>The title of the finding.</li></ul></td>
+        <td><code>finding</code> <ul><li><code>severity</code></li> <li><code>next_steps</code></li> <li><code>url</code></li></ul></td>
+        <td></br><ul><li>The level of urgency that the finding presents.</li> <li>The steps that can be taken to remediate the issue.</li> <li>A URL where the details of the finding can be found.</li></ul></td>
       </tr>
     </tbody>
   </table>
@@ -218,16 +218,16 @@ You can integrate your security tools by using the {{site.data.keyword.security-
     </thead>
     <tbody>
       <tr>
-        <td><code>note_name</code></td>
-        <td><code>&lt;account id&gt;/providers/my-custom-tool/notes/my-custom-tool-findings-type</code></td>
-      </tr>
-      <tr>
         <td><code>kind</code></td>
         <td><code>FINDING</code></td>
       </tr>
       <tr>
-        <td><code>remediation</code></td>
-        <td>The steps that need to be taken to resolve the issue.</td>
+        <td><code>short_description</code></td>
+        <td>A short description that summarizes the finding; no more than a couple of words.</td>
+      </tr>
+      <tr>
+        <td><code>long_description</code></td>
+        <td>A longer description that contains more detail about the finding.</td>
       </tr>
       <tr>
         <td><code>provider_id</code></td>
@@ -238,12 +238,12 @@ You can integrate your security tools by using the {{site.data.keyword.security-
         <td>An ID for the type of finding that your security tool found.</td>
       </tr>
       <tr>
-        <td><code>context</code><ul><li><code>region</code></li><li><code>resource_id</code></li> <li><code>resource_name</code></li> <li><code>resource_type</code></li> <li><code>service_name</code></li></ul></td>
-        <td></br><ul><li><code>The location in which the finding occurred</code></li><li><code>The ID for the specific resource.</code></li> <li><code>The name of the resource.</code></li> <li><code>The type of resource.</code></li> <li><code>The name of the service.</code></li></ul></td>
+        <td><code>reported_by</code><ul><li><code>id</code></li><li><code>title</code></li></ul></td>
+        <td></br><ul><li>The ID of the security tool that reported the finding.</li><li>The title of the security tool that reported the finding.</li></ul></td>
       </tr>
       <tr>
-        <td><code>finding</code> <ul><li><code>severity</code></li> <li><code>next_steps</code></li> <li><code>url</code></li></ul></td>
-        <td></br><ul><li>The level of urgency that the finding presents.</li> <li>The steps that can be taken to remediate the issue.</li> <li>A URL where the details of the finding can be found.</li></ul></td>
+        <td><code>finding</code> <ul><li><code>severity</code></li> <li><code>next_steps</code></li> <li><code>title</code></li></ul></td>
+        <td></br><ul><li>The level of urgency that the finding presents.</li> <li>The steps that can be taken to remediate the issue.</li> <li>The title of the finding.</li></ul></td>
       </tr>
     </tbody>
   </table>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-12-04"
+lastupdated: "2018-12-06"
 
 ---
 
@@ -43,7 +43,7 @@ Security Advisor is most helpful for Security Administrators. That role can take
     <td>A CISO decides how to implement the policies that are set by the CIO for the systems that are under their control. This could include middleware, servers, or architecture that is deployed. This person would define the security governance and security policies for the organization. They would monitor security risk and define controls to meet compliance standards such as ISO, or GDPR. This person also decides the tools that their teams use.</td>
   </tr>
   <tr>
-    <td>Security focal or Dev-Ops professional in charge of security</td>
+    <td>Security focal</td>
     <td>This person supports the CISO and executes the needed security checks and investigates any potential risks or issues. </td>
   </tr>
 </table>
@@ -89,10 +89,9 @@ Check out the following image to see the way that Security Advisor components fi
 Out of the box, the service comes with pre-integrated findings that are flagged by the API.
 {: shortdesc}
 
-The findings API leverages a Grafeas component for the creation of findings and legato (graphQL) to query your services. You can define Finding metadata and then send findings to the service dashboard through the API for partner tools. The findings are then stored in the findings database that is based on Cloudant.
+The Security Advisor findings API follows [Grafeas](http://grafeas.ng.bluemix.net/ui/) artifact metadata API specification to store, query, and retrieve critical metadata. The findings are reported by security services and tools.
 
-
-For every initial finding, a security Security Advisor Instance ID for the account is generated. The service allows 18,000 findings, approximately 200 per day, for each account, in a 90 day period. At the end of the 90 days, the finds are purged. Finding limits are monitored and should the account reach the limit before 90 days, the total findings are reduced to 50% in a FIFO (First in, First Out) model. When the service receives an account delete notification all of the findings related to that account are  purged. You can retrieve all of the findings for your account by using the API and store them yourself for any future use or audit purpose.
+For every initial finding, a Security Advisor Instance ID for the account is generated. The service allows 18,000 findings, approximately 200 per day, for each account, in a 90 day period. At the end of the 90 days, the finds are purged. Finding limits are monitored and should the account reach the limit before 90 days, the total findings are reduced to 50% in a FIFO (First in, First Out) model. When the service receives an account delete notification all of the findings related to that account are  purged. You can retrieve all of the findings for your account by using the API and store them yourself for any future use or audit purpose.
 
 </br>
 
@@ -105,35 +104,20 @@ Learn about different concepts that you might use while working with {{site.data
 <dl>
   <dt>Finding</dt>
     <dd>A finding is a priority security issue that is created when raw events are processed. Findings are made up of the key pieces of information that are needed to identify the who, what, when, and where of the issue. As a security admin, you can use {{site.data.keyword.security-advisor_short}} findings to prioritize and react to detected situations.</br> Findings are few and small in size but contain important insight that requires immediate attention. For example, your server is infected with malware or a certificate is about to expire.</dd>
-  <dt>Key Performance Indicator (KPI)</dt>
-    <dd>A Key Performance Indicator is triggered when a finding's value is out of bounds from the range of acceptable performance for specific security controls on services and workloads.</dd>
+  <dt>Key Risk Indicator (KRI)</dt>
+    <dd>The Key Risk Indicator (KRI)  is a measure used to indicate the risk of the findings to the security focal. KRIs provide an early signal of increasing risk exposures in various areas of enterprise cloud resources to the security focal. A KRI is triggered when a finding's value is out of bounds from the range of acceptable performance for specific security controls on services and workloads.</dd>
   <dt>Note</dt>
-    <dd>A particular type of finding is defined as a note. Grafeas divides the metadata information into notes and occurrences. Notes are high-level descriptions of particular types of metadata. You can create notes to categorize the findings that you come across while you are analyzing. A note can occur multiple times across different providers.</dd>
+    <dd>A particular type of finding is defined as a note. Grafeas divides the metadata information into notes and occurrences. Notes are high-level descriptions of particular types of metadata. You can create different notes for each type of finding submitted by different providers.</dd>
   <dt>Occurrence</dt>
-    <dd>An occurrence is an instantiation of a note that contains provider-specific details. Generally, an occurrence contains the vulnerability details, remediation steps, and other information that might be helpful for resolution.  
-    An occurrence describes provider-specific details of a note. The occurrence contains the vulnerability details, remediation steps, and other general information.</dd>
+    <dd>An occurrence describes provider-specific details of a note. The occurrence contains the vulnerability details, remediation steps, and other general information.</dd>
+  <dt>Card</dt>
+    <dd>Metadata that is used to visualize the findings in the service dashboard is defined by note kind - <code>CARD</code>. Security Advisor supports three types of KRI elements for a <code>CARD</code>: <ul><li>Numeric</li<li>Breakdown</li><li>Timeseries</li></ul></dd>
+  <dt>Provider</dt>
+    <dd>A provider is the tool or service that defines the type of finding (note) and then sends an occurrence of the finding to the service.</dd>
   <dt>Service CRN</dt>
-    <dd>The Service CRN identifies the {{site.data.keyword.Bluemix_notm}} service that is involved in the finding.</br>
-    <table>
-      <tr>
-        <th>Type of finding</th>
-        <th>CRN</th>
-      </tr>
-      <tr>
-        <td>{{site.data.keyword.cloudcerts_short}}</td>
-        <td>The service instance CRN.</td>
-      </tr>
-      <tr>
-        <td>Network Analytics</td>
-        <td>The Kubernetes cluster CRN.</td>
-      </tr>
-      <tr>
-        <td>Vulnerability Advisor</td>
-        <td>The container CRN.</td>
-      </tr>
-    </table></dd>
+    <dd>The Service CRN identifies the {{site.data.keyword.Bluemix_notm}} service that is involved in the finding. For instance, in a certificate expiry finding, the service instance ID or CRN of the Certificate Manager service instance reporting the findings will be included.</dd>
   <dt>Resource CRN</dt>
-    <dd>The resource CRN identifies the specific resource that is involved in the finding.</dd>
+    <dd>The resource CRN identifies the specific resource that is involved in the finding. When Network Analytics reports a finding, the Kubernetes cluster CRN is be included to identify the cluster or resource affected.</dd>
 </dl>
 
 </br>

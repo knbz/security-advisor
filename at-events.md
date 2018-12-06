@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-12-03"
+lastupdated: "2018-12-06"
 
 ---
 
@@ -16,7 +16,7 @@ lastupdated: "2018-12-03"
 {:download: .download}
 
 
-# Monitoring events
+# {{site.data.keyword.cloudaccesstrailshort}} events
 {: #at_events}
 
 You can view, manage, and audit user-initiated activities made in your {{site.data.keyword.security-advisor_long}} service instance by using the {{site.data.keyword.cloudaccesstrailshort}} service.
@@ -78,25 +78,5 @@ Check out the following table for a list of the events that are sent to {{site.d
   <tr>
     <td><code>security-advisor.findings.delete</code></td>
     <td>Delete an occurrence.</td>
-  </tr>
-  <tr>
-    <td><code>security-advisor.findings.update</code></td>
-    <td>Update an occurrence.</td>
-  </tr>
-  <tr>
-    <td><code>security-advisor.custom-solution.read</code></td>
-    <td>Read custom solutions that have been added to the service.</td>
-  </tr>
-  <tr>
-    <td><code>security-advisor.custom-solution.write</code></td>
-    <td>Add a custom solution to the service.</td>
-  </tr>
-  <tr>
-    <td><code>security-advisor.custom-solution.update</code></td>
-    <td>Update an existing custom solution within the service.</td>
-  </tr>
-  <tr>
-    <td><code>security-advisor.custom-solution.delete</code></td>
-    <td>Delete a custom solution from the service.</td>
   </tr>
 </table>
