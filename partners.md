@@ -6,7 +6,7 @@ lastupdated: "2018-12-07"
 
 ---
 
-{:new_window: target="blank"}
+{:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -46,7 +46,12 @@ As an administrator with administrative rights in both the IBM Cloud and Partner
 
 1. Connect your accounts.
   1. Provide a name for your connection.
-  2. Click **Next**.
-  3. Verify that you give permission for the service to generate a service ID and API key and create the connection with the service by clicking **Next**.
-  4. Click **Done**.
-5. Go to your service dashboard to review a test finding that was sent to {{site.data.keyword.containershort_notm}} by the partner.
+  2. Provide the NeuVector dashboard URL.
+  3. Provide the NeuVector configuration URL.
+    1. Login to NeuVector and navigate to settings.
+    2. Click **Generate URL**.
+    3. Copy the URL and paste it in the Security Advisor integration wizard.
+  4. Click **Next**.
+3. Verify that you give permission for the service to generate a service ID and API key and create the connection with the service by clicking **Next**.
+4. Click **Done**.
+5. Go to your service dashboard to review a test finding that was sent to {{site.data.keyword.containershort_notm}} by NeuVector.

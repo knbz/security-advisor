@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-12-03"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -95,11 +95,27 @@ After you push images to your {{site.data.keyword.registryshort_notm}} namespace
 ## Monitoring certificates
 {: #setup_certificates}
 
-Did you know that {{site.data.keyword.cloudcerts_long_notm}} can help to monitor and manage your SSL/TLS certificates? By integrating {{site.data.keyword.cloudcerts_short}} and {{site.data.keyword.security-advisor_short}}, you can get alerts and reminders about when you might need to update your certificates and other information, which can help prevent future vulnerabilities.
+Did you know that {{site.data.keyword.cloudcerts_long_notm}} can help to monitor and manage your SSL/TLS certificates? By integrating {{site.data.keyword.cloudcerts_short}} and {{site.data.keyword.security-advisor_short}}, you can get alerts in advance about your certificates expiry which can help prevent a service or application outage.
 {:shortdesc}
+
+Depending on the expiration data of the certificate that you upload to {{site.data.keyword.cloudcerts_short}}, the findings appear in the Security Advisor dashboard 90, 60, 10, and 1 day before the certificate expires. In addition, you receive daily notifications about expired certificates. The daily notifications start the day after your certificate expires.
+
+To trigger a manual update, you might try uploading a certificate that expires in a day to your {{site.data.keyword.cloudcerts_short}} instance. When the import is successful, you can see that the Key Risk Indicator (KRI) and findings are visible in the Security Advisor dashboard.
 
 You can learn more about [{{site.data.keyword.cloudcerts_long_notm}}](/docs/services/certificate-manager/index.html#gettingstarted) by reading the docs.
 {: tip}
+
+**Creating a certificate**
+
+To create a self signed certificate that expires in a day, you can run the following openssl command in your terminal.
+
+```
+openssl req -x509 -newkey rsa:2048 -keyout key.pem -subj "/CN=myservice.com" -out server.pem -days 1 -nodes
+```
+{: pre}
+
+
+**Uploading a certificate**
 
 1. In the {{site.data.keyword.Bluemix_notm}} catalog, search for "{{site.data.keyword.cloudcerts_short}}".
 2. Give your service instance a name, or use the preset name.
@@ -107,3 +123,6 @@ You can learn more about [{{site.data.keyword.cloudcerts_long_notm}}](/docs/serv
 4. To import your organization's certificates into {{site.data.keyword.cloudcerts_short}}, click **Import Certificate**.
 
 Now that your certificates are imported, information such as expiration times and expired certificates, is shown on the **Certificates** card in the {{site.data.keyword.security-advisor_short}} dashboard. By clicking the card, you can get more specific information about the certificates, such as which service instance that the certificates belong to. You can also see any steps that you can take to fix the security vulnerabilities.
+
+To stop the notifications, you must renew your certificate, upload the certificate to {{site.data.keyword.cloudcerts_short}}, and delete the expired certificate.
+{: tip}
