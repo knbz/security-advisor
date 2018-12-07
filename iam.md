@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-12-03"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -36,6 +36,7 @@ The actions are customized and defined by the {{site.data.keyword.Bluemix_notm}}
   <tr>
     <th>Action</th>
     <th>Explanation</th>
+    <th>Role</th>
   </tr>
   <tr>
     <td><code>security-advisor.findings.read</code></td>
