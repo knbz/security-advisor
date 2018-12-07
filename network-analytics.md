@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-15"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -13,7 +13,8 @@ lastupdated: "2018-11-15"
 # Network Analytics
 {: #network-analytics}
 
-With {{site.data.keyword.security-advisor_long}}, you can gain insight into potentially hazardous network communication that is related to your {{site.data.keyword.containerlong_notm}} clusters. To preview this network analytics capability, select **Preview** from the {{site.data.keyword.security-advisor_short}} [Getting Started page](https://console.bluemix.net/security/advisor/#!/overview).
+
+With {{site.data.keyword.security-advisor_long}}, you can gain insight into potentially hazardous network communication that is related to your {{site.data.keyword.containerlong_notm}} clusters. To preview this capability, click the arrow on the Network Analytics card in the **Security Advisor Tools** section of the [**Capabilities** page](https://console.bluemix.net/security/advisor/#!/overview).
 {: shortdesc}
 
 The network analytics preview feature consists of three modules:
