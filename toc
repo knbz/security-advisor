@@ -13,13 +13,13 @@ IBM Cloud Security Advisor
 
     {: .navgroup id="howto"}
     setup.md
-    
+
     {: .topicgroup}
     Integrations
         partners.md
         custom.md
         setup_cluster.md
-    
+
     iam.md
     {: .navgroup-end}
 
