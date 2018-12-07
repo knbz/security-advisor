@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-12-03"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2018-12-03"
 {:tip: .tip}
 {:download: .download}
 
-# Setting up a cluster
+# Setting up Network Analytics
 {: #cluster_install}
 
 You can try out the network analytics feature of the service by installing a {{site.data.keyword.security-advisor_short}} in to a {{site.data.keyword.containerlong_notm}} cluster.
@@ -51,7 +51,7 @@ Then, be sure you have the following prerequisites:
 * [jQ](https://stedolan.github.io/jq/download/)
 * The required CLIs and plugins in the minimum required version:
   * [{{site.data.keyword.Bluemix_notm}} CLI](https://console.bluemix.net/docs/cli/reference/bluemix_cli/get_started.html#getting-started) v0.6.5 or higher
-  * [Kubernetes CLI (kubectl)](https://kubernetes.io/docs/tasks/tools/install-kubectl/) v1.7 or higher
+  * [Kubernetes CLI (kubectl)](https://kubernetes.io/docs/tasks/tools/install-kubectl/) v1.7 or higher</br> The installer has been tested with the {{site.data.keyword.containerlong_notm}} default stable version `v1.10.11`. The installer has not been tested with `v1.11.5` or the latest version `v1.12.3`.
   * [{{site.data.keyword.containerlong_notm}} plug-in](https://console.bluemix.net/docs/containers/cs_cli_install.html#cs_cli_install)
   * [Kubernetes Helm (package manager)](https://docs.helm.sh/using_helm/#from-script)
 * [A free or standard Kubernetes cluster](https://console.bluemix.net/containers-kubernetes/catalog/cluster) in either the **US South** or **EU-GB** {{site.data.keyword.Bluemix_notm}} regions

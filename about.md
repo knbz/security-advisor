@@ -2,11 +2,11 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-12-06"
+lastupdated: "2018-12-07"
 
 ---
 
-{:new_window: target="_blank"}
+{:new_window: target="blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -18,8 +18,9 @@ lastupdated: "2018-12-06"
 # About {{site.data.keyword.security-advisor_short}}
 {: #about}
 
-With {{site.data.keyword.security-advisor_long}} security admins can find, prioritize, and manage security issues in their cloud applications and workloads all in one centralized dashboard.
+With {{site.data.keyword.security-advisor_long}} enables centralized security management through a unified dashboard that alerts security admins to issues and guides them to understand, prioritize, manage, and resolve security issues related to their cloud applications and workloads.
 {: shortdesc}
+
 
 ## Service overview
 {: #overview}
@@ -55,10 +56,8 @@ The described roles might be performed by a single person or multiple people dep
 ## Architecture
 {: #architecture}
 
-Security Advisor empowers administrators to manage security through centralized management and visibility by finding security issues and recommending resolutions.
+To make maintaining security at a large scale, Security Advisor is designed as a micro-service on IBM Cloud. The core micro-service that is provided is the findings API which implements the mechanism for IBM Cloud and partner services to send security findings to your service dashboard.
 {: shortdesc}
-
-Security Advisor is designed as a micro-service on IBM Cloud. The core micro-service that is provided by the service includes the findings API. The API implements the mechanism for IBM Cloud and partner services to send security findings to your service dashboard, which makes maintaining security on a large scale easier.
 
 The service receives findings from:
 * Pre-integrated IBM Cloud services like Certificate Manager and Vulnerability Advisor
@@ -72,10 +71,7 @@ Check out the following image to see the way that Security Advisor components fi
 
 <dl>
   <dt>Security risk and posture</dt>
-    <dd>Application security is important. Too often announcements are made that announce a new data breach or hack. Security risks will always be a part of development and although attacks can be impossible to plan for, one way to prevent them is to monitor your cloud deployments. For example, the risks can be related to:
-    <ul><li>Your container images that are in use.</li>
-    <li>Certificates that are expiring that can cause an outage of your cloud service or app.</li>
-    <li>Network security issues relating to suspicious clients or servers contacting your IBM Cloud Kubernetes Service deployments.</li></ul></dd>
+    <dd>Application security remains important with constant news articles announcing a new data breach or hack. Security risks will always be a part of development and although attacks can be difficult to predict, one way to prevent them is by closely monitoring your cloud deployments. For example, the risks can be related to vulnerabilities in your container images that are in use, expiring certificates that can cause outage of your cloud service or application or suspicious clients or servers with a known bad reputation interacting with your clusters.</dd>
   <dt>Centralized security management</dt>
     <dd>You can see a consolidated view to of all of your IBM Cloud security services and integrated partner services. You can select and subscribe to different services from the IBM Cloud catalog.</dd>
   <dt>Threat detection</dt>
