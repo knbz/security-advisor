@@ -107,7 +107,7 @@ Learn about different concepts that you might use while working with {{site.data
   <dt>Occurrence</dt>
     <dd>An occurrence describes provider-specific details of a note. The occurrence contains the vulnerability details, remediation steps, and other general information.</dd>
   <dt>Card</dt>
-    <dd>Metadata that is used to visualize the findings in the service dashboard is defined by note kind - <code>CARD</code>. Security Advisor supports three types of KRI elements for a <code>CARD</code>: <ul><li>Numeric</li<li>Breakdown</li><li>Timeseries</li></ul></dd>
+    <dd>Metadata that is used to visualize the findings in the service dashboard is defined by note kind - <code>CARD</code>. Security Advisor supports three types of KRI elements for a <code>CARD</code>: <ul><li>Numeric</li><li>Breakdown</li><li>Timeseries</li></ul></dd>
   <dt>Provider</dt>
     <dd>A provider is the tool or service that defines the type of finding (note) and then sends an occurrence of the finding to the service.</dd>
   <dt>Service CRN</dt>
