@@ -6,7 +6,7 @@ lastupdated: "2018-12-07"
 
 ---
 
-{:new_window: target="blank"}
+{:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -73,7 +73,7 @@ Check out the following image to see the way that Security Advisor components fi
   <dt>Security risk and posture</dt>
     <dd>Application security remains important with constant news articles announcing a new data breach or hack. Security risks will always be a part of development and although attacks can be difficult to predict, one way to prevent them is by closely monitoring your cloud deployments. For example, the risks can be related to vulnerabilities in your container images that are in use, expiring certificates that can cause outage of your cloud service or application or suspicious clients or servers with a known bad reputation interacting with your clusters.</dd>
   <dt>Centralized security management</dt>
-    <dd>You can see a consolidated view to of all of your IBM Cloud security services and integrated partner services. You can select and subscribe to different services from the IBM Cloud catalog.</dd>
+    <dd>You can see a consolidated view of all of your IBM Cloud security services and integrated partner services. You can select and subscribe to different services from the IBM Cloud catalog.</dd>
   <dt>Threat detection</dt>
     <dd>Security Advisor leverages the information that is gathered by IBM X-Force, other IBM Cloud services, and partner solutions to detect risks and threats before they become a security issue. The service also provides analytics on top of vulnerability data and network activity data.</dd>
 </dl>
@@ -121,10 +121,14 @@ Learn about different concepts that you might use while working with {{site.data
 ## High-availability and disaster recovery
 {: #ha-dr}
 
-{{site.data.keyword.security-advisor_short}} is a highly available, multi-region service.
+{{site.data.keyword.security-advisor_short}} is a highly available, service.
 {: shortdesc}
 
-{{site.data.keyword.security-advisor_short}} is currently supported in both the US-South and UK-South regions. In each supported region, the service runs in several [availability zones](https://www.ibm.com/blogs/bluemix/2018/06/improving-app-availability-multizone-clusters/). {{site.data.keyword.security-advisor_short}} has regional disaster recovery in place. The service maintains a back up database that can be quickly restored within three hours. All of the service data, with the exception of the previous 24 hours, is provided.
+
+
+
+{{site.data.keyword.security-advisor_short}} is currently supported in the Dallas region, where the service runs in several [availability zones](https://www.ibm.com/blogs/bluemix/2018/06/improving-app-availability-multizone-clusters/). {{site.data.keyword.security-advisor_short}} has regional disaster recovery in place. The service maintains a back up database that can be quickly restored within three hours. All of the service data, with the exception of the previous 24 hours, is provided.
+
 
 </br>
 </br>
