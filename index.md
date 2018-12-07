@@ -31,6 +31,8 @@ Through pre-integrated findings, you can monitor:
 - Certificates that you manage with {{site.data.keyword.cloudcerts_long_notm}}
 - Vulnerabilities in container images that are stored in {{site.data.keyword.registrylong_notm}}
 
+You can also gain insight into suspicious clients and potentially compromised containers that run on your IBM Cloud Kubernetes Service clusters. With the feature enabled and configured, cluster network communication, both incoming and outgoing, is collected and continuously monitored and analyzed based on threat intelligence. You can learn more by reading [Network analytics](network-analytics.html)
+
 </br>
 
 ## Getting to the service dashboard
