@@ -18,7 +18,7 @@ lastupdated: "2018-12-09"
 # About {{site.data.keyword.security-advisor_short}}
 {: #about}
 
-With {{site.data.keyword.security-advisor_long}} enables centralized security management through a unified dashboard that alerts security admins to issues and guides them to understand, prioritize, manage, and resolve security issues related to their cloud applications and workloads.
+{{site.data.keyword.security-advisor_long}} enables centralized security management through a unified dashboard that alerts security admins to issues and guides them to understand, prioritize, manage, and resolve security issues related to their cloud applications and workloads.
 {: shortdesc}
 
 
