@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-12-07"
+lastupdated: "2018-12-09"
 
 ---
 
@@ -94,7 +94,7 @@ Need help creating and configuring a cluster? Try running through this [tutorial
     ```
     export KUBECONFIG=/Users/<user_name>/.bluemix/plugins/container-service/clusters/<cluster_name>/kube-config-prod-dal10-<cluster_name>.yml
     ```
-    {: pre}
+    {: screen}
 
 4.  Install tiller to your cluster so that you can work with Helm charts.
 

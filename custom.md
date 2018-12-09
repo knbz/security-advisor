@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-12-06"
+lastupdated: "2018-12-09"
 
 ---
 
@@ -203,7 +203,7 @@ You can integrate your security tools by using the {{site.data.keyword.security-
     "update_week_date": "2018-W36-2"
   }
   ```
-  {: codeblock}
+  {: screen}
 
 2. Create a finding by posting an [occurrence](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Occurrences/createOccurrence).
 
@@ -399,7 +399,7 @@ You can integrate your security tools by using the {{site.data.keyword.security-
     "update_week_date": "2018-W36-2"
   }
   ```
-  {: codeblock}
+  {: screen}
 
 4. Navigate to your service dashboard to see the card that you created.
 

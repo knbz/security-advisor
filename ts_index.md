@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-19"
+lastupdated: "2018-12-09"
 
 ---
 
@@ -58,7 +58,7 @@ Choose another name for your occurrence.
 {: #kpi-missing}
 
 {: tsSymptoms}
-You do not see any KPI on your **Suspicious server IPs card**.
+You do not see any KRI on your **Suspicious server IPs card**.
 
 {: tsCauses}
 You have encountered a known issue.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-12-07"
+lastupdated: "2018-12-09"
 
 ---
 
@@ -121,13 +121,10 @@ Learn about different concepts that you might use while working with {{site.data
 ## High-availability and disaster recovery
 {: #ha-dr}
 
-{{site.data.keyword.security-advisor_short}} is a highly available, service.
+{{site.data.keyword.security-advisor_short}} is a highly available, multi-region service.
 {: shortdesc}
 
-
-
-
-{{site.data.keyword.security-advisor_short}} is currently supported in the Dallas region, where the service runs in several [availability zones](https://www.ibm.com/blogs/bluemix/2018/06/improving-app-availability-multizone-clusters/). {{site.data.keyword.security-advisor_short}} has regional disaster recovery in place. The service maintains a back up database that can be quickly restored within three hours. All of the service data, with the exception of the previous 24 hours, is provided.
+{{site.data.keyword.security-advisor_short}} is currently supported in both the Dallas and London regions. In each supported region, the service runs in several [availability zones](https://www.ibm.com/blogs/bluemix/2018/06/improving-app-availability-multizone-clusters/). {{site.data.keyword.security-advisor_short}} has regional disaster recovery in place. The service maintains a back up database that can be quickly restored within three hours. All of the service data, with the exception of the previous 24 hours, is provided.
 
 
 </br>

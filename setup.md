@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-12-07"
+lastupdated: "2018-12-09"
 
 ---
 
@@ -126,3 +126,6 @@ Now that your certificates are imported, information such as expiration times an
 
 To stop the notifications, you must renew your certificate, upload the certificate to {{site.data.keyword.cloudcerts_short}}, and delete the expired certificate.
 {: tip}
+
+</br>
+</br>

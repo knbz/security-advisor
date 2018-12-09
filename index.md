@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-12-07"
+lastupdated: "2018-12-09"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-12-07"
 # Getting started tutorial
 {: #index}
 
-With {{site.data.keyword.security-advisor_long}} (Beta), you can instantly view the security posture of your {{site.data.keyword.Bluemix_notm}} through a single, centralized dashboard.
+With {{site.data.keyword.security-advisor_long}}, you can instantly view the security posture of your {{site.data.keyword.Bluemix_notm}} through a single, centralized dashboard.
 {:shortdesc}
 
 {{site.data.keyword.security-advisor_short}} is a cloud service that is enabled by default for all {{site.data.keyword.Bluemix_notm}} accounts. As such, you do not need to provision any instance of the service.
@@ -72,4 +72,4 @@ Now that you've seen the dashboard in action, [learn more](about.html) about how
 ## Availability
 {: #availability}
 
-Currently, you can take advantage of {{site.data.keyword.security-advisor_short}} in the Dallas region only.
+Currently, you can take advantage of {{site.data.keyword.security-advisor_short}} in the Dallas, and London regions.
