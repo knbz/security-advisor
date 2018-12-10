@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-12-09"
+lastupdated: "2018-12-10"
 
 ---
 
@@ -98,9 +98,9 @@ After you push images to your {{site.data.keyword.registryshort_notm}} namespace
 Did you know that {{site.data.keyword.cloudcerts_long_notm}} can help to monitor and manage your SSL/TLS certificates? By integrating {{site.data.keyword.cloudcerts_short}} and {{site.data.keyword.security-advisor_short}}, you can get alerts in advance about your certificates expiry which can help prevent a service or application outage.
 {:shortdesc}
 
-Depending on the expiration data of the certificate that you upload to {{site.data.keyword.cloudcerts_short}}, the findings appear in the Security Advisor dashboard 90, 60, 10, and 1 day before the certificate expires. In addition, you receive daily notifications about expired certificates. The daily notifications start the day after your certificate expires.
+Depending on the expiration data of the certificate that you upload to {{site.data.keyword.cloudcerts_short}}, the findings appear in the {{site.data.keyword.security-advisor_short}} dashboard 90, 60, 10, and 1 day before the certificate expires. In addition, you receive daily notifications about expired certificates. The daily notifications start the day after your certificate expires.
 
-To trigger a manual update, you might try uploading a certificate that expires in a day to your {{site.data.keyword.cloudcerts_short}} instance. When the import is successful, you can see that the Key Risk Indicator (KRI) and findings are visible in the Security Advisor dashboard.
+To trigger a manual update, you might try uploading a certificate that expires in a day to your {{site.data.keyword.cloudcerts_short}} instance. When the import is successful, you can see that the Key Risk Indicator (KRI) and findings are visible in the {{site.data.keyword.security-advisor_short}} dashboard.
 
 You can learn more about [{{site.data.keyword.cloudcerts_long_notm}}](/docs/services/certificate-manager/index.html#gettingstarted) by reading the docs.
 {: tip}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-12-09"
+lastupdated: "2018-12-10"
 
 ---
 
@@ -106,7 +106,7 @@ Need help creating and configuring a cluster? Try running through this [tutorial
 Be sure to keep this command line window open as you continue.
 {: tip}
 
-## Installing Security Advisor components
+## Installing {{site.data.keyword.security-advisor_short}} components
 {: #cluster_components}
 
 After your cluster is configured to work with Helm, you can install {{site.data.keyword.security-advisor_short}} components.
