@@ -15,7 +15,7 @@ lastupdated: "2018-12-10"
 {:tip: .tip}
 {:download: .download}
 
-# Setting up Network Analytics
+# Setting up Network Analytics (beta)
 {: #cluster_install}
 
 You can try out the network analytics feature of the service by installing a {{site.data.keyword.security-advisor_short}} in to a {{site.data.keyword.containerlong_notm}} cluster.
