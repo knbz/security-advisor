@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-12-07"
+lastupdated: "2018-12-10"
 
 ---
 
@@ -17,7 +17,10 @@ lastupdated: "2018-12-07"
 With {{site.data.keyword.security-advisor_long}}, you can gain insight into potentially hazardous network communication that is related to your {{site.data.keyword.containerlong_notm}} clusters. To preview this capability, click the arrow on the Network Analytics card in the **Security Advisor Tools** section of the [**Capabilities** page](https://console.bluemix.net/security/advisor/#!/overview).
 {: shortdesc}
 
-The network analytics preview feature consists of three modules:
+The Network Analytics preview is available in the US-South region only.
+{: note}
+
+The Network Analytics preview feature consists of three modules:
 
 1. **Net-flow collecting agent**: Installed on your cluster, the agent collects network information and sends it to the analytics backend. Read more about [data collection](#data-collection).
 

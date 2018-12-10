@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-12-09"
+lastupdated: "2018-12-10"
 
 ---
 
@@ -58,7 +58,7 @@ Ready to get started? You can get to the service dashboard in one of the followi
   </li>
 </ul>
 
-Are your pre-integrated findings not displaying any information? You might not have any certificates or images for Security Advisor to monitor. Learn more about what Security Advisor needs to populate the dashboard cards in [Leveraging pre-integrated services](setup.html).
+Are your pre-integrated findings not displaying any information? You might not have any certificates or images for {{site.data.keyword.security-advisor_short}} to monitor. Learn more about what {{site.data.keyword.security-advisor_short}} needs to populate the dashboard cards in [Leveraging pre-integrated services](setup.html).
 
 </br>
 
