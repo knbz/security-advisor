@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-12-07"
+lastupdated: "2018-12-10"
 
 ---
 
@@ -29,7 +29,7 @@ With {{site.data.keyword.security-advisor_long}}, you can gain insight into pote
 {: shortdesc}
 
 
-Out of the box Security Advisor integrates with:
+Out of the box {{site.data.keyword.security-advisor_short}} integrates with:
 
 * Certificate Manager for notifications that are related to certificate expiry and lifecycle.
 * Vulnerability Advisor for details on image vulnerabilities and configuration issues.
@@ -41,10 +41,10 @@ To learn more, check out [Taking advantage of pre-integrated services](setup.htm
 ## Partner solutions
 {: #partner}
 
-Partner solutions are a way to enhance security for your IBM Cloud deployments by by creating a link between Security Advisor and other security tools outside of IBM Cloud.
+Partner solutions are a way to enhance security for your IBM Cloud deployments by by creating a link between {{site.data.keyword.security-advisor_short}} and other security tools outside of IBM Cloud.
 {: shortdesc}
 
-Security Advisor is currently partnered with the following companies:
+{{site.data.keyword.security-advisor_short}} is currently partnered with the following companies:
 
 ### NeuVector
 {: #neuvector}
@@ -53,9 +53,9 @@ Security Advisor is currently partnered with the following companies:
 
 With NeuVector, you can detect network threats and violations to prevent attacks of your container based applications. Through monitoring, you can prevent exploits and breakouts by detecting root privilege escalations, port scans, reverse shells, and suspicious file system activity in your containers and hosts.
 
-To learn how to setup your NeuVector instance with the integration system, see
+To learn how to setup your NeuVector instance with the integration wizard, see [Partner solutions](partners.html).
 
-Are you a partner and interested in integrating your solution with Security Advisor? Reach out to our team by contacting Matt Ward at wardm@us.ibm.com!
+Are you a partner and interested in integrating your solution with {{site.data.keyword.security-advisor_short}}? Reach out to our team by contacting Matt Ward at wardm@us.ibm.com!
 {: tip}
 
 </br>
@@ -63,16 +63,16 @@ Are you a partner and interested in integrating your solution with Security Advi
 ## Custom integrations
 {: #custom}
 
-You might already have a security tool that you depend on. You can integrate that tool with the security advisor dashboard so that all of your security information is centralized in one place!
+You might already have a security tool that you depend on. You can integrate that tool with the {{site.data.keyword.security-advisor_short}} dashboard so that all of your security information is centralized in one place!
 {: shortdesc}
 
 **Integrating your own tools with the GUI**
 
-By using the Security Advisor GUI, you can bookmark your internal and external security tools so that you have one point of access to everything from the Security Advisor dashboard. For example, you could bookmark PagerDuty.
+By using the {{site.data.keyword.security-advisor_short}} GUI, you can bookmark your internal and external security tools so that you have one point of access to everything from the {{site.data.keyword.security-advisor_short}} dashboard. For example, you could bookmark PagerDuty.
 
 **Integrating your own tools with the API**
 
-With the Findings API, you can integrate findings from your custom security tools into the Security Advisor dashboard. This could be any custom or partner tool that generates a security alert or finding that also supports API based interaction.
+With the Findings API, you can integrate findings from your custom security tools into the {{site.data.keyword.security-advisor_short}} dashboard. This could be any custom or partner tool that generates a security alert or finding that also supports API based interaction.
 
 **Get started**
 
