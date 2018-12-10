@@ -10,7 +10,7 @@ lastupdated: "2018-12-10"
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 
-# Network Analytics
+# Network Analytics (beta)
 {: #network-analytics}
 
 
