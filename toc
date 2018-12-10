@@ -7,21 +7,30 @@ IBM Cloud Security Advisor
     {: .navgroup id="learn"}
     index.md
     about.md
-    network-analytics.md
+    integrations.md
+    network-analytics
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
     setup.md
-    setup_cluster.md
-    custom-dashboard.md
+
+    {: .topicgroup}
+    Integrations
+        partners.md
+        custom.md
+        setup_cluster.md
+
     iam.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    sa_rellinks.md
+    [Findings API](https://console.bluemix.net/apidocs/security-advisor)
+    [Service dashboard](https://console.bluemix.net/security-advisor/#/dashboard)
+    [Blogs](https://www.ibm.com/blogs/bluemix/tag/security-advisor/)
     at-events.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
+    faq.md
     ts_index.md
     {: .navgroup-end}
