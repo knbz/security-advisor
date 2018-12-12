@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-12-09"
+lastupdated: "2018-12-12"
 
 ---
 
@@ -51,20 +51,6 @@ You have encountered a known issue. Creating the occurrence failed because the n
 
 {: tsResolve}
 Choose another name for your occurrence.
-
-</br>
-
-## KPI is missing
-{: #kpi-missing}
-
-{: tsSymptoms}
-You do not see any KRI on your **Suspicious server IPs card**.
-
-{: tsCauses}
-You have encountered a known issue.
-
-{: tsResolve}
-This issue cannot be resolved.
 
 </br>
 
