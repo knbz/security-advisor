@@ -14,12 +14,16 @@ lastupdated: "2018-12-14"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
 
 # Setting up Network Analytics (beta)
 {: #cluster_install}
 
 You can try out the network analytics feature of the service by installing a {{site.data.keyword.security-advisor_short}} in to a {{site.data.keyword.containerlong_notm}} cluster.
 {: shortdesc}
+
+Network Analytics is a preview feature that is available only in the US-South region.
+{: note}
 
 When you set up {{site.data.keyword.security-advisor_short}} in a cluster, the following actions take place:
 
@@ -42,7 +46,7 @@ Before you begin, be sure you have the following prerequisites in place.
 {: shortdesc}
 
 The account owner must complete the installation steps. If that is not you, check to see who the owner of your {{site.data.keyword.Bluemix_notm}} account is and have them assist with the install.
-{: tip}
+
 
 Then, be sure you have the following prerequisites:
 
