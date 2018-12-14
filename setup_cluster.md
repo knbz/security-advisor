@@ -46,7 +46,7 @@ Before you begin, be sure you have the following prerequisites in place.
 {: shortdesc}
 
 The account owner must complete the installation steps. If that is not you, check to see who the owner of your {{site.data.keyword.Bluemix_notm}} account is and have them assist with the install.
-
+{: tip}
 
 Then, be sure you have the following prerequisites:
 
