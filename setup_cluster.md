@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-12-12"
+lastupdated: "2018-12-14"
 
 ---
 
@@ -14,6 +14,7 @@ lastupdated: "2018-12-12"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
 
 # Setting up Network Analytics (beta)
 {: #cluster_install}
@@ -22,7 +23,7 @@ You can try out the network analytics feature of the service by installing a {{s
 {: shortdesc}
 
 Network Analytics is a preview feature that is available only in the US-South region.
-{: tip}
+{: note}
 
 When you set up {{site.data.keyword.security-advisor_short}} in a cluster, the following actions take place:
 
@@ -32,7 +33,9 @@ When you set up {{site.data.keyword.security-advisor_short}} in a cluster, the f
 
 If you have more than one cluster, be sure to run the installation for each cluster to generate service IDs and API keys for each cluster.
 
+
 Want to learn more about how network analytics work in {{site.data.keyword.security-advisor_short}}? [Check out the docs](network-analytics.html).
+{: tip}
 
 </br>
 
@@ -55,7 +58,7 @@ Then, be sure you have the following prerequisites:
   * [Kubernetes CLI (kubectl)](https://kubernetes.io/docs/tasks/tools/install-kubectl/) v1.7 or higher</br> The installer has been tested with the {{site.data.keyword.containerlong_notm}} default stable version `v1.10.11`. The installer has not been tested with `v1.11.5` or the latest version `v1.12.3`.
   * [{{site.data.keyword.containerlong_notm}} plug-in](https://console.bluemix.net/docs/containers/cs_cli_install.html#cs_cli_install)
   * [Kubernetes Helm (package manager)](https://docs.helm.sh/using_helm/#from-script)
-* [A free or standard Kubernetes cluster](https://console.bluemix.net/containers-kubernetes/catalog/cluster) in either the **US South** {{site.data.keyword.Bluemix_notm}} region
+* [A free or standard Kubernetes cluster](https://console.bluemix.net/containers-kubernetes/catalog/cluster) in the **US South** {{site.data.keyword.Bluemix_notm}} region
 
 Need help creating and configuring a cluster? Try running through this [tutorial](/docs/containers/cs_tutorials.html#cs_cluster_tutorial).
 {: tip}
@@ -106,6 +109,8 @@ Need help creating and configuring a cluster? Try running through this [tutorial
 
 Be sure to keep this command line window open as you continue.
 {: tip}
+
+</br>
 
 ## Installing {{site.data.keyword.security-advisor_short}} components
 {: #cluster_components}
