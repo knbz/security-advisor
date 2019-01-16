@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-10"
+  years: 2019
+lastupdated: "2019-01-16"
 
 ---
 
@@ -44,6 +44,9 @@ To learn more, check out [Taking advantage of pre-integrated services](setup.htm
 Partner solutions are a way to enhance security for your IBM Cloud deployments by by creating a link between {{site.data.keyword.security-advisor_short}} and other security tools outside of IBM Cloud.
 {: shortdesc}
 
+Are you a partner and interested in integrating your solution with {{site.data.keyword.security-advisor_short}}? Reach out to our team by contacting Matt Ward at wardm@us.ibm.com!
+{: tip}
+
 {{site.data.keyword.security-advisor_short}} is currently partnered with the following companies:
 
 ### NeuVector
@@ -53,12 +56,9 @@ Partner solutions are a way to enhance security for your IBM Cloud deployments b
 
 With NeuVector, you can detect network threats and violations to prevent attacks of your container based applications. Through monitoring, you can prevent exploits and breakouts by detecting root privilege escalations, port scans, reverse shells, and suspicious file system activity in your containers and hosts.
 
-To learn how to setup your NeuVector instance with the integration wizard, see [Partner solutions](partners.html).
+For help setting up your NeuVector instance, see [Partner solutions](partners.html).
 
-Are you a partner and interested in integrating your solution with {{site.data.keyword.security-advisor_short}}? Reach out to our team by contacting Matt Ward at wardm@us.ibm.com!
-{: tip}
 
-</br>
 
 ## Custom integrations
 {: #custom}
