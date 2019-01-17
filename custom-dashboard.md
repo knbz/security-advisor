@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-15"
+  years: 2019
+lastupdated: "2019-01-17"
 
 ---
 
@@ -359,13 +359,13 @@ Example payload:
 		"resource_id": "cluster crn",
 		"resource_name": "cloudkingdom",
 		"resource_type": "container",
-		"service_name": "kubernetess service"
+		"service_name": "kubernetes service"
 	},
 	"finding": {
 		"severity": "HIGH",
 		"next_steps": [{
 			"title": "Investigate which process are running in your cluster. If you suspect one of your pods was hacked, restart it, and look for image vulnerabilities",
-                        "url":"https://console.bluemix.net/containers-kubernetes/clusters"
+                        "url":"https://console.ibm.cloud.com/containers-kubernetes/clusters"
 		}],
                 "short_description": "One of the pods in your cluster appears to be leaking an excessive amount of data",
                 "long_description": "One of the pods in your cluster is approaching external servers and sending them data in volumes that exceed that pod’s normal behavior"
