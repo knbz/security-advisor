@@ -13,13 +13,13 @@ IBM Cloud Security Advisor
 
     {: .navgroup id="howto"}
     setup.md
-    rules.md
 
     {: .topicgroup}
     Integrations
         partners.md
         custom.md
 
+    rules.md
     iam.md
     {: .navgroup-end}
 
