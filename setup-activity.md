@@ -22,10 +22,9 @@ lastupdated: "2019-01-18"
 # Enabling Activity Insights
 {: #setup}
 
-With {{site.data.keyword.security-advisor_long}}, you can gain insights based on threat intelligence, behavioral patterns, and machine learning for potentially compromised containers that run on your {{site.data.keyword.containerlong_notm}} clusters.
+With {{site.data.keyword.security-advisor_long}}, you can continuously monitor your IBM Cloud Activity Tracker logs to identify unauthorized or suspicious behavior and changes in your resources. You can use rule packages that are based on best practices that are provided by the service or create your own custom rules.
 {: shortdesc}
 
-</br>
 
 ## Before you begin
 {: #prereq}
