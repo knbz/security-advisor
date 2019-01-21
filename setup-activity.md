@@ -159,7 +159,7 @@ You can install an agent to collect audit flow logs from your IBM Cloud account.
     </tr>
     <tr>
       <td><code>us_south_region_token</code></td>
-      <td>Optional: SHAWNA: what is this?. If the cluster is located in the <code>eu-gb</code> region, then create a Container Registry token in the <code>us-south</code> region and pass it to the other region.</td>
+      <td>Optional: The Container Registry token for the region in which you're working. If the cluster is located in the <code>eu-gb</code> region, then create a token in the <code>us-south</code> region and pass it to the other region.</td>
     </tr>
   </table>
 
