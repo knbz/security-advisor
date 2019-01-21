@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-18"
+lastupdated: "2019-01-21"
 
 ---
 
@@ -29,12 +29,12 @@ With {{site.data.keyword.security-advisor_long}}, you can continuously monitor y
 ## Before you begin
 {: #prereq}
 
-To get started with Activity Insights, be sure that you have the following prerequisites:
+To get started with Activity Insights, be sure that you have the following prerequisites.
 
-- For Windows 10, activate Windows Subsystem for Linux and install an [Ubuntu shell](https://win10faq.com/install-run-ubuntu-bash-windows-10/)
-- Install the yq CLI
-  - For MacOS, Windows 10: Install [yq CLI](http://mikefarah.github.io/yq/)
-  - For CentOS, Red Hat and Ubuntu : Install yq CLI version 1.15 by running the following commands:
+- If you are working on Windows 10, activate Windows Subsystem for Linux and install an [Ubuntu shell](https://win10faq.com/install-run-ubuntu-bash-windows-10/)
+- Install the yq CLI:
+  * For [MacOS and Windows 10](http://mikefarah.github.io/yq/).
+  * For CentOS, Red Hat, and Ubuntu run the following commands to install version 1.15.
     ```
     wget https://github.com/mikefarah/yq/releases/download/1.15.0/yq_linux_amd64       
     mv yq_linux_amd64 yq   
@@ -43,8 +43,7 @@ To get started with Activity Insights, be sure that you have the following prere
     yq -V
     ```
     {: codeblock}     
-- cURL binary and ensure that it's updated.
-  - For CentOS and Red Hat, you can update by running: `yum update -y nss curl libcurl`
+- cURL binary and ensure that it's updated. For CentOS and Red Hat, you can update by running: `yum update -y nss curl libcurl`
 - The [IBM Cloud CLI and required plugins](/docs/cli/index.html#overview)
 - The [Kubernetes CLI (kubectl)](https://kubernetes.io/docs/tasks/tools/install-kubectl/) v1.10.11 or higher
 - The [Kubernetes Helm (package manager)](/docs/containers/cs_integrations.html#helm) v2.9.0 or higher.
@@ -73,7 +72,7 @@ If you have an existing instance of COS and bucket be sure that it uses the nami
 ## Installing {{site.data.keyword.security-advisor_short}} components
 {: #install-components}
 
-You can install an agent to collect network flow logs from your Kubernetes cluster. The logs are stored in your Cloud Object Storage instance. You can then enable Network Insights to analyze your logs and detect and alert you to suspicious network activity.
+You can install an agent to collect audit flow logs from your IBM Cloud account. The logs are stored in your Cloud Object Storage instance where you can enable Network Insights to analyze your logs for suspicious user behavior activity.
 {: shortdesc}
 
 1. Clone the following repository to your local system.
@@ -93,8 +92,40 @@ You can install an agent to collect network flow logs from your Kubernetes clust
   {: codeblock}
 
 4. Change into *security-advisor-activity-insights** folder.
+5. Log in to the {{site.data.keyword.cloud_notm}} CLI. Follow the prompts in the CLI to complete finish logging in.
 
-5. Run the following command to install the Insights. The command validates your bucket naming convention, creates Kubernetes secrets, updates the values with your cluster GUID, and deploys Activity Insights. If you encounter an error, try running `helm init --upgrade`.
+  ```
+  ibmcloud login -a https://api.<region>.bluemix.net
+  ```
+  {: codeblock}
+
+  <table>
+    <tr>
+      <th>Region</th>
+      <th>Endpoint</th>
+    </tr>
+    <tr>
+      <td>United Kingdom</td>
+      <td><code>eu-gb</code></td>
+    </tr>
+    <tr>
+      <td>US South</td>
+      <td><code>us-south</code></td>
+    </tr>
+  </table>
+
+6. Set the context for your cluster.
+
+  1. Get the command to set the environment variable and download the Kubernetes configuration files.
+
+    ```
+    ibmcloud ks cluster-config <cluster_name_or_ID>
+    ```
+    {: codeblock}
+
+  2. Copy the output beginning with `export` and paste it into your terminal to set the `KUBECONFIG` environment variable.
+
+7. Run the following command to install the Insights. The command validates your bucket naming convention, creates Kubernetes secrets, updates the values with your cluster GUID, and deploys Activity Insights. If you encounter an error, try running `helm init --upgrade`.
 
   ```
   ./activity-insight-install.sh <cos_region> <cos_api_key> <at_region> <account_api_key> <account_spaces> <us_south_region_token>
@@ -132,7 +163,7 @@ You can install an agent to collect network flow logs from your Kubernetes clust
     </tr>
   </table>
 
-6. Check to see that the cards in the service dashboard are showing correctly to verify that your setup was successful.
+8. Check to see that the cards in the service dashboard are showing correctly to verify that your setup was successful.
 
 </br>
 
@@ -142,17 +173,32 @@ You can install an agent to collect network flow logs from your Kubernetes clust
 A rule package is a JSON file that contains a list of rules that you want to monitor. You can download rule packages or [create your own](rules.html). The Security Advisor engine validates that each rule follows the correct syntax.
 {: shortdesc}
 
-1. Clone the following repository to get several preset rule packages.
+1. Clone the following repository to get several preset rule packages. A file is created on your local system with the name *security-advisor-ata-rule-packages*.
 
   ```
-  https://github.ibm.com/security-services/security-advisor-ata-rule-packages
+  https://github.ibm.com/security-services/security-advisor-ata-rule-packages.git
   ```
   {: codeblock}
 
-2. Install the package into your COS bucket in `IBM.rules/activities`.
+2. Create a new file locally with the name *IBM.rules/activities*.
 
-SHAWNA: How do you actually do this?
+3. Move the JSON files from *security-advisor-ata-rule-packages* to *IBM.rules/activities*.
+
+4. Navigate to your IBM Cloud Dashboard and select the COS service instance that is associated with Activity Insights.
+
+5. On the **Buckets** tab of the service dashboard, select the bucket that is associated with Activity Insights.
+
+5. On the COS instance homepage, click **Upload** and select **Folders**.
+
+6. If prompted, click **Install Aspera Connect client**. If you weren't prompted, you already have the client installed. If you needed to install the client, repeat step 5 when the install is finished.
+
+7. Select the *IBM.rules/activities* folder.
+
+8. Click **Upload**.
+
+SHAWNA: I couldn't get Aspera to display anything after it "successfully downloaded" so I don't know if those are correct. If you have the installer and it's working for you, please check the button labels and click path.
 {: important}
+
 
 </br>
 
