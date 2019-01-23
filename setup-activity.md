@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-21"
+lastupdated: "2019-01-23"
 
 ---
 
@@ -19,7 +19,7 @@ lastupdated: "2019-01-21"
 {:download: .download}
 
 
-# Enabling Activity Insights
+# Activity Insights
 {: #setup}
 
 With {{site.data.keyword.security-advisor_long}}, you can continuously monitor your IBM Cloud Activity Tracker logs to identify unauthorized or suspicious behavior and changes in your resources. You can use rule packages that are based on best practices that are provided by the service or create your own custom rules.
@@ -47,13 +47,12 @@ To get started with Activity Insights, be sure that you have the following prere
 - The [IBM Cloud CLI and required plugins](/docs/cli/index.html#overview)
 - The [Kubernetes CLI (kubectl)](https://kubernetes.io/docs/tasks/tools/install-kubectl/) v1.10.11 or higher
 - The [Kubernetes Helm (package manager)](/docs/containers/cs_integrations.html#helm) v2.9.0 or higher.
-- A standard Kubernetes cluster version 1.7 or higher
-
+- A standard Kubernetes cluster version v1.10.11 or higher
 
 </br>
 
 ## Creating a COS bucket
-{: #setup-guide}
+{: #setup-cos}
 
 By using the {{site.data.keyword.security-advisor_short}} GUI, you can create a new COS instance and bucket.
 
@@ -65,20 +64,20 @@ By using the {{site.data.keyword.security-advisor_short}} GUI, you can create a 
 
 4. In the prerequisites section, click **Create COS instance and bucket**. Your COS instance and bucket are automatically created for you with the proper naming convention and IAM permissions. The bucket information is displayed.
 
-If you have an existing instance of COS and bucket be sure that it uses the naming convention: `sa.<account_id>.telemetric.<cos_region>`. To allow the service to read the data that is stored in your COS instance, set up service-to-service authorization by using IBM Cloud IAM. Set `source` to `Security Advisor` and `target` to your COS instance. Assign the `Reader` IAM role.
+If you have an existing instance of COS and bucket be sure that it uses the naming convention: `sa.<account_id>.telemetric.<cos_region>`. To allow the service to read the data that is stored in your COS instance, set up [service-to-service authorization](/docs/iam/authorizations.html#serviceauth) by using IBM Cloud IAM. Set `source` to `Security Advisor` and `target` to your COS instance. Assign the `Reader` IAM role.
 
 </br>
 
 ## Installing {{site.data.keyword.security-advisor_short}} components
 {: #install-components}
 
-You can install an agent to collect audit flow logs from your IBM Cloud account. The logs are stored in your Cloud Object Storage instance where you can enable Network Insights to analyze your logs for suspicious user behavior activity.
+You can install an agent to collect audit flow logs from your IBM Cloud account. The logs are stored in your Cloud Object Storage instance where you can enable Activity Insights to analyze your logs for suspicious behavior.
 {: shortdesc}
 
 1. Clone the following repository to your local system.
 
   ```
-  https://github.ibm.com/security-services/security-advisor-activity-insights-installer.git
+  git clone https://github.ibm.com/security-services/security-advisor-activity-insights-installer.git
   ```
   {: codeblock}
 
@@ -143,7 +142,7 @@ You can install an agent to collect audit flow logs from your IBM Cloud account.
     </tr>
     <tr>
       <td><code>cos_api_key</code></td>
-      <td>The API key that you created to access your COS instance and bucket. The key must have the platform role `writer`.</td>
+      <td>The [API key](/docs/services/cloud-object-storage/iam/service-credentials.html#service-credentials) that you created to access your COS instance and bucket. The key must have the platform role `writer`.</td>
     </tr>
     <tr>
       <td><code>at_region</code></td>
@@ -159,12 +158,9 @@ You can install an agent to collect audit flow logs from your IBM Cloud account.
     </tr>
     <tr>
       <td><code>us_south_region_token</code></td>
-      <td>Optional: The Container Registry token for the region in which you're working. If the cluster is located in the <code>eu-gb</code> region, then create a token in the <code>us-south</code> region and pass it to the other region.</td>
+      <td>Optional: The [Container Registry token](/docs/containers/cs_images.html#other_regions_accounts) for the region in which you're working. If the cluster is located in the <code>eu-gb</code> region, then create a token in the <code>us-south</code> region and pass it to the other region.</td>
     </tr>
   </table>
-
-8. Check to see that the cards in the service dashboard are showing correctly to verify that your setup was successful.
-
 </br>
 
 ## Adding rule packages to COS
@@ -196,8 +192,8 @@ A rule package is a JSON file that contains a list of rules that you want to mon
 
 8. Click **Upload**.
 
-SHAWNA: I couldn't get Aspera to display anything after it "successfully downloaded" so I don't know if those are correct. If you have the installer and it's working for you, please check the button labels and click path.
-{: important}
+Want to use your own packages? Try using one of the JSON files as a guide and create rules that fit your organizations needs. When you've created then file, add it to *IBM.rules/activities* folder in your COS instance. For more information about the types of rules and formatting, check out [Understanding rule packages](activity-insights.html).
+{: tip}
 
 
 </br>

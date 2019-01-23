@@ -8,18 +8,18 @@ IBM Cloud Security Advisor
     index.md
     about.md
     integrations.md
-    network-analytics
+    network-analytics.md
+    
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
     setup.md
 
     {: .topicgroup}
-    Integrations
+    Enabling integrations
         partners.md
         custom.md
 
-    rules.md
     iam.md
     {: .navgroup-end}
 
