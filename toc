@@ -9,7 +9,6 @@ IBM Cloud Security Advisor
     about.md
     integrations.html
     network-analytics.html
-    
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
