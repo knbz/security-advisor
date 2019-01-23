@@ -36,10 +36,10 @@ Check out the following image to see the flow of information.
 
 1. An an account administrator, you can use install Activity Insights into your cluster.
 2. With the add-on installed into one cluster, Activity Tracker collects logs for your your entire account.
-2. The activity logs are forwarded to a Cloud Object Storage bucket where they are stored until you decide to delete them. When you use the {{site.data.keyword.security-advisor_short}} GUI to create the bucket, service to service IAM roles are assigned so that the service can view the logs.
-3. With Activity Insights enabled, the raw data in your COS bucket is analyzed based on rules that can be predefined by the service or customized by you.
-4. When a possible security issue is flagged, the finding is forwarded to the Findings database.
-5. Findings are displayed in your service dashboard on two cards:
+3. The activity logs are forwarded to a Cloud Object Storage bucket where they are stored until you decide to delete them. When you use the {{site.data.keyword.security-advisor_short}} GUI to create the bucket, service to service IAM roles are assigned so that the service can view the logs.
+4. With Activity Insights enabled, the raw data in your COS bucket is analyzed based on rules that can be predefined by the service or customized by you.
+5. When a possible security issue is flagged, the finding is forwarded to the Findings database.
+6. Findings are displayed in your service dashboard on two cards:
   * High risk account activity
   * Suspicious account activity
 
