@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-01-16"
+lastupdated: "2019-01-23"
 
 ---
 
@@ -13,12 +13,15 @@ lastupdated: "2019-01-16"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Integrations
 {: #about}
 
-With {{site.data.keyword.security-advisor_long}}, you can integrate findings from your IBM Cloud Services, partner solutions, or create your own custom integrations.
+With {{site.data.keyword.security-advisor_long}}, you can integrate other built-in insights, partner solutions, or create your own custom integrations.
 {: shortdesc}
 
 
@@ -44,10 +47,10 @@ To learn more, check out [Taking advantage of pre-integrated services](setup.htm
 Partner solutions are a way to enhance security for your IBM Cloud deployments by by creating a link between {{site.data.keyword.security-advisor_short}} and other security tools outside of IBM Cloud.
 {: shortdesc}
 
+Current {{site.data.keyword.security-advisor_short}} partners include Neuvector.
+
 Are you a partner and interested in integrating your solution with {{site.data.keyword.security-advisor_short}}? Reach out to our team by contacting Matt Ward at wardm@us.ibm.com!
 {: tip}
-
-{{site.data.keyword.security-advisor_short}} is currently partnered with the following companies:
 
 ### NeuVector
 {: #neuvector}
@@ -56,7 +59,7 @@ Are you a partner and interested in integrating your solution with {{site.data.k
 
 With NeuVector, you can detect network threats and violations to prevent attacks of your container based applications. Through monitoring, you can prevent exploits and breakouts by detecting root privilege escalations, port scans, reverse shells, and suspicious file system activity in your containers and hosts.
 
-For help setting up your NeuVector instance, see [Partner solutions](partners.html).
+For help setting up your NeuVector instance, see [Partner solutions](partners.html#neuvector).
 
 
 
@@ -81,16 +84,21 @@ To learn the recommended practice on how to leverage the APIs and create bookmar
 </br>
 
 
+
+
+
 ## Network Analytics (preview)
 {: #network-analytics}
 
-With the network analytics preview, you can detect threats by monitoring your {{site.data.keyword.containerlong_notm}} cluster communciation.
+With the network analytics preview, you can detect threats by monitoring your {{site.data.keyword.containerlong_notm}} cluster communication.
 {: shortdesc}
 
 By monitoring cluster communication for suspicious communication to and from your clusters, you can take advantage of threat intelligence that is offered by IBM X-Force to flag any potential issues. When a suspicious communication is identified, a finding is issued that you can review and evaluate.
 
 For more detailed information about network analytics, see [Network analytics](network-analytics.html).
 {: tip}
+
+
 
 </br>
 </br>

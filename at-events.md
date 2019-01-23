@@ -118,24 +118,4 @@ Check out the following table for a list of the events that are sent to {{site.d
     <td><code>security-advisor.partner-solution.delete</code></td>
     <td>Delete a partner solution from your service instance.</td>
   </tr>
-  <tr>
-    <td><code>security-advisor.network-insights.enable</code></td>
-    <td>Enable the Network Insights feature that is provided by {{site.data.keyword.security-advisor_short}}.</td>
-  </tr>
-  <tr>
-    <td><code>security-advisor.network-insights.disable</code></td>
-    <td>Disable the Network Insights feature that is provided by {{site.data.keyword.security-advisor_short}}.</td>
-  </tr>
-  <tr>
-    <td><code>security-advisor.activity-insights.enable</code></td>
-    <td>Enable the Activity Insights feature that is provided by {{site.data.keyword.security-advisor_short}}.</td>
-  </tr>
-  <tr>
-    <td><code>security-advisor.activity-insights.disable</code></td>
-    <td>Disable the Activity Insights feature that is provided by {{site.data.keyword.security-advisor_short}}.</td>
-  </tr>
-  <tr>
-    <td><code>security-advisor.insights-cos.create</code></td>
-    <td>Create a Cloud Object Storage instance through {{site.data.keyword.security-advisor_short}}for network and activity insights.</td>
-  </tr>
 </table>
