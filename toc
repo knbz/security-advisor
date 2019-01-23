@@ -7,8 +7,8 @@ IBM Cloud Security Advisor
     {: .navgroup id="learn"}
     index.md
     about.md
-    integrations.html
-    network-analytics.html
+    integrations.md
+    network-analytics.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
