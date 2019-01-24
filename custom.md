@@ -2,11 +2,11 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-01-24"
 
 ---
 
-{:new_window: target="_blank"}
+{:new_window: target="blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -44,7 +44,7 @@ Example payload:
 		"resource_id": "cluster crn",
 		"resource_name": "cloudkingdom",
 		"resource_type": "container",
-		"service_name": "kubernetess service"
+		"service_name": "kubernetes service"
 	},
 	"finding": {
 		"severity": "HIGH",
@@ -55,7 +55,6 @@ Example payload:
                 "short_description": "One of the pods in your cluster appears to be leaking an excessive amount of data",
                 "long_description": "One of the pods in your cluster is approaching external servers and sending them data in volumes that exceed that pod’s normal behavior"
 	}
-
 }
 ```
 {: screen}
@@ -302,6 +301,9 @@ You can integrate your security tools by using the {{site.data.keyword.security-
   {: codeblock}
 
 3. Define the card in the dashboard to display your finding by creating a [note](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Notes/createNote).
+
+  In each card, you can define two KRIs to display.
+  {: note}
 
   ```
   curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account id>/providers/my-custom-tool/notes" -H "accept: application/json" -H "Authorization: <iam token>" -H "Content-Type: application/json" -d "{ \"kind\": \"CARD\", \"provider_id\": \"my-custom-tool\", \"id\": \"custom-tool-card\", \"short_description\": \"security risk found by my custom tool\", \"long_description\": \"Details about why this is security risk to be fixed\", \"reported_by\": { \"id\": \"my-custom-tool\", \"title\": \"My Security Tool\" }, \"card\": { \"section\": \"My Security Tools\", \"title\": \"My Security Tool Findings\", \"finding_note_names\": [ \"providers/my-custom-tool/notes/my-custom-tool-findings-type\" ], \"elements\": [ { \"kind\": \"NUMERIC\", \"text\": \"Count of findings reported by my security tool\", \"default_time_range\": \"1d\", \"value_type\": { \"kind\": \"FINDING_COUNT\", \"finding_note_names\": [ \"providers/my-custom-tool/notes/my-custom-tool-findings-type\" ] } } ] } }"
