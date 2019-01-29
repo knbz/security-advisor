@@ -49,7 +49,6 @@ To get started with Activity Insights, be sure that you have the following prere
 - The [Kubernetes Helm (package manager)](/docs/containers/cs_integrations.html#helm) v2.9.0 or higher.
 - A standard Kubernetes cluster version v1.10.11 or higher
 
-</br>
 
 ## Creating a COS bucket
 {: #setup-cos-activity}
@@ -66,7 +65,6 @@ By using the {{site.data.keyword.security-advisor_short}} GUI, you can create a 
 
 If you have an existing instance of COS and bucket be sure that it uses the naming convention: `sa.<account_id>.telemetric.<cos_region>`. To allow the service to read the data that is stored in your COS instance, set up [service-to-service authorization](/docs/iam/authorizations.html#serviceauth) by using IBM Cloud IAM. Set `source` to `Security Advisor` and `target` to your COS instance. Assign the `Reader` IAM role.
 
-</br>
 
 ## Installing {{site.data.keyword.security-advisor_short}} components
 {: #install-components-activity}
@@ -124,12 +122,21 @@ You can install an agent to collect audit flow logs from your IBM Cloud account.
 
   2. Copy the output beginning with `export` and paste it into your terminal to set the `KUBECONFIG` environment variable.
 
-7. Run the following command to install the Insights. The command validates your bucket naming convention, creates Kubernetes secrets, updates the values with your cluster GUID, and deploys Activity Insights. If you encounter an error, try running `helm init --upgrade`.
+7. Optional: Install Helm with TLS enabled. If you're using your workstation to handle the installation of analytics components in multiple clusters and TLS is enabled, be sure that the TLS configurations are current and match the current cluster where you plan to install the components. If you choose not to install TLS, and run the install script, then Helm is installed without it. It is reccommended that you enable TLS.
+
+  1. Install Helm by using the [Kubernetes Service integration docs](/docs/containers/cs_integrations.html#helm).
+
+  2. [Enable TLS](https://github.com/helm/helm/blob/master/docs/tiller_ssl.md).
+
+8. Run the following command to install the Insights. The command validates your bucket naming convention, creates Kubernetes secrets, updates the values with your cluster GUID, and deploys Activity Insights.
 
   ```
   ./activity-insight-install.sh <cos_region> <cos_api_key> <at_region> <account_api_key> <account_spaces>
   ```
   {: codeblock}
+
+  If you encounter an error, try running `helm init --upgrade`.
+  {: tip}
 
   <table>
     <tr>
@@ -157,7 +164,7 @@ You can install an agent to collect audit flow logs from your IBM Cloud account.
       <td>A comma separated list of the space GUIDs for your IBM Cloud account.</td>
     </tr>
   </table>
-</br>
+
 
 ## Adding rule packages to COS
 {: #adding-rules-activity}
@@ -192,7 +199,6 @@ Want to use your own packages? Try using one of the JSON files as a guide and cr
 {: tip}
 
 
-</br>
 
 ## Deleting the components
 {: #delete-activity}
@@ -214,7 +220,6 @@ If you no longer have a need to use Activity Insights, you can delete the servic
   ```
   {: codeblock}
 
-</br>
-</br>
+
 
 </staging>
