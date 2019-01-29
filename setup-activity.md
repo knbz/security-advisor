@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-01-29"
 
 ---
 
@@ -127,7 +127,7 @@ You can install an agent to collect audit flow logs from your IBM Cloud account.
 7. Run the following command to install the Insights. The command validates your bucket naming convention, creates Kubernetes secrets, updates the values with your cluster GUID, and deploys Activity Insights. If you encounter an error, try running `helm init --upgrade`.
 
   ```
-  ./activity-insight-install.sh <cos_region> <cos_api_key> <at_region> <account_api_key> <account_spaces> <us_south_region_token>
+  ./activity-insight-install.sh <cos_region> <cos_api_key> <at_region> <account_api_key> <account_spaces>
   ```
   {: codeblock}
 
@@ -155,10 +155,6 @@ You can install an agent to collect audit flow logs from your IBM Cloud account.
     <tr>
       <td><code>account_spaces</code></td>
       <td>A comma separated list of the space GUIDs for your IBM Cloud account.</td>
-    </tr>
-    <tr>
-      <td><code>us_south_region_token</code></td>
-      <td>Optional: The [Container Registry token](/docs/containers/cs_images.html#other_regions_accounts) for the region in which you're working. If the cluster is located in the <code>eu-gb</code> region, then create a token in the <code>us-south</code> region and pass it to the other region.</td>
     </tr>
   </table>
 </br>
@@ -204,10 +200,10 @@ Want to use your own packages? Try using one of the JSON files as a guide and cr
 If you no longer have a need to use Activity Insights, you can delete the service components from your cluster.
 {: shortdesc}
 
-1. Delete the service components by using Helm.
+1. Delete the service components by using Helm. Be sure to use the `-tls` flag if you have TLS enabled.
 
   ```
-  helm del --purge activity-insights
+  helm del --purge activity-insights [--tls]
   ```
   {: codeblock}
 
