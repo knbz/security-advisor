@@ -1,18 +1,21 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-09"
+  years: 2019
+lastupdated: "2019-01-30"
 
 ---
 
-{:new_window: target="_blank"}
+{:new_window: target="blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # About {{site.data.keyword.security-advisor_short}}
@@ -29,7 +32,7 @@ Before you get started, learn about the service architecture, use cases, and key
 
 **Is the service for me?**
 
-Security Advisor is most helpful for Security Administrators. That role can take many names. Check out the following table for some example users:
+{{site.data.keyword.security-advisor_short}} is most helpful for Security Administrators. That role can take many names. Check out the following table for some example users:
 
 <table>
   <tr>
@@ -56,16 +59,16 @@ The described roles might be performed by a single person or multiple people dep
 ## Architecture
 {: #architecture}
 
-To make maintaining security at a large scale, Security Advisor is designed as a micro-service on IBM Cloud. The core micro-service that is provided is the findings API which implements the mechanism for IBM Cloud and partner services to send security findings to your service dashboard.
+To make maintaining security at a large scale, {{site.data.keyword.security-advisor_short}} is designed as a micro-service on IBM Cloud. The core micro-service that is provided is the findings API which implements the mechanism for IBM Cloud and partner services to send security findings to your service dashboard.
 {: shortdesc}
 
 The service receives findings from:
 * Pre-integrated IBM Cloud services like Certificate Manager and Vulnerability Advisor
-* Network Analytics Add-on
-* Partners like NeuVector
+* Network Analytics Add-on (Beta)
+* Partners like NeuVector 
 * Custom integrations with your other security tools
 
-Check out the following image to see the way that Security Advisor components fit together.
+Check out the following image to see the way that {{site.data.keyword.security-advisor_short}} components fit together.
 
 ![{{site.data.keyword.security-advisor_short}} architecture](images/architecture.png)
 
@@ -75,7 +78,7 @@ Check out the following image to see the way that Security Advisor components fi
   <dt>Centralized security management</dt>
     <dd>You can see a consolidated view of all of your IBM Cloud security services and integrated partner services. You can select and subscribe to different services from the IBM Cloud catalog.</dd>
   <dt>Threat detection</dt>
-    <dd>Security Advisor leverages the information that is gathered by IBM X-Force, other IBM Cloud services, and partner solutions to detect risks and threats before they become a security issue. The service also provides analytics on top of vulnerability data and network activity data.</dd>
+    <dd>{{site.data.keyword.security-advisor_short}} leverages the information that is gathered by IBM X-Force, other IBM Cloud services, and partner solutions to detect risks and threats before they become a security issue. The service also provides analytics on top of vulnerability data and network activity data.</dd>
 </dl>
 
 
@@ -85,9 +88,9 @@ Check out the following image to see the way that Security Advisor components fi
 Out of the box, the service comes with pre-integrated findings that are flagged by the API.
 {: shortdesc}
 
-The Security Advisor findings API follows [Grafeas](http://grafeas.ng.bluemix.net/ui/) artifact metadata API specification to store, query, and retrieve critical metadata. The findings are reported by security services and tools.
+The {{site.data.keyword.security-advisor_short}} findings API follows [Grafeas](http://grafeas.ng.bluemix.net/ui/) artifact metadata API specification to store, query, and retrieve critical metadata. The findings are reported by security services and tools.
 
-Security Advisor is enabled by default for all IBM Cloud accounts. As such, you do not need to provision any instance of the service. An instance of Security Advisor is automatically created on either the initial access of the dashboard or when an initial finding is reported. The service allows 18,000 findings, approximately 200 per day, for each account, in a 90 day period. At the end of the 90 days, the finds are purged. Finding limits are monitored and should the account reach the limit before 90 days, the total findings are reduced to 50% in a FIFO (First in, First Out) model. When the service receives an account delete notification all of the findings related to that account are  purged. You can retrieve all of the findings for your account by using the API and store them yourself for any future use or audit purpose.
+{{site.data.keyword.security-advisor_short}} is enabled by default for all IBM Cloud accounts. As such, you do not need to provision any instance of the service. An instance of {{site.data.keyword.security-advisor_short}} is automatically created on either the initial access of the dashboard or when an initial finding is reported. The service allows 18,000 findings, approximately 200 per day, for each account, in a 90 day period. At the end of the 90 days, the finds are purged. Finding limits are monitored and should the account reach the limit before 90 days, the total findings are reduced to 50% in a FIFO (First in, First Out) model. When the service receives an account delete notification all of the findings related to that account are  purged. You can retrieve all of the findings for your account by using the API and store them yourself for any future use or audit purpose.
 
 </br>
 
@@ -107,7 +110,7 @@ Learn about different concepts that you might use while working with {{site.data
   <dt>Occurrence</dt>
     <dd>An occurrence describes provider-specific details of a note. The occurrence contains the vulnerability details, remediation steps, and other general information.</dd>
   <dt>Card</dt>
-    <dd>Metadata that is used to visualize the findings in the service dashboard is defined by note kind - <code>CARD</code>. Security Advisor supports three types of KRI elements for a <code>CARD</code>: <ul><li>Numeric</li><li>Breakdown</li><li>Timeseries</li></ul></dd>
+    <dd>Metadata that is used to visualize the findings in the service dashboard is defined by note kind - <code>CARD</code>. {{site.data.keyword.security-advisor_short}} supports three types of KRI elements for a <code>CARD</code>: <ul><li>Numeric</li><li>Breakdown</li><li>Timeseries</li></ul></dd>
   <dt>Provider</dt>
     <dd>A provider is the tool or service that defines the type of finding (note) and then sends an occurrence of the finding to the service.</dd>
   <dt>Service CRN</dt>

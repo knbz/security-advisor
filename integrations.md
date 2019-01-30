@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-01-30"
 
 ---
 
@@ -19,7 +19,7 @@ lastupdated: "2019-01-23"
 {:download: .download}
 
 # Integrations
-{: #about}
+{: #integrations}
 
 With {{site.data.keyword.security-advisor_long}}, you can integrate other built-in insights, partner solutions, or create your own custom integrations.
 {: shortdesc}
