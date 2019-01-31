@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-29"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -27,7 +27,7 @@ With {{site.data.keyword.security-advisor_long}}, you can continuously monitor y
 
 
 ## Before you begin
-{: #prereq-activity}
+{: #activity-prereq}
 
 To get started with Activity Insights, be sure that you have the following prerequisites.
 
@@ -51,7 +51,7 @@ To get started with Activity Insights, be sure that you have the following prere
 
 
 ## Creating a COS bucket
-{: #setup-cos-activity}
+{: #activity-setup-cos}
 
 By using the {{site.data.keyword.security-advisor_short}} GUI, you can create a new COS instance and bucket.
 
@@ -67,7 +67,7 @@ If you have an existing instance of COS and bucket be sure that it uses the nami
 
 
 ## Installing {{site.data.keyword.security-advisor_short}} components
-{: #install-components-activity}
+{: #activity-install-components}
 
 You can install an agent to collect audit flow logs from your IBM Cloud account. The logs are stored in your Cloud Object Storage instance where you can enable Activity Insights to analyze your logs for suspicious behavior.
 {: shortdesc}
@@ -167,7 +167,7 @@ You can install an agent to collect audit flow logs from your IBM Cloud account.
 
 
 ## Adding rule packages to COS
-{: #adding-rules-activity}
+{: #activity-adding-rules}
 
 A rule package is a JSON file that contains a list of rules that you want to monitor. You can download rule packages or [create your own](rules.html). The Security Advisor engine validates that each rule follows the correct syntax.
 {: shortdesc}
@@ -201,7 +201,7 @@ Want to use your own packages? Try using one of the JSON files as a guide and cr
 
 
 ## Deleting the components
-{: #delete-activity}
+{: #activity-delete}
 
 If you no longer have a need to use Activity Insights, you can delete the service components from your cluster.
 {: shortdesc}
@@ -219,7 +219,5 @@ If you no longer have a need to use Activity Insights, you can delete the servic
   kubectl delete ns security-advisor-insights
   ```
   {: codeblock}
-
-
 
 </staging>

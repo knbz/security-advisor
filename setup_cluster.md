@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-14"
+  years: 2019
+lastupdated: "2019-01-31"
 
 ---
 
@@ -13,11 +13,13 @@ lastupdated: "2018-12-14"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
-{:download: .download}
 {:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:download: .download}
 
 # Setting up Network Analytics (beta)
-{: #cluster_install}
+{: #cluster-install}
 
 You can try out the network analytics feature of the service by installing a {{site.data.keyword.security-advisor_short}} in to a {{site.data.keyword.containerlong_notm}} cluster.
 {: shortdesc}
@@ -66,7 +68,7 @@ Need help creating and configuring a cluster? Try running through this [tutorial
 </br>
 
 ## Setting up Helm
-{: #login}
+{: #setup-helm}
 
 1.  Log in to {{site.data.keyword.Bluemix_notm}}.
 
@@ -113,7 +115,7 @@ Be sure to keep this command line window open as you continue.
 </br>
 
 ## Installing {{site.data.keyword.security-advisor_short}} components
-{: #cluster_components}
+{: #cluster-components}
 
 After your cluster is configured to work with Helm, you can install {{site.data.keyword.security-advisor_short}} components.
 {: shortdesc}
@@ -134,7 +136,7 @@ To install the components continue in the same CLI window and complete the follo
 </br>
 
 ## Removing {{site.data.keyword.security-advisor_short}} components
-{: #cluster_uninstall}
+{: #cluster-uninstall}
 
 Remove the {{site.data.keyword.security-advisor_short}} components from your cluster and the service ID and API key from your {{site.data.keyword.Bluemix_notm}} account.
 

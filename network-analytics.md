@@ -2,13 +2,21 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-01-17"
+lastupdated: "2019-01-31"
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:download: .download}
 
 # Network Analytics (beta)
 {: #network-analytics}
@@ -33,7 +41,7 @@ The Network Analytics preview feature consists of three modules:
 
 
 ## Data collection
-{: #data-collection}
+{: #analytics-data-collection}
 
 {{site.data.keyword.security-advisor_short}} can help protect your cluster by adding network monitoring. Deployed as part of your cluster, network monitoring is used to provide information about cluster communications. To enable Network Analytics, network flow information is collected about the communication that takes place between the cluster and external entities.
 {: shortdesc}
@@ -53,7 +61,7 @@ Network monitoring works as part of the cluster with other services such as {{si
 
 
 ## Suspicious clients (incoming traffic)
-{: #suspicious-clients}
+{: #analytics-suspicious-clients}
 
 The {{site.data.keyword.security-advisor_short}} dashboard includes a suspicious client card that summarizes various information about communications in which the cluster acts as a server that is approached by an external client.
 {: shortdesc}
@@ -64,7 +72,7 @@ Analyzed communication might produce a finding such as:
 
 
 ## Suspicious server IPs (outgoing traffic)
-{: #suspicious-server-ips}
+{: #analytics-suspicious-server-ips}
 
 The {{site.data.keyword.security-advisor_short}} dashboard includes a suspicious server IP card that summarizes various information about communications in which the cluster acts as a client that approaches an external server.
 {: shortdesc}

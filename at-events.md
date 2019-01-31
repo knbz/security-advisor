@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -20,7 +20,7 @@ lastupdated: "2019-01-23"
 
 
 # {{site.data.keyword.cloudaccesstrailshort}} events
-{: #at_events}
+{: #at-events}
 
 You can view, manage, and audit user-initiated activities made in your {{site.data.keyword.security-advisor_long}} service instance by using the {{site.data.keyword.cloudaccesstrailshort}} service.
 {: shortdesc}
@@ -29,7 +29,7 @@ For more information about how the service works, see the [{{site.data.keyword.c
 
 
 ## Where to view events
-{: #monitor}
+{: #at-monitor}
 
 Events are available in the {{site.data.keyword.cloudaccesstrailshort}} **account domain** that is available in the {{site.data.keyword.Bluemix_notm}} region where the events are generated.
 
@@ -44,7 +44,7 @@ For users other than the account owner to view logs, you must use the premium pl
 {: tip}
 
 ## List of events
-{: #events}
+{: #at-event-list}
 
 Check out the following table for a list of the events that are sent to {{site.data.keyword.cloudaccesstrailshort}}.
 {: shortdesc}

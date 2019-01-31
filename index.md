@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-01-17"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -13,6 +13,9 @@ lastupdated: "2019-01-17"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Getting started tutorial
@@ -36,7 +39,7 @@ You can also gain insight into suspicious clients and potentially compromised co
 </br>
 
 ## Getting to the service dashboard
-{: #dashboard}
+{: #start-dashboard}
 
 Ready to get started? You can get to the service dashboard in one of the following ways:
 
@@ -63,13 +66,13 @@ Are your pre-integrated findings not displaying any information? You might not h
 </br>
 
 ## Next steps
-{: #next}
+{: #start-next}
 
 Now that you've seen the dashboard in action, [learn more](about.html) about how {{site.data.keyword.security-advisor_short}} can help you. You can also send user feedback by using [developerWorks](ts_index.html) to contribute ideas for the service as it develops.
 
 </br>
 
 ## Availability
-{: #availability}
+{: #start-availability}
 
 Currently, you can take advantage of {{site.data.keyword.security-advisor_short}} in the Dallas, and London regions.

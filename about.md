@@ -2,11 +2,11 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-01-30"
+lastupdated: "2019-01-31"
 
 ---
 
-{:new_window: target="blank"}
+{:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}

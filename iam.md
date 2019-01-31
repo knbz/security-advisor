@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -20,7 +20,7 @@ lastupdated: "2019-01-23"
 
 
 # Managing service access
-{: #service-access}
+{: #iam-service-access}
 
 As an account owner, you can manage access to instances of {{site.data.keyword.security-advisor_long}}, by using {{site.data.keyword.Bluemix_notm}} Identity and Access Management (IAM). By setting policies within your account that create different levels of access for different users, you can ensure that each instance of {{site.data.keyword.security-advisor_short}} is secure.
 {: shortdesc}
@@ -28,7 +28,7 @@ As an account owner, you can manage access to instances of {{site.data.keyword.s
 For more information about IAM, see [IAM Access](/docs/iam/users_roles.html).
 
 ## {{site.data.keyword.security-advisor_short}} access policies
-{: #access}
+{: #iam-access-policies}
 
 Every user that accesses an instance of the {{site.data.keyword.security-advisor_short}} service in your account must be assigned an access policy with an IAM user role defined. The policy determines which actions that a user can perform within the context of that specific service instance.
 {: shortdesc}

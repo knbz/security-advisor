@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-01-30"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -26,7 +26,7 @@ With {{site.data.keyword.security-advisor_long}}, you can integrate other built-
 
 
 ## Pre-integrated findings
-{: #built-in}
+{: #integrate-built-in}
 
 With {{site.data.keyword.security-advisor_long}}, you can gain insight into potential issues through built-in service capabilities.
 {: shortdesc}
@@ -42,7 +42,7 @@ To learn more, check out [Taking advantage of pre-integrated services](setup.htm
 </br>
 
 ## Partner solutions
-{: #partner}
+{: #integrate-partner}
 
 Partner solutions are a way to enhance security for your IBM Cloud deployments by by creating a link between {{site.data.keyword.security-advisor_short}} and other security tools outside of IBM Cloud.
 {: shortdesc}
@@ -53,7 +53,7 @@ Are you a partner and interested in integrating your solution with {{site.data.k
 {: tip}
 
 ### NeuVector
-{: #neuvector}
+{: #integrate-neuvector}
 
 [NeuVector](https://neuvector.com/) provides a highly integrated, automated security platform for Kubernetes and Red Hat OpenShift that allows you to monitor and protect container network traffic. Specifically, East-West network traffic.
 
@@ -64,7 +64,7 @@ For help setting up your NeuVector instance, see [Partner solutions](partners.ht
 
 
 ## Custom integrations
-{: #custom}
+{: #integrate-custom}
 
 You might already have a security tool that you depend on. You can integrate that tool with the {{site.data.keyword.security-advisor_short}} dashboard so that all of your security information is centralized in one place!
 {: shortdesc}
@@ -88,7 +88,7 @@ To learn the recommended practice on how to leverage the APIs and create bookmar
 
 
 ## Network Analytics (preview)
-{: #network-analytics}
+{: #integrate-network-analytics}
 
 With the network analytics preview, you can detect threats by monitoring your {{site.data.keyword.containerlong_notm}} cluster communication.
 {: shortdesc}

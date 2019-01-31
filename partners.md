@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-01-30"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -25,7 +25,7 @@ Partner solutions are a way to extend your security by creating a link between {
 {: shortdesc}
 
 ## Integration wizard
-{: #wizard}
+{: #setup-wizard}
 
 As an administrator with administrative rights in both the {{site.data.keyword.cloud_short}} and Partner accounts, you can use the integration wizard to quickly get up and running. The wizard has four basic steps:
 
@@ -37,7 +37,7 @@ As an administrator with administrative rights in both the {{site.data.keyword.c
 </br>
 
 ## Integrating NeuVector
-{: #neuvector}
+{: #setup-neuvector}
 
 **Before you begin**
 
@@ -47,7 +47,7 @@ As an administrator with administrative rights in both the {{site.data.keyword.c
 
 **Integrating**
 
-1. Navigate to **SHAWNA:CHECK > Partner Integrations** and select **NeuVector** from the options provided.
+1. Navigate to **Integrations > Partner Integrations** and select **NeuVector** from the options provided.
 2. Connect your accounts.
   1. Provide a name for your connection.
   2. Provide the NeuVector dashboard URL.

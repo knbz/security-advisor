@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-12"
+  years: 2019
+lastupdated: "2019-01-31"
 
 ---
 
@@ -13,6 +13,9 @@ lastupdated: "2018-12-12"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
@@ -41,7 +44,7 @@ For more information about getting support, see [how do I get the support that I
 </br>
 
 ## You can't create a custom solution occurrence
-{: #custom-occurrence}
+{: #ts-custom-occurrence}
 
 {: tsSymptoms}
 You try to create a custom solution occurrence but the information doesn't show in a browser and you receive no error message.
@@ -54,8 +57,22 @@ Choose another name for your occurrence.
 
 </br>
 
+## KPI is missing
+{: #ts-kpi-missing}
+
+{: tsSymptoms}
+You do not see any KRI on your **Suspicious server IPs card**.
+
+{: tsCauses}
+You have encountered a known issue.
+
+{: tsResolve}
+This issue cannot be resolved.
+
+</br>
+
 ## The latest details do not show
-{: #latest-details}
+{: #ts-latest-details}
 
 {: tsSymptoms}
 You do not see the latest details on your **Images with vulnerabilities** card.
