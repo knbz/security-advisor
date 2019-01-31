@@ -25,6 +25,6 @@ You can use the following related links to learn more about and interact with  {
 {:shortdesc}
 
 Links related to the user interface:
-* [{{site.data.keyword.security-advisor_short}} dashboard](https://console.bluemix.net/security-advisor/#/dashboard)
+* [{{site.data.keyword.security-advisor_short}} dashboard](https://cloud.ibm.com/security-advisor/#/dashboard)
 * The [Findings API](https://console.bluemix.net/apidocs/security-advisor)
 * The [Grafeas spec](http://grafeas.ng.bluemix.net/ui/)
