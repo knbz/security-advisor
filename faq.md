@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-02-04"
 
 ---
 
@@ -36,7 +36,7 @@ While you can integrate any IBM Cloud or custom security tool, the service comes
 </br>
 
 ## What is IBM X-Force?
-{: #faq-xforce}
+{: #xforce}
 {: faq}
 
 IBM X-Force Research is one of the most renowned commercial security research teams in the world. These security professionals monitor and analyze security issues from a variety of sources, providing threat intelligence content as the foundation of the IBM Security portfolio. IBM X-Force Exchange is a cloud-based threat intelligence sharing platform that enables users to rapidly research the latest security threats, aggregate actionable intelligence and collaborate with peers. IBM X-Force Exchange is supported by human- and machine-generated intelligence leveraging the scale of IBM X-Force.
@@ -44,7 +44,7 @@ IBM X-Force Research is one of the most renowned commercial security research te
 </br>
 
 ## How can I become an integrated partner?
-{: #faq-partner}
+{: #partner}
 {: faq}
 
 Happy to hear that you're interested in integrating your solution with {{site.data.keyword.security-advisor_short}}. Reach out to our team by contacting Matt Ward at wardm@us.ibm.com to get started!

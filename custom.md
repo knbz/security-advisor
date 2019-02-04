@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-02-04"
 
 ---
 
@@ -20,7 +20,7 @@ lastupdated: "2019-01-31"
 
 
 # Custom security tools
-{: #setup-custom}
+{: #setup_custom}
 
 There are times that you might already have have a tool that you use. You can integrate those tools such as, Neuvector, with {{site.data.keyword.security-advisor_short}}.
 {: shortdesc}

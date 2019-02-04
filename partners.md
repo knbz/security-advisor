@@ -25,7 +25,7 @@ Partner solutions are a way to extend your security by creating a link between {
 {: shortdesc}
 
 ## Integration wizard
-{: #setup-wizard}
+{: #wizard}
 
 As an administrator with administrative rights in both the {{site.data.keyword.cloud_short}} and Partner accounts, you can use the integration wizard to quickly get up and running. The wizard has four basic steps:
 
