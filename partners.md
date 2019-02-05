@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-02-04"
+lastupdated: "2019-02-05"
 
 ---
 
@@ -24,28 +24,34 @@ lastupdated: "2019-02-04"
 Partner solutions are a way to extend your security by creating a link between {{site.data.keyword.security-advisor_long}} and other security tools.
 {: shortdesc}
 
+## Before you begin
+{: #partner-before}
+
+Before you get started with partner solutions, be sure that you have the following prerequisites.
+
+* Ensure that you have an account with the partner that you want to integrate.
+* Ensure that you have the required administrative permissions to generate the integration URL for the Partner service.
+* Ensure that you have IAM administrative access to IBM Cloud and manager access to {{site.data.keyword.security-advisor_short}}.
+
 ## Integration wizard
 {: #wizard}
 
 As an administrator with administrative rights in both the {{site.data.keyword.cloud_short}} and Partner accounts, you can use the integration wizard to quickly get up and running. The wizard has four basic steps:
 
-* Establish trust and associate your {{site.data.keyword.cloud_short}} and Partner accounts
+* Establish trust and associate your {{site.data.keyword.cloud_short}} and partner accounts
 * Copy the required information such as credentials and URLs between the accounts
 * Install partner finding metadata into {{site.data.keyword.security-advisor_short}}
-* Validate the pairing by posting a findings from the Partner into {{site.data.keyword.security-advisor_short}}
+* Validate the pairing by posting a findings from the partner into {{site.data.keyword.security-advisor_short}}
 
 </br>
 
 ## Integrating NeuVector
 {: #setup-neuvector}
 
-**Before you begin**
+With NeuVector, you can detect network threats and violations to prevent attacks of your container based applications. Through monitoring, you can prevent exploits and breakouts by detecting root privilege escalations, port scans, reverse shells, and suspicious file system activity in your containers and hosts.
+{: shortdesc}
 
-* Ensure that you have an account with the partner that you want to integrate.
-* Ensure that you have the required administrative permissions to generate the integration URL for the Partner service.
-* Ensure that you have IAM administrative access to {{site.data.keyword.cloud_short}} and manager access to {{site.data.keyword.security-advisor_short}}.
-
-**Integrating**
+To integrate NeuVector with Security Advisor, you can use the following steps:
 
 1. Navigate to **Integrations > Partner Integrations** and select **NeuVector** from the options provided.
 2. Connect your accounts.
