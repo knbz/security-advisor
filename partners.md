@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-02-06"
 
 ---
 
@@ -51,7 +51,7 @@ As an administrator with administrative rights in both the {{site.data.keyword.c
 With NeuVector, you can detect network threats and violations to prevent attacks of your container based applications. Through monitoring, you can prevent exploits and breakouts by detecting root privilege escalations, port scans, reverse shells, and suspicious file system activity in your containers and hosts.
 {: shortdesc}
 
-To integrate NeuVector with Security Advisor, you can use the following steps:
+To integrate NeuVector with {{site.data.keyword.security-advisor_short}}, you can use the following steps:
 
 1. Navigate to **Integrations > Partner Integrations** and select **NeuVector** from the options provided.
 2. Connect your accounts.
