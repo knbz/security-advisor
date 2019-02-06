@@ -77,10 +77,6 @@ By using the {{site.data.keyword.security-advisor_short}} GUI, you can bookmark 
 
 With the Findings API, you can integrate findings from your custom security tools into the {{site.data.keyword.security-advisor_short}} dashboard. This could be any custom or partner tool that generates a security alert or finding that also supports API based interaction.
 
-**Get started**
-
-To learn the recommended practice on how to leverage the APIs and create bookmarks through the GUI, see [Custom security tools](/docs/services/security-advisor/custom.html).
-
 </br>
 
 
