@@ -66,3 +66,55 @@ To integrate NeuVector with {{site.data.keyword.security-advisor_short}}, you ca
 5. Go to your service dashboard to review a test finding that was sent to {{site.data.keyword.containershort_notm}} by NeuVector.
 
 
+
+## Integrating Twistlock
+{: #setup-twistlock}
+
+You can prevent risk by stopping the deployment of vulnerable images in your environment. With automated and custom policy enforcement, Twistlock offers complete control at every stage of the application lifecycle.
+{: shortdesc}
+
+When you configure the partner connection, two cards are created in your dashboard that summarize the findings from Twistlock.
+
+**Twistlock Runtime** introduces two Key Risk Indicators (KRIs):
+
+* Total incidents and audits: Findings that are related to incidents or audits on your cloud-native workloads.
+* Total firewall audits: Findings that are related to issues with your firewall.
+
+**Twistlock vulnerabilities** introduces one KRI:
+
+* Total images with new vulnerabilities: Findings that are related to vulnerabilities found in your container images.
+
+You can learn more about the company in the Twistlock docs. Be sure that you have a
+
+### Configuring Twistlock
+{: #configure-twistlock}
+
+1. In the {{site.data.keyword.security-advisor_short}} dashboard, navigate to **Integrations > Partner Integrations** and select **Twistlock** from the options provided.
+
+2. Click **Yes, connect my account to {{site.data.keyword.security-advisor_short}}**.
+
+  If you don't already have an account, click **No, help me create an account > Create an account**. You can fill out your information and the Twistlock sales team will contact you to get started.
+  {: note}
+
+3. Give your connection a name. Be sure that the name is unique to your account and that you use only alpha-numeric characters, space, or a hyphen.
+
+4. Optional: If you don't already have a configuration URL, click **Generate registration URL** to go to the Twistlock documentation and learn how to create the URL. Be sure that you have the Twistlock token that comes with your license to gain access to the docs.
+
+5. In the Twistlock dashboard, navigate to the **Manage > Alerts** tab and click **Add profile**.
+
+6. Select **{{site.data.keyword.security-advisor_short}}** from the **Provider** drop down.
+
+7. Click **Copy** to use the provided configuration URL.
+
+8. Back in the {{site.data.keyword.security-advisor_short}} dashboard, paste the URL in the **Enter the Twistlock configuration URL** box.
+
+9. Click **Connect Partner**.
+
+### Verifying the connection
+{: #twistlock-verify}
+
+1. In the {{site.data.keyword.security-advisor_short}} dashboard, check to see if the Twistlock cards are displaying as expected.
+
+2. In the Twistlock dashboard, refresh the **Alerts** tab. The {{site.data.keyword.security-advisor_short}} connection will show. Open the connection.
+
+3. Verify that the alert types that you want to be notified of are  checked and then click **Verify** to ensure that the connection is complete.

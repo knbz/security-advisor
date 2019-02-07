@@ -47,7 +47,7 @@ To learn more, check out [Taking advantage of pre-integrated services](setup.htm
 Partner integrations are a way to enhance security for your IBM Cloud deployments by creating a connection between {{site.data.keyword.security-advisor_short}} and other security tools that have worked with IBM to ensure a seamless user experience.
 {: shortdesc}
 
-Current {{site.data.keyword.security-advisor_short}} partners include Neuvector.
+Current {{site.data.keyword.security-advisor_short}} partners include Neuvector and Twistlock.
 
 Are you a partner and interested in integrating your solution with {{site.data.keyword.security-advisor_short}}? Reach out to our team by contacting Matt Ward at wardm@us.ibm.com!
 {: tip}
@@ -61,6 +61,16 @@ With NeuVector, you can detect network threats and violations to prevent attacks
 
 For help setting up your NeuVector instance, see [Partner solutions](partners.html#neuvector).
 
+
+### Twistlock
+{: #integrate-twistlock}
+
+Twistlock is uniquely able to prevent risk throughout the SDLC by preventing the deployment of vulnerable images across your environment. Automated and custom policy enforcement offers complete control at every stage of the application lifecycle. The Twistlock Intelligence Stream sources and aggregates vulnerability information directly from 30+ upstream projects, commercial sources, and proprietary research from Twistlock Labs.
+
+With a focus on having the most precise data available to cover all of the layers of your stack, so you have accurate visibility and the lowest rate of false positives.Twistlock combines this data with knowledge of your actual deployments such as which containers are exposed to the internet, which run with high privilege, and which have other security mitigations in place, so you can always see what vulnerabilities are most critical in your specific environment.
+
+For help setting up your Twistlock instance, see [Partner solutions](partners.html#twistlock).
+</br>
 
 
 ## Custom integrations
@@ -80,21 +90,16 @@ With the Findings API, you can integrate findings from your custom security tool
 </br>
 
 
+## Built-in Insights
+{: #integrate-insights}
 
-
-
-## Network Analytics (preview)
-{: #integrate-network-analytics}
-
-With the network analytics preview, you can detect threats by monitoring your {{site.data.keyword.containerlong_notm}} cluster communication.
+With built-in insights, you can detect potential issues by continuously monitoring your cluster and account logs. By monitoring network traffic and user activity you can help ensure that your IBM Cloud resources remain protected.
 {: shortdesc}
 
-By monitoring cluster communication for suspicious communication to and from your clusters, you can take advantage of threat intelligence that is offered by IBM X-Force to flag any potential issues. When a suspicious communication is identified, a finding is issued that you can review and evaluate.
+**Network Insights (beta)**
 
-For more detailed information about network analytics, see [Network analytics](network-analytics.html).
-{: tip}
+With Network Insights (beta), you can monitor and analyze cluster network communication, both incoming and outgoing, between your Kubernetes cluster and external entities. By using integrated threat intelligence and anomaly detection, the service can identity reconnaissance attacks and potentially compromised assets. To learn more, check out [Network Insights](network-insights.html).
 
+**Activity Insights (preview)**
 
-
-</br>
-</br>
+With Activity Insights (preview), you can continuously monitor your IBM Cloud Activity Tracker logs to identify unauthorized or suspicious activity that is made by users or apps by using rule packages. You can use the rules packages that are provided by the service which are based on security best practices or you can customize the rules to fit your needs. To learn more, check out [Activity Insights](activity-insights.html).

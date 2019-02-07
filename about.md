@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-02-07"
 
 ---
 
@@ -64,8 +64,9 @@ To make maintaining security at a large scale, {{site.data.keyword.security-advi
 
 The service receives findings from:
 * Pre-integrated IBM Cloud services like Certificate Manager and Vulnerability Advisor
-* Network Analytics Add-on (Beta)
-* Partners like NeuVector 
+* Network Insights
+* Activity Insights
+* Partners like NeuVector and Twistlock
 * Custom integrations with your other security tools
 
 Check out the following image to see the way that {{site.data.keyword.security-advisor_short}} components fit together.

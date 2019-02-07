@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-02-07"
 
 ---
 
@@ -20,7 +20,7 @@ lastupdated: "2019-01-31"
 
 
 # Managing service access
-{: #iam-service-access}
+{: #service-access}
 
 As an account owner, you can manage access to instances of {{site.data.keyword.security-advisor_long}}, by using {{site.data.keyword.Bluemix_notm}} Identity and Access Management (IAM). By setting policies within your account that create different levels of access for different users, you can ensure that each instance of {{site.data.keyword.security-advisor_short}} is secure.
 {: shortdesc}
@@ -28,7 +28,7 @@ As an account owner, you can manage access to instances of {{site.data.keyword.s
 For more information about IAM, see [IAM Access](/docs/iam/users_roles.html).
 
 ## {{site.data.keyword.security-advisor_short}} access policies
-{: #iam-access-policies}
+{: #access}
 
 Every user that accesses an instance of the {{site.data.keyword.security-advisor_short}} service in your account must be assigned an access policy with an IAM user role defined. The policy determines which actions that a user can perform within the context of that specific service instance.
 {: shortdesc}
@@ -122,6 +122,31 @@ The actions are customized and defined by the {{site.data.keyword.Bluemix_notm}}
   <tr>
     <td><code>security-advisor.partner-solution.delete</code></td>
     <td>Delete a partner solution from your service instance.</td>
+    <td>Manager</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.network-insights.enable</code></td>
+    <td>Enable network insights that are provided by the service.</td>
+    <td>Manager</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.network-insights.disable</code></td>
+    <td>Disable network insights that are provided by the service.</td>
+    <td>Manager</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.activity-insights.enable</code></td>
+    <td>Enable activity insights that are provided by the service.</td>
+    <td>Manager</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.activity-insights.disable</code></td>
+    <td>Disable activity insights that are provided by the service.</td>
+    <td>Manager</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.insights-cos.create</code></td>
+    <td>Create a Cloud Object Storage instance through {{site.data.keyword.security-advisor_short}}for network and activity insights.</td>
     <td>Manager</td>
   </tr>
 </table>
