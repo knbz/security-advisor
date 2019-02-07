@@ -2,11 +2,11 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-02-06"
+lastupdated: "2019-02-07"
 
 ---
 
-{:new_window: target="_blank"}
+{:new_window: target="blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -18,16 +18,16 @@ lastupdated: "2019-02-06"
 {:deprecated: .deprecated}
 {:download: .download}
 
-# Partner solutions
+# Partners
 {: #setup-partner}
 
-Partner solutions are a way to extend your security by creating a link between {{site.data.keyword.security-advisor_long}} and other security tools.
+Partner integrations are a way to bring critical alerts and findings from 3rd party providers into the {{site.data.keyword.security-advisor_long}} dashboard. These partners have worked with IBM to help shape, simplify, and guide the integration experience for you.
 {: shortdesc}
 
 ## Before you begin
 {: #partner-before}
 
-Before you get started with partner solutions, be sure that you have the following prerequisites.
+Before you start integrating partners, be sure that you have the following prerequisites.
 
 * Ensure that you have an account with the partner that you want to integrate.
 * Ensure that you have the required administrative permissions to generate the integration URL for the Partner service.
@@ -43,7 +43,6 @@ As an administrator with administrative rights in both the {{site.data.keyword.c
 * Install partner finding metadata into {{site.data.keyword.security-advisor_short}}
 * Validate the pairing by posting a findings from the partner into {{site.data.keyword.security-advisor_short}}
 
-</br>
 
 ## Integrating NeuVector
 {: #setup-neuvector}

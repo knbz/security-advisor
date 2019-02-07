@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-02-06"
+lastupdated: "2019-02-07"
 
 ---
 
@@ -41,10 +41,10 @@ To learn more, check out [Taking advantage of pre-integrated services](setup.htm
 
 </br>
 
-## Partner solutions
+## Partner integrations
 {: #integrate-partner}
 
-Partner solutions are a way to enhance security for your IBM Cloud deployments by by creating a link between {{site.data.keyword.security-advisor_short}} and other security tools outside of IBM Cloud.
+Partner integrations are a way to enhance security for your IBM Cloud deployments by creating a connection between {{site.data.keyword.security-advisor_short}} and other security tools that have worked with IBM to ensure a seamless user experience.
 {: shortdesc}
 
 Current {{site.data.keyword.security-advisor_short}} partners include Neuvector.
@@ -69,7 +69,7 @@ For help setting up your NeuVector instance, see [Partner solutions](partners.ht
 You might already have a security tool that you depend on. You can integrate that tool with the {{site.data.keyword.security-advisor_short}} dashboard so that all of your security information is centralized in one place!
 {: shortdesc}
 
-**Integrating your own tools with the GUI**
+**Creating a direct connection**
 
 By using the {{site.data.keyword.security-advisor_short}} GUI, you can bookmark your internal and external security tools so that you have one point of access to everything from the {{site.data.keyword.security-advisor_short}} dashboard. For example, you could bookmark PagerDuty.
 

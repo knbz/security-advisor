@@ -2,11 +2,11 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-02-06"
+lastupdated: "2019-02-07"
 
 ---
 
-{:new_window: target="blank"}
+{:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -19,38 +19,36 @@ lastupdated: "2019-02-06"
 {:download: .download}
 
 
-# Custom security tools
+# Custom
 {: #setup_custom}
 
-There are times that you might already have have a tool that you use. You can integrate those tools with {{site.data.keyword.security-advisor_short}} by using the Findings API.
+
+{{site.data.keyword.security-advisor_short}} enables you to integrate your existing custom security tools, whether open source, custom developed, or 3rd party services. You can create a direct connection from {{site.data.keyword.security-advisor_short}} to the other tool by adding the URL to your list of integrations. You can also integrate 3rd party findings to bring critical security events directly into a new card in the dashboard by using the APIs to configure APIs and key risk indicators (KRIs).
 {: shortdesc}
 
-You can register new finding types for your partner services or custom security tools by using the Findings API. When you register the metadata with your partner, they can send occurrences of findings as KRIs and events that are displayed in the Security Advisor dashboard.
 
-The APIs follow Grafeas like artifact metadata specifications to store, query, and retrieve the critical metadata for the findings that are reported by your security tools and services.
-
-## Integrating your own tools with the GUI
+## Adding a direct connection
 {: #setup-custom-gui}
 
-You can integrate your security tools by using the {{site.data.keyword.security-advisor_short}} dashboard.
+You can easily track your security tools by using the {{site.data.keyword.security-advisor_short}} dashboard.
 {: shortdesc}
 
 ### Before you begin
 {: #custom-before-gui}
 
-* You must have an account with the partner that you want to integrate.
+Before you can add the integration, you must first have an account with the partner that you want to integrate.
 
 {{site.data.keyword.security-advisor_short}} does not persist any credentials that are related to the partner service. Enterprise users must authenticate by using SAML to both {{site.data.keyword.Bluemix_notm}} and to the business partner.
 {: note}
 
-### Configuring the integration
-{: #custom-configure-integration}
+### Configuring the connection
+{: #custom-configure-connection}
 
-1. Log into your security tool and get your unique URL.
+1. Log in to your security tool and get your unique URL.
 
-2. Log into {{site.data.keyword.Bluemix_notm}}.
+2. Log in to {{site.data.keyword.cloud_notm}} by using the console.
 
-3. Click **Custom Integrations** and then click the **Add Custom Solution** card. A screen displays.
+3. Click **Custom Integrations > Direct Connection**. A screen displays.
 
   1. Give your solution a name. You can use only alpha-numeric characters, white spaces, and dashes (-) are allowed.
 
@@ -58,23 +56,19 @@ You can integrate your security tools by using the {{site.data.keyword.security-
 
   3. Upload an icon or image to represent the tool.
 
-    {{site.data.keyword.security-advisor_short}} creates the artifacts that are required for integration such as the service ID, API key, account ID, and metadata. The `writer` role is assigned.
+  4. Click **Connect** to complete the configuration. {{site.data.keyword.security-advisor_short}} creates the artifacts that are required for integration such as the service ID, API key, account ID, and metadata. The `writer` role is assigned.
 
-4. Configure your account for the other service.
 
-5. With the integration in place, you can start posting occurrences to {{site.data.keyword.security-advisor_short}} and view the findings in the service dashboard.
 
-</br>
+## Integrate 3rd party findings
 
-## Integrating your own tools with the API
+The APIs follow Grafeas like artifact metadata specifications to store, query, and retrieve the critical metadata for the findings that are reported by your security tools and services.
 {: #setup-custom-api}
-
-{{site.data.keyword.security-advisor_short}} APIs follow [Grafeas](https://grafeas.io/) like artifact metadata API specification to store, query, and retrieve critical metadata for the findings that are reported by all security tools and services.
 
 ### Before you begin
 {: #custom-before-api}
 
-Before you get started with your custom security tool, be sure that you have the following prerequisites.
+Before you integrate findings from your 3rd party tool, be sure that you have the following prerequisites.
 
 1. Be sure that the user or service ID that you're using is assigned the **Manager** [IAM role](https://console.bluemix.net/iam/#/users).
 
@@ -92,16 +86,21 @@ Before you get started with your custom security tool, be sure that you have the
   ```
   {: codeblock}
 
-3. Get your IAM token. The token is used in the `--header` of each API request.
+3. Get your Identity and Access Management (IAM) token. The token is used in the `--header` of each API request.
+
+ ***IAM token needs to be regenerated if it expires (default every 60 min).  SHould include code snippet for cron job or other means to auto regerate token.***
 
   ```
   ibmcloud iam oauth-tokens
   ```
   {: codeblock}
 
+  IAM tokens expire every 60 minutes. To learn how to [get a new token automatically](/docs/iam/apikey_iamtoken.html#iamtoken_from_apikey) by using an API key.
+  {: tip}
+
 </br>
 
-### Adding and monitoring findings
+### Importing findings and KRIs
 {: #custom-adding}
 
 1. Register a new type of Finding by creating a note. To create the note, use the [Findings API](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Notes/createNote). Be sure that you choose a unique provider ID to identify your custom tool. If you're automating the process by using a service ID you can use the service ID as your provider ID.
@@ -194,7 +193,7 @@ Before you get started with your custom security tool, be sure that you have the
   Be sure to remember the name of the note that is returned as part of the response. In this example, the value is `/providers/my-custom-tool/notes/my-custom-tool-findings-type`. This value is used in the next step.
   {: tip}
 
-2. Post findings as KPIs or events, otherwise known as an [occurrence](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Occurrences/createOccurrence).
+2. Post findings as KRIs or events, otherwise known as an [occurrence](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Occurrences/createOccurrence).
 
   For each card, you can define two KRIs.
   {: note}
