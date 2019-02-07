@@ -22,7 +22,6 @@ lastupdated: "2019-02-07"
 # Custom
 {: #setup_custom}
 
-
 {{site.data.keyword.security-advisor_short}} enables you to integrate your existing custom security tools, whether open source, custom developed, or 3rd party services. You can create a direct connection from {{site.data.keyword.security-advisor_short}} to the other tool by adding the URL to your list of integrations. You can also integrate 3rd party findings to bring critical security events directly into a new card in the dashboard by using the APIs to configure APIs and key risk indicators (KRIs).
 {: shortdesc}
 
@@ -50,7 +49,7 @@ Before you can add the integration, you must first have an account with the part
 
 3. Click **Custom Integrations > Direct Connection**. A screen displays.
 
-  1. Give your solution a name. You can use only alpha-numeric characters, white spaces, and dashes (-) are allowed.
+  1. Give your solution a name. You can use only alpha-numeric characters, white spaces, and dashes (-) in the name.
 
   2. Enter the URL for the solution in the format: `www.<website>.<domain>`.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-02-07"
 
 ---
 
@@ -82,3 +82,24 @@ You have encountered a known issue. Occasionally, the information does not updat
 
 {: tsResolve}
 To resolve the issue, click the refresh icon.
+
+## Error: namespaces "security-advisor-insights" is forbidden
+{: #ts-error-helm-install}
+
+{: tsSymptoms}
+When you try to install Network or Activity Insights, you encounter the error:
+
+```
+namespaces “security-advisor-insights” is forbidden: User “system:serviceaccount:kube-system:default” cannot get resource “namespaces” in API group “” in the namespace “security-advisor-insights”
+```
+{: screen}
+
+{: tsCauses}
+The `kube-system` default service account does not have admin access in your cluster. Prior to installing one of the Built-in Insights offerings, you must install Helm.
+
+{: tsResolve}
+To resolve the issue, install Helm with TLS enabled. If you're using your workstation to handle the installation of analytics components in multiple clusters and TLS is enabled, be sure that the TLS configurations are current and match the current cluster where you plan to install the components.
+
+  1. Install Helm by using the [Kubernetes Service integration docs](/docs/containers/cs_integrations.html#helm).
+
+  2. [Enable TLS](https://github.com/helm/helm/blob/master/docs/tiller_ssl.md).
