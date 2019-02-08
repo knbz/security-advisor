@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-10"
+  years: 2014, 2019
+lastupdated: "2019-01-31"
 
 ---
 
@@ -13,10 +13,13 @@ lastupdated: "2018-12-10"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Taking advantage of pre-integrated services
-{: #setup}
+{: #setup-services}
 
 {{site.data.keyword.security-advisor_short}} comes with several pre-populated cards that can help you to monitor for security risks and threats.
 {: shortdesc}
@@ -30,7 +33,7 @@ Although you do not have to do anything to create the connection between {{site.
 
 
 ## Monitoring vulnerabilities in container images
-{: #setup_images}
+{: #setup-images}
 
 With {{site.data.keyword.registryshort_notm}}, you have access to Vulnerability Advisor, which continuously scans the images in your {{site.data.keyword.registryshort_notm}} instance for potential security issues. If issues are found, you are alerted and can view a comprehensive report in your {{site.data.keyword.security-advisor_short}} dashboard.
 {:shortdesc}
@@ -93,7 +96,7 @@ After you push images to your {{site.data.keyword.registryshort_notm}} namespace
 </br>
 
 ## Monitoring certificates
-{: #setup_certificates}
+{: #setup-certificates}
 
 Did you know that {{site.data.keyword.cloudcerts_long_notm}} can help to monitor and manage your SSL/TLS certificates? By integrating {{site.data.keyword.cloudcerts_short}} and {{site.data.keyword.security-advisor_short}}, you can get alerts in advance about your certificates expiry which can help prevent a service or application outage.
 {:shortdesc}
@@ -126,6 +129,3 @@ Now that your certificates are imported, information such as expiration times an
 
 To stop the notifications, you must renew your certificate, upload the certificate to {{site.data.keyword.cloudcerts_short}}, and delete the expired certificate.
 {: tip}
-
-</br>
-</br>

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-10"
+  years: 2019
+lastupdated: "2019-02-08"
 
 ---
 
@@ -13,6 +13,9 @@ lastupdated: "2018-12-10"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Getting started tutorial
@@ -31,12 +34,12 @@ Through pre-integrated findings, you can monitor:
 - Certificates that you manage with {{site.data.keyword.cloudcerts_long_notm}}
 - Vulnerabilities in container images that are stored in {{site.data.keyword.registrylong_notm}}
 
-You can also gain insight into suspicious clients and potentially compromised containers that run on your IBM Cloud Kubernetes Service clusters. With the feature enabled and configured, cluster network communication, both incoming and outgoing, is collected and continuously monitored and analyzed based on threat intelligence. You can learn more by reading [Network analytics](network-analytics.html)
+You can also gain insight into suspicious clients and potentially compromised containers that run on your {{site.data.keyword.containerlong_notm}} clusters. With the feature enabled and configured, cluster network communication, both incoming and outgoing, is collected and continuously monitored and analyzed based on threat intelligence. You can learn more by reading [Network analytics](network-analytics.html)
 
 </br>
 
 ## Getting to the service dashboard
-{: #dashboard}
+{: #start-dashboard}
 
 Ready to get started? You can get to the service dashboard in one of the following ways:
 
@@ -63,13 +66,13 @@ Are your pre-integrated findings not displaying any information? You might not h
 </br>
 
 ## Next steps
-{: #next}
+{: #start-next}
 
 Now that you've seen the dashboard in action, [learn more](about.html) about how {{site.data.keyword.security-advisor_short}} can help you. You can also send user feedback by using [developerWorks](ts_index.html) to contribute ideas for the service as it develops.
 
 </br>
 
 ## Availability
-{: #availability}
+{: #start-availability}
 
-Currently, you can take advantage of {{site.data.keyword.security-advisor_short}} in the Dallas, and London regions.
+Currently, you can take advantage of {{site.data.keyword.security-advisor_short}} in the Dallas (us-south) and London (eu-gb) regions.

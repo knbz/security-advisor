@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-09"
+  years: 2019
+lastupdated: "2019-02-07"
 
 ---
 
@@ -13,85 +13,63 @@ lastupdated: "2018-12-09"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
-# Custom security tools
+
+# Custom
 {: #setup_custom}
 
-There are times that you might already have have a tool that you use. You can integrate those tools such as, Neuvector, with {{site.data.keyword.security-advisor_short}}.
+{{site.data.keyword.security-advisor_short}} enables you to integrate your existing custom security tools, whether open source, custom developed, or 3rd party services. You can create a direct connection from {{site.data.keyword.security-advisor_short}} to the other tool by adding the URL to your list of integrations. You can also integrate 3rd party findings to bring critical security events directly into a new card in the dashboard by using the APIs to configure APIs and key risk indicators (KRIs).
 {: shortdesc}
 
 
-Why would you want to create customizations? Say that you have an application that is running a {{site.data.keyword.containershort_notm}} cluster with the name `cloudkingdom`. One of the pods in the cluster is sending an abnormal amount of data to external servers. You want to capture this finding in your {{site.data.keyword.security-advisor_short}} dashboard.
+## Adding a direct connection
+{: #setup-custom-gui}
 
-If your custom tool monitors and detects the abnormal amount of data that is being transferred, then the tool sends the finding to {{site.data.keyword.security-advisor_short}}.
-
-Example payload:
-
-```
-{
-	"note_name": "<account id>/providers/my-custom-tool/notes/my-custom-tool-findings-type",
-	"kind": "FINDING",
-	"remediation": "How to resolve Data leakage threat",
-	"provider_id": "my-custom-tool",
-	"id": "my-custom-tool-finding-2",
-	"context": {
-		"region": "location",
-		"resource_id": "cluster crn",
-		"resource_name": "cloudkingdom",
-		"resource_type": "container",
-		"service_name": "kubernetess service"
-	},
-	"finding": {
-		"severity": "HIGH",
-		"next_steps": [{
-			"title": "Investigate which process are running in your cluster. If you suspect one of your pods was hacked, restart it, and look for image vulnerabilities",
-                        "url":"https://console.bluemix.net/containers-kubernetes/clusters"
-		}],
-                "short_description": "One of the pods in your cluster appears to be leaking an excessive amount of data",
-                "long_description": "One of the pods in your cluster is approaching external servers and sending them data in volumes that exceed that pod’s normal behavior"
-	}
-
-}
-```
-{: screen}
-
-</br>
-
-
-## Integrating your own tools with the GUI
-{: #gui}
-
-You can integrate your security tools by using the {{site.data.keyword.security-advisor_short}} dashboard.
+You can easily track your security tools by using the {{site.data.keyword.security-advisor_short}} dashboard.
 {: shortdesc}
 
-**Before you begin**
+### Before you begin
+{: #custom-before-gui}
 
-* You must have an account with the partner that you want to integrate.
+Before you can add the integration, you must first have an account with the partner that you want to integrate.
 
 {{site.data.keyword.security-advisor_short}} does not persist any credentials that are related to the partner service. Enterprise users must authenticate by using SAML to both {{site.data.keyword.Bluemix_notm}} and to the business partner.
 {: note}
 
-1. Log into your security tool and get your unique URL.
-2. Log into {{site.data.keyword.Bluemix_notm}}.
-3. Click **Custom Integrations** and then click the **Add Custom Solution** card. A screen displays.
-  1. Give your solution a name. You can use only alpha-numeric characters, white spaces, and dashes (-) are allowed.
+### Configuring the connection
+{: #custom-configure-connection}
+
+1. Log in to your security tool and get your unique URL.
+
+2. Log in to {{site.data.keyword.cloud_notm}} by using the console.
+
+3. Click **Custom Integrations > Direct Connection**. A screen displays.
+
+  1. Give your solution a name. You can use only alpha-numeric characters, white spaces, and dashes (-) in the name.
+
   2. Enter the URL for the solution in the format: `www.<website>.<domain>`.
+
   3. Upload an icon or image to represent the tool.
 
-    {{site.data.keyword.security-advisor_short}} creates the artifacts that are required for integration such as the service ID, API key, account ID, and metadata. The `writer` role is assigned.
+  4. Click **Connect** to complete the configuration. {{site.data.keyword.security-advisor_short}} creates the artifacts that are required for integration such as the service ID, API key, account ID, and metadata. The `writer` role is assigned.
 
-4. You can configure the customer account in the **Integration** tab of the other service.
-5. With the integration in place, you can start posting occurrences to {{site.data.keyword.security-advisor_short}} and view the findings in the service dashboard.
 
-</br>
 
-## Integrating your own tools with the API
-{: #integrate}
+## Integrate 3rd party findings
 
-{{site.data.keyword.security-advisor_short}} APIs follow [Grafeas](https://grafeas.io/) like artifact metadata API specification to store, query, and retrieve critical metadata for the findings that are reported by all security tools and services.
+The APIs follow Grafeas like artifact metadata specifications to store, query, and retrieve the critical metadata for the findings that are reported by your security tools and services.
+{: #setup-custom-api}
 
-**Before you begin**
+### Before you begin
+{: #custom-before-api}
+
+Before you integrate findings from your 3rd party tool, be sure that you have the following prerequisites.
+
+1. Be sure that the user or service ID that you're using is assigned the **Manager** [IAM role](https://console.bluemix.net/iam/#/users).
 
 1. Log in to {{site.data.keyword.Bluemix_notm}}.
 
@@ -100,25 +78,31 @@ You can integrate your security tools by using the {{site.data.keyword.security-
   ```
   {: codeblock}
 
-2. Get your account ID. Ensure that your ID is assigned the **Manager** [IAM role](https://console.bluemix.net/iam/#/users). For more information about service roles, check out the [{{site.data.keyword.security-advisor_short}} access policies](/docs/services/security-advisor/iam.html).
+2. Get your account ID. For more information about service roles, check out the [{{site.data.keyword.security-advisor_short}} access policies](/docs/iam/mngiam.html#iammanidaccser).
 
   ```
   ibmcloud account list org-account ORG_NAME [--guid]
   ```
   {: codeblock}
 
-3. Get your IAM token. The token is used in the `--header` of each API request.
+3. Get your Identity and Access Management (IAM) token. The token is used in the `--header` of each API request.
+
+ ***IAM token needs to be regenerated if it expires (default every 60 min).  SHould include code snippet for cron job or other means to auto regerate token.***
 
   ```
   ibmcloud iam oauth-tokens
   ```
   {: codeblock}
 
+  IAM tokens expire every 60 minutes. To learn how to [get a new token automatically](/docs/iam/apikey_iamtoken.html#iamtoken_from_apikey) by using an API key.
+  {: tip}
+
 </br>
 
-**Adding and monitoring findings**
+### Importing findings and KRIs
+{: #custom-adding}
 
-1. Register a new type of Finding by creating a note. To create the note, use the [Findings API](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Notes/createNote).
+1. Register a new type of Finding by creating a note. To create the note, use the [Findings API](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Notes/createNote). Be sure that you choose a unique provider ID to identify your custom tool. If you're automating the process by using a service ID you can use the service ID as your provider ID.
 
   Example request:
 
@@ -205,7 +189,13 @@ You can integrate your security tools by using the {{site.data.keyword.security-
   ```
   {: screen}
 
-2. Create a finding by posting an [occurrence](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Occurrences/createOccurrence).
+  Be sure to remember the name of the note that is returned as part of the response. In this example, the value is `/providers/my-custom-tool/notes/my-custom-tool-findings-type`. This value is used in the next step.
+  {: tip}
+
+2. Post findings as KRIs or events, otherwise known as an [occurrence](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Occurrences/createOccurrence).
+
+  For each card, you can define two KRIs.
+  {: note}
 
   ```
   curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account-id>/providers/my-custom-tool/occurrences" -H "accept: application/json" -H "Authorization: <iam-token>" -H "Replace-If-Exists: true" -H "Content-Type: application/json" -d "{ \"note_name\": \"<account-id>/providers/my-custom-tool/notes/my-custom-tool-findings-type\", \"kind\": \"FINDING\", \"remediation\": \"how to resolve this\", \"provider_id\": \"my-custom-tool\", \"id\": \"my-custom-tool-finding-1\", \"context\": { \"region\": \"location\", \"resource_id\": \"pluginId\", \"resource_name\": \"www.myapp.com\", \"resource_type\": \"worker\", \"service_name\": \"application\" }, \"finding\": { \"severity\": \"HIGH\", \"next_steps\": [{ \"url\": \"Details URL\" }] }}"
@@ -295,7 +285,7 @@ You can integrate your security tools by using the {{site.data.keyword.security-
     "update_week_date": "2018-W36-2"
   }
   ```
-  {: codeblock}
+  {: screen}
 
 3. Define the card in the dashboard to display your finding by creating a [note](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Notes/createNote).
 
@@ -403,6 +393,37 @@ You can integrate your security tools by using the {{site.data.keyword.security-
 
 4. Navigate to your service dashboard to see the card that you created.
 
+## Example usage
+{: #custom-example}
 
-</br>
-</br>
+Say that you have an application that runs on a {{site.data.keyword.containershort_notm}} cluster with the name `cloudkingdom`. Depending on the size of your application, you might have several pods within your cluster to monitor all at the same time. What if you have multiple custom tools that monitor and detect your cluster for different threats. If one of your pods in the cluster starts to send an abnormal amount of data to external servers, you'd want to know as soon as possible. The custom tool that monitors data transfer can detect the finding and send it to {{site.data.keyword.security-advisor_short}}. If you have another custom integration that detects an issue, it too would send the finding to {{site.data.keyword.security-advisor_short}}. Then, {{site.data.keyword.security-advisor_short}} displays the findings from all of your monitoring tools in a single dashboard. There you can quickly see an overview of any alerts, investigate an issue, and learn about how to take remediation steps.
+
+
+Example payload:
+
+```
+{
+	"note_name": "<account id>/providers/my-custom-tool/notes/my-custom-tool-findings-type",
+	"kind": "FINDING",
+	"remediation": "How to resolve Data leakage threat",
+	"provider_id": "my-custom-tool",
+	"id": "my-custom-tool-finding-2",
+	"context": {
+		"region": "location",
+		"resource_id": "cluster crn",
+		"resource_name": "cloudkingdom",
+		"resource_type": "container",
+		"service_name": "kubernetes service"
+	},
+	"finding": {
+		"severity": "HIGH",
+		"next_steps": [{
+			"title": "Investigate which process are running in your cluster. If you suspect one of your pods was hacked, restart it, and look for image vulnerabilities",
+                        "url":"https://console.bluemix.net/containers-kubernetes/clusters"
+		}],
+                "short_description": "One of the pods in your cluster appears to be leaking an excessive amount of data",
+                "long_description": "One of the pods in your cluster is approaching external servers and sending them data in volumes that exceed that pod’s normal behavior"
+	}
+}
+```
+{: screen}

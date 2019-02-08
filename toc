@@ -15,10 +15,9 @@ IBM Cloud Security Advisor
     setup.md
 
     {: .topicgroup}
-    Integrations
+    Enabling integrations
         partners.md
         custom.md
-        setup_cluster.md
 
     iam.md
     {: .navgroup-end}

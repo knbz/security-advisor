@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-12-07"
+  years: 2017, 2019
+lastupdated: "2019-02-07"
 
 ---
 
@@ -13,6 +13,9 @@ lastupdated: "2018-12-07"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 
@@ -31,7 +34,7 @@ For more information about how the service works, see the [{{site.data.keyword.c
 Events are available in the {{site.data.keyword.cloudaccesstrailshort}} **account domain** that is available in the {{site.data.keyword.Bluemix_notm}} region where the events are generated.
 
 1. Log in to your {{site.data.keyword.Bluemix_notm}} account.
-2. From the catalog, provision an instance of the {{site.data.keyword.cloudaccesstrailshort}} service in the same account as your instance of {{site.data.keyword.security-advisor_long}}.
+2. From the catalog, provision an instance of the {{site.data.keyword.cloudaccesstrailshort}} service in the same account as your instance of {{site.data.keyword.security-advisor_short}}.
 3. On the **Manage** tab of the {{site.data.keyword.cloudaccesstrailshort}} dashboard, click the **View in Kibana**.
 4. Set the time frame that you want to view logs for. The default is 15 min.
 5. In the **Available Fields** list, click **type**. Click the magnifying glass icon for **Activity Tracker** to limit the logs to only those tracked by the service.
@@ -114,5 +117,25 @@ Check out the following table for a list of the events that are sent to {{site.d
   <tr>
     <td><code>security-advisor.partner-solution.delete</code></td>
     <td>Delete a partner solution from your service instance.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.network-insights.enable</code></td>
+    <td>Enable the Network Insights feature that is provided by {{site.data.keyword.security-advisor_short}}.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.network-insights.disable</code></td>
+    <td>Disable the Network Insights feature that is provided by {{site.data.keyword.security-advisor_short}}.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.activity-insights.enable</code></td>
+    <td>Enable the Activity Insights feature that is provided by {{site.data.keyword.security-advisor_short}}.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.activity-insights.disable</code></td>
+    <td>Disable the Activity Insights feature that is provided by {{site.data.keyword.security-advisor_short}}.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.insights-cos.create</code></td>
+    <td>Create a Cloud Object Storage instance through {{site.data.keyword.security-advisor_short}}for network and activity insights.</td>
   </tr>
 </table>

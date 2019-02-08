@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-12-07"
+  years: 2017, 2019
+lastupdated: "2019-02-07"
 
 ---
 
@@ -13,6 +13,9 @@ lastupdated: "2018-12-07"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 
@@ -119,6 +122,31 @@ The actions are customized and defined by the {{site.data.keyword.Bluemix_notm}}
   <tr>
     <td><code>security-advisor.partner-solution.delete</code></td>
     <td>Delete a partner solution from your service instance.</td>
+    <td>Manager</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.network-insights.enable</code></td>
+    <td>Enable network insights that are provided by the service.</td>
+    <td>Manager</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.network-insights.disable</code></td>
+    <td>Disable network insights that are provided by the service.</td>
+    <td>Manager</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.activity-insights.enable</code></td>
+    <td>Enable activity insights that are provided by the service.</td>
+    <td>Manager</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.activity-insights.disable</code></td>
+    <td>Disable activity insights that are provided by the service.</td>
+    <td>Manager</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.insights-cos.create</code></td>
+    <td>Create a Cloud Object Storage instance through {{site.data.keyword.security-advisor_short}}for network and activity insights.</td>
     <td>Manager</td>
   </tr>
 </table>

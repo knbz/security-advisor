@@ -1,30 +1,34 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-12-10"
+  years: 2017, 2019
+lastupdated: "2019-02-04"
 
 ---
 
-{:new_window: target="blank"}
+{:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
+{:faq: .faq}
 
 
 # Frequently asked questions (FAQ)
-{: #about}
+{: #faq}
 
 This FAQ provides answers to common questions about the {{site.data.keyword.security-advisor_long}} service.
 {: shortdesc}
 
 
 ## What are the integrated services?
-{: #integrations}
+{: #faq-integrations}
 {: faq}
 
 While you can integrate any IBM Cloud or custom security tool, the service comes pre-configured to use IBM Cloud Certificate Manager and Vulnerability Advisor.
@@ -43,4 +47,4 @@ IBM X-Force Research is one of the most renowned commercial security research te
 {: #partner}
 {: faq}
 
-Happy to hear that you're interested in integrating your solution with Security Advisor. Reach out to our team by contacting Matt Ward at wardm@us.ibm.com to get started!
+Happy to hear that you're interested in integrating your solution with {{site.data.keyword.security-advisor_short}}. Reach out to our team by contacting Matt Ward at wardm@us.ibm.com to get started!
