@@ -75,7 +75,7 @@ You can install an agent to collect audit flow logs from your IBM Cloud account.
 1. Clone the following repository to your local system.
 
   ```
-  git clone https://github.ibm.com/security-services/security-advisor-activity-insights-installer.git
+  git clone https://github.com/ibm-cloud-security/security-advisor-activity-insights.git
   ```
   {: codeblock}
 

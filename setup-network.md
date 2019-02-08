@@ -82,7 +82,7 @@ Be sure to repeat the installation for each cluster that you want to monitor.
 1. Clone the following repository to your local system.
 
   ```
-  git clone https://github.ibm.com/security-services/security-advisor-network-analytics-installer.git
+  git clone https://github.com/ibm-cloud-security/security-advisor-network-insights.git
   ```
   {: codeblock}
 
