@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-02-07"
+lastupdated: "2019-02-08"
 
 ---
 
@@ -122,7 +122,7 @@ A model of normal container behavior is created by monitoring the behavioral pat
 
 The card introduces two Key Risk Indicators (KRIs):
 
-* Higher than normal recconaissance or data exchange activity: Findings that are related to abnormal interactions that are detected between the cluster and any external peers.
+* Higher than normal reconnaissance or data exchange activity: Findings that are related to abnormal interactions that are detected between the cluster and any external peers.
 * Outbound approach to a new server: Findings that are related to new detected servers that the cluster approaches.
 
 A finding might include:  
