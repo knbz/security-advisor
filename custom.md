@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-02-07"
+lastupdated: "2019-02-08"
 
 ---
 
@@ -86,8 +86,6 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
   {: codeblock}
 
 3. Get your Identity and Access Management (IAM) token. The token is used in the `--header` of each API request.
-
- ***IAM token needs to be regenerated if it expires (default every 60 min).  SHould include code snippet for cron job or other means to auto regerate token.***
 
   ```
   ibmcloud iam oauth-tokens
