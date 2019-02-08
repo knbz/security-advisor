@@ -18,7 +18,6 @@ lastupdated: "2019-02-08"
 {:deprecated: .deprecated}
 {:download: .download}
 
-
 # Network Insights
 {: #setup-network}
 
@@ -27,7 +26,6 @@ With {{site.data.keyword.security-advisor_long}}, you can monitor behavior by us
 
 As of 20 January 2019, Network Insights (beta) replaces the Network Analytics feature. Any analytics cards in your service dashboard are deleted, but the findings remain in the findings database.
 {: important}
-
 
 ## Before you begin
 {: #network-prereq}
@@ -52,7 +50,6 @@ If you are currently using the Network Analytics feature, you must [delete the s
 - The [Kubernetes Helm (package manager)](/docs/containers/cs_integrations.html#helm) v2.9.0 or higher.
 - A standard Kubernetes cluster version v1.10.11 or higher
 
-
 ## Creating a COS bucket
 {: #network-setup-cos}
 
@@ -66,7 +63,6 @@ By using the {{site.data.keyword.security-advisor_short}} GUI, you can create a 
 
 If you have an existing instance of COS and bucket, be sure that it uses the naming convention: `sa.<account_id>.telemetric.<cos_region>`. To allow the service to read the data that is stored in your COS instance, set up [service-to-service authorization](/docs/iam/authorizations.html#serviceauth) by using {{site.data.keyword.cloud_notm}} IAM. Set `source` to `{{site.data.keyword.security-advisor_short}}` and `target` to your COS instance. Assign the `Reader` IAM role.
 
-
 ## Installing {{site.data.keyword.security-advisor_short}} components
 {: #network-install-components}
 
@@ -75,7 +71,6 @@ You can install an agent to collect network flow logs from your Kubernetes clust
 
 Be sure to repeat the installation for each cluster that you want to monitor.
 {: note}
-
 
 1. Clone the following repository to your local system.
 
@@ -213,8 +208,6 @@ If you no longer have a need to use Network Insights, you can delete the service
 
 Be sure to delete the process for each cluster that you want to remove the agents from.
 {: tip}
-
-
 
 ## Uninstalling Network Analytics
 {: #uninstall-analytics}

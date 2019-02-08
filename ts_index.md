@@ -41,7 +41,6 @@ You can find help by searching for information or by asking questions through a 
 
 For more information about getting support, see [how do I get the support that I need](/docs/get-support/howtogetsupport.html#getting-customer-support).
 
-</br>
 
 ## You can't create a custom solution occurrence
 {: #ts-custom-occurrence}
@@ -68,7 +67,7 @@ namespaces “security-advisor-insights” is forbidden: User “system:servicea
 {: screen}
 
 {: tsCauses}
-The `kube-system` default service account does not have admin access in your cluster. Prior to installing one of the Built-in Insights offerings, you must install Helm.
+The `kube-system` default service account does not have admin access in your cluster.
 
 {: tsResolve}
-Install Helm by using the [Kubernetes Service integration docs](/docs/containers/cs_integrations.html#helm).
+Prior to installing one of the Built-in Insights offerings, you must install Helm. You can install Helm by using the [Kubernetes Service integration docs](/docs/containers/cs_integrations.html#helm).

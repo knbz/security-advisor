@@ -79,16 +79,15 @@ For help setting up your Twistlock instance, see [Partner solutions](/docs/servi
 You might already have a security tool that you depend on. You can integrate that tool with the {{site.data.keyword.security-advisor_short}} dashboard so that all of your security information is centralized in one place!
 {: shortdesc}
 
-**Creating a direct connection**
+### Creating a direct connection
+{: #create-direct-connect}
 
 By using the {{site.data.keyword.security-advisor_short}} GUI, you can bookmark your internal and external security tools so that you have one point of access to everything from the {{site.data.keyword.security-advisor_short}} dashboard. For example, you could bookmark PagerDuty.
 
-**Integrating your own tools with the API**
+### Integrating your own tools with the API
+{: #integrate-tools-api}
 
 With the Findings API, you can integrate findings from your custom security tools into the {{site.data.keyword.security-advisor_short}} dashboard. This could be any custom or partner tool that generates a security alert or finding that also supports API based interaction.
-
-</br>
-
 
 ## Built-in Insights
 {: #integrate-insights}

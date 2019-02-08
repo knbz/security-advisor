@@ -1,4 +1,4 @@
-{{site.data.keyword.cloud_notm}}---
+---
 
 copyright:
   years: 2019
