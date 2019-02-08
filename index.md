@@ -34,7 +34,7 @@ Through pre-integrated findings, you can monitor:
 - Certificates that you manage with {{site.data.keyword.cloudcerts_long_notm}}
 - Vulnerabilities in container images that are stored in {{site.data.keyword.registrylong_notm}}
 
-</br>
+
 
 ## Getting to the service dashboard
 {: #start-dashboard}
@@ -61,14 +61,12 @@ Ready to get started? You can get to the service dashboard in one of the followi
 
 Are your pre-integrated findings not displaying any information? You might not have any certificates or images for {{site.data.keyword.security-advisor_short}} to monitor. Learn more about what {{site.data.keyword.security-advisor_short}} needs to populate the dashboard cards in [Taking advantage of pre-integrated services](/docs/services/security-advisor/setup.html).
 
-</br>
 
 ## Next steps
 {: #start-next}
 
-Now that you've seen the dashboard in action, [learn more](/docs/services/security-advisor/about.html) about how {{site.data.keyword.security-advisor_short}} can help you. You can also send user feedback by using [developerWorks](/docs/services/security-advisor/ts_index.html) to contribute ideas for the service as it develops.
+Now that you've seen the dashboard in action, [learn more](/docs/services/security-advisor/about.html) about how {{site.data.keyword.security-advisor_short}} can help you. You can also send user feedback by using <a href="https://developer.ibm.com/" target="_blank">dW Answers <img src="../../icons/launch-glyph.svg" alt="External link icon"></a> to contribute ideas for the service as it develops.
 
-</br>
 
 ## Availability
 {: #start-availability}
