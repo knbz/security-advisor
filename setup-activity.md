@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-07"
+lastupdated: "2019-02-08"
 
 ---
 
@@ -79,7 +79,7 @@ You can install an agent to collect audit flow logs from your IBM Cloud account.
   ```
   {: codeblock}
 
-2. Change into the *security-advisor-activity-insights-installer* folder.
+2. Change into the `security-advisor-activity-insights-installer` folder.
 
 3. Extract the `.tar` file by running the following command.
 
@@ -88,7 +88,7 @@ You can install an agent to collect audit flow logs from your IBM Cloud account.
   ```
   {: codeblock}
 
-4. Change into *security-advisor-activity-insights** folder.
+4. Change into `security-advisor-activity-insights` folder.
 5. Log in to the {{site.data.keyword.cloud_notm}} CLI. Follow the prompts in the CLI to complete finish logging in.
 
   ```

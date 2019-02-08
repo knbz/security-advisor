@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-02-07"
+lastupdated: "2019-02-08"
 
 ---
 
@@ -32,7 +32,7 @@ With {{site.data.keyword.security-advisor_long}}, you can gain insight into pote
 {: shortdesc}
 
 
-Out of the box {{site.data.keyword.security-advisor_short}} integrates with:
+Out of the box, {{site.data.keyword.security-advisor_short}} integrates with:
 
 * Certificate Manager for notifications that are related to certificate expiry and lifecycle.
 * Vulnerability Advisor for details on image vulnerabilities and configuration issues.

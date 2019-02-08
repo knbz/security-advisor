@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-07"
+lastupdated: "2019-02-08"
 
 ---
 
@@ -86,7 +86,7 @@ Be sure to repeat the installation for each cluster that you want to monitor.
   ```
   {: codeblock}
 
-2. Change into the *security-advisor-network-analytics-installer* folder.
+2. Change into the `security-advisor-network-analytics-installer` folder.
 
 3. Extract the `.tar` file by running the following command.
 
@@ -95,7 +95,7 @@ Be sure to repeat the installation for each cluster that you want to monitor.
   ```
   {: codeblock}
 
-4. Change into the *security-advisor-network-analytics* folder.
+4. Change into the `security-advisor-network-analytics` folder.
 
 5. Log in to the {{site.data.keyword.cloud_notm}} CLI. Follow the prompts in the CLI to complete finish logging in.
 

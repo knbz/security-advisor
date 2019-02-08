@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-02-08"
 
 ---
 
@@ -75,4 +75,4 @@ Now that you've seen the dashboard in action, [learn more](about.html) about how
 ## Availability
 {: #start-availability}
 
-Currently, you can take advantage of {{site.data.keyword.security-advisor_short}} in the Dallas, and London regions.
+Currently, you can take advantage of {{site.data.keyword.security-advisor_short}} in the Dallas (us-south) and London (eu-gb) regions.
