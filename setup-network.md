@@ -33,7 +33,7 @@ As of 20 January 2019, Network Insights (beta) replaces the Network Analytics fe
 ## Before you begin
 {: #network-prereq}
 
-If you are currently using the Network Analytics feature, you must [delete the service components](#uninstall) before you can install Network Insights. To get started with Network Insights, be sure that you have the following prerequisites.
+If you are currently using the Network Analytics feature, you must [delete the service components](/docs/services/security-advisor/setup-network.html#uninstall) before you can install Network Insights. To get started with Network Insights, be sure that you have the following prerequisites.
 
 - If you are working on Windows 10, activate Windows Subsystem for Linux and install an [Ubuntu shell](https://win10faq.com/install-run-ubuntu-bash-windows-10/)
 - Install the yq CLI:
