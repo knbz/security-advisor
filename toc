@@ -26,8 +26,8 @@ IBM Cloud Security Advisor
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    [Findings API](https://console.bluemix.net/apidocs/security-advisor)
-    [Service dashboard](https://console.bluemix.net/security-advisor/#/dashboard)
+    [Findings API](https://cloud.ibm.com/apidocs/security-advisor)
+    [Service dashboard](https://cloud.ibm.com/security-advisor/#/dashboard)
     [Blogs](https://www.ibm.com/blogs/bluemix/tag/security-advisor/)
     at-events.md
     {: .navgroup-end}
