@@ -24,11 +24,10 @@ lastupdated: "2019-02-08"
 {{site.data.keyword.security-advisor_long}} enables centralized security management through a unified dashboard that alerts security admins to issues and guides them to understand, prioritize, manage, and resolve security issues related to their cloud applications and workloads.
 {: shortdesc}
 
+## Service overview
+{: #about-overview}
 
-![{{site.data.keyword.security-advisor_short}} architecture](images/sa-benefits.png)
-
-
-{{site.data.keyword.security-advisor_short}} is most helpful for Security Administrators. That role can take many names. Check out the following table for some example users:
+{{site.data.keyword.security-advisor_short}} is most helpful for security administrators. That role can take many names. Check out the following table for some example users:
 
 <table>
   <tr>
@@ -50,7 +49,21 @@ lastupdated: "2019-02-08"
 
 The described roles might be performed by a single person or multiple people depending on the size of your company. However, the offering was created to address the day-to-day requirements of a CISO or Security focal.
 
-</br>
+
+![{{site.data.keyword.security-advisor_short}} architecture](images/sa-benefits.png)
+
+
+<dl>
+  <dt>Security risk and posture</dt>
+    <dd>Application security remains important with constant news articles announcing a new data breach or hack. Security risks will always be a part of development and although attacks can be difficult to predict, one way to prevent them is by closely monitoring your cloud deployments. For example, the risks can be related to vulnerabilities in your container images that are in use, expiring certificates that can cause outage of your cloud service or application or suspicious clients or servers with a known bad reputation interacting with your clusters.</dd>
+  <dt>Centralized security management</dt>
+    <dd>You can see a consolidated view of all of your {{site.data.keyword.cloud_notm}} security services and integrated partner services. You can select and subscribe to different services from the {{site.data.keyword.cloud_notm}} catalog.</dd>
+  <dt>Threat detection</dt>
+    <dd>{{site.data.keyword.security-advisor_short}} leverages the information that is gathered by IBM X-Force, other {{site.data.keyword.cloud_notm}} services, and partner solutions to detect risks and threats before they become a security issue. The service also provides analytics on top of vulnerability data and network activity data.</dd>
+</dl>
+
+
+
 
 ## How it works
 {: #how-it-works}
@@ -69,14 +82,7 @@ Check out the following image to see the way that {{site.data.keyword.security-a
 
 ![{{site.data.keyword.security-advisor_short}} architecture](images/how-it-works.png)
 
-<dl>
-  <dt>Security risk and posture</dt>
-    <dd>Application security remains important with constant news articles announcing a new data breach or hack. Security risks will always be a part of development and although attacks can be difficult to predict, one way to prevent them is by closely monitoring your cloud deployments. For example, the risks can be related to vulnerabilities in your container images that are in use, expiring certificates that can cause outage of your cloud service or application or suspicious clients or servers with a known bad reputation interacting with your clusters.</dd>
-  <dt>Centralized security management</dt>
-    <dd>You can see a consolidated view of all of your {{site.data.keyword.cloud_notm}} security services and integrated partner services. You can select and subscribe to different services from the {{site.data.keyword.cloud_notm}} catalog.</dd>
-  <dt>Threat detection</dt>
-    <dd>{{site.data.keyword.security-advisor_short}} leverages the information that is gathered by IBM X-Force, other {{site.data.keyword.cloud_notm}} services, and partner solutions to detect risks and threats before they become a security issue. The service also provides analytics on top of vulnerability data and network activity data.</dd>
-</dl>
+
 
 
 ### The Findings API
