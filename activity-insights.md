@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-02-07"
+lastupdated: "2019-02-08"
 
 ---
 
@@ -402,4 +402,4 @@ Want to learn more about boolean rules? Check out <a href="https://github.com/Ca
 ## Next steps
 {: #activity-next}
 
-Ready to get started? Check out [Enabling Activity Insights](setup-activity.html)!
+Ready to get started? Check out [Enabling Activity Insights](/docs/services/security-advisor/setup-activity.html)!

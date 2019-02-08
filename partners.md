@@ -2,11 +2,11 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-02-07"
+lastupdated: "2019-02-08"
 
 ---
 
-{:new_window: target="blank"}
+{:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -36,9 +36,9 @@ Before you start integrating partners, be sure that you have the following prere
 ## Integration wizard
 {: #wizard}
 
-As an administrator with administrative rights in both the {{site.data.keyword.cloud_short}} and Partner accounts, you can use the integration wizard to quickly get up and running. The wizard has four basic steps:
+As an administrator with administrative rights in both the {{site.data.keyword.cloud_notm}} and Partner accounts, you can use the integration wizard to quickly get up and running. The wizard has four basic steps:
 
-* Establish trust and associate your {{site.data.keyword.cloud_short}} and partner accounts
+* Establish trust and associate your {{site.data.keyword.cloud_notm}} and partner accounts
 * Copy the required information such as credentials and URLs between the accounts
 * Install partner finding metadata into {{site.data.keyword.security-advisor_short}}
 * Validate the pairing by posting a findings from the partner into {{site.data.keyword.security-advisor_short}}
