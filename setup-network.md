@@ -18,7 +18,6 @@ lastupdated: "2019-02-08"
 {:deprecated: .deprecated}
 {:download: .download}
 
-
 # Network Insights
 {: #setup-network}
 
@@ -27,8 +26,6 @@ With {{site.data.keyword.security-advisor_long}}, you can monitor behavior by us
 
 As of 20 January 2019, Network Insights (beta) replaces the Network Analytics feature. Any analytics cards in your service dashboard are deleted, but the findings remain in the findings database.
 {: important}
-
-
 
 ## Before you begin
 {: #network-prereq}
@@ -48,11 +45,10 @@ If you are currently using the Network Analytics feature, you must [delete the s
     ```
     {: codeblock}     
 - cURL binary and ensure that it's updated. For CentOS and Red Hat, you can update by running: `yum update -y nss curl libcurl`
-- The [IBM Cloud CLI and required plugins](/docs/cli/index.html#overview)
+- The [{{site.data.keyword.cloud_notm}} CLI and required plugins](/docs/cli/index.html#overview)
 - The [Kubernetes CLI (kubectl)](https://kubernetes.io/docs/tasks/tools/install-kubectl/) v1.10.11 or higher
 - The [Kubernetes Helm (package manager)](/docs/containers/cs_integrations.html#helm) v2.9.0 or higher.
 - A standard Kubernetes cluster version v1.10.11 or higher
-
 
 ## Creating a COS bucket
 {: #network-setup-cos}
@@ -65,9 +61,7 @@ By using the {{site.data.keyword.security-advisor_short}} GUI, you can create a 
 
 3. In the prerequisites section, click **Create COS instance and bucket**. Your COS instance and bucket are automatically created for you with the proper naming convention and IAM permissions.
 
-If you have an existing instance of COS and bucket, be sure that it uses the naming convention: `sa.<account_id>.telemetric.<cos_region>`. To allow the service to read the data that is stored in your COS instance, set up [service-to-service authorization](/docs/iam/authorizations.html#serviceauth) by using IBM Cloud IAM. Set `source` to `{{site.data.keyword.security-advisor_short}}` and `target` to your COS instance. Assign the `Reader` IAM role.
-
-
+If you have an existing instance of COS and bucket, be sure that it uses the naming convention: `sa.<account_id>.telemetric.<cos_region>`. To allow the service to read the data that is stored in your COS instance, set up [service-to-service authorization](/docs/iam/authorizations.html#serviceauth) by using {{site.data.keyword.cloud_notm}} IAM. Set `source` to `{{site.data.keyword.security-advisor_short}}` and `target` to your COS instance. Assign the `Reader` IAM role.
 
 ## Installing {{site.data.keyword.security-advisor_short}} components
 {: #network-install-components}
@@ -78,7 +72,6 @@ You can install an agent to collect network flow logs from your Kubernetes clust
 Be sure to repeat the installation for each cluster that you want to monitor.
 {: note}
 
-
 1. Clone the following repository to your local system.
 
   ```
@@ -86,16 +79,16 @@ Be sure to repeat the installation for each cluster that you want to monitor.
   ```
   {: codeblock}
 
-2. Change into the `security-advisor-network-analytics-installer` folder.
+2. Change into the `security-advisor-network-analytics` folder.
 
 3. Extract the `.tar` file by running the following command.
 
   ```
-  tar -xvf security-advisor-network-analytics.tar
+  tar -xvf security-advisor-network-insights.tar
   ```
   {: codeblock}
 
-4. Change into the `security-advisor-network-analytics` folder.
+4. Change into the `security-advisor-network-insights` folder.
 
 5. Log in to the {{site.data.keyword.cloud_notm}} CLI. Follow the prompts in the CLI to complete finish logging in.
 
@@ -215,8 +208,6 @@ If you no longer have a need to use Network Insights, you can delete the service
 
 Be sure to delete the process for each cluster that you want to remove the agents from.
 {: tip}
-
-
 
 ## Uninstalling Network Analytics
 {: #uninstall-analytics}

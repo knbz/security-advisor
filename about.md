@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-02-07"
+lastupdated: "2019-02-08"
 
 ---
 
@@ -59,11 +59,11 @@ The described roles might be performed by a single person or multiple people dep
 ## Architecture
 {: #architecture}
 
-To make maintaining security at a large scale, {{site.data.keyword.security-advisor_short}} is designed as a micro-service on IBM Cloud. The core micro-service that is provided is the findings API which implements the mechanism for IBM Cloud and partner services to send security findings to your service dashboard.
+To make maintaining security at a large scale, {{site.data.keyword.security-advisor_short}} is designed as a micro-service on {{site.data.keyword.cloud_notm}}. The core micro-service that is provided is the findings API which implements the mechanism for {{site.data.keyword.cloud_notm}} and partner services to send security findings to your service dashboard.
 {: shortdesc}
 
 The service receives findings from:
-* Pre-integrated IBM Cloud services like Certificate Manager and Vulnerability Advisor
+* Pre-integrated {{site.data.keyword.cloud_notm}} services like Certificate Manager and Vulnerability Advisor
 * Network Insights
 * Activity Insights
 * Partners like NeuVector and Twistlock
@@ -77,9 +77,9 @@ Check out the following image to see the way that {{site.data.keyword.security-a
   <dt>Security risk and posture</dt>
     <dd>Application security remains important with constant news articles announcing a new data breach or hack. Security risks will always be a part of development and although attacks can be difficult to predict, one way to prevent them is by closely monitoring your cloud deployments. For example, the risks can be related to vulnerabilities in your container images that are in use, expiring certificates that can cause outage of your cloud service or application or suspicious clients or servers with a known bad reputation interacting with your clusters.</dd>
   <dt>Centralized security management</dt>
-    <dd>You can see a consolidated view of all of your IBM Cloud security services and integrated partner services. You can select and subscribe to different services from the IBM Cloud catalog.</dd>
+    <dd>You can see a consolidated view of all of your {{site.data.keyword.cloud_notm}} security services and integrated partner services. You can select and subscribe to different services from the {{site.data.keyword.cloud_notm}} catalog.</dd>
   <dt>Threat detection</dt>
-    <dd>{{site.data.keyword.security-advisor_short}} leverages the information that is gathered by IBM X-Force, other IBM Cloud services, and partner solutions to detect risks and threats before they become a security issue. The service also provides analytics on top of vulnerability data and network activity data.</dd>
+    <dd>{{site.data.keyword.security-advisor_short}} leverages the information that is gathered by IBM X-Force, other {{site.data.keyword.cloud_notm}} services, and partner solutions to detect risks and threats before they become a security issue. The service also provides analytics on top of vulnerability data and network activity data.</dd>
 </dl>
 
 
@@ -91,7 +91,7 @@ Out of the box, the service comes with pre-integrated findings that are flagged 
 
 The {{site.data.keyword.security-advisor_short}} findings API follows [Grafeas](http://grafeas.ng.bluemix.net/ui/) artifact metadata API specification to store, query, and retrieve critical metadata. The findings are reported by security services and tools.
 
-{{site.data.keyword.security-advisor_short}} is enabled by default for all IBM Cloud accounts. As such, you do not need to provision any instance of the service. An instance of {{site.data.keyword.security-advisor_short}} is automatically created on either the initial access of the dashboard or when an initial finding is reported. The service allows 18,000 findings, approximately 200 per day, for each account, in a 90 day period. At the end of the 90 days, the finds are purged. Finding limits are monitored and should the account reach the limit before 90 days, the total findings are reduced to 50% in a FIFO (First in, First Out) model. When the service receives an account delete notification all of the findings related to that account are  purged. You can retrieve all of the findings for your account by using the API and store them yourself for any future use or audit purpose.
+{{site.data.keyword.security-advisor_short}} is enabled by default for all {{site.data.keyword.cloud_notm}} accounts. As such, you do not need to provision any instance of the service. An instance of {{site.data.keyword.security-advisor_short}} is automatically created on either the initial access of the dashboard or when an initial finding is reported. The service allows 18,000 findings, approximately 200 per day, for each account, in a 90 day period. At the end of the 90 days, the finds are purged. Finding limits are monitored and should the account reach the limit before 90 days, the total findings are reduced to 50% in a FIFO (First in, First Out) model. When the service receives an account delete notification all of the findings related to that account are  purged. You can retrieve all of the findings for your account by using the API and store them yourself for any future use or audit purpose.
 
 </br>
 

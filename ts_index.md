@@ -36,12 +36,11 @@ If you have problems while you're working with {{site.data.keyword.security-advi
 You can find help by searching for information or by asking questions through a forum. You can also open a support ticket. When you are using the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.Bluemix_notm}} development teams.
 {: shortdesc}
 
-* If you have technical questions about {{site.data.keyword.security-advisor_short}}, post your question on <a href="http://stackoverflow.com/search?q=ibm+" target="_blank">Stack Overflow <img src="../../icons/launch-glyph.svg" alt="External link icon"></a>. Be sure to include the `security-advisor` and `ibm-cloud` tags.
-* For questions about the service and getting started instructions, use the <a href="https://developer.ibm.com/answers/search.html?f=&type=question&redirect=search%2Fsearch&sort=relevance&q=appid%20[bluemix]" target="_blank">dW Answers <img src="../../icons/launch-glyph.svg" alt="External link icon"></a> forum. Be sure to include the `security-advisor` and `ibm-cloud` tags.
+* If you have technical questions about {{site.data.keyword.security-advisor_short}}, post your question on <a href="http://stackoverflow.com/" target="_blank">Stack Overflow <img src="../../icons/launch-glyph.svg" alt="External link icon"></a>. Be sure to include the `security-advisor` and `ibm-cloud` tags.
+* For questions about the service and getting started instructions, use the <a href="https://developer.ibm.com/" target="_blank">dW Answers <img src="../../icons/launch-glyph.svg" alt="External link icon"></a> forum. Be sure to include the `security-advisor` and `ibm-cloud` tags.
 
 For more information about getting support, see [how do I get the support that I need](/docs/get-support/howtogetsupport.html#getting-customer-support).
 
-</br>
 
 ## You can't create a custom solution occurrence
 {: #ts-custom-occurrence}
@@ -68,7 +67,7 @@ namespaces “security-advisor-insights” is forbidden: User “system:servicea
 {: screen}
 
 {: tsCauses}
-The `kube-system` default service account does not have admin access in your cluster. Prior to installing one of the Built-in Insights offerings, you must install Helm.
+The `kube-system` default service account does not have admin access in your cluster.
 
 {: tsResolve}
-Install Helm by using the [Kubernetes Service integration docs](/docs/containers/cs_integrations.html#helm).
+Prior to installing one of the Built-in Insights offerings, you must install Helm. You can install Helm by using the [Kubernetes Service integration docs](/docs/containers/cs_integrations.html#helm).

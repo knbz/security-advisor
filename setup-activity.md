@@ -44,7 +44,7 @@ To get started with Activity Insights, be sure that you have the following prere
     ```
     {: codeblock}     
 - cURL binary and ensure that it's updated. For CentOS and Red Hat, you can update by running: `yum update -y nss curl libcurl`
-- The [IBM Cloud CLI and required plugins](/docs/cli/index.html#overview)
+- The [{{site.data.keyword.cloud_notm}} CLI and required plugins](/docs/cli/index.html#overview)
 - The [Kubernetes CLI (kubectl)](https://kubernetes.io/docs/tasks/tools/install-kubectl/) v1.10.11 or higher
 - The [Kubernetes Helm (package manager)](/docs/containers/cs_integrations.html#helm) v2.9.0 or higher.
 - A standard Kubernetes cluster version v1.10.11 or higher
@@ -63,13 +63,13 @@ By using the {{site.data.keyword.security-advisor_short}} GUI, you can create a 
 
 4. In the prerequisites section, click **Create COS instance and bucket**. Your COS instance and bucket are automatically created for you with the proper naming convention and IAM permissions. The bucket information is displayed.
 
-If you have an existing instance of COS and bucket be sure that it uses the naming convention: `sa.<account_id>.telemetric.<cos_region>`. To allow the service to read the data that is stored in your COS instance, set up [service-to-service authorization](/docs/iam/authorizations.html#serviceauth) by using IBM Cloud IAM. Set `source` to `{{site.data.keyword.security-advisor_short}}` and `target` to your COS instance. Assign the `Reader` IAM role.
+If you have an existing instance of COS and bucket be sure that it uses the naming convention: `sa.<account_id>.telemetric.<cos_region>`. To allow the service to read the data that is stored in your COS instance, set up [service-to-service authorization](/docs/iam/authorizations.html#serviceauth) by using {{site.data.keyword.cloud_notm}} IAM. Set `source` to `{{site.data.keyword.security-advisor_short}}` and `target` to your COS instance. Assign the `Reader` IAM role.
 
 
 ## Installing {{site.data.keyword.security-advisor_short}} components
 {: #activity-install-components}
 
-You can install an agent to collect audit flow logs from your IBM Cloud account. The logs are stored in your Cloud Object Storage instance where you can enable Activity Insights to analyze your logs for suspicious behavior.
+You can install an agent to collect audit flow logs from your {{site.data.keyword.cloud_notm}} account. The logs are stored in your Cloud Object Storage instance where you can enable Activity Insights to analyze your logs for suspicious behavior.
 {: shortdesc}
 
 1. Clone the following repository to your local system.
@@ -79,7 +79,7 @@ You can install an agent to collect audit flow logs from your IBM Cloud account.
   ```
   {: codeblock}
 
-2. Change into the `security-advisor-activity-insights-installer` folder.
+2. Change into the `security-advisor-activity-insights` folder.
 
 3. Extract the `.tar` file by running the following command.
 
@@ -155,11 +155,11 @@ You can install an agent to collect audit flow logs from your IBM Cloud account.
     </tr>
     <tr>
       <td><code>account_api_key</code></td>
-      <td>The platform API key for your IBM Cloud account.</td>
+      <td>The platform API key for your {{site.data.keyword.cloud_notm}} account.</td>
     </tr>
     <tr>
       <td><code>account_spaces</code></td>
-      <td>A comma separated list of the space GUIDs for your IBM Cloud account.</td>
+      <td>A comma separated list of the space GUIDs for your {{site.data.keyword.cloud_notm}} account.</td>
     </tr>
   </table>
 
@@ -181,7 +181,7 @@ A rule package is a JSON file that contains a list of rules that you want to mon
 
 3. Move the JSON files from *security-advisor-ata-rule-packages* to *IBM.rules/activities*.
 
-4. Navigate to your IBM Cloud Dashboard and select the COS service instance that is associated with Activity Insights.
+4. Navigate to your {{site.data.keyword.cloud_notm}} Dashboard and select the COS service instance that is associated with Activity Insights.
 
 5. On the **Buckets** tab of the service dashboard, select the bucket that is associated with Activity Insights.
 

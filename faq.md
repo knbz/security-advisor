@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-07"
+lastupdated: "2019-02-08"
 
 ---
 
@@ -31,7 +31,7 @@ This FAQ provides answers to common questions about the {{site.data.keyword.secu
 {: #faq-integrations}
 {: faq}
 
-While you can integrate any IBM Cloud or custom security tool, the service comes pre-configured to use IBM Cloud Certificate Manager and Vulnerability Advisor.
+While you can integrate any {{site.data.keyword.cloud_notm}} or custom security tool, the service comes pre-configured to use {{site.data.keyword.cloud_notm}} Certificate Manager and Vulnerability Advisor.
 
 </br>
 

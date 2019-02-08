@@ -21,7 +21,7 @@ lastupdated: "2019-02-08"
 # Activity Insights (preview)
 {: #activity}
 
-With {{site.data.keyword.security-advisor_long}}, you can detect suspicious user activity in your {{site.data.keyword.Bluemix_notm}} account by using IBM Cloud Activity Tracker.
+With {{site.data.keyword.security-advisor_long}}, you can detect suspicious user activity in your {{site.data.keyword.Bluemix_notm}} account by using {{site.data.keyword.cloud_notm}} Activity Tracker.
 {: shortdesc}
 
 
@@ -46,10 +46,10 @@ Check out the following image to see the flow of information.
 ## Collecting data
 {: #activity-data}
 
-Activity Tracker collects events that describe user interactions against IBM Cloud APIs. You can then store the logs in an Object Storage bucket for further analysis.
+Activity Tracker collects events that describe user interactions against {{site.data.keyword.cloud_notm}} APIs. You can then store the logs in an Object Storage bucket for further analysis.
 {: shortdesc}
 
-Activity Tracker collects events that describe user interactions against IBM Cloud APIs.
+Activity Tracker collects events that describe user interactions against {{site.data.keyword.cloud_notm}} APIs.
 
 Collected information includes:
 
