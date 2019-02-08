@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-02-07"
+lastupdated: "2019-02-08"
 
 ---
 
@@ -55,33 +55,6 @@ You have encountered a known issue. Creating the occurrence failed because the n
 {: tsResolve}
 Choose another name for your occurrence.
 
-</br>
-
-## KPI is missing
-{: #ts-kpi-missing}
-
-{: tsSymptoms}
-You do not see any KRI on your **Suspicious server IPs card**.
-
-{: tsCauses}
-You have encountered a known issue.
-
-{: tsResolve}
-This issue cannot be resolved.
-
-</br>
-
-## The latest details do not show
-{: #ts-latest-details}
-
-{: tsSymptoms}
-You do not see the latest details on your **Images with vulnerabilities** card.
-
-{: tsCauses}
-You have encountered a known issue. Occasionally, the information does not update the first time a page loads.
-
-{: tsResolve}
-To resolve the issue, click the refresh icon.
 
 ## Error: namespaces "security-advisor-insights" is forbidden
 {: #ts-error-helm-install}
@@ -98,8 +71,4 @@ namespaces “security-advisor-insights” is forbidden: User “system:servicea
 The `kube-system` default service account does not have admin access in your cluster. Prior to installing one of the Built-in Insights offerings, you must install Helm.
 
 {: tsResolve}
-To resolve the issue, install Helm with TLS enabled. If you're using your workstation to handle the installation of analytics components in multiple clusters and TLS is enabled, be sure that the TLS configurations are current and match the current cluster where you plan to install the components.
-
-  1. Install Helm by using the [Kubernetes Service integration docs](/docs/containers/cs_integrations.html#helm).
-
-  2. [Enable TLS](https://github.com/helm/helm/blob/master/docs/tiller_ssl.md).
+Install Helm by using the [Kubernetes Service integration docs](/docs/containers/cs_integrations.html#helm).
