@@ -44,7 +44,7 @@ To learn more, check out [Taking advantage of pre-integrated services](/docs/ser
 ## Partner integrations
 {: #integrate-partner}
 
-Partner integrations are a way to enhance security for your IBM Cloud deployments by creating a connection between {{site.data.keyword.security-advisor_short}} and other security tools that have worked with IBM to ensure a seamless user experience.
+Partner integrations are a way to enhance security for your {{site.data.keyword.cloud_notm}} deployments by creating a connection between {{site.data.keyword.security-advisor_short}} and other security tools that have worked with IBM to ensure a seamless user experience.
 {: shortdesc}
 
 Current {{site.data.keyword.security-advisor_short}} partners include Neuvector and Twistlock.
@@ -93,7 +93,7 @@ With the Findings API, you can integrate findings from your custom security tool
 ## Built-in Insights
 {: #integrate-insights}
 
-With built-in insights, you can detect potential issues by continuously monitoring your cluster and account logs. By monitoring network traffic and user activity you can help ensure that your IBM Cloud resources remain protected.
+With built-in insights, you can detect potential issues by continuously monitoring your cluster and account logs. By monitoring network traffic and user activity you can help ensure that your {{site.data.keyword.cloud_notm}} resources remain protected.
 {: shortdesc}
 
 **Network Insights (beta)**
@@ -102,4 +102,4 @@ With Network Insights (beta), you can monitor and analyze cluster network commun
 
 **Activity Insights (preview)**
 
-With Activity Insights (preview), you can continuously monitor your IBM Cloud Activity Tracker logs to identify unauthorized or suspicious activity that is made by users or apps by using rule packages. You can use the rules packages that are provided by the service which are based on security best practices or you can customize the rules to fit your needs. To learn more, check out [Activity Insights](/docs/services/security-advisor/activity-insights.html).
+With Activity Insights (preview), you can continuously monitor your {{site.data.keyword.cloud_notm}} Activity Tracker logs to identify unauthorized or suspicious activity that is made by users or apps by using rule packages. You can use the rules packages that are provided by the service which are based on security best practices or you can customize the rules to fit your needs. To learn more, check out [Activity Insights](/docs/services/security-advisor/activity-insights.html).

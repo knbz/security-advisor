@@ -31,7 +31,7 @@ Before you start integrating partners, be sure that you have the following prere
 
 * Ensure that you have an account with the partner that you want to integrate.
 * Ensure that you have the required administrative permissions to generate the integration URL for the Partner service.
-* Ensure that you have IAM administrative access to IBM Cloud and manager access to {{site.data.keyword.security-advisor_short}}.
+* Ensure that you have IAM administrative access to {{site.data.keyword.cloud_notm}} and manager access to {{site.data.keyword.security-advisor_short}}.
 
 ## Integration wizard
 {: #wizard}

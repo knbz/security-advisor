@@ -27,7 +27,7 @@ With {{site.data.keyword.security-advisor_long}}, you can instantly view the sec
 {{site.data.keyword.security-advisor_short}} is a cloud service that is enabled by default for all {{site.data.keyword.Bluemix_notm}} accounts. As such, you do not need to provision any instance of the service.
 {: tip}
 
-The service receives security information from various sources and displays any security alerts or vulnerabilities that require your attention in the service dashboard. Out of the box, there are several pre-populated cards in your dashboard. These findings are from security services in IBM Cloud, but you can also add cards or custom partner solutions so that all of your security tools can be accessed from the same location.
+The service receives security information from various sources and displays any security alerts or vulnerabilities that require your attention in the service dashboard. Out of the box, there are several pre-populated cards in your dashboard. These findings are from security services in {{site.data.keyword.cloud_notm}}, but you can also add cards or custom partner solutions so that all of your security tools can be accessed from the same location.
 
 Through pre-integrated findings, you can monitor:
 
