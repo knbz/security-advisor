@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-02-11"
+lastupdated: "2019-02-12"
 
 ---
 
@@ -73,14 +73,14 @@ The `kube-system` default service account does not have admin access in your clu
 Prior to installing one of the Built-in Insights offerings, you must install Helm. You can install Helm by using the [Kubernetes Service integration docs](/docs/containers/cs_integrations.html#helm).
 
 
-## Known defect: Network Analytics findings do not show
+## Known defect: Some Network Analytics findings do not show
 {: #ts-network-analytics}
 
 {: tsSymptoms}
-When you log in to the Security Advisor dashboard, your Network Analytics findings do not display in your cards.
+When you log in to the Security Advisor dashboard, some of your Network Analytics finding types do not display.
 
 {: tsCauses}
-Network Analytics is configured to work with IBM Cloud Kubernetes Service version 1.10.
+Some Network Analytics findings types are configured to work with IBM Cloud Kubernetes Service version 1.10 or less.
 
 {: tsResolve}
-Verify that that you are not using a Kubernetes Service version above 1.10. If you're using a newer version, try the new [Network Insights](/docs/services/security-advisor/network-insights.html) feature.
+Verify that that you are not using a Kubernetes Service version 1.10 or less. If you're using a newer version of Kubernetes, try using the new [Network Insights](/docs/services/security-advisor/network-insights.html) feature.
