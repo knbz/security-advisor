@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-23"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -19,7 +19,7 @@ lastupdated: "2018-10-23"
 # サービス・アクセスの管理
 {: #service-access}
 
-アカウント所有者は、{{site.data.keyword.Bluemix_notm}} の ID およびアクセス管理 (IAM) を使用して、{{site.data.keyword.security-advisor_long}} のインスタンスへのアクセスを管理できます。ユーザーに応じたアクセス・レベルになるようにアカウント内にポリシーを設定することで、{{site.data.keyword.security-advisor_short}} の各インスタンスを保護できます。
+アカウント所有者は、{{site.data.keyword.Bluemix_notm}} の ID およびアクセス管理 (IAM) を使用して、{{site.data.keyword.security-advisor_long}} のインスタンスへのアクセスを管理できます。 ユーザーに応じたアクセス・レベルになるようにアカウント内にポリシーを設定することで、{{site.data.keyword.security-advisor_short}} の各インスタンスを保護できます。
 {: shortdesc}
 
 IAM について詳しくは、[IAM のアクセス権限](/docs/iam/users_roles.html)を参照してください。
@@ -27,107 +27,99 @@ IAM について詳しくは、[IAM のアクセス権限](/docs/iam/users_roles
 ## {{site.data.keyword.security-advisor_short}} アクセス・ポリシー
 {: #access}
 
-アカウント内の {{site.data.keyword.security-advisor_short}} のサービス・インスタンスにアクセスする各ユーザーに、IAM ユーザー役割を定義したアクセス・ポリシーを割り当てる必要があります。このポリシーにより、その特定のサービス・インスタンスのコンテキストでユーザーが実行できるアクションが決まります。
+アカウント内の {{site.data.keyword.security-advisor_short}} のサービス・インスタンスにアクセスする各ユーザーに、IAM ユーザー役割を定義したアクセス・ポリシーを割り当てる必要があります。 このポリシーにより、その特定のサービス・インスタンスのコンテキストでユーザーが実行できるアクションが決まります。
 {: shortdesc}
 
-アクションは、{{site.data.keyword.Bluemix_notm}} サービスで実行が許可された操作として、そのサービスでカスタマイズおよび定義されます。 そして、アクションは IAM サービスのユーザー役割にマップされます。以下の表では、{{site.data.keyword.security-advisor_short}} のアクションと必要な許可がマップされています。
+アクションは、{{site.data.keyword.Bluemix_notm}} サービスで実行が許可された操作として、そのサービスでカスタマイズおよび定義されます。 そして、アクションは IAM サービスのユーザー役割にマップされます。 以下の表では、{{site.data.keyword.security-advisor_short}} のアクションと必要な許可がマップされています。
 
 <table><caption>どの役割がどのアクションを実行できるか?</caption>
-  <col width="43%">
-  <col width="42%">
-  <col width="5%">
-  <col width="5%">
-  <col width="5%">
+  <col width="40%">
+  <col width="40%">
+  <col width="20%">
   <tr>
     <th>アクション</th>
     <th>説明</th>
-    <th>リーダー</th>
-    <th>ライター</th>
-    <th>管理者</th>
+    <th>役割</th>
   </tr>
   <tr>
     <td><code>security-advisor.findings.read</code></td>
     <td>セキュリティー・レポートの検出事項を表示する。</td>
-    <td><img src="images/confirm.png" width="32" alt="フィーチャーを使用可能" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="フィーチャーを使用可能" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="フィーチャーを使用可能" style="width:32px;" /></td>
+    <td>リーダー</br>ライター</br>管理者</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.write</code></td>
     <td>セキュリティー・レポートの検出事項を生成する。</td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="フィーチャーを使用可能" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="フィーチャーを使用可能" style="width:32px;" /></td>
+    <td>ライター</br>管理者</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.delete</code></td>
     <td>セキュリティー・レポートの検出事項を削除する。</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="フィーチャーを使用可能" style="width:32px;" /></td>
+    <td>管理者</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.update</code></td>
     <td>セキュリティー・レポートの検出事項を編集する。</td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="フィーチャーを使用可能" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="フィーチャーを使用可能" style="width:32px;" /></td>
+    <td>ライター</br>管理者</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.read</code></td>
     <td>メタデータを表示する。</td>
-    <td><img src="images/confirm.png" width="32" alt="フィーチャーを使用可能" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="フィーチャーを使用可能" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="フィーチャーを使用可能" style="width:32px;" /></td>
+    <td>リーダー</br>ライター</br>管理者</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.delete</code></td>
     <td>メタデータを削除する。</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="フィーチャーを使用可能" style="width:32px;" /></td>
+    <td>管理者</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.write</code></td>
     <td>メタデータを生成する。</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="フィーチャーを使用可能" style="width:32px;" /></td>
+    <td>管理者</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.update</code></td>
     <td>メタデータを更新する。</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="フィーチャーを使用可能" style="width:32px;" /></td>
+    <td>管理者</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.read</code></td>
     <td>サービスに追加されたカスタム・ソリューションを読み取る。</td>
-    <td><img src="images/confirm.png" width="32" alt="フィーチャーを使用可能" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="フィーチャーを使用可能" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="フィーチャーを使用可能" style="width:32px;" /></td>
+    <td>リーダー</br>ライター</br>管理者</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.write</code></td>
     <td>サービスにカスタム・ソリューションを追加する。</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="フィーチャーを使用可能" style="width:32px;" /></td>
+    <td>管理者</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.update</code></td>
     <td>サービス内の既存のカスタム・ソリューションを更新する。</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="フィーチャーを使用可能" style="width:32px;" /></td>
+    <td>管理者</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.delete</code></td>
     <td>サービスからカスタム・ソリューションを削除します。</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="フィーチャーを使用可能" style="width:32px;" /></td>
+    <td>管理者</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.read</code></td>
+    <td>サービス・インスタンスに追加したパートナー・ソリューションを表示する。</td>
+    <td>リーダー</br>ライター</br>管理者</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.write</code></td>
+    <td>サービス・インスタンスにパートナー・ソリューションを追加する。</td>
+    <td>管理者</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.update</code></td>
+    <td>サービス・インスタンス内のパートナー・ソリューションを更新する。</td>
+    <td>管理者</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.delete</code></td>
+    <td>サービス・インスタンスからパートナー・ソリューションを削除する。</td>
+    <td>管理者</td>
   </tr>
 </table>
 

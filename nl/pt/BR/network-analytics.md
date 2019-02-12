@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-15"
+lastupdated: "2018-12-14"
 
 ---
 
@@ -10,13 +10,17 @@ lastupdated: "2018-11-15"
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 
-# Network Analytics
+# Network Analytics (beta)
 {: #network-analytics}
 
-Com o {{site.data.keyword.security-advisor_long}}, é possível obter insight sobre a comunicação de rede potencialmente perigosa que está relacionada aos clusters do {{site.data.keyword.containerlong_notm}}. Para visualizar esse recurso de análise de dados de rede, selecione **Visualizar** na[página Introdução](https://console.bluemix.net/security/advisor/#!/overview) do {{site.data.keyword.security-advisor_short}}.
+
+Com o {{site.data.keyword.security-advisor_long}}, é possível obter insight sobre a comunicação de rede potencialmente perigosa que está relacionada aos clusters do {{site.data.keyword.containerlong_notm}}. Para visualizar esse recurso, clique na seta no cartão Network Analytics na seção **Ferramentas do {{site.data.keyword.security-advisor_short}}** da [página **Recursos**](https://cloud.ibm.com/security-advisor#/capabilities).
 {: shortdesc}
 
-O recurso de visualização de análise de dados de rede consiste em três módulos:
+A visualização do Network Analytics está disponível apenas na região Sul dos EUA.
+{: note}
+
+O recurso de visualização Network Analytics consiste em três módulos:
 
 1. **Agente de coleta de fluxo de rede**: instalado no cluster, o agente coleta as informações de rede e as envia para o back-end de análise de dados. Leia mais sobre [coleta de dados](#data-collection).
 

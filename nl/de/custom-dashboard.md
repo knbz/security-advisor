@@ -18,7 +18,8 @@ lastupdated: "2018-11-15"
 # Eigene Sicherheitstools integrieren
 {: #custom}
 
-{{site.data.keyword.security-advisor_long}} stellt eine API für Untersuchungsergebnisse bereit, mit der das Sicherheitsmanagement in IBM Cloud vereinheitlicht und verbessert werden kann. Die APIs für Untersuchungsergebnisse können Sie zur Registrierung neuer Untersuchungsergebnistypen für Ihre Partnerservices und angepassten Sicherheitstools verwenden. Nach der Registrierung der Metadaten können die Tools mithilfe der APIs jedes Vorkommen von Untersuchungsergebnissen als KPIs (Key Performance Indicators, wesentliche Leistungsindikatoren) und als Ereignisse senden. Die Untersuchungsergebnisse werden als separate Karte im  {{site.data.keyword.security-advisor_short}}-Dashboard angezeigt.{: shortdesc}
+{{site.data.keyword.security-advisor_long}} stellt eine API für Untersuchungsergebnisse bereit, mit der das Sicherheitsmanagement in IBM Cloud vereinheitlicht und verbessert werden kann. Die APIs für Untersuchungsergebnisse können Sie zur Registrierung neuer Untersuchungsergebnistypen für Ihre Partnerservices und angepassten Sicherheitstools verwenden. Nach der Registrierung der Metadaten können die Tools mithilfe der APIs jedes Vorkommen von Untersuchungsergebnissen als KPIs (Key Performance Indicators, wesentliche Leistungsindikatoren) und als Ereignisse senden. Die Untersuchungsergebnisse werden als separate Karte im  {{site.data.keyword.security-advisor_short}}-Dashboard angezeigt.
+{: shortdesc}
 
 {{site.data.keyword.security-advisor_short}}-APIs richten sich nach der [Grafeas](https://grafeas.io/) ähnlichen API-Spezifikation für Artefaktmetadaten zum Speichern, Abfragen und Abrufen kritischer Metadaten für die von allen Sicherheitstools und –services gemeldeten Untersuchungsergebnisse.
 
@@ -307,7 +308,7 @@ lastupdated: "2018-11-15"
       ],
       "finding_note_names": [
         "providers/my-custom-tool/notes/my-custom-tool-findings-type"
-            ],
+      ],
       "section": "Meine Sicherheitstools",
       "title": "Untersuchungsergebnisse meines Sicherheitstools"
     },

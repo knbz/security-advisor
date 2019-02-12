@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-23"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -33,101 +33,93 @@ Jedem Benutzer, der auf eine Instanz des {{site.data.keyword.security-advisor_sh
 Die Aktionen werden angepasst und durch den {{site.data.keyword.Bluemix_notm}}-Service als Operationen definiert, deren Ausführung in dem Service zulässig ist. Dann werden die Aktionen IAM-Servicebenutzerrollen zugeordnet. Die folgende Tabelle enthält eine Auflistung der Aktionen und erforderlichen Berechtigungen für {{site.data.keyword.security-advisor_short}}.
 
 <table><caption>Welche Rollen können welche Aktionen ausführen?</caption>
-  <col width="43%">
-  <col width="42%">
-  <col width="5%">
-  <col width="5%">
-  <col width="5%">
+  <col width="40%">
+  <col width="40%">
+  <col width="20%">
   <tr>
     <th>Aktion</th>
     <th>Erläuterung</th>
-    <th>Leseberechtigter</th>
-    <th>Schreibberechtigter</th>
-    <th>Manager</th>
+    <th>Rolle</th>
   </tr>
   <tr>
     <td><code>security-advisor.findings.read</code></td>
     <td>Untersuchungsergebnisse für Sicherheitsbericht anzeigen.</td>
-    <td><img src="images/confirm.png" width="32" alt="Funktion verfügbar" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Funktion verfügbar" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Funktion verfügbar" style="width:32px;" /></td>
+    <td>Leseberechtigter</br>Schreibberechtigter</br>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.write</code></td>
     <td>Untersuchungsergebnisse für Sicherheitsbericht generieren.</td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Funktion verfügbar" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Funktion verfügbar" style="width:32px;" /></td>
+    <td>Schreibberechtigter</br>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.delete</code></td>
     <td>Untersuchungsergebnisse für Sicherheitsbericht löschen.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Funktion verfügbar" style="width:32px;" /></td>
+    <td>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.update</code></td>
     <td>Untersuchungsergebnisse für Sicherheitsbericht bearbeiten.</td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Funktion verfügbar" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Funktion verfügbar" style="width:32px;" /></td>
+    <td>Schreibberechtigter</br>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.read</code></td>
     <td>Metadaten anzeigen.</td>
-    <td><img src="images/confirm.png" width="32" alt="Funktion verfügbar" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Funktion verfügbar" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Funktion verfügbar" style="width:32px;" /></td>
+    <td>Leseberechtigter</br>Schreibberechtigter</br>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.delete</code></td>
     <td>Metadaten löschen.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Funktion verfügbar" style="width:32px;" /></td>
+    <td>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.write</code></td>
     <td>Metadaten generieren.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Funktion verfügbar" style="width:32px;" /></td>
+    <td>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.update</code></td>
     <td>Metadaten aktualisieren.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Funktion verfügbar" style="width:32px;" /></td>
+    <td>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.read</code></td>
     <td>Angepasste Lösungen lesen, die dem Service hinzugefügt wurden.</td>
-    <td><img src="images/confirm.png" width="32" alt="Funktion verfügbar" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Funktion verfügbar" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Funktion verfügbar" style="width:32px;" /></td>
+    <td>Leseberechtigter</br>Schreibberechtigter</br>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.write</code></td>
     <td>Angepasste Lösung zum Service hinzufügen.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Funktion verfügbar" style="width:32px;" /></td>
+    <td>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.update</code></td>
     <td>Vorhandene angepasste Lösung im Service aktualisieren.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Funktion verfügbar" style="width:32px;" /></td>
+    <td>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.delete</code></td>
     <td>Angepasste Lösung aus dem Service löschen.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Funktion verfügbar" style="width:32px;" /></td>
+    <td>Manager</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.read</code></td>
+    <td>Partnerlösungen anzeigen, die Sie Ihrer Serviceinstanz hinzugefügt haben.</td>
+    <td>Leseberechtigter</br>Schreibberechtigter</br>Manager</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.write</code></td>
+    <td>Partnerlösung zu Ihrer Serviceinstanz hinzufügen.</td>
+    <td>Manager</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.update</code></td>
+    <td>Partnerlösung in Ihrer Serviceinstanz aktualisieren.</td>
+    <td>Manager</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.delete</code></td>
+    <td>Partnerlösung aus Ihrer Serviceinstanz löschen.</td>
+    <td>Manager</td>
   </tr>
 </table>
 
@@ -137,7 +129,7 @@ Die Aktionen werden angepasst und durch den {{site.data.keyword.Bluemix_notm}}-S
 Welche Entsprechungen dieser Rollen gibt es in der API? Anhand der folgenden Tabelle können Sie feststellen, wie die Serviceaktionen der API zugeordnet werden.
 
 
-| Methode| Endpunkt                                                                  |  Serviceaktion                   |
+| Methode | Endpunkt                                                                  |  Serviceaktion                  |
 |--------|---------------------------------------------------------------------------|----------------------------------|
 | POST   | /v1/{account_id}/graph                                                    | security-advisor.findings.read   |
 | POST   | /v1/{account_id}/providers/{provider_id}/notes                            | security-advisor.metadata.write  |

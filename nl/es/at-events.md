@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-11"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -82,5 +82,37 @@ Consulte la tabla siguiente para ver una lista de los sucesos que se envían a {
   <tr>
     <td><code>security-advisor.findings.update</code></td>
     <td>Actualizar una aparición.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.read</code></td>
+    <td>Leer soluciones personalizadas que se han añadido al servicio.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.write</code></td>
+    <td>Añada una solución personalizada al servicio.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.update</code></td>
+    <td>Actualizar una solución personalizada existente dentro del servicio.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.delete</code></td>
+    <td>Suprimir una solución personalizada del servicio.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.read</code></td>
+    <td>Visualizar las soluciones de socio que ha añadido a la instancia de servicio.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.write</code></td>
+    <td>Añadir una solución de socio a la instancia de servicio.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.update</code></td>
+    <td>Actualizar una solución de socio en la instancia de servicio.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.delete</code></td>
+    <td>Suprimir una solución de socio de la instancia de servicio.</td>
   </tr>
 </table>

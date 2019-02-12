@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-11"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -28,10 +28,10 @@ lastupdated: "2018-10-11"
 ## 이벤트 확인 위치
 {: #monitor}
 
-이벤트는 이벤트가 생성되는 {{site.data.keyword.Bluemix_notm}} 지역에서 사용 가능한 {{site.data.keyword.cloudaccesstrailshort}} **계정 도메인**에 사용할 수 있습니다. 
+이벤트는 이벤트가 생성되는 {{site.data.keyword.Bluemix_notm}} 지역에서 사용 가능한 {{site.data.keyword.cloudaccesstrailshort}} **계정 도메인**에 사용할 수 있습니다.
 
 1. {{site.data.keyword.Bluemix_notm}} 계정에 로그인하십시오.
-2. 카탈로그의 {{site.data.keyword.security-advisor_long}}의 인스턴스와 동일한 계정에서 {{site.data.keyword.cloudaccesstrailshort}} 서비스의 인스턴스를 프로비저닝하십시오. 
+2. 카탈로그의 {{site.data.keyword.security-advisor_long}}의 인스턴스와 동일한 계정에서 {{site.data.keyword.cloudaccesstrailshort}} 서비스의 인스턴스를 프로비저닝하십시오.
 3. {{site.data.keyword.cloudaccesstrailshort}} 대시보드의 **관리** 탭에서 **Kibana에서 보기**를 클릭하십시오.
 4. 로그를 보려는 시간 프레임을 설정하십시오. 기본값은 15분입니다.
 5. **사용 가능한 필드** 목록에서 **유형**을 클릭하십시오. **활동 트래커**의 돋보기 아이콘을 클릭하여 서비스로 추적되는 항목으로만 로그를 제한하십시오.
@@ -82,5 +82,37 @@ lastupdated: "2018-10-11"
   <tr>
     <td><code>security-advisor.findings.update</code></td>
     <td>발생을 업데이트합니다.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.read</code></td>
+    <td>서비스에 추가된 사용자 정의 솔루션을 읽습니다.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.write</code></td>
+    <td>서비스에 사용자 정의 솔루션을 추가합니다.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.update</code></td>
+    <td>서비스 내 기존 사용자 정의 솔루션을 업데이트합니다.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.delete</code></td>
+    <td>서비스에서 사용자 정의 솔루션을 삭제합니다.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.read</code></td>
+    <td>서비스 인스턴스에 추가한 파트너 솔루션을 확인합니다.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.write</code></td>
+    <td>서비스 인스턴스에 파트너 솔루션을 추가합니다.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.update</code></td>
+    <td>서비스 인스턴스에서 파트너 솔루션을 업데이트합니다.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.delete</code></td>
+    <td>서비스 인스턴스에서 파트너 솔루션을 삭제합니다.</td>
   </tr>
 </table>

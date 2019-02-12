@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-15"
+lastupdated: "2018-12-14"
 
 ---
 
@@ -10,10 +10,15 @@ lastupdated: "2018-11-15"
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 
-# Network Analytics
+# Network Analytics (Betaversion)
 {: #network-analytics}
 
-Mit {{site.data.keyword.security-advisor_long}} können Sie Einblick in möglicherweise gefährliche Netzkommunikation im Zusammenhang mit Ihren {{site.data.keyword.containerlong_notm}}-Clustern gewinnen. Für eine Vorschau dieser Network Analytics-Funktionalität wählen Sie **Vorschau** auf der [Einführungsseite](https://console.bluemix.net/security/advisor/#!/overview) von {{site.data.keyword.security-advisor_short}} aus.{: shortdesc}
+
+Mit {{site.data.keyword.security-advisor_long}} können Sie Einblick in möglicherweise gefährliche Netzkommunikation im Zusammenhang mit Ihren {{site.data.keyword.containerlong_notm}}-Clustern gewinnen. Zum Anzeigen einer Vorschau dieser Funktion klicken Sie auf den Pfeil, der sich auf der Network Analytics-Karte im Abschnitt für **{{site.data.keyword.security-advisor_short}}-Tools** auf der Seite [**Funktionalität**](https://cloud.ibm.com/security-advisor#/capabilities) befindet.
+{: shortdesc}
+
+Die Vorschau von Network Analytics ist nur im Süden der USA verfügbar (Region 'US-South').
+{: note}
 
 Die Network Analytics-Vorschaufunktion besteht aus drei Modulen:
 

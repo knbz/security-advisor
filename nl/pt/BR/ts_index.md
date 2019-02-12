@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-19"
+lastupdated: "2018-12-12"
 
 ---
 
@@ -52,20 +52,6 @@ Você encontrou um problema conhecido. A criação da ocorrência falhou porque 
 
 {: tsResolve}
 Escolha outro nome para a ocorrência.
-
-</br>
-
-## O KPI está ausente
-{: #kpi-missing}
-
-{: tsSymptoms}
-Você não vê nenhum KPI no **Cartão de IPs do servidor suspeitos**.
-
-{: tsCauses}
-Você encontrou um problema conhecido.
-
-{: tsResolve}
-Esse problema não pode ser resolvido.
 
 </br>
 

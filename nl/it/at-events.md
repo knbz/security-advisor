@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-11"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -32,10 +32,10 @@ Gli eventi sono disponibili nel **dominio dell'account** {{site.data.keyword.clo
 
 1. Accedi al tuo account {{site.data.keyword.Bluemix_notm}}.
 2. Dal catalogo, esegui il provisioning di un'istanza del servizio {{site.data.keyword.cloudaccesstrailshort}} nello stesso account della tua istanza di {{site.data.keyword.security-advisor_long}}.
-3. Sulla scheda **Gestisci** del dashboard {{site.data.keyword.cloudaccesstrailshort}}, fai clic su **Visualizza in Kibana**. 
-4. Imposta l'intervallo di tempo per il quale desideri visualizzare i log. Il valore predefinito è 15 minuti. 
-5. Nell'elenco **Campi disponibili**, fai clic su **type**. Fai clic sull'icona della lente di ingrandimento del **Programma di traccia dell'attività** per limitare i log a quelli tracciati dal servizio. 
-6. Puoi utilizzare gli altri campi disponibili per restringere la tua ricerca. 
+3. Sulla scheda **Gestisci** del dashboard {{site.data.keyword.cloudaccesstrailshort}}, fai clic su **Visualizza in Kibana**.
+4. Imposta l'intervallo di tempo per il quale desideri visualizzare i log. Il valore predefinito è 15 minuti.
+5. Nell'elenco **Campi disponibili**, fai clic su **type**. Fai clic sull'icona della lente di ingrandimento del **Programma di traccia dell'attività** per limitare i log a quelli tracciati dal servizio.
+6. Puoi utilizzare gli altri campi disponibili per restringere la tua ricerca.
 
 Per utenti diversi dal proprietario dell'account, per visualizzare i log, devi utilizzare il piano premium. Per consentire ad altri utenti di visualizzare gli eventi, consulta [Concessione di autorizzazioni per visualizzare gli eventi di account](/docs/services/cloud-activity-tracker/how-to/grant_permissions.html#grant_permissions).
 {: tip}
@@ -48,8 +48,8 @@ Consulta la seguente tabella per un elenco di eventi inviati a {{site.data.keywo
 
 <table>
   <tr>
-    <th>Azione </th>
-    <th>Descrizione </th>
+    <th>Azione</th>
+    <th>Descrizione</th>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.read</code></td>
@@ -82,5 +82,37 @@ Consulta la seguente tabella per un elenco di eventi inviati a {{site.data.keywo
   <tr>
     <td><code>security-advisor.findings.update</code></td>
     <td>Aggiorna una ricorrenza.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.read</code></td>
+    <td>Leggi le soluzioni personalizzate che sono state aggiunte al servizio.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.write</code></td>
+    <td>Aggiungi una soluzione personalizzata al servizio.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.update</code></td>
+    <td>Aggiorna una soluzione personalizzata esistente all'interno del servizio.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.delete</code></td>
+    <td>Elimina una soluzione personalizzata dal servizio.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.read</code></td>
+    <td>Visualizza le soluzioni partner che hai aggiunto alla tua istanza del servizio.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.write</code></td>
+    <td>Aggiungi una soluzione partner alla tua istanza del servizio.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.update</code></td>
+    <td>Aggiorna una soluzione partner nella tua istanza del servizio.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.delete</code></td>
+    <td>Elimina una soluzione partner dalla tua istanza del servizio.</td>
   </tr>
 </table>

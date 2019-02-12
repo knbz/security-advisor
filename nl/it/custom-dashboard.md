@@ -336,7 +336,7 @@ Le API {{site.data.keyword.security-advisor_short}} seguono [Grafeas](https://gr
   ```
   {: codeblock}
 
-4. Passa la tuo dashboard del servizio per visualizzare la scheda che hai creato.
+4. Passa al tuo dashboard del servizio per visualizzare la scheda che hai creato.
 
 ## Scenario di esempio
 {: #example}

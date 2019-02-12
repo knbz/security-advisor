@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-23"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -24,7 +24,7 @@ Come proprietario di un account, puoi gestire l'accesso alle istanze di {{site.d
 
 Per ulteriori informazioni su IAM, consulta [Accesso IAM](/docs/iam/users_roles.html).
 
-## Politiche di accesso {{site.data.keyword.security-advisor_short}} 
+## Politiche di accesso {{site.data.keyword.security-advisor_short}}
 {: #access}
 
 Ad ogni utente che accede a un'istanza del servizio {{site.data.keyword.security-advisor_short}} nel tuo account deve essere assegnata una politica di accesso con un ruolo utente IAM definito. La politica determina le azioni che un utente può eseguire all'interno del contesto di quella specifica istanza del servizio.
@@ -33,101 +33,93 @@ Ad ogni utente che accede a un'istanza del servizio {{site.data.keyword.security
 Le azioni sono personalizzate e definite dal servizio {{site.data.keyword.Bluemix_notm}} come operazioni consentite nel servizio. Le azioni sono poi associate ai ruoli utente del servizio IAM. Nella seguente tabella, le azioni e le autorizzazioni richieste per {{site.data.keyword.security-advisor_short}} sono associate.
 
 <table><caption>Quali ruoli possono eseguire quali azioni?</caption>
-  <col width="43%">
-  <col width="42%">
-  <col width="5%">
-  <col width="5%">
-  <col width="5%">
+  <col width="40%">
+  <col width="40%">
+  <col width="20%">
   <tr>
-    <th>Azione </th>
+    <th>Azione</th>
     <th>Spiegazione</th>
-    <th>Lettore</th>
-    <th>Scrittore</th>
-    <th>Gestore </th>
+    <th>Ruolo</th>
   </tr>
   <tr>
     <td><code>security-advisor.findings.read</code></td>
     <td>Visualizza le ricerche del report di sicurezza.</td>
-    <td><img src="images/confirm.png" width="32" alt="Funzione disponibile" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Funzione disponibile" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Funzione disponibile" style="width:32px;" /></td>
+    <td>Lettore</br>Scrittore</br>Gestore</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.write</code></td>
     <td>Genera le ricerche del report di sicurezza.</td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Funzione disponibile" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Funzione disponibile" style="width:32px;" /></td>
+    <td>Scrittore</br>Gestore</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.delete</code></td>
     <td>Elimina le ricerche del report di sicurezza.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Funzione disponibile" style="width:32px;" /></td>
+    <td>Gestore</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.update</code></td>
     <td>Modifica le ricerche del report di sicurezza.</td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Funzione disponibile" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Funzione disponibile" style="width:32px;" /></td>
+    <td>Scrittore</br>Gestore</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.read</code></td>
     <td>Visualizza i metadati.</td>
-    <td><img src="images/confirm.png" width="32" alt="Funzione disponibile" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Funzione disponibile" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Funzione disponibile" style="width:32px;" /></td>
+    <td>Lettore</br>Scrittore</br>Gestore</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.delete</code></td>
     <td>Elimina i metadati.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Funzione disponibile" style="width:32px;" /></td>
+    <td>Gestore</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.write</code></td>
     <td>Genera i metadati.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Funzione disponibile" style="width:32px;" /></td>
+    <td>Gestore</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.update</code></td>
     <td>Aggiorna i metadati.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Funzione disponibile" style="width:32px;" /></td>
+    <td>Gestore</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.read</code></td>
     <td>Leggi le soluzioni personalizzate che sono state aggiunte al servizio.</td>
-    <td><img src="images/confirm.png" width="32" alt="Funzione disponibile" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Funzione disponibile" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Funzione disponibile" style="width:32px;" /></td>
+    <td>Lettore</br>Scrittore</br>Gestore</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.write</code></td>
     <td>Aggiungi una soluzione personalizzata al servizio.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Funzione disponibile" style="width:32px;" /></td>
+    <td>Gestore</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.update</code></td>
     <td>Aggiorna una soluzione personalizzata esistente all'interno del servizio.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Funzione disponibile" style="width:32px;" /></td>
+    <td>Gestore</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.delete</code></td>
     <td>Elimina una soluzione personalizzata dal servizio.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Funzione disponibile" style="width:32px;" /></td>
+    <td>Gestore</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.read</code></td>
+    <td>Visualizza le soluzioni partner che hai aggiunto alla tua istanza del servizio.</td>
+    <td>Lettore</br>Scrittore</br>Gestore</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.write</code></td>
+    <td>Aggiungi una soluzione partner alla tua istanza del servizio.</td>
+    <td>Gestore</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.update</code></td>
+    <td>Aggiorna una soluzione partner nella tua istanza del servizio.</td>
+    <td>Gestore</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.delete</code></td>
+    <td>Elimina una soluzione partner dalla tua istanza del servizio.</td>
+    <td>Gestore</td>
   </tr>
 </table>
 

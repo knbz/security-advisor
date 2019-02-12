@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-11"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -82,5 +82,37 @@ Consultez le tableau ci-dessous pour la liste des événements qui sont envoyés
   <tr>
     <td><code>security-advisor.findings.update</code></td>
     <td>Mettre à jour une occurrence.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.read</code></td>
+    <td>Lire les solutions personnalisés qui ont été ajoutées au service.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.write</code></td>
+    <td>Ajouter une solution personnalisée au service.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.update</code></td>
+    <td>Mettre à jour une solution personnalisée existante au sein du service.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.delete</code></td>
+    <td>Supprimer une solution personnalisée du service.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.read</code></td>
+    <td>Afficher les solutions partenaires que vous avez ajoutées à votre instance de service.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.write</code></td>
+    <td>Ajouter une solution partenaire à votre instance de service.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.update</code></td>
+    <td>Mettre à jour une solution partenaire dans votre instance de service.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.delete</code></td>
+    <td>Supprimer une solution partenaire de votre instance de service.</td>
   </tr>
 </table>

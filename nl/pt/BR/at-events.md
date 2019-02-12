@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-11"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -82,5 +82,37 @@ Confira a tabela a seguir para obter uma lista dos eventos enviados para o {{sit
   <tr>
     <td><code>security-advisor.findings.update</code></td>
     <td>Atualizar uma ocorrência.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.read</code></td>
+    <td>Ler as soluções customizadas que foram incluídas no serviço.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.write</code></td>
+    <td>Incluir uma solução customizada no serviço.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.update</code></td>
+    <td>Atualizar uma solução customizada existente dentro do serviço.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.delete</code></td>
+    <td>Excluir uma solução customizada do serviço.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.read</code></td>
+    <td>Visualizar as soluções de parceiros incluídas na instância de serviço.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.write</code></td>
+    <td>Incluir uma solução de parceiro na instância de serviço.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.update</code></td>
+    <td>Atualizar uma solução de parceiro na instância de serviço.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.delete</code></td>
+    <td>Excluir uma solução de parceiro da instância de serviço.</td>
   </tr>
 </table>

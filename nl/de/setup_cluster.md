@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-15"
+lastupdated: "2018-12-14"
 
 ---
 
@@ -14,142 +14,168 @@ lastupdated: "2018-11-15"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:note: .note}
 
-# Überwachung verdächtiger Clients und Server-IP-Adressen für einen Kubernetes-Cluster einrichten
+# Network Analytics (Betaversion) konfigurieren
 {: #cluster_install}
 
-Zum Testen des Network Analytics-Features installieren Sie die {{site.data.keyword.security-advisor_short}}-Komponenten in einem Cluster, der in {{site.data.keyword.containerlong_notm}} bereitgestellt wurde. Daraufhin werden Netzerkenntnisse und -alerts im {{site.data.keyword.security-advisor_short}}-Dashboard angezeigt.
-{:shortdesc}
+Sie können die Funktion für die Netzanalyse (Network Analytics) des Service ausprobieren, indem Sie einen {{site.data.keyword.security-advisor_short}} in einem {{site.data.keyword.containerlong_notm}}-Cluster installieren.
+{: shortdesc}
 
-Dieses Feature von {{site.data.keyword.security-advisor_short}} ist eine Technologievorschau.
+Network Analytics ist eine Vorschaufunktion, die nur in einer Region im Süden der USA verfügbar ist (Region 'US-South').
+{: note}
+
+Wenn Sie {{site.data.keyword.security-advisor_short}} in einem Cluster konfigurieren, werden folgende Aktionen ausgeführt:
+
+* Clustermetadaten werden erfasst und für die Installation der folgenden Elemente verwendet: IP-Adressen des Workerknotens, Teilnetze, Ingress-URL und -IP-Adresse, Cluster-CRN, Log Analysis-Endpunkt, Bereich und Token.
+* In Ihrem {{site.data.keyword.Bluemix_notm}}-Konto werden eine IAM-Service-ID und ein IAM-API-Schlüssel (IAM – Identity and Access Management) generiert, sodass Ihr Cluster von {{site.data.keyword.security-advisor_short}} identifiziert werden kann.
+* Die {{site.data.keyword.security-advisor_short}}-Komponenten werden im Namensbereich **monitoring** in Ihrem Cluster bereitgestellt.
+
+Wenn Sie über mehrere Cluster verfügen, müssen Sie sicherstellen, dass die Installation für jeden einzelnen der Cluster ausgeführt wird, damit für jeden Cluster Service-IDs und API-Schlüssel generiert werden.
+
+
+Weitere Informationen zur Funktionsweise der Arbeit von Network Analytics in {{site.data.keyword.security-advisor_short}} erhalten.[Dann schauen Sie sich die Dokumentation an](network-analytics.html).
 {: tip}
 
-Möchten Sie mehr über Network Analytics in {{site.data.keyword.security-advisor_short}} erfahren? [Dann schauen Sie sich die Dokumentation an](network-analytics.html).
-
+</br>
 
 ## Voraussetzungen
 {: #cluster_prereqs}
 
-Vorbereitende Schritte:
+Stellen Sie sicher, dass vor dem Start folgende Voraussetzungen erfüllt sind.
+{: shortdesc}
 
-* Mac-, Linux- oder Windows 10-Entwicklerworkstation
-  * Windows 10: [Linux-Subsystemfeature aktivieren](https://win10faq.com/install-run-ubuntu-bash-windows-10/)
+Der Kontoeigner muss die Installationsschritte ausführen. Wenn nicht Sie der Eigner des {{site.data.keyword.Bluemix_notm}}-Kontos sind, müssen Sie diesen ermitteln und sich zur Unterstützung der Installation an ihn wenden.
+{: tip}
+
+Stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
+
+* Mac-, Linux- oder [Windows 10](https://win10faq.com/install-run-ubuntu-bash-windows-10/)-Entwicklerworkstation.
 * [Node.js](https://nodejs.org/en/) 6 oder höher
 * [jQ](https://stedolan.github.io/jq/download/)
-* [{{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle](https://console.bluemix.net/docs/cli/reference/bluemix_cli/get_started.html#getting-started) Version 0.6.5 oder höher
-* [{{site.data.keyword.containerlong_notm}}-CLI-Plug-in](https://console.bluemix.net/docs/containers/cs_cli_install.html#cs_cli_install)
-* [Kubernetes-CLI (kubectl)](https://kubernetes.io/docs/tasks/tools/install-kubectl/) Version 1.7 oder höher
-* [Kubernetes Helm (Paketmanager)](https://docs.helm.sh/using_helm/#from-script)
-* [Ein freier oder Standard-Kubernetes-Cluster](https://console.bluemix.net/containers-kubernetes/catalog/cluster) in der Region **US South** (Vereinigte Staaten, Süden) von {{site.data.keyword.Bluemix_notm}}
-* Geben Sie den {{site.data.keyword.Bluemix_notm}}-Kontoeigner an, der die Installationsschritte ausführen soll.
+* Die erforderlichen CLIs und Plug-ins in der mindestens erforderlichen Version:
+  * [{{site.data.keyword.Bluemix_notm}}-CLI](https://console.bluemix.net/docs/cli/reference/bluemix_cli/get_started.html#getting-started) Version 0.6.5 oder höher
+  * [Kubernetes-CLI (kubectl)](https://kubernetes.io/docs/tasks/tools/install-kubectl/) Version 1.7 oder höher</br> Das Installationsprogramm wurde mit der standardmäßigen und stabilen Version `v1.10.11` von {{site.data.keyword.containerlong_notm}} getestet. Das Installationsprogramm wurde nicht mit `v1.11.5` oder der neuesten Version `v1.12.3` getestet.
+  * [{{site.data.keyword.containerlong_notm}}-Plug-in](https://console.bluemix.net/docs/containers/cs_cli_install.html#cs_cli_install)
+  * [Kubernetes Helm (Paketmanager)](https://docs.helm.sh/using_helm/#from-script)
+* [Ein kostenloser oder standardmäßiger Kubernetes-Cluster](https://console.bluemix.net/containers-kubernetes/catalog/cluster) in der {{site.data.keyword.Bluemix_notm}}-Region **US-South**. 
 
-## Beim Cluster anmelden
+Benötigen Sie Hilfe bei der Erstellung oder Konfiguration eines Clusters? Versuchen Sie, dieses [Lernprogramm](/docs/containers/cs_tutorials.html#cs_cluster_tutorial) durchzuarbeiten.
+{: tip}
+
+</br>
+
+## Helm einrichten
 {: #login}
 
 1.  Melden Sie sich bei {{site.data.keyword.Bluemix_notm}} an.
 
-    ```
-    ibmcloud login -a https://api.ng.bluemix.net --sso
-    ```
-    {: pre}
+  ```
+  ibmcloud login -a https://api.ng.bluemix.net --sso
+  ```
+  {: pre}
 
-2.  Listen Sie alle Cluster im Konto auf, um den Namen des Clusters abzurufen.
+2.  Listen Sie alle Cluster im Konto auf, um den Namen des Clusters abzurufen, mit dem Sie arbeiten möchten.
 
-    ```
-    ibmcloud ks clusters
-    ```
-    {: pre}
+  ```
+  ibmcloud ks clusters
+  ```
+  {: pre}
 
 3.  Geben Sie den Cluster in der Befehlszeilenschnittstelle als Ziel an.
+
+  1. Führen Sie zum Konfigurieren des Clusters folgenden Befehl aus. Die Ausgabe benötigen Sie im nächsten Schritt.
 
     ```
     ibmcloud ks cluster-config <Clustername-oder--ID>
     ```
     {: pre}
 
-4.  Definieren Sie den Pfad zur lokalen Kubernetes-Konfigurationsdatei als Umgebungsvariable. Beispiel:
+  2. Verwenden Sie die Ausgabe des vorherigen Befehls, um den Pfad zur lokalen Kubernetes-Konfigurationsdatei als Umgebungsvariable festzulegen.
+
+  Beispiel:
 
     ```
     export KUBECONFIG=/Users/<Benutzername>/.bluemix/plugins/container-service/clusters/<Clustername>/kube-config-prod-dal10-<Clustername>.yml
     ```
-    {: pre}
+    {: screen}
 
-5.  Richten Sie Helm im Cluster ein.
+4.  Installieren Sie Tiller in Ihrem Cluster, damit Sie mit Helm-Diagrammen arbeiten können.
 
-    ```
-    helm init
-    ```
-    {: pre}
+  ```
+  helm init
+  ```
+  {: pre}
 
-Lassen Sie dieses Befehlszeilenfenster geöffnet und fahren Sie fort.{: tip}
-
-## Security Advisor-Komponenten installieren
-{: #cluster_components}
-
-Das Installationsprogramm muss vom {{site.data.keyword.Bluemix_notm}}-Kontoeigner ausgeführt werden.
+Stellen Sie sicher, dass dieses Befehlszeilenfenster geöffnet bleibt, wenn Sie fortfahren.
 {: tip}
 
-Bei der Konfiguration von {{site.data.keyword.security-advisor_short}} finden die folgenden Aktionen statt:
-1. Clustermetadaten werden erfasst und für die Installation der folgenden Elemente verwendet: IP-Adressen des Workerknotens, Teilnetze, Ingress-URL und -IP-Adresse, Cluster-CRN, Log Analysis-Endpunkt, Bereich und Token.
-2. Eine IAM-Service-ID und ein IAM-API-Schlüssel werden in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto erstellt, so dass Ihr Cluster von Security Advisor identifiziert werden kann. Wenn Sie über mehrere Cluster verfügen, führen Sie die Installation für jeden Cluster aus, um Service-IDs und API-Schlüssel für jeden Cluster zu generieren.
-3. Die {{site.data.keyword.security-advisor_short}}-Komponenten werden im Namensbereich **monitoring** in Ihrem Cluster bereitgestellt.
+</br>
 
-<br/>
-Gehen Sie wie folgt vor, um die {{site.data.keyword.security-advisor_short}}-Komponenten zu installieren:
+## {{site.data.keyword.security-advisor_short}}-Komponenten installieren
+{: #cluster_components}
 
-1.  Laden Sie das [Installationspaket](https://github.com/IBM-Bluemix-Docs/security-advisor/blob/master/installation.tar.gz?raw=true) herunter und extrahieren Sie es.
-2.  Navigieren Sie in demselben Befehlszeilenfenster wie im vorherigen Abschnitt zu der Position des extrahierten Archivs und installieren Sie das Paket.
+Wenn Ihr Cluster für die Arbeit mit Helm konfiguriert ist, können Sie {{site.data.keyword.security-advisor_short}}-Komponenten installieren.
+{: shortdesc}
 
-    ```
-    ./install.sh
-    ```
-    {: pre}
 
-3.  Überprüfen Sie im [{{site.data.keyword.security-advisor_short}}-Dashboard](https://console.bluemix.net/security-advisor/#/dashboard), ob die Komponenten ordnungsgemäß installiert wurden.
+Zum Installieren der Komponenten fahren Sie in demselben Befehlszeilenschnittstellenfenster fort und führen Sie folgende Schritte aus:
+
+1. Laden Sie das [Installationspaket](https://github.com/IBM-Bluemix-Docs/security-advisor/blob/master/installation.tar.gz?raw=true) herunter und extrahieren Sie es.
+2. Fahren Sie in demselben Befehlszeilenschnittstellenfenster wie im vorherigen Abschnitt fort, navigieren Sie zu der Position des extrahierten Archivs und installieren Sie das Paket.
+
+  ```
+  ./install.sh
+  ```
+  {: pre}
+
+3.  Überprüfen Sie die ordnungsgemäße Installation der Komponenten im [{{site.data.keyword.security-advisor_short}}-Dashboard](https://console.bluemix.net/security-advisor/#/dashboard).
+
+</br>
 
 ## {{site.data.keyword.security-advisor_short}}-Komponenten entfernen
 {: #cluster_uninstall}
 
 Entfernen Sie die {{site.data.keyword.security-advisor_short}}-Komponenten aus Ihrem Cluster sowie die Service-ID und den API-Schlüssel aus Ihrem {{site.data.keyword.Bluemix_notm}}-Konto.
 
-1.  Melden Sie sich bei {{site.data.keyword.Bluemix_notm}} an.
+1. Melden Sie sich bei {{site.data.keyword.Bluemix_notm}} an.
 
-    ```
-    ibmcloud login -a https://api.ng.bluemix.net --sso
-    ```
-    {: pre}
+  ```
+  ibmcloud login -a https://api.ng.bluemix.net --sso
+  ```
+  {: pre}
 
-2.  Listen Sie alle Cluster im Konto auf, um den Namen des Clusters abzurufen.
+2. Listen Sie alle Cluster im Konto auf, um den Namen des Clusters abzurufen.
 
-    ```
-    ibmcloud ks clusters
-    ```
-    {: pre}
+  ```
+  ibmcloud ks clusters
+  ```
+  {: pre}
 
-3.  Geben Sie den Cluster in der Befehlszeilenschnittstelle als Ziel an.
+3. Geben Sie den Cluster in der Befehlszeilenschnittstelle als Ziel an.
 
-    ```
-    ibmcloud ks cluster-config <Clustername-oder--ID>
-    ```
-    {: pre}
+  ```
+  ibmcloud ks cluster-config <Clustername-oder--ID>
+  ```
+  {: pre}
 
-4.  Definieren Sie den Pfad zur lokalen Kubernetes-Konfigurationsdatei als Umgebungsvariable. Beispiel:
+4. Definieren Sie den Pfad zur lokalen Kubernetes-Konfigurationsdatei als Umgebungsvariable. Beispiel:
 
-    ```
-    export KUBECONFIG=/Users/<Benutzername>/.bluemix/plugins/container-service/clusters/<Clustername>/kube-config-prod-dal10-<Clustername>.yml
-    ```
-    {: pre}
+  ```
+  export KUBECONFIG=/Users/<Benutzername>/.bluemix/plugins/container-service/clusters/<Clustername>/kube-config-prod-dal10-<Clustername>.yml
+  ```
+  {: pre}
 
-5.  Navigieren Sie zu der Position des extrahierten Archivs und führen Sie das Deinstallationsscript aus.
+5. Navigieren Sie zu der Position des extrahierten Archivs und führen Sie das Deinstallationsscript aus.
 
-    ```
-    ./uninstall.sh
-    ```
-    {: pre}
+  ```
+  ./uninstall.sh
+  ```
+  {: pre}
 
-6.  Deinstallieren Sie wahlweise die Helm-Serverkomponente im Cluster.
+6. Deinstallieren Sie wahlweise die Helm-Serverkomponente im Cluster.
 
-    ```
-    helm reset
-    ```
-    {: pre}
+  ```
+  helm reset
+  ```
+  {: pre}

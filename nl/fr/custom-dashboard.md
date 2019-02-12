@@ -89,11 +89,11 @@ Les API {{site.data.keyword.security-advisor_short}} suivent la spécification d
       </tr>
       <tr>
         <td><code>reported_by</code><ul><li><code>id</code></li><li><code>title</code></li></ul></td>
-        <td></br><ul><li>ID de l'outil de sécurité qui a signalé le résultat. </li><li>Titre de l'outil de sécurité qui a signalé le résultat. </li></ul></td>
+        <td></br><ul><li>ID de l'outil de sécurité qui a signalé le résultat.</li><li>Titre de l'outil de sécurité qui a signalé le résultat.</li></ul></td>
       </tr>
       <tr>
         <td><code>finding</code> <ul><li><code>severity</code></li> <li><code>next_steps</code></li> <li><code>title</code></li></ul></td>
-        <td></br><ul><li>Niveau d'urgence que présente le résultat. </li> <li>Etapes pouvant être exécutées pour résoudre le problème. </li> <li>Titre du résultat.</li></ul></td>
+        <td></br><ul><li>Niveau d'urgence que présente le résultat.</li> <li>Etapes pouvant être exécutées pour résoudre le problème.</li> <li>Titre du résultat.</li></ul></td>
       </tr>
     </tbody>
   </table>
@@ -178,7 +178,7 @@ Les API {{site.data.keyword.security-advisor_short}} suivent la spécification d
       </tr>
       <tr>
         <td><code>finding</code> <ul><li><code>severity</code></li> <li><code>next_steps</code></li> <li><code>url</code></li></ul></td>
-        <td></br><ul><li>Niveau d'urgence que présente le résultat.</li> <li>Etapes pouvant être exécutées pour résoudre le problème. </li> <li>URL correspondant aux détails du résultat.</li></ul></td>
+        <td></br><ul><li>Niveau d'urgence que présente le résultat.</li> <li>Etapes pouvant être exécutées pour résoudre le problème.</li> <li>URL correspondant aux détails du résultat.</li></ul></td>
       </tr>
     </tbody>
   </table>
@@ -266,15 +266,15 @@ Les API {{site.data.keyword.security-advisor_short}} suivent la spécification d
       </tr>
       <tr>
         <td><code>reported_by</code><ul><li><code>id</code></li><li><code>title</code></li></ul></td>
-        <td></br><ul><li>ID de l'outil de sécurité qui a signalé le résultat. </li><li>Titre de l'outil de sécurité qui a signalé le résultat. </li></ul></td>
+        <td></br><ul><li>ID de l'outil de sécurité qui a signalé le résultat.</li><li>Titre de l'outil de sécurité qui a signalé le résultat.</li></ul></td>
       </tr>
       <tr>
         <td><code>card</code> <ul><li><code>section</code></li> <li><code>title</code></li> <li><code>finding_note_names</code></li></ul></td>
-        <td></br><ul><li>Section à laquelle correspond la carte. </li> <li>Titre de la carte.</li> <li><code>providers/<provider_id>/notes/my-custom-tool-findings-type</code></li></ul></td>
+        <td></br><ul><li>Section à laquelle correspond la carte.</li> <li>Titre de la carte.</li> <li><code>providers/<provider_id>/notes/my-custom-tool-findings-type</code></li></ul></td>
       </tr>
       <tr>
         <td><code>elements</code> <ul><li><code>kind</code></li> <li><code>text</code></li> <li><code>default_time_range</code></li></ul></td>
-        <td></br><ul><li>Type de l'élément. </li> <li>Texte à afficher.</li> <li>Période de temps à vérifier.</li></ul></td>
+        <td></br><ul><li>Type de l'élément.</li> <li>Texte à afficher.</li> <li>Période de temps à vérifier.</li></ul></td>
       </tr>
       <tr>
         <td><code>value_type</code> <ul><li><code>kind</code></li> <li><code>finding_note_names</code></li></ul></td>
@@ -336,7 +336,7 @@ Les API {{site.data.keyword.security-advisor_short}} suivent la spécification d
   ```
   {: codeblock}
 
-4. Accédez à votre tableau de bord de service pour voir la carte que vous avez créée. 
+4. Accédez à votre tableau de bord de service pour voir la carte que vous avez créée.
 
 ## Exemple de scénario
 {: #example}

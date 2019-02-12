@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-19"
+lastupdated: "2018-12-12"
 
 ---
 
@@ -51,20 +51,6 @@ Ha encontrado un problema conocido. No puede crear la aparición porque el nombr
 
 {: tsResolve}
 Elija otro nombre para su aparición.
-
-</br>
-
-## Falta KPI
-{: #kpi-missing}
-
-{: tsSymptoms}
-No ve ningún KPI en la **Tarjeta de IP de servidor sospechosas**.
-
-{: tsCauses}
-Ha encontrado un problema conocido.
-
-{: tsResolve}
-Este problema no se puede solucionar.
 
 </br>
 

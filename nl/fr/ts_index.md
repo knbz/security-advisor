@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-19"
+lastupdated: "2018-12-12"
 
 ---
 
@@ -44,27 +44,13 @@ Pour plus d'informations sur l'obtention de support, voir [Comment obtenir le su
 {: #custom-occurrence}
 
 {: tsSymptoms}
-Vous essayez de créer une occurrence de solution personnalisée, mais les informations ne s'affichent pas dans un navigateur et vous ne recevez aucun message d'erreur. 
+Vous essayez de créer une occurrence de solution personnalisée, mais les informations ne s'affichent pas dans un navigateur et vous ne recevez aucun message d'erreur.
 
 {: tsCauses}
-Il s'agit d'un problème connu. La création de l'occurrence a échoué car le nom que vous avez choisi existe déjà. 
+Il s'agit d'un problème connu. La création de l'occurrence a échoué car le nom que vous avez choisi existe déjà.
 
 {: tsResolve}
 Choisissez un autre nom pour votre occurrence.
-
-</br>
-
-## Indicateur clé de performance manquant
-{: #kpi-missing}
-
-{: tsSymptoms}
-Vous ne voyez aucun indicateur clé de performance (KPI) sur votre carte **IP serveur suspectes**.
-
-{: tsCauses}
-Il s'agit d'un problème connu.
-
-{: tsResolve}
-Ce problème ne peut pas être résolu.
 
 </br>
 
@@ -72,10 +58,10 @@ Ce problème ne peut pas être résolu.
 {: #latest-details}
 
 {: tsSymptoms}
-Vous ne voyez pas les détails les plus récents sur votre carte **Images présentant des vulnérabilités**. 
+Vous ne voyez pas les détails les plus récents sur votre carte **Images présentant des vulnérabilités**.
 
 {: tsCauses}
-Il s'agit d'un problème connu. Il arrive que les informations ne soient pas mises à jour au premier chargement d'une page. 
+Il s'agit d'un problème connu. Il arrive que les informations ne soient pas mises à jour au premier chargement d'une page.
 
 {: tsResolve}
 Pour résoudre le problème, cliquez sur l'icône d'actualisation.

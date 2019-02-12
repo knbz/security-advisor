@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-15"
+lastupdated: "2018-12-14"
 
 ---
 
@@ -10,13 +10,17 @@ lastupdated: "2018-11-15"
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 
-# Analisi di rete 
+# Analisi di rete (beta)
 {: #network-analytics}
 
-Con {{site.data.keyword.security-advisor_long}}, puoi ottenere informazioni approfondite sulla comunicazione di rete potenzialmente rischiosa correlata ai tuoi cluster {{site.data.keyword.containerlong_notm}}. Per visualizzare un'anteprima di questa funzionalità di analisi di rete, seleziona **Preview** dalla [pagina Introduzione](https://console.bluemix.net/security/advisor/#!/overview) a {{site.data.keyword.security-advisor_short}}.
+
+Con {{site.data.keyword.security-advisor_long}}, puoi ottenere informazioni approfondite sulla comunicazione di rete potenzialmente rischiosa correlata ai tuoi cluster {{site.data.keyword.containerlong_notm}}. Per visualizzare un'anteprima di questa funzionalità, fai clic sulla freccia nella scheda di Analisi di rete nella sezione **Strumenti di {{site.data.keyword.security-advisor_short}}** della pagina [**Capabilities**](https://cloud.ibm.com/security-advisor#/capabilities).
 {: shortdesc}
 
-La funzione di anteprima dell'analisi di rete è composta da tre moduli:
+L'anteprima di Analisi di rete è disponibile solo nella regione Stati Uniti Sud.
+{: note}
+
+La funzione di anteprima di Analisi di rete è composta da tre moduli:
 
 1. **Agent di raccolta del flusso di rete**: installato nel tuo cluster, l'agent raccoglie le informazioni di rete e le invia al backend di analisi. Leggi ulteriori informazioni sulla [raccolta dei dati](#data-collection).
 
@@ -28,7 +32,7 @@ La funzione di anteprima dell'analisi di rete è composta da tre moduli:
    - **IP server sospetti (traffico in uscita)**: questa scheda mostra i KPI e le ricerche che hanno [IP server sospetti](#suspicious-server-ips) che vengono eseguiti come parte del cluster. Esempio: quando il cluster si avvicina a un server sospetto per la distribuzione di malware.
 
 
-## Raccolta dei dati 
+## Raccolta dei dati
 {: #data-collection}
 
 {{site.data.keyword.security-advisor_short}} può essere utile per proteggere il tuo cluster aggiungendo il monitoraggio della rete. Distribuito come parte del tuo cluster, il monitoraggio di rete viene utilizzato per fornire informazioni sulle comunicazioni del cluster. Per abilitare le analisi di rete, vengono raccolte le informazioni sul flusso di rete della comunicazione che si svolge tra il cluster e le entità esterne.
@@ -48,7 +52,7 @@ Vengono raccolte le seguenti informazioni:
 Il monitoraggio di rete viene utilizzato all'interno del cluster con altri servizi come ad esempio {{site.data.keyword.loganalysisshort_notm}} in modo che ti puoi concentrare sulla logica aziendale. Puoi controllare le informazioni approfondite sul monitoraggio di rete nel tuo dashboard {{site.data.keyword.security-advisor_short}}.
 
 
-## Client sospetti (traffico in entrata) 
+## Client sospetti (traffico in entrata)
 {: #suspicious-clients}
 
 Il dashboard {{site.data.keyword.security-advisor_short}} include una scheda del client sospetto che riepiloga le varie informazioni sulle comunicazioni in cui il cluster agisce come un server che viene avvicinato da un client esterno.
@@ -59,7 +63,7 @@ La comunicazione analizzata potrebbe produrre una ricerca come ad esempio:
 - Un client esterno con bassa reputazione, come ad esempio un client noto per distribuire malware o associato a servizi anonimi, si avvicina ad uno degli URL o IP associati al cluster. Ad esempio, uno scanner si avvicina a una delle porte aperte del cluster. Tale comunicazione potrebbe suggerire una protezione inadeguata degli URL e degli IP associati al cluster ed anche dei rischi effettivi o in attesa.
 
 
-## IP server sospetti (traffico in uscita) 
+## IP server sospetti (traffico in uscita)
 {: #suspicious-server-ips}
 
 Il dashboard {{site.data.keyword.security-advisor_short}} include una scheda dell'IP server sospetto che riepiloga le varie informazioni sulle comunicazioni in cui il cluster agisce come un client che si avvicina a un server esterno.

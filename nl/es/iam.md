@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-23"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -33,101 +33,93 @@ Todos los usuarios que acceden a una instancia del servicio {{site.data.keyword.
 Las acciones son personalizadas y están definidas por el servicio de {{site.data.keyword.Bluemix_notm}} como operaciones permitidas para realizarse en el servicio. Las acciones se correlacionarán entonces a los roles de usuario del servicio IAM. En la tabla siguiente, se correlacionan las acciones y los permisos necesarios para {{site.data.keyword.security-advisor_short}}.
 
 <table><caption>¿Qué roles puede realizar cada acción?</caption>
-  <col width="43%">
-  <col width="42%">
-  <col width="5%">
-  <col width="5%">
-  <col width="5%">
+  <col width="40%">
+  <col width="40%">
+  <col width="20%">
   <tr>
     <th>Acción</th>
     <th>Explicación</th>
-    <th>Lector</th>
-    <th>Escritor</th>
-    <th>Gestor</th>
+    <th>Rol</th>
   </tr>
   <tr>
     <td><code>security-advisor.findings.read</code></td>
     <td>Ver hallazgos del informe de seguridad.</td>
-    <td><img src="images/confirm.png" width="32" alt="Característica disponible" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Característica disponible" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Característica disponible" style="width:32px;" /></td>
+    <td>Lector</br>Escritor</br>Gestor</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.write</code></td>
     <td>Genere hallazgos del informe de seguridad.</td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Característica disponible" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Característica disponible" style="width:32px;" /></td>
+    <td>Escritor</br>Gestor</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.delete</code></td>
     <td>Suprimir hallazgos del informe de seguridad.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Característica disponible" style="width:32px;" /></td>
+    <td>Gestor</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.update</code></td>
     <td>Editar hallazgos del informe de seguridad.</td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Característica disponible" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Característica disponible" style="width:32px;" /></td>
+    <td>Escritor</br>Gestor</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.read</code></td>
     <td>Ver metadatos.</td>
-    <td><img src="images/confirm.png" width="32" alt="Característica disponible" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Característica disponible" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Característica disponible" style="width:32px;" /></td>
+    <td>Lector</br>Escritor</br>Gestor</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.delete</code></td>
     <td>Suprimir metadatos.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Característica disponible" style="width:32px;" /></td>
+    <td>Gestor</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.write</code></td>
     <td>Generar metadatos.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Característica disponible" style="width:32px;" /></td>
+    <td>Gestor</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.update</code></td>
     <td>Actualizar metadatos.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Característica disponible" style="width:32px;" /></td>
+    <td>Gestor</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.read</code></td>
     <td>Leer soluciones personalizadas que se han añadido al servicio.</td>
-    <td><img src="images/confirm.png" width="32" alt="Característica disponible" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Característica disponible" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Característica disponible" style="width:32px;" /></td>
+    <td>Lector</br>Escritor</br>Gestor</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.write</code></td>
     <td>Añada una solución personalizada al servicio.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Característica disponible" style="width:32px;" /></td>
+    <td>Gestor</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.update</code></td>
     <td>Actualizar una solución personalizada existente dentro del servicio.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Característica disponible" style="width:32px;" /></td>
+    <td>Gestor</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.delete</code></td>
     <td>Suprimir una solución personalizada del servicio.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Característica disponible" style="width:32px;" /></td>
+    <td>Gestor</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.read</code></td>
+    <td>Visualizar las soluciones de socio que ha añadido a la instancia de servicio.</td>
+    <td>Lector</br>Escritor</br>Gestor</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.write</code></td>
+    <td>Añadir una solución de socio a la instancia de servicio.</td>
+    <td>Gestor</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.update</code></td>
+    <td>Actualizar una solución de socio en la instancia de servicio.</td>
+    <td>Gestor</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.delete</code></td>
+    <td>Suprimir una solución de socio de la instancia de servicio.</td>
+    <td>Gestor</td>
   </tr>
 </table>
 

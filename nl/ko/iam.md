@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-23"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -33,101 +33,93 @@ IAM에 대한 자세한 정보는 [IAM 액세스](/docs/iam/users_roles.html)를
 조치는 서비스에서 수행될 수 있는 오퍼레이션으로서 {{site.data.keyword.Bluemix_notm}} 서비스를 통해 사용자 정의 및 정의됩니다. 그런 다음 조치는 IAM 서비스 사용자 역할에 맵핑됩니다. 다음 표에서 조치 및 {{site.data.keyword.security-advisor_short}}에 필요한 권한이 맵핑됩니다.
 
 <table><caption>어떤 역할이 어떤 조치를 수행할 수 있습니까?</caption>
-  <col width="43%">
-  <col width="42%">
-  <col width="5%">
-  <col width="5%">
-  <col width="5%">
+  <col width="40%">
+  <col width="40%">
+  <col width="20%">
   <tr>
     <th>조치</th>
     <th>설명</th>
-    <th>독자</th>
-    <th>작성자</th>
-    <th>관리자</th>
+    <th>역할</th>
   </tr>
   <tr>
     <td><code>security-advisor.findings.read</code></td>
     <td>보안 보고서 찾은 결과를 봅니다.</td>
-    <td><img src="images/confirm.png" width="32" alt="사용 가능한 기능" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="사용 가능한 기능" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="사용 가능한 기능" style="width:32px;" /></td>
+    <td>독자</br>작성자</br>관리자</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.write</code></td>
     <td>보안 보고서 찾은 결과를 생성합니다.</td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="사용 가능한 기능" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="사용 가능한 기능" style="width:32px;" /></td>
+    <td>작성자</br>관리자</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.delete</code></td>
     <td>보안 보고서 찾은 결과를 삭제합니다.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="사용 가능한 기능" style="width:32px;" /></td>
+    <td>관리자</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.update</code></td>
     <td>보안 보고서 찾은 결과를 편집합니다.</td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="사용 가능한 기능" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="사용 가능한 기능" style="width:32px;" /></td>
+    <td>작성자</br>관리자</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.read</code></td>
     <td>메타데이터를 봅니다.</td>
-    <td><img src="images/confirm.png" width="32" alt="사용 가능한 기능" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="사용 가능한 기능" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="사용 가능한 기능" style="width:32px;" /></td>
+    <td>독자</br>작성자</br>관리자</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.delete</code></td>
     <td>메타데이터를 삭제합니다.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="사용 가능한 기능" style="width:32px;" /></td>
+    <td>관리자</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.write</code></td>
     <td>메타데이터를 생성합니다.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="사용 가능한 기능" style="width:32px;" /></td>
+    <td>관리자</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.update</code></td>
     <td>메타데이터를 업데이트합니다.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="사용 가능한 기능" style="width:32px;" /></td>
+    <td>관리자</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.read</code></td>
     <td>서비스에 추가된 사용자 정의 솔루션을 읽습니다.</td>
-    <td><img src="images/confirm.png" width="32" alt="사용 가능한 기능" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="사용 가능한 기능" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="사용 가능한 기능" style="width:32px;" /></td>
+    <td>독자</br>작성자</br>관리자</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.write</code></td>
     <td>서비스에 사용자 정의 솔루션을 추가합니다.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="사용 가능한 기능" style="width:32px;" /></td>
+    <td>관리자</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.update</code></td>
     <td>서비스 내 기존 사용자 정의 솔루션을 업데이트합니다.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="사용 가능한 기능" style="width:32px;" /></td>
+    <td>관리자</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.delete</code></td>
     <td>서비스에서 사용자 정의 솔루션을 삭제합니다.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="사용 가능한 기능" style="width:32px;" /></td>
+    <td>관리자</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.read</code></td>
+    <td>서비스 인스턴스에 추가한 파트너 솔루션을 확인합니다.</td>
+    <td>독자</br>작성자</br>관리자</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.write</code></td>
+    <td>서비스 인스턴스에 파트너 솔루션을 추가합니다.</td>
+    <td>관리자</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.update</code></td>
+    <td>서비스 인스턴스에서 파트너 솔루션을 업데이트합니다.</td>
+    <td>관리자</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.delete</code></td>
+    <td>서비스 인스턴스에서 파트너 솔루션을 삭제합니다.</td>
+    <td>관리자</td>
   </tr>
 </table>
 
@@ -137,7 +129,7 @@ IAM에 대한 자세한 정보는 [IAM 액세스](/docs/iam/users_roles.html)를
 해당 역할이 API와 일치하는 방법은 무엇입니까? 서비스 조치가 API에 맵핑되는 방법을 보려면 다음 표를 확인하십시오.
 
 
-|메소드  | 엔드포인트                                                                | 서비스 조치                      |
+|메소드 | 엔드포인트                                                                  | 서비스 조치                  |
 |--------|---------------------------------------------------------------------------|----------------------------------|
 | POST   | /v1/{account_id}/graph                                                    | security-advisor.findings.read   |
 | POST   | /v1/{account_id}/providers/{provider_id}/notes                            | security-advisor.metadata.write  |

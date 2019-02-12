@@ -1,0 +1,36 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="security-advisor" audience="security" arm="4033739" href="/docs/services/security-advisor/index.html" path="services/security-advisor"}
+IBM Cloud Security Advisor
+
+    {: .navgroup id="learn"}
+    index.md
+    about.md
+    integrations.md
+    network-analytics
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    setup.md
+
+    {: .topicgroup}
+    Integrazioni
+        partners.md
+        custom.md
+        setup_cluster.md
+
+    iam.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    [API Findings](https://console.bluemix.net/apidocs/security-advisor)
+    [Dashboard del servizio](https://console.bluemix.net/security-advisor/#/dashboard)
+    [Blog](https://www.ibm.com/blogs/bluemix/tag/security-advisor/)
+    at-events.md
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    faq.md
+    ts_index.md
+    {: .navgroup-end}

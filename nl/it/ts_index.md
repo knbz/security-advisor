@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-19"
+lastupdated: "2018-12-12"
 
 ---
 
@@ -18,14 +18,14 @@ lastupdated: "2018-11-19"
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 
-# Risoluzione dei problemi 
+# Risoluzione dei problemi
 {: #troubleshooting}
 
 Se hai dei problemi quando utilizzi {{site.data.keyword.security-advisor_long}}, tieni presenti queste tecniche per la risoluzione dei problemi e su come ottenere supporto.
 {: shortdesc}
 
 
-## Come ottenere aiuto e supporto 
+## Come ottenere aiuto e supporto
 {: #getting-help-and-support}
 
 
@@ -51,20 +51,6 @@ Hai riscontrato un problema noto. La creazione della ricorrenza non è riuscita 
 
 {: tsResolve}
 Scegli un altro nome per la tua ricorrenza.
-
-</br>
-
-## KPI mancante
-{: #kpi-missing}
-
-{: tsSymptoms}
-Non visualizzi alcun KPI sulla tua **scheda IP server sospetti**.
-
-{: tsCauses}
-Hai riscontrato un problema noto. 
-
-{: tsResolve}
-Questo problema non può essere risolto.
 
 </br>
 

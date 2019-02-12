@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-11"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -37,7 +37,7 @@ lastupdated: "2018-10-11"
 5. **「使用可能なフィールド」**リストで、**「タイプ」**をクリックします。 **アクティビティー・トラッカー**の虫眼鏡のアイコンをクリックして、サービスによって追跡されるもののみにログを制限します。
 6. その他の使用可能なフィールドを使用して、検索を絞り込むことができます。
 
-アカウント所有者以外のユーザーがログを表示するには、プレミアム・プランを使用している必要があります。他のユーザーがイベントを表示できるようにするには、[アカウント・イベントを表示する許可の付与](/docs/services/cloud-activity-tracker/how-to/grant_permissions.html#grant_permissions)を参照してください。
+アカウント所有者以外のユーザーがログを表示するには、プレミアム・プランを使用している必要があります。 他のユーザーがイベントを表示できるようにするには、[アカウント・イベントを表示する許可の付与](/docs/services/cloud-activity-tracker/how-to/grant_permissions.html#grant_permissions)を参照してください。
 {: tip}
 
 ## イベント・リスト
@@ -82,5 +82,37 @@ lastupdated: "2018-10-11"
   <tr>
     <td><code>security-advisor.findings.update</code></td>
     <td>オカレンスを更新。</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.read</code></td>
+    <td>サービスに追加されたカスタム・ソリューションを読み取る。</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.write</code></td>
+    <td>サービスにカスタム・ソリューションを追加する。</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.update</code></td>
+    <td>サービス内の既存のカスタム・ソリューションを更新する。</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.delete</code></td>
+    <td>サービスからカスタム・ソリューションを削除します。</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.read</code></td>
+    <td>サービス・インスタンスに追加したパートナー・ソリューションを表示する。</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.write</code></td>
+    <td>サービス・インスタンスにパートナー・ソリューションを追加する。</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.update</code></td>
+    <td>サービス・インスタンス内のパートナー・ソリューションを更新する。</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.delete</code></td>
+    <td>サービス・インスタンスからパートナー・ソリューションを削除する。</td>
   </tr>
 </table>

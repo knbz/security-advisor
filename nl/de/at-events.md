@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-11"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -82,5 +82,37 @@ Die folgende Tabelle enthält eine Auflistung der Ereignisse, die an {{site.data
   <tr>
     <td><code>security-advisor.findings.update</code></td>
     <td>Vorkommen aktualisieren.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.read</code></td>
+    <td>Angepasste Lösungen lesen, die dem Service hinzugefügt wurden.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.write</code></td>
+    <td>Angepasste Lösung zum Service hinzufügen.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.update</code></td>
+    <td>Vorhandene angepasste Lösung im Service aktualisieren.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.custom-solution.delete</code></td>
+    <td>Angepasste Lösung aus dem Service löschen.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.read</code></td>
+    <td>Partnerlösungen anzeigen, die Sie Ihrer Serviceinstanz hinzugefügt haben.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.write</code></td>
+    <td>Partnerlösung zu Ihrer Serviceinstanz hinzufügen.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.update</code></td>
+    <td>Partnerlösung in Ihrer Serviceinstanz aktualisieren.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.delete</code></td>
+    <td>Partnerlösung aus Ihrer Serviceinstanz löschen.</td>
   </tr>
 </table>

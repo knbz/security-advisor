@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-19"
+lastupdated: "2018-12-12"
 
 ---
 
@@ -51,20 +51,6 @@ Es ist ein bekanntes Problem aufgetreten. Das Erstellen des Vorkommens ist fehlg
 
 {: tsResolve}
 Wählen Sie einen anderen Namen für das Vorkommen aus.
-
-</br>
-
-## KPI fehlt
-{: #kpi-missing}
-
-{: tsSymptoms}
-Auf der Karte für **verdächtige Server-IP-Adressen** wird kein KPI angezeigt.
-
-{: tsCauses}
-Es ist ein bekanntes Problem aufgetreten.
-
-{: tsResolve}
-Dieses Problem kann nicht gelöst werden.
 
 </br>
 

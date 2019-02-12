@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-19"
+lastupdated: "2018-12-10"
 
 ---
 
@@ -18,30 +18,39 @@ lastupdated: "2018-11-19"
 # Tutoriel d'initiation
 {: #index}
 
-Vous pouvez utiliser {{site.data.keyword.security-advisor_long}} (bêta) pour vous aider à veiller à la sécurité de vos applications et charges de travail {{site.data.keyword.Bluemix_notm}}.
+Avec {{site.data.keyword.security-advisor_long}}, vous pouvez visualiser instantanément la situation de {{site.data.keyword.Bluemix_notm}} en matière de sécurité via un unique tableau de bord centralisé.
 {:shortdesc}
 
-{{site.data.keyword.security-advisor_short}} est fourni dans le cadre du catalogue {{site.data.keyword.Bluemix_notm}}. Vous n'avez pas besoin de mettre à disposition une instance de service, ce qui signifie que vous pouvez débuter rapidement avec le service.
+{{site.data.keyword.security-advisor_short}} est un service de cloud activé par défaut pour tous les comptes {{site.data.keyword.Bluemix_notm}}. De ce fait, vous n'avez pas à mettre une instance de service à disposition.
+{: tip}
 
-Vous pouvez surveiller :
+Le service reçoit des informations relatives à la sécurité et affiche toutes les vulnérabilités et alertes de sécurité qui nécessitent votre intervention dans le tableau de bord du service. Prêt à l'emploi, votre tableau de bord contient plusieurs cartes préremplies. Ces résultats proviennent des services de sécurité d'IBM Cloud, mais vous pouvez également ajouter des cartes ou personnaliser des solutions partenaires de sorte que tous vos outils de sécurité soient accessibles depuis le même emplacement.
+
+Par le biais des résultats pré-intégrés, vous pouvez surveiller :
 
 - Les certificats que vous gérez avec {{site.data.keyword.cloudcerts_long_notm}}
 - Les vulnérabilités des images de conteneur stockées dans {{site.data.keyword.registrylong_notm}}
-- Les clients et les IP serveur suspects qui communiquent avec un cluster dans {{site.data.keyword.containerlong_notm}} (aperçu)
 
-Prêt à commencer ? Accédez au tableau de bord du service de l'une des façons suivantes : 
+Vous pouvez également mieux évaluer les clients suspects et les conteneurs potentiellement non fiables qui s'exécutent sur vos clusters IBM Cloud Kubernetes Service. Une fois la fonction activée et configurée, les communications du réseau de clusters, entrantes comme sortantes, sont collectées et surveillées et analysées en permanence sur la base de renseignements sur les menaces. Pour en savoir plus, voir [Analyse réseau](network-analytics.html)
+
+</br>
+
+## Accès au tableau de bord du service
+{: #dashboard}
+
+Prêt à commencer ? Vous pouvez accéder au tableau de bord du service de l'une des façons suivantes :
 
 <ul>
   <li>En utilisant la vignette :
     <ol>
-      <li>Connectez-vous à <a href="https://console.bluemix.net/catalog/" target="_blank">{{site.data.keyword.Bluemix_notm}}<img src="../../icons/launch-glyph.svg" alt="Icône de lien externe"></a>.</li>
+      <li>Connectez-vous à <a href="https://console.cloud.ibm.com/catalog/" target="_blank">{{site.data.keyword.Bluemix_notm}}<img src="../../icons/launch-glyph.svg" alt="Icône de lien externe"></a>.</li>
       <li>Accédez au **Catalogue** et cliquez sur **Sécurité et identité**.</li>
-      <li>Sélectionnez la vignette {{site.data.keyword.security-advisor_short}}. Un tableau de bord s'ouvre, dans lequel vous pouvez afficher des information de sécurité pour les outils intégrés préconfigurés tels que Vulnerability Advisor ou le gestionnaire de certificat. </li>
+      <li>Sélectionnez la vignette {{site.data.keyword.security-advisor_short}}. Un tableau de bord s'ouvre, dans lequel vous pouvez afficher des information de sécurité pour les outils intégrés préconfigurés tels que Vulnerability Advisor ou le gestionnaire de certificat.</li>
     </ol>
   </li>
   <li>En utilisant le menu :
     <ol>
-      <li>Connectez-vous à <a href="https://console.bluemix.net" target="_blank">{{site.data.keyword.Bluemix_notm}}<img src="../../icons/launch-glyph.svg" alt="Icône de lien externe"></a>.</li>
+      <li>Connectez-vous à <a href="https://console.cloud.ibm.com" target="_blank">{{site.data.keyword.Bluemix_notm}}<img src="../../icons/launch-glyph.svg" alt="Icône de lien externe"></a>.</li>
       <li>Depuis votre tableau de bord, cliquez sur le menu latéral pour développer les options.</li>
       <li>Cliquez sur **Sécurité**. Une présentation du tableau de bord de sécurité s'ouvre.</li>
       <li>Cliquez sur **Mise en route** dans la barre de navigation pour voir les informations de présentation générale du service, ou cliquez sur **Tableau de bord** si vous préférez découvrir le service en voyant celui-ci en action.</li>
@@ -49,14 +58,18 @@ Prêt à commencer ? Accédez au tableau de bord du service de l'une des façons
   </li>
 </ul>
 
-Quelques-unes des cartes de votre tableau de bord sont préremplies avec des informations sur des services spécifiques. Vous pouvez toujours ajouter des cartes pour créer un point de vue holistique des services que vous souhaitez surveiller. 
+Vous résultats pré-intégrés n'affichent aucune information ? Il est possible que vous ne disposiez pas de certificats ou d'images que {{site.data.keyword.security-advisor_short}} peut surveiller. Pour en savoir plus sur les éléments nécessaires à {{site.data.keyword.security-advisor_short}} pour renseigner les cartes du tableau de bord, voir [Tirer parti des services pré-intégrés](setup.html).
 
-A présent que vous disposez d'une instance du service, [découvrez](about.html) comment {{site.data.keyword.security-advisor_short}} peut vous aider. Vous pouvez également envoyer des commentaires utilisateur en utilisant [developerWorks](ts_index.html) pour faire des suggestions sur le service lors de son développement.
+</br>
 
-Vous ne trouvez pas ce que vous cherchez ? Soyez immédiatement opérationnel en seulement quelques [étapes](setup.html).
-{: tip}
+## Etapes suivantes
+{: #next}
+
+Maintenant que vous avez vu le tableau de bord en action, [découvrez](about.html) comment {{site.data.keyword.security-advisor_short}} peut vous aider. Vous pouvez également envoyer des commentaires utilisateur en utilisant [developerWorks](ts_index.html) pour faire des suggestions sur le service lors de son développement.
+
+</br>
 
 ## Disponibilité
 {: #availability}
 
-Actuellement, vous pouvez bénéficier de {{site.data.keyword.security-advisor_short}} dans la région du Sud des Etats-Unis uniquement. 
+Actuellement, vous pouvez bénéficier de {{site.data.keyword.security-advisor_short}} dans les régions de Dallas et de Londres.

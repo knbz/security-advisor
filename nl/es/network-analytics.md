@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-15"
+lastupdated: "2018-12-14"
 
 ---
 
@@ -10,13 +10,17 @@ lastupdated: "2018-11-15"
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 
-# Analítica de red
+# Network Analytics (beta)
 {: #network-analytics}
 
-Con {{site.data.keyword.security-advisor_long}}, puede obtener información detallada sobre la comunicación de red potencialmente peligrosa relacionada con los clústeres de {{site.data.keyword.containerlong_notm}}. Para ver una visión general de eta función de analítica de red, seleccione **Vista previa** en la {{site.data.keyword.security-advisor_short}} [página de iniciación](https://console.bluemix.net/security/advisor/#!/overview).
+
+Con {{site.data.keyword.security-advisor_long}}, puede obtener información detallada sobre la comunicación de red potencialmente peligrosa relacionada con los clústeres de {{site.data.keyword.containerlong_notm}}. Para obtener una vista previa de esta capacidad, pulse la flecha en la tarjeta de Network Analytics en la sección **Herramientas de {{site.data.keyword.security-advisor_short}}** de la página [**Posibilidades**](https://cloud.ibm.com/security-advisor#/capabilities).
 {: shortdesc}
 
-La característica vista previa de analítica de red consta de tres módulos:
+La vista previa de Network Analytics sólo está disponible en la región de EE.UU. Sur.
+{: note}
+
+La característica de vista previa de Network Analytics consta de tres módulos:
 
 1. **Agente de recopilación de flujo de red**: instalado en el clúster, el agente recopila información de red y la envía al programa de fondo de análisis. Obtenga más información sobre la [recopilación de datos](#data-collection).
 

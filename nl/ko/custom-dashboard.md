@@ -21,7 +21,7 @@ lastupdated: "2018-11-15"
 {{site.data.keyword.security-advisor_long}}는 IBM Cloud에서 보안 관리를 통합하고 개선하는 데 사용할 수 있는 찾은 결과 API를 제공합니다. 찾은 결과 API를 사용하여 파트너 서비스 및 사용자 정의 보안 도구에 대한 새 찾은 결과 유형을 등록할 수 있습니다. 메타데이터가 등록된 후 도구는 API를 사용하여 KPI 및 이벤트로서 찾은 결과의 발생을 전송할 수 있습니다. 찾은 결과는 개별 카드로 {{site.data.keyword.security-advisor_short}} 대시보드에 표시됩니다.
 {: shortdesc}
 
-{{site.data.keyword.security-advisor_short}}는 모든 보안 도구 및 서비스로 보고되는 찾은 결과에 대한 중요 메타데이터를 작성하고, 조회하고, 검색하기 위해 아티팩트 메타데이터 API 스펙과 같은 [Grafeas](https://grafeas.io/)를 따릅니다. 
+{{site.data.keyword.security-advisor_short}}는 모든 보안 도구 및 서비스로 보고되는 찾은 결과에 대한 중요 메타데이터를 작성하고, 조회하고, 검색하기 위해 아티팩트 메타데이터 API 스펙과 같은 [Grafeas](https://grafeas.io/)를 따릅니다.
 
 ## 고유한 도구 통합
 {: #integrate}
@@ -42,7 +42,7 @@ lastupdated: "2018-11-15"
   ```
   {: codeblock}
 
-3. IAM 토큰을 가져오십시오. 토큰은 각 API 요청의 `--header`에 사용됩니다. 
+3. IAM 토큰을 가져오십시오. 토큰은 각 API 요청의 `--header`에 사용됩니다.
 
   ```
   ibmcloud iam oauth-tokens
@@ -64,7 +64,7 @@ lastupdated: "2018-11-15"
 
   <table>
     <thead>
-      <th colspan=2><img src="images/idea.png" alt="자세한 정보 아이콘"/> 이 명령 컴포넌트 이해</th>
+      <th colspan=2><img src="images/idea.png" alt="자세한 정보 아이콘"/> 이 명령 컴포넌트 이해 </th>
     </thead>
     <tbody>
       <tr>
@@ -73,7 +73,7 @@ lastupdated: "2018-11-15"
       </tr>
       <tr>
         <td><code>short_description</code></td>
-        <td>찾은 결과가 요약된 짧은 설명으로 몇 개의 단어로만 구성됩니다. </td>
+        <td>찾은 결과가 요약된 짧은 설명으로 몇 개의 단어로만 구성됩니다.</td>
       </tr>
       <tr>
         <td><code>long_description</code></td>
@@ -85,7 +85,7 @@ lastupdated: "2018-11-15"
       </tr>
       <tr>
         <td><code>id</code></td>
-        <td>보안 도구에서 발견된 찾은 결과 유형에 대한 ID입니다. </td>
+        <td>보안 도구에서 발견된 찾은 결과 유형에 대한 ID입니다.</td>
       </tr>
       <tr>
         <td><code>reported_by</code><ul><li><code>id</code></li><li><code>title</code></li></ul></td>
@@ -149,7 +149,7 @@ lastupdated: "2018-11-15"
 
   <table>
     <thead>
-      <th colspan=2><img src="images/idea.png" alt="자세한 정보 아이콘"/> 이 명령 컴포넌트 이해</th>
+      <th colspan=2><img src="images/idea.png" alt="자세한 정보 아이콘"/> 이 명령 컴포넌트 이해 </th>
     </thead>
     <tbody>
       <tr>
@@ -170,7 +170,7 @@ lastupdated: "2018-11-15"
       </tr>
       <tr>
         <td><code>id</code></td>
-        <td>보안 도구에서 발견된 찾은 결과 유형에 대한 ID입니다. </td>
+        <td>보안 도구에서 발견된 찾은 결과 유형에 대한 ID입니다.</td>
       </tr>
       <tr>
         <td><code>context</code><ul><li><code>region</code></li><li><code>resource_id</code></li> <li><code>resource_name</code></li> <li><code>resource_type</code></li> <li><code>service_name</code></li></ul></td>
@@ -241,7 +241,7 @@ lastupdated: "2018-11-15"
 
   <table>
     <thead>
-      <th colspan=2><img src="images/idea.png" alt="자세한 정보 아이콘"/> 이 명령 컴포넌트 이해</th>
+      <th colspan=2><img src="images/idea.png" alt="자세한 정보 아이콘"/> 이 명령 컴포넌트 이해 </th>
     </thead>
     <tbody>
       <tr>
@@ -254,7 +254,7 @@ lastupdated: "2018-11-15"
       </tr>
       <tr>
         <td><code>id</code></td>
-        <td>보안 도구에서 발견된 찾은 결과 유형에 대한 ID입니다. </td>
+        <td>보안 도구에서 발견된 찾은 결과 유형에 대한 ID입니다.</td>
       </tr>
       <tr>
         <td><code>short_description</code></td>
@@ -336,7 +336,7 @@ lastupdated: "2018-11-15"
   ```
   {: codeblock}
 
-4. 작성한 카드를 보려면 서비스 대시보드로 이동하십시오. 
+4. 작성한 카드를 보려면 서비스 대시보드로 이동하십시오.
 
 ## 시나리오 예제
 {: #example}

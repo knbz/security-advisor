@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-23"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -35,101 +35,93 @@ As ações são customizadas e definidas pelo serviço {{site.data.keyword.Bluem
 seguir, as ações e as permissões necessárias para o {{site.data.keyword.security-advisor_short}} são mapeadas.
 
 <table><caption>Quais ações cada função pode executar?</caption>
-  <col width="43%">
-  <col width="42%">
-  <col width="5%">
-  <col width="5%">
-  <col width="5%">
+  <col width="40%">
+  <col width="40%">
+  <col width="20%">
   <tr>
     <th>Ação</th>
     <th>Explicação</th>
-    <th>Leitor</th>
-    <th>Gravador</th>
-    <th>Gerente</th>
+    <th>Função</th>
   </tr>
   <tr>
     <td><code>security-advisor.findings.read</code></td>
     <td>Visualizar as descobertas do relatório de segurança.</td>
-    <td><img src="images/confirm.png" width="32" alt="Recurso disponível" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Recurso disponível" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Recurso disponível" style="width:32px;" /></td>
+    <td>Leitor</br>Gravador</br>Gerente</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.write</code></td>
     <td>Gerar as descobertas do relatório de segurança.</td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Recurso disponível" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Recurso disponível" style="width:32px;" /></td>
+    <td>Gravador</br>Gerente</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.delete</code></td>
     <td>Excluir as descobertas do relatório de segurança.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Recurso disponível" style="width:32px;" /></td>
+    <td>Gerente</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.update</code></td>
     <td>Editar as descobertas do relatório de segurança.</td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Recurso disponível" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Recurso disponível" style="width:32px;" /></td>
+    <td>Gravador</br>Gerente</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.read</code></td>
     <td>Visualizar os metadados.</td>
-    <td><img src="images/confirm.png" width="32" alt="Recurso disponível" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Recurso disponível" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Recurso disponível" style="width:32px;" /></td>
+    <td>Leitor</br>Gravador</br>Gerente</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.delete</code></td>
     <td>Excluir os metadados.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Recurso disponível" style="width:32px;" /></td>
+    <td>Gerente</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.write</code></td>
     <td>Gerar os metadados.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Recurso disponível" style="width:32px;" /></td>
+    <td>Gerente</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.update</code></td>
     <td>Atualizar os metadados.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Recurso disponível" style="width:32px;" /></td>
+    <td>Gerente</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.read</code></td>
     <td>Ler as soluções customizadas que foram incluídas no serviço.</td>
-    <td><img src="images/confirm.png" width="32" alt="Recurso disponível" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Recurso disponível" style="width:32px;" /></td>
-    <td><img src="images/confirm.png" width="32" alt="Recurso disponível" style="width:32px;" /></td>
+    <td>Leitor</br>Gravador</br>Gerente</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.write</code></td>
     <td>Incluir uma solução customizada no serviço.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Recurso disponível" style="width:32px;" /></td>
+    <td>Gerente</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.update</code></td>
     <td>Atualizar uma solução customizada existente dentro do serviço.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Recurso disponível" style="width:32px;" /></td>
+    <td>Gerente</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.delete</code></td>
     <td>Excluir uma solução customizada do serviço.</td>
-    <td> </td>
-    <td> </td>
-    <td><img src="images/confirm.png" width="32" alt="Recurso disponível" style="width:32px;" /></td>
+    <td>Gerente</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.read</code></td>
+    <td>Visualizar as soluções de parceiros incluídas na instância de serviço.</td>
+    <td>Leitor</br>Gravador</br>Gerente</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.write</code></td>
+    <td>Incluir uma solução de parceiro na instância de serviço.</td>
+    <td>Gerente</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.update</code></td>
+    <td>Atualizar uma solução de parceiro na instância de serviço.</td>
+    <td>Gerente</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.partner-solution.delete</code></td>
+    <td>Excluir uma solução de parceiro da instância de serviço.</td>
+    <td>Gerente</td>
   </tr>
 </table>
 

@@ -18,10 +18,10 @@ lastupdated: "2018-11-15"
 # 独自のセキュリティー・ツールとの統合
 {: #custom}
 
-{{site.data.keyword.security-advisor_long}} には、IBM Cloud のセキュリティー管理を統合して向上させるために使用できる検出事項 API が用意されています。これらの検出事項 API を使用して、パートナー・サービスやカスタム・セキュリティー・ツールの検出事項タイプを新たに登録することができます。メタデータを登録したら、それらのツールから API を使用して検出事項のオカレンスを KPI やイベントとして送信できます。それらの検出事項は、{{site.data.keyword.security-advisor_short}} ダッシュボードに別のカードとして表示されます。
+{{site.data.keyword.security-advisor_long}} には、IBM Cloud のセキュリティー管理を統合して向上させるために使用できる検出事項 API が用意されています。 これらの検出事項 API を使用して、パートナー・サービスやカスタム・セキュリティー・ツールの新たな検出事項タイプを登録することができます。 メタデータを登録したら、それらのツールから API を使用して検出事項のオカレンスを KPI やイベントとして送信できます。 それらの検出事項は、{{site.data.keyword.security-advisor_short}} ダッシュボードに別のカードとして表示されます。
 {: shortdesc}
 
-{{site.data.keyword.security-advisor_short}} API は、[Grafeas](https://grafeas.io/) に似た成果物メタデータ API 仕様に従って、あらゆるセキュリティー・ツールやサービスから報告された検出事項に関する重要なメタデータを保管、照会、および取得できます。
+{{site.data.keyword.security-advisor_short}} API は、[Grafeas](https://grafeas.io/) に似た成果物メタデータ API 仕様に従って、あらゆるセキュリティー・ツールやサービスから報告された検出事項の重要なメタデータを保管、照会、および取得します。
 
 ## 独自のツールとの統合
 {: #integrate}
@@ -35,14 +35,14 @@ lastupdated: "2018-11-15"
   ```
   {: codeblock}
 
-2. アカウント ID を取得します。自分の ID に**管理者**の [IAM 役割](https://console.bluemix.net/iam/#/users)が割り当てられていることを確認してください。サービスの役割について詳しくは、[{{site.data.keyword.security-advisor_short}} のアクセス・ポリシー](/docs/services/security-advisor/iam.html)を参照してください。
+2. アカウント ID を取得します。 自分の ID に**管理者**の [IAM 役割](https://console.bluemix.net/iam/#/users)が割り当てられていることを確認してください。 サービスの役割について詳しくは、[{{site.data.keyword.security-advisor_short}} のアクセス・ポリシー](/docs/services/security-advisor/iam.html)を参照してください。
 
   ```
   ibmcloud account list org-account ORG_NAME [--guid]
   ```
   {: codeblock}
 
-3. IAM トークンを取得します。このトークンを、各 API 要求の `--header` で使用します。
+3. IAM トークンを取得します。 このトークンを、各 API 要求の `--header` で使用します。
 
   ```
   ibmcloud iam oauth-tokens
@@ -53,7 +53,7 @@ lastupdated: "2018-11-15"
 
 **検出事項の追加とモニター**
 
-1. 注記を作成して、新しいタイプの検出事項を登録します。注記を作成するには、[検出事項 API](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Notes/createNote) を使用します。
+1. 注記を作成して、新しいタイプの検出事項を登録します。 注記を作成するには、[検出事項 API](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Notes/createNote) を使用します。
 
   要求の例:
 
@@ -341,7 +341,7 @@ lastupdated: "2018-11-15"
 ## サンプル・シナリオ
 {: #example}
 
-なぜカスタマイズを作成する必要があるのでしょうか? `cloudkingdom` という名前の {{site.data.keyword.containershort_notm}} クラスターを実行しているアプリケーションがあるとします。このクラスター内のポッドが外部サーバーに異常な量のデータを送信しているとします。このような事象を {{site.data.keyword.security-advisor_short}} のダッシュボードに検出事項として表示する必要があります。
+なぜカスタマイズを作成する必要があるのでしょうか? `cloudkingdom` という名前の {{site.data.keyword.containershort_notm}} クラスターを実行しているアプリケーションがあるとします。 このクラスター内のポッドが外部サーバーに異常な量のデータを送信しているとします。 このような事象を {{site.data.keyword.security-advisor_short}} のダッシュボードに検出事項として表示する必要があります。
 
 カスタム・ツールでモニターし、異常な量のデータ転送を検出したら、ツールから {{site.data.keyword.security-advisor_short}} に検出事項を送信します。
 
