@@ -77,7 +77,7 @@ Prior to installing one of the Built-in Insights offerings, you must install Hel
 {: #ts-network-analytics}
 
 {: tsSymptoms}
-When you log in to the Security Advisor dashboard, some of your Network Insights finding types do not display.
+You do not see all of the finding types when you look for Network Insights through the dashboard or the API.
 
 {: tsCauses}
 Some Network Insights findings types work only on IBM Cloud Kubernetes Service version 1.10 or less.
