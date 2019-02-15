@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-02-08"
+lastupdated: "2019-02-15"
 
 ---
 
@@ -136,4 +136,4 @@ A finding might include:
 ## Next steps
 {: #network-next}
 
-Ready to get started? Check out [Enabling Network Insights](setup-network.html)!
+Ready to get started? Check out [Enabling Network Insights](/docs/services/security-advisor/setup-network.html)!

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-08"
+lastupdated: "2019-02-15"
 
 ---
 
@@ -167,7 +167,7 @@ You can install an agent to collect audit flow logs from your {{site.data.keywor
 ## Adding rule packages to COS
 {: #activity-adding-rules}
 
-A rule package is a JSON file that contains a list of rules that you want to monitor. You can download rule packages or [create your own](rules.html). The {{site.data.keyword.security-advisor_short}} engine validates that each rule follows the correct syntax.
+A rule package is a JSON file that contains a list of rules that you want to monitor. You can download rule packages or [create your own](/docs/services/security-advisor/rules.html). The {{site.data.keyword.security-advisor_short}} engine validates that each rule follows the correct syntax.
 {: shortdesc}
 
 1. Clone the following repository to get several preset rule packages. A file is created on your local system with the name *security-advisor-ata-rule-packages*.
@@ -193,7 +193,7 @@ A rule package is a JSON file that contains a list of rules that you want to mon
 
 8. Click **Upload**.
 
-Want to use your own packages? Try using one of the JSON files as a guide and create rules that fit your organizations needs. When you've created then file, add it to *IBM.rules/activities* folder in your COS instance. For more information about the types of rules and formatting, check out [Understanding rule packages](activity-insights.html).
+Want to use your own packages? Try using one of the JSON files as a guide and create rules that fit your organizations needs. When you've created then file, add it to *IBM.rules/activities* folder in your COS instance. For more information about the types of rules and formatting, check out [Understanding rule packages](/docs/services/security-advisor/activity-insights.html).
 {: tip}
 
 
