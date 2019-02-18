@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-02-08"
+lastupdated: "2019-02-18"
 
 ---
 
@@ -59,13 +59,13 @@ Ready to get started? You can get to the service dashboard in one of the followi
   </li>
 </ul>
 
-Are your pre-integrated findings not displaying any information? You might not have any certificates or images for {{site.data.keyword.security-advisor_short}} to monitor. Learn more about what {{site.data.keyword.security-advisor_short}} needs to populate the dashboard cards in [Taking advantage of pre-integrated services](/docs/services/security-advisor/setup.html).
+Are your pre-integrated findings not displaying any information? You might not have any certificates or images for {{site.data.keyword.security-advisor_short}} to monitor. Learn more about what {{site.data.keyword.security-advisor_short}} needs to populate the dashboard cards in [Taking advantage of pre-integrated services](/docs/services/security-advisor?topic=security-advisor-setup-services).
 
 
 ## Next steps
 {: #start-next}
 
-Now that you've seen the dashboard in action, [learn more](/docs/services/security-advisor/about.html) about how {{site.data.keyword.security-advisor_short}} can help you. You can also send user feedback by using <a href="https://developer.ibm.com/" target="_blank">dW Answers <img src="../../icons/launch-glyph.svg" alt="External link icon"></a> to contribute ideas for the service as it develops.
+Now that you've seen the dashboard in action, [learn more](/docs/services/security-advisor?topic=security-advisor-about) about how {{site.data.keyword.security-advisor_short}} can help you. You can also send user feedback by using <a href="https://developer.ibm.com/" target="_blank">dW Answers <img src="../../icons/launch-glyph.svg" alt="External link icon"></a> to contribute ideas for the service as it develops.
 
 
 ## Availability
