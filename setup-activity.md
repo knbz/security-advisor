@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-08"
+lastupdated: "2019-02-18"
 
 ---
 
@@ -44,9 +44,9 @@ To get started with Activity Insights, be sure that you have the following prere
     ```
     {: codeblock}     
 - cURL binary and ensure that it's updated. For CentOS and Red Hat, you can update by running: `yum update -y nss curl libcurl`
-- The [{{site.data.keyword.cloud_notm}} CLI and required plugins](/docs/cli/index.html#overview)
+- The [{{site.data.keyword.cloud_notm}} CLI and required plugins](/docs/cli?topic=cloud-cli-overview#overview)
 - The [Kubernetes CLI (kubectl)](https://kubernetes.io/docs/tasks/tools/install-kubectl/) v1.10.11 or higher
-- The [Kubernetes Helm (package manager)](/docs/containers/cs_integrations.html#helm) v2.9.0 or higher.
+- The [Kubernetes Helm (package manager)](/docs/containers?topic=containers-integrations#helm) v2.9.0 or higher.
 - A standard Kubernetes cluster version v1.10.11 or higher
 
 
@@ -63,7 +63,7 @@ By using the {{site.data.keyword.security-advisor_short}} GUI, you can create a 
 
 4. In the prerequisites section, click **Create COS instance and bucket**. Your COS instance and bucket are automatically created for you with the proper naming convention and IAM permissions. The bucket information is displayed.
 
-If you have an existing instance of COS and bucket be sure that it uses the naming convention: `sa.<account_id>.telemetric.<cos_region>`. To allow the service to read the data that is stored in your COS instance, set up [service-to-service authorization](/docs/iam/authorizations.html#serviceauth) by using {{site.data.keyword.cloud_notm}} IAM. Set `source` to `{{site.data.keyword.security-advisor_short}}` and `target` to your COS instance. Assign the `Reader` IAM role.
+If you have an existing instance of COS and bucket be sure that it uses the naming convention: `sa.<account_id>.telemetric.<cos_region>`. To allow the service to read the data that is stored in your COS instance, set up [service-to-service authorization](/docs/iam?topic=iam-serviceauth#serviceauth) by using {{site.data.keyword.cloud_notm}} IAM. Set `source` to `{{site.data.keyword.security-advisor_short}}` and `target` to your COS instance. Assign the `Reader` IAM role.
 
 
 ## Installing {{site.data.keyword.security-advisor_short}} components
@@ -122,7 +122,7 @@ You can install an agent to collect audit flow logs from your {{site.data.keywor
 
   2. Copy the output beginning with `export` and paste it into your terminal to set the `KUBECONFIG` environment variable.
 
-7. Install Helm by using the [Kubernetes Service integration docs](/docs/containers/cs_integrations.html#helm).
+7. Install Helm by using the [Kubernetes Service integration docs](/docs/containers?topic=containers-integrations#helm).
 
 8. Optional: [Enable TLS](https://github.com/helm/helm/blob/master/docs/tiller_ssl.md). If you're using your workstation to handle the installation of analytics components in multiple clusters and TLS is enabled, be sure that the TLS configurations are current and match the current cluster where you plan to install the components.
 
@@ -147,7 +147,7 @@ You can install an agent to collect audit flow logs from your {{site.data.keywor
     </tr>
     <tr>
       <td><code>cos_api_key</code></td>
-      <td>The [API key](/docs/services/cloud-object-storage/iam/service-credentials.html#service-credentials) that you created to access your COS instance and bucket. The key must have the platform role `writer`.</td>
+      <td>The [API key](/docs/services/cloud-object-storage/iam?topic=cloud-object-storage-service-credentials#service-credentials) that you created to access your COS instance and bucket. The key must have the platform role `writer`.</td>
     </tr>
     <tr>
       <td><code>at_region</code></td>
@@ -167,7 +167,7 @@ You can install an agent to collect audit flow logs from your {{site.data.keywor
 ## Adding rule packages to COS
 {: #activity-adding-rules}
 
-A rule package is a JSON file that contains a list of rules that you want to monitor. You can download rule packages or [create your own](rules.html). The {{site.data.keyword.security-advisor_short}} engine validates that each rule follows the correct syntax.
+A rule package is a JSON file that contains a list of rules that you want to monitor. You can download rule packages or [create your own](/docs/services/security-advisor/rules.html). The {{site.data.keyword.security-advisor_short}} engine validates that each rule follows the correct syntax.
 {: shortdesc}
 
 1. Clone the following repository to get several preset rule packages. A file is created on your local system with the name *security-advisor-ata-rule-packages*.
@@ -193,7 +193,7 @@ A rule package is a JSON file that contains a list of rules that you want to mon
 
 8. Click **Upload**.
 
-Want to use your own packages? Try using one of the JSON files as a guide and create rules that fit your organizations needs. When you've created then file, add it to *IBM.rules/activities* folder in your COS instance. For more information about the types of rules and formatting, check out [Understanding rule packages](activity-insights.html).
+Want to use your own packages? Try using one of the JSON files as a guide and create rules that fit your organizations needs. When you've created then file, add it to *IBM.rules/activities* folder in your COS instance. For more information about the types of rules and formatting, check out [Understanding rule packages](/docs/services/security-advisor/activity-insights.html).
 {: tip}
 
 

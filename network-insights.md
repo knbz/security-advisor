@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-02-08"
+lastupdated: "2019-02-18"
 
 ---
 
@@ -63,7 +63,7 @@ The following information is collected:
 
 **The actual data that is exchanged is not collected.**
 
-From a security point of view, it's a good idea to purge your collected data when legal or company requirements allow for it to be deleted. For more information, check out [Deleting Objects](/docs/services/cloud-object-storage/info/data-security-encryption.html#deletion).
+From a security point of view, it's a good idea to purge your collected data when legal or company requirements allow for it to be deleted. For more information, check out [Deleting Objects](/docs/services/cloud-object-storage/info?topic=cloud-object-storage-security#deletion).
 {: tip}
 
 
@@ -136,4 +136,4 @@ A finding might include:
 ## Next steps
 {: #network-next}
 
-Ready to get started? Check out [Enabling Network Insights](setup-network.html)!
+Ready to get started? Check out [Enabling Network Insights](/docs/services/security-advisor/setup-network.html)!

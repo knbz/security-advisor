@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-02-08"
+lastupdated: "2019-02-18"
 
 ---
 
@@ -78,7 +78,7 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
   ```
   {: codeblock}
 
-2. Get your account ID. For more information about service roles, check out the [{{site.data.keyword.security-advisor_short}} access policies](/docs/iam/mngiam.html#iammanidaccser).
+2. Get your account ID. For more information about service roles, check out the [{{site.data.keyword.security-advisor_short}} access policies](/docs/iam?topic=iam-iammanidaccser#iammanidaccser).
 
   ```
   ibmcloud account list org-account ORG_NAME [--guid]
@@ -92,7 +92,7 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
   ```
   {: codeblock}
 
-  IAM tokens expire every 60 minutes. To learn how to [get a new token automatically](/docs/iam/apikey_iamtoken.html#iamtoken_from_apikey) by using an API key.
+  IAM tokens expire every 60 minutes. To learn how to [get a new token automatically](/docs/iam?topic=iam-iamtoken_from_apikey#iamtoken_from_apikey) by using an API key.
   {: tip}
 
 </br>
