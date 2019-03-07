@@ -21,6 +21,7 @@ subcollection: security-advisor
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
+{:faq: data-hd-content-type='faq'}
 
 
 # Frequently asked questions (FAQ)
