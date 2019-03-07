@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-02-18"
+  years: 2017, 2019
+lastupdated: "2019-03-07"
+
+keywords: centralized security, security management, alerts, security risk, insights, threat detection
+
+subcollection: security-advisor
 
 ---
 
@@ -17,6 +21,7 @@ lastupdated: "2019-02-18"
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
+
 
 # Integrations
 {: #integrations}
