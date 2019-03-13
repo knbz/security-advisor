@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-02-18"
+  years: 2017, 2019
+lastupdated: "2019-03-13"
+
+keywords: centralized security, security management, alerts, security risk, insights, threat detection
+
+subcollection: security-advisor
 
 ---
 
@@ -69,9 +73,9 @@ The APIs follow Grafeas like artifact metadata specifications to store, query, a
 
 Before you integrate findings from your 3rd party tool, be sure that you have the following prerequisites.
 
-1. Be sure that the user or service ID that you're using is assigned the **Manager** [IAM role](https://console.bluemix.net/iam/#/users).
+1. Be sure that the user or service ID that you're using is assigned the **Manager** [IAM role](https://cloud.ibm.com/iam#/users).
 
-1. Log in to {{site.data.keyword.Bluemix_notm}}.
+1. Log in to {{site.data.keyword.cloud_notm}}.
 
   ```
   ibmcloud login
@@ -95,7 +99,7 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
   IAM tokens expire every 60 minutes. To learn how to [get a new token automatically](/docs/iam?topic=iam-iamtoken_from_apikey#iamtoken_from_apikey) by using an API key.
   {: tip}
 
-</br>
+
 
 ### Importing findings and KRIs
 {: #custom-adding}

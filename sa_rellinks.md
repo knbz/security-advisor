@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-02-04"
+  years: 2017, 2019
+lastupdated: "2019-03-13"
+
+keywords: centralized security, security management, alerts, security risk, insights, threat detection
+
+subcollection: security-advisor
 
 ---
 
@@ -26,5 +30,5 @@ You can use the following related links to learn more about and interact with  {
 
 Links related to the user interface:
 * [{{site.data.keyword.security-advisor_short}} dashboard](https://cloud.ibm.com/security-advisor#/dashboard)
-* The [Findings API](https://console.bluemix.net/apidocs/security-advisor)
+* The [Findings API](https://cloud.ibm.com/apidocs/security-advisor)
 * The [Grafeas spec](http://grafeas.ng.bluemix.net/ui/)

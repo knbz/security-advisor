@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-02-08"
+  years: 2017, 2019
+lastupdated: "2019-03-13"
+
+keywords: centralized security, security management, alerts, security risk, insights, threat detection
+
+subcollection: security-advisor
 
 ---
 
@@ -18,10 +22,11 @@ lastupdated: "2019-02-08"
 {:deprecated: .deprecated}
 {:download: .download}
 
+
 # Partners
 {: #setup-partner}
 
-Partner integrations are a way to bring critical alerts and findings from 3rd party providers into the {{site.data.keyword.security-advisor_long}} dashboard. These partners have worked with IBM to help shape, simplify, and guide the integration experience for you.
+IBM Business Partner integrations are a way to bring critical alerts and findings from 3rd party providers into the {{site.data.keyword.security-advisor_long}} dashboard. These partners have worked with IBM to help shape, simplify, and guide the integration experience for you.
 {: shortdesc}
 
 ## Before you begin
@@ -30,7 +35,7 @@ Partner integrations are a way to bring critical alerts and findings from 3rd pa
 Before you start integrating partners, be sure that you have the following prerequisites.
 
 * Ensure that you have an account with the partner that you want to integrate.
-* Ensure that you have the required administrative permissions to generate the integration URL for the Partner service.
+* Ensure that you have the required administrative permissions to generate the integration URL for the partner service.
 * Ensure that you have IAM administrative access to {{site.data.keyword.cloud_notm}} and manager access to {{site.data.keyword.security-advisor_short}}.
 
 ## Integration wizard
@@ -84,7 +89,7 @@ When you configure the partner connection, two cards are created in your dashboa
 
 * Total images with new vulnerabilities: Findings that are related to vulnerabilities found in your container images.
 
-You can learn more about the company in the Twistlock docs. Be sure that you have a
+You can learn more about the company in the Twistlock docs.
 
 ### Configuring Twistlock
 {: #configure-twistlock}

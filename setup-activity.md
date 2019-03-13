@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-18"
+lastupdated: "2019-03-13"
+
+keywords: centralized security, security management, alerts, security risk, insights, threat detection
+
+subcollection: security-advisor
 
 ---
 
@@ -18,7 +22,6 @@ lastupdated: "2019-02-18"
 {:deprecated: .deprecated}
 {:download: .download}
 
-
 # Activity Insights
 {: #setup-activity}
 
@@ -33,7 +36,7 @@ To get started with Activity Insights, be sure that you have the following prere
 
 - If you are working on Windows 10, activate Windows Subsystem for Linux and install an [Ubuntu shell](https://win10faq.com/install-run-ubuntu-bash-windows-10/)
 - Install the yq CLI:
-  * For [MacOS and Windows 10](http://mikefarah.github.io/yq/).
+  * For [macOS and Windows 10](http://mikefarah.github.io/yq/).
   * For CentOS, Red Hat, and Ubuntu run the following commands to install version 1.15.
     ```
     wget https://github.com/mikefarah/yq/releases/download/1.15.0/yq_linux_amd64       
@@ -43,9 +46,9 @@ To get started with Activity Insights, be sure that you have the following prere
     yq -V
     ```
     {: codeblock}     
-- cURL binary and ensure that it's updated. For CentOS and Red Hat, you can update by running: `yum update -y nss curl libcurl`
-- The [{{site.data.keyword.cloud_notm}} CLI and required plugins](/docs/cli?topic=cloud-cli-overview#overview)
-- The [Kubernetes CLI (kubectl)](https://kubernetes.io/docs/tasks/tools/install-kubectl/) v1.10.11 or higher
+- Updated cURL binary: For CentOS and Red Hat, you can update by running `yum update -y nss curl libcurl`.
+- The [{{site.data.keyword.cloud_notm}} CLI and required plug-ins](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)
+- The [Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/) v1.10.11 or higher
 - The [Kubernetes Helm (package manager)](/docs/containers?topic=containers-integrations#helm) v2.9.0 or higher.
 - A standard Kubernetes cluster version v1.10.11 or higher
 
@@ -167,7 +170,7 @@ You can install an agent to collect audit flow logs from your {{site.data.keywor
 ## Adding rule packages to COS
 {: #activity-adding-rules}
 
-A rule package is a JSON file that contains a list of rules that you want to monitor. You can download rule packages or [create your own](/docs/services/security-advisor/rules.html). The {{site.data.keyword.security-advisor_short}} engine validates that each rule follows the correct syntax.
+A rule package is a JSON file that contains a list of rules that you want to monitor. You can download rule packages or [create your own](/docs/services/security-advisor?topic=security-advisor-activity#activity-packages). The {{site.data.keyword.security-advisor_short}} engine validates that each rule follows the correct syntax.
 {: shortdesc}
 
 1. Clone the following repository to get several preset rule packages. A file is created on your local system with the name *security-advisor-ata-rule-packages*.
@@ -185,7 +188,7 @@ A rule package is a JSON file that contains a list of rules that you want to mon
 
 5. On the **Buckets** tab of the service dashboard, select the bucket that is associated with Activity Insights.
 
-5. On the COS instance homepage, click **Upload** and select **Folders**.
+5. On the COS instance home page, click **Upload** and select **Folders**.
 
 6. If prompted, click **Install Aspera Connect client**. If you weren't prompted, you already have the client installed. If you needed to install the client, repeat step 5 when the install is finished.
 
@@ -193,7 +196,7 @@ A rule package is a JSON file that contains a list of rules that you want to mon
 
 8. Click **Upload**.
 
-Want to use your own packages? Try using one of the JSON files as a guide and create rules that fit your organizations needs. When you've created then file, add it to *IBM.rules/activities* folder in your COS instance. For more information about the types of rules and formatting, check out [Understanding rule packages](/docs/services/security-advisor/activity-insights.html).
+Want to use your own packages? Try using one of the JSON files as a guide and create rules that fit your organizations needs. When you've created then file, add it to *IBM.rules/activities* folder in your COS instance. For more information about the types of rules and formatting, check out [Understanding rule packages](/docs/services/security-advisor?topic=security-advisor-activity#activity).
 {: tip}
 
 
