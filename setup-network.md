@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-18"
+lastupdated: "2019-03-13"
 
 ---
 
@@ -34,7 +34,7 @@ If you are currently using the Network Analytics feature, you must [delete the s
 
 - If you are working on Windows 10, activate Windows Subsystem for Linux and install an [Ubuntu shell](https://win10faq.com/install-run-ubuntu-bash-windows-10/)
 - Install the yq CLI:
-  * For [MacOS and Windows 10](http://mikefarah.github.io/yq/).
+  * For [macOS and Windows 10](http://mikefarah.github.io/yq/).
   * For CentOS, Red Hat, and Ubuntu run the following commands to install version 1.15.
     ```
     wget https://github.com/mikefarah/yq/releases/download/1.15.0/yq_linux_amd64       
@@ -44,9 +44,9 @@ If you are currently using the Network Analytics feature, you must [delete the s
     yq -V
     ```
     {: codeblock}     
-- cURL binary and ensure that it's updated. For CentOS and Red Hat, you can update by running: `yum update -y nss curl libcurl`
-- The [{{site.data.keyword.cloud_notm}} CLI and required plugins](/docs/cli?topic=cloud-cli-overview#overview)
-- The [Kubernetes CLI (kubectl)](https://kubernetes.io/docs/tasks/tools/install-kubectl/) v1.10.11 or higher
+- Updated cURL binary: For CentOS and Red Hat, you can update by running `yum update -y nss curl libcurl`.
+- The [{{site.data.keyword.cloud_notm}} CLI and required plug-ins](/docs/cli?topic=cloud-cli-overview#overview)
+- The [Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/) v1.10.11 or higher
 - The [Kubernetes Helm (package manager)](/docs/containers?topic=containers-integrations#helm) v2.9.0 or higher.
 - A standard Kubernetes cluster version v1.10.11 or higher
 
