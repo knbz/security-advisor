@@ -30,7 +30,7 @@ As of 20 January 2019, Network Insights (beta) replaces the Network Analytics fe
 ## Before you begin
 {: #network-prereq}
 
-If you are currently using the Network Analytics feature, you must [delete the service components](/docs/services/security-advisor?topic=security-advisor-setup-network#uninstall) before you can install Network Insights. To get started with Network Insights, be sure that you have the following prerequisites.
+If you are currently using the Network Analytics feature, you must [delete the service components](/docs/services/security-advisor?topic=security-advisor-setup-network#uninstall-analytics) before you can install Network Insights. To get started with Network Insights, be sure that you have the following prerequisites.
 
 - If you are working on Windows 10, activate Windows Subsystem for Linux and install an [Ubuntu shell](https://win10faq.com/install-run-ubuntu-bash-windows-10/)
 - Install the yq CLI:
@@ -45,7 +45,7 @@ If you are currently using the Network Analytics feature, you must [delete the s
     ```
     {: codeblock}     
 - Updated cURL binary: For CentOS and Red Hat, you can update by running `yum update -y nss curl libcurl`.
-- The [{{site.data.keyword.cloud_notm}} CLI and required plug-ins](/docs/cli?topic=cloud-cli-overview#overview)
+- The [{{site.data.keyword.cloud_notm}} CLI and required plug-ins](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)
 - The [Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/) v1.10.11 or higher
 - The [Kubernetes Helm (package manager)](/docs/containers?topic=containers-integrations#helm) v2.9.0 or higher.
 - A standard Kubernetes cluster version v1.10.11 or higher

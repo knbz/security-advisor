@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-03-13"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -30,7 +30,7 @@ subcollection: security-advisor
 You can view, manage, and audit user-initiated activities made in your {{site.data.keyword.security-advisor_long}} service instance by using the {{site.data.keyword.cloudaccesstrailshort}} service.
 {: shortdesc}
 
-For more information about how the service works, see the [{{site.data.keyword.cloudaccesstrailshort}} docs](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started-with-cla).
+For more information about how the service works, see the [{{site.data.keyword.cloudaccesstrailshort}} docs](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started#getting-started).
 
 
 ## Where to view events
@@ -141,6 +141,6 @@ Check out the following table for a list of the events that are sent to {{site.d
   </tr>
   <tr>
     <td><code>security-advisor.insights-cos.create</code></td>
-    <td>Create a Cloud Object Storage instance through {{site.data.keyword.security-advisor_short}}for network and activity insights.</td>
+    <td>Create a Cloud Object Storage instance through {{site.data.keyword.security-advisor_short}} for network and activity insights.</td>
   </tr>
 </table>

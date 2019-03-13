@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-03-13"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -398,10 +398,6 @@ The following example demonstrates a rule that watches for the deletion of polic
 
 Want to learn more about boolean rules? Check out <a href="https://github.com/CacheControl/json-rules-engine/blob/master/docs/rules.md" target="_blank">the CacheControl docs <img src="../../icons/launch-glyph.svg" alt="External link icon"></a>.
 {: tip}
-
-
-
-</br>
 
 ## Next steps
 {: #activity-next}

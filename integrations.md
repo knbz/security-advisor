@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-03-13"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -64,7 +64,7 @@ Are you a partner and interested in integrating your solution with {{site.data.k
 
 With NeuVector, you can detect network threats and violations to prevent attacks of your container based applications. Through monitoring, you can prevent exploits and breakouts by detecting root privilege escalations, port scans, reverse shells, and suspicious file system activity in your containers and hosts.
 
-For help setting up your NeuVector instance, see [Partner solutions](/docs/services/security-advisor?topic=security-advisor-setup-partner#neuvector).
+For help setting up your NeuVector instance, see [Partner solutions](/docs/services/security-advisor?topic=security-advisor-setup-partner#setup-neuvector).
 
 
 ### Twistlock
@@ -74,7 +74,7 @@ For help setting up your NeuVector instance, see [Partner solutions](/docs/servi
 
 With a focus on having the most precise data available to cover all of the layers of your stack, so you have accurate visibility and the lowest rate of false positives.Twistlock combines this data with knowledge of your actual deployments such as which containers are exposed to the internet, which run with high privilege, and which have other security mitigations in place, so you can always see what vulnerabilities are most critical in your specific environment.
 
-For help setting up your Twistlock instance, see [Partner solutions](/docs/services/security-advisor?topic=security-advisor-setup-partner#twistlock).
+For help setting up your Twistlock instance, see [Partner solutions](/docs/services/security-advisor?topic=security-advisor-setup-partner#setup-twistlock).
 </br>
 
 

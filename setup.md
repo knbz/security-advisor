@@ -44,15 +44,15 @@ Learn more about [{{site.data.keyword.registryshort_notm}}](/docs/services/Regis
 **Before you begin**
 
 Before you can get started with registry, be sure that you have the following CLIs and plug-ins installed:
-* [The {{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://clis.ng.bluemix.net/ui/home.html)
-* The container-registry plug-in.
+* [The {{site.data.keyword.cloud_notm}} CLI)](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)
+* The Container Registry plug-in.
 
   ```
   ibmcloud plugin install container-registry -r Bluemix
   ```
   {: pre}
 
-</br>
+
 **Creating a namespace**
 
 1. Log in to your account by using the CLI.
@@ -93,7 +93,6 @@ Before you can get started with registry, be sure that you have the following CL
 
 After you push images to your {{site.data.keyword.registryshort_notm}} namespace, information about any vulnerabilities found is shown in the **Images with Vulnerabilities** card in the service dashboard. You can also drill down into specific images to find out more information, such as a description of all of the identified vulnerabilities and configuration issues.
 
-</br>
 
 ## Monitoring certificates
 {: #setup-certificates}
