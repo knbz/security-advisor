@@ -30,6 +30,7 @@ IBM Cloud Security Advisor
     [Service dashboard](https://cloud.ibm.com/security-advisor/#/dashboard)
     [Blogs](https://www.ibm.com/blogs/bluemix/tag/security-advisor/)
     at-events.md
+    sa_rellinks.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}

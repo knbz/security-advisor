@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-03-14"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -38,7 +38,7 @@ Check out the following image to see the flow of information.
 
 ![Activity Insights flow diagram](images/activity-insights-flow.png)
 
-1. An an account administrator, you can use install Activity Insights into your cluster.
+1. An an account administrator, you can install Activity Insights into your cluster.
 2. With the add-on installed into one cluster, it can monitor Activity Tracker logs for your entire account.
 3. The activity logs are forwarded to a Cloud Object Storage bucket where they are stored until you decide to delete them. When you use the {{site.data.keyword.security-advisor_short}} GUI to create the bucket, service to service IAM roles are assigned so that the service can view the logs.
 4. With Activity Insights enabled, the raw data in your COS bucket is analyzed based on rules that can be predefined by the service or customized by you.
@@ -61,11 +61,11 @@ Collected information includes:
 * The user that was authenticated
 * The activity type
 * The activity result
-* and more...
+* And more ...
 
-The raw data that is collected is stored in a Cloud Object Storage bucket where you can determine the length of time that it is stored. You own and control the collected data, which means that you're responsible for storing, securing, and deleting it. {{site.data.keyword.security-advisor_short}} maintains findings for 90 days. During that time the results are presented on the **Activity Insights** card in the service dashboard. So, although you will no longer see the finding in your dashboard after 90 days, you might still have the raw data in storage.
+The raw data that is collected is stored in a Cloud Object Storage bucket where you can determine the length of time that it is stored. You own and control the collected data, which means that you're responsible for storing, securing, and deleting it. {{site.data.keyword.security-advisor_short}} maintains findings for 90 days. During that time, the results are presented on the **Activity Insights** card in the service dashboard. So, although you will no longer see the finding in your dashboard after 90 days, you might still have the raw data in storage.
 
-From a security point of view, it's a generally a good idea to purge your collected data when legal or company requirements allow for it to be deleted. For more information, check out [Deleting objects](/docs/services/cloud-object-storage/info?topic=cloud-object-storage-security#deletion).
+From a security point of view, it's generally a good idea to purge your collected data when legal or company requirements allow for it to be deleted. For more information, check out [Deleting objects](/docs/services/cloud-object-storage/info?topic=cloud-object-storage-security#deletion).
 {: tip}
 
 ## Activity Insights: Access
@@ -175,7 +175,7 @@ Example:
 	</tr>
 	<tr>
 		<td><code>value</code></td>
-		<td>The way that an action is defined. This usually corresponds to an API call that can be used to interact with the service.</td>
+		<td>The way that an action is defined. The value usually corresponds to an API call that can be used to interact with the service.</td>
 	</tr>
 </table>
 
@@ -203,7 +203,7 @@ Example:
 ### Rule type: aggregate
 {: #rule-aggregate}
 
-An aggregate rule type counts the number of occurrences of an action in a specific time frame and then triggers a finding if the defined threshold is exceeded. The rule is defined by adding the threshold and time window to the boolean condition. There are several conditions that must be met in order for the rule to be defined.
+An aggregate rule type counts the number of occurrences of an action in a specific time frame and then triggers a finding if the defined threshold is exceeded. The rule is defined by adding the threshold and time window to the boolean condition. Several conditions must be met in order for the rule to be defined.
 
 * The rule type must be `aggregate`.
 * The root condition must contain the following facts:
@@ -301,7 +301,7 @@ A coincident rule type monitors actions to see how many times the same action oc
 
 **Example**
 
-The following example demonstrates a rule that watches for a coincident of three specific actions that must occur within one 30 minute period:
+The following example demonstrates a rule that watches for a coincident of three specific actions that must occur within one thirty-minute period:
 
 ```
 {

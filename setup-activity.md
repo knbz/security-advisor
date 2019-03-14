@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-03-14"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -66,7 +66,7 @@ By using the {{site.data.keyword.security-advisor_short}} GUI, you can create a 
 
 4. In the prerequisites section, click **Create COS instance and bucket**. Your COS instance and bucket are automatically created for you with the proper naming convention and IAM permissions. The bucket information is displayed.
 
-If you have an existing instance of COS and bucket be sure that it uses the naming convention: `sa.<account_id>.telemetric.<cos_region>`. To allow the service to read the data that is stored in your COS instance, set up [service-to-service authorization](/docs/iam?topic=iam-serviceauth#serviceauth) by using {{site.data.keyword.cloud_notm}} IAM. Set `source` to `{{site.data.keyword.security-advisor_short}}` and `target` to your COS instance. Assign the `Reader` IAM role.
+If you have an existing instance of COS and bucket, be sure that it uses the naming convention `sa.<account_id>.telemetric.<cos_region>`. To allow the service to read the data that is stored in your COS instance, set up [service-to-service authorization](/docs/iam?topic=iam-serviceauth#serviceauth) by using {{site.data.keyword.cloud_notm}} IAM. Set `source` to `{{site.data.keyword.security-advisor_short}}` and `target` to your COS instance. Assign the `Reader` IAM role.
 
 
 ## Installing {{site.data.keyword.security-advisor_short}} components
@@ -92,7 +92,7 @@ You can install an agent to collect audit flow logs from your {{site.data.keywor
   {: codeblock}
 
 4. Change into `security-advisor-activity-insights` folder.
-5. Log in to the {{site.data.keyword.cloud_notm}} CLI. Follow the prompts in the CLI to complete finish logging in.
+5. Log in to the {{site.data.keyword.cloud_notm}} CLI. Follow the prompts in the CLI to finish logging in.
 
   ```
   ibmcloud login -a https://api.<region>.bluemix.net
@@ -129,7 +129,7 @@ You can install an agent to collect audit flow logs from your {{site.data.keywor
 
 8. Optional: [Enable TLS](https://github.com/helm/helm/blob/master/docs/tiller_ssl.md). If you're using your workstation to handle the installation of analytics components in multiple clusters and TLS is enabled, be sure that the TLS configurations are current and match the current cluster where you plan to install the components.
 
-9. Run the following command to install the Insights. The command validates your bucket naming convention, creates Kubernetes secrets, updates the values with your cluster GUID, and deploys Activity Insights.
+9. Run the following command to install the Insights. The command validates the naming convention of your bucket, creates Kubernetes secrets, updates the values with your cluster GUID, and deploys Activity Insights.
 
   ```
   ./activity-insight-install.sh <cos_region> <cos_api_key> <at_region> <account_api_key> <account_spaces>
@@ -162,7 +162,7 @@ You can install an agent to collect audit flow logs from your {{site.data.keywor
     </tr>
     <tr>
       <td><code>account_spaces</code></td>
-      <td>A comma separated list of the space GUIDs for your {{site.data.keyword.cloud_notm}} account.</td>
+      <td>A comma-separated list of the space GUIDs for your {{site.data.keyword.cloud_notm}} account.</td>
     </tr>
   </table>
 
@@ -180,7 +180,7 @@ A rule package is a JSON file that contains a list of rules that you want to mon
   ```
   {: codeblock}
 
-2. Create a new file locally with the name *IBM.rules/activities*.
+2. Locally, create a file with the name *IBM.rules/activities*.
 
 3. Move the JSON files from *security-advisor-ata-rule-packages* to *IBM.rules/activities*.
 
@@ -190,20 +190,20 @@ A rule package is a JSON file that contains a list of rules that you want to mon
 
 5. On the COS instance home page, click **Upload** and select **Folders**.
 
-6. If prompted, click **Install Aspera Connect client**. If you weren't prompted, you already have the client installed. If you needed to install the client, repeat step 5 when the install is finished.
+6. If prompted, click **Install Aspera Connect client**. If you do not see a prompt, you already have the client installed. If you needed to install the client, repeat step 5 when the installation is finished.
 
 7. Select the *IBM.rules/activities* folder.
 
 8. Click **Upload**.
 
-Want to use your own packages? Try using one of the JSON files as a guide and create rules that fit your organizations needs. When you've created then file, add it to *IBM.rules/activities* folder in your COS instance. For more information about the types of rules and formatting, check out [Understanding rule packages](/docs/services/security-advisor?topic=security-advisor-activity#activity).
+Want to use your own packages? Use one of the JSON files as a guide and create rules that fit your organizations needs. After you create the file, add it to the *IBM.rules/activities* folder in your COS instance. For more information about the types of rules and formatting, check out [Understanding rule packages](/docs/services/security-advisor?topic=security-advisor-activity#activity).
 {: tip}
 
 
 ## Deleting the components
 {: #activity-delete}
 
-If you no longer have a need to use Activity Insights, you can delete the service components from your cluster.
+If you no longer need to use Activity Insights, you can delete the service components from your cluster.
 {: shortdesc}
 
 1. Delete the service components by using Helm. Be sure to use the `-tls` flag if you have TLS enabled.

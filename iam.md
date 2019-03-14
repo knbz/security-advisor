@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-03-14"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -91,7 +91,7 @@ The actions are customized and defined by the {{site.data.keyword.Bluemix_notm}}
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.read</code></td>
-    <td>Read custom solutions that have been added to the service.</td>
+    <td>Read custom solutions that you added to the service.</td>
     <td>Reader</br>Writer</br>Manager</td>
   </tr>
   <tr>
@@ -111,7 +111,7 @@ The actions are customized and defined by the {{site.data.keyword.Bluemix_notm}}
   </tr>
   <tr>
     <td><code>security-advisor.partner-solution.read</code></td>
-    <td>View the partner solutions that you have added to your service instance.</td>
+    <td>View the partner solutions that you added to your service instance.</td>
     <td>Reader</br>Writer</br>Manager</td>
   </tr>
   <tr>
@@ -151,7 +151,7 @@ The actions are customized and defined by the {{site.data.keyword.Bluemix_notm}}
   </tr>
   <tr>
     <td><code>security-advisor.insights-cos.create</code></td>
-    <td>Create a Cloud Object Storage instance through {{site.data.keyword.security-advisor_short}}for network and activity insights.</td>
+    <td>Create a Cloud Object Storage instance through {{site.data.keyword.security-advisor_short}} for network and activity insights.</td>
     <td>Manager</td>
   </tr>
 </table>

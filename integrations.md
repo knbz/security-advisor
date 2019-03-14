@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-03-14"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -49,7 +49,7 @@ To learn more, check out [Taking advantage of pre-integrated services](/docs/ser
 ## Partner integrations
 {: #integrate-partner}
 
-Partner integrations are a way to enhance security for your {{site.data.keyword.cloud_notm}} deployments by creating a connection between {{site.data.keyword.security-advisor_short}} and other security tools that have worked with IBM to ensure a seamless user experience.
+Partner integrations are a way to enhance security for your {{site.data.keyword.cloud_notm}} deployments by creating a connection between {{site.data.keyword.security-advisor_short}} and other security tools that are working with IBM to ensure a seamless user experience.
 {: shortdesc}
 
 Current {{site.data.keyword.security-advisor_short}} partners include Neuvector and Twistlock.
@@ -62,9 +62,9 @@ Are you a partner and interested in integrating your solution with {{site.data.k
 
 [NeuVector](https://neuvector.com/) provides a highly integrated, automated security platform for Kubernetes and Red Hat OpenShift that allows you to monitor and protect container network traffic. Specifically, East-West network traffic.
 
-With NeuVector, you can detect network threats and violations to prevent attacks of your container based applications. Through monitoring, you can prevent exploits and breakouts by detecting root privilege escalations, port scans, reverse shells, and suspicious file system activity in your containers and hosts.
+With NeuVector, you can detect network threats and violations to prevent attacks of your container-based applications. Through monitoring, you can prevent exploits and breakouts by detecting root privilege escalations, port scans, reverse shells, and suspicious file system activity in your containers and hosts.
 
-For help setting up your NeuVector instance, see [Partner solutions](/docs/services/security-advisor?topic=security-advisor-setup-partner#setup-neuvector).
+For help with setting up your NeuVector instance, see [Partner solutions](/docs/services/security-advisor?topic=security-advisor-setup-partner#setup-neuvector).
 
 
 ### Twistlock
@@ -74,7 +74,7 @@ For help setting up your NeuVector instance, see [Partner solutions](/docs/servi
 
 With a focus on having the most precise data available to cover all of the layers of your stack, so you have accurate visibility and the lowest rate of false positives.Twistlock combines this data with knowledge of your actual deployments such as which containers are exposed to the internet, which run with high privilege, and which have other security mitigations in place, so you can always see what vulnerabilities are most critical in your specific environment.
 
-For help setting up your Twistlock instance, see [Partner solutions](/docs/services/security-advisor?topic=security-advisor-setup-partner#setup-twistlock).
+For help with setting up your Twistlock instance, see [Partner solutions](/docs/services/security-advisor?topic=security-advisor-setup-partner#setup-twistlock).
 </br>
 
 
@@ -92,17 +92,17 @@ By using the {{site.data.keyword.security-advisor_short}} GUI, you can bookmark 
 ### Integrating your own tools with the API
 {: #integrate-tools-api}
 
-With the Findings API, you can integrate findings from your custom security tools into the {{site.data.keyword.security-advisor_short}} dashboard. This could be any custom or partner tool that generates a security alert or finding that also supports API based interaction.
+With the Findings API, you can integrate findings from your custom security tools into the {{site.data.keyword.security-advisor_short}} dashboard. This could be any custom or partner tool that generates a security alert or finding that also supports API-based interaction.
 
 ## Built-in Insights
 {: #integrate-insights}
 
-With built-in insights, you can detect potential issues by continuously monitoring your cluster and account logs. By monitoring network traffic and user activity you can help ensure that your {{site.data.keyword.cloud_notm}} resources remain protected.
+With built-in insights, you can detect potential issues by continuously monitoring your cluster and account logs. By monitoring network traffic and user activity, you can help ensure that your {{site.data.keyword.cloud_notm}} resources remain protected.
 {: shortdesc}
 
 **Network Insights (beta)**
 
-With Network Insights (beta), you can monitor and analyze cluster network communication, both incoming and outgoing, between your Kubernetes cluster and external entities. By using integrated threat intelligence and anomaly detection, the service can identity reconnaissance attacks and potentially compromised assets. To learn more, check out [Network Insights](/docs/services/security-advisor?topic=security-advisor-network).
+With Network Insights (beta), you can monitor and analyze cluster network communication, both incoming and outgoing, between your Kubernetes cluster and external entities. By using integrated threat intelligence and anomaly detection, the service can identify reconnaissance attacks and potentially compromised assets. To learn more, check out [Network Insights](/docs/services/security-advisor?topic=security-advisor-network).
 
 **Activity Insights (preview)**
 
