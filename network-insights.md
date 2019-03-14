@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-03-14"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -39,7 +39,7 @@ Check out the following image to see the flow of information.
 
 ![Network Insights flow diagram](images/network-insights-flow.png)
 
-1. As an account administrator, you can use install Network Insights into each cluster that you want to monitor.
+1. As an account administrator, you can install Network Insights into each cluster that you want to monitor.
 2. Network flow logs are forwarded to a Cloud Object Storage bucket where they are stored until you decide to delete them. When you use the {{site.data.keyword.security-advisor_short}} GUI to create the bucket, service to service IAM roles are assigned so that the service can view the logs.
 3. With Network Insights enabled, the raw data in your COS bucket is analyzed for suspicious behavior.
 4. When a possible security issue is flagged, the finding is forwarded to the Findings database.
@@ -90,9 +90,9 @@ The card introduces two Key Risk Indicators (KRIs):
 
 Findings might include suspicious clients that:
 
-* send abnormally large amounts of data into the cluster.
-* perform an abnormally large number of requests to a cluster service
-* appear to target the cluster as exhibited by the number of attempts that it performs to survey the cluster. and identity what services it has open in any given time.
+* Send abnormally large amounts of data into the cluster.
+* Perform an abnormally large number of requests to a cluster service.
+* Appear to target the cluster as exhibited by the number of attempts that it performs to survey the cluster.
 
 
 
@@ -106,8 +106,8 @@ The service continuously monitors the behavioral patterns of containers that acc
 
 The card introduces two Key Risk Indicators (KRIs):
 
-* Outbound approaches to suspicious servers: Findings related to a cluster that access the servers.
-* Abnormally large payloads exchanged with suspicious servers: Findings related to data volumes that are sent between the cluster and servers.
+* Outbound approaches to suspicious servers: Findings that are related to a cluster that access the servers.
+* Abnormally large payloads exchanged with suspicious servers: Findings that are related to data volumes that are sent between the cluster and servers.
 
 
 Findings might include containers that:
@@ -136,7 +136,7 @@ A finding might include:
 * containers that send out or consume significantly more data than normal to or from specific peers
 * the level of surveying of a particular increased significantly
 
- After the model is developed, deviations from the learned model are detected, and when an alarming change is exhibited, Network Insights posts a finding to the Security Advisor dashboard. Findings are summarized in the 'Network: Anomalies in Traffic' card. The card introduces two Key Risk Indicators (KRIs). The 'Higher than normal reconnaissance or data exchange activity' KRI counts findings related to abnormal interactions detected between the cluster and external peers, while the 'Outbound approach to a new server' KRI counts findings related to new detected servers approaches by the cluster.  
+ After the model is developed, deviations from the learned model are detected, and when an alarming change is exhibited, Network Insights posts a finding to the Security Advisor dashboard. Findings are summarized in the 'Network: Anomalies in Traffic' card. The card introduces two Key Risk Indicators (KRIs). The 'Higher than normal reconnaissance or data exchange activity' KRI counts findings that are related to abnormal interactions detected between the cluster and external peers, while the 'Outbound approach to a new server' KRI counts findings that are related to new detected servers approaches by the cluster.  
 
 ## Next steps
 {: #network-next}
