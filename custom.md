@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-03-15"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -109,9 +109,32 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
   Example request:
 
   ```
-  curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account id>/providers/my-custom-tool/notes" -H "accept: application/json" -H "Authorization: <iam-token>" -H "Content-Type: application/json" -d "{ \"kind\": \"FINDING\", \"short_description\": \"My security tool finding\", \"long_description\": \"See what my custom security tool found\", \"provider_id\": \"my-custom-tool\", \"id\": \"my-custom-tool-findings-type\", \"reported_by\": { \"id\": \"my-custom-tool\", \"title\": \"My Custom Security Tool\" }, \"finding\": { \"severity\": \"MEDIUM\", \"next_steps\": [ { \"title\": \"Learn why this is reported as a risk\" } ] } }"
+  curl --request POST 
+  --url "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account id>/providers/my-custom-tool/notes",
+  --header "accept: application/json",
+  --header "authorization: <IAM_token>",
+  --header "content-type: application/json",
+  --data "{
+    "kind": "FINDING",
+    "short_description": "My security tool finding",
+    "long_description": "Longer description of what the security tool found.",
+    "provder_id": "my-custom-tool",
+    "id": "my-custom-tool-findings-type",
+    "reported_by": {
+      "id": "my-custom-tool",
+      "title": "My custom security tool",
+    }
+    "finding": {
+      "severity": "MEDIUM",
+      "next_steps": [
+        {
+          "title": "Explain why it's reported as a risk.",
+        }
+      ]
+    }
+  }
   ```
-  {: codeblock}
+  {: pre}
 
   <table>
     <thead>
@@ -200,9 +223,36 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
   {: note}
 
   ```
-  curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account-id>/providers/my-custom-tool/occurrences" -H "accept: application/json" -H "Authorization: <iam-token>" -H "Replace-If-Exists: true" -H "Content-Type: application/json" -d "{ \"note_name\": \"<account-id>/providers/my-custom-tool/notes/my-custom-tool-findings-type\", \"kind\": \"FINDING\", \"remediation\": \"how to resolve this\", \"provider_id\": \"my-custom-tool\", \"id\": \"my-custom-tool-finding-1\", \"context\": { \"region\": \"location\", \"resource_id\": \"pluginId\", \"resource_name\": \"www.myapp.com\", \"resource_type\": \"worker\", \"service_name\": \"application\" }, \"finding\": { \"severity\": \"HIGH\", \"next_steps\": [{ \"url\": \"Details URL\" }] }}"
+  curl --request POST 
+    --url "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account-id>/providers/my-custom-tool/occurrences",
+    --header "accept: application/json",
+    --header "authorization: <IAM_token>",
+    --header "Replace-If-Exists: true",
+    --header "content-type: application/json",
+    --data "{
+      "note_name": "<account-id>/providers/my-custom-tool/notes/my-custom-tool-findings-type",
+      "kind": "FINDING",
+      "remediation": "Explanation of resolution steps.",	
+      "provider_id": "my-custom-tool",
+      "id":	"custom-tool-finding-1",
+      "context": {
+        "region": "location",
+        "resource_id": "pluginID",
+        "resource_name": "www.myapp.com",
+        "resource_type": "worker",
+        "service_name": "application",
+      }
+      "finding": {
+        "severity": "HIGH",
+        "next_steps": [
+          {
+            "url": "Details URL"
+          }
+        ]
+      }
+    }
   ```
-  {: codeblock}
+  {: pre}
 
   <table>
     <thead>
@@ -292,22 +342,54 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
 3. Define the card in the dashboard to display your finding by creating a [note](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Notes/createNote).
 
   ```
-  curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account id>/providers/my-custom-tool/notes" -H "accept: application/json" -H "Authorization: <iam token>" -H "Content-Type: application/json" -d "{ \"kind\": \"CARD\", \"provider_id\": \"my-custom-tool\", \"id\": \"custom-tool-card\", \"short_description\": \"security risk found by my custom tool\", \"long_description\": \"Details about why this is security risk to be fixed\", \"reported_by\": { \"id\": \"my-custom-tool\", \"title\": \"My Security Tool\" }, \"card\": { \"section\": \"My Security Tools\", \"title\": \"My Security Tool Findings\", \"finding_note_names\": [ \"providers/my-custom-tool/notes/my-custom-tool-findings-type\" ], \"elements\": [ { \"kind\": \"NUMERIC\", \"text\": \"Count of findings reported by my security tool\", \"default_time_range\": \"1d\", \"value_type\": { \"kind\": \"FINDING_COUNT\", \"finding_note_names\": [ \"providers/my-custom-tool/notes/my-custom-tool-findings-type\" ] } } ] } }"
+  curl --request POST 
+    --url "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account id>/providers/my-custom-tool/notes"  \
+    --header "accept: application/json" \
+    --header "content-type: application/json" \
+    --header "authorization: <IAM_token>" \
+    --data "{
+      "kind": "CARD",	
+      "provider_id": "my-custom-tool"
+      "id":	"custom-tool-card"
+      "short_description": "Security risk found by my custom tool.",	
+      "long_description": "More detailed description about why this security risk needs to be fixed.",
+      "reported_by": {
+        "id": "my-custom-tool"
+        "title": "My security tool"
+      }	
+      "card": {
+        "section": "My security tools"
+        "title": "My security tool findings"
+        "subtitle": "My security tool"
+        "finding_note_names": [
+          "providers/my-custom-tool/notes/my-custom-tool-findings-type"
+        ]
+        elements: [
+          {
+            "kind": "NUMERIC"
+            "text": "Count of findings reported by my security tool."
+            "default_time_range": "1d"
+            "value_type": {
+              "kind": "FINDING_COUNT"
+              "finding_note_names": [
+                "providers/my-custom-tool/notes/my-custom-tool-findings-type"
+              ]
+            }
+          }
+        ]
+      }
+    }
   ```
-  {: codeblock}
+  {: pre}
 
   <table>
     <thead>
-      <th colspan=2><img src="images/idea.png" alt="More information icon"/> Understanding this commands components </th>
+      <th colspan=2><img src="images/idea.png" alt="More information icon"/> Understanding a CARD's components </th>
     </thead>
     <tbody>
       <tr>
-        <td><code>kind</code></td>
-        <td><code>CARD</code></td>
-      </tr>
-      <tr>
         <td><code>provider_id</code></td>
-        <td>Your custom security tool.</td>
+        <td>The ID of your security tool.</td>
       </tr>
       <tr>
         <td><code>id</code></td>
@@ -326,69 +408,85 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
         <td></br><ul><li>The ID of the security tool that reported the finding.</li><li>The title of the security tool that reported the finding.</li></ul></td>
       </tr>
       <tr>
-        <td><code>card</code> <ul><li><code>section</code></li> <li><code>title</code></li> <li><code>finding_note_names</code></li></ul></td>
-        <td></br><ul><li>The section that the card fits into.</li> <li>The title of the card</li> <li><code>providers/<provider_id>/notes/my-custom-tool-findings-type</code></li></ul></td>
+        <td><code>card</code> 
+          <ul><li><code>section</code></li> 
+          <li><code>title</code></li> 
+          <li><code>subtitle</code></li> 
+          <li><code>finding_note_names</code></li></ul></td>
+        <td></br>
+          <ul><li>The section that the card fits into. The maximum number of characters is 25.</li>
+          <li>The title that you want your card to have. The maximum number of characters is 28.</li>
+          <li>The subtitle that you want your card to have. The maximum number of characters is 30.</li>
+          <li><code>providers/<provider_id>/notes/my-custom-tool-findings-type</code></li></ul></td>
       </tr>
       <tr>
-        <td><code>elements</code> <ul><li><code>kind</code></li> <li><code>text</code></li> <li><code>default_time_range</code></li></ul></td>
-        <td></br><ul><li>The type of element.</li> <li>The text that you want to display</li> <li>The amount of time that you want to check.</li></ul></td>
-      </tr>
-      <tr>
-        <td><code>value_type</code> <ul><li><code>kind</code></li> <li><code>finding_note_names</code></li></ul></td>
-        <td></br><ul><li>The type of value</li> <li>The name of the findings that you want to see in your card.</li></ul></td>
+        <td><code>elements</code>
+          <ul><li><code>kind</code></li>
+          <li><code>text</code></li>
+          <li><code>default_time_range</code></li>
+          <li><code>value_type</code>
+            <ul><li><code>kind</code></li>
+            <li><code>finding_note_names</code></li></ul></ul></td>
+        <td></br>
+          <ul><li>NUMERIC: The maximum number of characters for a KRIs numeric text is 60. </li>
+          <li>The text that you want to display</li>
+          <li>The amount of time that you want to check. The values are set in days. Current options include: <code>1d</code>, <code>2d</code>, <code>3d</code>, and <code>4d</code>.</li></br>
+          <li>The kind of value that you want to see in your card. The maximum number of characters is 22.</li>
+          <li>The name of the findings that you want to see in your card. The maximum number of characters is 22.</li></ul></td>
       </tr>
     </tbody>
   </table>
 
   Example response:
   ```
-    {
-    "author": {
-      "account_id": "<account id",
-      "email": "email id",
-      "id": "user id",
-      "kind": "user"
-    },
-    "card": {
-      "elements": [
-        {
-          "default_time_range": "1d",
-          "kind": "NUMERIC",
-          "text": "Count of findings reported by my security tool",
-          "value_type": {
-            "finding_note_names": [
-              "providers/my-custom-tool/notes/my-custom-tool-findings-type"
-            ],
-            "kind": "FINDING_COUNT"
-          }
+  {
+  "author": {
+    "account_id": "<account id",
+    "email": "email id",
+    "id": "user id",
+    "kind": "user"
+  },
+  "card": {
+    "elements": [
+      {
+        "default_time_range": "1d",
+        "kind": "NUMERIC",
+        "text": "Count of findings reported by my security tool",
+        "value_type": {
+          "finding_note_names": [
+            "providers/my-custom-tool/notes/my-custom-tool-findings-type"
+          ],
+          "kind": "FINDING_COUNT"
         }
-      ],
-      "finding_note_names": [
-        "providers/my-custom-tool/notes/my-custom-tool-findings-type"
-      ],
-      "section": "My Security Tools",
-      "title": "My Security Tool Findings"
-    },
-    "context": {
-      "account_id": "<account id>"
-    },
-    "create_time": "2018-09-04T11:49:36.056047Z",
-    "create_timestamp": 1536061776056,
-    "id": "custom-tool-card",
-    "kind": "CARD",
-    "long_description": "Details about why this is security risk to be fixed",
-    "name": "<account id>/providers/my-custom-tool/notes/custom-tool-card",
-    "provider_id": "my-custom-tool",
-    "provider_name": "<account id>/providers/my-custom-tool",
-    "reported_by": {
-      "id": "my-custom-tool",
-      "title": "My Security Tool"
-    },
-    "shared": true,
-    "short_description": "security risk found by my custom tool",
-    "update_time": "2018-09-04T11:49:36.056066Z",
-    "update_timestamp": 1536061776056,
-    "update_week_date": "2018-W36-2"
+      }
+    ],
+    "finding_note_names": [
+      "providers/my-custom-tool/notes/my-custom-tool-findings-type"
+    ],
+    "section": "My Security Tools",
+    "title": "My Security Tool Findings",
+    "subtitle": "My Security Tool"
+  },
+  "context": {
+    "account_id": "<account id>"
+  },
+  "create_time": "2018-09-04T11:49:36.056047Z",
+  "create_timestamp": 1536061776056,
+  "id": "custom-tool-card",
+  "kind": "CARD",
+  "long_description": "Details about why this is security risk to be fixed",
+  "name": "<account id>/providers/my-custom-tool/notes/custom-tool-card",
+  "provider_id": "my-custom-tool",
+  "provider_name": "<account id>/providers/my-custom-tool",
+  "reported_by": {
+    "id": "my-custom-tool",
+    "title": "My Security Tool"
+  },
+  "shared": true,
+  "short_description": "security risk found by my custom tool",
+  "update_time": "2018-09-04T11:49:36.056066Z",
+  "update_timestamp": 1536061776056,
+  "update_week_date": "2018-W36-2"
   }
   ```
   {: screen}
