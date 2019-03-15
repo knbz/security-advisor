@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-03-15"
 
 ---
 
@@ -77,7 +77,7 @@ Be sure to repeat the installation for each cluster that you want to monitor.
   ```
   git clone https://github.com/ibm-cloud-security/security-advisor-network-insights.git
   ```
-  {: codeblock}
+  {: pre}
 
 2. Change into the `security-advisor-network-analytics` folder.
 
@@ -86,7 +86,7 @@ Be sure to repeat the installation for each cluster that you want to monitor.
   ```
   tar -xvf security-advisor-network-insights.tar
   ```
-  {: codeblock}
+  {: pre}
 
 4. Change into the `security-advisor-network-insights` folder.
 
@@ -95,7 +95,7 @@ Be sure to repeat the installation for each cluster that you want to monitor.
   ```
   ibmcloud login -a https://api.<region>.bluemix.net
   ```
-  {: codeblock}
+  {: pre}
 
   <table>
     <tr>
@@ -119,7 +119,7 @@ Be sure to repeat the installation for each cluster that you want to monitor.
     ```
     ibmcloud ks cluster-config <cluster_name_or_ID>
     ```
-    {: codeblock}
+    {: pre}
 
   2. Copy the output beginning with `export` and paste it into your terminal to set the `KUBECONFIG` environment variable.
 
@@ -132,7 +132,7 @@ Be sure to repeat the installation for each cluster that you want to monitor.
   ```
   ./network-insight-install.sh <cos_region> <cos_api_key>
   ```
-  {: codeblock}
+  {: pre}
 
   <table>
     <tr>
@@ -164,7 +164,7 @@ If you no longer have a need to use Network Insights, you can delete the service
   ```
   ibmcloud login -a https://api.<region>.bluemix.net
   ```
-  {: codeblock}
+  {: pre}
 
   <table>
     <tr>
@@ -188,7 +188,7 @@ If you no longer have a need to use Network Insights, you can delete the service
     ```
     ibmcloud ks cluster-config <cluster_name_or_ID>
     ```
-    {: codeblock}
+    {: pre}
 
   2. Copy the output beginning with `export` and paste it into your terminal to set the `KUBECONFIG` environment variable.
 
@@ -197,14 +197,14 @@ If you no longer have a need to use Network Insights, you can delete the service
   ```
   helm del --purge network-insights [--tls]
   ```
-  {: codeblock}
+  {: pre}
 
 4. Delete the Kubernetes secrets.
 
   ```
   kubectl delete ns security-advisor-insights
   ```
-  {: codeblock}
+  {: pre}
 
 Be sure to delete the process for each cluster that you want to remove the agents from.
 {: tip}
