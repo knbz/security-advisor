@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-02-18"
+lastupdated: "2019-03-15"
 
 ---
 
@@ -72,15 +72,3 @@ The `kube-system` default service account does not have admin access in your clu
 {: tsResolve}
 Prior to installing one of the Built-in Insights offerings, you must install Helm. You can install Helm by using the [Kubernetes Service integration docs](/docs/containers?topic=containers-integrations#helm).
 
-
-## Known defect: Some Network Insights findings do not show
-{: #ts-network-analytics}
-
-{: tsSymptoms}
-You do not see all of the finding types when you look for Network Insights through the dashboard or the API.
-
-{: tsCauses}
-Some Network Insights findings types work only on IBM Cloud Kubernetes Service version 1.10 or less.
-
-{: tsResolve}
-Use Kubernetes Service version 1.10 or less.

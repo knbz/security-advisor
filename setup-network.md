@@ -72,25 +72,7 @@ You can install an agent to collect network flow logs from your Kubernetes clust
 Be sure to repeat the installation for each cluster that you want to monitor.
 {: note}
 
-1. Clone the following repository to your local system.
-
-  ```
-  git clone https://github.com/ibm-cloud-security/security-advisor-network-insights.git
-  ```
-  {: pre}
-
-2. Change into the `security-advisor-network-analytics` folder.
-
-3. Extract the `.tar` file by running the following command.
-
-  ```
-  tar -xvf security-advisor-network-insights.tar
-  ```
-  {: pre}
-
-4. Change into the `security-advisor-network-insights` folder.
-
-5. Log in to the {{site.data.keyword.cloud_notm}} CLI. Follow the prompts in the CLI to complete finish logging in.
+1. Log in to the {{site.data.keyword.cloud_notm}} CLI. Follow the prompts in the CLI to complete finish logging in.
 
   ```
   ibmcloud login -a https://api.<region>.bluemix.net
@@ -112,7 +94,7 @@ Be sure to repeat the installation for each cluster that you want to monitor.
     </tr>
   </table>
 
-6. Set the context for your cluster.
+2. Set the context for your cluster.
 
   1. Get the command to set the environment variable and download the Kubernetes configuration files.
 
@@ -123,11 +105,47 @@ Be sure to repeat the installation for each cluster that you want to monitor.
 
   2. Copy the output beginning with `export` and paste it into your terminal to set the `KUBECONFIG` environment variable.
 
-7. Install Helm by using the [Kubernetes Service integration docs](/docs/containers?topic=containers-integrations#helm).
+3. Get the version of your Kubernetes cluster.
 
-8. Optional: [Enable TLS](https://github.com/helm/helm/blob/master/docs/tiller_ssl.md). If you're using your workstation to handle the installation of analytics components in multiple clusters and TLS is enabled, be sure that the TLS configurations are current and match the current cluster where you plan to install the components.
+  ```
+  kube_version=$(kubectl version --output json) echo $(echo $kube_version | yq r - serverVersion.major).$(echo $kube_version | yq r - serverVersion.minor)
+  ```
+  {: pre}
 
-9. Run the following command to install the Helm chart and its dependencies. The command validates that your bucket uses the correct naming convention, creates Kubernetes secrets, updates the values with your cluster GUID, and deploys the Network Insights Helm chart. If you encounter an error, try running `helm init --upgrade`.
+4. Clone the following repository to your local system by using one of the following options.
+
+  If your Kubernetes Service is version 1.11 or later run the following command.
+
+  ```
+  git clone https://github.com/ibm-cloud-security/security-advisor-network-insights.git
+  ```
+  {: pre}
+
+  If your Kubernetes Service is version 1.10 run the following command.
+
+  ```
+  git clone https://github.com/ibm-cloud-security/security-advisor-network-insights.git
+  ```
+  {: pre}
+
+5. Change into the `security-advisor-network-insights` folder.
+
+6. If your version of Kubernetes Service is 1.10, then change in to the `v1.10` directory. If your version is greater than 1.10, then, change into the `v1.10+` directory.
+
+7. Extract the `.tar` file by running the following command.
+
+  ```
+  tar -xvf security-advisor-network-insights.tar
+  ```
+  {: pre}
+
+8. Change into the `security-advisor-network-insights` folder.
+
+9. Install Helm by using the [Kubernetes Service integration docs](/docs/containers?topic=containers-integrations#helm).
+
+10. Optional: [Enable TLS](https://github.com/helm/helm/blob/master/docs/tiller_ssl.md). If you're using your workstation to handle the installation of analytics components in multiple clusters and TLS is enabled, be sure that the TLS configurations are current and match the current cluster where you plan to install the components.
+
+11. Run the following command to install the Helm chart and its dependencies. The command validates that your bucket uses the correct naming convention, creates Kubernetes secrets, updates the values with your cluster GUID, and deploys the Network Insights Helm chart. If you encounter an error, try running `helm init --upgrade`.
 
   ```
   ./network-insight-install.sh <cos_region> <cos_api_key>
