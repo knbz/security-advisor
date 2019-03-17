@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-15"
+lastupdated: "2019-03-17"
 
 ---
 
@@ -112,16 +112,7 @@ Be sure to repeat the installation for each cluster that you want to monitor.
   ```
   {: pre}
 
-4. Clone the following repository to your local system by using one of the following options.
-
-  If your Kubernetes Service is version 1.11 or later run the following command.
-
-  ```
-  git clone https://github.com/ibm-cloud-security/security-advisor-network-insights.git
-  ```
-  {: pre}
-
-  If your Kubernetes Service is version 1.10 run the following command.
+4. Clone the following repository to your local system
 
   ```
   git clone https://github.com/ibm-cloud-security/security-advisor-network-insights.git
