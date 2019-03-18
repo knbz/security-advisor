@@ -436,7 +436,7 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
           <li>The amount of time that you want to check. The values are set in days. Current options include: <code>1d</code>, <code>2d</code>, <code>3d</code>, and <code>4d</code>.</li>
           <li><code>value_type</code> denotes the kind of element. If <code>kind</code> is <code>NUMERIC</code>, this field is <code>value_type</code>. If <code>kind</code> is <code>TIME_SERIES</code> or <code>BREAKDOWN</code>, this field is <code>value_types</code>.</li>
             <ul><li> The type of value. Options include: <code>KPI</code> and <code>FINDING_COUNT.</code>
-            <li>If <code>kind</code> is <code>FINDING_CODE</code>, the name of the findings that you want to see in your card specified as an array. 
+            <li>If <code>kind</code> is <code>FINDING_COUNT</code>, the name of the findings that you want to see in your card specified as an array. 
             <li>If <code>kind</code> is <code>KPI</code>, the name of the KPI note that you want to see in your card.</li>
             <li>The text of the element type. The maximum number of characters is 22.</li></ul></ul></td>
       </tr>
