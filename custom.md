@@ -41,7 +41,7 @@ You can easily track your security tools by using the {{site.data.keyword.securi
 
 Before you can add the integration, you must first have an account with the partner that you want to integrate.
 
-{{site.data.keyword.security-advisor_short}} does not persist any credentials that are related to the partner service. Enterprise users must authenticate by using SAML to both {{site.data.keyword.Bluemix_notm}} and to the business partner.
+{{site.data.keyword.security-advisor_short}} does not persist any credentials that are related to the partner service. Enterprise users must authenticate by using SAML to both {{site.data.keyword.cloud_notm}} and to the business partner.
 {: note}
 
 ### Configuring the connection
@@ -423,12 +423,12 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
       <tr>
         <td><code>elements</code>
           <ul><li><code>kind</code></li>
-          <li><code>text</code></li>
+          <li><code>text</code></li></br></br>
           <li><code>default_time_range</code></li>
           <li><code>value_type</code>
-            <ul><li><code>kind</code></li>
-            <li><code>finding_note_names</code></li>
-            <li><code>kpi_note_name</code></li>
+            <ul></br><li><code>kind</code></li>
+            <li><code>finding_note_names</code></li></br>
+            <li><code>kpi_note_name</code></li></br>
             <li><code>text</code></li></ul></ul></td>
         <td></br>
           <ul><li>Options include: <code>NUMERIC</code>, <code>TIME_SERIES</code>, and <code>BREAKDOWN</code>.</li>
@@ -525,7 +525,7 @@ Example payload:
 		"severity": "HIGH",
 		"next_steps": [{
 			"title": "Investigate which process are running in your cluster. If you suspect one of your pods was hacked, restart it, and look for image vulnerabilities",
-                        "url":"https://console.bluemix.net/containers-kubernetes/clusters"
+                        "url":"https://cloud.ibm.com/containers-kubernetes/clusters"
 		}],
                 "short_description": "One of the pods in your cluster appears to be leaking an excessive amount of data",
                 "long_description": "One of the pods in your cluster is approaching external servers and sending them data in volumes that exceed that pod’s normal behavior"
