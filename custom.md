@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-15"
+lastupdated: "2019-03-18"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -63,7 +63,8 @@ Before you can add the integration, you must first have an account with the part
 
 
 
-## Integrate 3rd party findings
+## Integrate third party findings
+{: #custom-integrate}
 
 The APIs follow Grafeas like artifact metadata specifications to store, query, and retrieve the critical metadata for the findings that are reported by your security tools and services.
 {: #setup-custom-api}
@@ -348,29 +349,29 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
     --header "content-type: application/json" \
     --header "authorization: <IAM_token>" \
     --data "{
-      "kind": "CARD",	
-      "provider_id": "my-custom-tool"
-      "id":	"custom-tool-card"
-      "short_description": "Security risk found by my custom tool.",	
-      "long_description": "More detailed description about why this security risk needs to be fixed.",
+      "kind": "CARD",    
+      "provider_id": "my-custom-tool",
+      "id": "custom-tool-card",
+      "short_description": "Security risk found by my custom tool",    
+      "long_description": "More detailed description about why this security risk needs to be fixed",
       "reported_by": {
-        "id": "my-custom-tool"
+        "id": "my-custom-tool",
         "title": "My security tool"
-      }	
+      },    
       "card": {
-        "section": "My security tools"
-        "title": "My security tool findings"
-        "subtitle": "My security tool"
+        "section": "My security tools",
+        "title": "My security tool findings",
+        "subtitle": "My security tool",
         "finding_note_names": [
           "providers/my-custom-tool/notes/my-custom-tool-findings-type"
-        ]
-        elements: [
+        ],
+        "elements": [
           {
-            "kind": "NUMERIC"
-            "text": "Count of findings reported by my security tool."
-            "default_time_range": "1d"
+            "kind": "NUMERIC",
+            "text": "Count of findings reported by my security tool",
+            "default_time_range": "1d",
             "value_type": {
-              "kind": "FINDING_COUNT"
+              "kind": "FINDING_COUNT",
               "finding_note_names": [
                 "providers/my-custom-tool/notes/my-custom-tool-findings-type"
               ]
@@ -426,13 +427,18 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
           <li><code>default_time_range</code></li>
           <li><code>value_type</code>
             <ul><li><code>kind</code></li>
-            <li><code>finding_note_names</code></li></ul></ul></td>
+            <li><code>finding_note_names</code></li>
+            <li><code>kpi_note_name</code></li>
+            <li><code>text</code></li></ul></ul></td>
         <td></br>
-          <ul><li>NUMERIC: The maximum number of characters for a KRIs numeric text is 60. </li>
-          <li>The text that you want to display</li>
-          <li>The amount of time that you want to check. The values are set in days. Current options include: <code>1d</code>, <code>2d</code>, <code>3d</code>, and <code>4d</code>.</li></br>
-          <li>The kind of value that you want to see in your card. The maximum number of characters is 22.</li>
-          <li>The name of the findings that you want to see in your card. The maximum number of characters is 22.</li></ul></td>
+          <ul><li>Options include: <code>NUMERIC</code>, <code>TIME_SERIES</code>, and <code>BREAKDOWN</code>.</li>
+          <li>The text that you want to display. If `kind` is <code>NUMERIC</code>, the maximum number of character is 60. If `kind` is <code>TIME_SERIES</code> or <code>BREAKDOWN</code>, the maximum number of character is 65.</li>
+          <li>The amount of time that you want to check. The values are set in days. Current options include: <code>1d</code>, <code>2d</code>, <code>3d</code>, and <code>4d</code>.</li>
+          <li><code>value_type</code> denotes the kind of element. If <code>kind</code> is <code>NUMERIC</code>, this field is <code>value_type</code>. If <code>kind</code> is <code>TIME_SERIES</code> or <code>BREAKDOWN</code>, this field is <code>value_types</code>.</li>
+            <ul><li> The type of value. Options include: <code>KPI</code> and <code>FINDING_COUNT.</code>
+            <li>If <code>kind</code> is <code>FINDING_CODE</code>, the name of the findings that you want to see in your card specified as an array. 
+            <li>If <code>kind</code> is <code>KPI</code>, the name of the KPI note that you want to see in your card.</li>
+            <li>The text of the element type. The maximum number of characters is 22.</li></ul></ul></td>
       </tr>
     </tbody>
   </table>
