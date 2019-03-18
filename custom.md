@@ -410,23 +410,23 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
       </tr>
       <tr>
         <td><code>card</code> 
-          <ul><li><code>section</code></li> 
+          <ul><li><code>section</code></li>
           <li><code>title</code></li> 
           <li><code>subtitle</code></li> 
           <li><code>finding_note_names</code></li></ul></td>
         <td></br>
-          <ul><li>The section that the card fits into. The maximum number of characters is 25.</li>
-          <li>The title that you want your card to have. The maximum number of characters is 28.</li>
-          <li>The subtitle that you want your card to have. The maximum number of characters is 30.</li>
+          <ul><li>The section that the card fits into. Maximum characters: 25</li>
+          <li>The title that you want your card to have. Maximum characters: 28</li>
+          <li>The subtitle that you want your card to have. Maximum characters: 30</li>
           <li><code>providers/<provider_id>/notes/my-custom-tool-findings-type</code></li></ul></td>
       </tr>
       <tr>
         <td><code>elements</code>
           <ul><li><code>kind</code></li>
           <li><code>text</code></li></br></br>
-          <li><code>default_time_range</code></li>
+          <li><code>default_time_range</code></li></br>
           <li><code>value_type</code>
-            <ul></br><li><code>kind</code></li>
+            <ul></br></br></br></br></br></br><li><code>kind</code></li>
             <li><code>finding_note_names</code></li></br>
             <li><code>kpi_note_name</code></li></br>
             <li><code>text</code></li></ul></ul></td>
