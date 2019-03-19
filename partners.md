@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-03-15"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -26,7 +26,7 @@ subcollection: security-advisor
 # Partners
 {: #setup-partner}
 
-IBM Business Partner integrations are a way to bring critical alerts and findings from 3rd party providers into the {{site.data.keyword.security-advisor_long}} dashboard. These partners have worked with IBM to help shape, simplify, and guide the integration experience for you.
+IBM Business Partner integrations are a way to bring critical alerts and findings from third party providers into the {{site.data.keyword.security-advisor_long}} dashboard. These partners are working with IBM to help shape, simplify, and guide the integration experience for you.
 {: shortdesc}
 
 ## Before you begin
@@ -41,18 +41,18 @@ Before you start integrating partners, be sure that you have the following prere
 ## Integration wizard
 {: #wizard}
 
-As an administrator with administrative rights in both the {{site.data.keyword.cloud_notm}} and Partner accounts, you can use the integration wizard to quickly get up and running. The wizard has four basic steps:
+As an administrator with administrative permissions in both the {{site.data.keyword.cloud_notm}} and Partner accounts, you can use the integration wizard to quickly get up and running. The wizard has four basic steps:
 
 * Establish trust and associate your {{site.data.keyword.cloud_notm}} and partner accounts
 * Copy the required information such as credentials and URLs between the accounts
-* Install partner finding metadata into {{site.data.keyword.security-advisor_short}}
-* Validate the pairing by posting a findings from the partner into {{site.data.keyword.security-advisor_short}}
+* Install the partner's finding metadata into {{site.data.keyword.security-advisor_short}}
+* Validate the pairing by posting a finding from the partner into {{site.data.keyword.security-advisor_short}}
 
 
 ## Integrating NeuVector
 {: #setup-neuvector}
 
-With NeuVector, you can detect network threats and violations to prevent attacks of your container based applications. Through monitoring, you can prevent exploits and breakouts by detecting root privilege escalations, port scans, reverse shells, and suspicious file system activity in your containers and hosts.
+With NeuVector, you can detect network threats and violations to prevent attacks of your container-based applications. Through monitoring, you can prevent exploits and breakouts by detecting root privilege escalations, port scans, reverse shells, and suspicious file system activity in your containers and hosts.
 {: shortdesc}
 
 To integrate NeuVector with {{site.data.keyword.security-advisor_short}}, you can use the following steps:
@@ -62,7 +62,7 @@ To integrate NeuVector with {{site.data.keyword.security-advisor_short}}, you ca
   1. Provide a name for your connection.
   2. Provide the NeuVector dashboard URL.
   3. Provide the NeuVector configuration URL.
-    1. Login to NeuVector and navigate to settings.
+    1. Log in to NeuVector and navigate to settings.
     2. Click **Generate URL**.
     3. Copy the URL and paste it in the {{site.data.keyword.security-advisor_short}} integration wizard.
   4. Click **Next**.
@@ -85,7 +85,7 @@ When you configure the partner connection, two cards are created in your dashboa
 * Total incidents and audits: Findings that are related to incidents or audits on your cloud-native workloads.
 * Total firewall audits: Findings that are related to issues with your firewall.
 
-**Twistlock vulnerabilities** introduces one KRI:
+**Twistlock vulnerabilities** introduce one KRI:
 
 * Total images with new vulnerabilities: Findings that are related to vulnerabilities found in your container images.
 
@@ -118,8 +118,8 @@ You can learn more about the company in the Twistlock docs.
 ### Verifying the connection
 {: #twistlock-verify}
 
-1. In the {{site.data.keyword.security-advisor_short}} dashboard, check to see if the Twistlock cards are displaying as expected.
+1. In the {{site.data.keyword.security-advisor_short}} dashboard, check to see whether the Twistlock cards are displaying as expected.
 
-2. In the Twistlock dashboard, refresh the **Alerts** tab. The {{site.data.keyword.security-advisor_short}} connection will show. Open the connection.
+2. In the Twistlock dashboard, refresh the **Alerts** tab. The {{site.data.keyword.security-advisor_short}} connection shows. Open the connection.
 
 3. Verify that the alert types that you want to be notified of are  checked and then click **Verify** to ensure that the connection is complete.

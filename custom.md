@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-03-19"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -41,7 +41,7 @@ You can easily track your security tools by using the {{site.data.keyword.securi
 
 Before you can add the integration, you must first have an account with the partner that you want to integrate.
 
-{{site.data.keyword.security-advisor_short}} does not persist any credentials that are related to the partner service. Enterprise users must authenticate by using SAML to both {{site.data.keyword.Bluemix_notm}} and to the business partner.
+{{site.data.keyword.security-advisor_short}} does not persist any credentials that are related to the partner service. Enterprise users must authenticate by using SAML to both {{site.data.keyword.cloud_notm}} and to the business partner.
 {: note}
 
 ### Configuring the connection
@@ -63,7 +63,8 @@ Before you can add the integration, you must first have an account with the part
 
 
 
-## Integrate 3rd party findings
+## Integrate third party findings
+{: #custom-integrate}
 
 The APIs follow Grafeas like artifact metadata specifications to store, query, and retrieve the critical metadata for the findings that are reported by your security tools and services.
 {: #setup-custom-api}
@@ -109,9 +110,32 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
   Example request:
 
   ```
-  curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account id>/providers/my-custom-tool/notes" -H "accept: application/json" -H "Authorization: <iam-token>" -H "Content-Type: application/json" -d "{ \"kind\": \"FINDING\", \"short_description\": \"My security tool finding\", \"long_description\": \"See what my custom security tool found\", \"provider_id\": \"my-custom-tool\", \"id\": \"my-custom-tool-findings-type\", \"reported_by\": { \"id\": \"my-custom-tool\", \"title\": \"My Custom Security Tool\" }, \"finding\": { \"severity\": \"MEDIUM\", \"next_steps\": [ { \"title\": \"Learn why this is reported as a risk\" } ] } }"
+  curl --request POST 
+  --url "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account id>/providers/my-custom-tool/notes",
+  --header "accept: application/json",
+  --header "authorization: <IAM_token>",
+  --header "content-type: application/json",
+  --data "{
+    "kind": "FINDING",
+    "short_description": "My security tool finding",
+    "long_description": "Longer description of what the security tool found.",
+    "provder_id": "my-custom-tool",
+    "id": "my-custom-tool-findings-type",
+    "reported_by": {
+      "id": "my-custom-tool",
+      "title": "My custom security tool",
+    }
+    "finding": {
+      "severity": "MEDIUM",
+      "next_steps": [
+        {
+          "title": "Explain why it's reported as a risk.",
+        }
+      ]
+    }
+  }
   ```
-  {: codeblock}
+  {: pre}
 
   <table>
     <thead>
@@ -200,9 +224,36 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
   {: note}
 
   ```
-  curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account-id>/providers/my-custom-tool/occurrences" -H "accept: application/json" -H "Authorization: <iam-token>" -H "Replace-If-Exists: true" -H "Content-Type: application/json" -d "{ \"note_name\": \"<account-id>/providers/my-custom-tool/notes/my-custom-tool-findings-type\", \"kind\": \"FINDING\", \"remediation\": \"how to resolve this\", \"provider_id\": \"my-custom-tool\", \"id\": \"my-custom-tool-finding-1\", \"context\": { \"region\": \"location\", \"resource_id\": \"pluginId\", \"resource_name\": \"www.myapp.com\", \"resource_type\": \"worker\", \"service_name\": \"application\" }, \"finding\": { \"severity\": \"HIGH\", \"next_steps\": [{ \"url\": \"Details URL\" }] }}"
+  curl --request POST 
+    --url "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account-id>/providers/my-custom-tool/occurrences",
+    --header "accept: application/json",
+    --header "authorization: <IAM_token>",
+    --header "Replace-If-Exists: true",
+    --header "content-type: application/json",
+    --data "{
+      "note_name": "<account-id>/providers/my-custom-tool/notes/my-custom-tool-findings-type",
+      "kind": "FINDING",
+      "remediation": "Explanation of resolution steps.",	
+      "provider_id": "my-custom-tool",
+      "id":	"custom-tool-finding-1",
+      "context": {
+        "region": "location",
+        "resource_id": "pluginID",
+        "resource_name": "www.myapp.com",
+        "resource_type": "worker",
+        "service_name": "application",
+      }
+      "finding": {
+        "severity": "HIGH",
+        "next_steps": [
+          {
+            "url": "Details URL"
+          }
+        ]
+      }
+    }
   ```
-  {: codeblock}
+  {: pre}
 
   <table>
     <thead>
@@ -292,22 +343,54 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
 3. Define the card in the dashboard to display your finding by creating a [note](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Notes/createNote).
 
   ```
-  curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account id>/providers/my-custom-tool/notes" -H "accept: application/json" -H "Authorization: <iam token>" -H "Content-Type: application/json" -d "{ \"kind\": \"CARD\", \"provider_id\": \"my-custom-tool\", \"id\": \"custom-tool-card\", \"short_description\": \"security risk found by my custom tool\", \"long_description\": \"Details about why this is security risk to be fixed\", \"reported_by\": { \"id\": \"my-custom-tool\", \"title\": \"My Security Tool\" }, \"card\": { \"section\": \"My Security Tools\", \"title\": \"My Security Tool Findings\", \"finding_note_names\": [ \"providers/my-custom-tool/notes/my-custom-tool-findings-type\" ], \"elements\": [ { \"kind\": \"NUMERIC\", \"text\": \"Count of findings reported by my security tool\", \"default_time_range\": \"1d\", \"value_type\": { \"kind\": \"FINDING_COUNT\", \"finding_note_names\": [ \"providers/my-custom-tool/notes/my-custom-tool-findings-type\" ] } } ] } }"
+  curl --request POST 
+    --url "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account id>/providers/my-custom-tool/notes"  \
+    --header "accept: application/json" \
+    --header "content-type: application/json" \
+    --header "authorization: <IAM_token>" \
+    --data "{
+      "kind": "CARD",    
+      "provider_id": "my-custom-tool",
+      "id": "custom-tool-card",
+      "short_description": "Security risk found by my custom tool",    
+      "long_description": "More detailed description about why this security risk needs to be fixed",
+      "reported_by": {
+        "id": "my-custom-tool",
+        "title": "My security tool"
+      },    
+      "card": {
+        "section": "My security tools",
+        "title": "My security tool findings",
+        "subtitle": "My security tool",
+        "finding_note_names": [
+          "providers/my-custom-tool/notes/my-custom-tool-findings-type"
+        ],
+        "elements": [
+          {
+            "kind": "NUMERIC",
+            "text": "Count of findings reported by my security tool",
+            "default_time_range": "1d",
+            "value_type": {
+              "kind": "FINDING_COUNT",
+              "finding_note_names": [
+                "providers/my-custom-tool/notes/my-custom-tool-findings-type"
+              ]
+            }
+          }
+        ]
+      }
+    }
   ```
-  {: codeblock}
+  {: pre}
 
   <table>
     <thead>
-      <th colspan=2><img src="images/idea.png" alt="More information icon"/> Understanding this commands components </th>
+      <th colspan=2><img src="images/idea.png" alt="More information icon"/> Understanding a CARD's components </th>
     </thead>
     <tbody>
       <tr>
-        <td><code>kind</code></td>
-        <td><code>CARD</code></td>
-      </tr>
-      <tr>
         <td><code>provider_id</code></td>
-        <td>Your custom security tool.</td>
+        <td>The ID of your security tool.</td>
       </tr>
       <tr>
         <td><code>id</code></td>
@@ -326,69 +409,90 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
         <td></br><ul><li>The ID of the security tool that reported the finding.</li><li>The title of the security tool that reported the finding.</li></ul></td>
       </tr>
       <tr>
-        <td><code>card</code> <ul><li><code>section</code></li> <li><code>title</code></li> <li><code>finding_note_names</code></li></ul></td>
-        <td></br><ul><li>The section that the card fits into.</li> <li>The title of the card</li> <li><code>providers/<provider_id>/notes/my-custom-tool-findings-type</code></li></ul></td>
+        <td><code>card</code> 
+          <ul><li><code>section</code></li>
+          <li><code>title</code></li> 
+          <li><code>subtitle</code></li> 
+          <li><code>finding_note_names</code></li></ul></td>
+        <td></br>
+          <ul><li>The section that the card fits into. Maximum characters: 25</li>
+          <li>The title that you want your card to have. Maximum characters: 28</li>
+          <li>The subtitle that you want your card to have. Maximum characters: 30</li>
+          <li><code>providers/<provider_id>/notes/my-custom-tool-findings-type</code></li></ul></td>
       </tr>
       <tr>
-        <td><code>elements</code> <ul><li><code>kind</code></li> <li><code>text</code></li> <li><code>default_time_range</code></li></ul></td>
-        <td></br><ul><li>The type of element.</li> <li>The text that you want to display</li> <li>The amount of time that you want to check.</li></ul></td>
-      </tr>
-      <tr>
-        <td><code>value_type</code> <ul><li><code>kind</code></li> <li><code>finding_note_names</code></li></ul></td>
-        <td></br><ul><li>The type of value</li> <li>The name of the findings that you want to see in your card.</li></ul></td>
+        <td><code>elements</code>
+          <ul><li><code>kind</code></li>
+          <li><code>text</code></li></br></br>
+          <li><code>default_time_range</code></li></br>
+          <li><code>value_type</code>
+            <ul></br></br></br></br></br></br></br><li><code>kind</code></li>
+            <li><code>finding_note_names</code></li></br>
+            <li><code>kpi_note_name</code></li></br>
+            <li><code>text</code></li></ul></ul></td>
+        <td></br>
+          <ul><li>Options include: <code>NUMERIC</code>, <code>TIME_SERIES</code>, and <code>BREAKDOWN</code>.</li>
+          <li>The text that you want to display. If `kind` is <code>NUMERIC</code>, the maximum number of character is 60. If `kind` is <code>TIME_SERIES</code> or <code>BREAKDOWN</code>, the maximum number of character is 65.</li>
+          <li>The amount of time that you want to check. The values are set in days. Current options include: <code>1d</code>, <code>2d</code>, <code>3d</code>, and <code>4d</code>.</li>
+          <li><code>value_type</code> denotes the kind of element. If <code>kind</code> is <code>NUMERIC</code>, the field is <code>value_type</code> and you can have up to 4 elements per card. If <code>kind</code> is <code>TIME_SERIES</code> or <code>BREAKDOWN</code>, the field is <code>value_types</code>. The maximum number of both <code>TIME_SERIES</code> or <code>BREAKDOWN</code> is 1. If you have numeric entries only, you can have up to 4 elements per card. If you want to use a combination, you can have up to 2 numeric entries and 1 of either time series or breakdown. You can not have both time series and breakdown in the same card. If you define your value types as an array for time series, you can have up to 3 entries.</li>
+            <ul><li>The type of value. Options include: <code>KPI</code> and <code>FINDING_COUNT.</code>
+            <li>If <code>kind</code> is <code>FINDING_COUNT</code>, the name of the findings that you want to see in your card specified as an array. 
+            <li>If <code>kind</code> is <code>KPI</code>, the name of the KPI note that you want to see in your card.</li>
+            <li>The text of the element type. The maximum number of characters is 22.</li></ul></ul></td>
       </tr>
     </tbody>
   </table>
 
   Example response:
   ```
-    {
-    "author": {
-      "account_id": "<account id",
-      "email": "email id",
-      "id": "user id",
-      "kind": "user"
-    },
-    "card": {
-      "elements": [
-        {
-          "default_time_range": "1d",
-          "kind": "NUMERIC",
-          "text": "Count of findings reported by my security tool",
-          "value_type": {
-            "finding_note_names": [
-              "providers/my-custom-tool/notes/my-custom-tool-findings-type"
-            ],
-            "kind": "FINDING_COUNT"
-          }
+  {
+  "author": {
+    "account_id": "<account id",
+    "email": "email id",
+    "id": "user id",
+    "kind": "user"
+  },
+  "card": {
+    "elements": [
+      {
+        "default_time_range": "1d",
+        "kind": "NUMERIC",
+        "text": "Count of findings reported by my security tool",
+        "value_type": {
+          "finding_note_names": [
+            "providers/my-custom-tool/notes/my-custom-tool-findings-type"
+          ],
+          "kind": "FINDING_COUNT"
         }
-      ],
-      "finding_note_names": [
-        "providers/my-custom-tool/notes/my-custom-tool-findings-type"
-      ],
-      "section": "My Security Tools",
-      "title": "My Security Tool Findings"
-    },
-    "context": {
-      "account_id": "<account id>"
-    },
-    "create_time": "2018-09-04T11:49:36.056047Z",
-    "create_timestamp": 1536061776056,
-    "id": "custom-tool-card",
-    "kind": "CARD",
-    "long_description": "Details about why this is security risk to be fixed",
-    "name": "<account id>/providers/my-custom-tool/notes/custom-tool-card",
-    "provider_id": "my-custom-tool",
-    "provider_name": "<account id>/providers/my-custom-tool",
-    "reported_by": {
-      "id": "my-custom-tool",
-      "title": "My Security Tool"
-    },
-    "shared": true,
-    "short_description": "security risk found by my custom tool",
-    "update_time": "2018-09-04T11:49:36.056066Z",
-    "update_timestamp": 1536061776056,
-    "update_week_date": "2018-W36-2"
+      }
+    ],
+    "finding_note_names": [
+      "providers/my-custom-tool/notes/my-custom-tool-findings-type"
+    ],
+    "section": "My Security Tools",
+    "title": "My Security Tool Findings",
+    "subtitle": "My Security Tool"
+  },
+  "context": {
+    "account_id": "<account id>"
+  },
+  "create_time": "2018-09-04T11:49:36.056047Z",
+  "create_timestamp": 1536061776056,
+  "id": "custom-tool-card",
+  "kind": "CARD",
+  "long_description": "Details about why this is security risk to be fixed",
+  "name": "<account id>/providers/my-custom-tool/notes/custom-tool-card",
+  "provider_id": "my-custom-tool",
+  "provider_name": "<account id>/providers/my-custom-tool",
+  "reported_by": {
+    "id": "my-custom-tool",
+    "title": "My Security Tool"
+  },
+  "shared": true,
+  "short_description": "security risk found by my custom tool",
+  "update_time": "2018-09-04T11:49:36.056066Z",
+  "update_timestamp": 1536061776056,
+  "update_week_date": "2018-W36-2"
   }
   ```
   {: screen}
@@ -421,7 +525,7 @@ Example payload:
 		"severity": "HIGH",
 		"next_steps": [{
 			"title": "Investigate which process are running in your cluster. If you suspect one of your pods was hacked, restart it, and look for image vulnerabilities",
-                        "url":"https://console.bluemix.net/containers-kubernetes/clusters"
+                        "url":"https://cloud.ibm.com/containers-kubernetes/clusters"
 		}],
                 "short_description": "One of the pods in your cluster appears to be leaking an excessive amount of data",
                 "long_description": "One of the pods in your cluster is approaching external servers and sending them data in volumes that exceed that pod’s normal behavior"

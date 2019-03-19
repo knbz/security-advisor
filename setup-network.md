@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-03-19"
 
 ---
 
@@ -72,30 +72,12 @@ You can install an agent to collect network flow logs from your Kubernetes clust
 Be sure to repeat the installation for each cluster that you want to monitor.
 {: note}
 
-1. Clone the following repository to your local system.
+1. Log in to the {{site.data.keyword.cloud_notm}} CLI. Follow the prompts in the CLI to complete finish logging in.
 
   ```
-  git clone https://github.com/ibm-cloud-security/security-advisor-network-insights.git
+  ibmcloud login -a cloud.ibm.com -r <region>
   ```
-  {: codeblock}
-
-2. Change into the `security-advisor-network-analytics` folder.
-
-3. Extract the `.tar` file by running the following command.
-
-  ```
-  tar -xvf security-advisor-network-insights.tar
-  ```
-  {: codeblock}
-
-4. Change into the `security-advisor-network-insights` folder.
-
-5. Log in to the {{site.data.keyword.cloud_notm}} CLI. Follow the prompts in the CLI to complete finish logging in.
-
-  ```
-  ibmcloud login -a https://api.<region>.bluemix.net
-  ```
-  {: codeblock}
+  {: pre}
 
   <table>
     <tr>
@@ -112,27 +94,54 @@ Be sure to repeat the installation for each cluster that you want to monitor.
     </tr>
   </table>
 
-6. Set the context for your cluster.
+2. Set the context for your cluster.
 
   1. Get the command to set the environment variable and download the Kubernetes configuration files.
 
     ```
     ibmcloud ks cluster-config <cluster_name_or_ID>
     ```
-    {: codeblock}
+    {: pre}
 
   2. Copy the output beginning with `export` and paste it into your terminal to set the `KUBECONFIG` environment variable.
 
-7. Install Helm by using the [Kubernetes Service integration docs](/docs/containers?topic=containers-integrations#helm).
+3. Get the version of your Kubernetes cluster.
 
-8. Optional: [Enable TLS](https://github.com/helm/helm/blob/master/docs/tiller_ssl.md). If you're using your workstation to handle the installation of analytics components in multiple clusters and TLS is enabled, be sure that the TLS configurations are current and match the current cluster where you plan to install the components.
+  ```
+  kube_version=$(kubectl version --output json) echo $(echo $kube_version | yq r - serverVersion.major).$(echo $kube_version | yq r - serverVersion.minor)
+  ```
+  {: pre}
 
-9. Run the following command to install the Helm chart and its dependencies. The command validates that your bucket uses the correct naming convention, creates Kubernetes secrets, updates the values with your cluster GUID, and deploys the Network Insights Helm chart. If you encounter an error, try running `helm init --upgrade`.
+4. Clone the following repository to your local system
+
+  ```
+  git clone https://github.com/ibm-cloud-security/security-advisor-network-insights.git
+  ```
+  {: pre}
+
+5. Change into the `security-advisor-network-insights` folder.
+
+6. If your version of Kubernetes Service is 1.10, then change in to the `v1.10` directory. If your version is greater than 1.10, then, change into the `v1.10+` directory.
+
+7. Extract the `.tar` file by running the following command.
+
+  ```
+  tar -xvf security-advisor-network-insights.tar
+  ```
+  {: pre}
+
+8. Change into the `security-advisor-network-insights` folder.
+
+9. Install Helm by using the [Kubernetes Service integration docs](/docs/containers?topic=containers-integrations#helm).
+
+10. Optional: [Enable TLS](https://github.com/helm/helm/blob/master/docs/tiller_ssl.md). If you're using your workstation to handle the installation of analytics components in multiple clusters and TLS is enabled, be sure that the TLS configurations are current and match the current cluster where you plan to install the components.
+
+11. Run the following command to install the Helm chart and its dependencies. The command validates that your bucket uses the correct naming convention, creates Kubernetes secrets, updates the values with your cluster GUID, and deploys the Network Insights Helm chart. If you encounter an error, try running `helm init --upgrade`.
 
   ```
   ./network-insight-install.sh <cos_region> <cos_api_key>
   ```
-  {: codeblock}
+  {: pre}
 
   <table>
     <tr>
@@ -162,9 +171,9 @@ If you no longer have a need to use Network Insights, you can delete the service
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI. Follow the prompts in the CLI to complete finish logging in.
 
   ```
-  ibmcloud login -a https://api.<region>.bluemix.net
+  ibmcloud login -a cloud.ibm.com -r <region>
   ```
-  {: codeblock}
+  {: pre}
 
   <table>
     <tr>
@@ -188,7 +197,7 @@ If you no longer have a need to use Network Insights, you can delete the service
     ```
     ibmcloud ks cluster-config <cluster_name_or_ID>
     ```
-    {: codeblock}
+    {: pre}
 
   2. Copy the output beginning with `export` and paste it into your terminal to set the `KUBECONFIG` environment variable.
 
@@ -197,14 +206,14 @@ If you no longer have a need to use Network Insights, you can delete the service
   ```
   helm del --purge network-insights [--tls]
   ```
-  {: codeblock}
+  {: pre}
 
 4. Delete the Kubernetes secrets.
 
   ```
   kubectl delete ns security-advisor-insights
   ```
-  {: codeblock}
+  {: pre}
 
 Be sure to delete the process for each cluster that you want to remove the agents from.
 {: tip}
@@ -215,7 +224,7 @@ Be sure to delete the process for each cluster that you want to remove the agent
 If you used the beta version of Network Analytics, you must uninstall the old {{site.data.keyword.security-advisor_short}} components before you can install the new ones. Be sure to repeat this process for each cluster that contains any service components.
 {: shortdesc}
 
-1. Log in to {{site.data.keyword.Bluemix_notm}}.
+1. Log in to {{site.data.keyword.cloud_notm}}.
 
   ```
   ibmcloud login -a https://api.us-south.ibm.cloud.com --sso

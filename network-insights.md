@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-03-15"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -112,9 +112,9 @@ The card introduces two Key Risk Indicators (KRIs):
 
 Findings might include containers that:
 
-* send abnormally large amounts of data to a suspicious server
-* extract a large amount of data from a suspicious server
-* perform a large number of requests to a suspicious server
+* Send abnormally large amounts of data to a suspicious server.
+* Extract a large amount of data from a suspicious server.
+* Perform a large number of requests to a suspicious server.
 
 
 ## Network: Anomalies in traffic (experimental)
@@ -132,13 +132,13 @@ The card introduces two Key Risk Indicators (KRIs):
 
 A finding might include:  
 
-* containers that approach servers that were never approached previously
-* containers that send out or consume significantly more data than normal to or from specific peers
-* the level of surveying of a particular increased significantly
+* Containers that approach servers that were never approached previously.
+* Containers that send out or consume significantly more data than normal to or from specific peers.
+* The level of surveying of a particular increased significantly.
 
- After the model is developed, deviations from the learned model are detected, and when an alarming change is exhibited, Network Insights posts a finding to the Security Advisor dashboard. Findings are summarized in the 'Network: Anomalies in Traffic' card. The card introduces two Key Risk Indicators (KRIs). The 'Higher than normal reconnaissance or data exchange activity' KRI counts findings that are related to abnormal interactions detected between the cluster and external peers, while the 'Outbound approach to a new server' KRI counts findings that are related to new detected servers approaches by the cluster.  
+ After the model is developed, deviations from the learned model are detected, and when an alarming change is exhibited, Network Insights posts a finding to the Security Advisor dashboard. Findings are summarized in the 'Network: Anomalies in Traffic' card. The card introduces two Key Risk Indicators (KRIs). The 'Higher than normal reconnaissance or data exchange activity' KRI counts findings that are related to abnormal interactions detected between the cluster and external peers. The 'Outbound approach to a new server' KRI counts findings that are related to new detected servers approaches by the cluster.  
 
 ## Next steps
 {: #network-next}
 
-Ready to get started? Check out [Enabling Network Insights](/docs/services/security-advisor/setup-network.html)!
+Ready to get started? Check out [Enabling Network Insights](/docs/services/security-advisor?topic=security-advisor-setup-network#setup-network)!

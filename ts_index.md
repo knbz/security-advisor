@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-02-18"
+lastupdated: "2019-03-19"
 
 ---
 
@@ -33,7 +33,7 @@ If you have problems while you're working with {{site.data.keyword.security-advi
 
 
 
-You can find help by searching for information or by asking questions through a forum. You can also open a support ticket. When you are using the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.Bluemix_notm}} development teams.
+You can find help by searching for information or by asking questions through a forum. You can also open a support ticket. When you are using the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
 {: shortdesc}
 
 * If you have technical questions about {{site.data.keyword.security-advisor_short}}, post your question on <a href="http://stackoverflow.com/" target="_blank">Stack Overflow <img src="../../icons/launch-glyph.svg" alt="External link icon"></a>. Be sure to include the `security-advisor` and `ibm-cloud` tags.
@@ -72,15 +72,3 @@ The `kube-system` default service account does not have admin access in your clu
 {: tsResolve}
 Prior to installing one of the Built-in Insights offerings, you must install Helm. You can install Helm by using the [Kubernetes Service integration docs](/docs/containers?topic=containers-integrations#helm).
 
-
-## Known defect: Some Network Insights findings do not show
-{: #ts-network-analytics}
-
-{: tsSymptoms}
-You do not see all of the finding types when you look for Network Insights through the dashboard or the API.
-
-{: tsCauses}
-Some Network Insights findings types work only on IBM Cloud Kubernetes Service version 1.10 or less.
-
-{: tsResolve}
-Use Kubernetes Service version 1.10 or less.
