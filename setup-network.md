@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-17"
+lastupdated: "2019-03-19"
 
 ---
 
@@ -75,7 +75,7 @@ Be sure to repeat the installation for each cluster that you want to monitor.
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI. Follow the prompts in the CLI to complete finish logging in.
 
   ```
-  ibmcloud login -a https://api.<region>.bluemix.net
+  ibmcloud login -a cloud.ibm.com -r <region>
   ```
   {: pre}
 
@@ -171,7 +171,7 @@ If you no longer have a need to use Network Insights, you can delete the service
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI. Follow the prompts in the CLI to complete finish logging in.
 
   ```
-  ibmcloud login -a https://api.<region>.bluemix.net
+  ibmcloud login -a cloud.ibm.com -r <region>
   ```
   {: pre}
 
@@ -224,7 +224,7 @@ Be sure to delete the process for each cluster that you want to remove the agent
 If you used the beta version of Network Analytics, you must uninstall the old {{site.data.keyword.security-advisor_short}} components before you can install the new ones. Be sure to repeat this process for each cluster that contains any service components.
 {: shortdesc}
 
-1. Log in to {{site.data.keyword.Bluemix_notm}}.
+1. Log in to {{site.data.keyword.cloud_notm}}.
 
   ```
   ibmcloud login -a https://api.us-south.ibm.cloud.com --sso

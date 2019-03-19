@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-15"
+lastupdated: "2019-03-19"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -117,7 +117,7 @@ Learn about different concepts that you might use while you work with {{site.dat
   <dt>Provider</dt>
     <dd>A provider is the tool or service that defines the type of finding (note) and then sends an occurrence of the finding to the service.</dd>
   <dt>Service CRN</dt>
-    <dd>The Service CRN identifies the {{site.data.keyword.Bluemix_notm}} service that is involved in the finding. For instance, in a certificate expiry finding, the service instance ID, or CRN of the Certificate Manager service instance that reports the findings is included.</dd>
+    <dd>The Service CRN identifies the {{site.data.keyword.cloud_notm}} service that is involved in the finding. For instance, in a certificate expiry finding, the service instance ID, or CRN of the Certificate Manager service instance that reports the findings is included.</dd>
   <dt>Resource CRN</dt>
     <dd>The resource CRN identifies the specific resource that is involved in the finding. When Network Analytics reports a finding, the Kubernetes cluster CRN is included to identify the cluster or resource affected.</dd>
 </dl>

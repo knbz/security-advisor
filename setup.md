@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-03-19"
 
 ---
 
@@ -119,7 +119,7 @@ openssl req -x509 -newkey rsa:2048 -keyout key.pem -subj "/CN=myservice.com" -ou
 
 **Uploading a certificate**
 
-1. In the {{site.data.keyword.Bluemix_notm}} catalog, search for "{{site.data.keyword.cloudcerts_short}}".
+1. In the {{site.data.keyword.cloud_notm}} catalog, search for "{{site.data.keyword.cloudcerts_short}}".
 2. Give your service instance a name, or use the preset name.
 3. Click **Create**.
 4. To import your organization's certificates into {{site.data.keyword.cloudcerts_short}}, click **Import Certificate**.

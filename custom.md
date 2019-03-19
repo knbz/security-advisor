@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-18"
+lastupdated: "2019-03-19"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -426,7 +426,7 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
           <li><code>text</code></li></br></br>
           <li><code>default_time_range</code></li></br>
           <li><code>value_type</code>
-            <ul></br></br></br></br></br></br><li><code>kind</code></li>
+            <ul></br></br></br></br></br></br></br><li><code>kind</code></li>
             <li><code>finding_note_names</code></li></br>
             <li><code>kpi_note_name</code></li></br>
             <li><code>text</code></li></ul></ul></td>
@@ -434,8 +434,8 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
           <ul><li>Options include: <code>NUMERIC</code>, <code>TIME_SERIES</code>, and <code>BREAKDOWN</code>.</li>
           <li>The text that you want to display. If `kind` is <code>NUMERIC</code>, the maximum number of character is 60. If `kind` is <code>TIME_SERIES</code> or <code>BREAKDOWN</code>, the maximum number of character is 65.</li>
           <li>The amount of time that you want to check. The values are set in days. Current options include: <code>1d</code>, <code>2d</code>, <code>3d</code>, and <code>4d</code>.</li>
-          <li><code>value_type</code> denotes the kind of element. If <code>kind</code> is <code>NUMERIC</code>, this field is <code>value_type</code>. You can have up to 4 <code>NUMERIC</code> elements per card. If <code>kind</code> is <code>TIME_SERIES</code> or <code>BREAKDOWN</code>, this field is <code>value_types</code>. The maximum number of both <code>TIME_SERIES</code> and <code>BREAKDOWN</code> is 1. If you have both <code>value_type</code> and <code>value_types</code> in your card definition, the maximum number of <code>NUMERIC</code> elements is lowered to two with the other remaining the same.</li>
-            <ul><li> The type of value. Options include: <code>KPI</code> and <code>FINDING_COUNT.</code>
+          <li><code>value_type</code> denotes the kind of element. If <code>kind</code> is <code>NUMERIC</code>, the field is <code>value_type</code> and you can have up to 4 elements per card. If <code>kind</code> is <code>TIME_SERIES</code> or <code>BREAKDOWN</code>, the field is <code>value_types</code>. The maximum number of both <code>TIME_SERIES</code> or <code>BREAKDOWN</code> is 1. If you have numeric entries only, you can have up to 4 elements per card. If you want to use a combination, you can have up to 2 numeric entries and 1 of either time series or breakdown. You can not have both time series and breakdown in the same card. If you define your value types as an array for time series, you can have up to 3 entries.</li>
+            <ul><li>The type of value. Options include: <code>KPI</code> and <code>FINDING_COUNT.</code>
             <li>If <code>kind</code> is <code>FINDING_COUNT</code>, the name of the findings that you want to see in your card specified as an array. 
             <li>If <code>kind</code> is <code>KPI</code>, the name of the KPI note that you want to see in your card.</li>
             <li>The text of the element type. The maximum number of characters is 22.</li></ul></ul></td>

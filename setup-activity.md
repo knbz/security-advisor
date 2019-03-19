@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-03-19"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -95,7 +95,7 @@ You can install an agent to collect audit flow logs from your {{site.data.keywor
 5. Log in to the {{site.data.keyword.cloud_notm}} CLI. Follow the prompts in the CLI to finish logging in.
 
   ```
-  ibmcloud login -a https://api.<region>.bluemix.net
+  ibmcloud login -a cloud.ibm.com -r <region>
   ```
   {: codeblock}
 

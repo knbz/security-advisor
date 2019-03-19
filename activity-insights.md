@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-03-19"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -25,7 +25,7 @@ subcollection: security-advisor
 # Activity Insights (preview)
 {: #activity}
 
-With {{site.data.keyword.security-advisor_long}}, you can detect suspicious user activity in your {{site.data.keyword.Bluemix_notm}} account by using {{site.data.keyword.cloud_notm}} Activity Tracker.
+With {{site.data.keyword.security-advisor_long}}, you can detect suspicious user activity in your {{site.data.keyword.cloud_notm}} account by using {{site.data.keyword.cloud_notm}} Activity Tracker.
 {: shortdesc}
 
 
@@ -88,7 +88,7 @@ As an account admin, you can quickly start monitoring your accounts by taking ad
 The service offers rule packages that are associated with several services including:
 
 * {{site.data.keyword.containerlong_notm}}
-* {{site.data.keyword.Bluemix_notm}} Identity and Access Management (IAM)
+* {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM)
 * {{site.data.keyword.cloudcerts_long_notm}}
 * {{site.data.keyword.appid_long_notm}}
 * {{site.data.keyword.keymanagementservicelong_notm}}
