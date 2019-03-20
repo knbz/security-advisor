@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-19"
+lastupdated: "2019-03-20"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -26,7 +26,7 @@ subcollection: security-advisor
 # Custom
 {: #setup_custom}
 
-{{site.data.keyword.security-advisor_short}} enables you to integrate your existing custom security tools, whether open source, custom developed, or 3rd party services. You can create a direct connection from {{site.data.keyword.security-advisor_short}} to the other tool by adding the URL to your list of integrations. You can also integrate 3rd party findings to bring critical security events directly into a new card in the dashboard by using the APIs to configure APIs and key risk indicators (KRIs).
+{{site.data.keyword.security-advisor_short}} enables you to integrate your existing custom security tools, whether open source, custom developed, or 3rd party services. You can create a direct connection from {{site.data.keyword.security-advisor_short}} to the other tool by adding the URL to your list of integrations. You can also integrate 3rd party findings to bring critical security events directly into a new card in the dashboard by using the APIs to configure key risk indicators (KRIs).
 {: shortdesc}
 
 
@@ -502,7 +502,7 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
 ## Example usage
 {: #custom-example}
 
-Say that you have an application that runs on a {{site.data.keyword.containershort_notm}} cluster with the name `cloudkingdom`. Depending on the size of your application, you might have several pods within your cluster to monitor all at the same time. What if you have multiple custom tools that monitor and detect your cluster for different threats. If one of your pods in the cluster starts to send an abnormal amount of data to external servers, you'd want to know as soon as possible. The custom tool that monitors data transfer can detect the finding and send it to {{site.data.keyword.security-advisor_short}}. If you have another custom integration that detects an issue, it too would send the finding to {{site.data.keyword.security-advisor_short}}. Then, {{site.data.keyword.security-advisor_short}} displays the findings from all of your monitoring tools in a single dashboard. There you can quickly see an overview of any alerts, investigate an issue, and learn about how to take remediation steps.
+Say that you have an application that runs on a {{site.data.keyword.containershort_notm}} cluster with the name `cloudkingdom`. Depending on the size of your application, you might have several pods within your cluster that you need to monitor all at the same time. What if you have multiple custom tools that monitor and detect your cluster for different threats. If one of your pods in the cluster starts to send an abnormal amount of data to external servers, you'd want to know as soon as possible. The custom tool that monitors data transfer can detect the finding and send it to {{site.data.keyword.security-advisor_short}}. If you have another custom integration that detects an issue, it too would send the finding to {{site.data.keyword.security-advisor_short}}. Then, {{site.data.keyword.security-advisor_short}} displays the findings from all of your monitoring tools in a single dashboard. There you can quickly see an overview of any alerts, investigate an issue, and learn about how to take remediation steps.
 
 
 Example payload:
