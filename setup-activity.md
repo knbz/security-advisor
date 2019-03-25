@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-19"
+lastupdated: "2019-03-25"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -176,13 +176,13 @@ A rule package is a JSON file that contains a list of rules that you want to mon
 1. Clone the following repository to get several preset rule packages. A file is created on your local system with the name *security-advisor-ata-rule-packages*.
 
   ```
-  https://github.ibm.com/security-services/security-advisor-ata-rule-packages.git
+  https://github.com/ibm-cloud-security/security-advisor-activity-insights.git
   ```
   {: codeblock}
 
-2. Locally, create a file with the name *IBM.rules/activities*.
+2. Locally, create a folder with the name `IBM.rules/activities`.
 
-3. Move the JSON files from *security-advisor-ata-rule-packages* to *IBM.rules/activities*.
+3. Copy the JSON files from `security-advisor-ata-rule-packages` to `IBM.rules/activities`.
 
 4. Navigate to your {{site.data.keyword.cloud_notm}} Dashboard and select the COS service instance that is associated with Activity Insights.
 
