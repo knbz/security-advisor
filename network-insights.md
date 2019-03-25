@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-15"
+lastupdated: "2019-03-20"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -79,7 +79,7 @@ From a security point of view, it's a good idea to purge your collected data whe
 {: shortdesc}
 
 
-The behavioral patterns of clients that are classified by IBM X-Force as distributing malware that is used as scanners, as part of a botnet, for mining cryptocurrency, or for anonymization services are all continuously monitored. If that type of client approaches your cluster and exhibit  approach a monitored cluster and exhibit an alarming behavior, network insights issues a finding.
+The behavioral patterns of clients that are classified by IBM X-Force as distributing malware that is used as scanners, as part of a botnet, for mining cryptocurrency, or for anonymization services are all continuously monitored. If that type of client approaches a monitored cluster and exhibits an alarming behavior, network insights issues a finding.
 
 
 The card introduces two Key Risk Indicators (KRIs):
@@ -134,7 +134,7 @@ A finding might include:
 
 * Containers that approach servers that were never approached previously.
 * Containers that send out or consume significantly more data than normal to or from specific peers.
-* The level of surveying of a particular increased significantly.
+* The level of surveying of a particular container has significantly increased.
 
  After the model is developed, deviations from the learned model are detected, and when an alarming change is exhibited, Network Insights posts a finding to the Security Advisor dashboard. Findings are summarized in the 'Network: Anomalies in Traffic' card. The card introduces two Key Risk Indicators (KRIs). The 'Higher than normal reconnaissance or data exchange activity' KRI counts findings that are related to abnormal interactions detected between the cluster and external peers. The 'Outbound approach to a new server' KRI counts findings that are related to new detected servers approaches by the cluster.  
 
