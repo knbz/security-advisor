@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-20"
+lastupdated: "2019-03-26"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -79,7 +79,7 @@ From a security point of view, it's a good idea to purge your collected data whe
 {: shortdesc}
 
 
-The behavioral patterns of clients that are classified by IBM X-Force as distributing malware that is used as scanners, as part of a botnet, for mining cryptocurrency, or for anonymization services are all continuously monitored. If that type of client approaches a monitored cluster and exhibits an alarming behavior, network insights issues a finding.
+The behavioral patterns of clients that are classified by IBM X-Force as distributing malware that is used as scanners, as part of a botnet, for mining cryptocurrency or for anonymization services are all continuously monitored. If that type of client approaches a monitored cluster and exhibits an alarming behavior, network insights issues a finding.
 
 
 The card introduces two Key Risk Indicators (KRIs):

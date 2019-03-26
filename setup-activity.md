@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-25"
+lastupdated: "2019-03-26"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -173,7 +173,7 @@ You can install an agent to collect audit flow logs from your {{site.data.keywor
 A rule package is a JSON file that contains a list of rules that you want to monitor. You can download rule packages or [create your own](/docs/services/security-advisor?topic=security-advisor-activity#activity-packages). The {{site.data.keyword.security-advisor_short}} engine validates that each rule follows the correct syntax.
 {: shortdesc}
 
-1. Clone the following repository to get several preset rule packages. A file is created on your local system with the name *security-advisor-ata-rule-packages*.
+1. Clone the following repository to get several preset rule packages. A folder is created on your local system with the name `security-advisor-activity-insights`.
 
   ```
   https://github.com/ibm-cloud-security/security-advisor-activity-insights.git
@@ -182,7 +182,7 @@ A rule package is a JSON file that contains a list of rules that you want to mon
 
 2. Locally, create a folder with the name `IBM.rules/activities`.
 
-3. Copy the JSON files from `security-advisor-ata-rule-packages` to `IBM.rules/activities`.
+3. Copy the JSON files from `security-advisor-activity-insights/security-advisor-ata-rule-packages` to `IBM.rules/activities`.
 
 4. Navigate to your {{site.data.keyword.cloud_notm}} Dashboard and select the COS service instance that is associated with Activity Insights.
 
