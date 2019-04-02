@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-19"
+lastupdated: "2019-04-02"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -29,7 +29,7 @@ subcollection: security-advisor
 With {{site.data.keyword.security-advisor_long}}, you can instantly view the security posture of your {{site.data.keyword.cloud_notm}} through a single, centralized dashboard.
 {:shortdesc}
 
-{{site.data.keyword.security-advisor_short}} is a cloud service that is enabled by default for all {{site.data.keyword.cloud_notm}} accounts. As such, you do not need to provision any instance of the service.
+{{site.data.keyword.security-advisor_short}} is enabled by default for all {{site.data.keyword.cloud_notm}} accounts. As such, you do not need to provision any instance of the service.
 {: tip}
 
 The service receives security information from various sources and displays any security alerts or vulnerabilities that require your attention in the service dashboard. Out of the box, there are several pre-populated cards in your dashboard. These findings are from security services in {{site.data.keyword.cloud_notm}}, but you can also add cards or custom partner solutions so that all of your security tools can be accessed from the same location.
