@@ -1,33 +1,36 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="security-advisor" audience="security" arm="4033739" href="/docs/services/security-advisor/index.html" path="services/security-advisor"}
+{: .toc subcollection="security-advisor" audience="security" arm="4033739" href="/docs/services/security-advisor?topic=security-advisor-index#index" path="services/security-advisor"}
 IBM Cloud Security Advisor
 
     {: .navgroup id="learn"}
     index.md
     about.md
     integrations.md
-    network-analytics
+    network-insights.md
+    activity-insights.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
     setup.md
 
     {: .topicgroup}
-    Intégrations
+    Activation des intégrations
         partners.md
         custom.md
-        setup_cluster.md
+        setup-network.md
+        setup-activity.md
 
     iam.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    [API Findings](https://console.bluemix.net/apidocs/security-advisor)
-    [Tableau de bord de service](https://console.bluemix.net/security-advisor/#/dashboard)
+    [API Findings](https://cloud.ibm.com/apidocs/security-advisor)
+    [Tableau de bord du service](https://cloud.ibm.com/security-advisor/#/dashboard)
     [Blogues](https://www.ibm.com/blogs/bluemix/tag/security-advisor/)
     at-events.md
+    sa_rellinks.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}

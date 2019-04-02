@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-09"
+  years: 2017, 2019
+lastupdated: "2019-03-13"
+
+keywords: centralized security, security management, alerts, security risk, insights, threat detection
+
+subcollection: security-advisor
 
 ---
 
@@ -13,112 +17,94 @@ lastupdated: "2018-12-09"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
-# Outils de sécurité personnalisés
+
+# Personnalisation 
 {: #setup_custom}
 
-Il est possible que vous utilisiez déjà un outil. Vous pouvez intégrer des outils tels que Neuvector à {{site.data.keyword.security-advisor_short}}.
+{{site.data.keyword.security-advisor_short}} vous permet d'intégrer vos outils de sécurité personnalisés existants, qu'il s'agisse de services open source, que vous avez développés ou tiers. Vous pouvez créer une connexion directe de {{site.data.keyword.security-advisor_short}} à l'autre outil en ajoutant l'URL à votre liste d'intégrations. Vous pouvez également intégrer des résultats de tiers pour afficher les événements de sécurité critiques directement sur une nouvelle carte dans le tableau de bord en utilisant les API pour configurer des indicateurs clés de risques.
 {: shortdesc}
 
 
-Pourquoi souhaiteriez-vous créer des personnalisations ? Disons que vous possédez une application qui exécute un cluster {{site.data.keyword.containershort_notm}} et qui porte le nom de `cloudkingdom`. L'un des pods du cluster envoie une quantité anormale de données à des serveurs externes. Vous souhaitez capture ce résultat dans votre tableau de bord {{site.data.keyword.security-advisor_short}}.
+## Ajout d'une connexion directe
+{: #setup-custom-gui}
 
-Si votre outil personnalisé surveille et détecte la quantité anormale de données qui sont transférées, alors il envoie le résultat à {{site.data.keyword.security-advisor_short}}.
-
-Exemple de contenu :
-
-```
-{
-	"note_name": "<account id>/providers/my-custom-tool/notes/my-custom-tool-findings-type",
-	"kind": "FINDING",
-	"remediation": "How to resolve Data leakage threat",
-	"provider_id": "my-custom-tool",
-	"id": "my-custom-tool-finding-2",
-	"context": {
-		"region": "location",
-		"resource_id": "cluster crn",
-		"resource_name": "cloudkingdom",
-		"resource_type": "container",
-		"service_name": "kubernetess service"
-	},
-	"finding": {
-		"severity": "HIGH",
-		"next_steps": [{
-			"title": "Investigate which process are running in your cluster. If you suspect one of your pods was hacked, restart it, and look for image vulnerabilities",
-                        "url":"https://console.bluemix.net/containers-kubernetes/clusters"
-		}],
-                "short_description": "One of the pods in your cluster appears to be leaking an excessive amount of data",
-                "long_description": "One of the pods in your cluster is approaching external servers and sending them data in volumes that exceed that pod’s normal behavior"
-	}
-
-}
-```
-{: screen}
-
-</br>
-
-
-## Intégration de vos propres outils à l'aide de l'interface graphique
-{: #gui}
-
-Vous pouvez intégrer vos outils de sécurité à l'aide du tableau de bord {{site.data.keyword.security-advisor_short}}.
+Vous pouvez assurer facilement le suivi de vos outils de sécurité dans le tableau de bord {{site.data.keyword.security-advisor_short}}.
 {: shortdesc}
 
-**Avant de commencer**
+### Avant de commencer
+{: #custom-before-gui}
 
-* Vous devez disposer d'un compte avec le partenair que vous voulez intégrer.
+Pour pouvoir ajouter l'intégration, vous devez disposer d'un compte avec le partenaire que vous voulez intégrer. 
 
-{{site.data.keyword.security-advisor_short}} ne conserve pas les données d'identification associées au service partenaire. Les utilisateurs de l'entreprise doivent s'authentifier à l'aide de SAML auprès de {{site.data.keyword.Bluemix_notm}} et du partenaire commercial.
+{{site.data.keyword.security-advisor_short}} ne conserve pas les données d'identification associées au service partenaire. Les utilisateurs de l'entreprise doivent s'authentifier à l'aide de SAML auprès d'{{site.data.keyword.Bluemix_notm}} et du partenaire commercial.
 {: note}
 
+### Configuration de la connexion
+{: #custom-configure-connection}
+
 1. Connectez-vous à votre outil de sécurité et obtenez votre URL unique.
-2. Connectez-vous à {{site.data.keyword.Bluemix_notm}}.
-3. Cliquez sur **Intégrations personnalisées**, puis sur la carte **Ajouter une solution personnalisée**. Un écran s'affiche.
-  1. Donnez un nom à votre solution. Seuls les caractères alphanumériques, les espaces et les tirets (-) sont autorisés.
-  2. Entrez l'URL de la solution au format : `www.<website>.<domain>`.
+
+2. Connectez-vous à {{site.data.keyword.cloud_notm}} depuis la console. 
+
+3. Cliquez sur **Intégrations personnalisées > Direct Connection**. Un écran s'affiche.
+
+  1. Attribuez un nom à votre solution. Le nom ne peut comporter que des caractères alphanumériques, des espaces et des traits d'union. 
+
+  2. Entrez l'URL de la solution au format `www.<website>.<domain>`.
+
   3. Téléchargez une icône ou une image pour représenter l'outil.
 
-    {{site.data.keyword.security-advisor_short}} crée les artefacts requis pour l'intégration, tels que l'ID de service, la clé d'API, l'ID de compte et les métadonnées. Le rôle `Auteur` est affecté.
+  4. Cliquez sur **Connecter** pour finaliser la configuration. {{site.data.keyword.security-advisor_short}} crée les artefacts requis pour l'intégration, tels que l'ID de service, la clé d'API, l'ID de compte et les métadonnées. Le rôle `Auteur` est affecté.
 
-4. Vous pouvez configurer le compte client dans l'onglet **Intégration** de l'autre service.
-5. Une fois l'intégration mise en place, vous pouvez commencer à envoyer des occurrences à {{site.data.keyword.security-advisor_short}} et à afficher les résultats dans le tableau de bord du service.
 
-</br>
 
-## Intégration de vos propres outils à l'aide de l'API
-{: #integrate}
+## Intégration de résultats de tiers 
 
-Les API {{site.data.keyword.security-advisor_short}} suivent la spécification d'API de métadonnées d'artefact de type [Grafeas](https://grafeas.io/) pour stocker, interroger et extraire les métadonnées critiques pour les résultats consignés par tous les services et outils de sécurité.
+Les API suivent les spécifications d'API de métadonnées d'artefact de type Grafeas pour stocker, interroger et extraire les métadonnées critiques pour les résultats rapportés par vos outils de sécurité et services.
+{: #setup-custom-api}
 
-**Avant de commencer**
+### Avant de commencer
+{: #custom-before-api}
 
-1. Connectez-vous à {{site.data.keyword.Bluemix_notm}}.
+Avant d'intégrer des résultats provenant de votre outil tiers, assurez-vous de disposer des prérequis suivants : 
+
+1. Assurez-vous que l'ID utilisateur ou l'ID de service que vous utilisez possède le [rôle IAM](https://cloud.ibm.com/iam#/users) **Gestionnaire**.
+
+1. Connectez-vous à {{site.data.keyword.cloud_notm}}.
 
   ```
   ibmcloud login
   ```
   {: codeblock}
 
-2. Obtenez votre ID compte. Vérifiez que le [rôle IAM](https://console.bluemix.net/iam/#/users) **Manager** est affecté à votre ID. Pour plus d'informations sur les rôles de service, consultez les [{{site.data.keyword.security-advisor_short}}politiques d'accès](/docs/services/security-advisor/iam.html).
+2. Obtenez votre ID de compte. Pour plus d'informations sur les rôles de service, voir les [règles d'accès de {{site.data.keyword.security-advisor_short}}](/docs/iam?topic=iam-iammanidaccser#iammanidaccser).
 
   ```
   ibmcloud account list org-account ORG_NAME [--guid]
   ```
   {: codeblock}
 
-3. Obtenez votre jeton IAM. Ce jeton est utilisé dans l'en-tête (`--header`) de chaque demande d'API.
+3. Obtenez votre jeton Identity and Access Management (IAM). Ce jeton est utilisé dans l'en-tête (`--header`) de chaque demande d'API.
 
   ```
   ibmcloud iam oauth-tokens
   ```
   {: codeblock}
 
-</br>
+  Les jetons expirent toutes les 60 minutes. Découvrez comment [obtenir un nouveau jeton automatiquement](/docs/iam?topic=iam-iamtoken_from_apikey#iamtoken_from_apikey) à l'aide d'une clé d'API.
+  {: tip}
 
-**Ajout et surveillance de résultats**
 
-1. Enregistrez un nouveau type de résultat (Finding) en créant une note. Pour ce faire, utilisez l'[API Findings](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Notes/createNote).
+
+### Importation de résultats et d'indicateurs clés de risques 
+{: #custom-adding}
+
+1. Enregistrez un nouveau type de résultat en créant une note. Pour ce faire, utilisez l'[API Findings](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Notes/createNote). Assurez-vous de choisir un ID de fournisseur unique afin d'identifier votre outil personnalisé. Si vous automatisez le processus avec un ID de service, vous pouvez utiliser l'ID de service comme ID de fournisseur. 
 
   Exemple de demande :
 
@@ -142,7 +128,7 @@ Les API {{site.data.keyword.security-advisor_short}} suivent la spécification d
       </tr>
       <tr>
         <td><code>remediation</code></td>
-        <td>Etapes à prendre pour résoudre le problème.</td>
+        <td>Etapes à effectuer pour résoudre le problème.</td>
       </tr>
       <tr>
         <td><code>provider_id</code></td>
@@ -158,7 +144,7 @@ Les API {{site.data.keyword.security-advisor_short}} suivent la spécification d
       </tr>
       <tr>
         <td><code>finding</code> <ul><li><code>severity</code></li> <li><code>next_steps</code></li> <li><code>url</code></li></ul></td>
-        <td></br><ul><li>Niveau d'urgence que présente le résultat.</li> <li>Etapes pouvant être exécutées pour résoudre le problème.</li> <li>URL correspondant aux détails du résultat.</li></ul></td>
+        <td></br><ul><li>Niveau d'urgence que présente le résultat.</li> <li>Etapes pouvant être effectuées pour résoudre le problème.</li> <li>URL correspondant aux détails du résultat.</li></ul></td>
       </tr>
     </tbody>
   </table>
@@ -205,7 +191,13 @@ Les API {{site.data.keyword.security-advisor_short}} suivent la spécification d
   ```
   {: screen}
 
-2. Créez un résultat en publiant une [occurrence](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Occurrences/createOccurrence).
+  Mémorisez le nom de la note qui est renvoyée dans la réponse. Dans cet exemple, il s'agit de `/providers/my-custom-tool/notes/my-custom-tool-findings-type`. Cette valeur est utilisée à l'étape suivante.
+  {: tip}
+
+2. Publiez des résultats sous forme d'indicateurs clés de risques ou d'événements, aussi appelés [occurrences](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Occurrences/createOccurrence).
+
+  Pour chaque carte, vous pouvez définir deux indicateurs clés de risques.
+  {: note}
 
   ```
   curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account-id>/providers/my-custom-tool/occurrences" -H "accept: application/json" -H "Authorization: <iam-token>" -H "Replace-If-Exists: true" -H "Content-Type: application/json" -d "{ \"note_name\": \"<account-id>/providers/my-custom-tool/notes/my-custom-tool-findings-type\", \"kind\": \"FINDING\", \"remediation\": \"how to resolve this\", \"provider_id\": \"my-custom-tool\", \"id\": \"my-custom-tool-finding-1\", \"context\": { \"region\": \"location\", \"resource_id\": \"pluginId\", \"resource_name\": \"www.myapp.com\", \"resource_type\": \"worker\", \"service_name\": \"application\" }, \"finding\": { \"severity\": \"HIGH\", \"next_steps\": [{ \"url\": \"Details URL\" }] }}"
@@ -223,7 +215,7 @@ Les API {{site.data.keyword.security-advisor_short}} suivent la spécification d
       </tr>
       <tr>
         <td><code>short_description</code></td>
-        <td>Brève description qui récapitule le résultat (un ou deux mots max.).</td>
+        <td>Brève description qui récapitule le résultat (un ou deux mots maximum).</td>
       </tr>
       <tr>
         <td><code>long_description</code></td>
@@ -239,11 +231,11 @@ Les API {{site.data.keyword.security-advisor_short}} suivent la spécification d
       </tr>
       <tr>
         <td><code>reported_by</code><ul><li><code>id</code></li><li><code>title</code></li></ul></td>
-        <td></br><ul><li>ID de l'outil de sécurité qui a signalé le résultat.</li><li>Titre de l'outil de sécurité qui a signalé le résultat.</li></ul></td>
+        <td></br><ul><li>ID de l'outil de sécurité qui a rapporté le résultat.</li><li>Titre de l'outil de sécurité qui a rapporté le résultat.</li></ul></td>
       </tr>
       <tr>
         <td><code>finding</code> <ul><li><code>severity</code></li> <li><code>next_steps</code></li> <li><code>title</code></li></ul></td>
-        <td></br><ul><li>Niveau d'urgence que présente le résultat.</li> <li>Etapes pouvant être exécutées pour résoudre le problème.</li> <li>Titre du résultat.</li></ul></td>
+        <td></br><ul><li>Niveau d'urgence que présente le résultat.</li> <li>Etapes pouvant être effectuées pour résoudre le problème.</li> <li>Titre du résultat.</li></ul></td>
       </tr>
     </tbody>
   </table>
@@ -295,7 +287,7 @@ Les API {{site.data.keyword.security-advisor_short}} suivent la spécification d
     "update_week_date": "2018-W36-2"
   }
   ```
-  {: codeblock}
+  {: screen}
 
 3. Définissez la carte dans le tableau de bord pour afficher votre résultat en créant une [note](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Notes/createNote).
 
@@ -323,7 +315,7 @@ Les API {{site.data.keyword.security-advisor_short}} suivent la spécification d
       </tr>
       <tr>
         <td><code>short_description</code></td>
-        <td>Description, un ou deux mots au maximum, qui récapitule le résultat.</td>
+        <td>Description qui récapitule le résultat (un ou deux mots maximum).</td>
       </tr>
       <tr>
         <td><code>long_description</code></td>
@@ -331,11 +323,11 @@ Les API {{site.data.keyword.security-advisor_short}} suivent la spécification d
       </tr>
       <tr>
         <td><code>reported_by</code><ul><li><code>id</code></li><li><code>title</code></li></ul></td>
-        <td></br><ul><li>ID de l'outil de sécurité qui a signalé le résultat.</li><li>Titre de l'outil de sécurité qui a signalé le résultat.</li></ul></td>
+        <td></br><ul><li>ID de l'outil de sécurité qui a rapporté le résultat.</li><li>Titre de l'outil de sécurité qui a rapporté le résultat.</li></ul></td>
       </tr>
       <tr>
         <td><code>card</code> <ul><li><code>section</code></li> <li><code>title</code></li> <li><code>finding_note_names</code></li></ul></td>
-        <td></br><ul><li>Section à laquelle correspond la carte.</li> <li>Titre de la carte.</li> <li><code>providers/<provider_id>/notes/my-custom-tool-findings-type</code></li></ul></td>
+        <td></br><ul><li>Section dans laquelle se trouve la carte. </li> <li>Titre de la carte.</li> <li><code>providers/<provider_id>/notes/my-custom-tool-findings-type</code></li></ul></td>
       </tr>
       <tr>
         <td><code>elements</code> <ul><li><code>kind</code></li> <li><code>text</code></li> <li><code>default_time_range</code></li></ul></td>
@@ -343,7 +335,7 @@ Les API {{site.data.keyword.security-advisor_short}} suivent la spécification d
       </tr>
       <tr>
         <td><code>value_type</code> <ul><li><code>kind</code></li> <li><code>finding_note_names</code></li></ul></td>
-        <td></br><ul><li>Type de valeur.</li> <li>Nom des résultats à afficher dans la carte.</li></ul></td>
+        <td></br><ul><li>Type de valeur.</li> <li>Nom des résultats à afficher sur la carte.</li></ul></td>
       </tr>
     </tbody>
   </table>
@@ -401,8 +393,39 @@ Les API {{site.data.keyword.security-advisor_short}} suivent la spécification d
   ```
   {: screen}
 
-4. Accédez à votre tableau de bord de service pour voir la carte que vous avez créée.
+4. Accédez à votre tableau de bord du service pour voir la carte que vous avez créée.
+
+## Exemple d'utilisation 
+{: #custom-example}
+
+Imaginez que vous disposez d'une application qui s'exécute dans un cluster {{site.data.keyword.containershort_notm}} dont le nom est `cloudkingdom`. Selon la taille de votre application, votre cluster peut comporter plusieurs pods que vous devez surveiller simultanément. Que se passe-t-il lorsque plusieurs outils personnalisés surveillent votre cluster et détectent différentes menaces ? Si l'un des pods dans le cluster commençait à envoyer une quantité anormale de données à des serveurs externes, vous voudriez en être informé le plus tôt possible. L'outil personnalisé qui surveille le transfert de données peut détecter le résultat et l'envoyer à {{site.data.keyword.security-advisor_short}}. Si une autre de vos intégrations personnalisées détecte un problème, elle envoie également le résultat à {{site.data.keyword.security-advisor_short}}. Ensuite, {{site.data.keyword.security-advisor_short}} affiche les résultats depuis tous vos outils de surveillance dans un seul tableau de bord. Là, vous pouvez rapidement prendre connaissance des alertes, examiner un problème, et en savoir plus sur les étapes de résolution. 
 
 
-</br>
-</br>
+Exemple de contenu :
+
+```
+{
+	"note_name": "<account id>/providers/my-custom-tool/notes/my-custom-tool-findings-type",
+	"kind": "FINDING",
+	"remediation": "How to resolve Data leakage threat",
+	"provider_id": "my-custom-tool",
+	"id": "my-custom-tool-finding-2",
+	"context": {
+		"region": "location",
+		"resource_id": "cluster crn",
+		"resource_name": "cloudkingdom",
+		"resource_type": "container",
+		"service_name": "kubernetes service"
+	},
+	"finding": {
+		"severity": "HIGH",
+		"next_steps": [{
+			"title": "Investigate which process are running in your cluster. If you suspect one of your pods was hacked, restart it, and look for image vulnerabilities",
+                        "url":"https://console.bluemix.net/containers-kubernetes/clusters"
+		}],
+                "short_description": "One of the pods in your cluster appears to be leaking an excessive amount of data",
+                "long_description": "One of the pods in your cluster is approaching external servers and sending them data in volumes that exceed that pod’s normal behavior"
+	}
+}
+```
+{: screen}

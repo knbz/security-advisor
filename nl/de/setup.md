@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-10"
+  years: 2014, 2019
+lastupdated: "2019-03-13"
 
 ---
 
@@ -13,10 +13,13 @@ lastupdated: "2018-12-10"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Vorteile vorintegrierter Services nutzen
-{: #setup}
+{: #setup-services}
 
 {{site.data.keyword.security-advisor_short}} wird mit einigen vorab gefüllten Karten geliefert, die Sie unterstützen können, wenn Sie eine Überwachung auf Sicherheitsrisiken und Bedrohungen ausführen.
 {: shortdesc}
@@ -30,26 +33,26 @@ Obwohl zur Erstellung der Verbindung zwischen {{site.data.keyword.security-advis
 
 
 ## Sicherheitslücken in Container-Images überwachen
-{: #setup_images}
+{: #setup-images}
 
 Mithilfe von {{site.data.keyword.registryshort_notm}} haben Sie Zugriff auf Vulnerability Advisor, womit die Images in Ihrer {{site.data.keyword.registryshort_notm}}-Instanz kontinuierlich auf mögliche Sicherheitsprobleme überprüft werden. Werden Probleme gefunden, werden Sie benachrichtigt und Sie haben die Möglichkeit, einen umfassenden Bericht in Ihrem {{site.data.keyword.security-advisor_short}}-Dashboard anzuzeigen.
 {:shortdesc}
 
-Weitere Informationen hierzu finden Sie unter [{{site.data.keyword.registryshort_notm}}](/docs/services/Registry/index.html#index).
+Weitere Informationen hierzu finden Sie unter [{{site.data.keyword.registryshort_notm}}](/docs/services/Registry?topic=registry-index#index).
 
 
 **Vorbereitende Schritte**
 
-Bevor Sie die Registry verwenden können, müssen Sie die folgenden Befehlszeilenschnittstellen und Plug-ins installiert werden:
-* [Die {{site.data.keyword.Bluemix_notm}}-CLI ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](http://clis.ng.bluemix.net/ui/home.html)
-* Das Plug-in 'Container-Registry'
+Um die Registry verwenden zu können, müssen Sie sicherstellen, dass die folgenden Befehlszeilenschnittstellen und Plug-ins installiert sind:
+* [{{site.data.keyword.cloud_notm}}-CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)
+* Plug-in 'Container-Registry'
 
   ```
   ibmcloud plugin install container-registry -r Bluemix
   ```
   {: pre}
 
-</br>
+
 **Namensbereich erstellen**
 
 1. Melden Sie sich über die Befehlszeilenschnittstelle (CLI) bei Ihrem Konto an.
@@ -76,24 +79,23 @@ Bevor Sie die Registry verwenden können, müssen Sie die folgenden Befehlszeile
 3. Kennzeichnen Sie ein Image mit einem Tag.
 
   ```
-  docker tag <image>:<tag> registry.ng.bluemix.net/<namespace>/<image>:<tag>
+  docker tag <image>:<tag> registry.ng.bluemix.net/<namensbereich>/<image>:<tag>
   ```
   {: pre}
 
 5. Übertragen Sie das Image mit einer Push-Operation.
 
   ```
-  docker push registry.ng.bluemix.net/<namespace>/<image>:<tag>
+  docker push registry.ng.bluemix.net/<namensbereich>/<image>:<tag>
   ```
   {: pre}
 
 
 Nachdem Sie Images mit einer Push-Operation in Ihren {{site.data.keyword.registryshort_notm}}-Namensbereich übertragen haben, werden Informationen zu allen gefundenen Sicherheitslücken auf der Karte **Images mit Sicherheitslücken** im Service-Dashboard angezeigt. Sie können für bestimmte Images auch einen Drilldown durchführen, um weitere Informationen zu erhalten, z. B. eine Beschreibung aller identifizierten Sicherheitslücken und Konfigurationsprobleme.
 
-</br>
 
 ## Zertifikate überwachen
-{: #setup_certificates}
+{: #setup-certificates}
 
 Wussten Sie, dass {{site.data.keyword.cloudcerts_long_notm}} die Überwachung und Verwaltung Ihrer SSL/TLS-Zertifikate unterstützen kann? Durch die Integration von {{site.data.keyword.cloudcerts_short}} und {{site.data.keyword.security-advisor_short}} können Sie rechtzeitig Alerts zu den Ablaufterminen Ihrer Zertifikate erhalten, wodurch Ausfälle von Services oder Anwendungen vermieden werden.
 {:shortdesc}
@@ -102,12 +104,12 @@ In Abhängigkeit von den Ablaufdaten des Zertifikats, das Sie in {{site.data.key
 
 Zum Auslösen einer manuellen Aktualisierung können Sie versuchen, ein Zertifikat in Ihre {{site.data.keyword.cloudcerts_short}}-Instanz hochzuladen, das nach einem Tag abläuft. Bei erfolgreichem Import sehen Sie, dass der Key Risk Indicator (KRI) sowie Untersuchungsergebnisse im {{site.data.keyword.security-advisor_short}}-Dashboard angezeigt werden.
 
-Weitere Informationen zu [{{site.data.keyword.cloudcerts_long_notm}}](/docs/services/certificate-manager/index.html#gettingstarted) finden Sie in der Dokumentation.
+Weitere Informationen zu [{{site.data.keyword.cloudcerts_long_notm}}](/docs/services/certificate-manager?topic=certificate-manager-gettingstarted#gettingstarted) finden Sie in der Dokumentation.
 {: tip}
 
 **Zertifikat erstellen**
 
-Zum Erstellen eines selbst signierten Zertifikats, das in einem Tag abläuft, können Sie folgenden OpenSSL-Befehl in Ihrem Terminal absetzen.
+Zum Erstellen eines selbst signierten Zertifikats, das in einem Tag abläuft, können Sie den folgenden OpenSSL-Befehl in Ihrem Terminal absetzen.
 
 ```
 openssl req -x509 -newkey rsa:2048 -keyout key.pem -subj "/CN=myservice.com" -out server.pem -days 1 -nodes
@@ -126,6 +128,3 @@ Nachdem Sie Ihre Zertifikate importiert haben, werden auf der Karte **Zertifikat
 
 Um die Benachrichtigungen zu stoppen, müssen Sie Ihr Zertifikat verlängern, das Zertifikat in {{site.data.keyword.cloudcerts_short}} hochladen und das abgelaufene Zertifikat löschen.
 {: tip}
-
-</br>
-</br>

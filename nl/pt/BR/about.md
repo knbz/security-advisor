@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-09"
+  years: 2017, 2019
+lastupdated: "2019-03-07"
+
+keywords: centralized security, security management, alerts, security risk, insights, threat detection
+
+subcollection: security-advisor
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2018-12-09"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Sobre {{site.data.keyword.security-advisor_short}}
@@ -21,15 +28,42 @@ lastupdated: "2018-12-09"
 O {{site.data.keyword.security-advisor_long}} permite o gerenciamento de segurança centralizado por meio de um painel unificado que alerta os administradores de segurança sobre problemas e os orienta para que eles entendam, priorizem, gerenciem e resolvam problemas de segurança relacionados a seus aplicativos em nuvem e cargas de trabalho.
 {: shortdesc}
 
+## Benefícios do uso do serviço
+{: #about-benefits}
 
-## Visão geral do serviço
-{: #overview}
+![{} architecture](images/sa-benefits.png)
 
-Antes de começar, saiba mais sobre a arquitetura de serviço, os casos de uso e os conceitos-chave.
 
-**O serviço é para mim?**
+<dl>
+  <dt>Risco e postura de segurança</dt>
+    <dd>A segurança do aplicativo permanece importante com os constantes artigos de notícias anunciando uma nova violação de dados ou uma invasão. Os riscos de segurança sempre farão parte do desenvolvimento e, embora os ataques possam ser difíceis de prever, uma maneira de evitá-los é monitorar de perto as implementações na nuvem. Por exemplo, os riscos podem estar relacionados a vulnerabilidades nas imagens de contêiner que estão em uso, em certificados que estão expirando, que podem causar indisponibilidade de seu serviço de nuvem ou do aplicativo, ou em clientes ou servidores suspeitos com má reputação conhecida interagindo com seus clusters.</dd>
+  <dt>Gerenciamento de segurança centralizada</dt>
+    <dd>É possível ver uma visualização consolidada de todos os seus serviços de segurança do {{site.data.keyword.cloud_notm}} e serviços de parceiros integrados. É possível selecionar e assinar serviços diferentes no catálogo do {{site.data.keyword.cloud_notm}}.</dd>
+  <dt>Detecção de ameaça</dt>
+    <dd>O {{site.data.keyword.security-advisor_short}} aproveita as informações que são reunidas pelo IBM X-Force, outros serviços do {{site.data.keyword.cloud_notm}} e soluções de parceiros para detectar riscos e ameaças antes de se tornarem um problema de segurança. O serviço também fornece análise de dados sobre os dados de vulnerabilidade e os dados de atividade de rede.</dd>
+</dl>
 
-O Security Advisor é mais útil para Administradores de segurança. Essa função pode ter muitos nomes. Verifique a tabela a seguir para ver alguns usuários de exemplo:
+
+## Como ele funciona
+{: #how-it-works}
+
+Para manter a segurança em uma escala grande, o {{site.data.keyword.security-advisor_short}} é projetado como um microsserviço no {{site.data.keyword.cloud_notm}}. O microsserviço principal fornecido é a API de descobertas que implementa o mecanismo para o {{site.data.keyword.cloud_notm}} e serviços de parceiros para enviar descobertas de segurança para o painel de serviço.
+{: shortdesc}
+
+O serviço recebe descobertas de:
+* Serviços {{site.data.keyword.cloud_notm}} pré-integrados como o Certificate Manager e o Vulnerability Advisor
+* Network Insights
+* Activity Insights
+* Parceiros como o NeuVector e o Twistlock
+* Integrações customizadas com suas outras ferramentas de segurança
+
+Confira a imagem a seguir para ver a maneira que os componentes do {{site.data.keyword.security-advisor_short}} se encaixam.
+
+![{} architecture](images/how-it-works.png)
+
+
+
+{{site.data.keyword.security-advisor_short}}  é mais útil para administradores de segurança. Essa função pode ter muitos nomes. Verifique a tabela a seguir para ver alguns usuários de exemplo:
 
 <table>
   <tr>
@@ -51,33 +85,6 @@ O Security Advisor é mais útil para Administradores de segurança. Essa funç�
 
 As funções descritas podem ser executadas por uma única pessoa ou por várias pessoas, dependendo do tamanho de sua empresa. No entanto, a oferta foi criada para tratar os requisitos do dia a dia de um CISO ou de um Focal de segurança.
 
-</br>
-
-## Software
-{: #architecture}
-
-Para manter a segurança em uma grande escala, o Security Advisor é projetado como um microsserviço no IBM Cloud. O microsserviço principal fornecido é a API de descobertas, a qual implementa o mecanismo para que o IBM Cloud e os serviços de parceiro enviem descobertas de segurança para seu painel de serviço.
-{: shortdesc}
-
-O serviço recebe descobertas de:
-* Serviços pré-integrados do IBM Cloud, como o Certificate Manager e o Vulnerability Advisor
-* Complemento Network Analytics
-* Parceiros, como o NeuVector
-* Integrações customizadas com suas outras ferramentas de segurança
-
-Na imagem a seguir, veja a maneira com que os componentes do Security Advisor são associados.
-
-![Arquitetura do {{site.data.keyword.security-advisor_short}}](images/architecture.png)
-
-<dl>
-  <dt>Risco e postura de segurança</dt>
-    <dd>A segurança do aplicativo permanece importante com os constantes artigos de notícias anunciando uma nova violação de dados ou uma invasão. Os riscos de segurança sempre farão parte do desenvolvimento e, embora os ataques possam ser difíceis de prever, uma maneira de evitá-los é monitorar de perto as implementações na nuvem. Por exemplo, os riscos podem estar relacionados a vulnerabilidades nas imagens de contêiner que estão em uso, em certificados que estão expirando, que podem causar indisponibilidade de seu serviço de nuvem ou do aplicativo, ou em clientes ou servidores suspeitos com má reputação conhecida interagindo com seus clusters.</dd>
-  <dt>Gerenciamento de segurança centralizada</dt>
-    <dd>É possível obter uma visualização consolidada de todos os seus serviços de segurança do IBM Cloud e de serviços de parceiros integrados. É possível selecionar e assinar diferentes serviços do catálogo do IBM Cloud.</dd>
-  <dt>Detecção de ameaça</dt>
-    <dd>O Security Advisor aproveita as informações reunidas pelo IBM X-Force, por outros serviços do IBM Cloud e soluções de parceiros para detectar riscos e ameaças antes de se tornarem um problema de segurança. O serviço também fornece análise de dados sobre os dados de vulnerabilidade e os dados de atividade de rede.</dd>
-</dl>
-
 
 ### A API de descobertas
 {: #api}
@@ -85,11 +92,10 @@ Na imagem a seguir, veja a maneira com que os componentes do Security Advisor s�
 O serviço pronto para uso vem com descobertas pré-integradas que são sinalizadas pela API.
 {: shortdesc}
 
-A API de descobertas do Security Advisor segue a especificação da API de metadados de artefato [Grafeas](http://grafeas.ng.bluemix.net/ui/) para armazenar, consultar e recuperar metadados críticos. As descobertas são relatadas pelos serviços e ferramentas de segurança.
+A API de descobertas do {{site.data.keyword.security-advisor_short}} segue a especificação de API de metadados de artefato do <a href="http://grafeas.ng.bluemix.net/ui/" target="_blank">Grafeas <img src="../../icons/launch-glyph.svg" alt="Ícone de link externo"></a> para armazenar, consultar e recuperar metadados críticos. As descobertas são relatadas pelos serviços e ferramentas de segurança.
 
-O Security Advisor está ativado por padrão para todas as contas do IBM Cloud. Por isso, não é necessário provisionar nenhuma instância do serviço. Uma instância do Security Advisor é criada automaticamente no acesso inicial do painel ou quando uma descoberta inicial é relatada. O serviço permite 18.000 descobertas, aproximadamente 200 por dia, para cada conta, em um período de 90 dias. No final dos 90 dias, as descobertas são limpas. Os limites de descoberta são monitorados e, se a conta atingir o limite antes de 90 dias, as descobertas totais serão reduzidas para 50% em um modelo PEPS (primeiro a entrar, primeiro a sair). Quando o serviço recebe uma notificação de exclusão de conta, todas as descobertas relacionadas a essa conta são limpas. É possível recuperar todas as descobertas para sua conta usando a API e armazená-las para uso futuro ou para propósitos de auditoria.
+O {{site.data.keyword.security-advisor_short}} é ativado por padrão para todas as contas do {{site.data.keyword.cloud_notm}}. Por isso, não é necessário provisionar nenhuma instância do serviço. Uma instância do {{site.data.keyword.security-advisor_short}} é criada automaticamente no acesso inicial do painel ou quando uma descoberta inicial é relatada. O serviço permite 18.000 descobertas, aproximadamente 200 por dia, para cada conta, em um período de 90 dias. No final dos 90 dias, as descobertas são limpas. Os limites de descoberta são monitorados e, se a conta atingir o limite antes de 90 dias, as descobertas totais serão reduzidas para 50% em um modelo PEPS (primeiro a entrar, primeiro a sair). Quando o serviço recebe uma notificação de exclusão de conta, todas as descobertas relacionadas a essa conta são limpas. É possível recuperar todas as descobertas para sua conta usando a API e armazená-las para uso futuro ou para propósitos de auditoria.
 
-</br>
 
 ## Conceitos-chave
 {: #concepts}
@@ -107,7 +113,7 @@ Conheça os diferentes conceitos que podem ser usados ao trabalhar com o {{site.
   <dt>Ocorrência</dt>
     <dd>Uma ocorrência descreve os detalhes específicos de uma nota do provedor. A ocorrência contém os detalhes de vulnerabilidade, as etapas de correção e outras informações gerais.</dd>
   <dt>Card</dt>
-    <dd>Os metadados usados para visualizar as descobertas no painel de serviço são definidos pelo tipo de nota: <code>CARD</code>. O Security Advisor suporta três tipos de elementos KRI para um <code>CARD</code>: <ul><li>Numérico</li><li>Detalhamento</li><li>Série temporal</li></ul></dd>
+    <dd>Os metadados usados para visualizar as descobertas no painel de serviço são definidos pelo tipo de nota: <code>CARD</code>. O {{site.data.keyword.security-advisor_short}} suporta três tipos de elementos KRI para um <code>CARD</code>: <ul><li>Numérico</li><li>Detalhamento</li><li>Série temporal</li></ul></dd>
   <dt>Provedor</dt>
     <dd>Um provedor é a ferramenta ou o serviço que define o tipo de descoberta (nota) e, em seguida, envia uma ocorrência da descoberta para o serviço.</dd>
   <dt>CRN do serviço</dt>
@@ -116,7 +122,6 @@ Conheça os diferentes conceitos que podem ser usados ao trabalhar com o {{site.
     <dd>O CRN do recurso identifica o recurso específico envolvido na descoberta. Quando o Network Analytics relata uma descoberta, o CRN do cluster do Kubernetes deve ser incluído para identificar o cluster ou o recurso afetado.</dd>
 </dl>
 
-</br>
 
 ## Alta disponibilidade e recuperação de desastre
 {: #ha-dr}
@@ -124,8 +129,4 @@ Conheça os diferentes conceitos que podem ser usados ao trabalhar com o {{site.
 O {{site.data.keyword.security-advisor_short}} é um serviço multiregion altamente disponível.
 {: shortdesc}
 
-O {{site.data.keyword.security-advisor_short}} é suportado atualmente nas regiões Dallas e Londres. Em cada região suportada, o serviço é executado em várias [zonas de disponibilidade](https://www.ibm.com/blogs/bluemix/2018/06/improving-app-availability-multizone-clusters/). O {{site.data.keyword.security-advisor_short}} tem a recuperação de desastre regional em vigor. O serviço mantém um banco de dados de backup que pode ser restaurado rapidamente dentro de três horas. Todos os dados de serviço, com exceção das 24 horas anteriores, são fornecidos.
-
-
-</br>
-</br>
+O {{site.data.keyword.security-advisor_short}} é suportado atualmente nas regiões Dallas e Londres. Em cada região suportada, o serviço é executado em várias <a href="https://www.ibm.com/blogs/bluemix/2018/06/improving-app-availability-multizone-clusters/" target="_blank">zonas de disponibilidade <img src="../../icons/launch-glyph.svg" alt="Ícone de link externo"> </a>. O {{site.data.keyword.security-advisor_short}} tem a recuperação de desastre regional em vigor. O serviço mantém um banco de dados de backup que pode ser restaurado rapidamente dentro de três horas. Todos os dados de serviço, com exceção das 24 horas anteriores, são fornecidos.

@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-09"
+  years: 2017, 2019
+lastupdated: "2019-03-07"
+
+keywords: centralized security, security management, alerts, security risk, insights, threat detection
+
+subcollection: security-advisor
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2018-12-09"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Informazioni su {{site.data.keyword.security-advisor_short}}
@@ -21,15 +28,42 @@ lastupdated: "2018-12-09"
 {{site.data.keyword.security-advisor_long}} consente la gestione della sicurezza centralizzata attraverso un dashboard unificato che avvisa dei problemi gli amministratori della sicurezza e li guida a comprendere, assegnare priorità, gestire e risolvere i problemi di sicurezza relativi alle loro applicazioni cloud e ai carichi di lavoro.
 {: shortdesc}
 
+## Vantaggi dell'utilizzo del servizio
+{: #about-benefits}
 
-## Panoramica del servizio
-{: #overview}
+![{{site.data.keyword.security-advisor_short}} - Architettura](images/sa-benefits.png)
 
-Prima di iniziare, scopri l'architettura del servizio, i casi di utilizzo e i concetti chiave.
 
-**Il servizio è adatto a me?**
+<dl>
+  <dt>Rischio e postura di sicurezza</dt>
+    <dd>La sicurezza delle applicazioni rimane importante con i costanti articoli che annunciano una nuova intrusione o violazione dei dati. I rischi per la sicurezza faranno sempre parte dello sviluppo e anche se gli attacchi possono essere difficili da prevedere, un modo per prevenirli è monitorare da vicino le tue distribuzioni cloud. Ad esempio, i rischi possono essere correlati a vulnerabilità nelle tue immagini contenitore in uso, a certificati in scadenza che possono provocare un'interruzione del tuo servizio o della tua applicazione cloud oppure a client o servizi sospetti con una reputazione negativa che interagiscono con i tuoi cluster.</dd>
+  <dt>Gestione della sicurezza centralizzata</dt>
+    <dd>Puoi visualizzare una vista consolidata di tutti i tuoi servizi di sicurezza {{site.data.keyword.cloud_notm}} e dei servizi partner integrati. Puoi selezionare e sottoscrivere servizi diversi dal catalogo {{site.data.keyword.cloud_notm}}.</dd>
+  <dt>Rilevamento delle minacce</dt>
+    <dd>{{site.data.keyword.security-advisor_short}} sfrutta le informazioni raccolte da IBM X-Force, altri servizi {{site.data.keyword.cloud_notm}} e soluzioni partner per rilevare rischi e minacce prima che diventino un problema di sicurezza. Il servizio fornisce anche l'analisi sui dati di vulnerabilità e dati di attività della rete.</dd>
+</dl>
 
-Security Advisor è molto utile per gli amministratori della sicurezza. Tale ruolo può assumere molti nomi. Controlla la seguente tabella per alcuni utenti di esempio:
+
+## Modalità di funzionamento
+{: #how-it-works}
+
+Per rendere il mantenimento della sicurezza su larga scala, {{site.data.keyword.security-advisor_short}} è progettato come un micro-servizio su {{site.data.keyword.cloud_notm}}. Il micro-servizio principale fornito è l'API per le ricerche che implementa il meccanismo con cui i servizi {{site.data.keyword.cloud_notm}} e i servizi partner possono inviare le ricerche sulla sicurezza al tuo dashboard del servizio.
+{: shortdesc}
+
+Il servizio riceve le ricerche da:
+* Servizi {{site.data.keyword.cloud_notm}} pre-integrati come Gestore certificati e Vulnerability Advisor
+* Network Insights
+* Activity Insights
+* Partner come NeuVector e Twistlock
+* Integrazioni personalizzate con altri tuoi strumenti di sicurezza
+
+Controlla la seguente immagine per vedere come si integrano i componenti di {{site.data.keyword.security-advisor_short}}.
+
+![{{site.data.keyword.security-advisor_short}} - Architettura](images/how-it-works.png)
+
+
+
+{{site.data.keyword.security-advisor_short}} è molto utile per gli amministratori della sicurezza. Tale ruolo può assumere molti nomi. Controlla la seguente tabella per alcuni utenti di esempio:
 
 <table>
   <tr>
@@ -51,33 +85,6 @@ Security Advisor è molto utile per gli amministratori della sicurezza. Tale ruo
 
 I ruoli descritti potrebbero essere eseguiti da una singola persona o da più persone a seconda delle dimensioni della tua azienda. Tuttavia, l'offerta è stata creata per soddisfare le esigenze quotidiane di un CISO o focale di sicurezza.
 
-</br>
-
-## Architettura
-{: #architecture}
-
-Per rendere il mantenimento della sicurezza su larga scala, Security Advisor è progettato come un micro-servizio su IBM Cloud. Il micro-servizio principale fornito è l'API per le ricerche che implementa il meccanismo con cui i servizi IBM Cloud e i servizi partner possono inviare le ricerche sulla sicurezza al tuo dashboard del servizio.
-{: shortdesc}
-
-Il servizio riceve le ricerche da:
-* Servizi IBM Cloud pre-integrati come Gestore certificati e Vulnerability Advisor
-* Componente aggiuntivo Analisi di rete
-* Partner come NeuVector
-* Integrazioni personalizzate con altri tuoi strumenti di sicurezza
-
-Controlla la seguente immagine per vedere come si integrano i componenti di Security Advisor.
-
-![{{site.data.keyword.security-advisor_short}} - Architettura](images/architecture.png)
-
-<dl>
-  <dt>Rischio e postura di sicurezza</dt>
-    <dd>La sicurezza delle applicazioni rimane importante con i costanti articoli che annunciano una nuova intrusione o violazione dei dati. I rischi per la sicurezza faranno sempre parte dello sviluppo e anche se gli attacchi possono essere difficili da prevedere, un modo per prevenirli è monitorare da vicino le tue distribuzioni cloud. Ad esempio, i rischi possono essere correlati a vulnerabilità nelle tue immagini contenitore in uso, a certificati in scadenza che possono provocare un'interruzione del tuo servizio o della tua applicazione cloud oppure a client o servizi sospetti con una reputazione negativa che interagiscono con i tuoi cluster.</dd>
-  <dt>Gestione della sicurezza centralizzata</dt>
-    <dd>Puoi visualizzare una vista consolidata di tutti i tuoi servizi di sicurezza IBM Cloud e dei servizi partner integrati. Puoi selezionare e sottoscrivere servizi diversi dal catalogo IBM Cloud.</dd>
-  <dt>Rilevamento delle minacce</dt>
-    <dd>Security Advisor sfrutta le informazioni raccolte da IBM X-Force, altri servizi IBM Cloud e soluzioni partner per rilevare rischi e minacce prima che diventino un problema di sicurezza. Il servizio fornisce anche l'analisi sui dati di vulnerabilità e dati di attività della rete.</dd>
-</dl>
-
 
 ### API Findings
 {: #api}
@@ -85,11 +92,10 @@ Controlla la seguente immagine per vedere come si integrano i componenti di Secu
 Come preconfigurazione, il servizio viene fornito con ricerche pre-integrate contrassegnate dall'API.
 {: shortdesc}
 
-L'API per le ricerche di Security Advisor segue la specifica dell'API dei metadati di risorse [Grafeas](http://grafeas.ng.bluemix.net/ui/) per archiviare, interrogare e richiamare i metadati critici. Le ricerche vengono segnalate dai servizi e dagli strumenti di sicurezza.
+L'API per le ricerche di {{site.data.keyword.security-advisor_short}} segue la specifica dell'API dei metadati di risorse <a href="http://grafeas.ng.bluemix.net/ui/" target="_blank">Grafeas <img src="../../icons/launch-glyph.svg" alt="Icona link esterno"></a> per archiviare, interrogare e richiamare i metadati critici. Le ricerche vengono segnalate dai servizi e dagli strumenti di sicurezza.
 
-Per impostazione predefinita, Security Advisor è abilitato per tutti gli account IBM Cloud. Per tale motivo, non hai bisogno di eseguire il provisioning di alcuna istanza del servizio. Un'istanza di Security Advisor viene creata automaticamente durante l'accesso iniziale del dashboard o quando viene segnalata una ricerca iniziale. Il servizio consente 18.000 ricerche, circa 200 al giorno, per ciascun account, in un periodo di 90 giorni. Alla fine dei 90 giorni, le ricerche vengono eliminate. I limiti di ricerca vengono monitorati e, se l'account raggiunge il limite prima dei 90 giorni, le ricerche totali vengono ridotte al 50% secondo un modello FIFO (First in, First Out). Quando il servizio riceve una notifica di cancellazione dell'account, tutte le ricerche relative a quell'account vengono eliminate. Puoi richiamare tutte le ricerche relative al tuo account utilizzando l'API e archiviarle personalmente per qualsiasi utilizzo futuro o scopo di controllo.
+{{site.data.keyword.security-advisor_short}} è abilitato per impostazione predefinita per tutti gli account {{site.data.keyword.cloud_notm}}. Per tale motivo, non hai bisogno di eseguire il provisioning di alcuna istanza del servizio. Un'istanza di {{site.data.keyword.security-advisor_short}} viene creata automaticamente durante l'accesso iniziale del dashboard o quando viene segnalata una ricerca iniziale. Il servizio consente 18.000 ricerche, circa 200 al giorno, per ciascun account, in un periodo di 90 giorni. Alla fine dei 90 giorni, le ricerche vengono eliminate. I limiti di ricerca vengono monitorati e, se l'account raggiunge il limite prima dei 90 giorni, le ricerche totali vengono ridotte al 50% secondo un modello FIFO (First in, First Out). Quando il servizio riceve una notifica di cancellazione dell'account, tutte le ricerche relative a quell'account vengono eliminate. Puoi richiamare tutte le ricerche relative al tuo account utilizzando l'API e archiviarle personalmente per qualsiasi utilizzo futuro o scopo di controllo.
 
-</br>
 
 ## Concetti chiave
 {: #concepts}
@@ -107,7 +113,7 @@ Trova ulteriori informazioni sui diversi concetti che puoi utilizzare mentre lav
   <dt>Ricorrenza</dt>
     <dd>Una ricorrenza descrive i dettagli specifici del provider di una nota. La ricorrenza contiene i dettagli della vulnerabilità, le correzioni e altre informazioni generali.</dd>
   <dt>Scheda</dt>
-    <dd>I metadati utilizzati per visualizzare le ricerche nel dashboard del servizio sono definiti in base al tipo di nota - <code>CARD</code>. Security Advisor supporta tre tipi di elementi KRI per una <code>CARD</code>: <ul><li>Numerico</li><li>Suddivisione</li><li>Serie temporale</li></ul></dd>
+    <dd>I metadati utilizzati per visualizzare le ricerche nel dashboard del servizio sono definiti in base al tipo di nota - <code>CARD</code>. {{site.data.keyword.security-advisor_short}} supporta tre tipi di elementi KRI per una <code>CARD</code>: <ul><li>Numerico</li><li>Suddivisione</li><li>Serie temporale</li></ul></dd>
   <dt>Provider</dt>
     <dd>Un provider è lo strumento o il servizio che definisce il tipo di ricerca (nota) e invia quindi una ricorrenza della ricerca al servizio.</dd>
   <dt>CRN del servizio</dt>
@@ -116,7 +122,6 @@ Trova ulteriori informazioni sui diversi concetti che puoi utilizzare mentre lav
     <dd>Il CRN della risorsa identifica la risorsa specifica coinvolta nella ricerca. Quando l'Analisi di rete segnala una ricerca, il CRN del cluster Kubernetes viene incluso per identificare il cluster o la risorsa interessata.</dd>
 </dl>
 
-</br>
 
 ## Alta disponibilità e ripristino di emergenza
 {: #ha-dr}
@@ -124,8 +129,4 @@ Trova ulteriori informazioni sui diversi concetti che puoi utilizzare mentre lav
 {{site.data.keyword.security-advisor_short}} è un servizio multi-regione altamente disponibile.
 {: shortdesc}
 
-{{site.data.keyword.security-advisor_short}} è attualmente supportato nelle regioni di Dallas e Londra. In ciascuna regione supportata, il servizio viene eseguito in diverse [zone di disponibilità](https://www.ibm.com/blogs/bluemix/2018/06/improving-app-availability-multizone-clusters/). {{site.data.keyword.security-advisor_short}} prevede il ripristino di emergenza a livello regionale. Il servizio gestisce un database di backup che può essere rapidamente ripristinato entro tre ore. Vengono forniti tutti i dati del servizio, ad eccezione di quelli delle 24 ore precedenti.
-
-
-</br>
-</br>
+{{site.data.keyword.security-advisor_short}} è attualmente supportato nelle regioni di Dallas e Londra. In ciascuna regione supportata, il servizio viene eseguito in diverse <a href="https://www.ibm.com/blogs/bluemix/2018/06/improving-app-availability-multizone-clusters/" target="_blank">zone di disponibilità <img src="../../icons/launch-glyph.svg" alt="Icona link esterno"></a>. {{site.data.keyword.security-advisor_short}} prevede il ripristino di emergenza a livello regionale. Il servizio gestisce un database di backup che può essere rapidamente ripristinato entro tre ore. Vengono forniti tutti i dati del servizio, ad eccezione di quelli delle 24 ore precedenti.

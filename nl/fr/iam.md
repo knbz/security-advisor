@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-12-07"
+  years: 2017, 2019
+lastupdated: "2019-03-14"
+
+keywords: centralized security, security management, alerts, security risk, insights, threat detection
+
+subcollection: security-advisor
 
 ---
 
@@ -13,26 +17,30 @@ lastupdated: "2018-12-07"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
+
 
 
 # Gestion de l'accès au service
 {: #service-access}
 
-En tant que propriétaire de compte, vous pouvez gérer l'accès aux instances d'{{site.data.keyword.security-advisor_long}} en utilisant {{site.data.keyword.Bluemix_notm}} Identity and Access Management (IAM). En définissant dans votre compte des politiques qui créent différents niveaux d'accès pour différents utilisateurs, vous pouvez garantir que chaque instance de {{site.data.keyword.security-advisor_short}} est sécurisée.
+En tant que propriétaire de compte, vous pouvez gérer l'accès aux instances d'{{site.data.keyword.security-advisor_long}} en utilisant {{site.data.keyword.Bluemix_notm}} Identity and Access Management (IAM). En définissant sur votre compte des règless qui créent différents niveaux d'accès pour différents utilisateurs, vous pouvez garantir que chaque instance de {{site.data.keyword.security-advisor_short}} est sécurisée.
 {: shortdesc}
 
-Pour plus d'informations sur IAM, voir [Accès à IAM](/docs/iam/users_roles.html).
+Pour plus d'informations sur IAM, voir [Accès à IAM](/docs/iam?topic=iam-userroles).
 
 ## Règles d'accès {{site.data.keyword.security-advisor_short}}
 {: #access}
 
-A chaque utilisateur qui accède à une instance du service {{site.data.keyword.security-advisor_short}} dans votre compte doit être affectée une politique d'accès avec un rôle utilisateur IAM défini. La politique détermine les actions qu'un utilisateur peut effectuer dans le contexte de cette instance de service spécifique.
+Une règle d'accès avec un rôle utilisateur IAM défini doit être affectée à chaque utilisateur qui accède à une instance du service {{site.data.keyword.security-advisor_short}} sur votre compte. La règle détermine les actions qu'un utilisateur peut effectuer dans le contexte de cette instance de service spécifique.
 {: shortdesc}
 
 Les actions sont personnalisées et définies par le service {{site.data.keyword.Bluemix_notm}} en tant qu'opérations dont l'exécution est autorisée dans le service. Les actions sont ensuite mappées aux rôles utilisateur du service IAM. Dans le tableau ci-dessous, les actions et les droits requis pour {{site.data.keyword.security-advisor_short}} sont mappés.
 
-<table><caption>Quels rôles peuvent effectuer quelles actions ?</caption>
+<table><caption>Quelles sont les actions que chaque rôle peut effectuer ? </caption>
   <col width="40%">
   <col width="40%">
   <col width="20%">
@@ -43,22 +51,22 @@ Les actions sont personnalisées et définies par le service {{site.data.keyword
   </tr>
   <tr>
     <td><code>security-advisor.findings.read</code></td>
-    <td>Afficher les résultats (findings) du rapport de sécurité.</td>
+    <td>Afficher les résultats du rapport de sécurité.</td>
     <td>Lecteur</br>Auteur</br>Gestionnaire</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.write</code></td>
-    <td>Générer les résultats (findings) du rapport de sécurité.</td>
+    <td>Générer les résultats du rapport de sécurité.</td>
     <td>Auteur</br>Gestionnaire</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.delete</code></td>
-    <td>Supprimer les résultats (findings) du rapport de sécurité.</td>
+    <td>Supprimer les résultats du rapport de sécurité.</td>
     <td>Gestionnaire</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.update</code></td>
-    <td>Editer les résultats (findings) du rapport de sécurité.</td>
+    <td>Editer les résultats du rapport de sécurité.</td>
     <td>Auteur</br>Gestionnaire</td>
   </tr>
   <tr>
@@ -83,7 +91,7 @@ Les actions sont personnalisées et définies par le service {{site.data.keyword
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.read</code></td>
-    <td>Lire les solutions personnalisés qui ont été ajoutées au service.</td>
+    <td>Lire les solutions personnalisées que vous avez ajoutées au service.</td>
     <td>Lecteur</br>Auteur</br>Gestionnaire</td>
   </tr>
   <tr>
@@ -93,7 +101,7 @@ Les actions sont personnalisées et définies par le service {{site.data.keyword
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.update</code></td>
-    <td>Mettre à jour une solution personnalisée existante au sein du service.</td>
+    <td>Mettre à jour une solution personnalisée existante dans le service.</td>
     <td>Gestionnaire</td>
   </tr>
   <tr>
@@ -119,6 +127,31 @@ Les actions sont personnalisées et définies par le service {{site.data.keyword
   <tr>
     <td><code>security-advisor.partner-solution.delete</code></td>
     <td>Supprimer une solution partenaire de votre instance de service.</td>
+    <td>Gestionnaire</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.network-insights.enable</code></td>
+    <td>Activer les analyses de réseau fournies par le service. </td>
+    <td>Gestionnaire</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.network-insights.disable</code></td>
+    <td>Désactiver les analyses de réseau fournies par le service. </td>
+    <td>Gestionnaire</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.activity-insights.enable</code></td>
+    <td>Activer les analyses d'activité fournies par le service. </td>
+    <td>Gestionnaire</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.activity-insights.disable</code></td>
+    <td>Désactiver les analyses d'activité fournies par le service. </td>
+    <td>Gestionnaire</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.insights-cos.create</code></td>
+    <td>Créez une instance de Cloud Object Storage par le biais de {{site.data.keyword.security-advisor_short}} pour les analyses de réseau et d'activité. </td>
     <td>Gestionnaire</td>
   </tr>
 </table>

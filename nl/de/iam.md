@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-12-07"
+  years: 2017, 2019
+lastupdated: "2019-03-14"
+
+keywords: centralized security, security management, alerts, security risk, insights, threat detection
+
+subcollection: security-advisor
 
 ---
 
@@ -13,7 +17,11 @@ lastupdated: "2018-12-07"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
+
 
 
 # Servicezugriff verwalten
@@ -22,7 +30,7 @@ lastupdated: "2018-12-07"
 Als Kontoeigner können Sie den Zugriff auf Instanzen von {{site.data.keyword.security-advisor_long}} mithilfe von {{site.data.keyword.Bluemix_notm}} Identity and Access Management (IAM) steuern. Sie definieren Richtlinien in Ihrem Konto, die verschiedene Zugriffsebenen für verschiedene Benutzer erstellen, und können damit gewährleisten, dass jede Instanz von {{site.data.keyword.security-advisor_short}} sicher ist.
 {: shortdesc}
 
-Weitere Informationen zu IAM finden Sie unter [IAM-Zugriff](/docs/iam/users_roles.html).
+Weitere Informationen zu IAM finden Sie unter [IAM-Zugriff](/docs/iam?topic=iam-userroles).
 
 ## {{site.data.keyword.security-advisor_short}}-Zugriffsrichtlinien
 {: #access}
@@ -83,7 +91,7 @@ Die Aktionen werden angepasst und durch den {{site.data.keyword.Bluemix_notm}}-S
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.read</code></td>
-    <td>Angepasste Lösungen lesen, die dem Service hinzugefügt wurden.</td>
+    <td>Angepasste Lösungen, die Sie zum Service hinzugefügt haben, lesen.</td>
     <td>Leseberechtigter</br>Schreibberechtigter</br>Manager</td>
   </tr>
   <tr>
@@ -103,7 +111,7 @@ Die Aktionen werden angepasst und durch den {{site.data.keyword.Bluemix_notm}}-S
   </tr>
   <tr>
     <td><code>security-advisor.partner-solution.read</code></td>
-    <td>Partnerlösungen anzeigen, die Sie Ihrer Serviceinstanz hinzugefügt haben.</td>
+    <td>Partnerlösungen, die Sie zu Ihrer Serviceinstanz hinzugefügt haben, anzeigen.</td>
     <td>Leseberechtigter</br>Schreibberechtigter</br>Manager</td>
   </tr>
   <tr>
@@ -119,6 +127,31 @@ Die Aktionen werden angepasst und durch den {{site.data.keyword.Bluemix_notm}}-S
   <tr>
     <td><code>security-advisor.partner-solution.delete</code></td>
     <td>Partnerlösung aus Ihrer Serviceinstanz löschen.</td>
+    <td>Manager</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.network-insights.enable</code></td>
+    <td>Vom Service bereitgestelltes Network Insights-Feature aktivieren.</td>
+    <td>Manager</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.network-insights.disable</code></td>
+    <td>Vom Service bereitgestelltes Network Insights-Feature inaktivieren.</td>
+    <td>Manager</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.activity-insights.enable</code></td>
+    <td>Vom Service bereitgestelltes Activity Insights-Feature aktivieren.</td>
+    <td>Manager</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.activity-insights.disable</code></td>
+    <td>Vom Service bereitgestelltes Activity Insights-Feature inaktivieren.</td>
+    <td>Manager</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.insights-cos.create</code></td>
+    <td>Für Network Insights und Activity Insights über {{site.data.keyword.security-advisor_short}} eine Cloud Object Storage-Instanz erstellen.</td>
     <td>Manager</td>
   </tr>
 </table>

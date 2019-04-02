@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-12-07"
+  years: 2017, 2019
+lastupdated: "2019-03-14"
+
+keywords: centralized security, security management, alerts, security risk, insights, threat detection
+
+subcollection: security-advisor
 
 ---
 
@@ -13,7 +17,11 @@ lastupdated: "2018-12-07"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
+
 
 
 # Gerenciando o acesso de serviço
@@ -22,7 +30,7 @@ lastupdated: "2018-12-07"
 Como proprietário da conta, é possível gerenciar o acesso às instâncias do {{site.data.keyword.security-advisor_long}} usando o {{site.data.keyword.Bluemix_notm}} Identity and Access Management (IAM). Na sua conta, ao configurar políticas que criam diferentes níveis de acesso para diferentes usuários, é possível garantir que cada instância do {{site.data.keyword.security-advisor_short}} seja segura.
 {: shortdesc}
 
-Para obter mais informações sobre o IAM, veja [Acesso IAM](/docs/iam/users_roles.html).
+Para obter mais informações sobre o IAM, veja [Acesso IAM](/docs/iam?topic=iam-userroles).
 
 ## Políticas de acesso do
 {{site.data.keyword.security-advisor_short}}
@@ -85,7 +93,7 @@ seguir, as ações e as permissões necessárias para o {{site.data.keyword.secu
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.read</code></td>
-    <td>Ler as soluções customizadas que foram incluídas no serviço.</td>
+    <td>Leia as soluções customizadas que você incluiu no serviço.</td>
     <td>Leitor</br>Gravador</br>Gerente</td>
   </tr>
   <tr>
@@ -105,7 +113,7 @@ seguir, as ações e as permissões necessárias para o {{site.data.keyword.secu
   </tr>
   <tr>
     <td><code>security-advisor.partner-solution.read</code></td>
-    <td>Visualizar as soluções de parceiros incluídas na instância de serviço.</td>
+    <td>Visualize as soluções do parceiro que você incluiu em sua instância de serviço.</td>
     <td>Leitor</br>Gravador</br>Gerente</td>
   </tr>
   <tr>
@@ -121,6 +129,31 @@ seguir, as ações e as permissões necessárias para o {{site.data.keyword.secu
   <tr>
     <td><code>security-advisor.partner-solution.delete</code></td>
     <td>Excluir uma solução de parceiro da instância de serviço.</td>
+    <td>Gerente</td>
+  </tr>
+  <tr>
+    <td><code> security-advisor.network-insights.enable </code></td>
+    <td>Ative insights de rede que são fornecidos pelo serviço.</td>
+    <td>Gerente</td>
+  </tr>
+  <tr>
+    <td><code> security-advisor.network-insights.disable </code></td>
+    <td>Desative insights de rede que são fornecidos pelo serviço.</td>
+    <td>Gerente</td>
+  </tr>
+  <tr>
+    <td><code> security-advisor.activity-insights.enable </code></td>
+    <td>Ative insights de atividade que são fornecidos pelo serviço.</td>
+    <td>Gerente</td>
+  </tr>
+  <tr>
+    <td><code> security-advisor.activity-insights.disable </code></td>
+    <td>Desative insights de atividade que são fornecidos pelo serviço.</td>
+    <td>Gerente</td>
+  </tr>
+  <tr>
+    <td><code> security-advisor.insights-cos.create </code></td>
+    <td>Crie uma instância do Cloud Object Storage por meio do {{site.data.keyword.security-advisor_short}} para insights de rede e de atividade.</td>
     <td>Gerente</td>
   </tr>
 </table>

@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-09"
+  years: 2017, 2019
+lastupdated: "2019-03-07"
+
+keywords: centralized security, security management, alerts, security risk, insights, threat detection
+
+subcollection: security-advisor
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2018-12-09"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Informationen zu {{site.data.keyword.security-advisor_short}}
@@ -21,15 +28,42 @@ lastupdated: "2018-12-09"
 Mithilfe eines einheitlichen Dashboards, das Sicherheitsadministratoren über Probleme benachrichtigt und sie beim Erkennen, Priorisieren, Verwalten und Lösen von Sicherheitsproblemen bei ihren Cloudanwendungen und Workloads anleitet, ermöglicht {{site.data.keyword.security-advisor_long}} ein zentrales Sicherheitsmanagement.
 {: shortdesc}
 
+## Vorteile der Verwendung des Service
+{: #about-benefits}
 
-## Serviceübersicht
-{: #overview}
+![{{site.data.keyword.security-advisor_short}}-Architektur](images/sa-benefits.png)
 
-Erfahren Sie vor dem Start mehr zur Servicearchitektur, zu Anwendungsfällen und wichtigen Begriffen.
 
-**Ist der Service für mich von Nutzen?**
+<dl>
+  <dt>Sicherheitsrisiko und -status</dt>
+    <dd>Anwendungssicherheit ist angesichts der ständig erscheinenden Nachrichtenartikel zu Datenschutzverletzungen oder Hackerattacken weiterhin wichtig. Sicherheitsrisiken werden stets Teil der Entwicklung sein; doch obwohl Hackerattacken schwer vorauszusagen sind, können Sie durch eine engmaschige Überwachung Ihrer Cloudbereitstellungen verhindert werden. Die Risiken können sich beispielsweise beziehen auf Sicherheitslücken in den von Ihnen verwendeten Container-Images, auf abgelaufene Zertifikate, die zu Ausfällen Ihres Cloud-Services oder Ihrer Cloudanwendung führen, oder darauf, dass verdächtige Clients oder Server mit bekannt schlechter Reputation mit Ihren Clustern interagieren.</dd>
+  <dt>Zentrales Sicherheitsmanagement</dt>
+    <dd>Sie können eine konsolidierte Ansicht aller Ihrer {{site.data.keyword.cloud_notm}}-Sicherheitsservices und der integrierten Partnerservices anzeigen. Im {{site.data.keyword.cloud_notm}}-Katalog können Sie verschiedene Services auswählen und abonnieren.</dd>
+  <dt>Bedrohungserkennung</dt>
+    <dd>{{site.data.keyword.security-advisor_short}} nutzt die von IBM X-Force, von anderen {{site.data.keyword.cloud_notm}}-Services und von Partnerlösungen erfassten Informationen, um Risiken und Bedrohungen zu erkennen, bevor sie zu einem Sicherheitsproblem werden. Darüber hinaus stellt der Service außer Netzaktivitätsdaten und Daten zu Sicherheitslücken auch Analysen bereit.</dd>
+</dl>
 
-Security Advisor ist für Sicherheitsadministratoren besonders hilfreich. Diese Rolle kann unterschiedliche bezeichnet werden. In der folgenden Tabelle finden Sie einige Beispielbenutzer:
+
+## Funktionsweise
+{: #how-it-works}
+
+Damit das Gewährleisten der Sicherheit in großem Maßstab möglich ist, wurde {{site.data.keyword.security-advisor_short}} als Mikroservice in {{site.data.keyword.cloud_notm}} konzipiert. Als zentraler Mikroservice wird die API für Untersuchungsergebnisse bereitgestellt, die das Verfahren, mit dem Untersuchungsergebnisse zur Sicherheit an Ihr Service-Dashboard gesendet werden, für {{site.data.keyword.cloud_notm}} und Partnerservices implementiert.
+{: shortdesc}
+
+Der Service erhält von folgenden Elementen Untersuchungsergebnisse:
+* Vorintegrierten {{site.data.keyword.cloud_notm}}-Services wie beispielsweise Certificate Manager und Vulnerability Advisor
+* Network Insights
+* Activity Insights
+* Partnern wie NeuVector und Twistlock
+* Angepassten Integrationen, die Ihre übrigen Sicherheitstools umfassen
+
+Anhand der folgenden Abbildung können Sie erkennen, wie die einzelnen {{site.data.keyword.security-advisor_short}}-Komponenten zusammengehören.
+
+![{{site.data.keyword.security-advisor_short}}-Architektur](images/how-it-works.png)
+
+
+
+{{site.data.keyword.security-advisor_short}} ist für Sicherheitsadministratoren besonders hilfreich. Diese Rolle kann unterschiedliche Bezeichnungen tragen. In der folgenden Tabelle finden Sie einige Beispielbenutzer:
 
 <table>
   <tr>
@@ -45,38 +79,11 @@ Security Advisor ist für Sicherheitsadministratoren besonders hilfreich. Diese 
   </tr>
   <tr>
     <td>Sicherheitsansprechpartner</td>
-    <td>Diese Person unterstützt den CISO und führt die erforderlichen Sicherheitsprüfungen aus und untersucht mögliche Risiken oder Probleme.</td>
+    <td>Diese Person unterstützt den CISO und führt die erforderlichen Sicherheitsprüfungen aus und untersucht mögliche Risiken oder Probleme. </td>
   </tr>
 </table>
 
 Die beschriebenen Rollen können abhängig von der Größe Ihres Unternehmens von einer einzigen Person oder mehreren Personen ausgeführt werden. Das Angebot wurde jedoch erstellt, um den täglichen Anforderungen eines CISO oder eines Sicherheitsansprechpartners zu begegnen.
-
-</br>
-
-## Architektur
-{: #architecture}
-
-Damit das Gewährleisten der Sicherheit in großem Maßstab möglich ist, wurde Security Advisor als Mikroservice in IBM Cloud konzipiert. Als zentraler Mikroservice wird die API für Untersuchungsergebnisse bereitgestellt, die das Verfahren, mit dem Sicherheitsfeststellungen an Ihr Service-Dashboard gesendet werden, für IBM Cloud und Partnerservices implementiert.
-{: shortdesc}
-
-Der Service empfängt Feststellungen von folgenden Elementen:
-* Vorintegrierte IBM Cloud-Services wie beispielsweise Certificate Manager und Vulnerability Advisor
-* Network Analytics-Add-on
-* Partner wie NeuVector
-* Angepasste Integrationen, die Ihre übrigen Sicherheitstools umfassen
-
-Anhand der folgenden Abbildung können Sie erkennen, wie Security Advisor-Komponenten zusammengehören.
-
-![{{site.data.keyword.security-advisor_short}}-Architektur](images/architecture.png)
-
-<dl>
-  <dt>Sicherheitsrisiko und -status</dt>
-    <dd>Anwendungssicherheit ist angesichts der ständig erscheinenden Nachrichtenartikel zu Datenschutzverletzungen oder Hackerattacken weiterhin wichtig. Sicherheitsrisiken werden stets Teil der Entwicklung sein; doch obwohl Hackerattacken schwer vorauszusagen sind, können Sie durch eine engmaschige Überwachung Ihrer Cloudbereitstellungen verhindert werden. Die Risiken können sich beispielsweise beziehen auf Sicherheitslücken in den von Ihnen verwendeten Container-Images, auf abgelaufene Zertifikate, die zu Ausfällen Ihres Cloud-Services oder Ihrer Cloudanwendung führen, oder darauf, dass verdächtige Clients oder Server mit bekannter schlechter Reputation mit Ihren Clustern interagieren.</dd>
-  <dt>Zentrales Sicherheitsmanagement</dt>
-    <dd>Sie können eine konsolidierte Ansicht aller Ihrer IBM Cloud-Sicherheitsservices und der integrierten Partnerservices anzeigen. Im IBM Cloud-Katalog können Sie verschiedene Services auswählen und abonnieren.</dd>
-  <dt>Bedrohungserkennung</dt>
-    <dd>Security Advisor nutzt die von IBM X-Force, anderen IBM Cloud-Services und Partnerlösungen erfassten Informationen, um Risiken und Bedrohungen zu erkennen, bevor sie zu einem Sicherheitsproblem werden. Darüber hinaus stellt der Service außer Netzaktivitätsdaten und Daten zu Sicherheitslücken auch Analysen bereit.</dd>
-</dl>
 
 
 ### Die API für Untersuchungsergebnisse
@@ -85,11 +92,10 @@ Anhand der folgenden Abbildung können Sie erkennen, wie Security Advisor-Kompon
 Der Service wird ohne Vorbereitungs- oder Anpassungsaufwand mit vorintegrierten Untersuchungsergebnissen geliefert, die von der API markiert sind.
 {: shortdesc}
 
-Die API für Untersuchungsergebnisse in Security Advisor richtet sich beim Speichern, Abfragen und Abrufen von kritischen Metadaten nach der API-Spezifikation [Grafeas](http://grafeas.ng.bluemix.net/ui/) für Artefaktmetadaten. Die Untersuchungsergebnisse werden von Sicherheitsdiensten und -tools berichtet.
+Die API für Untersuchungsergebnisse in {{site.data.keyword.security-advisor_short}} richtet sich beim Speichern, Abfragen und Abrufen von kritischen Metadaten nach der API-Spezifikation <a href="http://grafeas.ng.bluemix.net/ui/" target="_blank">Grafeas <img src="../../icons/launch-glyph.svg" alt="Symbol für externen Link"></a> für Artefaktmetadaten. Die Untersuchungsergebnisse werden von Sicherheitsdiensten und -tools gemeldet.
 
-Security Advisor ist standardmäßig für alle IBM Cloud-Konten aktiviert. Daher müssen Sie keine Instanz des Service bereitstellen. Eine Instanz von Security Advisor wird entweder beim erstmaligen Zugriff auf das Dashboard oder beim Berichten des ersten Untersuchungsergebnisses automatisch erstellt. Der Service lässt in einem Zeitraum von 90 Tagen pro Konto 18.000 Untersuchungsergebnisse zu, d. h. ca. 200 pro Tag. Am Ende der 90 Tage werden die Untersuchungsergebnisse gelöscht. Die Grenzwerte für die Anzahl der Untersuchungsergebnisse werden überwacht; sollte das Konto vor Ablauf der 90 Tage den Grenzwert erreichen, wird die Gesamtzahl der Untersuchungsergebnisse innerhalb eines FIFO-Modells (First in, First out – die ältesten Ergebnisse werden zuerst gelöscht) auf 50 Prozent reduziert. Wenn der Service die Benachrichtigung zum Löschen des Kontos empfängt, werden alle auf dieses Konto bezogenen Untersuchungsergebnisse gelöscht. Sie können alle auf Ihr Konto bezogenen Untersuchungsergebnisse mithilfe der API abrufen und sie für eine zukünftige Verwendung oder für Prüfzwecke selbst speichern.
+{{site.data.keyword.security-advisor_short}} ist standardmäßig für alle {{site.data.keyword.cloud_notm}}-Konten aktiviert. Daher müssen Sie keine Instanz des Service bereitstellen. Eine Instanz von {{site.data.keyword.security-advisor_short}} wird entweder beim erstmaligen Zugriff auf das Dashboard oder beim Melden des ersten Untersuchungsergebnisses automatisch erstellt. Der Service lässt in einem Zeitraum von 90 Tagen pro Konto 18.000 Untersuchungsergebnisse zu, d. h. ca. 200 pro Tag. Am Ende der 90 Tage werden die Untersuchungsergebnisse gelöscht. Die Grenzwerte für die Anzahl der Untersuchungsergebnisse werden überwacht; sollte das Konto vor Ablauf der 90 Tage den Grenzwert erreichen, wird die Gesamtzahl der Untersuchungsergebnisse innerhalb eines FIFO-Modells (First in, First out – die ältesten Ergebnisse werden zuerst gelöscht) auf 50 Prozent reduziert. Wenn der Service die Benachrichtigung zum Löschen des Kontos empfängt, werden alle auf dieses Konto bezogenen Untersuchungsergebnisse gelöscht. Sie können alle auf Ihr Konto bezogenen Untersuchungsergebnisse mithilfe der API abrufen und sie für eine zukünftige Verwendung oder für Prüfzwecke selbst speichern.
 
-</br>
 
 ## Wichtige Begriffe
 {: #concepts}
@@ -107,7 +113,7 @@ Hier finden Sie Informationen zu verschiedenen Begriffen, die bei der Arbeit mit
   <dt>Vorkommen</dt>
     <dd>In einem Vorkommen werden providerspezifische Details einer Anmerkung beschrieben. Das Vorkommen enthält die Details zur Sicherheitslücke, die Korrekturschritte und andere allgemeine Informationen.</dd>
   <dt>Karte</dt>
-    <dd>Metadaten, die zum Darstellen der Untersuchungsergebnisse im Service-Dashboard verwendet werden, sind durch eine Anmerkung des Typs 'Karte' (<code>CARD</code>) definiert. Security Advisor unterstützt für eine Karte (<code>CARD</code>) drei Typen von KRI-Elementen: <ul><li>Numerisch</li><li>Aufgliederung</li><li>Zeitreihen</li></ul></dd>
+    <dd>Metadaten, die zum Darstellen der Untersuchungsergebnisse im Service-Dashboard verwendet werden, sind durch eine Anmerkung des Typs 'Karte' (<code>CARD</code>) definiert. {{site.data.keyword.security-advisor_short}} unterstützt für eine Karte (<code>CARD</code>) drei Typen von KRI-Elementen: <ul><li>Numerisch</li><li>Aufgliederung</li><li>Zeitreihen</li></ul></dd>
   <dt>Provider</dt>
     <dd>Ein Provider ist das Tool oder der Service, der den Untersuchungsergebnistyp (Anmerkung) definiert und anschließend ein Vorkommen des Untersuchungsergebnisses an den Service sendet.</dd>
   <dt>Service-CRN</dt>
@@ -116,7 +122,6 @@ Hier finden Sie Informationen zu verschiedenen Begriffen, die bei der Arbeit mit
     <dd>Der Ressourcen-CRN gibt die Ressource an, die an dem Untersuchungsergebnis beteiligt ist. Wenn Network Analytics ein Untersuchungsergebnis berichtet, muss die CRN des Kubernetes-Clusters eingeschlossen werden, um den betroffenen Cluster oder die betroffene Ressource zu identifizieren.</dd>
 </dl>
 
-</br>
 
 ## Hochverfügbarkeit und Disaster-Recovery
 {: #ha-dr}
@@ -124,8 +129,4 @@ Hier finden Sie Informationen zu verschiedenen Begriffen, die bei der Arbeit mit
 {{site.data.keyword.security-advisor_short}} ist ein hoch verfügbarer Service für mehrere Regionen.
 {: shortdesc}
 
-{{site.data.keyword.security-advisor_short}} wird zurzeit sowohl in der Region Dallas als auch in der Region London unterstützt. In jeder unterstützten Region wird der Service in mehreren [Verfügbarkeitszonen](https://www.ibm.com/blogs/bluemix/2018/06/improving-app-availability-multizone-clusters/) ausgeführt. {{site.data.keyword.security-advisor_short}} verfügt über eine regionale Disaster-Recovery. Der Service verwaltet eine Backup-Datenbank, die schnell innerhalb von drei Stunden wiederhergestellt werden kann. Mit Ausnahme der letzten 24 Stunden werden sämtliche Servicedaten bereitgestellt.
-
-
-</br>
-</br>
+{{site.data.keyword.security-advisor_short}} wird zurzeit sowohl in der Region Dallas als auch in der Region London unterstützt. In jeder unterstützten Region wird der Service in mehreren <a href="https://www.ibm.com/blogs/bluemix/2018/06/improving-app-availability-multizone-clusters/" target="_blank">Verfügbarkeitszonen <img src="../../icons/launch-glyph.svg" alt="Symbol für externen Link"></a> ausgeführt. {{site.data.keyword.security-advisor_short}} verfügt über eine regionale Disaster-Recovery. Der Service verwaltet eine Backup-Datenbank, die schnell innerhalb von drei Stunden wiederhergestellt werden kann. Mit Ausnahme der letzten 24 Stunden werden sämtliche Servicedaten bereitgestellt.

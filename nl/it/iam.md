@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-12-07"
+  years: 2017, 2019
+lastupdated: "2019-03-14"
+
+keywords: centralized security, security management, alerts, security risk, insights, threat detection
+
+subcollection: security-advisor
 
 ---
 
@@ -13,7 +17,11 @@ lastupdated: "2018-12-07"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
+
 
 
 # Gestione dell'accesso al servizio
@@ -22,7 +30,7 @@ lastupdated: "2018-12-07"
 Come proprietario di un account, puoi gestire l'accesso alle istanze di {{site.data.keyword.security-advisor_long}}, utilizzando {{site.data.keyword.Bluemix_notm}} Identity and Access Management (IAM). Configurando le politiche nel tuo account creando diversi livelli di accesso per utenti differenti, puoi garantire che ogni istanza di {{site.data.keyword.security-advisor_short}} sia sicura.
 {: shortdesc}
 
-Per ulteriori informazioni su IAM, consulta [Accesso IAM](/docs/iam/users_roles.html).
+Per ulteriori informazioni su IAM, consulta [Accesso IAM](/docs/iam?topic=iam-userroles).
 
 ## Politiche di accesso {{site.data.keyword.security-advisor_short}}
 {: #access}
@@ -83,7 +91,7 @@ Le azioni sono personalizzate e definite dal servizio {{site.data.keyword.Bluemi
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.read</code></td>
-    <td>Leggi le soluzioni personalizzate che sono state aggiunte al servizio.</td>
+    <td>Leggi le soluzioni personalizzate che hai aggiunto al servizio.</td>
     <td>Lettore</br>Scrittore</br>Gestore</td>
   </tr>
   <tr>
@@ -119,6 +127,31 @@ Le azioni sono personalizzate e definite dal servizio {{site.data.keyword.Bluemi
   <tr>
     <td><code>security-advisor.partner-solution.delete</code></td>
     <td>Elimina una soluzione partner dalla tua istanza del servizio.</td>
+    <td>Gestore</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.network-insights.enable</code></td>
+    <td>Abilita Network Insights che viene fornito dal servizio.</td>
+    <td>Gestore</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.network-insights.disable</code></td>
+    <td>Disabilita Network Insights che viene fornito dal servizio.</td>
+    <td>Gestore</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.activity-insights.enable</code></td>
+    <td>Abilita Activity Insights che viene fornito dal servizio.</td>
+    <td>Gestore</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.activity-insights.disable</code></td>
+    <td>Disabilita Activity Insights che viene fornito dal servizio.</td>
+    <td>Gestore</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.insights-cos.create</code></td>
+    <td>Crea un'istanza Cloud Object Storage tramite {{site.data.keyword.security-advisor_short}} per Network e Activity Insights.</td>
     <td>Gestore</td>
   </tr>
 </table>

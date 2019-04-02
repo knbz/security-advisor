@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-12-07"
+  years: 2017, 2019
+lastupdated: "2019-03-14"
+
+keywords: centralized security, security management, alerts, security risk, insights, threat detection
+
+subcollection: security-advisor
 
 ---
 
@@ -13,7 +17,11 @@ lastupdated: "2018-12-07"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
+
 
 
 # {{site.data.keyword.cloudaccesstrailshort}} イベント
@@ -22,7 +30,7 @@ lastupdated: "2018-12-07"
 {{site.data.keyword.cloudaccesstrailshort}} サービスを使用すると、{{site.data.keyword.security-advisor_long}} サービス・インスタンスで実行されたユーザー開始のアクティビティーを表示、管理、および監査できます。
 {: shortdesc}
 
-このサービスの仕組みについて詳しくは、[{{site.data.keyword.cloudaccesstrailshort}} の資料](/docs/services/cloud-activity-tracker/index.html)を参照してください。
+このサービスの仕組みについて詳しくは、[{{site.data.keyword.cloudaccesstrailshort}} の資料](/docs/services/cloud-activity-tracker/reference?topic=cloud-activity-tracker-getting-started-with-cla#getting-started-with-cla)を参照してください。
 
 
 ## イベントを確認できる場所
@@ -31,13 +39,13 @@ lastupdated: "2018-12-07"
 イベントは、イベントが生成された {{site.data.keyword.Bluemix_notm}} 領域の {{site.data.keyword.cloudaccesstrailshort}} の**アカウント・ドメイン**で確認できます。
 
 1. {{site.data.keyword.Bluemix_notm}} アカウントにログインします。
-2. カタログから、{{site.data.keyword.security-advisor_long}} のインスタンスと同じアカウントに、{{site.data.keyword.cloudaccesstrailshort}} サービスのインスタンスをプロビジョンします。
+2. カタログから、{{site.data.keyword.security-advisor_short}} のインスタンスと同じアカウントに、{{site.data.keyword.cloudaccesstrailshort}} サービスのインスタンスをプロビジョンします。
 3. {{site.data.keyword.cloudaccesstrailshort}} ダッシュボードの **「管理」** タブで、**「Kibana で表示」**をクリックします。
 4. ログを表示する時間フレームを設定します。 デフォルトは 15 分です。
 5. **「使用可能なフィールド」**リストで、**「タイプ」**をクリックします。 **アクティビティー・トラッカー**の虫眼鏡のアイコンをクリックして、サービスによって追跡されるもののみにログを制限します。
 6. その他の使用可能なフィールドを使用して、検索を絞り込むことができます。
 
-アカウント所有者以外のユーザーがログを表示するには、プレミアム・プランを使用している必要があります。 他のユーザーがイベントを表示できるようにするには、[アカウント・イベントを表示する許可の付与](/docs/services/cloud-activity-tracker/how-to/grant_permissions.html#grant_permissions)を参照してください。
+アカウント所有者以外のユーザーがログを表示するには、プレミアム・プランを使用している必要があります。 他のユーザーがイベントを表示できるようにするには、[アカウント・イベントを表示する許可の付与](/docs/services/cloud-activity-tracker/how-to?topic=cloud-activity-tracker-grant_permissions#grant_permissions)を参照してください。
 {: tip}
 
 ## イベント・リスト
@@ -114,5 +122,25 @@ lastupdated: "2018-12-07"
   <tr>
     <td><code>security-advisor.partner-solution.delete</code></td>
     <td>サービス・インスタンスからパートナー・ソリューションを削除する。</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.network-insights.enable</code></td>
+    <td>{{site.data.keyword.security-advisor_short}} によって提供される Network Insights フィーチャーを有効にする。</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.network-insights.disable</code></td>
+    <td>{{site.data.keyword.security-advisor_short}} によって提供される Network Insights フィーチャーを無効にする。</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.activity-insights.enable</code></td>
+    <td>{{site.data.keyword.security-advisor_short}} によって提供される Activity Insights フィーチャーを有効にする。</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.activity-insights.disable</code></td>
+    <td>{{site.data.keyword.security-advisor_short}} によって提供される Activity Insights フィーチャーを無効にする。</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.insights-cos.create</code></td>
+    <td>Network Insights と Activity Insights のために {{site.data.keyword.security-advisor_short}} によって Cloud Object Storage インスタンスを作成する。</td>
   </tr>
 </table>

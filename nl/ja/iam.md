@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-12-07"
+  years: 2017, 2019
+lastupdated: "2019-03-14"
+
+keywords: centralized security, security management, alerts, security risk, insights, threat detection
+
+subcollection: security-advisor
 
 ---
 
@@ -13,7 +17,11 @@ lastupdated: "2018-12-07"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
+
 
 
 # サービス・アクセスの管理
@@ -22,7 +30,7 @@ lastupdated: "2018-12-07"
 アカウント所有者は、{{site.data.keyword.Bluemix_notm}} の ID およびアクセス管理 (IAM) を使用して、{{site.data.keyword.security-advisor_long}} のインスタンスへのアクセスを管理できます。 ユーザーに応じたアクセス・レベルになるようにアカウント内にポリシーを設定することで、{{site.data.keyword.security-advisor_short}} の各インスタンスを保護できます。
 {: shortdesc}
 
-IAM について詳しくは、[IAM のアクセス権限](/docs/iam/users_roles.html)を参照してください。
+IAM について詳しくは、[IAM のアクセス権限](/docs/iam?topic=iam-userroles)を参照してください。
 
 ## {{site.data.keyword.security-advisor_short}} アクセス・ポリシー
 {: #access}
@@ -83,7 +91,7 @@ IAM について詳しくは、[IAM のアクセス権限](/docs/iam/users_roles
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.read</code></td>
-    <td>サービスに追加されたカスタム・ソリューションを読み取る。</td>
+    <td>このサービスに追加したカスタム・ソリューションを読み取る。</td>
     <td>リーダー</br>ライター</br>管理者</td>
   </tr>
   <tr>
@@ -119,6 +127,31 @@ IAM について詳しくは、[IAM のアクセス権限](/docs/iam/users_roles
   <tr>
     <td><code>security-advisor.partner-solution.delete</code></td>
     <td>サービス・インスタンスからパートナー・ソリューションを削除する。</td>
+    <td>管理者</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.network-insights.enable</code></td>
+    <td>このサービスで提供される Network Insights を有効にする。</td>
+    <td>管理者</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.network-insights.disable</code></td>
+    <td>このサービスで提供される Network Insights を無効にする。</td>
+    <td>管理者</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.activity-insights.enable</code></td>
+    <td>このサービスで提供される Activity Insights を有効にする。</td>
+    <td>管理者</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.activity-insights.disable</code></td>
+    <td>このサービスで提供される Activity Insights を無効にする。</td>
+    <td>管理者</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.insights-cos.create</code></td>
+    <td>Network Insights と Activity Insights のために {{site.data.keyword.security-advisor_short}} によって Cloud Object Storage インスタンスを作成する。</td>
     <td>管理者</td>
   </tr>
 </table>

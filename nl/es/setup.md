@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-10"
+  years: 2014, 2019
+lastupdated: "2019-03-13"
 
 ---
 
@@ -13,10 +13,13 @@ lastupdated: "2018-12-10"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Cómo aprovechar los servicios preintegrados
-{: #setup}
+{: #setup-services}
 
 {{site.data.keyword.security-advisor_short}} se suministra con varias tarjetas rellenadas previamente que pueden ayudarle a supervisar los riesgos y amenazas de seguridad.
 {: shortdesc}
@@ -30,26 +33,26 @@ Aunque no tiene que hacer nada para crear la conexión entre {{site.data.keyword
 
 
 ## Supervisión de vulnerabilidades en imágenes de contenedor
-{: #setup_images}
+{: #setup-images}
 
 Con {{site.data.keyword.registryshort_notm}}, tiene acceso a Vulnerability Advisor, que explora de forma continuada las imágenes de su instancia de {{site.data.keyword.registryshort_notm}} en busca de problemas de seguridad potenciales. Si se encuentran problemas, se le alerta y puede ver un informe completo en el panel de control de {{site.data.keyword.security-advisor_short}}.
 {:shortdesc}
 
-Obtenga más información acerca de [{{site.data.keyword.registryshort_notm}}](/docs/services/Registry/index.html#index).
+Obtenga más información acerca de [{{site.data.keyword.registryshort_notm}}](/docs/services/Registry?topic=registry-index#index).
 
 
 **Antes de empezar**
 
-Antes de empezar a trabajar con el registro, asegúrese de que tiene instaladas las siguientes CLI y plugins:
-* [La CLI de {{site.data.keyword.Bluemix_notm}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](http://clis.ng.bluemix.net/ui/home.html)
-* El plugin container-registry.
+Para poder empezar a trabajar con el registro, asegúrese de que tiene instaladas las siguientes CLI y plugins:
+* [La CLI de {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)
+* El plugin Container Registry.
 
   ```
   ibmcloud plugin install container-registry -r Bluemix
   ```
   {: pre}
 
-</br>
+
 **Creación de un espacio de nombres**
 
 1. Inicie una sesión en su cuenta mediante la CLI.
@@ -90,10 +93,9 @@ Antes de empezar a trabajar con el registro, asegúrese de que tiene instaladas 
 
 Después de enviar por push imágenes al espacio de nombres de {{site.data.keyword.registryshort_notm}}, se muestra información sobre las vulnerabilidades encontradas en la tarjeta **Imágenes con vulnerabilidades** en el panel de control del servicio. También puede ver detalles de imágenes específicas para encontrar más información, como por ejemplo una descripción de todas las vulnerabilidades y problemas de configuración que se han identificado.
 
-</br>
 
 ## Supervisión de certificados
-{: #setup_certificates}
+{: #setup-certificates}
 
 ¿Sabía que {{site.data.keyword.cloudcerts_long_notm}} puede ayudar a supervisar y gestionar los certificados SSL/TLS? Mediante la integración de {{site.data.keyword.cloudcerts_short}} y {{site.data.keyword.security-advisor_short}}, puede obtener alertas por adelantado sobre la caducidad de los certificados, lo que puede ayudar a evitar la interrupción de un servicio o aplicación.
 {:shortdesc}
@@ -102,12 +104,12 @@ En función de la fecha de caducidad del certificado que cargue a {{site.data.ke
 
 Para desencadenar una actualización manual, puede intentar cargar un certificado que caduque en un día a su instancia de {{site.data.keyword.cloudcerts_short}}. Cuando la importación se haya realizado correctamente, puede ver que el indicador clave de riesgo (KRI) y los resultados son visibles en el panel de control de {{site.data.keyword.security-advisor_short}}.
 
-Puede obtener más información sobre [ {{site.data.keyword.cloudcerts_long_notm}}](/docs/services/certificate-manager/index.html#gettingstarted) leyendo la documentación.
+Encontrará más información acerca de [{{site.data.keyword.cloudcerts_long_notm}}](/docs/services/certificate-manager?topic=certificate-manager-gettingstarted#gettingstarted) en la documentación.
 {: tip}
 
 **Creación de un certificado**
 
-Para crear un certificado autofirmado que caduque en un día, puede ejecutar el siguiente mandato openssl en el terminal.
+Para crear un certificado autofirmado que caduque en un día, puede ejecutar el siguiente mandato OpenSSL en el terminal.
 
 ```
 openssl req -x509 -newkey rsa:2048 -keyout key.pem -subj "/CN=myservice.com" -out server.pem -days 1 -nodes
@@ -126,6 +128,3 @@ Ahora que se han importado los certificados, se muestra información, como tiemp
 
 Para detener las notificaciones, debe renovar el certificado, cargar el certificado en {{site.data.keyword.cloudcerts_short}} y suprimir el certificado caducado.
 {: tip}
-
-</br>
-</br>

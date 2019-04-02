@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-06"
+  years: 2017, 2019
+lastupdated: "2019-03-13"
+
+keywords: centralized security, security management, alerts, security risk, insights, threat detection
+
+subcollection: security-advisor
 
 ---
 
@@ -13,15 +17,18 @@ lastupdated: "2018-09-06"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # 관련 링크
-{: #sa_rellinks}
+{: #sa-rellinks}
 
 다음 관련 링크를 사용하여 좀 더 자세히 알아보고 {{site.data.keyword.security-advisor_long}}와 함께 상호작용할 수 있습니다.
 {:shortdesc}
 
 사용자 인터페이스와 관련된 링크:
-* [{{site.data.keyword.security-advisor_short}} 대시보드](https://console.bluemix.net/security-advisor/#/dashboard)
-* [찾은 결과 API](https://console.bluemix.net/apidocs/security-advisor)
-* [Grafeas 스펙](https://grafeas.io/)
+* [{{site.data.keyword.security-advisor_short}} 대시보드](https://cloud.ibm.com/security-advisor#/dashboard)
+* [찾은 결과 API](https://cloud.ibm.com/apidocs/security-advisor)
+* [Grafeas 스펙](http://grafeas.ng.bluemix.net/ui/)

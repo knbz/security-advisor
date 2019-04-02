@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-12-07"
+  years: 2017, 2019
+lastupdated: "2019-03-14"
+
+keywords: centralized security, security management, alerts, security risk, insights, threat detection
+
+subcollection: security-advisor
 
 ---
 
@@ -13,7 +17,11 @@ lastupdated: "2018-12-07"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
+
 
 
 # Eventos do {{site.data.keyword.cloudaccesstrailshort}}
@@ -22,7 +30,7 @@ lastupdated: "2018-12-07"
 É possível visualizar, gerenciar e auditar as atividades iniciadas pelo usuário feitas na instância de serviço do {{site.data.keyword.security-advisor_long}} usando o serviço {{site.data.keyword.cloudaccesstrailshort}}.
 {: shortdesc}
 
-Para obter mais informações sobre como o serviço funciona, consulte a [documentação do {{site.data.keyword.cloudaccesstrailshort}}](/docs/services/cloud-activity-tracker/index.html).
+Para obter mais informações sobre como o serviço funciona, consulte os [docs do {{site.data.keyword.cloudaccesstrailshort}}](/docs/services/cloud-activity-tracker/reference?topic=cloud-activity-tracker-getting-started-with-cla#getting-started-with-cla).
 
 
 ## Onde visualizar os eventos
@@ -31,13 +39,13 @@ Para obter mais informações sobre como o serviço funciona, consulte a [docume
 Os eventos estão disponíveis no **domínio de contas** do {{site.data.keyword.cloudaccesstrailshort}} que está acessível na região do {{site.data.keyword.Bluemix_notm}} em que os eventos são gerados.
 
 1. Efetue login em sua conta do {{site.data.keyword.Bluemix_notm}}.
-2. Por meio do catálogo, provisione uma instância do serviço {{site.data.keyword.cloudaccesstrailshort}} na mesma conta da instância do {{site.data.keyword.security-advisor_long}}.
+2. Por meio do catálogo, provisione uma instância do serviço {{site.data.keyword.cloudaccesstrailshort}} na mesma conta da instância do {{site.data.keyword.security-advisor_short}}.
 3. Na guia **Gerenciar** do painel do {{site.data.keyword.cloudaccesstrailshort}}, clique em **Visualizar no Kibana**.
 4. Configure o prazo durante o qual deseja visualizar os logs. O padrão é 15 min.
 5. Na lista **Campos disponíveis**, clique em **tipo**. Clique no ícone de lupa para o **Activity Tracker** para limitar os logs somente aos rastreados pelo serviço.
 6. É possível usar os outros campos disponíveis para limitar sua procura.
 
-Para que usuários que não sejam o proprietário da conta visualizem os logs, o plano premium deve ser usado. Para permitir que outros usuários visualizem os eventos, consulte [Concedendo permissões para ver os eventos de conta](/docs/services/cloud-activity-tracker/how-to/grant_permissions.html#grant_permissions).
+Para que usuários que não sejam o proprietário da conta visualizem os logs, o plano premium deve ser usado. Para permitir que outros usuários visualizem os eventos, consulte [Concedendo permissões para ver os eventos de conta](/docs/services/cloud-activity-tracker/how-to?topic=cloud-activity-tracker-grant_permissions#grant_permissions).
 {: tip}
 
 ## Lista de eventos
@@ -114,5 +122,25 @@ Confira a tabela a seguir para obter uma lista dos eventos enviados para o {{sit
   <tr>
     <td><code>security-advisor.partner-solution.delete</code></td>
     <td>Excluir uma solução de parceiro da instância de serviço.</td>
+  </tr>
+  <tr>
+    <td><code> security-advisor.network-insights.enable </code></td>
+    <td>Ative o recurso do Network Insights que é fornecido pelo {{site.data.keyword.security-advisor_short}}.</td>
+  </tr>
+  <tr>
+    <td><code> security-advisor.network-insights.disable </code></td>
+    <td>Desative o recurso do Network Insights que é fornecido pelo {{site.data.keyword.security-advisor_short}}.</td>
+  </tr>
+  <tr>
+    <td><code> security-advisor.activity-insights.enable </code></td>
+    <td>Ative o recurso Activity Insights que é fornecido pelo {{site.data.keyword.security-advisor_short}}.</td>
+  </tr>
+  <tr>
+    <td><code> security-advisor.activity-insights.disable </code></td>
+    <td>Desative o recurso Activity Insights que é fornecido pelo {{site.data.keyword.security-advisor_short}}.</td>
+  </tr>
+  <tr>
+    <td><code> security-advisor.insights-cos.create </code></td>
+    <td>Crie uma instância do Cloud Object Storage por meio do {{site.data.keyword.security-advisor_short}} para insights de rede e de atividade.</td>
   </tr>
 </table>

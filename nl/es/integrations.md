@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-10"
+  years: 2017, 2019
+lastupdated: "2019-03-14"
+
+keywords: centralized security, security management, alerts, security risk, insights, threat detection
+
+subcollection: security-advisor
 
 ---
 
@@ -13,17 +17,21 @@ lastupdated: "2018-12-10"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
-# Integraciones
-{: #about}
 
-Con {{site.data.keyword.security-advisor_long}}, puede integrar los hallazgos de IBM Cloud Services, las soluciones de socios, o crear sus propias integraciones personalizadas.
+# Integraciones
+{: #integrations}
+
+Con {{site.data.keyword.security-advisor_long}}, puede integrar otras soluciones incorporadas y soluciones de socios o puede crear sus propias integraciones personalizadas.
 {: shortdesc}
 
 
 ## Hallazgos preintegrados
-{: #built-in}
+{: #integrate-built-in}
 
 Con {{site.data.keyword.security-advisor_long}}, puede obtener información de los problemas potenciales a través de las prestaciones de servicio incorporadas.
 {: shortdesc}
@@ -34,63 +42,68 @@ De forma predeterminada, {{site.data.keyword.security-advisor_short}} se integra
 * Certificate Manager para notificaciones relacionadas con la caducidad y el ciclo de vida de los certificados.
 * Vulnerability Advisor para obtener detalles sobre vulnerabilidades y problemas de configuración.
 
-Para obtener más información, consulte [Cómo aprovechar los servicios preintegrados](setup.html).
+Para obtener más información, consulte [Cómo aprovechar los servicios preintegrados](/docs/services/security-advisor?topic=security-advisor-setup-services).
 
 </br>
 
-## Soluciones de socios
-{: #partner}
+## Integraciones de socios
+{: #integrate-partner}
 
-Las soluciones de socios son una forma de mejorar la seguridad de los despliegues de IBM Cloud creando un enlace entre {{site.data.keyword.security-advisor_short}} y otras herramientas de seguridad fuera de IBM Cloud.
+Las integraciones de socios son una forma de mejorar la seguridad de sus despliegues de {{site.data.keyword.cloud_notm}} mediante la creación de una conexión entre {{site.data.keyword.security-advisor_short}} y otras herramientas de seguridad que trabajan con IBM para garantizar una experiencia de usuario sin problemas.
 {: shortdesc}
 
-{{site.data.keyword.security-advisor_short}} está asociado actualmente con las siguientes empresas:
-
-### NeuVector
-{: #neuvector}
-
-[ NeuVector ](https://neuvector.com/) proporciona una plataforma de seguridad automatizada y altamente integrada para Kubernetes y Red Hat OpenShift que le permite supervisar y proteger el tráfico de la red de contenedores. Específicamente, el tráfico de la red este-oeste.
-
-Con NeuVector, puede detectar amenazas y violaciones de red para evitar ataques a las aplicaciones basadas en el contenedor. Mediante la supervisión, puede evitar las vulnerabilidades y fugas detectando escaladas de privilegios root, escaneados de puertos, shells inversos y actividad sospechosa de sistema de archivos en sus contenedores y hosts.
-
-Para obtener más información sobre cómo configurar la instancia de NeuVector con el asistente de integración, consulte [Soluciones de socios](partners.html).
+Entre los socios actuales de {{site.data.keyword.security-advisor_short}} se encuentran Neuvector y Twistlock.
 
 ¿Es usted un socio y está interesado en integrar su solución con {{site.data.keyword.security-advisor_short}}? Póngase en contacto con nuestro equipo enviando un mensaje a Matt Ward en wardm@us.ibm.com.
 {: tip}
 
+### NeuVector
+{: #integrate-neuvector}
+
+[NeuVector](https://neuvector.com/) proporciona una plataforma de seguridad automatizada y altamente integrada para Kubernetes y Red Hat OpenShift que le permite supervisar y proteger el tráfico de la red de contenedores. Específicamente, el tráfico de la red este-oeste.
+
+Con NeuVector, puede detectar amenazas y violaciones de red para evitar ataques a las aplicaciones basadas en el contenedor. Mediante la supervisión, puede evitar las vulnerabilidades y fugas detectando escaladas de privilegios root, escaneados de puertos, shells inversos y actividad sospechosa de sistema de archivos en sus contenedores y hosts.
+
+Para obtener ayuda para configurar la instancia de NeuVector, consulte el apartado sobre [Soluciones de socios](/docs/services/security-advisor?topic=security-advisor-setup-partner#setup-neuvector).
+
+
+### Twistlock
+{: #integrate-twistlock}
+
+Twistlock permite prevenir riesgos a través de SDLC al impedir el despliegue de imágenes vulnerables en el entorno. La imposición de políticas automáticas y personalizadas permite controlar cada una de las fases del ciclo de vida de una aplicación. Twistlock Intelligence Stream detecta y agrega información sobre vulnerabilidades directamente de más de 30 proyectos, fuentes comerciales y resultados de investigaciones de los laboratorios de Twistlock.
+
+Se centra en ofrecer los datos más precisos que cubran todos los niveles de la pila para poder presentar una visión precisa y la tasa más baja de falsos positivos.Twistlock combina estos datos con información procedente de sus despliegues reales, como por ejemplo qué contenedores están expuestos a internet, cuáles se ejecutan con un privilegio elevado y cuáles están sujetos a mitigaciones de seguridad, para que siempre pueda ver las vulnerabilidades más críticas en su entorno.
+
+Para obtener ayuda para configurar la instancia de Twistlock, consulte el apartado sobre [Soluciones de socios](/docs/services/security-advisor?topic=security-advisor-setup-partner#setup-twistlock).
 </br>
 
+
 ## Integraciones personalizadas
-{: #custom}
+{: #integrate-custom}
 
 Es posible que ya tenga una herramienta de seguridad de la que dependa. Puede integrar esta herramienta en el panel de control de {{site.data.keyword.security-advisor_short}} para que toda su información de seguridad esté centralizada en un solo lugar.
 {: shortdesc}
 
-**Integración de sus herramientas con la GUI**
+### Creación de una conexión directa
+{: #create-direct-connect}
 
 Mediante el uso de la GUI de {{site.data.keyword.security-advisor_short}}, puede marcar las herramientas de seguridad internas y externas para tener un punto de acceso a todo desde el panel de control de {{site.data.keyword.security-advisor_short}}. Por ejemplo, puede marcar PagerDuty.
 
-**Integración de sus herramientas con la API**
+### Integración de sus herramientas con la API
+{: #integrate-tools-api}
 
 Con la API de hallazgos. puede integrar los hallazgos de las herramientas de seguridad personalizadas en el panel de control de {{site.data.keyword.security-advisor_short}}. Puede ser cualquier herramienta personalizada o de socio que genere una alerta de seguridad o un hallazgo que también admita la interacción basada en API.
 
-**Cómo empezar**
+## Perspectivas integradas
+{: #integrate-insights}
 
-Para conocer las prácticas recomendadas sobre cómo aprovechar las API y crear marcadores a través de la GUI, consulte [Herramientas de seguridad personalizadas](/docs/services/security-advisor/custom.html).
-
-</br>
-
-
-## Network Analytics (vista previa)
-{: #network-analytics}
-
-Con la vista previa de Network Analytics, puede detectar amenazas supervisando la comunicación de clúster de {{site.data.keyword.containerlong_notm}}.
+Con las perspectivas integradas, puede detectar problemas potenciales mediante una supervisión continua de los registros del clúster y de la cuenta. Mediante la supervisión del tráfico de la red y de la actividad de los usuarios, puede ayudar a garantizar que los recursos de {{site.data.keyword.cloud_notm}} están siempre protegidos.
 {: shortdesc}
 
-Mediante la supervisión de la comunicación de clúster para la comunicación sospechosa de y hacia los clústeres, puede aprovechar la información de amenazas que ofrece IBM X-Force para señalar cualquier problema potencial. Cuando se identifica una comunicación sospechosa, se emite un resultado que puede revisarse y evaluarse.
+**Network Insights (beta)**
 
-Para obtener información más detallada sobre Network Analytics, consulte [Network Analytics](network-analytics.html).
-{: tip}
+Con Network Insights (beta), puede supervisar y analizar la comunicación de red del clúster, tanto de entrada como de salida, entre el clúster de Kubernetes y las entidades externas. Mediante el uso de la inteligencia de amenazas integrada y la detección de anomalías, el servicio puede identificar ataques de reconocimiento y activos cuya seguridad se vea potencialmente comprometida. Para obtener más información, consulte el apartado sobre [Network Insights](/docs/services/security-advisor?topic=security-advisor-network).
 
-</br>
-</br>
+**Activity Insights (presentación)**
+
+Con Activity Insights (presentación), puede supervisar continuamente los registros de {{site.data.keyword.cloud_notm}} Activity Tracker para identificar la actividad no autorizada o sospechosa que realizan los usuarios o las apps mediante paquetes de reglas. Puede utilizar los paquetes de reglas que proporciona el servicio y que se basan en las prácticas recomendadas de seguridad o puede personalizar las reglas para que se ajusten a sus necesidades. Para obtener más información, consulte [Activity Insights](/docs/services/security-advisor?topic=security-advisor-activity).

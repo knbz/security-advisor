@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-12-07"
+  years: 2017, 2019
+lastupdated: "2019-03-14"
+
+keywords: centralized security, security management, alerts, security risk, insights, threat detection
+
+subcollection: security-advisor
 
 ---
 
@@ -13,7 +17,11 @@ lastupdated: "2018-12-07"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
+
 
 
 # Gestión de acceso de servicio
@@ -22,7 +30,7 @@ lastupdated: "2018-12-07"
 Como propietario de la cuenta, puede gestionar el acceso a las instancias de {{site.data.keyword.security-advisor_long}} mediante {{site.data.keyword.Bluemix_notm}} Identity and Access Management (IAM). Mediante el establecimiento de políticas dentro de su cuenta que crean distintos niveles de acceso para los distintos usuarios, puede asegurarse de que cada instancia de {{site.data.keyword.security-advisor_short}} esté protegida.
 {: shortdesc}
 
-Para obtener más información sobre IAM, consulte [Acceso de IAM](/docs/iam/users_roles.html).
+Para obtener más información sobre IAM, consulte [Acceso de IAM](/docs/iam?topic=iam-userroles).
 
 ## Políticas de acceso de {{site.data.keyword.security-advisor_short}}
 {: #access}
@@ -48,7 +56,7 @@ Las acciones son personalizadas y están definidas por el servicio de {{site.dat
   </tr>
   <tr>
     <td><code>security-advisor.findings.write</code></td>
-    <td>Genere hallazgos del informe de seguridad.</td>
+    <td>Generar hallazgos del informe de seguridad.</td>
     <td>Escritor</br>Gestor</td>
   </tr>
   <tr>
@@ -83,12 +91,12 @@ Las acciones son personalizadas y están definidas por el servicio de {{site.dat
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.read</code></td>
-    <td>Leer soluciones personalizadas que se han añadido al servicio.</td>
+    <td>Leer soluciones personalizadas que ha añadido al servicio.</td>
     <td>Lector</br>Escritor</br>Gestor</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.write</code></td>
-    <td>Añada una solución personalizada al servicio.</td>
+    <td>Añadir una solución personalizada al servicio.</td>
     <td>Gestor</td>
   </tr>
   <tr>
@@ -119,6 +127,31 @@ Las acciones son personalizadas y están definidas por el servicio de {{site.dat
   <tr>
     <td><code>security-advisor.partner-solution.delete</code></td>
     <td>Suprimir una solución de socio de la instancia de servicio.</td>
+    <td>Gestor</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.network-insights.enable</code></td>
+    <td>Habilitar las perspectivas de red que proporciona el servicio.</td>
+    <td>Gestor</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.network-insights.disable</code></td>
+    <td>Inhabilitar las perspectivas de red que proporciona el servicio.</td>
+    <td>Gestor</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.activity-insights.enable</code></td>
+    <td>Habilitar las perspectivas de actividad que proporciona el servicio.</td>
+    <td>Gestor</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.activity-insights.disable</code></td>
+    <td>Inhabilitar las perspectivas de actividad que proporciona el servicio.</td>
+    <td>Gestor</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.insights-cos.create</code></td>
+    <td>Crear una instancia de Cloud Object Storage mediante {{site.data.keyword.security-advisor_short}} para obtener información detallada de red y de actividad.</td>
     <td>Gestor</td>
   </tr>
 </table>

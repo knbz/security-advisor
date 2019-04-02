@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-09"
+  years: 2017, 2019
+lastupdated: "2019-03-13"
+
+keywords: centralized security, security management, alerts, security risk, insights, threat detection
+
+subcollection: security-advisor
 
 ---
 
@@ -13,112 +17,95 @@ lastupdated: "2018-12-09"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
-# Herramientas de seguridad personalizadas
+
+# Personalización
 {: #setup_custom}
 
-A veces, es posible que ya tenga una herramienta que utilice. Puede integrar estas herramientas como, por ejemplo, Neuvector, con {{site.data.keyword.security-advisor_short}}.
+{{site.data.keyword.security-advisor_short}} le permite integrar las herramientas de seguridad personalizadas existentes, ya sean de código abierto, de desarrollo personalizado o de servicios de terceros. Puede crear una conexión directa entre {{site.data.keyword.security-advisor_short}} y la otra herramienta añadiendo el URL a la lista de integraciones. También puede integrar los hallazgos de terceros para incorporar sucesos de seguridad críticos directamente en una nueva tarjeta en el panel de control utilizando las API para configurar las API y los indicadores clave de riesgo (KRI).
 {: shortdesc}
 
 
-¿Por qué desea crear personalizaciones? Supongamos que tiene una aplicación que ejecuta un clúster de {{site.data.keyword.containershort_notm}} con llamado `cloudkingdom`. Uno de los pods del clúster está enviando una cantidad inusual de datos a servidores externos. Desea capturar este hallazgo en el panel de control de {{site.data.keyword.security-advisor_short}}.
+## Adición de una conexión directa
+{: #setup-custom-gui}
 
-Si la herramienta personalizada supervisa y detecta la cantidad inusual de datos que se están transfiriendo, la herramienta envía el hallazgo a {{site.data.keyword.security-advisor_short}}.
-
-Ejemplo de carga útil:
-
-```
-{
-	"note_name": "<account id>/providers/my-custom-tool/notes/my-custom-tool-findings-type",
-	"kind": "FINDING",
-	"remediation": "How to resolve Data leakage threat",
-	"provider_id": "my-custom-tool",
-	"id": "my-custom-tool-finding-2",
-	"context": {
-		"region": "location",
-		"resource_id": "cluster crn",
-		"resource_name": "cloudkingdom",
-		"resource_type": "container",
-		"service_name": "kubernetess service"
-	},
-	"finding": {
-		"severity": "HIGH",
-		"next_steps": [{
-			"title": "Investigate which process are running in your cluster. If you suspect one of your pods was hacked, restart it, and look for image vulnerabilities",
-                        "url":"https://console.bluemix.net/containers-kubernetes/clusters"
-		}],
-                "short_description": "One of the pods in your cluster appears to be leaking an excessive amount of data",
-                "long_description": "One of the pods in your cluster is approaching external servers and sending them data in volumes that exceed that pod’s normal behavior"
-	}
-
-}
-```
-{: screen}
-
-</br>
-
-
-## Integración de sus herramientas con la GUI
-{: #gui}
-
-Puede integrar las herramientas de seguridad utilizando el panel de control de {{site.data.keyword.security-advisor_short}}.
+Puede realizar fácilmente un seguimiento de las herramientas de seguridad utilizando el panel de control de {{site.data.keyword.security-advisor_short}}.
 {: shortdesc}
 
-**Antes de empezar**
+### Antes de empezar
+{: #custom-before-gui}
 
-* Debe tener una cuenta con el socio que desea integrar.
+Para poder añadir la integración, debe tener una cuenta con el socio que desea integrar.
 
 {{site.data.keyword.security-advisor_short}} no conserva las credenciales relacionadas con el servicio asociado. Los usuarios de empresa deben autenticarse mediante SAML tanto en {{site.data.keyword.Bluemix_notm}} como en el business partner.
 {: note}
 
-1. Inicie sesión en la herramienta de seguridad y obtenga el URL exclusivo.
-2. Inicie sesión en {{site.data.keyword.Bluemix_notm}}.
-3. Pulse **Integraciones personalizadas** y, a continuación, pulse la tarjeta **Añadir solución personalizada**. Se mostrará una pantalla.
-  1. Dé un nombre a la solución. Sólo se pueden utilizar caracteres alfanuméricos, espacios en blanco y guiones (-).
+### Configuración de la conexión
+{: #custom-configure-connection}
+
+1. Inicie una sesión en la herramienta de seguridad y obtenga el URL exclusivo.
+
+2. Inicie una sesión en {{site.data.keyword.cloud_notm}} mediante la consola.
+
+3. Pulse **Integraciones personalizadas > Conexión directa**. Se mostrará una pantalla.
+
+  1. Dé un nombre a la solución. En el nombre solo se pueden utilizar caracteres alfanuméricos, espacios en blanco y guiones (-).
+
   2. Especifique el URL para la solución con el formato: `www.<sitio_web>.<dominio>`.
+
   3. Cargue un icono o una imagen para representar la herramienta.
 
-    {{site.data.keyword.security-advisor_short}} crea los artefactos que son necesarios para la integración, como el ID de servicio, la clave de API, el ID de cuenta y los metadatos. Se asigna el rol de `escritor`.
+  4. Pulse **Conectar** para completar la configuración. {{site.data.keyword.security-advisor_short}} crea los artefactos que son necesarios para la integración, como el ID de servicio, la clave de API, el ID de cuenta y los metadatos. Se asigna el rol de `escritor`.
 
-4. Puede configurar la cuenta de cliente en el separador **Integración** del otro servicio.
-5. Con la integración en curso, puede empezar a publicar ocurrencias en {{site.data.keyword.security-advisor_short}} y ver los hallazgos en el panel de control de servicio.
 
-</br>
 
-## Integración de sus herramientas con la API
-{: #integrate}
+## Integración de hallazgos de terceros
 
-Las API de {{site.data.keyword.security-advisor_short}} API siguen la especificación de API de metadatos de artefactos de tipo [Grafeas](https://grafeas.io/) para almacenar, consultar y recuperar metadatos críticos correspondientes a los hallazgos notificados por todas las herramientas y servicios de seguridad.
+Las API siguen las especificaciones de metadatos de Grafeas como artefactos para almacenar, consultar y recuperar los metadatos críticos correspondientes a los hallazgos que notifican las herramientas de seguridad y los servicios.
+{: #setup-custom-api}
 
-**Antes de empezar**
+### Antes de empezar
+{: #custom-before-api}
 
-1. Inicie sesión en {{site.data.keyword.Bluemix_notm}}.
+Para poder integrar hallazgos de la herramienta de terceros, asegúrese de cumplir los siguientes requisitos previos.
+
+1. Asegúrese de que el ID de usuario o de servicio que utiliza tiene asignado el [rol de IAM](https://cloud.ibm.com/iam#/users) de **Gestor**.
+
+1. Inicie sesión en {{site.data.keyword.cloud_notm}}.
 
   ```
   ibmcloud login
   ```
   {: codeblock}
 
-2. Obtenga el ID de la cuenta. Asegúrese de que el ID tenga asignado el [rol de IAM](https://console.bluemix.net/iam/#/users) de **Gestor**. Para obtener más información sobre los roles de servicio, consulte las [políticas de acceso de {{site.data.keyword.security-advisor_short}}](/docs/services/security-advisor/iam.html).
+2. Obtenga el ID de la cuenta. Para obtener más información sobre los roles de servicio, consulte las [políticas de acceso de {{site.data.keyword.security-advisor_short}}](/docs/iam?topic=iam-iammanidaccser#iammanidaccser).
 
   ```
   ibmcloud account list org-account ORG_NAME [--guid]
   ```
   {: codeblock}
 
-3. Obtenga la señal de IAM. La señal se utiliza en la variable `--header` de cada solicitud de API.
+3. Obtenga la señal de Identity and Access Management (IAM). La señal se utiliza en la variable `--header` de cada solicitud de API.
 
   ```
   ibmcloud iam oauth-tokens
   ```
   {: codeblock}
 
-</br>
+  Las señales de IAM caducan cada 60 minutos. Para obtener información sobre cómo [obtener
+una nueva señal automáticamente](/docs/iam?topic=iam-iamtoken_from_apikey#iamtoken_from_apikey) mediante una clave de API.
+  {: tip}
 
-**Adición y supervisión de hallazgos**
 
-1. Para registrar un nuevo tipo de hallazgo, cree una nota. Para crear la nota, utilice la [API de hallazgos](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Notes/createNote).
+
+### Importación de hallazgos y de KRI
+{: #custom-adding}
+
+1. Para registrar un nuevo tipo de hallazgo, cree una nota. Para crear la nota, utilice la [API de hallazgos](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Notes/createNote). Asegúrese de elegir un ID de proveedor exclusivo para identificar la herramienta personalizada. Si va a automatizar el proceso mediante un ID de servicio, puede utilizar el ID de servicio como ID de proveedor.
 
   Solicitud de ejemplo:
 
@@ -205,7 +192,13 @@ Las API de {{site.data.keyword.security-advisor_short}} API siguen la especifica
   ```
   {: screen}
 
-2. Para crear un hallazgo, publique una [aparición](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Occurrences/createOccurrence).
+  Asegúrese de recordar el nombre de la nota que se devuelve como parte de la respuesta. En este ejemplo, el valor es `/providers/my-custom-tool/notes/my-custom-tool-findings-type`. Este valor se utiliza en el siguiente paso.
+  {: tip}
+
+2. Publique los hallazgos como KRI o como sucesos, conocidos también como [apariciones](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Occurrences/createOccurrence).
+
+  Para cada tarjeta, puede definir dos KRI.
+  {: note}
 
   ```
   curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account-id>/providers/my-custom-tool/occurrences" -H "accept: application/json" -H "Authorization: <iam-token>" -H "Replace-If-Exists: true" -H "Content-Type: application/json" -d "{ \"note_name\": \"<account-id>/providers/my-custom-tool/notes/my-custom-tool-findings-type\", \"kind\": \"FINDING\", \"remediation\": \"how to resolve this\", \"provider_id\": \"my-custom-tool\", \"id\": \"my-custom-tool-finding-1\", \"context\": { \"region\": \"location\", \"resource_id\": \"pluginId\", \"resource_name\": \"www.myapp.com\", \"resource_type\": \"worker\", \"service_name\": \"application\" }, \"finding\": { \"severity\": \"HIGH\", \"next_steps\": [{ \"url\": \"Details URL\" }] }}"
@@ -295,7 +288,7 @@ Las API de {{site.data.keyword.security-advisor_short}} API siguen la especifica
     "update_week_date": "2018-W36-2"
   }
   ```
-  {: codeblock}
+  {: screen}
 
 3. Defina la tarjeta en el panel de control para visualizar el hallazgo mediante la creación de una [nota](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Notes/createNote).
 
@@ -403,6 +396,37 @@ Las API de {{site.data.keyword.security-advisor_short}} API siguen la especifica
 
 4. Vaya al panel de control del servicio para ver la tarjeta que ha creado.
 
+## Ejemplo de uso
+{: #custom-example}
 
-</br>
-</br>
+Supongamos que tiene una aplicación que se ejecuta en un clúster de {{site.data.keyword.containershort_notm}} con el nombre `cloudkingdom`. Dependiendo del tamaño de la aplicación, es posible que tenga varios pods en el clúster para poder supervisar todo al mismo tiempo. ¿Qué pasa si tiene varias herramientas personalizadas que supervisan y detectan el clúster en busca de distintas amenazas? Si uno de los pods del clúster empieza a enviar una cantidad inusual de datos a servidores externos, querrá saberlo lo antes posible. La herramienta personalizada que supervisa la transferencia de datos puede detectar el hallazgo y enviarlo a {{site.data.keyword.security-advisor_short}}. Si tiene otra integración personalizada que detecta un problema, también enviaría el hallazgo a {{site.data.keyword.security-advisor_short}}. A continuación, {{site.data.keyword.security-advisor_short}} mostraría los hallazgos de todas las herramientas de supervisión en un solo panel de control. Allí puede obtener rápidamente una visión general de cualquier alerta, investigar un problema y obtener información sobre los pasos que debe emprender para solucionarlo.
+
+
+Ejemplo de carga útil:
+
+```
+{
+	"note_name": "<account id>/providers/my-custom-tool/notes/my-custom-tool-findings-type",
+	"kind": "FINDING",
+	"remediation": "How to resolve Data leakage threat",
+	"provider_id": "my-custom-tool",
+	"id": "my-custom-tool-finding-2",
+	"context": {
+		"region": "location",
+		"resource_id": "cluster crn",
+		"resource_name": "cloudkingdom",
+		"resource_type": "container",
+		"service_name": "kubernetes service"
+	},
+	"finding": {
+		"severity": "HIGH",
+		"next_steps": [{
+			"title": "Investigate which process are running in your cluster. If you suspect one of your pods was hacked, restart it, and look for image vulnerabilities",
+                        "url":"https://console.bluemix.net/containers-kubernetes/clusters"
+		}],
+                "short_description": "One of the pods in your cluster appears to be leaking an excessive amount of data",
+                "long_description": "One of the pods in your cluster is approaching external servers and sending them data in volumes that exceed that pod’s normal behavior"
+	}
+}
+```
+{: screen}

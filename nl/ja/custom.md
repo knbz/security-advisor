@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-09"
+  years: 2017, 2019
+lastupdated: "2019-03-13"
+
+keywords: centralized security, security management, alerts, security risk, insights, threat detection
+
+subcollection: security-advisor
 
 ---
 
@@ -13,112 +17,94 @@ lastupdated: "2018-12-09"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
-# カスタム・セキュリティー・ツール
+
+# カスタム
 {: #setup_custom}
 
-既にあるツールを使用している場合があります。これらのツール (Neuvector など) を {{site.data.keyword.security-advisor_short}} と統合できます。
+{{site.data.keyword.security-advisor_short}} では、既存のカスタム・セキュリティー・ツールがオープン・ソースのサービス、カスタム開発したサービス、またはサード・パーティーのサービスのいずれであっても、そのツールを統合することができます。{{site.data.keyword.security-advisor_short}} から他のツールへの直接接続を作成するには、URL を統合リストに追加します。また、API および重要リスク指標 (KRI) を構成するための API を使用することで、サード・パーティーによる検出事項を統合して、重要なセキュリティー・イベントをダッシュボード内の新規カードに直接取り込むこともできます。
 {: shortdesc}
 
 
-なぜカスタマイズを作成する必要があるのでしょうか? `cloudkingdom` という名前の {{site.data.keyword.containershort_notm}} クラスターを実行しているアプリケーションがあるとします。 このクラスター内のポッドが外部サーバーに異常な量のデータを送信しているとします。 このような事象を {{site.data.keyword.security-advisor_short}} のダッシュボードに検出事項として表示する必要があります。
+## 直接接続の追加
+{: #setup-custom-gui}
 
-カスタム・ツールでモニターし、異常な量のデータ転送を検出したら、ツールから {{site.data.keyword.security-advisor_short}} に検出事項を送信します。
-
-ペイロードの例:
-
-```
-{
-	"note_name": "<account id>/providers/my-custom-tool/notes/my-custom-tool-findings-type",
-	"kind": "FINDING",
-	"remediation": "How to resolve Data leakage threat",
-	"provider_id": "my-custom-tool",
-	"id": "my-custom-tool-finding-2",
-	"context": {
-		"region": "location",
-		"resource_id": "cluster crn",
-		"resource_name": "cloudkingdom",
-		"resource_type": "container",
-		"service_name": "kubernetess service"
-	},
-	"finding": {
-		"severity": "HIGH",
-		"next_steps": [{
-			"title": "Investigate which process are running in your cluster. If you suspect one of your pods was hacked, restart it, and look for image vulnerabilities",
-                        "url":"https://console.bluemix.net/containers-kubernetes/clusters"
-		}],
-                "short_description": "One of the pods in your cluster appears to be leaking an excessive amount of data",
-                "long_description": "One of the pods in your cluster is approaching external servers and sending them data in volumes that exceed that pod’s normal behavior"
-	}
-
-}
-```
-{: screen}
-
-</br>
-
-
-## 独自のツールと GUI との統合
-{: #gui}
-
-{{site.data.keyword.security-advisor_short}} ダッシュボードを使用してセキュリティー・ツールを統合できます。
+{{site.data.keyword.security-advisor_short}} ダッシュボードを使用して、セキュリティー・ツールを容易に追跡できます。
 {: shortdesc}
 
-**始める前に**
+### 始めに
+{: #custom-before-gui}
 
-* 統合しようとしているパートナーのアカウントがなければなりません。
+統合を追加するには、その前に、統合しようとしているパートナーのアカウントをまず用意する必要があります。
 
-{{site.data.keyword.security-advisor_short}} は、パートナー・サービスに関連した資格情報を永続化しません。エンタープライズ・ユーザーが、{{site.data.keyword.Bluemix_notm}} とビジネス・パートナーの両方に対して SAML を使用して認証しなければなりません。
+{{site.data.keyword.security-advisor_short}} は、パートナー・サービスに関連した資格情報を永続化しません。 エンタープライズ・ユーザーが、{{site.data.keyword.Bluemix_notm}} とビジネス・パートナーの両方に対して SAML を使用して認証しなければなりません。
 {: note}
 
+### 接続の構成
+{: #custom-configure-connection}
+
 1. セキュリティー・ツールにログインし、固有の URL を取得します。
-2. {{site.data.keyword.Bluemix_notm}} にログインします。
-3. **「カスタム統合 (Custom Integrations)」**をクリックしてから、**「カスタム・ソリューションの追加 (Add Custom Solution)」**カードをクリックします。画面が表示されます。
-  1. ソリューションに名前を付けます。英数字、空白文字、ダッシュ (-) のみ使用できます。
+
+2. コンソールを使用して {{site.data.keyword.cloud_notm}} にログインします。
+
+3. **「カスタム統合 (Custom Integrations)」>「直接接続 (Direct Connection)」**をクリックします。画面が表示されます。
+
+  1. ソリューションに名前を付けます。 英数字、空白文字、ダッシュ (-) のみを名前で使用できます。
+
   2. `www.<website>.<domain>` の形式で、ソリューションの URL を入力します。
+
   3. ツールを表わすアイコンまたはイメージをアップロードします。
 
-    {{site.data.keyword.security-advisor_short}} は、サービス ID、API 鍵、アカウント ID、メタデータなどの、統合に必要な成果物を作成します。`writer` 役割が割り当てられます。
+  4. **「接続」**をクリックして、構成を完了します。{{site.data.keyword.security-advisor_short}} は、サービス ID、API 鍵、アカウント ID、メタデータなどの、統合に必要な成果物を作成します。 `writer` 役割が割り当てられます。
 
-4. その他のサービスの**「統合」**タブ内でお客様アカウントを構成できます。
-5. 統合が整備されると、{{site.data.keyword.security-advisor_short}} へのオカレンスの送付を開始したり、サービス・ダッシュボード内に検出事項を表示したりできます。
 
-</br>
 
-## 独自のツールと API との統合
-{: #integrate}
+## サード・パーティーによる検出事項の統合
 
-{{site.data.keyword.security-advisor_short}} API は、[Grafeas](https://grafeas.io/) に似た成果物メタデータ API 仕様に従って、あらゆるセキュリティー・ツールやサービスから報告された検出事項の重要なメタデータを保管、照会、および取得します。
+API は、Grafeas に似た成果物メタデータ仕様に従って、セキュリティー・ツールやサービスから報告された検出事項の重要なメタデータを保管、照会、および取得します。
+{: #setup-custom-api}
 
-**始める前に**
+### 始めに
+{: #custom-before-api}
 
-1. {{site.data.keyword.Bluemix_notm}} にログインします。
+サード・パーティー・ツールからの検出事項を統合する前に、以下の前提条件を必ず満たしてください。
+
+1. 使用するユーザー ID またはサービス ID に、**管理者**の [IAM 役割](https://cloud.ibm.com/iam#/users)が割り当てられていることを確認します。
+
+1. {{site.data.keyword.cloud_notm}} にログインします。
 
   ```
   ibmcloud login
   ```
   {: codeblock}
 
-2. アカウント ID を取得します。 自分の ID に**管理者**の [IAM 役割](https://console.bluemix.net/iam/#/users)が割り当てられていることを確認してください。 サービスの役割について詳しくは、[{{site.data.keyword.security-advisor_short}} のアクセス・ポリシー](/docs/services/security-advisor/iam.html)を参照してください。
+2. アカウント ID を取得します。 サービスの役割について詳しくは、[{{site.data.keyword.security-advisor_short}} のアクセス・ポリシー](/docs/iam?topic=iam-iammanidaccser#iammanidaccser)を参照してください。
 
   ```
   ibmcloud account list org-account ORG_NAME [--guid]
   ```
   {: codeblock}
 
-3. IAM トークンを取得します。 このトークンを、各 API 要求の `--header` で使用します。
+3. Identity and Access Management (IAM) トークンを取得します。このトークンを、各 API 要求の `--header` で使用します。
 
   ```
   ibmcloud iam oauth-tokens
   ```
   {: codeblock}
 
-</br>
+  IAM トークンの有効期限は 60 分です。詳しくは、API キーを使用して[新規トークンを自動的に取得する](/docs/iam?topic=iam-iamtoken_from_apikey#iamtoken_from_apikey)方法を参照してください。
+  {: tip}
 
-**検出事項の追加とモニター**
 
-1. 注記を作成して、新しいタイプの検出事項を登録します。 注記を作成するには、[検出事項 API](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Notes/createNote) を使用します。
+
+### 検出事項と KRI のインポート
+{: #custom-adding}
+
+1. 注記を作成して、新しいタイプの検出事項を登録します。 注記を作成するには、[Findings API](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Notes/createNote) を使用します。カスタム・ツールを識別するためには、必ず、固有のプロバイダー ID を選択してください。サービス ID を使用してプロセスを自動化する場合は、そのサービス ID をプロバイダー ID として使用することができます。
 
   要求の例:
 
@@ -205,7 +191,13 @@ lastupdated: "2018-12-09"
   ```
   {: screen}
 
-2. [オカレンス](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Occurrences/createOccurrence)を POST して、検出事項を作成します。
+  応答の一部として戻された注記の名前を覚えておいてください。この例では、その値は `/providers/my-custom-tool/notes/my-custom-tool-findings-type` です。次のステップでこの値を使用します。
+  {: tip}
+
+2. 検出事項を KRI またはイベント ([オカレンス](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Occurrences/createOccurrence)と呼ばれることもあります) として通知します。
+
+  カードごとに 2 つの KRI を定義することができます。
+  {: note}
 
   ```
   curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account-id>/providers/my-custom-tool/occurrences" -H "accept: application/json" -H "Authorization: <iam-token>" -H "Replace-If-Exists: true" -H "Content-Type: application/json" -d "{ \"note_name\": \"<account-id>/providers/my-custom-tool/notes/my-custom-tool-findings-type\", \"kind\": \"FINDING\", \"remediation\": \"how to resolve this\", \"provider_id\": \"my-custom-tool\", \"id\": \"my-custom-tool-finding-1\", \"context\": { \"region\": \"location\", \"resource_id\": \"pluginId\", \"resource_name\": \"www.myapp.com\", \"resource_type\": \"worker\", \"service_name\": \"application\" }, \"finding\": { \"severity\": \"HIGH\", \"next_steps\": [{ \"url\": \"Details URL\" }] }}"
@@ -295,7 +287,7 @@ lastupdated: "2018-12-09"
     "update_week_date": "2018-W36-2"
   }
   ```
-  {: codeblock}
+  {: screen}
 
 3. [注記](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Notes/createNote)を作成して、検出事項を表示するダッシュボードのカードを定義します。
 
@@ -403,6 +395,37 @@ lastupdated: "2018-12-09"
 
 4. サービス・ダッシュボードにナビゲートし、作成したカードを確認します。
 
+## 使用例
+{: #custom-example}
 
-</br>
-</br>
+`cloudkingdom` という名前の {{site.data.keyword.containershort_notm}} クラスター上で実行しているアプリケーションがあるとしましょう。アプリケーションの規模によっては、クラスター内に複数のポッドがあり、それらをすべて同時にモニターする場合があります。クラスターをモニターしてそれぞれ異なる脅威を検出する、複数のカスタム・ツールがある場合について考えましょう。クラスター内のポッドの 1 つが異常な量のデータを外部サーバーに送信し始めたら、できるだけ早くそのことを把握したいものです。データ転送をモニターするカスタム・ツールは、その問題を検出し、{{site.data.keyword.security-advisor_short}} に送信するでしょう。その問題を検出する別のカスタム統合が存在するなら、そこからも {{site.data.keyword.security-advisor_short}} に検出事項が送信されます。そして、{{site.data.keyword.security-advisor_short}} は、すべてのモニタリング・ツールから得た検出事項を単一のダッシュボードに表示します。これによって、ユーザーは、迅速にすべてのアラートの概要を確認し、問題を調査し、修復方法を知ることができます。
+
+
+ペイロードの例:
+
+```
+{
+	"note_name": "<account id>/providers/my-custom-tool/notes/my-custom-tool-findings-type",
+	"kind": "FINDING",
+	"remediation": "How to resolve Data leakage threat",
+	"provider_id": "my-custom-tool",
+	"id": "my-custom-tool-finding-2",
+	"context": {
+		"region": "location",
+		"resource_id": "cluster crn",
+		"resource_name": "cloudkingdom",
+		"resource_type": "container",
+		"service_name": "kubernetes service"
+	},
+	"finding": {
+		"severity": "HIGH",
+		"next_steps": [{
+			"title": "Investigate which process are running in your cluster. If you suspect one of your pods was hacked, restart it, and look for image vulnerabilities",
+                        "url":"https://console.bluemix.net/containers-kubernetes/clusters"
+		}],
+                "short_description": "One of the pods in your cluster appears to be leaking an excessive amount of data",
+                "long_description": "One of the pods in your cluster is approaching external servers and sending them data in volumes that exceed that pod’s normal behavior"
+	}
+}
+```
+{: screen}

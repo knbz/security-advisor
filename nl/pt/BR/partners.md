@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-10"
+  years: 2017, 2019
+lastupdated: "2019-03-13"
+
+keywords: centralized security, security management, alerts, security risk, insights, threat detection
+
+subcollection: security-advisor
 
 ---
 
@@ -13,38 +17,48 @@ lastupdated: "2018-12-10"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
-# Soluções de parceiros
+
+# Parceiros
 {: #setup-partner}
 
-As soluções de parceiros são uma maneira de ampliar sua segurança criando um link entre o {{site.data.keyword.security-advisor_long}} e outras ferramentas de segurança.
+As integrações do Parceiro de Negócios IBM são uma maneira de trazer alertas críticos e descobertas de provedores de terceiros para o painel do {{site.data.keyword.security-advisor_long}}. Esses parceiros trabalharam com a IBM para ajudar a dar forma, simplificar e orientar a experiência de integração para você.
 {: shortdesc}
+
+## Antes de começar
+{: #partner-before}
+
+Antes de iniciar a integração de parceiros, certifique-se de que você tenha os pré-requisitos a seguir.
+
+* Assegure-se de que tenha uma conta com o parceiro que deseja integrar.
+* Assegure-se de que você tenha as permissões administrativas necessárias para gerar a URL de integração para o serviço de parceiro.
+* Assegure-se de que você tenha acesso administrativo do IAM ao {{site.data.keyword.cloud_notm}} e acesso de gerenciador ao {{site.data.keyword.security-advisor_short}}.
 
 ## Assistente de integração
 {: #wizard}
 
-Como um administrador com direitos administrativos nas contas do IBM Cloud e do Parceiro, é possível usar o assistente de integração para funcionar rapidamente. O assistente tem quatro etapas básicas:
+Como um administrador com direitos administrativos nas contas do {{site.data.keyword.cloud_notm}} e do Parceiro, é possível usar o assistente de integração para que funcione rapidamente. O assistente tem quatro etapas básicas:
 
-* Estabelecer confiança e associar suas contas do IBM Cloud e do Parceiro
+* Estabelecer confiança e associar suas contas do {{site.data.keyword.cloud_notm}} e do parceiro
 * Copiar as informações necessárias, tais como credenciais e URLs, entre as contas
 * Instalar os metadados de descoberta do parceiro no {{site.data.keyword.security-advisor_short}}
-* Validar o emparelhamento postando uma descoberta do Parceiro no {{site.data.keyword.security-advisor_short}}
+* Validar o emparelhamento postando uma descoberta do parceiro no {{site.data.keyword.security-advisor_short}}
 
-</br>
 
 ## Integrando o NeuVector
-{: #neuvector}
+{: #setup-neuvector}
 
-**Antes de começar**
+Com o NeuVector, é possível detectar ameaças e violações de rede para evitar ataques de seus aplicativos baseados em contêiner. Por meio de monitoramento, é possível evitar explosões e quebras detectando escalações de privilégios de administrador, varreduras de porta, shells reversos e atividade suspeita do sistema de arquivos em seus contêineres e hosts.
+{: shortdesc}
 
-* Assegure-se de que tenha uma conta com o parceiro que deseja integrar.
-* Assegure-se de que tenha as permissões administrativas necessárias para gerar a URL de integração do serviço de Parceiro.
-* Assegure-se de que tenha acesso administrativo do IAM ao IBM Cloud e acesso do gerenciador ao {{site.data.keyword.security-advisor_short}}.
+Para integrar o NeuVector ao {{site.data.keyword.security-advisor_short}}, é possível usar as etapas a seguir:
 
-**Integrando**
-
-1. Conecte suas contas.
+1. Navegue para **Integrações > Integrações de parceiros** e selecione **NeuVector** nas opções fornecidas.
+2. Conecte suas contas.
   1. Forneça um nome para sua conexão.
   2. Forneça a URL do painel do NeuVector.
   3. Forneça a URL de configuração do NeuVector.
@@ -55,3 +69,57 @@ Como um administrador com direitos administrativos nas contas do IBM Cloud e do 
 3. Certifique-se de dar permissão para que o serviço gere um ID de serviço e uma chave de API e crie a conexão com o serviço clicando em **Avançar**.
 4. Clique em **Pronto**.
 5. Acesse seu painel de serviço para revisar uma descoberta de teste que foi enviada para o {{site.data.keyword.containershort_notm}} pelo NeuVector.
+
+
+
+## Integrando o Twistlock
+{: #setup-twistlock}
+
+É possível evitar riscos parando a implementação das imagens vulneráveis em seu ambiente. Com o cumprimento de política automatizada e customizada, o Twistlock oferece controle completo em cada estágio do ciclo de vida do aplicativo.
+{: shortdesc}
+
+Quando você configura a conexão do parceiro, são criadas duas placas em seu painel que resumem as descobertas do Twistlock.
+
+**Tempo de execução do Twistlock** apresenta dois Principais indicadores de risco (KRIs):
+
+* Total de incidentes e auditorias: descobertas que estão relacionadas a incidentes ou auditorias em suas cargas de trabalho nativas de nuvem.
+* Total de auditorias de firewall: descobertas que estão relacionadas a problemas com seu firewall.
+
+** Vulnerabilidades do Twistlock **  introduz um KRI:
+
+* Total de imagens com novas vulnerabilidades: descobertas que estão relacionadas a vulnerabilidades localizadas em suas imagens de contêiner.
+
+É possível saber mais sobre a empresa nos docs do Twistlock.
+
+### Configurando o Twistlock
+{: #configure-twistlock}
+
+1. No painel do {{site.data.keyword.security-advisor_short}}, navegue para **Integrações > Integrações de parceiros** e selecione **Twistlock** nas opções fornecidas.
+
+2. Clique em  ** Sim, conecte minha conta ao  {{site.data.keyword.security-advisor_short}} **.
+
+  Se você ainda não tiver uma conta, clique em **Não, ajude-me a criar uma conta > Criar uma conta**. É possível preencher suas informações e a equipe de vendas do Twistlock entrará em contato com você para que inicie.
+  {: note}
+
+3. Dê a sua conexão um nome. Certifique-se de que o nome seja exclusivo para sua conta e de que você use apenas caracteres alfanuméricos, espaço ou um hífen.
+
+4. Opcional: se você ainda não tiver uma URL de configuração, clique em **Gerar URL de registro** para acessar a documentação do Twistlock e saber como criar a URL. Certifique-se de que você tenha o token do Twistlock que vem com sua licença para obter acesso aos docs.
+
+5. No painel do Twistlock, navegue para a guia **Gerenciar > Alertas** e clique em **Incluir perfil**.
+
+6. Selecione  ** {{site.data.keyword.security-advisor_short}} **  na lista suspensa  ** Provedor ** .
+
+7. Clique em **Copiar** para usar a URL de configuração fornecida.
+
+8. De volta no painel do {{site.data.keyword.security-advisor_short}}, cole a URL na caixa **Inserir a URL de configuração do Twistlock**.
+
+9. Clique em  ** Conectar parceiro **.
+
+### Verificando a Conexão
+{: #twistlock-verify}
+
+1. No painel do {{site.data.keyword.security-advisor_short}}, verifique se as placas do Twistlock estão sendo exibidas conforme o esperado.
+
+2. No painel do Twistlock, atualize a guia **Alertas**. A conexão  {{site.data.keyword.security-advisor_short}}  mostrará. Abra a conexão.
+
+3. Verifique se os tipos de alerta que você deseja que sejam notificados estão marcados e, em seguida, clique em **Verificar** para assegurar que a conexão esteja concluída.

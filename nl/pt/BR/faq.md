@@ -1,33 +1,41 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-12-10"
+  years: 2017, 2019
+lastupdated: "2019-03-07"
+
+keywords: centralized security, security management, alerts, security risk, insights, threat detection
+
+subcollection: security-advisor
 
 ---
 
-{:new_window: target="blank"}
+{:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
+{:faq: data-hd-content-type='faq'}
 
 
 # Perguntas mais frequentes (FAQ)
-{: #about}
+{: #faq}
 
 Esta FAQ fornece respostas às perguntas comuns sobre o serviço {{site.data.keyword.security-advisor_long}}.
 {: shortdesc}
 
 
 ## Quais são os serviços integrados?
-{: #integrations}
+{: #faq-integrations}
 {: faq}
 
-Embora seja possível integrar qualquer ferramenta de segurança customizada ou do IBM Cloud, o serviço vem pré-configurado para usar o IBM Cloud Certificate Manager e o Vulnerability Advisor.
+Embora seja possível integrar qualquer ferramenta de segurança do {{site.data.keyword.cloud_notm}} ou customizada, o serviço vem pré-configurado para usar o {{site.data.keyword.cloud_notm}} Certificate Manager e o Vulnerability Advisor.
 
 </br>
 
@@ -43,4 +51,4 @@ O IBM X-Force Research é uma das equipes de pesquisa de segurança comercial ma
 {: #partner}
 {: faq}
 
-Fico feliz em saber que você está interessado em integrar sua solução ao Security Advisor. Fale com nossa equipe entrando em contato com Matt Ward em wardm@us.ibm.com para começar.
+Ficamos felizes em saber que você está interessado em integrar sua solução ao {{site.data.keyword.security-advisor_short}}. Fale com nossa equipe entrando em contato com Matt Ward em wardm@us.ibm.com para começar.

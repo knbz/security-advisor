@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-12-07"
+  years: 2017, 2019
+lastupdated: "2019-03-14"
+
+keywords: centralized security, security management, alerts, security risk, insights, threat detection
+
+subcollection: security-advisor
 
 ---
 
@@ -13,7 +17,11 @@ lastupdated: "2018-12-07"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
+
 
 
 # 서비스 액세스 관리
@@ -22,7 +30,7 @@ lastupdated: "2018-12-07"
 계정 소유자로서 사용자는 {{site.data.keyword.Bluemix_notm}} Identity and Access Management(IAM)를 사용하여 {{site.data.keyword.security-advisor_long}}의 인스턴에 대한 액세스를 관리할 수 있습니다. 다른 사용자마다 다른 액세스 레벨을 작성하는 계정 내에 정책을 설정하여 {{site.data.keyword.security-advisor_short}}의 각 인스턴스가 보안 설정되었는지 확인할 수 있습니다.
 {: shortdesc}
 
-IAM에 대한 자세한 정보는 [IAM 액세스](/docs/iam/users_roles.html)를 참조하십시오.
+IAM에 대한 자세한 정보는 [IAM 액세스](/docs/iam?topic=iam-userroles)를 참조하십시오.
 
 ## {{site.data.keyword.security-advisor_short}} 액세스 정책
 {: #access}
@@ -119,6 +127,31 @@ IAM에 대한 자세한 정보는 [IAM 액세스](/docs/iam/users_roles.html)를
   <tr>
     <td><code>security-advisor.partner-solution.delete</code></td>
     <td>서비스 인스턴스에서 파트너 솔루션을 삭제합니다.</td>
+    <td>관리자</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.network-insights.enable</code></td>
+    <td>서비스에서 제공하는 네트워크 인사이트를 사용으로 설정합니다.</td>
+    <td>관리자</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.network-insights.disable</code></td>
+    <td>서비스에서 제공하는 네트워크 인사이트를 사용 안함으로 설정합니다.</td>
+    <td>관리자</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.activity-insights.enable</code></td>
+    <td>서비스에서 제공하는 활동 인사이트를 사용으로 설정합니다.</td>
+    <td>관리자</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.activity-insights.disable</code></td>
+    <td>서비스에서 제공하는 활동 인사이트를 사용 안함으로 설정합니다.</td>
+    <td>관리자</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.insights-cos.create</code></td>
+    <td>Network 및 Activity Insights의 {{site.data.keyword.security-advisor_short}}를 통해 Cloud Object Storage 인스턴스를 작성합니다.</td>
     <td>관리자</td>
   </tr>
 </table>

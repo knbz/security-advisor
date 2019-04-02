@@ -1,33 +1,36 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="security-advisor" audience="security" arm="4033739" href="/docs/services/security-advisor/index.html" path="services/security-advisor"}
+{: .toc subcollection="security-advisor" audience="security" arm="4033739" href="/docs/services/security-advisor?topic=security-advisor-index#index" path="services/security-advisor"}
 IBM Cloud Security Advisor
 
     {: .navgroup id="learn"}
     index.md
     about.md
     integrations.md
-    network-analytics
+    network-insights.md
+    activity-insights.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
     setup.md
 
     {: .topicgroup}
-    통합
+    통합 사용
         partners.md
         custom.md
-        setup_cluster.md
+        setup-network.md
+        setup-activity.md
 
     iam.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    [찾은 결과 API](https://console.bluemix.net/apidocs/security-advisor)
-    [서비스 대시보드](https://console.bluemix.net/security-advisor/#/dashboard)
+    [찾은 결과 API](https://cloud.ibm.com/apidocs/security-advisor)
+    [서비스 대시보드](https://cloud.ibm.com/security-advisor/#/dashboard)
     [블로그](https://www.ibm.com/blogs/bluemix/tag/security-advisor/)
     at-events.md
+    sa_rellinks.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}

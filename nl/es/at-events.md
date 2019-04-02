@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-12-07"
+  years: 2017, 2019
+lastupdated: "2019-03-14"
+
+keywords: centralized security, security management, alerts, security risk, insights, threat detection
+
+subcollection: security-advisor
 
 ---
 
@@ -13,7 +17,11 @@ lastupdated: "2018-12-07"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
+
 
 
 # Sucesos de {{site.data.keyword.cloudaccesstrailshort}}
@@ -22,7 +30,7 @@ lastupdated: "2018-12-07"
 Puede ver, gestionar y auditar las actividades iniciadas por el usuario que se han realizado en la instancia del servicio {{site.data.keyword.security-advisor_long}} mediante el servicio {{site.data.keyword.cloudaccesstrailshort}}.
 {: shortdesc}
 
-Para obtener más información sobre el funcionamiento del servicio, consulte la [documentación de {{site.data.keyword.cloudaccesstrailshort}}](/docs/services/cloud-activity-tracker/index.html).
+Para obtener más información sobre el funcionamiento del servicio, consulte la [documentación de {{site.data.keyword.cloudaccesstrailshort}}](/docs/services/cloud-activity-tracker/reference?topic=cloud-activity-tracker-getting-started-with-cla#getting-started-with-cla).
 
 
 ## Dónde ver los sucesos
@@ -30,14 +38,14 @@ Para obtener más información sobre el funcionamiento del servicio, consulte la
 
 Los sucesos están disponibles en el **dominio de la cuenta** de {{site.data.keyword.cloudaccesstrailshort}} que está disponible en la región de {{site.data.keyword.Bluemix_notm}} donde se han generado los sucesos.
 
-1. Inicie sesión en su cuenta de {{site.data.keyword.Bluemix_notm}}.
-2. Desde el catálogo, suministre una instancia del servicio {{site.data.keyword.cloudaccesstrailshort}} en la misma cuenta que la instancia de {{site.data.keyword.security-advisor_long}}.
+1. Inicie una sesión en su cuenta de {{site.data.keyword.Bluemix_notm}}.
+2. Desde el catálogo, suministre una instancia del servicio {{site.data.keyword.cloudaccesstrailshort}} en la misma cuenta que la instancia de {{site.data.keyword.security-advisor_short}}.
 3. En el separador **Gestión** del panel de control de {{site.data.keyword.cloudaccesstrailshort}}, pulse **Ver en Kibana**.
 4. Establezca el intervalo de tiempo para el que desea ver los registros. El valor predeterminado es 15 minutos.
 5. En la lista **Campos disponibles**, pulse **Tipo**. Pulse el icono de lupa de **Activity Tracker** para limitar los registros a aquellos que el servicio rastrea.
 6. Puede utilizar los otros campos disponibles para limitar la búsqueda.
 
-Para que los usuarios que no sean el propietario de la cuenta puedan ver los registros, debe utilizar el plan premium. Para permitir que otros usuarios vean sucesos, consulte [Concesión de permisos para ver sucesos de cuentas](/docs/services/cloud-activity-tracker/how-to/grant_permissions.html#grant_permissions).
+Para que los usuarios que no sean el propietario de la cuenta puedan ver los registros, debe utilizar el plan premium. Para permitir que otros usuarios vean sucesos, consulte [Concesión de permisos para ver sucesos de cuentas](/docs/services/cloud-activity-tracker/how-to?topic=cloud-activity-tracker-grant_permissions#grant_permissions).
 {: tip}
 
 ## Lista de sucesos
@@ -77,7 +85,7 @@ Consulte la tabla siguiente para ver una lista de los sucesos que se envían a {
   </tr>
   <tr>
     <td><code>security-advisor.findings.delete</code></td>
-    <td>Suprima una aparición.</td>
+    <td>Suprimir una aparición.</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.update</code></td>
@@ -89,7 +97,7 @@ Consulte la tabla siguiente para ver una lista de los sucesos que se envían a {
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.write</code></td>
-    <td>Añada una solución personalizada al servicio.</td>
+    <td>Añadir una solución personalizada al servicio.</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.update</code></td>
@@ -114,5 +122,25 @@ Consulte la tabla siguiente para ver una lista de los sucesos que se envían a {
   <tr>
     <td><code>security-advisor.partner-solution.delete</code></td>
     <td>Suprimir una solución de socio de la instancia de servicio.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.network-insights.enable</code></td>
+    <td>Habilitar la característica Network Insights que proporciona {{site.data.keyword.security-advisor_short}}.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.network-insights.disable</code></td>
+    <td>Inhabilitar la característica Network Insights que proporciona {{site.data.keyword.security-advisor_short}}.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.activity-insights.enable</code></td>
+    <td>Habilitar la característica Activity Insights que proporciona {{site.data.keyword.security-advisor_short}}.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.activity-insights.disable</code></td>
+    <td>Inhabilitar la característica Activity Insights que proporciona {{site.data.keyword.security-advisor_short}}.</td>
+  </tr>
+  <tr>
+    <td><code>security-advisor.insights-cos.create</code></td>
+    <td>Crear una instancia de Cloud Object Storage mediante {{site.data.keyword.security-advisor_short}} para obtener información detallada de red y de actividad.</td>
   </tr>
 </table>
