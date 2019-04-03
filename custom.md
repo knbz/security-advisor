@@ -414,7 +414,11 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
     </tr>
     <tr>
       <td><code>card: section</code></td>
-      <td>The section that the card fits into. Maximum characters: 25</td>    
+      <td>The section in which you want the card to display. You can have up to 3 custom sections with 6 cards in each section. Maximum characters: 25</td>
+    </tr>
+        <tr>
+      <td>Optional: <code>card: order</code></td>
+      <td>The order in which the card are displayed within the specified section. The order is specified in range 1 - 6. If you choose a number that already is already applied to another card, the creation fails. You receive an error message that states "Given order is already taken by other card in section." If the order provided is greater than the current number of cards plus 1, then the card creation will fail with the error "Order of the card cannot be more than existing number of cards plus one in a section." For example, if you currently have 2 cards and are creating another, you could not specify 5 in the card order because all together, you will have 3 cards total. If the order for the cards is not specified, they are arranged alphabetically in the assigned section.</td>
     </tr>
     <tr>
       <td><code>card: title</code></td>
@@ -423,14 +427,6 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
     <tr>
       <td><code>card: subtitle</code></td>
       <td>The subtitle that you want your card to have. Maximum characters: 30</td>    
-    </tr>
-    <tr>
-      <td><code>Optional: section</code></td>
-      <td>The section in which you want the card to display. You can have up to 3 custom sections with 6 cards in each section. If the order for the cards is not specified, they are arranged alphabetically in the assigned section. If you define the order of a few cards but not all of the cards, the cards with an order are placed in the order in which they are defined. The cards without a specified order are arranged alphabetically in the remaining slots of the {{site.data.keyword.security-advisor_short}} dashboard.</td>
-    </tr>
-    <tr>
-      <td>Optional: <code>order</code></td>
-      <td>The order in which the card are displayed within the specified section. The order is specified in range 1 - 6. If you choose a number that already is already applied to another card, the creation fails. You receive an error message that states "Given order is already taken by other card in section." If the order provided is greater than the current number of cards plus 1, then the card creation will fail with the error "Order of the card cannot be more than existing number of cards plus one in a section." For example, if you currently have 2 cards and are creating another, you could not specify 5 in the card order because all together, you will have 3 cards total.</td>
     </tr>
     <tr>
       <td><code>card: finding_note_names</code></td>
