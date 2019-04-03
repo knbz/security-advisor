@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-02"
+lastupdated: "2019-04-03"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -385,93 +385,89 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
   {: pre}
 
   <table>
-    <thead>
-      <tr>
-        <th colspan=2><img src="images/idea.png" alt="More information icon"/> Understanding a CARD's components </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>provider_id</code></td>
-        <td>The ID of your security tool.</td>
-      </tr>
-      <tr>
-        <td><code>id</code></td>
-        <td>An ID for the type of finding that your security tool found.</td>
-      </tr>
-      <tr>
-        <td><code>short_description</code></td>
-        <td>A description, no more than a couple words, that summarizes the finding.</td>
-      </tr>
-      <tr>
-        <td><code>long_description</code></td>
-        <td>A longer description that contains more detail about the finding.</td>
-      </tr>
-      <tr>
-        <td><code>reported_by: id</code></td>
-        <td>The ID of the security tool that reported the finding.</td>
-      </tr>
-      <tr>
-        <td><code>reported_by: title</code></td>
-        <td>The title of the security tool that reported the finding.</td>
-      </tr>
-      <tr>
-        <td><code>card: section</code></td>
-        <td>The section that the card fits into. Maximum characters: 25</td>    
-      </tr>
-      <tr>
-        <td><code>card: title</code></td>
-        <td>The title that you want your card to have. Maximum characters: 28</td>    
-      </tr>
-      <tr>
-        <td><code>card: subtitle</code></td>
-        <td>The subtitle that you want your card to have. Maximum characters: 30</td>    
-      </tr>
-      <tr>
-        <td><code>card: finding_note_names</code></td>
-        <td><code>providers/<provider_id>/notes/my-custom-tool-findings-type</code></td>    
-      </tr>
-      <tr>
-        <td><code>elements: kind</code></td>
-        <td>Options include: <code>NUMERIC</code>, <code>TIME_SERIES</code>, and <code>BREAKDOWN</code>.</td>    
-      </tr>
-      <tr>
-        <td><code>elements: text</code></td>
-        <td>The text that you want to display. If `kind` is <code>NUMERIC</code>, the maximum number of character is 60. If `kind` is <code>TIME_SERIES</code> or <code>BREAKDOWN</code>, the maximum number of character is 65.</td>    
-      </tr>
-      <tr>
-        <td><code>elements: default_time_range</code></td>
-        <td>The amount of time that you want to check. The values are set in days. Current options include: <code>1d</code>, <code>2d</code>, <code>3d</code>, and <code>4d</code>.</td>    
-      </tr>
-      <tr>
-        <td><code>elements: value_type</code></td>
-        <td><code>value_type</code> denotes the kind of element. If <code>kind</code> is <code>NUMERIC</code>, the field is <code>value_type</code> and you can have up to 4 elements per card. If <code>kind</code> is <code>TIME_SERIES</code> or <code>BREAKDOWN</code>, the field is <code>value_types</code>. The maximum number of both <code>TIME_SERIES</code> or <code>BREAKDOWN</code> is 1. If you have numeric entries only, you can have up to 4 elements per card. If you want to use a combination, you can have up to 2 numeric entries and 1 of either time series or breakdown. You can not have both time series and breakdown in the same card. If you define your value types as an array for time series, you can have up to 3 entries.</td>    
-      </tr>
-      <tr>
-        <td><code>elements: value_type: kind</code></td>
-        <td>The type of value. Options include: <code>KPI</code> and <code>FINDING_COUNT</code>.</td>    
-      </tr>
-      <tr>
-        <td><code>elements: value_type: finding_note_names</code></td>
-        <td>If <code>kind</code> is <code>FINDING_COUNT</code>, the name of the findings that you want to see in your card specified as an array.</td>    
-      </tr>
-      <tr>
-        <td><code>elements: value_type: kpi_note_name</code></td>
-        <td>If <code>kind</code> is <code>KPI</code>, the name of the KPI note that you want to see in your card.</td>    
-      </tr>
-      <tr>
-        <td><code>elements: value_type: text</code></td>
-        <td>The text of the element type. The maximum number of characters is 22.</td>    
-      </tr>
-      <tr>
-        <td>Optional: <code>order</code></td>
-        <td>The order in which the card appears on your dashboard. The order is specified in range 1 - 6. If you choose a number that already is already applied to another card, the creation fails. You receive an error message that states "Given order is already taken by other card in section." If the order provided is greater than the current number of cards plus 1, then the card creation will fail with the error "Order of the card cannot be more than existing number of cards plus one in a section." For example, if you currently have 2 cards and are creating another, you could not specify 5 in the card order because all together, you will have 3 cards total.</td>
-      </tr>
-      <tr>
-        <td><code>Optional: section</code></td>
-        <td>The section in which you want the card to display. You can have up to 3 custom sections with 6 cards in each section. If the order for the cards is not specified, they are arranged alphabetically in the assigned section. If you define the order of a few cards but not all of the cards, the cards with an order are placed in the order in which they are defined. The cards without a specified order are arranged alphabetically in the remaining slots of the {{site.data.keyword.security-advisor_short}} dashboard.</td>
-      </tr>
-    </tbody>
+    <tr>
+      <th colspan=2><img src="images/idea.png" alt="More information icon"/> Understanding a CARD's components </th>
+    </tr>
+    <tr>
+      <td><code>provider_id</code></td>
+      <td>The ID of your security tool.</td>
+    </tr>
+    <tr>
+      <td><code>id</code></td>
+      <td>An ID for the type of finding that your security tool found.</td>
+    </tr>
+    <tr>
+      <td><code>short_description</code></td>
+      <td>A description, no more than a couple words, that summarizes the finding.</td>
+    </tr>
+    <tr>
+      <td><code>long_description</code></td>
+      <td>A longer description that contains more detail about the finding.</td>
+    </tr>
+    <tr>
+      <td><code>reported_by: id</code></td>
+      <td>The ID of the security tool that reported the finding.</td>
+    </tr>
+    <tr>
+      <td><code>reported_by: title</code></td>
+      <td>The title of the security tool that reported the finding.</td>
+    </tr>
+    <tr>
+      <td><code>card: section</code></td>
+      <td>The section that the card fits into. Maximum characters: 25</td>    
+    </tr>
+    <tr>
+      <td><code>card: title</code></td>
+      <td>The title that you want your card to have. Maximum characters: 28</td>    
+    </tr>
+    <tr>
+      <td><code>card: subtitle</code></td>
+      <td>The subtitle that you want your card to have. Maximum characters: 30</td>    
+    </tr>
+    <tr>
+      <td><code>Optional: section</code></td>
+      <td>The section in which you want the card to display. You can have up to 3 custom sections with 6 cards in each section. If the order for the cards is not specified, they are arranged alphabetically in the assigned section. If you define the order of a few cards but not all of the cards, the cards with an order are placed in the order in which they are defined. The cards without a specified order are arranged alphabetically in the remaining slots of the {{site.data.keyword.security-advisor_short}} dashboard.</td>
+    </tr>
+    <tr>
+      <td>Optional: <code>order</code></td>
+      <td>The order in which the card are displayed within the specified section. The order is specified in range 1 - 6. If you choose a number that already is already applied to another card, the creation fails. You receive an error message that states "Given order is already taken by other card in section." If the order provided is greater than the current number of cards plus 1, then the card creation will fail with the error "Order of the card cannot be more than existing number of cards plus one in a section." For example, if you currently have 2 cards and are creating another, you could not specify 5 in the card order because all together, you will have 3 cards total.</td>
+    </tr>
+    <tr>
+      <td><code>card: finding_note_names</code></td>
+      <td><code>providers/<provider_id>/notes/my-custom-tool-findings-type</code></td>    
+    </tr>
+    <tr>
+      <td><code>elements: kind</code></td>
+      <td>Options include: <code>NUMERIC</code>, <code>TIME_SERIES</code>, and <code>BREAKDOWN</code>.</td>    
+    </tr>
+    <tr>
+      <td><code>elements: text</code></td>
+      <td>The text that you want to display. If `kind` is <code>NUMERIC</code>, the maximum number of character is 60. If `kind` is <code>TIME_SERIES</code> or <code>BREAKDOWN</code>, the maximum number of character is 65.</td>    
+    </tr>
+    <tr>
+      <td><code>elements: default_time_range</code></td>
+      <td>The amount of time that you want to check. The values are set in days. Current options include: <code>1d</code>, <code>2d</code>, <code>3d</code>, and <code>4d</code>.</td>    
+    </tr>
+    <tr>
+      <td><code>elements: value_type</code></td>
+      <td><code>value_type</code> denotes the kind of element. If <code>kind</code> is <code>NUMERIC</code>, the field is <code>value_type</code> and you can have up to 4 elements per card. If <code>kind</code> is <code>TIME_SERIES</code> or <code>BREAKDOWN</code>, the field is <code>value_types</code>. The maximum number of both <code>TIME_SERIES</code> or <code>BREAKDOWN</code> is 1. If you have numeric entries only, you can have up to 4 elements per card. If you want to use a combination, you can have up to 2 numeric entries and 1 of either time series or breakdown. You can not have both time series and breakdown in the same card. If you define your value types as an array for time series, you can have up to 3 entries.</td>    
+    </tr>
+    <tr>
+      <td><code>elements: value_type: kind</code></td>
+      <td>The type of value. Options include: <code>KPI</code> and <code>FINDING_COUNT</code>.</td>    
+    </tr>
+    <tr>
+      <td><code>elements: value_type: finding_note_names</code></td>
+      <td>If <code>kind</code> is <code>FINDING_COUNT</code>, the name of the findings that you want to see in your card specified as an array.</td>    
+    </tr>
+    <tr>
+      <td><code>elements: value_type: kpi_note_name</code></td>
+      <td>If <code>kind</code> is <code>KPI</code>, the name of the KPI note that you want to see in your card.</td>    
+    </tr>
+    <tr>
+      <td><code>elements: value_type: text</code></td>
+      <td>The text of the element type. The maximum number of characters is 22.</td>    
+    </tr>
   </table>
 
   Example response:
