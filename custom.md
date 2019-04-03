@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-20"
+lastupdated: "2019-04-03"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -66,8 +66,9 @@ Before you can add the integration, you must first have an account with the part
 ## Integrate third party findings
 {: #custom-integrate}
 
-The APIs follow Grafeas like artifact metadata specifications to store, query, and retrieve the critical metadata for the findings that are reported by your security tools and services.
+When you integrate a third party, you create a card on your service dashboard to track any findings. The APIs follow Grafeas like artifact metadata specifications to store, query, and retrieve the critical metadata for the findings that are reported by your security tools and services.
 {: #setup-custom-api}
+
 
 ### Before you begin
 {: #custom-before-api}
@@ -384,63 +385,77 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
   {: pre}
 
   <table>
-    <thead>
+    <tr>
       <th colspan=2><img src="images/idea.png" alt="More information icon"/> Understanding a CARD's components </th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>provider_id</code></td>
-        <td>The ID of your security tool.</td>
-      </tr>
-      <tr>
-        <td><code>id</code></td>
-        <td>An ID for the type of finding that your security tool found.</td>
-      </tr>
-      <tr>
-        <td><code>short_description</code></td>
-        <td>A description, no more than a couple words, that summarizes the finding.</td>
-      </tr>
-      <tr>
-        <td><code>long_description</code></td>
-        <td>A longer description that contains more detail about the finding.</td>
-      </tr>
-      <tr>
-        <td><code>reported_by</code><ul><li><code>id</code></li><li><code>title</code></li></ul></td>
-        <td></br><ul><li>The ID of the security tool that reported the finding.</li><li>The title of the security tool that reported the finding.</li></ul></td>
-      </tr>
-      <tr>
-        <td><code>card</code> 
-          <ul><li><code>section</code></li>
-          <li><code>title</code></li> 
-          <li><code>subtitle</code></li> 
-          <li><code>finding_note_names</code></li></ul></td>
-        <td></br>
-          <ul><li>The section that the card fits into. Maximum characters: 25</li>
-          <li>The title that you want your card to have. Maximum characters: 28</li>
-          <li>The subtitle that you want your card to have. Maximum characters: 30</li>
-          <li><code>providers/<provider_id>/notes/my-custom-tool-findings-type</code></li></ul></td>
-      </tr>
-      <tr>
-        <td><code>elements</code>
-          <ul><li><code>kind</code></li>
-          <li><code>text</code></li></br></br>
-          <li><code>default_time_range</code></li></br>
-          <li><code>value_type</code>
-            <ul></br></br></br></br></br></br></br><li><code>kind</code></li>
-            <li><code>finding_note_names</code></li></br>
-            <li><code>kpi_note_name</code></li></br>
-            <li><code>text</code></li></ul></ul></td>
-        <td></br>
-          <ul><li>Options include: <code>NUMERIC</code>, <code>TIME_SERIES</code>, and <code>BREAKDOWN</code>.</li>
-          <li>The text that you want to display. If `kind` is <code>NUMERIC</code>, the maximum number of character is 60. If `kind` is <code>TIME_SERIES</code> or <code>BREAKDOWN</code>, the maximum number of character is 65.</li>
-          <li>The amount of time that you want to check. The values are set in days. Current options include: <code>1d</code>, <code>2d</code>, <code>3d</code>, and <code>4d</code>.</li>
-          <li><code>value_type</code> denotes the kind of element. If <code>kind</code> is <code>NUMERIC</code>, the field is <code>value_type</code> and you can have up to 4 elements per card. If <code>kind</code> is <code>TIME_SERIES</code> or <code>BREAKDOWN</code>, the field is <code>value_types</code>. The maximum number of both <code>TIME_SERIES</code> or <code>BREAKDOWN</code> is 1. If you have numeric entries only, you can have up to 4 elements per card. If you want to use a combination, you can have up to 2 numeric entries and 1 of either time series or breakdown. You can not have both time series and breakdown in the same card. If you define your value types as an array for time series, you can have up to 3 entries.</li>
-            <ul><li>The type of value. Options include: <code>KPI</code> and <code>FINDING_COUNT.</code>
-            <li>If <code>kind</code> is <code>FINDING_COUNT</code>, the name of the findings that you want to see in your card specified as an array. 
-            <li>If <code>kind</code> is <code>KPI</code>, the name of the KPI note that you want to see in your card.</li>
-            <li>The text of the element type. The maximum number of characters is 22.</li></ul></ul></td>
-      </tr>
-    </tbody>
+    </tr>
+    <tr>
+      <td><code>provider_id</code></td>
+      <td>The ID of your security tool.</td>
+    </tr>
+    <tr>
+      <td><code>id</code></td>
+      <td>An ID for the type of finding that your security tool found.</td>
+    </tr>
+    <tr>
+      <td><code>short_description</code></td>
+      <td>A description, no more than a couple words, that summarizes the finding.</td>
+    </tr>
+    <tr>
+      <td><code>long_description</code></td>
+      <td>A longer description that contains more detail about the finding.</td>
+    </tr>
+    <tr>
+      <td><code>reported_by: id</code></td>
+      <td>The ID of the security tool that reported the finding.</td>
+    </tr>
+    <tr>
+      <td><code>reported_by: title</code></td>
+      <td>The title of the security tool that reported the finding.</td>
+    </tr>
+    <tr>
+      <td><code>card: title</code></td>
+      <td>The title that you want your card to have. Maximum characters: 28</td>    
+    </tr>
+    <tr>
+      <td><code>card: subtitle</code></td>
+      <td>The subtitle that you want your card to have. Maximum characters: 30</td>    
+    </tr>
+    <tr>
+      <td><code>card: finding_note_names</code></td>
+      <td><code>providers/<provider_id>/notes/my-custom-tool-findings-type</code></td>    
+    </tr>
+    <tr>
+      <td><code>elements: kind</code></td>
+      <td>Options include: <code>NUMERIC</code>, <code>TIME_SERIES</code>, and <code>BREAKDOWN</code>.</td>    
+    </tr>
+    <tr>
+      <td><code>elements: text</code></td>
+      <td>The text that you want to display. If `kind` is <code>NUMERIC</code>, the maximum number of character is 60. If `kind` is <code>TIME_SERIES</code> or <code>BREAKDOWN</code>, the maximum number of character is 65.</td>    
+    </tr>
+    <tr>
+      <td><code>elements: default_time_range</code></td>
+      <td>The amount of time that you want to check. The values are set in days. Current options include: <code>1d</code>, <code>2d</code>, <code>3d</code>, and <code>4d</code>.</td>    
+    </tr>
+    <tr>
+      <td><code>elements: value_type</code></td>
+      <td><code>value_type</code> denotes the kind of element. If <code>kind</code> is <code>NUMERIC</code>, the field is <code>value_type</code> and you can have up to 4 elements per card. If <code>kind</code> is <code>TIME_SERIES</code> or <code>BREAKDOWN</code>, the field is <code>value_types</code>. The maximum number of both <code>TIME_SERIES</code> or <code>BREAKDOWN</code> is 1. If you have numeric entries only, you can have up to 4 elements per card. If you want to use a combination, you can have up to 2 numeric entries and 1 of either time series or breakdown. You can not have both time series and breakdown in the same card. If you define your value types as an array for time series, you can have up to 3 entries.</td>    
+    </tr>
+    <tr>
+      <td><code>elements: value_type: kind</code></td>
+      <td>The type of value. Options include: <code>KPI</code> and <code>FINDING_COUNT</code>.</td>    
+    </tr>
+    <tr>
+      <td><code>elements: value_type: finding_note_names</code></td>
+      <td>If <code>kind</code> is <code>FINDING_COUNT</code>, the name of the findings that you want to see in your card specified as an array.</td>    
+    </tr>
+    <tr>
+      <td><code>elements: value_type: kpi_note_name</code></td>
+      <td>If <code>kind</code> is <code>KPI</code>, the name of the KPI note that you want to see in your card.</td>    
+    </tr>
+    <tr>
+      <td><code>elements: value_type: text</code></td>
+      <td>The text of the element type. The maximum number of characters is 22.</td>    
+    </tr>
   </table>
 
   Example response:
