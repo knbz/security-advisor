@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-04-08"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -52,7 +52,7 @@ To learn more, check out [Taking advantage of pre-integrated services](/docs/ser
 Partner integrations are a way to enhance security for your {{site.data.keyword.cloud_notm}} deployments by creating a connection between {{site.data.keyword.security-advisor_short}} and other security tools that are working with IBM to ensure a seamless user experience.
 {: shortdesc}
 
-Current {{site.data.keyword.security-advisor_short}} partners include Neuvector and Twistlock.
+Current {{site.data.keyword.security-advisor_short}} partners include NeuVector and Twistlock.
 
 Are you a partner and interested in integrating your solution with {{site.data.keyword.security-advisor_short}}? Reach out to our team by contacting Matt Ward at wardm@us.ibm.com!
 {: tip}

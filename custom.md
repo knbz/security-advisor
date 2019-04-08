@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-04-08"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -413,6 +413,10 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
       <td>The title of the security tool that reported the finding.</td>
     </tr>
     <tr>
+      <td><code>card: section</code></td>
+      <td>The section in which you want the card to display. You can have up to 3 custom sections with 6 cards in each section. Maximum characters: 25</td>
+    </tr>
+    <tr>
       <td><code>card: title</code></td>
       <td>The title that you want your card to have. Maximum characters: 28</td>    
     </tr>
@@ -442,15 +446,15 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
     </tr>
     <tr>
       <td><code>elements: value_type: kind</code></td>
-      <td>The type of value. Options include: <code>KPI</code> and <code>FINDING_COUNT</code>.</td>    
+      <td>The type of value. Options include: <code>KRI</code> and <code>FINDING_COUNT</code>.</td>    
     </tr>
     <tr>
       <td><code>elements: value_type: finding_note_names</code></td>
       <td>If <code>kind</code> is <code>FINDING_COUNT</code>, the name of the findings that you want to see in your card specified as an array.</td>    
     </tr>
     <tr>
-      <td><code>elements: value_type: kpi_note_name</code></td>
-      <td>If <code>kind</code> is <code>KPI</code>, the name of the KPI note that you want to see in your card.</td>    
+      <td><code>elements: value_type: kri_note_name</code></td>
+      <td>If <code>kind</code> is <code>KRI</code>, the name of the KRI note that you want to see in your card.</td>    
     </tr>
     <tr>
       <td><code>elements: value_type: text</code></td>
@@ -462,7 +466,7 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
   ```
   {
   "author": {
-    "account_id": "<account id",
+    "account_id": "account id",
     "email": "email id",
     "id": "user id",
     "kind": "user"
