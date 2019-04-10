@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-04-08"
+lastupdated: "2019-04-10"
 
 ---
 
@@ -10,7 +10,7 @@ lastupdated: "2019-04-08"
 
 Welcome to the docs repo for Security Advisor! Feedback and updates are always welcome.
 
-Customer-facing documentation: https://cloud.ibm.com/docs/services/certificate-manager?topic=certificate-manager-gettingstarted#gettingstarted
+Customer-facing documentation: https://cloud.ibm.com/docs/services/security-advisor?topic=security-advisor-getting-started#getting-started
 
 
 
