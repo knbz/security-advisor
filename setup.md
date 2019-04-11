@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-04-02"
+lastupdated: "2019-04-10"
 
 ---
 
@@ -38,7 +38,7 @@ Although you do not have to do anything to create the connection between {{site.
 With {{site.data.keyword.registryshort_notm}}, you have access to Vulnerability Advisor, which continuously scans the images in your {{site.data.keyword.registryshort_notm}} instance for potential security issues. If issues are found, you are alerted and can view a comprehensive report in your {{site.data.keyword.security-advisor_short}} dashboard.
 {:shortdesc}
 
-Learn more about [{{site.data.keyword.registryshort_notm}}](/docs/services/Registry?topic=registry-index#index).
+Learn more about [{{site.data.keyword.registryshort_notm}}](/docs/services/Registry?topic=registry-getting-started#getting-started).
 
 
 **Before you begin**
