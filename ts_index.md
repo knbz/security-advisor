@@ -72,3 +72,15 @@ The `kube-system` default service account does not have admin access in your clu
 {: tsResolve}
 Prior to installing one of the Built-in Insights offerings, you must install Helm. You can install Helm by using the [Kubernetes Service integration docs](/docs/containers?topic=containers-integrations#helm).
 
+## Known issue: Direct connection image doesn't update
+{: #ts-known-cant-edit}
+
+{: tsSymptoms}
+When you upload or edit an image for a direct connection it doesn't immediately display.
+
+{: tsCauses}
+There is a known issue with images displaying correctly.
+
+{: tsResolve}
+To see the updated image, refresh your browser. The new image will be displayed in the direct connection table.
+
