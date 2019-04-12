@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-08"
+lastupdated: "2019-04-12"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -414,7 +414,7 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
     </tr>
     <tr>
       <td><code>card: section</code></td>
-      <td>The section in which you want the card to display. You can have up to 3 custom sections with 6 cards in each section. Maximum characters: 25</td>
+      <td>The section in which you want the card to display. You can have up to 3 custom sections with 6 cards in each section. Maximum characters: 30</td>
     </tr>
     <tr>
       <td><code>card: title</code></td>
