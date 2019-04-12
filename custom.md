@@ -70,7 +70,7 @@ The APIs follow Grafeas like artifact metadata specifications to store, query, a
 {: shortdesc}
 
 
-### Step 1: Register a new finding type
+### Step 1: Registering a new finding type
 {: #custom-register-finding}
 
 To register a new type of findings, you can create a note. To create the note, you can use the [Findings API](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Notes/createNote). Be sure that you choose a unique provider ID to identify your custom tool. If you're automating the process by using your service ID as your provider ID.
@@ -187,7 +187,7 @@ Be sure to remember the name of the note that is returned as part of the respons
 {: tip}
 
 
-### Step 2: Posting findings to your dashboard
+### Step 2: Posting findings
 {: #custom-post-findings}
 
 Create an [occurrence](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Occurrences/createOccurrence) to post findings as KRIs or events to your security advisor dashboard.
