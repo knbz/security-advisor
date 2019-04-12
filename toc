@@ -18,6 +18,7 @@ IBM Cloud Security Advisor
     {: .topicgroup}
     Enabling integrations
         partners.md
+        direct-connect.md
         custom.md
         setup-network.md
         setup-activity.md
