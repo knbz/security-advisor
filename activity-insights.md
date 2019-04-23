@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-08"
+lastupdated: "2019-04-23"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -75,7 +75,7 @@ The Activity Insights card in the service dashboard summarizes any indication of
 
 The card introduces two Key Risk Indicators (KRIs):
 
-* Identity and Access: Findings that are related to the Identity and Access Management (IAM) or App ID services.
+* Identity and Access: Findings that are related to the Identity and Access Management (IAM) or {{site.data.keyword.appid_short_notm}}  services.
 * Data and Kubernetes: Findings that are related to Key Protect, Kubernetes Service, Cloud Object Storage, or Certificate Manager.
 
 
@@ -105,7 +105,7 @@ Example:
 
 ```
 	{
-		"comment": "Dormant Rule: Very high risk App ID activity... ",
+		"comment": "Dormant Rule: Very high risk {{site.data.keyword.appid_short_notm}}  activity... ",
 		"dormant": true,
 		"conditions": { 	… },
 		"event": { … }
