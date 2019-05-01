@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-04-12"
+lastupdated: "2019-05-01"
 
 ---
 
@@ -70,7 +70,7 @@ namespaces “security-advisor-insights” is forbidden: User “system:servicea
 The `kube-system` default service account does not have admin access in your cluster.
 
 {: tsResolve}
-Prior to installing one of the Built-in Insights offerings, you must install Helm. You can install Helm by using the [Kubernetes Service integration docs](/docs/containers?topic=containers-integrations#helm).
+Prior to installing one of the Built-in Insights offerings, you must install Helm. You can install Helm by using the [Kubernetes Service integration docs](/docs/containers?topic=containers-helm).
 
 ## Known issue: Direct connection image doesn't update
 {: #ts-known-cant-edit}
