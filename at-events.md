@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-26"
+lastupdated: "2019-05-01"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -24,23 +24,29 @@ subcollection: security-advisor
 
 
 
-# {{site.data.keyword.at_short}} events
+# {{site.data.keyword.cloudaccesstrailshort}} events
 {: #at_events}
 
-You can view, manage, and audit user-initiated activities made in your {{site.data.keyword.security-advisor_long}} service instance by using the {{site.data.keyword.at_short}} service.
+You can view, manage, and audit user-initiated activities made in your {{site.data.keyword.security-advisor_long}} service instance by using the {{site.data.keyword.cloudaccesstrailshort}} service.
 {: shortdesc}
 
-For more information about how the service works, see the [{{site.data.keyword.at_short}} docs](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-cloud_services#cloud_services).
+
+
+
+
+
+For more information about how the service works, see the [{{site.data.keyword.cloudaccesstrailshort}} docs](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started#getting-started).
+
 
 
 ## Where to view events
 {: #monitor}
 
-Events are available in the {{site.data.keyword.at_short}} **account domain** that is available in the {{site.data.keyword.cloud_notm}} region where the events are generated.
+Events are available in the {{site.data.keyword.cloudaccesstrailshort}} **account domain** that is available in the {{site.data.keyword.cloud_notm}} region where the events are generated.
 
 1. Log in to your {{site.data.keyword.cloud_notm}} account.
-2. From the catalog, provision an instance of the {{site.data.keyword.at_short}} service in the same account as your instance of {{site.data.keyword.security-advisor_short}}.
-3. On the **Manage** tab of the {{site.data.keyword.at_short}} dashboard, click the **View in Kibana**.
+2. From the catalog, provision an instance of the {{site.data.keyword.cloudaccesstrailshort}} service in the same account as your instance of {{site.data.keyword.security-advisor_short}}.
+3. On the **Manage** tab of the {{site.data.keyword.cloudaccesstrailshort}} dashboard, click the **View in Kibana**.
 4. Set the time frame that you want to view logs for. The default is 15 min.
 5. In the **Available Fields** list, click **type**. Click the magnifying glass icon for **Activity Tracker** to limit the logs to only those tracked by the service.
 6. You can use the other available fields to narrow your search.
@@ -51,7 +57,7 @@ For users other than the account owner to view logs, you must use the premium pl
 ## List of events
 {: #events}
 
-Check out the following table for a list of the events that are sent to {{site.data.keyword.at_short}}.
+Check out the following table for a list of the events that are sent to {{site.data.keyword.cloudaccesstrailshort}}.
 {: shortdesc}
 
 <table>

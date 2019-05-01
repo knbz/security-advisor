@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-19"
+lastupdated: "2019-05-01"
 
 ---
 
@@ -47,7 +47,7 @@ If you are currently using the Network Analytics feature, you must [delete the s
 - Updated cURL binary: For CentOS and Red Hat, you can update by running `yum update -y nss curl libcurl`.
 - The [{{site.data.keyword.cloud_notm}} CLI and required plug-ins](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)
 - The [Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/) v1.10.11 or higher
-- The [Kubernetes Helm (package manager)](/docs/containers?topic=containers-integrations#helm) v2.9.0 or higher.
+- The [Kubernetes Helm (package manager)](/docs/containers?topic=containers-helm) v2.9.0 or higher.
 - A standard Kubernetes cluster version v1.10.11 or higher
 
 ## Creating a COS bucket
@@ -132,7 +132,7 @@ Be sure to repeat the installation for each cluster that you want to monitor.
 
 8. Change into the `security-advisor-network-insights` folder.
 
-9. Install Helm by using the [Kubernetes Service integration docs](/docs/containers?topic=containers-integrations#helm).
+9. Install Helm by using the [Kubernetes Service integration docs](/docs/containers?topic=containers-helm).
 
 10. Optional: [Enable TLS](https://github.com/helm/helm/blob/master/docs/tiller_ssl.md). If you're using your workstation to handle the installation of analytics components in multiple clusters and TLS is enabled, be sure that the TLS configurations are current and match the current cluster where you plan to install the components.
 

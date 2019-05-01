@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-12"
+lastupdated: "2019-04-30"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -37,21 +37,21 @@ Before you integrate findings from your 3rd party tool, be sure that you have th
 
 1. Be sure that the user or service ID that you're using is assigned the **Manager** [IAM role](https://cloud.ibm.com/iam#/users).
 
-1. Log in to {{site.data.keyword.cloud_notm}}.
+2. Log in to {{site.data.keyword.cloud_notm}}.
 
   ```
   ibmcloud login
   ```
   {: codeblock}
 
-2. Get your account ID. For more information about service roles, check out the [{{site.data.keyword.security-advisor_short}} access policies](/docs/iam?topic=iam-iammanidaccser#iammanidaccser).
+3. Get your account ID. For more information about service roles, check out the [{{site.data.keyword.security-advisor_short}} access policies](/docs/iam?topic=iam-iammanidaccser#iammanidaccser).
 
   ```
   ibmcloud account list org-account ORG_NAME [--guid]
   ```
   {: codeblock}
 
-3. Get your Identity and Access Management (IAM) token. The token is used in the `--header` of each API request.
+4. Get your Identity and Access Management (IAM) token. The token is used in the `--header` of each API request.
 
   ```
   ibmcloud iam oauth-tokens
@@ -502,7 +502,6 @@ Example response:
 ```
 {: screen}
 
-4. Navigate to your service dashboard to see the card that you created.
 
 ## Example usage
 {: #custom-example}
