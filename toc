@@ -22,7 +22,7 @@ IBM Cloud Security Advisor
         custom.md
 
     {: .topicgroup}
-    Enabling insights
+    Enabling Insights
         setup-network.md
         setup-activity.md
 
