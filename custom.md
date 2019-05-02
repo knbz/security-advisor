@@ -23,17 +23,17 @@ subcollection: security-advisor
 {:download: .download}
 
 
-# Findings
+# Custom findings
 {: #setup_custom}
 
-{{site.data.keyword.security-advisor_short}} enables you to integrate your existing custom security tools, whether open source, custom developed, or 3rd party services. By integrating third-party findings you're able to bring all of your security tools and findings in to one dashboard where you can monitor ciritcal security events.
+{{site.data.keyword.security-advisor_short}} enables you to integrate your existing custom security tools, whether open source, custom developed, or third-party services. By integrating third-party findings you're able to bring all of your security tools and findings in to one dashboard where you can monitor ciritcal security events.
 {: shortdesc}
 
 
 ## Before you begin
 {: #custom-before-api}
 
-Before you integrate findings from your 3rd party tool, be sure that you have the following prerequisites.
+Before you integrate findings from your third-party tool, be sure that you have the following prerequisites.
 
 1. Be sure that the user or service ID that you're using is assigned the **Manager** [IAM role](https://cloud.ibm.com/iam#/users).
 

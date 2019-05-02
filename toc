@@ -16,7 +16,7 @@ IBM Cloud Security Advisor
     setup.md
 
     {: .topicgroup}
-    Integrating third-party
+    Integrating third-parties
         direct-connect.md
         partners.md
         custom.md
