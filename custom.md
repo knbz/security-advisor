@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-30"
+lastupdated: "2019-05-02"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -23,7 +23,7 @@ subcollection: security-advisor
 {:download: .download}
 
 
-# Third-party findings
+# Findings
 {: #setup_custom}
 
 {{site.data.keyword.security-advisor_short}} enables you to integrate your existing custom security tools, whether open source, custom developed, or 3rd party services. By integrating third-party findings you're able to bring all of your security tools and findings in to one dashboard where you can monitor ciritcal security events.

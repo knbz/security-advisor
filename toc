@@ -14,12 +14,12 @@ IBM Cloud Security Advisor
 
     {: .navgroup id="howto"}
     setup.md
-    custom.md
 
     {: .topicgroup}
-    Integrating partners
+    Integrating third-party
         direct-connect.md
         partners.md
+        custom.md
 
     {: .topicgroup}
     Enabling insights
