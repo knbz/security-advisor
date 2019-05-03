@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-01"
+lastupdated: "2019-05-02"
 
 ---
 
@@ -238,28 +238,25 @@ If you used the beta version of Network Analytics, you must uninstall the old {{
   ```
   {: pre}
 
-3. Target your CLI to the cluster.
+3. Set the context for your cluster.
 
-  ```
-  ibmcloud ks cluster-config <cluster-name-or-id>
-  ```
-  {: pre}
+  1. Get the command to set the environment variable and download the Kubernetes configuration files.
 
-4. Set the path to the local Kubernetes configuration file as an environment variable. Example:
+    ```
+    ibmcloud ks cluster-config <cluster_name_or_ID>
+    ```
+    {: pre}
 
-  ```
-  export KUBECONFIG=/Users/<user_name>/.bluemix/plugins/container-service/clusters/<cluster_name>/kube-config-prod-dal10-<cluster_name>.yml
-  ```
-  {: pre}
+  2. Copy the output beginning with `export` and paste it into your terminal to set the `KUBECONFIG` environment variable.
 
-5. Navigate to the extracted archive location and run the uninstaller script.
+4. Navigate to the extracted archive location and run the uninstaller script.
 
   ```
   ./uninstall.sh
   ```
   {: pre}
 
-6. Optional: Uninstall the Helm server component from the cluster.
+5. Optional: Uninstall the Helm server component from the cluster.
 
   ```
   helm reset

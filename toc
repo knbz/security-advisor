@@ -16,10 +16,13 @@ IBM Cloud Security Advisor
     setup.md
 
     {: .topicgroup}
-    Enabling integrations
-        partners.md
+    Integrating third-parties
         direct-connect.md
+        partners.md
         custom.md
+
+    {: .topicgroup}
+    Enabling Insights
         setup-network.md
         setup-activity.md
 
@@ -30,8 +33,8 @@ IBM Cloud Security Advisor
     [Findings API](https://cloud.ibm.com/apidocs/security-advisor)
     [Service dashboard](https://cloud.ibm.com/security-advisor/#/dashboard)
     [Blogs](https://www.ibm.com/blogs/bluemix/tag/security-advisor/)
+    [Grafeas spec](https://grafeas.io/)
     at-events.md
-    sa_rellinks.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}

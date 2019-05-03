@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-30"
+lastupdated: "2019-05-03"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -23,17 +23,17 @@ subcollection: security-advisor
 {:download: .download}
 
 
-# Third-party findings
+# Custom findings
 {: #setup_custom}
 
-{{site.data.keyword.security-advisor_short}} enables you to integrate your existing custom security tools, whether open source, custom developed, or 3rd party services. By integrating third-party findings you're able to bring all of your security tools and findings in to one dashboard where you can monitor ciritcal security events.
+{{site.data.keyword.security-advisor_short}} enables you to integrate your existing custom security tools, whether open source, custom developed, or third-party services. By integrating third-party findings you're able to bring all of your security tools and findings in to one dashboard where you can monitor ciritcal security events.
 {: shortdesc}
 
 
 ## Before you begin
 {: #custom-before-api}
 
-Before you integrate findings from your 3rd party tool, be sure that you have the following prerequisites.
+Before you integrate findings from your third-party tool, be sure that you have the following prerequisites.
 
 1. Be sure that the user or service ID that you're using is assigned the **Manager** [IAM role](https://cloud.ibm.com/iam#/users).
 
@@ -78,30 +78,7 @@ To register a new type of findings, you can create a note. To create the note, y
 Example request:
 
 ```
-curl --request POST 
---url "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account id>/providers/my-custom-tool/notes",
---header "accept: application/json",
---header "authorization: <IAM_token>",
---header "content-type: application/json",
---data "{
-  "kind": "FINDING",
-  "short_description": "My security tool finding",
-  "long_description": "Longer description of what the security tool found.",
-  "provder_id": "my-custom-tool",
-  "id": "my-custom-tool-findings-type",
-  "reported_by": {
-    "id": "my-custom-tool",
-    "title": "My custom security tool",
-  }
-  "finding": {
-    "severity": "MEDIUM",
-    "next_steps": [
-      {
-        "title": "Explain why it's reported as a risk.",
-      }
-    ]
-  }
-}
+curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>/providers/my-custom-tool/notes" -H  "accept: application/json" -H  "Authorization: <IAM_token>" -H  "Content-Type: application/json" -d "{  \"kind\": \"FINDING\",  \"short_description\": \"My security tool finding\",  \"long_description\": \"Longer description of what the security tool found.\",  \"provder_id\": \"my-custom-tool\",  \"id\": \"my-custom-tool-findings-type\",  \"reported_by\": {    \"id\": \"my-custom-tool\",    \"title\": \"My custom security tool\"  } ,  \"finding\": {    \"severity\": \"MEDIUM\",    \"next_steps\": [      {        \"title\": \"Explain why it's reported as a risk.\"      }    ]  }}"
 ```
 {: pre}
 
@@ -198,34 +175,7 @@ For each card, you can define two KRIs.
 Example request: 
 
 ```
-curl --request POST 
-  --url "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account-id>/providers/my-custom-tool/occurrences",
-  --header "accept: application/json",
-  --header "authorization: <IAM_token>",
-  --header "Replace-If-Exists: true",
-  --header "content-type: application/json",
-  --data "{
-    "note_name": "<account-id>/providers/my-custom-tool/notes/my-custom-tool-findings-type",
-    "kind": "FINDING",
-    "remediation": "Explanation of resolution steps.",	
-    "provider_id": "my-custom-tool",
-    "id":	"custom-tool-finding-1",
-    "context": {
-      "region": "location",
-      "resource_id": "pluginID",
-      "resource_name": "www.myapp.com",
-      "resource_type": "worker",
-      "service_name": "application",
-    }
-    "finding": {
-      "severity": "HIGH",
-      "next_steps": [
-        {
-          "url": "Details URL"
-        }
-      ]
-    }
-  }
+curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>/providers/my-custom-tool/occurrences"  -H  "accept: application/json" -H  "Authorization: <IAM_token>" -H  "Content-Type: application/json" -d "{    \"note_name\": \"<account id>/providers/my-custom-tool/notes/my-custom-tool-findings-type\",    \"kind\": \"FINDING\",    \"remediation\": \"How to resolve Data leakage threat\",    \"provider_id\": \"my-custom-tool\",    \"id\": \"my-custom-tool-finding-2\",    \"context\": {        \"region\": \"location\",        \"resource_id\": \"cluster crn\",        \"resource_name\": \"cloudkingdom\",        \"resource_type\": \"container\",        \"service_name\": \"kubernetes service\"    },    \"finding\": {        \"severity\": \"HIGH\",        \"next_steps\": [{            \"title\": \"Investigate which process are running in your cluster. If you suspect one of your pods was hacked, restart it, and look for image vulnerabilities\",                        \"url\":\"https://cloud.ibm.com/containers-kubernetes/clusters\"        }],                \"short_description\": \"One of the pods in your cluster appears to be leaking an excessive amount of data\",                \"long_description\": \"One of the pods in your cluster is approaching external servers and sending them data in volumes that exceed that pod's normal behavior\"    }}"
 ```
 {: pre}
 
@@ -323,44 +273,7 @@ Define the way in which you want your card to display your findings in your dash
 Example request:
 
 ```
-curl --request POST 
-  --url "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account id>/providers/my-custom-tool/notes"  \
-  --header "accept: application/json" \
-  --header "content-type: application/json" \
-  --header "authorization: <IAM_token>" \
-  --data "{
-    "kind": "CARD",    
-    "provider_id": "my-custom-tool",
-    "id": "custom-tool-card",
-    "short_description": "Security risk found by my custom tool",    
-    "long_description": "More detailed description about why this security risk needs to be fixed",
-    "reported_by": {
-      "id": "my-custom-tool",
-      "title": "My security tool"
-    },    
-    "card": {
-      "section": "My security tools",
-      "order": "1"
-      "title": "My security tool findings",
-      "subtitle": "My security tool",
-      "finding_note_names": [
-        "providers/my-custom-tool/notes/my-custom-tool-findings-type"
-      ],
-      "elements": [
-        {
-          "kind": "NUMERIC",
-          "text": "Count of findings reported by my security tool",
-          "default_time_range": "1d",
-          "value_type": {
-            "kind": "FINDING_COUNT",
-            "finding_note_names": [
-              "providers/my-custom-tool/notes/my-custom-tool-findings-type"
-            ]
-          }
-        }
-      ]
-    }
-  }
+curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>/providers/my-custom-tool/notes" -H  "accept: application/json" -H  "Authorization: <IAM_token>" -H  "Content-Type: application/json" -d "{    \"kind\": \"CARD\",        \"provider_id\": \"my-custom-tool\",    \"id\": \"custom-tool-card\",    \"short_description\": \"Security risk found by my custom tool\",        \"long_description\": \"More detailed description about why this security risk needs to be fixed\",    \"reported_by\": {      \"id\": \"my-custom-tool\",      \"title\": \"My security tool\"    },        \"card\": {      \"section\": \"My security tools\",      \"order\": 1 ,     \"title\": \"My security tool findings\",      \"subtitle\": \"My security tool\",      \"finding_note_names\": [        \"providers/my-custom-tool/notes/my-custom-tool-findings-type\"      ],      \"elements\": [        {          \"kind\": \"NUMERIC\",          \"text\": \"Count of findings reported by my security tool\",          \"default_time_range\": \"1d\",          \"value_type\": {            \"kind\": \"FINDING_COUNT\",            \"finding_note_names\": [              \"providers/my-custom-tool/notes/my-custom-tool-findings-type\"            ]          }        }      ]    }  }"
 ```
 {: pre}
 

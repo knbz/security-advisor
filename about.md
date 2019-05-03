@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-19"
+lastupdated: "2019-05-02"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -92,7 +92,7 @@ The described roles might be performed by a single person or multiple people - d
 Out of the box, the service comes with pre-integrated findings that are flagged by the API.
 {: shortdesc}
 
-The {{site.data.keyword.security-advisor_short}} findings API follows <a href="http://grafeas.ng.bluemix.net/ui/" target="_blank">Grafeas <img src="../../icons/launch-glyph.svg" alt="External link icon"></a> artifact metadata API specification to store, query, and retrieve critical metadata. The findings are reported by security services and tools.
+The {{site.data.keyword.security-advisor_short}} findings API follows <a href="https://grafeas.io/" target="_blank">Grafeas <img src="../../icons/launch-glyph.svg" alt="External link icon"></a> artifact metadata API specification to store, query, and retrieve critical metadata. The findings are reported by security services and tools.
 
 {{site.data.keyword.security-advisor_short}} is enabled by default for all {{site.data.keyword.cloud_notm}} accounts. As such, you do not need to provision any instance of the service. An instance of {{site.data.keyword.security-advisor_short}} is automatically created on either the initial access of the dashboard or when an initial finding is reported. The service allows 18,000 findings, approximately 200 per day, for each account, in a 90-day period. At the end of the 90 days, the finds are purged. Finding limits are monitored and should the account reach the limit before 90 days, the total findings are reduced to 50% in a FIFO (First in, First Out) model. When the service receives an account delete notification all of the findings related to that account are  purged. You can retrieve all of the findings for your account by using the API and store them yourself for any future use or audit purpose.
 

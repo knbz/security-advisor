@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-04-10"
+lastupdated: "2019-05-02"
 
 ---
 
@@ -48,7 +48,7 @@ Before you can get started with registry, be sure that you have the following CL
 * The Container Registry plug-in.
 
   ```
-  ibmcloud plugin install container-registry -r Bluemix
+  ibmcloud plugin install container-registry
   ```
   {: pre}
 
@@ -79,14 +79,14 @@ Before you can get started with registry, be sure that you have the following CL
 3. Tag an image.
 
   ```
-  docker tag <image>:<tag> registry.ng.bluemix.net/<namespace>/<image>:<tag>
+  docker tag <image>:<tag> <region>.icr.io/<namespace>/<image>:<tag>
   ```
   {: pre}
 
 5. Push the image.
 
   ```
-  docker push registry.ng.bluemix.net/<namespace>/<image>:<tag>
+  docker push <region>.icr.io/<namespace>/<image>:<tag>
   ```
   {: pre}
 
