@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-05-02"
+lastupdated: "2019-05-13"
 
 ---
 
@@ -50,7 +50,7 @@ Before you can get started with registry, be sure that you have the following CL
   ```
   ibmcloud plugin install container-registry
   ```
-  {: pre}
+  {: codeblock}
 
 
 **Creating a namespace**
@@ -60,35 +60,35 @@ Before you can get started with registry, be sure that you have the following CL
   ```
   ibmcloud login --sso
   ```
-  {: pre}
+  {: codeblock}
 
 2. Log in to {{site.data.keyword.registryshort_notm}}.
 
   ```
   ibmcloud cr login
   ```
-  {: pre}
+  {: codeblock}
 
 3. Optional: Create a namespace. You can always use an existing one.
 
   ```
   ibmcloud cr namespace-add
   ```
-  {: pre}
+  {: codeblock}
 
 3. Tag an image.
 
   ```
   docker tag <image>:<tag> <region>.icr.io/<namespace>/<image>:<tag>
   ```
-  {: pre}
+  {: codeblock}
 
 5. Push the image.
 
   ```
   docker push <region>.icr.io/<namespace>/<image>:<tag>
   ```
-  {: pre}
+  {: codeblock}
 
 
 After you push images to your {{site.data.keyword.registryshort_notm}} namespace, information about any vulnerabilities found is shown in the **Images with Vulnerabilities** card in the service dashboard. You can also drill down into specific images to find out more information, such as a description of all of the identified vulnerabilities and configuration issues.
@@ -114,7 +114,7 @@ To create a self signed certificate that expires in a day, you can run the follo
 ```
 openssl req -x509 -newkey rsa:2048 -keyout key.pem -subj "/CN=myservice.com" -out server.pem -days 1 -nodes
 ```
-{: pre}
+{: codeblock}
 
 
 **Uploading a certificate**

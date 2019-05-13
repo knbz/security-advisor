@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-02"
+lastupdated: "2019-05-13"
 
 ---
 
@@ -77,7 +77,7 @@ Be sure to repeat the installation for each cluster that you want to monitor.
   ```
   ibmcloud login -a cloud.ibm.com -r <region>
   ```
-  {: pre}
+  {: codeblock}
 
   <table>
     <tr>
@@ -101,7 +101,7 @@ Be sure to repeat the installation for each cluster that you want to monitor.
     ```
     ibmcloud ks cluster-config <cluster_name_or_ID>
     ```
-    {: pre}
+    {: codeblock}
 
   2. Copy the output beginning with `export` and paste it into your terminal to set the `KUBECONFIG` environment variable.
 
@@ -110,14 +110,14 @@ Be sure to repeat the installation for each cluster that you want to monitor.
   ```
   kube_version=$(kubectl version --output json) echo $(echo $kube_version | yq r - serverVersion.major).$(echo $kube_version | yq r - serverVersion.minor)
   ```
-  {: pre}
+  {: codeblock}
 
 4. Clone the following repository to your local system
 
   ```
   git clone https://github.com/ibm-cloud-security/security-advisor-network-insights.git
   ```
-  {: pre}
+  {: codeblock}
 
 5. Change into the `security-advisor-network-insights` folder.
 
@@ -128,7 +128,7 @@ Be sure to repeat the installation for each cluster that you want to monitor.
   ```
   tar -xvf security-advisor-network-insights.tar
   ```
-  {: pre}
+  {: codeblock}
 
 8. Change into the `security-advisor-network-insights` folder.
 
@@ -141,7 +141,7 @@ Be sure to repeat the installation for each cluster that you want to monitor.
   ```
   ./network-insight-install.sh <cos_region> <cos_api_key>
   ```
-  {: pre}
+  {: codeblock}
 
   <table>
     <tr>
@@ -173,7 +173,7 @@ If you no longer have a need to use Network Insights, you can delete the service
   ```
   ibmcloud login -a cloud.ibm.com -r <region>
   ```
-  {: pre}
+  {: codeblock}
 
   <table>
     <tr>
@@ -197,7 +197,7 @@ If you no longer have a need to use Network Insights, you can delete the service
     ```
     ibmcloud ks cluster-config <cluster_name_or_ID>
     ```
-    {: pre}
+    {: codeblock}
 
   2. Copy the output beginning with `export` and paste it into your terminal to set the `KUBECONFIG` environment variable.
 
@@ -206,14 +206,14 @@ If you no longer have a need to use Network Insights, you can delete the service
   ```
   helm del --purge network-insights [--tls]
   ```
-  {: pre}
+  {: codeblock}
 
 4. Delete the Kubernetes secrets.
 
   ```
   kubectl delete ns security-advisor-insights
   ```
-  {: pre}
+  {: codeblock}
 
 Be sure to delete the process for each cluster that you want to remove the agents from.
 {: tip}
@@ -229,14 +229,14 @@ If you used the beta version of Network Analytics, you must uninstall the old {{
   ```
   ibmcloud login -a https://api.us-south.ibm.cloud.com --sso
   ```
-  {: pre}
+  {: codeblock}
 
 2. List all of the clusters in your account to get the name of the cluster.
 
   ```
   ibmcloud ks clusters
   ```
-  {: pre}
+  {: codeblock}
 
 3. Set the context for your cluster.
 
@@ -245,7 +245,7 @@ If you used the beta version of Network Analytics, you must uninstall the old {{
     ```
     ibmcloud ks cluster-config <cluster_name_or_ID>
     ```
-    {: pre}
+    {: codeblock}
 
   2. Copy the output beginning with `export` and paste it into your terminal to set the `KUBECONFIG` environment variable.
 
@@ -254,11 +254,11 @@ If you used the beta version of Network Analytics, you must uninstall the old {{
   ```
   ./uninstall.sh
   ```
-  {: pre}
+  {: codeblock}
 
 5. Optional: Uninstall the Helm server component from the cluster.
 
   ```
   helm reset
   ```
-  {: pre}
+  {: codeblock}
