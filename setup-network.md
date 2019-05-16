@@ -112,19 +112,20 @@ Be sure to repeat the installation for each cluster that you want to monitor.
   ```
   {: codeblock}
 
-4. Clone the following repository to your local system.
-
-  If your Kubernetes Service is version 1.11 or later run the following command.
+4. Ensure that your Kubernetes Service is version 1.11 or later and then clone the following repository to your local system.
 
   ```
   git clone https://github.com/ibm-cloud-security/security-advisor-network-insights.git
   ```
   {: codeblock}
 
+  Kubernetes Service version 1.10 is deprecated and is not supported. If you already have v1.10+ installed, fix the vulnerabilities in the existing image or update to image version 0.0.2. To restart the analyzer pods after updgrading, you can run the following Helm command: `helm upgrade --recreate-pods network-insights`.
+  {: deprecated}
+
 
 5. Change into the `security-advisor-network-insights` folder.
 
-6. If your version of Kubernetes Service is 1.10, then change in to the `v1.10` directory. If your version is greater than 1.10, then, change into the `v1.10+` directory.
+6. Change into the `v1.10+` directory.
 
 7. Extract the `.tar` file by running the following command.
 
