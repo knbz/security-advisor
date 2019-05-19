@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-16"
+lastupdated: "2019-05-19"
 
 ---
 
@@ -119,9 +119,8 @@ Be sure to repeat the installation for each cluster that you want to monitor.
   ```
   {: codeblock}
 
-  Kubernetes Service version 1.10 is deprecated and is not supported. If you already have v1.10+ installed, fix the vulnerabilities in the existing image or update to image version 0.0.2. To restart the analyzer pods after updgrading, you can run the following Helm command: `helm upgrade --recreate-pods network-insights`.
+  Kubernetes Service version 1.10 is deprecated and is not supported. If you already have v1.10+ installed, fix the vulnerabilities in the existing image by restarting the analyzer pods by running the following Helm command: `helm upgrade --recreate-pods network-insights`.
   {: deprecated}
-
 
 5. Change into the `security-advisor-network-insights` folder.
 
