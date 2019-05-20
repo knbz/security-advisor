@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-13"
+lastupdated: "2019-05-20"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -26,7 +26,7 @@ subcollection: security-advisor
 # Custom findings
 {: #setup_custom}
 
-{{site.data.keyword.security-advisor_short}} enables you to integrate your existing custom security tools, whether open source, custom developed, or third-party services. By integrating third-party findings you're able to bring all of your security tools and findings in to one dashboard where you can monitor ciritcal security events.
+With {{site.data.keyword.security-advisor_short}}, you can integrate your existing custom security tools, whether open source, custom developed, or third-party services. By integrating third-party findings, you're able to bring all of your security tools and findings in to one dashboard where you can monitor critical security events.
 {: shortdesc}
 
 
@@ -84,7 +84,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 
 <table>
   <thead>
-    <th colspan=2><img src="images/idea.png" alt="More information icon"/> Understanding this commands components </th>
+    <th colspan=2><img src="images/idea.png" alt="More information icon"/> Understanding the command components </th>
   </thead>
   <tbody>
     <tr>
@@ -181,7 +181,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 
 <table>
   <thead>
-    <th colspan=2><img src="images/idea.png" alt="More information icon"/> Understanding this commands components </th>
+    <th colspan=2><img src="images/idea.png" alt="More information icon"/> Understanding the command components </th>
   </thead>
   <tbody>
     <tr>
@@ -267,7 +267,7 @@ Example response:
 ### Step 3: Defining the card to display
 {: #custom-define-card}
 
-Define the way in which you want your card to display your findings in your dashboard by creating a [note](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Notes/createNote).
+Define how you want your card to display your findings in your dashboard by creating a [note](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Notes/createNote).
 
 
 Example request:
@@ -279,7 +279,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 
 <table>
   <tr>
-    <th colspan=2><img src="images/idea.png" alt="More information icon"/> Understanding a CARD's components </th>
+    <th colspan=2><img src="images/idea.png" alt="More information icon"/> Understanding the command components </th>
   </tr>
   <tr>
     <td><code>provider_id</code></td>
@@ -291,7 +291,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
   </tr>
   <tr>
     <td><code>short_description</code></td>
-    <td>A description, no more than a couple words, that summarizes the finding.</td>
+    <td>A description, no more than a couple of words, that summarizes the finding.</td>
   </tr>
   <tr>
     <td><code>long_description</code></td>
@@ -311,15 +311,15 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
   </tr>
   <tr>
     <td>Optional: <code>card: order</code></td>
-    <td>The order in which the card are displayed within the specified section. The order is specified in range 1 - 6. If you choose a number that already is already applied to another card, the creation fails. You receive an error message that states "Given order is already taken by other card in section." If the order provided is greater than the current number of cards plus 1, then the card creation will fail with the error "Order of the card cannot be more than existing number of cards plus one in a section." For example, if you currently have 2 cards and are creating another, you could not specify 5 in the card order because all together, you will have 3 cards total. If the order for the cards is not specified, they are arranged alphabetically in the assigned section.</td>
+    <td>The order in which the card is displayed within the specified section. The order is specified in range <code>1 - 6</code>. If you choose a number that already is already applied to another card, the creation fails. You receive an error message that states "Given order is already taken by other card in section." If the order provided is greater than the current number of cards plus 1, then the card creation will fail with the error "Order of the card cannot be more than existing number of cards plus one in a section." For example, if you currently have two cards and are creating another, you could not specify <code>5</code> in the card order because all together, you will have three cards total. If the order for the cards is not specified, they are arranged alphabetically in the assigned section.</td>
   </tr>
   <tr>
     <td><code>card: title</code></td>
-    <td>The title that you want your card to have. Maximum characters: 28</td>    
+    <td>The title that you want your card to have. Maximum characters: <code>28</code></td>    
   </tr>
   <tr>
     <td><code>card: subtitle</code></td>
-    <td>The subtitle that you want your card to have. Maximum characters: 30</td>    
+    <td>The subtitle that you want your card to have. Maximum characters: <code>30</code></td>    
   </tr>
   <tr>
     <td><code>card: finding_note_names</code></td>
@@ -331,7 +331,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
   </tr>
   <tr>
     <td><code>elements: text</code></td>
-    <td>The text that you want to display. If `kind` is <code>NUMERIC</code>, the maximum number of character is 60. If `kind` is <code>TIME_SERIES</code> or <code>BREAKDOWN</code>, the maximum number of character is 65.</td>    
+    <td>The text that you want to display. If `kind` is <code>NUMERIC</code>, the maximum number of characters is 60. If `kind` is <code>TIME_SERIES</code> or <code>BREAKDOWN</code>, the maximum number of characters is <code>65</code>.</td>    
   </tr>
   <tr>
     <td><code>elements: default_time_range</code></td>
@@ -339,7 +339,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
   </tr>
   <tr>
     <td><code>elements: value_type</code></td>
-    <td><code>value_type</code> denotes the kind of element. If <code>kind</code> is <code>NUMERIC</code>, the field is <code>value_type</code> and you can have up to 4 elements per card. If <code>kind</code> is <code>TIME_SERIES</code> or <code>BREAKDOWN</code>, the field is <code>value_types</code>. The maximum number of both <code>TIME_SERIES</code> or <code>BREAKDOWN</code> is 1. If you have numeric entries only, you can have up to 4 elements per card. If you want to use a combination, you can have up to 2 numeric entries and 1 of either time series or breakdown. You can not have both time series and breakdown in the same card. If you define your value types as an array for time series, you can have up to 3 entries.</td>    
+    <td><code>value_type</code> denotes the kind of element. If <code>kind</code> is <code>NUMERIC</code>, the field is <code>value_type</code> and you can have up to 4 elements per card. If <code>kind</code> is <code>TIME_SERIES</code> or <code>BREAKDOWN</code>, the field is <code>value_types</code>. The maximum number of both <code>TIME_SERIES</code> or <code>BREAKDOWN</code> is <code>1</code>. If you have numeric entries only, you can have up to four elements per card. If you want to use a combination, you can have up to two numeric entries and one of either time series or breakdown. You cannot have both time series and breakdown in the same card. If you define your value types as an array for time series, you can have up to three entries.</td>    
   </tr>
   <tr>
     <td><code>elements: value_type: kind</code></td>
@@ -347,7 +347,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
   </tr>
   <tr>
     <td><code>elements: value_type: finding_note_names</code></td>
-    <td>If <code>kind</code> is <code>FINDING_COUNT</code>, the name of the findings that you want to see in your card specified as an array.</td>    
+    <td>If <code>kind</code> is <code>FINDING_COUNT</code>, the name of the findings that you want to see in your card, specified as an array.</td>    
   </tr>
   <tr>
     <td><code>elements: value_type: kri_note_name</code></td>
