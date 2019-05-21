@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-02"
+lastupdated: "2019-05-20"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -129,4 +129,4 @@ Learn about different concepts that you might use while you work with {{site.dat
 {{site.data.keyword.security-advisor_short}} is a highly available, multi-region service.
 {: shortdesc}
 
-{{site.data.keyword.security-advisor_short}} is currently supported in both the Dallas and London regions. In each supported region, the service runs in several <a href="https://www.ibm.com/blogs/bluemix/2018/06/improving-app-availability-multizone-clusters/" target="_blank">availability zones <img src="../../icons/launch-glyph.svg" alt="External link icon"></a>. {{site.data.keyword.security-advisor_short}} has regional disaster recovery in place. The service maintains a back up database that can be quickly restored within three hours. All of the service data, except for the previous twenty-four hours, is provided.
+{{site.data.keyword.security-advisor_short}} is currently supported in both the Dallas and London regions. In each supported region, the service runs in several <a href="https://www.ibm.com/cloud/blog/announcements/improving-app-availability-multizone-clusters" target="_blank">availability zones <img src="../../icons/launch-glyph.svg" alt="External link icon"></a>. {{site.data.keyword.security-advisor_short}} has regional disaster recovery in place. The service maintains a back up database that can be quickly restored within three hours. All of the service data, except for the previous twenty-four hours, is provided.

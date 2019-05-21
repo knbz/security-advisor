@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-19"
+lastupdated: "2019-05-20"
 
 ---
 
@@ -63,6 +63,7 @@ By using the {{site.data.keyword.security-advisor_short}} GUI, you can create a 
 
 If you have an existing instance of COS and bucket, be sure that it uses the naming convention: `sa.<account_id>.telemetric.<cos_region>`. To allow the service to read the data that is stored in your COS instance, set up [service-to-service authorization](/docs/iam?topic=iam-serviceauth#serviceauth) by using {{site.data.keyword.cloud_notm}} IAM. Set `source` to `{{site.data.keyword.security-advisor_short}}` and `target` to your COS instance. Assign the `Reader` IAM role.
 
+
 ## Installing {{site.data.keyword.security-advisor_short}} components
 {: #network-install-components}
 
@@ -111,6 +112,36 @@ Be sure to repeat the installation for each cluster that you want to monitor.
   kube_version=$(kubectl version --output json) echo $(echo $kube_version | yq r - serverVersion.major).$(echo $kube_version | yq r - serverVersion.minor)
   ```
   {: codeblock}
+
+3. If you're using Kubernetes Service v1.12.x, install Helm by using the following commands. If not, checkout the Kubernetes documentation to see which installation steps that you should take to [set up Helm in a cluster with public access](/docs/containers?topic=containers-helm#public_helm_install).
+
+  1. Delete any existing deployments.
+
+    ```
+    kubectl delete deployment tiller-deploy -n kube-system
+    ```
+    {: codeblock}
+
+  2. Apply the Tiller RBAC policies to your deployment.
+
+    ```
+    kubectl apply -f https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/rbac/serviceaccount-tiller.yaml
+    ```
+    {: codeblock}
+  
+  3. Initialize Helm in your cluster and install Tiller in your cluster.
+
+    ```
+    helm init --service-account tiller
+    ```
+    {: codeblock}
+
+  4. Check if your installation is successful by verifying that the status of the `tiller-deploy` pod is `running`.
+
+    ```
+    kubectl get pods -n kube-system -l app=helm
+    ```
+    {: codeblock}
 
 4. Ensure that your Kubernetes Service is version 1.11 or later and then clone the following repository to your local system.
 
