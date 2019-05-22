@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-15"
+lastupdated: "2019-05-22"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -26,7 +26,7 @@ subcollection: security-advisor
 # Partners
 {: #setup-partner}
 
-IBM Business Partner integrations are a way to bring critical alerts and findings from third party providers into the {{site.data.keyword.security-advisor_long}} dashboard. These partners are working with IBM to help shape, simplify, and guide the integration experience for you.
+IBM Business Partner integrations are a way to bring critical alerts and findings from third party providers into the {{site.data.keyword.security-advisor_long}} dashboard. These partners are working with IBM to help create, simplify, and guide the integration experience for you.
 {: shortdesc}
 
 ## Before you begin

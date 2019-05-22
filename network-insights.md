@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-26"
+lastupdated: "2019-05-22"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -66,10 +66,10 @@ The following information is collected:
 * A set of protocol-specific parameters
 * Various time stamps.
 
-**The actual data that is exchanged is not collected.**
+The actual data that is exchanged is not collected.
+{: tip}
 
 From a security point of view, it's a good idea to purge your collected data when legal or company requirements allow for it to be deleted. For more information, check out [Deleting Objects](/docs/services/cloud-object-storage/info?topic=cloud-object-storage-security#deletion).
-{: tip}
 
 
 ## Network: Suspicious inbound traffic
@@ -136,7 +136,7 @@ A finding might include:
 * Containers that send out or consume significantly more data than normal to or from specific peers.
 * The level of surveying of a particular container has significantly increased.
 
- After the model is developed, deviations from the learned model are detected, and when an alarming change is exhibited, Network Insights posts a finding to the Security Advisor dashboard. Findings are summarized in the 'Network: Anomalies in Traffic' card. The card introduces two Key Risk Indicators (KRIs). The 'Higher than normal reconnaissance or data exchange activity' KRI counts findings that are related to abnormal interactions detected between the cluster and external peers. The 'Outbound approach to a new server' KRI counts findings that are related to new detected servers approaches by the cluster.  
+After the model is developed, deviations from the learned model are detected, and when an alarming change is exhibited, Network Insights posts a finding to the Security Advisor dashboard. Findings are summarized in the 'Network: Anomalies in Traffic' card. The card introduces two Key Risk Indicators (KRIs). The 'Higher than normal reconnaissance or data exchange activity' KRI counts findings that are related to abnormal interactions detected between the cluster and external peers. The 'Outbound approach to a new server' KRI counts findings that are related to new detected servers approaches by the cluster.  
 
 ## Next steps
 {: #network-next}

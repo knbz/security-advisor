@@ -100,7 +100,7 @@ When a notification is sent, you can use a public key to decrypt and verify the 
 
 ### Deleting a notification channel
 
-Note: Want to take a break from receiving notifications but don't want to delete your configuration? No problem, disable your channel configuration instead. When you're ready to use it again, go ahead and switch to enabled to pick up where you left off.
+Note: Want to take a break from receiving notifications but don't want to delete your configuration? No problem, disable your channel configuration instead. Then, when you're ready to use the configuration again, you can just flip the switch to enabled and you're ready to go!
 
 -	Delete any notification channel/channels.
 -	Can enable/disable the notification channels.

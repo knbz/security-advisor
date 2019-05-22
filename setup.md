@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-05-13"
+lastupdated: "2019-05-22"
 
 ---
 
@@ -41,7 +41,8 @@ With {{site.data.keyword.registryshort_notm}}, you have access to Vulnerability 
 Learn more about [{{site.data.keyword.registryshort_notm}}](/docs/services/Registry?topic=registry-getting-started#getting-started).
 
 
-**Before you begin**
+### Before you begin
+{: #setup-before}
 
 Before you can get started with registry, be sure that you have the following CLIs and plug-ins installed:
 * [The {{site.data.keyword.cloud_notm}} CLI)](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)
@@ -53,7 +54,8 @@ Before you can get started with registry, be sure that you have the following CL
   {: codeblock}
 
 
-**Creating a namespace**
+### Creating a namespace
+{: #setup-create-namespace}
 
 1. Log in to your account by using the CLI.
 
@@ -107,7 +109,8 @@ To trigger a manual update, you might try uploading a certificate that expires i
 You can learn more about [{{site.data.keyword.cloudcerts_long_notm}}](/docs/services/certificate-manager?topic=certificate-manager-getting-started#getting-started) by reading the docs.
 {: tip}
 
-**Creating a certificate**
+### Creating a certificate
+{: #setup-create-cert}
 
 To create a self signed certificate that expires in a day, you can run the following OpenSSL command in your terminal.
 
@@ -117,7 +120,8 @@ openssl req -x509 -newkey rsa:2048 -keyout key.pem -subj "/CN=myservice.com" -ou
 {: codeblock}
 
 
-**Uploading a certificate**
+### Uploading a certificate
+{: #setup-upload-cert}
 
 1. In the {{site.data.keyword.cloud_notm}} catalog, search for "{{site.data.keyword.cloudcerts_short}}".
 2. Give your service instance a name, or use the preset name.
