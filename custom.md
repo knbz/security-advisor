@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-20"
+lastupdated: "2019-05-22"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -83,39 +83,37 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 {: codeblock}
 
 <table>
-  <thead>
+  <tr>
     <th colspan=2><img src="images/idea.png" alt="More information icon"/> Understanding the command components </th>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>note_name</code></td>
-      <td><code>&lt;account id&gt;/providers/my-custom-tool/notes/my-custom-tool-findings-type</code></td>
-    </tr>
-    <tr>
-      <td><code>kind</code></td>
-      <td><code>FINDING</code></td>
-    </tr>
-    <tr>
-      <td><code>remediation</code></td>
-      <td>The steps that need to be taken to resolve the issue.</td>
-    </tr>
-    <tr>
-      <td><code>provider_id</code></td>
-      <td>Your custom security tool.</td>
-    </tr>
-    <tr>
-      <td><code>id</code></td>
-      <td>An ID for the type of finding that your security tool found.</td>
-    </tr>
-    <tr>
-      <td><code>context</code><ul><li><code>region</code></li><li><code>resource_id</code></li> <li><code>resource_name</code></li> <li><code>resource_type</code></li> <li><code>service_name</code></li></ul></td>
-      <td></br><ul><li><code>The location in which the finding occurred</code></li><li><code>The ID for the specific resource.</code></li> <li><code>The name of the resource.</code></li> <li><code>The type of resource.</code></li> <li><code>The name of the service.</code></li></ul></td>
-    </tr>
-    <tr>
-      <td><code>finding</code> <ul><li><code>severity</code></li> <li><code>next_steps</code></li> <li><code>url</code></li></ul></td>
-      <td></br><ul><li>The level of urgency that the finding presents.</li> <li>The steps that can be taken to remediate the issue.</li> <li>A URL where the details of the finding can be found.</li></ul></td>
-    </tr>
-  </tbody>
+  </tr>
+  <tr>
+    <td><code>note_name</code></td>
+    <td><code>&lt;account id&gt;/providers/my-custom-tool/notes/my-custom-tool-findings-type</code></td>
+  </tr>
+  <tr>
+    <td><code>kind</code></td>
+    <td><code>FINDING</code></td>
+  </tr>
+  <tr>
+    <td><code>remediation</code></td>
+    <td>The steps that need to be taken to resolve the issue.</td>
+  </tr>
+  <tr>
+    <td><code>provider_id</code></td>
+    <td>Your custom security tool.</td>
+  </tr>
+  <tr>
+    <td><code>id</code></td>
+    <td>An ID for the type of finding that your security tool found.</td>
+  </tr>
+  <tr>
+    <td><code>context</code><ul><li><code>region</code></li><li><code>resource_id</code></li> <li><code>resource_name</code></li> <li><code>resource_type</code></li> <li><code>service_name</code></li></ul></td>
+    <td></br><ul><li><code>The location in which the finding occurred</code></li><li><code>The ID for the specific resource.</code></li> <li><code>The name of the resource.</code></li> <li><code>The type of resource.</code></li> <li><code>The name of the service.</code></li></ul></td>
+  </tr>
+  <tr>
+    <td><code>finding</code> <ul><li><code>severity</code></li> <li><code>next_steps</code></li> <li><code>url</code></li></ul></td>
+    <td></br><ul><li>The level of urgency that the finding presents.</li> <li>The steps that can be taken to remediate the issue.</li> <li>A URL where the details of the finding can be found.</li></ul></td>
+  </tr>
 </table>
 
 Example response:
@@ -277,9 +275,9 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 {: codeblock}
 
 <table>
-  <thead>
+  <tr>
     <th colspan=2><img src="images/idea.png" alt="More information icon"/> Understanding the command components </th>
-  </thead>
+  </tr>
   <tr>
     <td><code>provider_id</code></td>
     <td>The ID of your security tool.</td>
