@@ -4,13 +4,12 @@ copyright:
   years: 2017, 2019
 lastupdated: "2019-06-05"
 
-keywords: centralized security, security management, alerts, security risk, insights, threat detection
+keywords: Centralized security, security management, alerts, security risk, insights, threat detection
 
 subcollection: security-advisor
 
 ---
 
-{:new_window: target="_blank"}
 {:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -27,7 +26,7 @@ subcollection: security-advisor
 # Direct connections
 {: #setup-custom-gui}
 
-{{site.data.keyword.security-advisor_short}} enables you to integrate your existing custom security tools, whether open source, custom developed, or 3rd party services. You can create a direct connection from {{site.data.keyword.security-advisor_short}} to the other tool by adding the URL to your list of integrations. By creating the link, you can easily keep track of all of the tools that you use.
+With {{site.data.keyword.security-advisor_short}}, you can integrate your existing custom security tools, whether open source, custom developed, or third party services. You can create a direct connection from {{site.data.keyword.security-advisor_short}} to the other tool by adding the URL to your list of integrations. By creating the link, you can easily monitor all of the tools that you use.
 {: shortdesc}
 
 
