@@ -4,13 +4,12 @@ copyright:
   years: 2017, 2019
 lastupdated: "2019-06-05"
 
-keywords: centralized security, security management, alerts, security risk, insights, threat detection
+keywords: Centralized security, security management, alerts, security risk, insights, threat detection
 
 subcollection: security-advisor
 
 ---
 
-{:new_window: target="_blank"}
 {:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -303,11 +302,11 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
   </tr>
   <tr>
     <td><code>card: section</code></td>
-    <td>The section in which you want the card to display. You can have up to 3 custom sections with 6 cards in each section. Maximum characters: 30</td>
+    <td>The section in which you want the card to display. You can have up to three custom sections with six cards in each section. Maximum characters: 30</td>
   </tr>
   <tr>
     <td>Optional: <code>card: order</code></td>
-    <td>The order in which the card is displayed within the specified section. The order is specified in range <code>1 - 6</code>. If you choose a number that already is already applied to another card, the creation fails. You receive an error message that states "Given order is already taken by other card in section." If the order provided is greater than the current number of cards plus 1, then card creation fails. For example, if you currently have two cards and are creating another, you could not specify <code>5</code> in the card order because all together, you will have three cards total. If the order for the cards is not specified, they are arranged alphabetically in the assigned section.</td>
+    <td>The order in which the card is displayed within the specified section. The order is specified in range <code>1 - 6</code>. If you choose a number that is already applied to another card, the creation fails. You receive an error message that states "Given order is already taken by other card in section." If the order provided is greater than the current number of cards plus 1, then card creation fails. For example, if you currently have two cards and are creating another, you could not specify <code>5</code> in the card order because all together, you have three cards total. If the order for the cards is not specified, they are arranged alphabetically in the assigned section.</td>
   </tr>
   <tr>
     <td><code>card: title</code></td>
@@ -335,7 +334,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
   </tr>
   <tr>
     <td><code>elements: value_type</code></td>
-    <td><code>value_type</code> denotes the kind of element. If <code>kind</code> is <code>NUMERIC</code>, the field is <code>value_type</code> and you can have up to 4 elements per card. If <code>kind</code> is <code>TIME_SERIES</code> or <code>BREAKDOWN</code>, the field is <code>value_types</code>. The maximum number of both <code>TIME_SERIES</code> or <code>BREAKDOWN</code> is <code>1</code>. If you have numeric entries only, you can have up to four elements per card. If you want to use a combination, you can have up to two numeric entries and one of either time series or breakdown. You cannot have both time series and breakdown in the same card. If you define your value types as an array for time series, you can have up to three entries.</td>    
+    <td><code>value_type</code> denotes the kind of element. If <code>kind</code> is <code>NUMERIC</code>, the field is <code>value_type</code> and you can have up to four elements per card. If <code>kind</code> is <code>TIME_SERIES</code> or <code>BREAKDOWN</code>, the field is <code>value_types</code>. The maximum number of both <code>TIME_SERIES</code> or <code>BREAKDOWN</code> is <code>1</code>. If you have numeric entries only, you can have up to four elements per card. If you want to use a combination, you can have up to two numeric entries and one of either time series or breakdown. You cannot have both time series and breakdown in the same card. If you define your value types as an array for time series, you can have up to three entries.</td>    
   </tr>
   <tr>
     <td><code>elements: value_type: kind</code></td>
@@ -343,7 +342,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
   </tr>
   <tr>
     <td><code>elements: value_type: finding_note_names</code></td>
-    <td>If <code>kind</code> is <code>FINDING_COUNT</code>, the name of the findings that you want to see in your card, specified as an array.</td>    
+    <td>If <code>kind</code> is <code>FINDING_COUNT</code>, the name of the findings that you want to see in your card, which is specified as an array.</td>    
   </tr>
   <tr>
     <td><code>elements: value_type: kri_note_name</code></td>
