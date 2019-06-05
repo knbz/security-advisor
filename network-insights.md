@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-22"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -141,4 +142,4 @@ After the model is developed, deviations from the learned model are detected, an
 ## Next steps
 {: #network-next}
 
-Ready to get started? Check out [Enabling Network Insights](/docs/services/security-advisor?topic=security-advisor-setup-network#setup-network)!
+Ready to get started? Check out [Enabling Network Insights](/docs/services/security-advisor?topic=security-advisor-setup-network)!

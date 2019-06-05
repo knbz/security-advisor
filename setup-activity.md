@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-01"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -34,9 +35,9 @@ With {{site.data.keyword.security-advisor_long}}, you can continuously monitor y
 
 To get started with Activity Insights, be sure that you have the following prerequisites.
 
-- If you are working on Windows 10, activate Windows Subsystem for Linux and install an [Ubuntu shell](https://win10faq.com/install-run-ubuntu-bash-windows-10/)
+- If you are working on Windows 10, activate Windows Subsystem for Linux and install an [Ubuntu shell](https://win10faq.com/install-run-ubuntu-bash-windows-10/){: external}.
 - Install the yq CLI:
-  * For [macOS and Windows 10](http://mikefarah.github.io/yq/).
+  * For [macOS and Windows 10](http://mikefarah.github.io/yq/){: external}.
   * For CentOS, Red Hat, and Ubuntu run the following commands to install version 1.15.
     ```
     wget https://github.com/mikefarah/yq/releases/download/1.15.0/yq_linux_amd64       
@@ -48,7 +49,7 @@ To get started with Activity Insights, be sure that you have the following prere
     {: codeblock}     
 - Updated cURL binary: For CentOS and Red Hat, you can update by running `yum update -y nss curl libcurl`.
 - The [{{site.data.keyword.cloud_notm}} CLI and required plug-ins](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)
-- The [Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/) v1.10.11 or higher
+- The [Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/){: external} v1.10.11 or higher
 - The [Kubernetes Helm (package manager)](/docs/containers?topic=containers-helm) v2.9.0 or higher.
 - A standard Kubernetes cluster version v1.10.11 or higher
 
@@ -66,7 +67,7 @@ By using the {{site.data.keyword.security-advisor_short}} GUI, you can create a 
 
 4. In the prerequisites section, click **Create COS instance and bucket**. Your COS instance and bucket are automatically created for you with the proper naming convention and IAM permissions. The bucket information is displayed.
 
-If you have an existing instance of COS and bucket, be sure that it uses the naming convention `sa.<account_id>.telemetric.<cos_region>`. To allow the service to read the data that is stored in your COS instance, set up [service-to-service authorization](/docs/iam?topic=iam-serviceauth#serviceauth) by using {{site.data.keyword.cloud_notm}} IAM. Set `source` to `{{site.data.keyword.security-advisor_short}}` and `target` to your COS instance. Assign the `Reader` IAM role.
+If you have an existing instance of COS and bucket, be sure that it uses the naming convention `sa.<account_id>.telemetric.<cos_region>`. To allow the service to read the data that is stored in your COS instance, set up [service-to-service authorization](/docs/iam?topic=iam-serviceauth) by using {{site.data.keyword.cloud_notm}} IAM. Set `source` to `{{site.data.keyword.security-advisor_short}}` and `target` to your COS instance. Assign the `Reader` IAM role.
 
 
 ## Installing {{site.data.keyword.security-advisor_short}} components
@@ -127,7 +128,7 @@ You can install an agent to collect audit flow logs from your {{site.data.keywor
 
 7. Install Helm by using the [Kubernetes Service integration docs](/docs/containers?topic=containers-helm).
 
-8. Optional: [Enable TLS](https://github.com/helm/helm/blob/master/docs/tiller_ssl.md). If you're using your workstation to handle the installation of analytics components in multiple clusters and TLS is enabled, be sure that the TLS configurations are current and match the current cluster where you plan to install the components.
+8. Optional: [Enable TLS](https://github.com/helm/helm/blob/master/docs/tiller_ssl.md){: external}. If you're using your workstation to handle the installation of analytics components in multiple clusters and TLS is enabled, be sure that the TLS configurations are current and match the current cluster where you plan to install the components.
 
 9. Run the following command to install the Insights. The command validates the naming convention of your bucket, creates Kubernetes secrets, updates the values with your cluster GUID, and deploys Activity Insights.
 
@@ -150,7 +151,7 @@ You can install an agent to collect audit flow logs from your {{site.data.keywor
     </tr>
     <tr>
       <td><code>cos_api_key</code></td>
-      <td>The [API key](/docs/services/cloud-object-storage/iam?topic=cloud-object-storage-service-credentials#service-credentials) that you created to access your COS instance and bucket. The key must have the platform role `writer`.</td>
+      <td>The [API key](/docs/services/cloud-object-storage/iam?topic=cloud-object-storage-service-credentials) that you created to access your COS instance and bucket. The key must have the platform role `writer`.</td>
     </tr>
     <tr>
       <td><code>at_region</code></td>
@@ -196,7 +197,7 @@ A rule package is a JSON file that contains a list of rules that you want to mon
 
 8. Click **Upload**.
 
-Want to use your own packages? Use one of the JSON files as a guide and create rules that fit your organizations needs. After you create the file, add it to the *IBM.rules/activities* folder in your COS instance. For more information about the types of rules and formatting, check out [Understanding rule packages](/docs/services/security-advisor?topic=security-advisor-activity#activity).
+Want to use your own packages? Use one of the JSON files as a guide and create rules that fit your organizations needs. After you create the file, add it to the *IBM.rules/activities* folder in your COS instance. For more information about the types of rules and formatting, check out [Understanding rule packages](/docs/services/security-advisor?topic=security-advisor-activity).
 {: tip}
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-20"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -70,7 +71,7 @@ Are your pre-integrated findings not displaying any information? You might not h
 ## Next steps
 {: #start-next}
 
-Now that you've seen the dashboard in action, [learn more](/docs/services/security-advisor?topic=security-advisor-about) about how {{site.data.keyword.security-advisor_short}} can help you. You can also send user feedback by using <a href="https://developer.ibm.com/" target="_blank">dW Answers <img src="../../icons/launch-glyph.svg" alt="External link icon"></a> to contribute ideas for the service as it develops.
+Now that you've seen the dashboard in action, [learn more](/docs/services/security-advisor?topic=security-advisor-about) about how {{site.data.keyword.security-advisor_short}} can help you. You can also send user feedback by using [dW Answers](https://developer.ibm.com){: external} to contribute ideas for the service as it develops.
 
 
 ## Availability

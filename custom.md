@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-22"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -58,7 +59,7 @@ Before you integrate findings from your third-party tool, be sure that you have 
   ```
   {: codeblock}
 
-  IAM tokens expire every 60 minutes. To learn how to [get a new token automatically](/docs/iam?topic=iam-iamtoken_from_apikey#iamtoken_from_apikey) by using an API key.
+  IAM tokens expire every 60 minutes. To learn how to [get a new token automatically](/docs/iam?topic=iam-iamtoken_from_apikey) by using an API key.
   {: tip}
 
 
@@ -73,7 +74,7 @@ The APIs follow Grafeas like artifact metadata specifications to store, query, a
 ### Step 1: Registering a new finding type
 {: #custom-register-finding}
 
-To register a new type of findings, you can create a note. To create the note, you can use the [Findings API](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Notes/createNote). Be sure that you choose a unique provider ID to identify your custom tool. If you're automating the process by using your service ID as your provider ID.
+To register a new type of findings, you can create a note. To create the note, you can use the [Findings API](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Notes/createNote){: external}. Be sure that you choose a unique provider ID to identify your custom tool. If you're automating the process by using your service ID as your provider ID.
 
 Example request:
 
@@ -165,7 +166,7 @@ Be sure to remember the name of the note that is returned as part of the respons
 ### Step 2: Posting findings
 {: #custom-post-findings}
 
-Create an [occurrence](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Occurrences/createOccurrence) to post findings as KRIs or events to your security advisor dashboard.
+Create an [occurrence](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Occurrences/createOccurrence){: external} to post findings as KRIs or events to your security advisor dashboard.
 
 For each card, you can define two KRIs.
 {: note}
@@ -263,7 +264,7 @@ Example response:
 ### Step 3: Defining the card to display
 {: #custom-define-card}
 
-Define how you want your card to display your findings in your dashboard by creating a [note](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Notes/createNote).
+Define how you want your card to display your findings in your dashboard by creating a [note](https://us-south.secadvisor.cloud.ibm.com/findings/v1/docs/#/Findings_Notes/createNote){: external}.
 
 Example request: 
 
