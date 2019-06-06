@@ -82,46 +82,12 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 ```
 {: codeblock}
 
-<table>
-  <tr>
-    <th colspan=2><img src="images/idea.png" alt="More information icon"/> Understanding the command components </th>
-  </tr>
-  <tr>
-    <td><code>note_name</code></td>
-    <td><code>&lt;account id&gt;/providers/my-custom-tool/notes/my-custom-tool-findings-type</code></td>
-  </tr>
-  <tr>
-    <td><code>kind</code></td>
-    <td><code>FINDING</code></td>
-  </tr>
-  <tr>
-    <td><code>remediation</code></td>
-    <td>The steps that need to be taken to resolve the issue.</td>
-  </tr>
-  <tr>
-    <td><code>provider_id</code></td>
-    <td>Your custom security tool.</td>
-  </tr>
-  <tr>
-    <td><code>id</code></td>
-    <td>An ID for the type of finding that your security tool found.</td>
-  </tr>
-  <tr>
-    <td><code>context</code><ul><li><code>region</code></li><li><code>resource_id</code></li> <li><code>resource_name</code></li> <li><code>resource_type</code></li> <li><code>service_name</code></li></ul></td>
-    <td></br><ul><li><code>The location in which the finding occurred</code></li><li><code>The ID for the specific resource.</code></li> <li><code>The name of the resource.</code></li> <li><code>The type of resource.</code></li> <li><code>The name of the service.</code></li></ul></td>
-  </tr>
-  <tr>
-    <td><code>finding</code> <ul><li><code>severity</code></li> <li><code>next_steps</code></li> <li><code>url</code></li></ul></td>
-    <td></br><ul><li>The level of urgency that the finding presents.</li> <li>The steps that can be taken to remediate the issue.</li> <li>A URL where the details of the finding can be found.</li></ul></td>
-  </tr>
-</table>
-
 | General | Description | 
 |:-----------------|:-----------------|
 | `note_name` | `<account id>/providers/my-custom-tool/notes/my-custom-tool-findings-type`  |
 | `kind` | `FINDING` |
 | `remediation` | The steps that need to be taken to resolve the issue. |
-| `provider_id` | Your custom security tool ID. |
+| `provider_id` | Your custom security tool. |
 | `id` | An ID for the type of finding that your security tool found. |
 {: class="simple-tab-table"}
 {: caption="Table 1. Understanding the command's general components" caption-side="top"}
@@ -148,9 +114,9 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 | `next_steps` | The steps that can be taken to remediate the issue. |
 | `url` | A URL where the details of the finding can be found. |
 {: class="simple-tab-table"}
-{: caption="Table 2. Understanding the command's context components" caption-side="top"}
+{: caption="Table 3. Understanding the command's finding components" caption-side="top"}
 {: #simpletabtable1}
-{: tab-title="Context"}
+{: tab-title="Finding"}
 {: tab-group="component-simple"}
 
 Example response:
@@ -214,39 +180,40 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 ```
 {: codeblock}
 
-<table>
-  <tr>
-    <th colspan=2><img src="images/idea.png" alt="More information icon"/> Understanding the command components </th>
-  </tr>
-  <tr>
-    <td><code>kind</code></td>
-    <td><code>FINDING</code></td>
-  </tr>
-  <tr>
-    <td><code>short_description</code></td>
-    <td>A short description that summarizes the finding; no more than a couple of words.</td>
-  </tr>
-  <tr>
-    <td><code>long_description</code></td>
-    <td>A longer description that contains more detail about the finding.</td>
-  </tr>
-  <tr>
-    <td><code>provider_id</code></td>
-    <td>Your custom security tool.</td>
-  </tr>
-  <tr>
-    <td><code>id</code></td>
-    <td>An ID for the type of finding that your security tool found.</td>
-  </tr>
-  <tr>
-    <td><code>reported_by</code><ul><li><code>id</code></li><li><code>title</code></li></ul></td>
-    <td></br><ul><li>The ID of the security tool that reported the finding.</li><li>The title of the security tool that reported the finding.</li></ul></td>
-  </tr>
-  <tr>
-    <td><code>finding</code> <ul><li><code>severity</code></li> <li><code>next_steps</code></li> <li><code>title</code></li></ul></td>
-    <td></br><ul><li>The level of urgency that the finding presents.</li> <li>The steps that can be taken to remediate the issue.</li> <li>The title of the finding.</li></ul></td>
-  </tr>
-</table>
+| General | Description | 
+|:-----------------|:-----------------|
+| `kind` | `FINDING` |
+| `short_description` | A short description that summaries the finding; no more than a couple of words. |
+| `long_description` | A longer description that contains more details about the finding. |
+| `provider_id` | Your custom security tool. |
+| `id` | An ID for the type of finding that your security tool found. |
+{: class="simple-tab-table"}
+{: caption="Table 1. Understanding the command's general components" caption-side="top"}
+{: #simpletabtable1}
+{: tab-title="General"}
+{: tab-group="component-simple"}
+
+| Reported by | Description | 
+|:-----------------|:-----------------|
+| `id` | The ID of the security tool that reported the finding.  |
+| `title` | The title of the security tool that reported the finding. |
+{: class="simple-tab-table"}
+{: caption="Table 2. Understanding the command's reported by components" caption-side="top"}
+{: #simpletabtable1}
+{: tab-title="Reported by"}
+{: tab-group="component-simple"}
+
+| Finding | Description | 
+|:-----------------|:-----------------|
+| `severity` | The level of urgency that the finding presents.  |
+| `next_steps` | The steps that can be taken to remediate the issue. |
+| `title` | The title of the finding. |
+{: class="simple-tab-table"}
+{: caption="Table 3. Understanding the command's finding components" caption-side="top"}
+{: #simpletabtable1}
+{: tab-title="Finding"}
+{: tab-group="component-simple"}
+
 
 Example response:
 
@@ -309,34 +276,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 ```
 {: codeblock}
 
-<table>
-  <tr>
-    <th colspan=2><img src="images/idea.png" alt="More information icon"/> Understanding the command components </th>
-  </tr>
-  <tr>
-    <td><code>provider_id</code></td>
-    <td>The ID of your security tool.</td>
-  </tr>
-  <tr>
-    <td><code>id</code></td>
-    <td>An ID for the type of finding that your security tool found.</td>
-  </tr>
-  <tr>
-    <td><code>short_description</code></td>
-    <td>A description, no more than a couple of words, that summarizes the finding.</td>
-  </tr>
-  <tr>
-    <td><code>long_description</code></td>
-    <td>A longer description that contains more detail about the finding.</td>
-  </tr>
-  <tr>
-    <td><code>reported_by: id</code></td>
-    <td>The ID of the security tool that reported the finding.</td>
-  </tr>
-  <tr>
-    <td><code>reported_by: title</code></td>
-    <td>The title of the security tool that reported the finding.</td>
-  </tr>
+
   <tr>
     <td><code>card: section</code></td>
     <td>The section in which you want the card to display. You can have up to three custom sections with six cards in each section. Maximum characters: 30</td>
@@ -390,6 +330,57 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
     <td>The text of the element type. The maximum number of characters is 22.</td>    
   </tr>
 </table>
+
+| General | Description | 
+|:-----------------|:-----------------|
+| `provider_id` | The ID of your security tool. |
+| `id` | An ID for the type of finding that your security tool found. |
+| `short_description` | A short description that summaries the finding; no more than a couple of words. |
+| `long_description` | A longer description that contains more details about the finding. |
+{: class="simple-tab-table"}
+{: caption="Table 1. Understanding the command's general components" caption-side="top"}
+{: #simpletabtable1}
+{: tab-title="General"}
+{: tab-group="component-simple"}
+
+| Reported by | Description | 
+|:-----------------|:-----------------|
+| `id` | The ID of the security tool that reported the finding.  |
+| `title` | The title of the security tool that reported the finding. |
+{: class="simple-tab-table"}
+{: caption="Table 2. Understanding the command's reported by components" caption-side="top"}
+{: #simpletabtable1}
+{: tab-title="Reported by"}
+{: tab-group="component-simple"}
+
+| Card | Description | 
+|:-----------------|:-----------------|
+| `section` | The section in which you want the card to display. You can have up to three custom sections with six cards in each section. Maximum characters: 30  |
+| Optional: `order` | The order in which the card is displayed within the specified section. The order is specified in range 1 - 6. If you choose a number that is already applied to another card, the creation fails. You receive an error message that states "Given order is already taken by other card in section." If the order provided is greater than the current number of cards plus 1, then card creation fails. For example, if you currently have two cards and are creating another, you could not specify 5 in the card order because all together, you have three cards total. If the order for the cards is not specified, they are arranged alphabetically in the assigned section. |
+| `title` | The title that you want your card to have. Maximum characters: 28 |
+| `subtitle` | The subtitle that you want your card to have. Maximum characters: 30 |
+| `finding_note_names` | `providers//notes/my-custom-tool-findings-type` |
+{: class="simple-tab-table"}
+{: caption="Table 3. Understanding the command's card components" caption-side="top"}
+{: #simpletabtable1}
+{: tab-title="Card"}
+{: tab-group="component-simple"}
+
+| Elements: Value type | Description | 
+|:-----------------|:-----------------|
+| `kind` | Options include: `NUMERIC`, `TIME_SERIES`, and `BREAKDOWN`. |
+| `text` | The text that you want to display. If kind is `NUMERIC`, the maximum number of characters is 60. If kind is `TIME_SERIES` or `BREAKDOWN`, the maximum number of characters is 65. |
+| `default_time_range` | The amount of time that you want to check. The values are set in days. Current options include: `1d`, `2d`, `3d`, and `4d`. |
+| `value_type` | The kind of element. If kind is `NUMERIC`, the field is `value_type` and you can have up to four elements per card. If kind is `TIME_SERIES` or `BREAKDOWN`, the field is `value_types`. The maximum number of both `TIME_SERIES` or `BREAKDOWN` is 1. If you have numeric entries only, you can have up to four elements per card. If you want to use a combination, you can have up to two numeric entries and one of either time series or breakdown. You cannot have both time series and breakdown in the same card. If you define your value types as an array for time series, you can have up to three entries.  |
+| `value_type`: `kind` | The type of value. Options include: `KRI` and `FINDING_COUNT`. |
+| `value_type`: `finding_note_names` | If `kind` is `FINDING_COUNT`, the name of the findings that you want to see in your card, which is specified as an array. |
+| `value_type`: `kri_note_names` | If `kind` is `FINDING_COUNT`, the name of the findings that you want to see in your card, which is specified as an array. |
+| `value_type`: `text` | The text of the element type. The maximum number of characters is 22. |
+{: class="simple-tab-table"}
+{: caption="Table 4. Understanding the command's element components" caption-side="top"}
+{: #simpletabtable1}
+{: tab-title="Elements"}
+{: tab-group="component-simple"}
 
 Example response:
 
