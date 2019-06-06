@@ -91,7 +91,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 | `id` | An ID for the type of finding that your security tool found. |
 {: class="simple-tab-table"}
 {: caption="Table 1. Understanding the command's general components" caption-side="top"}
-{: #simpletabtable1}
+{: #registerfindingtable1}
 {: tab-title="General"}
 {: tab-group="component-simple"}
 
@@ -104,7 +104,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 | `service_name` | The name of the service. |
 {: class="simple-tab-table"}
 {: caption="Table 2. Understanding the command's context components" caption-side="top"}
-{: #simpletabtable2}
+{: #registerfinding2}
 {: tab-title="Context"}
 {: tab-group="component-simple"}
 
@@ -115,7 +115,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 | `url` | A URL where the details of the finding can be found. |
 {: class="simple-tab-table"}
 {: caption="Table 3. Understanding the command's finding components" caption-side="top"}
-{: #simpletabtable3}
+{: #registerfinding3}
 {: tab-title="Finding"}
 {: tab-group="component-simple"}
 
@@ -189,7 +189,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 | `id` | An ID for the type of finding that your security tool found. |
 {: class="simple-tab-table"}
 {: caption="Table 2. Understanding the command's general components" caption-side="top"}
-{: #simpletabtable4}
+{: #postfinding1}
 {: tab-title="General"}
 {: tab-group="component-simple"}
 
@@ -199,7 +199,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 | `title` | The title of the security tool that reported the finding. |
 {: class="simple-tab-table"}
 {: caption="Table 2. Understanding the command's reported by components" caption-side="top"}
-{: #simpletabtable5}
+{: #postfinding2}
 {: tab-title="Reported by"}
 {: tab-group="component-simple"}
 
@@ -210,7 +210,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 | `title` | The title of the finding. |
 {: class="simple-tab-table"}
 {: caption="Table 3. Understanding the command's finding components" caption-side="top"}
-{: #simpletabtable6}
+{: #postfinding3}
 {: tab-title="Finding"}
 {: tab-group="component-simple"}
 
@@ -284,7 +284,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 | `long_description` | A longer description that contains more details about the finding. |
 {: class="simple-tab-table"}
 {: caption="Table 1. Understanding the command's general components" caption-side="top"}
-{: #simpletabtable7}
+{: #definecard1}
 {: tab-title="General"}
 {: tab-group="component-simple"}
 
@@ -294,7 +294,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 | `title` | The title of the security tool that reported the finding. |
 {: class="simple-tab-table"}
 {: caption="Table 2. Understanding the command's reported by components" caption-side="top"}
-{: #simpletabtable8}
+{: #definecard2}
 {: tab-title="Reported by"}
 {: tab-group="component-simple"}
 
@@ -307,7 +307,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 | `finding_note_names` | `providers//notes/my-custom-tool-findings-type` |
 {: class="simple-tab-table"}
 {: caption="Table 3. Understanding the command's card components" caption-side="top"}
-{: #simpletabtable9}
+{: #definecard3}
 {: tab-title="Card"}
 {: tab-group="component-simple"}
 
@@ -323,7 +323,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 | `value_type`: `text` | The text of the element type. The maximum number of characters is 22. |
 {: class="simple-tab-table"}
 {: caption="Table 4. Understanding the command's element components" caption-side="top"}
-{: #simpletabtable10}
+{: #definecard4}
 {: tab-title="Elements"}
 {: tab-group="component-simple"}
 
