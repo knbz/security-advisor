@@ -2,15 +2,14 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-05"
+lastupdated: "2019-06-06"
 
-keywords: centralized security, security management, alerts, security risk, insights, threat detection
+keywords: Centralized security, security management, alerts, security risk, insights, threat detection
 
 subcollection: security-advisor
 
 ---
 
-{:new_window: target="_blank"}
 {:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -137,7 +136,7 @@ A finding might include:
 * Containers that send out or consume significantly more data than normal to or from specific peers.
 * The level of surveying of a particular container has significantly increased.
 
-After the model is developed, deviations from the learned model are detected, and when an alarming change is exhibited, Network Insights posts a finding to the Security Advisor dashboard. Findings are summarized in the 'Network: Anomalies in Traffic' card. The card introduces two Key Risk Indicators (KRIs). The 'Higher than normal reconnaissance or data exchange activity' KRI counts findings that are related to abnormal interactions detected between the cluster and external peers. The 'Outbound approach to a new server' KRI counts findings that are related to new detected servers approaches by the cluster.  
+After the model is developed, deviations from the learned model are detected, and when an alarming change is exhibited, Network Insights posts a finding to the Security Advisor dashboard. Findings are summarized in the "Network: Anomalies in Traffic" card. The card introduces two Key Risk Indicators (KRIs). The "Higher than normal reconnaissance or data exchange activity" KRI counts findings that are related to abnormal interactions detected between the cluster and external peers. The "Outbound approach to a new server" KRI counts findings that are related to new detected servers approaches by the cluster.  
 
 ## Next steps
 {: #network-next}
