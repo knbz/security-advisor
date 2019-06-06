@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-05"
+lastupdated: "2019-06-06"
 
 keywords: Centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -115,6 +115,43 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
     <td></br><ul><li>The level of urgency that the finding presents.</li> <li>The steps that can be taken to remediate the issue.</li> <li>A URL where the details of the finding can be found.</li></ul></td>
   </tr>
 </table>
+
+| General | Description | 
+|:-----------------|:-----------------|
+| `note_name` | `<account id>/providers/my-custom-tool/notes/my-custom-tool-findings-type`  |
+| `kind` | `FINDING` |
+| `remediation` | The steps that need to be taken to resolve the issue. |
+| `provider_id` | Your custom security tool ID. |
+| `id` | An ID for the type of finding that your security tool found. |
+{: class="simple-tab-table"}
+{: caption="Table 1. Understanding the command's general components" caption-side="top"}
+{: #simpletabtable1}
+{: tab-title="General"}
+{: tab-group="component-simple"}
+
+| Context | Description | 
+|:-----------------|:-----------------|
+| `region` | The location in which the finding occured.  |
+| `resource_id` | The ID for the resource. |
+| `resource_name` | The name of the resource. |
+| `resource_type` | The type of resource. |
+| `service_name` | The name of the service. |
+{: class="simple-tab-table"}
+{: caption="Table 2. Understanding the command's context components" caption-side="top"}
+{: #simpletabtable1}
+{: tab-title="Context"}
+{: tab-group="component-simple"}
+
+| Finding | Description | 
+|:-----------------|:-----------------|
+| `severity` | The level of urgency that the finding presents.  |
+| `next_steps` | The steps that can be taken to remediate the issue. |
+| `url` | A URL where the details of the finding can be found. |
+{: class="simple-tab-table"}
+{: caption="Table 2. Understanding the command's context components" caption-side="top"}
+{: #simpletabtable1}
+{: tab-title="Context"}
+{: tab-group="component-simple"}
 
 Example response:
 
