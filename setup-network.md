@@ -2,11 +2,12 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-20"
+lastupdated: "2019-06-05"
 
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -32,9 +33,9 @@ As of 20 January 2019, Network Insights (beta) replaces the Network Analytics fe
 
 If you are currently using the Network Analytics feature, you must [delete the service components](/docs/services/security-advisor?topic=security-advisor-setup-network#uninstall-analytics) before you can install Network Insights. To get started with Network Insights, be sure that you have the following prerequisites.
 
-- If you are working on Windows 10, activate Windows Subsystem for Linux and install an [Ubuntu shell](https://win10faq.com/install-run-ubuntu-bash-windows-10/)
+- If you are working on Windows 10, activate Windows Subsystem for Linux and install an [Ubuntu shell](https://win10faq.com/install-run-ubuntu-bash-windows-10/){: external}.
 - Install the yq CLI:
-  * For [macOS and Windows 10](http://mikefarah.github.io/yq/).
+  * For [macOS and Windows 10](http://mikefarah.github.io/yq/){: external}.
   * For CentOS, Red Hat, and Ubuntu run the following commands to install version 1.15.
     ```
     wget https://github.com/mikefarah/yq/releases/download/1.15.0/yq_linux_amd64       
@@ -46,7 +47,7 @@ If you are currently using the Network Analytics feature, you must [delete the s
     {: codeblock}     
 - Updated cURL binary: For CentOS and Red Hat, you can update by running `yum update -y nss curl libcurl`.
 - The [{{site.data.keyword.cloud_notm}} CLI and required plug-ins](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)
-- The [Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/) v1.10.11 or higher
+- The [Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/){: external} v1.10.11 or higher
 - The [Kubernetes Helm (package manager)](/docs/containers?topic=containers-helm) v2.9.0 or higher.
 - A standard Kubernetes cluster version v1.10.11 or higher
 
@@ -61,7 +62,7 @@ By using the {{site.data.keyword.security-advisor_short}} GUI, you can create a 
 
 3. In the prerequisites section, click **Create COS instance and bucket**. Your COS instance and bucket are automatically created for you with the proper naming convention and IAM permissions.
 
-If you have an existing instance of COS and bucket, be sure that it uses the naming convention: `sa.<account_id>.telemetric.<cos_region>`. To allow the service to read the data that is stored in your COS instance, set up [service-to-service authorization](/docs/iam?topic=iam-serviceauth#serviceauth) by using {{site.data.keyword.cloud_notm}} IAM. Set `source` to `{{site.data.keyword.security-advisor_short}}` and `target` to your COS instance. Assign the `Reader` IAM role.
+If you have an existing instance of COS and bucket, be sure that it uses the naming convention: `sa.<account_id>.telemetric.<cos_region>`. To allow the service to read the data that is stored in your COS instance, set up [service-to-service authorization](/docs/iam?topic=iam-serviceauth) by using {{site.data.keyword.cloud_notm}} IAM. Set `source` to `{{site.data.keyword.security-advisor_short}}` and `target` to your COS instance. Assign the `Reader` IAM role.
 
 
 ## Installing {{site.data.keyword.security-advisor_short}} components
@@ -168,7 +169,7 @@ Be sure to repeat the installation for each cluster that you want to monitor.
 
 9. Install Helm by using the [Kubernetes Service integration docs](/docs/containers?topic=containers-helm).
 
-10. Optional: [Enable TLS](https://github.com/helm/helm/blob/master/docs/tiller_ssl.md). If you're using your workstation to handle the installation of analytics components in multiple clusters and TLS is enabled, be sure that the TLS configurations are current and match the current cluster where you plan to install the components.
+10. Optional: [Enable TLS](https://github.com/helm/helm/blob/master/docs/tiller_ssl.md){: external}. If you're using your workstation to handle the installation of analytics components in multiple clusters and TLS is enabled, be sure that the TLS configurations are current and match the current cluster where you plan to install the components.
 
 11. Run the following command to install the Helm chart and its dependencies. The command validates that your bucket uses the correct naming convention, creates Kubernetes secrets, updates the values with your cluster GUID, and deploys the Network Insights Helm chart. If you encounter an error, try running `helm init --upgrade`.
 
@@ -188,7 +189,7 @@ Be sure to repeat the installation for each cluster that you want to monitor.
     </tr>
     <tr>
       <td><code>cos_api_key</code></td>
-      <td>The [API key](/docs/services/cloud-object-storage/iam?topic=cloud-object-storage-service-credentials#service-credentials) that you created to access your COS instance and bucket. The key must have the platform role `writer`.</td>
+      <td>The [API key](/docs/services/cloud-object-storage/iam?topic=cloud-object-storage-service-credentials) that you created to access your COS instance and bucket. The key must have the platform role `writer`.</td>
     </tr>
   </table>
 

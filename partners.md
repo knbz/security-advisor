@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-15"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -26,7 +27,7 @@ subcollection: security-advisor
 # Partners
 {: #setup-partner}
 
-IBM Business Partner integrations are a way to bring critical alerts and findings from third party providers into the {{site.data.keyword.security-advisor_long}} dashboard. These partners are working with IBM to help shape, simplify, and guide the integration experience for you.
+IBM Business Partner integrations are a way to bring critical alerts and findings from third party providers into the {{site.data.keyword.security-advisor_long}} dashboard. These partners are working with IBM to help create, simplify, and guide the integration experience for you.
 {: shortdesc}
 
 ## Before you begin
@@ -52,7 +53,7 @@ As an administrator with administrative permissions in both the {{site.data.keyw
 ## Integrating NeuVector
 {: #setup-neuvector}
 
-With NeuVector, you can detect network threats and violations to prevent attacks of your container-based applications. Through monitoring, you can prevent exploits and breakouts by detecting root privilege escalations, port scans, reverse shells, and suspicious file system activity in your containers and hosts.
+With [NeuVector](https://neuvector.com){: external}, you can detect network threats and violations to prevent attacks of your container-based applications. Through monitoring, you can prevent exploits and breakouts by detecting root privilege escalations, port scans, reverse shells, and suspicious file system activity in your containers and hosts.
 {: shortdesc}
 
 To integrate NeuVector with {{site.data.keyword.security-advisor_short}}, you can use the following steps:
@@ -75,7 +76,7 @@ To integrate NeuVector with {{site.data.keyword.security-advisor_short}}, you ca
 ## Integrating Twistlock
 {: #setup-twistlock}
 
-You can prevent risk by stopping the deployment of vulnerable images in your environment. With automated and custom policy enforcement, Twistlock offers complete control at every stage of the application lifecycle.
+You can prevent risk by stopping the deployment of vulnerable images in your environment. With automated and custom policy enforcement, [Twistlock](https://www.twistlock.com){: external} offers complete control at every stage of the application lifecycle.
 {: shortdesc}
 
 When you configure the partner connection, two cards are created in your dashboard that summarize the findings from Twistlock.

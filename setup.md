@@ -2,11 +2,12 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-05-13"
+lastupdated: "2019-06-05"
 
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -38,13 +39,14 @@ Although you do not have to do anything to create the connection between {{site.
 With {{site.data.keyword.registryshort_notm}}, you have access to Vulnerability Advisor, which continuously scans the images in your {{site.data.keyword.registryshort_notm}} instance for potential security issues. If issues are found, you are alerted and can view a comprehensive report in your {{site.data.keyword.security-advisor_short}} dashboard.
 {:shortdesc}
 
-Learn more about [{{site.data.keyword.registryshort_notm}}](/docs/services/Registry?topic=registry-getting-started#getting-started).
+Learn more about [{{site.data.keyword.registryshort_notm}}](/docs/services/Registry?topic=registry-getting-started).
 
 
-**Before you begin**
+### Before you begin
+{: #setup-before}
 
 Before you can get started with registry, be sure that you have the following CLIs and plug-ins installed:
-* [The {{site.data.keyword.cloud_notm}} CLI)](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)
+* [The {{site.data.keyword.cloud_notm}} CLI)](/docs/cli?topic=cloud-cli-ibmcloud-cli)
 * The Container Registry plug-in.
 
   ```
@@ -53,7 +55,8 @@ Before you can get started with registry, be sure that you have the following CL
   {: codeblock}
 
 
-**Creating a namespace**
+### Creating a namespace
+{: #setup-create-namespace}
 
 1. Log in to your account by using the CLI.
 
@@ -104,10 +107,11 @@ Depending on the expiration data of the certificate that you upload to {{site.da
 
 To trigger a manual update, you might try uploading a certificate that expires in a day to your {{site.data.keyword.cloudcerts_short}} instance. When the import is successful, you can see that the Key Risk Indicator (KRI) and findings are visible in the {{site.data.keyword.security-advisor_short}} dashboard.
 
-You can learn more about [{{site.data.keyword.cloudcerts_long_notm}}](/docs/services/certificate-manager?topic=certificate-manager-getting-started#getting-started) by reading the docs.
+You can learn more about [{{site.data.keyword.cloudcerts_long_notm}}](/docs/services/certificate-manager?topic=certificate-manager-getting-started) by reading the docs.
 {: tip}
 
-**Creating a certificate**
+### Creating a certificate
+{: #setup-create-cert}
 
 To create a self signed certificate that expires in a day, you can run the following OpenSSL command in your terminal.
 
@@ -117,7 +121,8 @@ openssl req -x509 -newkey rsa:2048 -keyout key.pem -subj "/CN=myservice.com" -ou
 {: codeblock}
 
 
-**Uploading a certificate**
+### Uploading a certificate
+{: #setup-upload-cert}
 
 1. In the {{site.data.keyword.cloud_notm}} catalog, search for "{{site.data.keyword.cloudcerts_short}}".
 2. Give your service instance a name, or use the preset name.

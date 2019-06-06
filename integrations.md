@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-08"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -60,7 +61,7 @@ Are you a partner and interested in integrating your solution with {{site.data.k
 ### NeuVector
 {: #integrate-neuvector}
 
-[NeuVector](https://neuvector.com/) provides a highly integrated, automated security platform for Kubernetes and Red Hat OpenShift that allows you to monitor and protect container network traffic. Specifically, East-West network traffic.
+[NeuVector](https://neuvector.com){: external} provides a highly integrated, automated security platform for Kubernetes and Red Hat OpenShift that allows you to monitor and protect container network traffic. Specifically, East-West network traffic.
 
 With NeuVector, you can detect network threats and violations to prevent attacks of your container-based applications. Through monitoring, you can prevent exploits and breakouts by detecting root privilege escalations, port scans, reverse shells, and suspicious file system activity in your containers and hosts.
 
@@ -70,7 +71,7 @@ For help with setting up your NeuVector instance, see [Partner solutions](/docs/
 ### Twistlock
 {: #integrate-twistlock}
 
-Twistlock is uniquely able to prevent risk throughout the SDLC by preventing the deployment of vulnerable images across your environment. Automated and custom policy enforcement offers complete control at every stage of the application lifecycle. The Twistlock Intelligence Stream sources and aggregates vulnerability information directly from 30+ upstream projects, commercial sources, and proprietary research from Twistlock Labs.
+[Twistlock](https://www.twistlock.com){: external} is uniquely able to prevent risk throughout the SDLC by preventing the deployment of vulnerable images across your environment. Automated and custom policy enforcement offers complete control at every stage of the application lifecycle. The Twistlock Intelligence Stream sources and aggregates vulnerability information directly from 30+ upstream projects, commercial sources, and proprietary research from Twistlock Labs.
 
 With a focus on having the most precise data available to cover all of the layers of your stack, so you have accurate visibility and the lowest rate of false positives.Twistlock combines this data with knowledge of your actual deployments such as which containers are exposed to the internet, which run with high privilege, and which have other security mitigations in place, so you can always see what vulnerabilities are most critical in your specific environment.
 
@@ -100,10 +101,12 @@ With the Findings API, you can integrate findings from your custom security tool
 With built-in insights, you can detect potential issues by continuously monitoring your cluster and account logs. By monitoring network traffic and user activity, you can help ensure that your {{site.data.keyword.cloud_notm}} resources remain protected.
 {: shortdesc}
 
-**Network Insights (beta)**
+### Network Insights (beta)
+{: #integrate-network-insights}
 
 With Network Insights (beta), you can monitor and analyze cluster network communication, both incoming and outgoing, between your Kubernetes cluster and external entities. By using integrated threat intelligence and anomaly detection, the service can identify reconnaissance attacks and potentially compromised assets. To learn more, check out [Network Insights](/docs/services/security-advisor?topic=security-advisor-network).
 
-**Activity Insights (preview)**
+### Activity Insights (preview)
+{: #integrate-activity-insights}
 
 With Activity Insights (preview), you can continuously monitor your {{site.data.keyword.cloud_notm}} Activity Tracker logs to identify unauthorized or suspicious activity that is made by users or apps by using rule packages. You can use the rules packages that are provided by the service which are based on security best practices or you can customize the rules to fit your needs. To learn more, check out [Activity Insights](/docs/services/security-advisor?topic=security-advisor-activity).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-23"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -21,6 +22,7 @@ subcollection: security-advisor
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
+
 
 # Activity Insights (preview)
 {: #activity}
@@ -104,13 +106,13 @@ A rule is the combination of conditions and a single event. You can use rules, o
 Example:
 
 ```
-	{
-		"comment": "Dormant Rule: Very high risk {{site.data.keyword.appid_short_notm}}  activity... ",
-		"dormant": true,
-		"conditions": { 	… },
-		"event": { … }
-		"type": "aggregate"
-	}
+{
+	"comment": "Dormant Rule: Very high risk {{site.data.keyword.appid_short_notm}}  activity... ",
+	"dormant": true,
+	"conditions": { 	… },
+	"event": { … }
+	"type": "aggregate"
+}
 ```
 {: screen}
 
@@ -144,20 +146,20 @@ A basic condition is a building block that is composed of three components. The 
 Example:
 
 ```
-	"conditions": {
-		"all": [{
-			"any": [{
-				"fact": "action",
-				"operator": "equal",
-				"value": "iam-groups.group.delete"
-			},
-			{
-				"fact": "action",
-				"operator": "equal",
-				"value": "iam-groups.member.delete"
-			}]
-		}
+"conditions": {
+	"all": [{
+		"any": [{
+			"fact": "action",
+			"operator": "equal",
+			"value": "iam-groups.group.delete"
+		},
+		{
+			"fact": "action",
+			"operator": "equal",
+			"value": "iam-groups.member.delete"
+		}]
 	}
+}
 ```
 {: screen}
 
@@ -189,13 +191,13 @@ An event is composed of two fields: `type` and `params.findingType`. The first i
 Example:
 
 ```
-	{
-		"conditions": { 	… },
-		"event": {
-			"type": "IKS high risk API",
-			"params": {"findingType": "IKS-high-risk"}
-		}
+{
+	"conditions": { 	… },
+	"event": {
+		"type": "IKS high risk API",
+		"params": {"findingType": "IKS-high-risk"}
 	}
+}
 ```
 {: screen}
 
@@ -227,7 +229,8 @@ An aggregate rule type counts the number of occurrences of an action in a specif
 	* When hours are selected, the max value can be 24
 	* When minutes are selected, the max value can be 1440.
 
-**Example**
+#### Example
+{: #aggregate-example}
 
 The following example demonstrates a rule that counts five failed attempts within 30 minutes:
 
@@ -299,7 +302,8 @@ A coincident rule type monitors actions to see how many times the same action oc
 	* When minutes are selected, the max value can be 1440.
 
 
-**Example**
+#### Example
+{: #coincident-example}
 
 The following example demonstrates a rule that watches for a coincident of three specific actions that must occur within one thirty-minute period:
 
@@ -347,7 +351,8 @@ A boolean rule is composed of a boolean condition and an event. Boolean rules ar
 
 If a rule is not defined as `aggregate` or `coincident`, then it is evaluated as a `boolean` rule.
 
-**Example**
+#### Example
+{: #boolean-example}
 
 The following example demonstrates a rule that watches for the deletion of policy outside the change control window by a user that is not on the whitelist:
 
@@ -396,7 +401,7 @@ The following example demonstrates a rule that watches for the deletion of polic
 ```
 {: screen}
 
-Want to learn more about boolean rules? Check out <a href="https://github.com/CacheControl/json-rules-engine/blob/master/docs/rules.md" target="_blank">the Cache-Control docs <img src="../../icons/launch-glyph.svg" alt="External link icon"></a>.
+Want to learn more about boolean rules? Check out [the Cache-Control docs](https://github.com/CacheControl/json-rules-engine/blob/master/docs/rules.md){: external}.
 {: tip}
 
 ## Next steps
