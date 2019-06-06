@@ -93,7 +93,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 {: caption="Table 1. Understanding the command's general components" caption-side="top"}
 {: #registerfindingtable1}
 {: tab-title="General"}
-{: tab-group="component-simple"}
+{: tab-group="register"}
 
 | Context | Description | 
 |:-----------------|:-----------------|
@@ -106,7 +106,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 {: caption="Table 2. Understanding the command's context components" caption-side="top"}
 {: #registerfinding2}
 {: tab-title="Context"}
-{: tab-group="component-simple"}
+{: tab-group="register"}
 
 | Finding | Description | 
 |:-----------------|:-----------------|
@@ -117,7 +117,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 {: caption="Table 3. Understanding the command's finding components" caption-side="top"}
 {: #registerfinding3}
 {: tab-title="Finding"}
-{: tab-group="component-simple"}
+{: tab-group="register"}
 
 Example response:
 
@@ -191,7 +191,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 {: caption="Table 2. Understanding the command's general components" caption-side="top"}
 {: #postfinding1}
 {: tab-title="General"}
-{: tab-group="component-simple"}
+{: tab-group="post"}
 
 | Reported by | Description | 
 |:-----------------|:-----------------|
@@ -201,7 +201,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 {: caption="Table 2. Understanding the command's reported by components" caption-side="top"}
 {: #postfinding2}
 {: tab-title="Reported by"}
-{: tab-group="component-simple"}
+{: tab-group="post"}
 
 | Finding | Description | 
 |:-----------------|:-----------------|
@@ -212,7 +212,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 {: caption="Table 3. Understanding the command's finding components" caption-side="top"}
 {: #postfinding3}
 {: tab-title="Finding"}
-{: tab-group="component-simple"}
+{: tab-group="post"}
 
 
 Example response:
@@ -286,7 +286,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 {: caption="Table 1. Understanding the command's general components" caption-side="top"}
 {: #definecard1}
 {: tab-title="General"}
-{: tab-group="component-simple"}
+{: tab-group="card"}
 
 | Reported by | Description | 
 |:-----------------|:-----------------|
@@ -296,7 +296,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 {: caption="Table 2. Understanding the command's reported by components" caption-side="top"}
 {: #definecard2}
 {: tab-title="Reported by"}
-{: tab-group="component-simple"}
+{: tab-group="card"}
 
 | Card | Description | 
 |:-----------------|:-----------------|
@@ -309,7 +309,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 {: caption="Table 3. Understanding the command's card components" caption-side="top"}
 {: #definecard3}
 {: tab-title="Card"}
-{: tab-group="component-simple"}
+{: tab-group="card"}
 
 | Elements: Value type | Description | 
 |:-----------------|:-----------------|
@@ -325,7 +325,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 {: caption="Table 4. Understanding the command's element components" caption-side="top"}
 {: #definecard4}
 {: tab-title="Elements"}
-{: tab-group="component-simple"}
+{: tab-group="card"}
 
 Example response:
 
