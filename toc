@@ -8,8 +8,11 @@ IBM Cloud Security Advisor
     index.md
     about.md
     integrations.md
-    network-insights.md
-    activity-insights.md
+
+    {: .topicgroup}
+    Built-in insights
+        network-insights.md
+        activity-insights.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
