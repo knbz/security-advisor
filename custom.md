@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-06"
+lastupdated: "2019-06-13"
 
 keywords: Centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -122,7 +122,7 @@ curl -X POST "https://us-south.secadvisor.cloud.ibm.com/findings/v1/<account_id>
 Example response:
 
 ```
-  {
+{
   "author": {
     "account_id": "account id",
     "email": "email id",
