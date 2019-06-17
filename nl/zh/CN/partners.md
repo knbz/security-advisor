@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -26,7 +27,7 @@ subcollection: security-advisor
 # 合作伙伴
 {: #setup-partner}
 
-通过 IBM 业务合作伙伴集成，可将来自第三方提供者的关键警报和发现结果引入 {{site.data.keyword.security-advisor_long}} 仪表板。这些合作伙伴与 IBM 合作，帮助形成和简化您的集成体验，并提供相关指导。
+通过 IBM 业务合作伙伴集成，可将来自第三方提供者的关键警报和发现结果引入 {{site.data.keyword.security-advisor_long}} 仪表板。这些合作伙伴与 IBM 合作，帮助创建和简化您的集成体验，并提供相关指导。
 {: shortdesc}
 
 ## 开始之前
@@ -41,18 +42,18 @@ subcollection: security-advisor
 ## 集成向导
 {: #wizard}
 
-作为同时具有 {{site.data.keyword.cloud_notm}} 和伙伴帐户中管理权限的管理员，您可以使用集成向导来快速启动并开始运行。该向导包含四个基本步骤：
+作为同时具有 {{site.data.keyword.cloud_notm}} 和伙伴帐户中管理许可权的管理员，您可以使用集成向导来快速启动并开始运行。该向导包含四个基本步骤：
 
 * 建立信任，并将 {{site.data.keyword.cloud_notm}} 与伙伴帐户相关联
 * 在帐户之间复制必需的信息，例如凭证和 URL
-* 将合作伙伴发现结果元数据安装到 {{site.data.keyword.security-advisor_short}} 中
+* 将合作伙伴的发现结果元数据安装到 {{site.data.keyword.security-advisor_short}} 中
 * 通过将来自合作伙伴的发现结果发布到 {{site.data.keyword.security-advisor_short}} 中来验证配对情况
 
 
 ## 集成 NeuVector
 {: #setup-neuvector}
 
-通过 NeuVector，可以检测网络威胁和违例，以阻止对基于容器的应用程序的攻击。借助监视，可以通过检测容器和主机中的 root 用户特权升级、端口扫描、逆向 shell 和可疑文件系统活动，防止漏洞利用和爆发。
+通过 [NeuVector](https://neuvector.com){: external}，可以检测网络威胁和违例，以阻止对基于容器的应用程序的攻击。借助监视，可以通过检测容器和主机中的 root 用户特权升级、端口扫描、逆向 shell 和可疑文件系统活动，防止漏洞利用和爆发。
 {: shortdesc}
 
 要将 NeuVector 与 {{site.data.keyword.security-advisor_short}} 集成，可以使用以下步骤：
@@ -75,7 +76,7 @@ subcollection: security-advisor
 ## 集成 Twistlock
 {: #setup-twistlock}
 
-可以通过阻止在环境中部署易受攻击的映像来防范风险。通过自动化和定制策略强制实施，Twistlock 提供了对应用程序生命周期中每个阶段的完全控制。
+可以通过阻止在环境中部署易受攻击的映像来防范风险。通过自动化和定制策略强制实施，[Twistlock](https://www.twistlock.com){: external} 提供了对应用程序生命周期中每个阶段的完全控制。
 {: shortdesc}
 
 配置合作伙伴连接时，将在仪表板中创建两个卡，用于概述来自的 Twistlock 的发现结果。

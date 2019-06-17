@@ -2,15 +2,16 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-06-06"
 
-keywords: centralized security, security management, alerts, security risk, insights, threat detection
+keywords: Centralized security, security management, alerts, security risk, insights, threat detection
 
 subcollection: security-advisor
 
 ---
 
-{:new_window: target="_blank"}
+
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -43,7 +44,7 @@ subcollection: security-advisor
 {: #xforce}
 {: faq}
 
-IBM X-Force リサーチは、世界で最も実績の高い民間セキュリティー研究チームの 1 つです。 これらのセキュリティー専門家は、さまざまなソースからセキュリティー問題をモニターして分析し、IBM セキュリティー・ポートフォリオの基盤として脅威インテリジェンスの内容を提供します。 IBM X-Force Exchange は、脅威インテリジェンスを共有するためのクラウド・ベースのプラットフォームであり、ユーザーは、最新のセキュリティー脅威の迅速な調査、実用的なインテリジェンスの集約、同僚との共同作業が可能になります。 IBM X-Force Exchange は、IBM の X-Force のスケールを利用する、手動で生成されたインテリジェンスと自動的に生成されたインテリジェンスによってサポートされています。
+IBM X-Force リサーチは、世界で最も実績の高い民間セキュリティー研究チームの 1 つです。 このチームのセキュリティー専門家が、さまざまなソースのセキュリティー問題をモニターして分析し、IBM セキュリティー・ポートフォリオの基盤として脅威インテリジェンスの内容を提供しています。IBM X-Force Exchange は、脅威インテリジェンスを共有するためのクラウド・ベースのプラットフォームであり、ユーザーは、最新のセキュリティー脅威の迅速な調査、実用的なインテリジェンスの集約、同僚との共同作業が可能になります。 IBM X-Force Exchange は、IBM の X-Force のスケールを利用して人が生成したインテリジェンスとマシンが生成したインテリジェンスによってサポートされています。
 
 </br>
 
@@ -51,4 +52,4 @@ IBM X-Force リサーチは、世界で最も実績の高い民間セキュリ�
 {: #partner}
 {: faq}
 
-ご使用のソリューションと {{site.data.keyword.security-advisor_short}} との統合に関心を持っていただき、ありがとうございます。始めに、wardm@us.ibm.com で Matt Ward と連絡を取ってチームに接触してください。
+ご使用のソリューションと {{site.data.keyword.security-advisor_short}} との統合に関心を持っていただき、ありがとうございます。 始めに、wardm@us.ibm.com で Matt Ward と連絡を取ってチームに接触してください。

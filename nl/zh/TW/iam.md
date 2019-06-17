@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -27,7 +28,7 @@ subcollection: security-advisor
 # 管理服務存取
 {: #service-access}
 
-身為帳戶擁有者，您可以使用 {{site.data.keyword.Bluemix_notm}} Identity and Access Management (IAM) 來管理對 {{site.data.keyword.security-advisor_long}} 實例的存取權。透過在帳戶內設定原則以針對不同的使用者建立不同的存取層次，您可以確保每個 {{site.data.keyword.security-advisor_short}} 實例都是安全的。
+身為帳戶擁有者，您可以使用 {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) 來管理對 {{site.data.keyword.security-advisor_long}} 實例的存取權。透過在帳戶內設定原則以針對不同的使用者建立不同的存取層次，您可以確保每個 {{site.data.keyword.security-advisor_short}} 實例都是安全的。
 {: shortdesc}
 
 如需 IAM 的相關資訊，請參閱 [IAM 存取](/docs/iam?topic=iam-userroles)。
@@ -38,7 +39,7 @@ subcollection: security-advisor
 帳戶中存取 {{site.data.keyword.security-advisor_short}} 服務實例的每位使用者，都必須獲指派已定義 IAM 使用者角色的存取原則。該原則決定使用者可在該特定服務實例的環境定義內執行的動作。
 {: shortdesc}
 
-這些動作是自訂的，並由 {{site.data.keyword.Bluemix_notm}} 服務定義為可在服務中執行的作業。然後，這些動作會對映至 IAM 服務使用者角色。在下表中，會對映 {{site.data.keyword.security-advisor_short}} 的動作與必要許可權。
+這些動作是自訂的，並由 {{site.data.keyword.cloud_notm}} 服務定義為可在服務中執行的作業。然後，這些動作會對映至 IAM 服務使用者角色。在下表中，會對映 {{site.data.keyword.security-advisor_short}} 的動作與必要許可權。
 
 <table><caption>哪些角色可以執行哪些動作？</caption>
   <col width="40%">
@@ -52,12 +53,12 @@ subcollection: security-advisor
   <tr>
     <td><code>security-advisor.findings.read</code></td>
     <td>檢視安全報告發現項目。</td>
-    <td>讀者</br>作者</br>管理員</td>
+    <td>讀者</br>撰寫者</br>管理員</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.write</code></td>
     <td>產生安全報告發現項目。</td>
-    <td>作者</br>管理員</td>
+    <td>撰寫者</br>管理員</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.delete</code></td>
@@ -67,12 +68,12 @@ subcollection: security-advisor
   <tr>
     <td><code>security-advisor.findings.update</code></td>
     <td>編輯安全報告發現項目。</td>
-    <td>作者</br>管理員</td>
+    <td>撰寫者</br>管理員</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.read</code></td>
     <td>檢視 meta 資料。</td>
-    <td>讀者</br>作者</br>管理員</td>
+    <td>讀者</br>撰寫者</br>管理員</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.delete</code></td>
@@ -92,7 +93,7 @@ subcollection: security-advisor
   <tr>
     <td><code>security-advisor.custom-solution.read</code></td>
     <td>閱讀已新增至服務的自訂解決方案。</td>
-    <td>讀者</br>作者</br>管理員</td>
+    <td>讀者</br>撰寫者</br>管理員</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.write</code></td>
@@ -111,22 +112,22 @@ subcollection: security-advisor
   </tr>
   <tr>
     <td><code>security-advisor.partner-solution.read</code></td>
-    <td>檢視已新增至服務實例的夥伴解決方案。</td>
-    <td>讀者</br>作者</br>管理員</td>
+    <td>檢視已新增至服務實例的合作夥伴解決方案。</td>
+    <td>讀者</br>撰寫者</br>管理員</td>
   </tr>
   <tr>
     <td><code>security-advisor.partner-solution.write</code></td>
-    <td>將夥伴解決方案新增至服務實例。</td>
+    <td>將合作夥伴解決方案新增至服務實例。</td>
     <td>管理員</td>
   </tr>
   <tr>
     <td><code>security-advisor.partner-solution.update</code></td>
-    <td>更新服務實例中的夥伴解決方案。</td>
+    <td>更新服務實例中的合作夥伴解決方案。</td>
     <td>管理員</td>
   </tr>
   <tr>
     <td><code>security-advisor.partner-solution.delete</code></td>
-    <td>刪除服務實例中的夥伴解決方案。</td>
+    <td>刪除服務實例中的合作夥伴解決方案。</td>
     <td>管理員</td>
   </tr>
   <tr>
@@ -151,7 +152,7 @@ subcollection: security-advisor
   </tr>
   <tr>
     <td><code>security-advisor.insights-cos.create</code></td>
-    <td>透過 {{site.data.keyword.security-advisor_short}} 建立 Network 及 Activity Insights 的 Cloud Object Storage 實例。</td>
+    <td>透過 {{site.data.keyword.security-advisor_short}} 建立 Network  Insights 及 Activity Insights 的 Cloud Object Storage 實例。</td>
     <td>管理員</td>
   </tr>
 </table>
@@ -159,7 +160,7 @@ subcollection: security-advisor
 ## API 對映
 {: #api-map}
 
-這些角色如何對應至 API？請查看下表，以查看服務動作如何對映至 API。
+這些角色如何對應至 API？請參閱下表，以查看服務動作如何對映至 API。
 
 
 | 方法   | 端點                                                                      |  服務動作                        |

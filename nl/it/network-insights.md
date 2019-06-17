@@ -2,15 +2,15 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
-keywords: centralized security, security management, alerts, security risk, insights, threat detection
+keywords: Centralized security, security management, alerts, security risk, insights, threat detection
 
 subcollection: security-advisor
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -33,7 +33,7 @@ Con {{site.data.keyword.security-advisor_long}}, puoi ottenere delle informazion
 ## Modalità di funzionamento
 {: #network-how-it-works}
 
-La funzione Network Insights è un componente aggiuntivo del servizio {{site.data.keyword.security-advisor_short}}. Con la funzione abilitata e configurata, la comunicazione di rete del cluster, sia in entrata che in uscita, tra il tuo cluster ed entità esterne, viene raccolta e continuamente monitorata e analizzata. 
+La funzione Network Insights è un componente aggiuntivo del servizio {{site.data.keyword.security-advisor_short}}. Con la funzione abilitata e configurata, la comunicazione di rete del cluster, sia in entrata che in uscita, tra il tuo cluster ed entità esterne, viene raccolta e continuamente monitorata e analizzata.
 
 Controlla la seguente immagine per vedere il flusso di informazioni.
 
@@ -43,7 +43,7 @@ Controlla la seguente immagine per vedere il flusso di informazioni.
 2. I log del flusso di rete vengono inoltrati a un bucket Cloud Object Storage in cui vengono archiviati finché non decidi di eliminarli. Quando utilizzi la GUI {{site.data.keyword.security-advisor_short}} per creare il bucket, vengono assegnati dei ruoli IAM da servizio a servizio in modo che il servizio possa visualizzare i log.
 3. Con Network Insights abilitato, i dati non elaborati nel tuo bucket COS vengono analizzati alla ricerca di comportamenti sospetti.
 4. Quando viene segnalato un possibile problema di sicurezza, la ricerca viene inoltrata al database delle ricerche.
-5. Le ricerche vengono visualizzate nel tuo dashboard del servizio su tre schede: 
+5. Le ricerche vengono visualizzate nel tuo dashboard del servizio su tre schede:
   * Traffico in entrata sospetto
   * Traffico in uscita sospetto
   * Anomalie nel traffico
@@ -66,10 +66,10 @@ Vengono raccolte le seguenti informazioni:
 * Una serie di parametri specifici del protocollo
 * Varie date/ore.
 
-**I dati effettivi che vengono scambiati non vengono raccolti.**
+I dati effettivi che vengono scambiati non vengono raccolti.
+{: tip}
 
 Da un punto di vista della sicurezza, è una buona idea eliminare i tuoi dati raccolti quando i requisiti legali e aziendali consentono di eliminarli. Per ulteriori informazioni, vedi [Eliminazione degli oggetti](/docs/services/cloud-object-storage/info?topic=cloud-object-storage-security#deletion).
-{: tip}
 
 
 ## Rete: Traffico in entrata sospetto
@@ -79,7 +79,7 @@ Da un punto di vista della sicurezza, è una buona idea eliminare i tuoi dati ra
 {: shortdesc}
 
 
-I modelli comportamentali dei client classificati da IBM X-Force come distributori di malware utilizzati come scanner, che fanno parte di una botnet, per l'estrazione della criptovaluta o per i servizi di anonimazione, vengono tutti monitorati in modo continuo. Se questo tipo di client si avvicina al tuo cluster e mostra l'approccio di un cluster monitorato e di un comportamento allarmante, Network Insights emette una ricerca.
+I modelli comportamentali dei client classificati da IBM X-Force come distributori di malware utilizzati come scanner, che fanno parte di una botnet, per l'estrazione della criptovaluta o per i servizi di anonimazione, vengono tutti monitorati in modo continuo. Se quel tipo di client si avvicina a un cluster monitorato e mostra un comportamento allarmante, Network Insights emette una ricerca.
 
 
 La scheda introduce due KRI (Key Risk Indicator):
@@ -112,9 +112,9 @@ La scheda introduce due KRI (Key Risk Indicator):
 
 Le ricerche potrebbero includere i contenitori che:
 
-* inviano in modo anomalo grandi quantità di dati a un server sospetto 
-* estraggono una grande quantità di dati da un server sospetto
-* eseguono molte richieste a un server sospetto
+* Inviano quantità eccessivamente grandi di dati a un server sospetto.
+* Estraggono una grande quantità di dati da un server sospetto.
+* Eseguono un numero elevato di richieste su un server sospetto.
 
 
 ## Rete: Anomalie nel traffico (sperimentale)
@@ -132,13 +132,13 @@ La scheda introduce due KRI (Key Risk Indicator):
 
 Una ricerca può includere:  
 
-* contenitori che si avvicinano a server a cui non si sono mai avvicinati prima
-* contenitori che inviano o utilizzano molti più dati del normale da o verso peer specifici
-* uno specifico livello di rilevamento aumenta in modo significativo
+* Contenitori che si avvicinano a server a cui non si sono mai avvicinati in precedenza.
+* Contenitori che inviano o utilizzano molti più dati del normale da o verso peer specifici.
+* Il livello di rilevamento di un particolare contenitore è notevolmente aumentato.
 
- Dopo che il modello è stato sviluppato, vengono rilevate le deviazioni dal modello acquisito e quando si presenta una modifica allarmante, Network Insights pubblica una ricerca sul dashboard di Security Advisor. Le ricerche sono riepilogate nella scheda 'Rete: Anomalie nel traffico'. La scheda introduce due KRI (Key Risk Indicator). Il KRI 'Attività di scambio di dati o di ricognizione più elevata del normale' conta le ricerche correlate alle interazioni anomale rilevate tra il cluster e i peer esterni, mentre il KRI 'Approccio in uscita a un nuovo server' conta le ricerche correlate ai nuovi server rilevati a cui si avvicina il cluster.  
+Dopo che il modello è stato sviluppato, vengono rilevate le deviazioni dal modello acquisito e quando si presenta una modifica allarmante, Network Insights pubblica una ricerca sul dashboard di Security Advisor. Le ricerche sono riepilogate nella scheda "Rete: Anomalie nel traffico". La scheda introduce due KRI (Key Risk Indicator). Il KRI "Attività di scambio di dati o di ricognizione più elevata del normale" conta le ricerche correlate alle interazioni anomale rilevate tra il cluster e i peer esterni. Il KRI "Approccio in uscita a un nuovo server" conta le ricerche correlate ai nuovi server rilevati a cui si avvicina il cluster.  
 
 ## Passi successivi
 {: #network-next}
 
-Pronto per iniziare? Consulta [Abilitazione di Network Insights](/docs/services/security-advisor/setup-network.html)!
+Pronto per iniziare? Consulta [Abilitazione di Network Insights](/docs/services/security-advisor?topic=security-advisor-setup-network)!

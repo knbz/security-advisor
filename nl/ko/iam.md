@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -27,7 +28,7 @@ subcollection: security-advisor
 # 서비스 액세스 관리
 {: #service-access}
 
-계정 소유자로서 사용자는 {{site.data.keyword.Bluemix_notm}} Identity and Access Management(IAM)를 사용하여 {{site.data.keyword.security-advisor_long}}의 인스턴에 대한 액세스를 관리할 수 있습니다. 다른 사용자마다 다른 액세스 레벨을 작성하는 계정 내에 정책을 설정하여 {{site.data.keyword.security-advisor_short}}의 각 인스턴스가 보안 설정되었는지 확인할 수 있습니다.
+계정 소유자로서 사용자는 {{site.data.keyword.cloud_notm}} Identity and Access Management(IAM)를 사용하여 {{site.data.keyword.security-advisor_long}}의 인스턴에 대한 액세스를 관리할 수 있습니다. 다른 사용자마다 다른 액세스 레벨을 작성하는 계정 내에 정책을 설정하여 {{site.data.keyword.security-advisor_short}}의 각 인스턴스가 보안 설정되었는지 확인할 수 있습니다.
 {: shortdesc}
 
 IAM에 대한 자세한 정보는 [IAM 액세스](/docs/iam?topic=iam-userroles)를 참조하십시오.
@@ -38,7 +39,7 @@ IAM에 대한 자세한 정보는 [IAM 액세스](/docs/iam?topic=iam-userroles)
 계정에서 {{site.data.keyword.security-advisor_short}} 서비스의 인스턴스에 액세스하는 모든 사용자에게 IAM 사용자 역할이 정의된 액세스 정책이 지정되어야 합니다. 정책은 사용자가 해당 특정 서비스 인스턴스의 컨텍스트 내에서 수행할 수 있는 조치를 결정합니다.
 {: shortdesc}
 
-조치는 서비스에서 수행될 수 있는 오퍼레이션으로서 {{site.data.keyword.Bluemix_notm}} 서비스를 통해 사용자 정의 및 정의됩니다. 그런 다음 조치는 IAM 서비스 사용자 역할에 맵핑됩니다. 다음 표에서 조치 및 {{site.data.keyword.security-advisor_short}}에 필요한 권한이 맵핑됩니다.
+조치는 서비스에서 수행될 수 있는 오퍼레이션으로서 {{site.data.keyword.cloud_notm}} 서비스를 통해 사용자 정의 및 정의됩니다. 그런 다음 조치는 IAM 서비스 사용자 역할에 맵핑됩니다. 다음 표에서 조치 및 {{site.data.keyword.security-advisor_short}}에 필요한 권한이 맵핑됩니다.
 
 <table><caption>어떤 역할이 어떤 조치를 수행할 수 있습니까?</caption>
   <col width="40%">

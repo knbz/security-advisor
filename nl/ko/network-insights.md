@@ -2,15 +2,15 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
-keywords: centralized security, security management, alerts, security risk, insights, threat detection
+keywords: Centralized security, security management, alerts, security risk, insights, threat detection
 
 subcollection: security-advisor
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -66,10 +66,10 @@ Network Insights 기능은 {{site.data.keyword.security-advisor_short}} 서비�
 * 프로토콜에 특정한 매개변수 세트
 * 다양한 시간소인
 
-**교환되는 실제 데이터는 수집되지 않습니다.**
+교환되는 실제 데이터는 수집되지 않습니다.
+{: tip}
 
 보안 관점에서 법적 또는 회사 요구사항에 따라 삭제할 수 있으면 수집된 데이터는 제거하는 것이 좋습니다. 자세한 정보는 [오브젝트 삭제](/docs/services/cloud-object-storage/info?topic=cloud-object-storage-security#deletion)를 참조하십시오.
-{: tip}
 
 
 ## 네트워크: 의심스러운 인바운드 트래픽
@@ -79,7 +79,7 @@ Network Insights 기능은 {{site.data.keyword.security-advisor_short}} 서비�
 {: shortdesc}
 
 
-IBM X-Force가 봇넷의 파트, 스캐너로서 사용되는 악성코드를 배포하는 것으로 분류한 클라이언트의 동작 패턴, 암호 화폐 채굴 또는 익명화 서비스에 대한 동작 패턴은 모두 지속적으로 모니터됩니다. 해당 유형의 클라이언트가 클러스터에 접근하여 모니터되는 클러스터에 접근하고 알람 작동이 표시되면 네트워크 인사이트에서 찾은 결과를 발행합니다.
+IBM X-Force가 봇넷의 일부로서 스캐너로 사용되는 배포 악성코드로 분류한 클라이언트의 동작 패턴, 암호 화폐 채굴 또는 익명화 서비스에 대한 동작 패턴은 모두 지속적으로 모니터됩니다. 해당 유형의 클라이언트가 모니터되는 클러스터에 접근하고 알람 동작이 표시되면 네트워크 인사이트에서 찾은 결과를 발행합니다.
 
 
 카드에는 두 가지 주요 위험 지표(KRI)가 있습니다.
@@ -112,9 +112,9 @@ IBM X-Force가 봇넷의 파트, 스캐너로서 사용되는 악성코드를 �
 
 찾은 결과에는 다음과 같은 컨테이너가 포함될 수 있습니다.
 
-* 의심스러운 서버로 비정상적인 대량의 데이터를 전송합니다.
-* 의심스러운 서버에서 대량의 데이터를 추출합니다.
-* 의심스러운 서버에 대량의 요청을 수행합니다.
+* 비정상적인 대량의 데이터를 의심스러운 서버로 전송합니다. 
+* 의심스러운 서버에서 대량의 데이터를 추출합니다. 
+* 의심스러운 서버에 대해 대량의 요청을 수행합니다. 
 
 
 ## 네트워크: 트래픽의 이상 항목(시범)
@@ -130,15 +130,15 @@ IBM X-Force가 봇넷의 파트, 스캐너로서 사용되는 악성코드를 �
 * 정상적인 정찰 또는 데이터 교환 활동보다 높음: 클러스터와 외부 피어 간에 발견된 비정상 상호작용과 관련된 찾은 결과.
 * 새 서버에 아웃 바운드 접근: 클러스터가 접근하는 새로 발견된 서버와 관련된 찾은 결과.
 
-찾은 결과에는 다음 사항이 포함될 수 있습니다.   
+찾은 결과에는 다음 사항이 포함될 수 있습니다.  
 
 * 이전에 접근하지 않았던 서버에 접근하는 컨테이너
 * 특정 피어로 또는 피어에서 정상 상태보다 훨씬 많은 데이터를 전송하거나 사용하는 컨테이너
-* 특정 조사의 레벨이 현저하게 증가함
+* 특정 컨테이너의 조사 레벨이 현저하게 증가함
 
- 모델이 개발되면 학습된 모델의 편차가 발견되고 알람이 변경되면 Network Insights는 Security Advisor 대시보드에 찾은 결과를 게시합니다. 찾은 결과는 '네트워크: 트래픽의 이상 항목' 카드에 요약됩니다. 카드에는 두 가지 주요 위험 지표(KRI)가 있습니다. '정상적인 정찰 또는 데이터 교환 활동보다 높음' KRI는 클러스터와 외부 피어 간에 발견된 비정상 상호작용과 관련된 찾은 결과를 계산하고 '새 서버에 아웃 바운드 접근' KRI는 클러스터에 의한 새로 발견된 서버 접근과 관련된 찾은 결과를 계산합니다.  
+모델이 개발되면 학습된 모델의 편차가 발견되고 알람이 변경되면 Network Insights는 Security Advisor 대시보드에 찾은 결과를 게시합니다. 찾은 결과는 "네트워크: 트래픽의 이상 항목" 카드에 요약됩니다. 카드에는 두 가지 주요 위험 지표(KRI)가 있습니다. "정상적인 정찰 또는 데이터 교환 활동보다 높음" KRI는 클러스터와 외부 피어 간에 발견된 비정상 상호작용과 관련된 찾은 결과를 계산합니다. "새 서버에 아웃 바운드 접근" KRI는 클러스터에 의한 새로 발견된 서버 접근과 관련된 찾은 결과를 계산합니다.   
 
 ## 다음 단계
 {: #network-next}
 
-시작할 준비가 되셨습니까? [Network Insights 사용](/docs/services/security-advisor/setup-network.html)을 참조하십시오!
+시작할 준비가 되셨습니까? [Network Insights 사용](/docs/services/security-advisor?topic=security-advisor-setup-network)을 참조하십시오!

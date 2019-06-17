@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -27,7 +28,7 @@ subcollection: security-advisor
 # 管理服务访问权
 {: #service-access}
 
-作为帐户所有者，您可以使用 {{site.data.keyword.Bluemix_notm}} Identity and Access Management (IAM) 来管理对 {{site.data.keyword.security-advisor_long}} 实例的访问权。通过在帐户中设置策略，用于针对不同用户创建不同级别的访问权，可以确保 {{site.data.keyword.security-advisor_short}} 的每个实例都是安全的。
+作为帐户所有者，您可以使用 {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) 来管理对 {{site.data.keyword.security-advisor_long}} 实例的访问权。通过在帐户中设置策略，用于针对不同用户创建不同级别的访问权，可以确保 {{site.data.keyword.security-advisor_short}} 的每个实例都是安全的。
 {: shortdesc}
 
 有关 IAM 的更多信息，请参阅 [IAM 访问权](/docs/iam?topic=iam-userroles)。
@@ -38,7 +39,7 @@ subcollection: security-advisor
 帐户中访问 {{site.data.keyword.security-advisor_short}} 服务实例的每个用户都会分配有定义了 IAM 用户角色的访问策略。该策略确定用户可以在该特定服务实例的上下文中执行的操作。
 {: shortdesc}
 
-这些操作由 {{site.data.keyword.Bluemix_notm}} 服务定制和定义，作为允许在服务中执行的操作。然后，这些操作会映射到 IAM 服务用户角色。在下表中，{{site.data.keyword.security-advisor_short}} 的操作和必需的许可权一一对应。
+这些操作由 {{site.data.keyword.cloud_notm}} 服务定制和定义，作为允许在服务中执行的操作。然后，这些操作会映射到 IAM 服务用户角色。在下表中，{{site.data.keyword.security-advisor_short}} 的操作和必需的许可权一一对应。
 
 <table><caption>哪些角色可以执行哪些操作？</caption>
   <col width="40%">

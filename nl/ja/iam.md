@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -27,7 +28,7 @@ subcollection: security-advisor
 # サービス・アクセスの管理
 {: #service-access}
 
-アカウント所有者は、{{site.data.keyword.Bluemix_notm}} の ID およびアクセス管理 (IAM) を使用して、{{site.data.keyword.security-advisor_long}} のインスタンスへのアクセスを管理できます。 ユーザーに応じたアクセス・レベルになるようにアカウント内にポリシーを設定することで、{{site.data.keyword.security-advisor_short}} の各インスタンスを保護できます。
+アカウント所有者は、{{site.data.keyword.cloud_notm}} の Identity and Access Management (IAM) を使用して、{{site.data.keyword.security-advisor_long}} のインスタンスへのアクセスを管理できます。ユーザーに応じたアクセス・レベルになるようにアカウント内にポリシーを設定することで、{{site.data.keyword.security-advisor_short}} の各インスタンスを保護できます。
 {: shortdesc}
 
 IAM について詳しくは、[IAM のアクセス権限](/docs/iam?topic=iam-userroles)を参照してください。
@@ -38,7 +39,7 @@ IAM について詳しくは、[IAM のアクセス権限](/docs/iam?topic=iam-u
 アカウント内の {{site.data.keyword.security-advisor_short}} のサービス・インスタンスにアクセスする各ユーザーに、IAM ユーザー役割を定義したアクセス・ポリシーを割り当てる必要があります。 このポリシーにより、その特定のサービス・インスタンスのコンテキストでユーザーが実行できるアクションが決まります。
 {: shortdesc}
 
-アクションは、{{site.data.keyword.Bluemix_notm}} サービスで実行が許可された操作として、そのサービスでカスタマイズおよび定義されます。 そして、アクションは IAM サービスのユーザー役割にマップされます。 以下の表では、{{site.data.keyword.security-advisor_short}} のアクションと必要な許可がマップされています。
+アクションは、{{site.data.keyword.cloud_notm}} サービスで実行が許可された操作として、そのサービスでカスタマイズおよび定義されます。 そして、アクションは IAM サービスのユーザー役割にマップされます。 以下の表では、{{site.data.keyword.security-advisor_short}} のアクションと必要な許可がマップされています。
 
 <table><caption>どの役割がどのアクションを実行できるか?</caption>
   <col width="40%">

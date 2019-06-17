@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -30,23 +31,28 @@ subcollection: security-advisor
 Puede ver, gestionar y auditar las actividades iniciadas por el usuario que se han realizado en la instancia del servicio {{site.data.keyword.security-advisor_long}} mediante el servicio {{site.data.keyword.cloudaccesstrailshort}}.
 {: shortdesc}
 
-Para obtener más información sobre el funcionamiento del servicio, consulte la [documentación de {{site.data.keyword.cloudaccesstrailshort}}](/docs/services/cloud-activity-tracker/reference?topic=cloud-activity-tracker-getting-started-with-cla#getting-started-with-cla).
+
+
+
+
+
+Para obtener más información sobre cómo funciona el servicio, consulte la [documentación de {{site.data.keyword.cloudaccesstrailshort}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started#getting-started).
+
 
 
 ## Dónde ver los sucesos
 {: #monitor}
 
-Los sucesos están disponibles en el **dominio de la cuenta** de {{site.data.keyword.cloudaccesstrailshort}} que está disponible en la región de {{site.data.keyword.Bluemix_notm}} donde se han generado los sucesos.
+Los sucesos están disponibles en el **dominio de la cuenta** de {{site.data.keyword.cloudaccesstrailshort}} que está disponible en la región de {{site.data.keyword.cloud_notm}} donde se han generado los sucesos.
 
-1. Inicie una sesión en su cuenta de {{site.data.keyword.Bluemix_notm}}.
+1. Inicie sesión en su cuenta de {{site.data.keyword.cloud_notm}}.
 2. Desde el catálogo, suministre una instancia del servicio {{site.data.keyword.cloudaccesstrailshort}} en la misma cuenta que la instancia de {{site.data.keyword.security-advisor_short}}.
 3. En el separador **Gestión** del panel de control de {{site.data.keyword.cloudaccesstrailshort}}, pulse **Ver en Kibana**.
 4. Establezca el intervalo de tiempo para el que desea ver los registros. El valor predeterminado es 15 minutos.
 5. En la lista **Campos disponibles**, pulse **Tipo**. Pulse el icono de lupa de **Activity Tracker** para limitar los registros a aquellos que el servicio rastrea.
 6. Puede utilizar los otros campos disponibles para limitar la búsqueda.
 
-Para que los usuarios que no sean el propietario de la cuenta puedan ver los registros, debe utilizar el plan premium. Para permitir que otros usuarios vean sucesos, consulte [Concesión de permisos para ver sucesos de cuentas](/docs/services/cloud-activity-tracker/how-to?topic=cloud-activity-tracker-grant_permissions#grant_permissions).
-{: tip}
+
 
 ## Lista de sucesos
 {: #events}

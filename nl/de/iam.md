@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -27,7 +28,7 @@ subcollection: security-advisor
 # Servicezugriff verwalten
 {: #service-access}
 
-Als Kontoeigner können Sie den Zugriff auf Instanzen von {{site.data.keyword.security-advisor_long}} mithilfe von {{site.data.keyword.Bluemix_notm}} Identity and Access Management (IAM) steuern. Sie definieren Richtlinien in Ihrem Konto, die verschiedene Zugriffsebenen für verschiedene Benutzer erstellen, und können damit gewährleisten, dass jede Instanz von {{site.data.keyword.security-advisor_short}} sicher ist.
+Als Kontoeigner können Sie den Zugriff auf Instanzen von {{site.data.keyword.security-advisor_long}} mithilfe von {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) steuern. Sie definieren Richtlinien in Ihrem Konto, die verschiedene Zugriffsebenen für verschiedene Benutzer erstellen, und können damit gewährleisten, dass jede Instanz von {{site.data.keyword.security-advisor_short}} sicher ist.
 {: shortdesc}
 
 Weitere Informationen zu IAM finden Sie unter [IAM-Zugriff](/docs/iam?topic=iam-userroles).
@@ -38,7 +39,7 @@ Weitere Informationen zu IAM finden Sie unter [IAM-Zugriff](/docs/iam?topic=iam-
 Jedem Benutzer, der auf eine Instanz des {{site.data.keyword.security-advisor_short}}-Service in Ihrem Konto zugreift, muss eine Zugriffsrichtlinie mit einer definierten IAM-Benutzerrolle zugeordnet werden. Die Richtlinie legt fest, welche Aktionen ein Benutzer im Kontext der jeweiligen Serviceinstanz ausführen kann.
 {: shortdesc}
 
-Die Aktionen werden angepasst und durch den {{site.data.keyword.Bluemix_notm}}-Service als Operationen definiert, deren Ausführung in dem Service zulässig ist. Dann werden die Aktionen IAM-Servicebenutzerrollen zugeordnet. Die folgende Tabelle enthält eine Auflistung der Aktionen und erforderlichen Berechtigungen für {{site.data.keyword.security-advisor_short}}.
+Die Aktionen werden angepasst und durch den {{site.data.keyword.cloud_notm}}-Service als Operationen definiert, deren Ausführung in dem Service zulässig ist. Dann werden die Aktionen IAM-Servicebenutzerrollen zugeordnet. Die folgende Tabelle enthält eine Auflistung der Aktionen und erforderlichen Berechtigungen für {{site.data.keyword.security-advisor_short}}.
 
 <table><caption>Welche Rollen können welche Aktionen ausführen?</caption>
   <col width="40%">
@@ -52,12 +53,12 @@ Die Aktionen werden angepasst und durch den {{site.data.keyword.Bluemix_notm}}-S
   <tr>
     <td><code>security-advisor.findings.read</code></td>
     <td>Untersuchungsergebnisse für Sicherheitsbericht anzeigen.</td>
-    <td>Leseberechtigter</br>Schreibberechtigter</br>Manager</td>
+    <td>Leser</br>Autor</br>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.write</code></td>
     <td>Untersuchungsergebnisse für Sicherheitsbericht generieren.</td>
-    <td>Schreibberechtigter</br>Manager</td>
+    <td>Autor</br>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.delete</code></td>
@@ -67,12 +68,12 @@ Die Aktionen werden angepasst und durch den {{site.data.keyword.Bluemix_notm}}-S
   <tr>
     <td><code>security-advisor.findings.update</code></td>
     <td>Untersuchungsergebnisse für Sicherheitsbericht bearbeiten.</td>
-    <td>Schreibberechtigter</br>Manager</td>
+    <td>Autor</br>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.read</code></td>
     <td>Metadaten anzeigen.</td>
-    <td>Leseberechtigter</br>Schreibberechtigter</br>Manager</td>
+    <td>Leser</br>Autor</br>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.delete</code></td>
@@ -92,7 +93,7 @@ Die Aktionen werden angepasst und durch den {{site.data.keyword.Bluemix_notm}}-S
   <tr>
     <td><code>security-advisor.custom-solution.read</code></td>
     <td>Angepasste Lösungen, die Sie zum Service hinzugefügt haben, lesen.</td>
-    <td>Leseberechtigter</br>Schreibberechtigter</br>Manager</td>
+    <td>Leser</br>Autor</br>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.write</code></td>
@@ -112,7 +113,7 @@ Die Aktionen werden angepasst und durch den {{site.data.keyword.Bluemix_notm}}-S
   <tr>
     <td><code>security-advisor.partner-solution.read</code></td>
     <td>Partnerlösungen, die Sie zu Ihrer Serviceinstanz hinzugefügt haben, anzeigen.</td>
-    <td>Leseberechtigter</br>Schreibberechtigter</br>Manager</td>
+    <td>Leser</br>Autor</br>Manager</td>
   </tr>
   <tr>
     <td><code>security-advisor.partner-solution.write</code></td>

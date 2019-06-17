@@ -2,15 +2,16 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-06-06"
 
-keywords: centralized security, security management, alerts, security risk, insights, threat detection
+keywords: Centralized security, security management, alerts, security risk, insights, threat detection
 
 subcollection: security-advisor
 
 ---
 
-{:new_window: target="_blank"}
+
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -43,12 +44,12 @@ subcollection: security-advisor
 {: #xforce}
 {: faq}
 
-IBM X-Force 研究是全球最知名之一的業務安全研究團隊。這群安全研究專家會從各式各樣的來源監控並分析安全問題，提供威脅情報內容作為 IBM Security 產品組合的基礎。IBM X-Force Exchange 是一種雲端型威脅情報分享平台，可讓使用者快速研究最新的安全威脅、聚集可採取動作的情報，並與同儕分工合作。IBM X-Force Exchange 的內容來自於人員和機器運用 IBM X-Force 規模所產生的情報。
+IBM X-Force 研究是全球最知名之一的商業安全研究團隊。這些安全專家監視並分析各種來來源的安全問題，以提供威脅情報內容作為 IBM Security 產品服務組合的基礎。IBM X-Force Exchange 是一種雲端型威脅情報分享平台，可讓使用者快速研究最新的安全威脅、聚集可採取動作的情報，並與同儕分工合作。IBM X-Force Exchange 的內容來自於人員和機器運用 IBM X-Force 規模所產生的情報。
 
 </br>
 
-## 如何成為整合式夥伴？
+## 如何成為整合式合作夥伴？
 {: #partner}
 {: faq}
 
-很開心您有興趣整合解決方案與 {{site.data.keyword.security-advisor_short}}。請透過 wardm@us.ibm.com 聯絡 Matt Ward 來聯繫我們的團隊，以開始使用！
+很開心您有興趣整合解決方案與 {{site.data.keyword.security-advisor_short}}。請透過 wardm@us.ibm.com 與 Matt Ward 聯絡，和我們的團隊聯繫，開始使用！

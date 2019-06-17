@@ -2,15 +2,15 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
-keywords: centralized security, security management, alerts, security risk, insights, threat detection
+keywords: Centralized security, security management, alerts, security risk, insights, threat detection
 
 subcollection: security-advisor
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -30,7 +30,7 @@ Con {{site.data.keyword.security-advisor_long}}, puede obtener información deta
 {: shortdesc}
 
 
-## Funcionamiento
+## Cómo funciona
 {: #network-how-it-works}
 
 La característica Network Insights es un complemento del servicio {{site.data.keyword.security-advisor_short}}. Con la característica habilitada y configurada, se supervisa y se analiza continuamente la comunicación de red de clúster, tanto de entrada como de salida, entre el clúster y entidades externas.
@@ -66,10 +66,10 @@ Se recopila la información siguiente:
 * Un conjunto de parámetros específicos del protocolo
 * Varias indicaciones de fecha y hora.
 
-**Los datos reales que se intercambian no se recopilan.**
+Los datos reales que se intercambian no se recopilan.
+{: tip}
 
 Desde un punto de vista de seguridad, se recomienda eliminar los datos recopilados cuando los requisitos legales o de la empresa permitan que se supriman. Para obtener más información, consulte [Supresión de objetos](/docs/services/cloud-object-storage/info?topic=cloud-object-storage-security#deletion).
-{: tip}
 
 
 ## Red: Tráfico de entrada sospechoso
@@ -79,7 +79,7 @@ Desde un punto de vista de seguridad, se recomienda eliminar los datos recopilad
 {: shortdesc}
 
 
-Se supervisan continuamente todos los patrones de comportamiento de los clientes clasificados por IBM X-Force como distribuidores de malware que se utiliza como exploradores, como parte de un botnet, como autores de minería de criptomoneda o como servicios de anonimización. Si este tipo de cliente se acerca a su clúster y muestra un comportamiento alarmante, la característica Network Insights emite un hallazgo.
+Se supervisan continuamente todos los patrones de comportamiento de los clientes clasificados por IBM X-Force como distribuidores de malware que se utiliza como exploradores, como parte de un botnet, como autores de minería de criptomoneda o como servicios de anonimización. Si este tipo de cliente se acerca a un clúster supervisado y muestra un comportamiento alarmante, la característica Network Insights emite un hallazgo.
 
 
 La tarjeta incorpora dos indicadores de riesgo clave (KRI):
@@ -112,9 +112,9 @@ La tarjeta incorpora dos indicadores de riesgo clave (KRI):
 
 Los hallazgos pueden incluir contenedores que:
 
-* envían cantidades anormalmente grandes de datos a un servidor sospechoso
-* extraen una gran cantidad de datos de un servidor sospechoso
-* realizan un gran número de solicitudes a un servidor sospechoso
+* Envían cantidades anormalmente grandes de datos a un servidor sospechoso.
+* Extraen una gran cantidad de datos de un servidor sospechoso.
+* Realizan un gran número de solicitudes a un servidor sospechoso.
 
 
 ## Red: Anomalías en el tráfico (experimental)
@@ -132,13 +132,13 @@ La tarjeta incorpora dos indicadores de riesgo clave (KRI):
 
 Un hallazgo puede incluir:  
 
-* contenedores que se aproximan a servidores a los que nunca se habían acercado anteriormente
-* contenedores que envían a iguales específicos muchos más datos de lo normal o que los consumen de los mismos
-* el nivel de inspección de un servidor en concreto aumenta significativamente
+* Contenedores que se aproximan a servidores a los que nunca se habían acercado anteriormente.
+* Contenedores que envían a iguales específicos muchos más datos de lo normal o que los consumen de los mismos.
+* El nivel de inspección de un contenedor en concreto aumenta significativamente.
 
- Una vez que se ha desarrollado el modelo, se detectan las desviaciones con respecto al modelo aprendido, y, cuando se muestra un cambio alarmante, Network Insights publica un hallazgo en el panel de control de Security Advisor. Los hallazgos se resumen en la tarjeta "Red: Anomalías en el tráfico". La tarjeta incorpora dos indicadores de riesgo clave (KRI). El KRI 'Actividad de reconocimiento o de intercambio de datos más alta de lo normal' cuenta los hallazgos relacionados con interacciones anómalas detectadas entre el clúster y cualquier igual externo, mientras que el KRI 'Enfoque de salida a un nuevo servidor' cuenta los hallazgos relacionados con acercamientos a servidores recién detectados por parte del clúster.  
+Una vez que se ha desarrollado el modelo, se detectan las desviaciones con respecto al modelo aprendido, y, cuando se muestra un cambio alarmante, Network Insights publica un hallazgo en el panel de control de Security Advisor. Los hallazgos se resumen en la tarjeta "Red: Anomalías en el tráfico". La tarjeta incorpora dos indicadores de riesgo clave (KRI). El Indicador clave de riesgo (KRI) "Actividad de reconocimiento o de intercambio de datos más alta de lo normal" cuentan los hallazgos relacionados con interacciones anómalas detectadas entre el clúster y los iguales externos. El Indicador clave de riesgo (KRI) "Enfoque de salida a un nuevo servidor" cuenta los hallazgos relacionados con acercamientos a servidores recién detectados por parte del clúster.  
 
 ## Pasos siguientes
 {: #network-next}
 
-¿Listo para empezar? Consulte [Habilitación de Network Insights](/docs/services/security-advisor/setup-network.html).
+¿Listo para empezar? Consulte [Habilitación de Network Insights](/docs/services/security-advisor?topic=security-advisor-setup-network).

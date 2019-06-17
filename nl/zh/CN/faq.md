@@ -2,15 +2,16 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-06-06"
 
-keywords: centralized security, security management, alerts, security risk, insights, threat detection
+keywords: Centralized security, security management, alerts, security risk, insights, threat detection
 
 subcollection: security-advisor
 
 ---
 
-{:new_window: target="_blank"}
+
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -35,7 +36,7 @@ subcollection: security-advisor
 {: #faq-integrations}
 {: faq}
 
-虽然可以集成任何 {{site.data.keyword.cloud_notm}} 或定制安全工具，但服务已预配置为使用 {{site.data.keyword.cloud_notm}} 证书管理器和漏洞顾问程序。
+虽然可以集成任何 {{site.data.keyword.cloud_notm}} 或定制安全工具，但服务已预配置为使用 {{site.data.keyword.cloud_notm}} Certificate Manager 和漏洞顾问程序。
 
 </br>
 

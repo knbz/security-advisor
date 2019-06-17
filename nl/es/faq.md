@@ -2,15 +2,16 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-06-06"
 
-keywords: centralized security, security management, alerts, security risk, insights, threat detection
+keywords: Centralized security, security management, alerts, security risk, insights, threat detection
 
 subcollection: security-advisor
 
 ---
 
-{:new_window: target="_blank"}
+
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -43,7 +44,7 @@ Aunque puede integrar cualquier herramienta de seguridad de {{site.data.keyword.
 {: #xforce}
 {: faq}
 
-IBM X-Force Research es uno de los equipos de investigación de seguridad comercial más prestigiosos del mundo. Estos profesionales de seguridad supervisan y analizan los problemas de seguridad de diversa procedencia, proporcionando contenido de inteligencia sobre amenazas como base del portfolio de IBM Security. IBM X-Force Exchange es una plataforma de intercambio de información de amenazas basada en la nube que permite a los usuarios investigar rápidamente las amenazas de seguridad más recientes, agregar información procesable y colaborar con iguales. IBM X-Force Exchange se basa en inteligencia generada tanto por humanos como por máquinas y optimiza la escala de IBM X-Force.
+IBM X-Force Research es uno de los equipos de investigación de seguridad comercial más prestigiosos del mundo. Estos profesionales de seguridad supervisan y analizan los problemas de seguridad de diversas procedencias, proporcionando contenido de inteligencia sobre amenazas como base del portfolio de IBM Security. IBM X-Force Exchange es una plataforma de intercambio de información de amenazas basada en la nube que permite a los usuarios investigar rápidamente las amenazas de seguridad más recientes, agregar información procesable y colaborar con iguales. IBM X-Force Exchange se basa en inteligencia generada tanto por humanos como por máquinas, que aprovecha la escala de IBM X-Force.
 
 </br>
 

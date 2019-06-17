@@ -2,11 +2,11 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-02-18"
+lastupdated: "2019-06-06"
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -33,26 +33,15 @@ Si tiene problemas mientras trabaja con {{site.data.keyword.security-advisor_lon
 
 
 
-Para encontrar ayuda, busque en la información o plantee preguntas en el foro. También puede abrir una incidencia de soporte. Si utiliza el foro para hacer preguntas, etiquete su pregunta para que los equipos de desarrolladores de {{site.data.keyword.Bluemix_notm}} la puedan ver.
+Para encontrar ayuda, busque en la información o plantee preguntas en el foro. También puede abrir una incidencia de soporte. Si utiliza el foro para hacer preguntas, etiquete su pregunta para que los equipos de desarrolladores de {{site.data.keyword.cloud_notm}} la puedan ver.
 {: shortdesc}
 
-* Si tiene preguntas técnicas sobre {{site.data.keyword.security-advisor_short}}, publique la pregunta en <a href="http://stackoverflow.com/" target="_blank">Stack Overflow <img src="../../icons/launch-glyph.svg" alt="Icono de enlace externo"></a>. Asegúrese de incluir las etiquetas `security-advisor` e `ibm-cloud`.
-* Para preguntas referentes al servicio e instrucciones sobre cómo empezar, utilice el foro <a href="https://developer.ibm.com/" target="_blank">dW Answers <img src="../../icons/launch-glyph.svg" alt="Icono de enlace externo"></a>. Asegúrese de incluir las etiquetas `security-advisor` e `ibm-cloud`.
+  * Si tiene preguntas técnicas sobre {{site.data.keyword.security-advisor_short}}, publique la pregunta en [Stack Overflow](https://stackoverflow.com/){: external}. Asegúrese de incluir las etiquetas `security-advisor` e `ibm-cloud`.
+
+  * Para formular preguntas sobre el servicio y obtener instrucciones de iniciación, utilice el foro [dW Answers](https://developer.ibm.com/){: external}. Asegúrese de incluir las etiquetas `security-advisor` e `ibm-cloud`.
+
 
 Para obtener más información sobre cómo obtener ayuda, consulte [¿Cómo puedo obtener la ayuda que necesito?](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support).
-
-
-## No se puede crear una aparición de solución personalizada
-{: #ts-custom-occurrence}
-
-{: tsSymptoms}
-Inténtelo de crear una aparición de solución personalizada, pero la información no se muestra en un navegador y no recibe ningún mensaje de error.
-
-{: tsCauses}
-Ha encontrado un problema conocido. No puede crear la aparición porque el nombre que ha elegido ya existe.
-
-{: tsResolve}
-Elija otro nombre para su aparición.
 
 
 ## Error: el espacio de nombres "security-advisor-insights" está prohibido
@@ -70,17 +59,30 @@ El espacio de nombres “security-advisor-insights” está prohibido: El usuari
 La cuenta de servicio predeterminada `kube-system` no tiene acceso de administración en el clúster.
 
 {: tsResolve}
-Antes de instalar una de las ofertas de Built-in Insights, debe instalar Helm. Para instalar Helm, puede utilizar la [documentación de integración del servicio Kubernetes](/docs/containers?topic=containers-integrations#helm).
+Antes de instalar una de las ofertas de Built-in Insights, debe instalar Helm. Para instalar Helm, puede utilizar la [documentación de integración del servicio Kubernetes](/docs/containers?topic=containers-helm).
 
 
-## Defecto conocido: algunos hallazgos de Network Insights no se muestran
-{: #ts-network-analytics}
+## Problema conocido: No se puede crear una aparición de solución personalizada
+{: #ts-custom-occurrence}
 
 {: tsSymptoms}
-No ve todos los tipos de hallazgos cuando busca información de Network Insights a través del panel de control o la API.
+Inténtelo de crear una aparición de solución personalizada, pero la información no se muestra en un navegador y no recibe ningún mensaje de error.
 
 {: tsCauses}
-Algunos tipos de hallazgos de Network Insights solo funcionan en IBM Cloud Kubernetes Service versión 1.10 o anteriores.
+No puede crear la aparición porque el nombre que ha elegido se está utilizando.
 
 {: tsResolve}
-Utilice Kubernetes Service versión 1.10 o anterior.
+Elija otro nombre para su aparición.
+
+## Problema conocido: la imagen de conexión directa no se actualiza
+{: #ts-known-cant-edit}
+
+{: tsSymptoms}
+Cuando carga o edita una imagen para una conexión directa, no se muestra inmediatamente.
+
+{: tsCauses}
+Es un problema conocido que las imágenes no se muestran correctamente.
+
+{: tsResolve}
+Para ver la imagen actualizada, renueve el explorador. La nueva imagen se mostrará en la tabla de conexión directa.
+

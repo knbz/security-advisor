@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -30,23 +31,28 @@ subcollection: security-advisor
 Mit dem {{site.data.keyword.cloudaccesstrailshort}}-Service können Sie vom Benutzer eingeleitete Aktivitäten in Ihrer {{site.data.keyword.security-advisor_long}}-Serviceinstanz anzeigen, verwalten und prüfen.
 {: shortdesc}
 
-Weitere Informationen zur Funktionsweise des Service finden Sie in der [{{site.data.keyword.cloudaccesstrailshort}}-Dokumentation](/docs/services/cloud-activity-tracker/reference?topic=cloud-activity-tracker-getting-started-with-cla#getting-started-with-cla).
+
+
+
+
+
+Weitere Informationen zur Funktionsweise des Service finden Sie in der [{{site.data.keyword.cloudaccesstrailshort}}-Dokumentation](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started#getting-started).
+
 
 
 ## Wo werden Ereignisse angezeigt?
 {: #monitor}
 
-Ereignisse sind in der {{site.data.keyword.cloudaccesstrailshort}}-**Kontodomäne** verfügbar, die zu der {{site.data.keyword.Bluemix_notm}}-Region gehört, in der die Ereignisse generiert werden.
+Ereignisse sind in der {{site.data.keyword.cloudaccesstrailshort}}-**Kontodomäne** verfügbar, die zu der {{site.data.keyword.cloud_notm}}-Region gehört, in der die Ereignisse generiert werden.
 
-1. Melden Sie sich bei Ihrem {{site.data.keyword.Bluemix_notm}}-Konto an.
+1. Melden Sie sich bei Ihrem {{site.data.keyword.cloud_notm}}-Konto an.
 2. Stellen Sie in dem Konto Ihrer {{site.data.keyword.security-advisor_short}}-Instanz aus dem Katalog eine Instanz des {{site.data.keyword.cloudaccesstrailshort}}-Service bereit.
 3. Klicken Sie auf der Registerkarte **Verwalten** des {{site.data.keyword.cloudaccesstrailshort}}-Dashboards auf **In Kibana anzeigen**.
 4. Legen Sie den Zeitrahmen fest, für den Sie Protokolle anzeigen wollen. Der Standardwert ist 15 Minuten.
 5. Klicken Sie in der Liste der **verfügbaren Felder** auf **Typ**. Klicken Sie auf das Lupensymbol für **Activity Tracker**, um die Protokolle auf die Protokolle zu beschränken, die vom Service überwacht werden.
 6. Sie können die Suche durch Angaben in den anderen verfügbaren Feldern eingrenzen.
 
-Damit Benutzer, die nicht Kontoeigner sind, Protokolle anzeigen können, müssen Sie den Premium-Plan verwenden. Informationen zum Anzeigen von Ereignissen durch andere Benutzer finden Sie unter [Berechtigungen zum Anzeigen von Ereignissen erteilen](/docs/services/cloud-activity-tracker/how-to?topic=cloud-activity-tracker-grant_permissions#grant_permissions).
-{: tip}
+
 
 ## Ereignisliste
 {: #events}

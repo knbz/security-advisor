@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -27,7 +28,7 @@ subcollection: security-advisor
 # Gestión de acceso de servicio
 {: #service-access}
 
-Como propietario de la cuenta, puede gestionar el acceso a las instancias de {{site.data.keyword.security-advisor_long}} mediante {{site.data.keyword.Bluemix_notm}} Identity and Access Management (IAM). Mediante el establecimiento de políticas dentro de su cuenta que crean distintos niveles de acceso para los distintos usuarios, puede asegurarse de que cada instancia de {{site.data.keyword.security-advisor_short}} esté protegida.
+Como propietario de la cuenta, puede gestionar el acceso a las instancias de {{site.data.keyword.security-advisor_long}} mediante {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). Mediante el establecimiento de políticas dentro de su cuenta que crean distintos niveles de acceso para los distintos usuarios, puede asegurarse de que cada instancia de {{site.data.keyword.security-advisor_short}} esté protegida.
 {: shortdesc}
 
 Para obtener más información sobre IAM, consulte [Acceso de IAM](/docs/iam?topic=iam-userroles).
@@ -38,7 +39,7 @@ Para obtener más información sobre IAM, consulte [Acceso de IAM](/docs/iam?top
 Todos los usuarios que acceden a una instancia del servicio {{site.data.keyword.security-advisor_short}} en su cuenta deben tener asignada una política de acceso con un rol de usuario IAM definido. La política determina qué acciones puede realizar un usuario dentro del contexto de la instancia deservicio específica.
 {: shortdesc}
 
-Las acciones son personalizadas y están definidas por el servicio de {{site.data.keyword.Bluemix_notm}} como operaciones permitidas para realizarse en el servicio. Las acciones se correlacionarán entonces a los roles de usuario del servicio IAM. En la tabla siguiente, se correlacionan las acciones y los permisos necesarios para {{site.data.keyword.security-advisor_short}}.
+Las acciones son personalizadas y están definidas por el servicio de {{site.data.keyword.cloud_notm}} como operaciones permitidas para realizarse en el servicio. Las acciones se correlacionarán entonces a los roles de usuario del servicio IAM. En la tabla siguiente, se correlacionan las acciones y los permisos necesarios para {{site.data.keyword.security-advisor_short}}.
 
 <table><caption>¿Qué roles puede realizar cada acción?</caption>
   <col width="40%">

@@ -2,11 +2,12 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-06-05"
 
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -38,57 +39,59 @@ Embora não seja necessário fazer nada para criar a conexão entre o {{site.dat
 Com o {{site.data.keyword.registryshort_notm}}, você tem acesso ao Vulnerability Advisor, que varre continuamente as imagens na instância do {{site.data.keyword.registryshort_notm}} para possíveis problemas de segurança. Se problemas forem localizados, você será alertado e poderá visualizar um relatório abrangente no painel do {{site.data.keyword.security-advisor_short}}.
 {:shortdesc}
 
-Saiba mais sobre o [{{site.data.keyword.registryshort_notm}}](/docs/services/Registry?topic=registry-index#index).
+Saiba mais sobre o [{{site.data.keyword.registryshort_notm}}](/docs/services/Registry?topic=registry-getting-started).
 
 
-**Antes de começar**
+### Antes de começar
+{: #setup-before}
 
 Antes de iniciar com o registro, certifique-se de que tenha as CLIs e plug-ins a seguir instalados:
-* [ A  {{site.data.keyword.cloud_notm}}  CLI) ](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)
+* [ A  {{site.data.keyword.cloud_notm}}  CLI) ](/docs/cli?topic=cloud-cli-ibmcloud-cli)
 * O plug-in Registro do Contêiner.
 
   ```
-  ibmcloud plugin install container-registry -r Bluemix
+  ibmcloud plugin install container-registry
   ```
-  {: pre}
+  {: codeblock}
 
 
-**Criando um namespace**
+### Criando um Namespace
+{: #setup-create-namespace}
 
 1. Efetue login na conta usando a CLI.
 
   ```
   ibmcloud login --sso
   ```
-  {: pre}
+  {: codeblock}
 
 2. Efetue login no {{site.data.keyword.registryshort_notm}}.
 
   ```
   ibmcloud cr login
   ```
-  {: pre}
+  {: codeblock}
 
 3. Opcional: crie um namespace. Sempre é possível usar um existente.
 
   ```
   ibmcloud cr namespace-add
   ```
-  {: pre}
+  {: codeblock}
 
 3. Identifique uma imagem.
 
   ```
-  docker tag <image>:<tag> registry.ng.bluemix.net/<namespace>/<image>:<tag>
+  docker tag <image>:<tag> <region>.icr.io/<namespace>/<image>:<tag>
   ```
-  {: pre}
+  {: codeblock}
 
 5. Envie por push a imagem.
 
   ```
-  docker push registry.ng.bluemix.net/<namespace>/<image>:<tag>
+  docker push <region>.icr.io/<namespace>/<image>:<tag>
   ```
-  {: pre}
+  {: codeblock}
 
 
 Depois do envio por push das imagens para o namespace do {{site.data.keyword.registryshort_notm}}, as informações sobre quaisquer vulnerabilidades localizadas são mostradas no cartão **Imagens com vulnerabilidades** no painel de serviço. Também é possível realizar drill down em imagens específicas para descobrir mais informações, como uma descrição de todas as vulnerabilidades identificadas e os problemas de configuração.
@@ -104,22 +107,24 @@ Dependendo dos dados de expiração do certificado do qual você faz upload para
 
 Para acionar uma atualização manual, é possível tentar fazer upload de um certificado que expira em um dia para sua instância do {{site.data.keyword.cloudcerts_short}}. Quando a importação é bem-sucedida, é possível ver que o Principal indicador de risco (KRI) e as descobertas estão visíveis no painel do {{site.data.keyword.security-advisor_short}}.
 
-É possível saber mais sobre os [{{site.data.keyword.cloudcerts_long_notm}}](/docs/services/certificate-manager?topic=certificate-manager-gettingstarted#gettingstarted) lendo os docs.
+É possível saber mais sobre os [{{site.data.keyword.cloudcerts_long_notm}}](/docs/services/certificate-manager?topic=certificate-manager-getting-started) lendo os docs.
 {: tip}
 
-**Criando um certificado**
+### Criando um certificado
+{: #setup-create-cert}
 
 Para criar um certificado autoassinado que expira em um dia, é possível executar o comando OpenSSL a seguir em seu terminal.
 
 ```
 openssl req -x509 -newkey rsa:2048 -keyout key.pem -subj "/CN=myservice.com" -out server.pem -days 1 -nodes
 ```
-{: pre}
+{: codeblock}
 
 
-**Fazendo upload de um certificado**
+### Fazendo upload de um certificado
+{: #setup-upload-cert}
 
-1. No catálogo do {{site.data.keyword.Bluemix_notm}}, procure "{{site.data.keyword.cloudcerts_short}}".
+1. No catálogo do {{site.data.keyword.cloud_notm}}, procure "{{site.data.keyword.cloudcerts_short}}".
 2. Dê à sua instância de serviço um nome ou use o nome predefinido.
 3. Clique em **Criar**.
 4. Para importar certificados de sua organização em {{site.data.keyword.cloudcerts_short}}, clique em

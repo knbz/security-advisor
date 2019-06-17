@@ -2,11 +2,12 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-06-05"
 
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -38,57 +39,59 @@ lastupdated: "2019-03-13"
 {{site.data.keyword.registryshort_notm}} を使用すると、潜在的なセキュリティー問題がないか {{site.data.keyword.registryshort_notm}} インスタンス内のイメージを継続的にスキャンする脆弱性アドバイザーを利用できます。 問題が検出されると、アラートが通知され、{{site.data.keyword.security-advisor_short}} ダッシュボードで総合的なレポートを確認できます。
 {:shortdesc}
 
-詳しくは、[{{site.data.keyword.registryshort_notm}}](/docs/services/Registry?topic=registry-index#index) を参照してください。
+詳しくは、[{{site.data.keyword.registryshort_notm}}](/docs/services/Registry?topic=registry-getting-started) を参照してください。
 
 
-**始めに**
+### 始めに
+{: #setup-before}
 
 レジストリーの使用を開始する前に、以下の CLI とプラグインがインストールされていることを確認してください。
-* [{{site.data.keyword.cloud_notm}} CLI)](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)
+* [{{site.data.keyword.cloud_notm}} CLI)](/docs/cli?topic=cloud-cli-ibmcloud-cli)
 * コンテナー・レジストリー・プラグイン。
 
   ```
-  ibmcloud plugin install container-registry -r Bluemix
+  ibmcloud plugin install container-registry
   ```
-  {: pre}
+  {: codeblock}
 
 
-**名前空間の作成**
+### 名前空間の作成
+{: #setup-create-namespace}
 
 1. CLI を使用して、自分のアカウントにログインします。
 
   ```
   ibmcloud login --sso
   ```
-  {: pre}
+  {: codeblock}
 
 2. {{site.data.keyword.registryshort_notm}} にログインします。
 
   ```
   ibmcloud cr login
   ```
-  {: pre}
+  {: codeblock}
 
 3. オプション: 名前空間を作成します。 いつでも既存のものを使用できます。
 
   ```
   ibmcloud cr namespace-add
   ```
-  {: pre}
+  {: codeblock}
 
 3. イメージにタグを付けます。
 
   ```
-  docker tag <image>:<tag> registry.ng.bluemix.net/<namespace>/<image>:<tag>
+  docker tag <image>:<tag> <region>.icr.io/<namespace>/<image>:<tag>
   ```
-  {: pre}
+  {: codeblock}
 
 5. イメージをプッシュします。
 
   ```
-  docker push registry.ng.bluemix.net/<namespace>/<image>:<tag>
+  docker push <region>.icr.io/<namespace>/<image>:<tag>
   ```
-  {: pre}
+  {: codeblock}
 
 
 イメージを {{site.data.keyword.registryshort_notm}} 名前空間にプッシュすると、検出された脆弱性に関する情報が、サービス・ダッシュボード内の**「脆弱性のあるイメージ (Images with Vulnerabilities)」**カードに表示されます。 特定のイメージにドリルダウンすると、すべての特定された脆弱性や構成の問題の説明など、詳しい情報が表示されます。
@@ -104,22 +107,24 @@ lastupdated: "2019-03-13"
 
 手動更新をトリガーするには、1 日で期限が切れる証明書の {{site.data.keyword.cloudcerts_short}} インスタンスへのアップロードを試行することもできます。 インポートが正常に実行されると、{{site.data.keyword.security-advisor_short}} ダッシュボードに重要リスク指標 (KRI) と検出項目が表示されます。
 
-[{{site.data.keyword.cloudcerts_long_notm}}](/docs/services/certificate-manager?topic=certificate-manager-gettingstarted#gettingstarted) について詳しくは、資料を参照してください。
+[{{site.data.keyword.cloudcerts_long_notm}}](/docs/services/certificate-manager?topic=certificate-manager-getting-started) について詳しくは、資料を参照してください。
 {: tip}
 
-**証明書の作成**
+### 証明書の作成
+{: #setup-create-cert}
 
 1 日で有効期限が切れる自己署名証明書を作成するには、端末で以下の OpenSSL コマンドを実行します。
 
 ```
 openssl req -x509 -newkey rsa:2048 -keyout key.pem -subj "/CN=myservice.com" -out server.pem -days 1 -nodes
 ```
-{: pre}
+{: codeblock}
 
 
-**証明書のアップロード**
+### 証明書のアップロード
+{: #setup-upload-cert}
 
-1. {{site.data.keyword.Bluemix_notm}} カタログで、「{{site.data.keyword.cloudcerts_short}}」を検索します。
+1. {{site.data.keyword.cloud_notm}} カタログで、「{{site.data.keyword.cloudcerts_short}}」を検索します。
 2. サービス・インスタンスに名前を付けます。または、事前設定された名前を使用します。
 3. **「作成」**をクリックします。
 4. 組織の証明書を {{site.data.keyword.cloudcerts_short}} にインポートするには、**「証明書のインポート (Import Certificate)」**をクリックします。

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -34,9 +35,9 @@ Con {{site.data.keyword.security-advisor_long}}, puede supervisar continuamente 
 
 Para empezar a trabajar con Activity Insights, asegúrese de cumplir los siguientes requisitos previos.
 
-- Si trabaja en Windows 10, active el subsistema Windows para Linux e instale un [shell de Ubuntu](https://win10faq.com/install-run-ubuntu-bash-windows-10/)
+- Si trabaja en Windows 10, active el subsistema Windows para Linux e instale un [shell de Ubuntu](https://win10faq.com/install-run-ubuntu-bash-windows-10/){: external}.
 - Instale la CLI yq:
-  * Para [macOS y Windows 10](http://mikefarah.github.io/yq/).
+  * Para [macOS y Windows 10](http://mikefarah.github.io/yq/){: external}.
   * Para CentOS, Red Hat y Ubuntu, ejecute los siguientes mandatos para instalar la versión 1.15.
     ```
     wget https://github.com/mikefarah/yq/releases/download/1.15.0/yq_linux_amd64       
@@ -48,8 +49,8 @@ Para empezar a trabajar con Activity Insights, asegúrese de cumplir los siguien
     {: codeblock}     
 - Binario de cURL actualizado: para CentOS y Red Hat, puede actualizar con el mandato `yum update -y nss curl libcurl`.
 - La [CLI de {{site.data.keyword.cloud_notm}} y los plugins necesarios](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)
-- La [CLI de Kubernetes](https://kubernetes.io/docs/tasks/tools/install-kubectl/) v1.10.11 o posterior
-- El [Helm de Kubernetes (gestor de paquetes)](/docs/containers?topic=containers-integrations#helm) v2.9.0 o posterior.
+- La [CLI de Kubernetes](https://kubernetes.io/docs/tasks/tools/install-kubectl/){: external} v1.10.11 o posterior
+- El [Helm de Kubernetes (gestor de paquetes)](/docs/containers?topic=containers-helm) v2.9.0 o posterior.
 - Un clúster de Kubernetes estándar versión v1.10.11 o posterior
 
 
@@ -66,7 +67,7 @@ Con la GUI de {{site.data.keyword.security-advisor_short}}, puede crear una nuev
 
 4. En la sección de requisitos previos, pulse **Crear instancia y grupo de COS**. La instancia y el grupo de COS se crean automáticamente con el convenio de denominación y los permisos de IAM adecuados. Se muestra la información del grupo.
 
-Si tiene una instancia y un grupo de COS existentes, asegúrese de que utilizan el convenio de denominación `sa.<account_id>.telemetric.<cos_region>`. Para permitir que el servicio lea los datos almacenados en la instancia de COS, configure la [autorización de servicio a servicio](/docs/iam?topic=iam-serviceauth#serviceauth) mediante IAM de {{site.data.keyword.cloud_notm}}. Establezca el valor de `source` en `{{site.data.keyword.security-advisor_short}}` y el de `target` en su instancia de COS. Asigne el rol de IAM de `Lector`.
+Si tiene una instancia y un grupo de COS existentes, asegúrese de que utilizan el convenio de denominación `sa.<account_id>.telemetric.<cos_region>`. Para permitir que el servicio lea los datos almacenados en la instancia de COS, configure la [autorización de servicio a servicio](/docs/iam?topic=iam-serviceauth) mediante {{site.data.keyword.cloud_notm}} IAM. Establezca el valor de `source` en `{{site.data.keyword.security-advisor_short}}` y el de `target` en su instancia de COS. Asigne el rol de IAM de `Lector`.
 
 
 ## Instalación de componentes de {{site.data.keyword.security-advisor_short}}
@@ -95,7 +96,7 @@ Puede instalar un agente para que recopile registros de flujo de auditoría de l
 5. Inicie una sesión en la CLI de {{site.data.keyword.cloud_notm}}. Siga las indicaciones de la CLI para completar el inicio de sesión.
 
   ```
-  ibmcloud login -a https://api.<region>.bluemix.net
+  ibmcloud login -a cloud.ibm.com -r <region>
   ```
   {: codeblock}
 
@@ -125,9 +126,9 @@ Puede instalar un agente para que recopile registros de flujo de auditoría de l
 
   2. Copie la salida comenzando por `export` y péguela en el terminal para establecer la variable de entorno `KUBECONFIG`.
 
-7. Instale Helm siguiendo la [documentación de integración del servicio Kubernetes](/docs/containers?topic=containers-integrations#helm).
+7. Instale Helm siguiendo la [documentación de integración del servicio Kubernetes](/docs/containers?topic=containers-helm).
 
-8. Opcional: [Habilite TLS](https://github.com/helm/helm/blob/master/docs/tiller_ssl.md). Si utiliza su estación de trabajo para gestionar la instalación de componentes de análisis en varios clústeres y TLS está habilitado, asegúrese de que las configuraciones de TLS estén actualizadas y coincidan con el clúster actual donde tiene previsto instalar los componentes.
+8. Opcional: [Habilite TLS](https://github.com/helm/helm/blob/master/docs/tiller_ssl.md){: external}. Si utiliza su estación de trabajo para gestionar la instalación de componentes de análisis en varios clústeres y TLS está habilitado, asegúrese de que las configuraciones de TLS estén actualizadas y coincidan con el clúster actual donde tiene previsto instalar los componentes.
 
 9. Ejecute el mandato siguiente para instalar Insights. El mandato valida el convenio de denominación del grupo, crea secretos de Kubernetes, actualiza los valores con el GUID del clúster y despliega Activity Insights.
 
@@ -150,7 +151,7 @@ Puede instalar un agente para que recopile registros de flujo de auditoría de l
     </tr>
     <tr>
       <td><code>cos_api_key</code></td>
-      <td>La [clave de API](/docs/services/cloud-object-storage/iam?topic=cloud-object-storage-service-credentials#service-credentials) que ha creado para acceder a la instancia y al grupo de COS. La clave debe tener el rol de `escritor` de la plataforma.</td>
+      <td>La [clave de API](/docs/services/cloud-object-storage/iam?topic=cloud-object-storage-service-credentials) que ha creado para acceder a la instancia y al grupo de COS. La clave debe tener el rol de `escritor` de la plataforma.</td>
     </tr>
     <tr>
       <td><code>at_region</code></td>
@@ -173,16 +174,16 @@ Puede instalar un agente para que recopile registros de flujo de auditoría de l
 Un paquete de reglas es un archivo JSON que contiene una lista de las reglas que desea supervisar. Puede descargar paquetes de reglas o [crear los suyos propios](/docs/services/security-advisor?topic=security-advisor-activity#activity-packages). El motor de {{site.data.keyword.security-advisor_short}} valida que cada regla sigue la sintaxis correcta.
 {: shortdesc}
 
-1. Clone el siguiente repositorio para obtener varios paquetes de reglas preestablecidos. Se crea un archivo en el sistema local llamado *security-advisor-ata-rule-packages*.
+1. Clone el siguiente repositorio para obtener varios paquetes de reglas preestablecidos. Se crea una carpeta en el sistema local con el nombre `security-advisor-activity-insights`.
 
   ```
-  https://github.ibm.com/security-services/security-advisor-ata-rule-packages.git
+  https://github.com/ibm-cloud-security/security-advisor-activity-insights.git
   ```
   {: codeblock}
 
-2. Cree un archivo local llamado *IBM.rules/activities*.
+2. Cree una carpeta local con el nombre `IBM.rules/activities`.
 
-3. Mueva los archivos JSON de *security-advisor-ata-rule-packages* a *IBM.rules/activities*.
+3. Copie los archivos JSON de `security-advisor-activity-insights/security-advisor-ata-rule-packages` a `IBM.rules/activities`.
 
 4. Vaya al panel de control de {{site.data.keyword.cloud_notm}} y seleccione la instancia de servicio de COS asociada con Activity Insights.
 
@@ -196,7 +197,7 @@ Un paquete de reglas es un archivo JSON que contiene una lista de las reglas que
 
 8. Pulse **Cargar**.
 
-¿Desea utilizar sus propios paquetes? Utilice uno de los archivos JSON como guía y cree las reglas que se ajusten a las necesidades de su organización. Después de crear el archivo, añádelo a la carpeta *IBM.rules/activities* en la instancia de COS. Para obtener más información acerca de los tipos de reglas y su formato, consulte [Visión general de los paquetes de reglas](/docs/services/security-advisor?topic=security-advisor-activity#activity).
+¿Desea utilizar sus propios paquetes? Utilice uno de los archivos JSON como guía y cree las reglas que se ajusten a las necesidades de su organización. Después de crear el archivo, añádelo a la carpeta *IBM.rules/activities* en la instancia de COS. Para obtener más información acerca de los tipos de reglas y su formato, consulte [Visión general de los paquetes de reglas](/docs/services/security-advisor?topic=security-advisor-activity).
 {: tip}
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -23,46 +24,46 @@ subcollection: security-advisor
 {:download: .download}
 
 
-# 夥伴
+# 合作夥伴
 {: #setup-partner}
 
-「IBM 事業夥伴」整合是將協力廠商提供者的重要警示及發現項目帶入 {{site.data.keyword.security-advisor_long}} 儀表板。這些夥伴與 IBM 合作，協助您塑造、簡化並引導您進行整合體驗。
+「IBM 事業夥伴」整合是將協力廠商提供者的重要警示及發現項目帶入 {{site.data.keyword.security-advisor_long}} 儀表板。這些合作夥伴與 IBM 合作，協助建立和簡化您的整合體驗，並提供相關指引。
 {: shortdesc}
 
 ## 開始之前
 {: #partner-before}
 
-開始整合夥伴之前，請確定您具有下列必要條件。
+開始整合合作夥伴之前，請確定您具有下列必要條件。
 
-* 確定您有要整合之夥伴的帳戶。
-* 確定您有產生夥伴服務整合 URL 的必要管理許可權。
+* 確定您有要整合之合作夥伴的帳戶。
+* 確定您有產生合作夥伴服務整合 URL 的必要管理許可權。
 * 確定您有 {{site.data.keyword.cloud_notm}} 的 IAM 管理存取權及 {{site.data.keyword.security-advisor_short}} 的管理員存取權。
 
 ## 整合精靈
 {: #wizard}
 
-身為 {{site.data.keyword.cloud_notm}} 及「夥伴」帳戶中具有管理權限的管理者，您可以使用整合精靈來快速啟動並執行。精靈有四個基本步驟：
+作為同時具有 {{site.data.keyword.cloud_notm}} 和合作夥伴帳戶中管理許可權的管理者，您可以使用整合精靈來快速啟動並開始執行。精靈有四個基本步驟：
 
-* 建立信任，並關聯 {{site.data.keyword.cloud_notm}} 及夥伴帳戶
-* 複製必要資訊，例如帳戶之間的認證及 URL
-* 將夥伴發現項目 meta 資料安裝到 {{site.data.keyword.security-advisor_short}}
-* 將發現項目從夥伴張貼到 {{site.data.keyword.security-advisor_short}} 來驗證配對
+* 建立信任，並關聯 {{site.data.keyword.cloud_notm}} 及合作夥伴帳戶
+* 在帳戶之間複製必要資訊，例如認證及 URL
+* 將合作夥伴發現項目 meta 資料安裝到 {{site.data.keyword.security-advisor_short}}
+* 將來自合作夥伴的發現項目公佈到 {{site.data.keyword.security-advisor_short}} 中來驗證配對
 
 
 ## 整合 NeuVector
 {: #setup-neuvector}
 
-使用 NeuVector，您可以偵測網路威脅及違規，以防止容器型應用程式的攻擊。透過監視，您可以藉由偵測容器及主機中的 root 專用權提升、埠掃描、反向 Shell 及可疑檔案系統活動，防止惡意探索及強行離開。
+使用 [NeuVector](https://neuvector.com){: external}，您可以偵測網路威脅及違規，以防止以容器為基礎的應用程式受到攻擊。透過監視，您可以藉由偵測容器及主機中的 root 專用權提升、埠掃描、反向 Shell 及可疑檔案系統活動，防止漏洞遭不當運用及突破。
 {: shortdesc}
 
 若要將 NeuVector 與 {{site.data.keyword.security-advisor_short}} 整合，您可以使用下列步驟：
 
-1. 導覽至**整合 > 夥伴整合**，然後從提供的選項中選取 **NeuVector**。
+1. 導覽至**整合 > 合作夥伴整合**，然後從提供的選項中選取 **NeuVector**。
 2. 連接帳戶。
   1. 提供連線的名稱。
   2. 提供 NeuVector 儀表板 URL。
   3. 提供 NeuVector 配置 URL。
-    1. 登入 NeuVector 並導覽至設定。
+    1. 登入到 NeuVector 並導覽至設定。
     2. 按一下**產生 URL**。
     3. 複製 URL，並將它貼入 {{site.data.keyword.security-advisor_short}} 整合精靈。
   4. 按**下一步**。
@@ -75,10 +76,10 @@ subcollection: security-advisor
 ## 整合 Twistlock
 {: #setup-twistlock}
 
-您可以停止在環境中部署有漏洞的映像檔來防止風險。透過自動化及自訂原則強制執行，Twistlock 可在應用程式生命週期的每個階段提供完整控制。
+您可以停止在環境中部署有漏洞的映像檔來防止風險。透過自動化及自訂原則強制執行，[Twistlock](https://www.twistlock.com){: external} 可在應用程式生命週期的每個階段提供完整控制。
 {: shortdesc}
 
-當您配置夥伴連線時，儀表板中會建立兩張卡片，以彙總來自 Twistlock 的發現項目。
+當您配置合作夥伴連線時，儀表板中會建立兩張卡片，以彙總來自 Twistlock 的發現項目。
 
 **Twistlock 運行環境**引進兩個「關鍵風險指標 (KRI)」：
 
@@ -94,7 +95,7 @@ subcollection: security-advisor
 ### 配置 Twistlock
 {: #configure-twistlock}
 
-1. 在 {{site.data.keyword.security-advisor_short}} 儀表板中，導覽至**整合 > 夥伴整合**，然後從提供的選項中選取 **Twistlock**。
+1. 在 {{site.data.keyword.security-advisor_short}} 儀表板中，導覽至**整合 > 合作夥伴整合**，然後從提供的選項中選取 **Twistlock**。
 
 2. 按一下**是，將我的帳戶連接至 {{site.data.keyword.security-advisor_short}}**。
 
@@ -113,13 +114,13 @@ subcollection: security-advisor
 
 8. 回到 {{site.data.keyword.security-advisor_short}} 儀表板，將 URL 貼入**輸入 Twistlock 配置 URL** 方框。
 
-9. 按一下**連接夥伴**。
+9. 按一下**連接合作夥伴**。
 
 ### 驗證連線
 {: #twistlock-verify}
 
-1. 在 {{site.data.keyword.security-advisor_short}} 儀表板中，確認是否如預期顯示 Twistlock 卡。
+1. 在 {{site.data.keyword.security-advisor_short}} 儀表板中，檢查 Twistlock 卡片是否按預期顯示。
 
-2. 在 Twistlock 儀表板中，重新整理**警示**標籤。將會顯示 {{site.data.keyword.security-advisor_short}} 連線。請開啟連線。
+2. 在 Twistlock 儀表板中，重新整理**警示**標籤。這將顯示 {{site.data.keyword.security-advisor_short}} 連線。請開啟連線。
 
 3. 驗證已勾選您要收到通知的警示類型，然後按一下**驗證**以確定連線完成。

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -34,9 +35,9 @@ subcollection: security-advisor
 
 若要開始使用 Activity Insights，請確定您具有下列必要條件。
 
-- 如果您在 Windows 10 中工作，請啟動 Windows Subsystem for Linux，並安裝 [Ubuntu Shell](https://win10faq.com/install-run-ubuntu-bash-windows-10/)
+- 如果您在 Windows 10 中工作，請啟動 Windows Subsystem for Linux，並安裝 [Ubuntu Shell](https://win10faq.com/install-run-ubuntu-bash-windows-10/){: external}。
 - 安裝 yq CLI：
-  * 針對 [macOS 及 Windows 10](http://mikefarah.github.io/yq/)。
+  * 針對 [macOS 及 Windows 10](http://mikefarah.github.io/yq/){: external}。
   * 針對 CentOS、Red Hat 及 Ubuntu，執行下列指令來安裝 1.15 版。
     ```
     wget https://github.com/mikefarah/yq/releases/download/1.15.0/yq_linux_amd64       
@@ -48,8 +49,8 @@ subcollection: security-advisor
     {: codeblock}     
 - 已更新 cURL 二進位：針對 CentOS 及 Red Hat，您可以執行 `yum update -y nss curl libcurl` 進行更新。
 - [{{site.data.keyword.cloud_notm}} CLI 及必要的外掛程式](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)
-- [Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/) 1.10.11 版或更新版本
-- [Kubernetes Helm（套件管理程式）](/docs/containers?topic=containers-integrations#helm)2.9.0 版或更新版本。
+- [Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/){: external} 1.10.11 版或更新版本
+- [Kubernetes Helm（套件管理程式）](/docs/containers?topic=containers-helm)2.9.0 版或更新版本。
 - 標準 Kubernetes 叢集 1.10.11 版或更新版本
 
 
@@ -66,7 +67,7 @@ subcollection: security-advisor
 
 4. 在「必要條件」區段中，按一下**建立 COS 實例及儲存區**。即會自動為您建立 COS 實例及儲存區，並且具有適當的命名慣例及 IAM 許可權。會顯示儲存區資訊。
 
-如果您有現有的 COS 及儲存區實例，請確定它使用命名慣例 `sa.<account_id>.telemetric.<cos_region>`。若要容許服務讀取 COS 實例中所儲存的資料，請使用 {{site.data.keyword.cloud_notm}} IAM 來設定[服務對服務授權](/docs/iam?topic=iam-serviceauth#serviceauth)。將 `source` 設為 `{{site.data.keyword.security-advisor_short}}`，並將 `target` 設為 COS 實例。指派 `Reader` IAM 角色。
+如果您有現有的 COS 及儲存區實例，請確定它使用命名慣例 `sa.<account_id>.telemetric.<cos_region>`。若要容許服務讀取 COS 實例中所儲存的資料，請使用 {{site.data.keyword.cloud_notm}} IAM 來設定[服務對服務授權](/docs/iam?topic=iam-serviceauth)。將 `source` 設為 `{{site.data.keyword.security-advisor_short}}`，並將 `target` 設為 COS 實例。指派 `Reader` IAM 角色。
 
 
 ## 安裝 {{site.data.keyword.security-advisor_short}} 元件
@@ -95,7 +96,7 @@ subcollection: security-advisor
 5. 登入 {{site.data.keyword.cloud_notm}} CLI。遵循 CLI 中的提示，以完成登入。
 
   ```
-  ibmcloud login -a https://api.<region>.bluemix.net
+  ibmcloud login -a cloud.ibm.com -r <region>
   ```
   {: codeblock}
 
@@ -125,9 +126,9 @@ subcollection: security-advisor
 
   2. 複製開頭為 `export` 的輸出，並將它貼到您的終端機以設定 `KUBECONFIG` 環境變數。
 
-7. 使用 [Kubernetes Service 整合文件](/docs/containers?topic=containers-integrations#helm)來安裝 Helm。
+7. 使用 [Kubernetes Service 整合文件](/docs/containers?topic=containers-helm)來安裝 Helm。
 
-8. 選用項目：[啟用 TLS](https://github.com/helm/helm/blob/master/docs/tiller_ssl.md)。如果您使用工作站來處理多個叢集中的分析元件安裝，並啟用 TLS，則請確定 TLS 配置是最新的，並且符合您計劃要在其中安裝元件的現行叢集。
+8. 選用項目：[啟用 TLS](https://github.com/helm/helm/blob/master/docs/tiller_ssl.md){: external}。如果您使用工作站來處理多個叢集中的分析元件安裝，並啟用 TLS，則請確定 TLS 配置是最新的，並且符合您計劃要在其中安裝元件的現行叢集。
 
 9. 執行下列指令，以安裝 Insights。此指令會驗證儲存區的命名慣例、建立 Kubernetes 密碼、使用叢集 GUID 更新這些值，以及部署 Activity Insights。
 
@@ -150,7 +151,7 @@ subcollection: security-advisor
     </tr>
     <tr>
       <td><code>cos_api_key</code></td>
-      <td>您建立來存取 COS 實例及儲存區的 [API 金鑰](/docs/services/cloud-object-storage/iam?topic=cloud-object-storage-service-credentials#service-credentials)。此金鑰必須具有平台角色 `writer`。</td>
+      <td>您建立來存取 COS 實例及儲存區的 [API 金鑰](/docs/services/cloud-object-storage/iam?topic=cloud-object-storage-service-credentials)。此金鑰必須具有平台角色 `writer`。</td>
     </tr>
     <tr>
       <td><code>at_region</code></td>
@@ -173,16 +174,16 @@ subcollection: security-advisor
 規則套件是包含您要監視之規則清單的 JSON 檔案。您可以下載規則套件，或[建立您自己的規則套件](/docs/services/security-advisor?topic=security-advisor-activity#activity-packages)。{{site.data.keyword.security-advisor_short}} 引擎會驗證每個規則都遵循正確的語法。
 {: shortdesc}
 
-1. 複製下列儲存庫以取得數個預設規則套件。會在您的本端系統上建立名稱為 *security-advisor-ata-rule-packages* 的檔案。
+1. 複製下列儲存庫以取得數個預設規則套件。將在本端系統上建立名稱為 `security-advisor-activity-insights` 的資料夾。
 
   ```
-  https://github.ibm.com/security-services/security-advisor-ata-rule-packages.git
+  https://github.com/ibm-cloud-security/security-advisor-activity-insights.git
   ```
   {: codeblock}
 
-2. 在本端建立名稱為 *IBM.rules/activities* 的檔案。
+2. 在本端建立名稱為 `IBM.rules/activities` 的資料夾。
 
-3. 將 JSON 檔案從 *security-advisor-ata-rule-packages* 移至 *IBM.rules/activities*。
+3. 將 JSON 檔案從 `security-advisor-activity-insights/security-advisor-ata-rule-packages` 複製到 `IBM.rules/activities`。
 
 4. 導覽至「{{site.data.keyword.cloud_notm}} 儀表板」，然後選取與 Activity Insights 相關聯的 COS 服務實例。
 
@@ -196,7 +197,7 @@ subcollection: security-advisor
 
 8. 按一下**上傳**。
 
-要使用您自己的套件嗎？使用其中一個 JSON 檔案作為指引，並建立符合組織需求的規則。建立檔案之後，請將它新增至 COS 實例中的 *IBM.rules/activities* 資料夾。如需規則類型及格式的相關資訊，請查看[瞭解規則套件](/docs/services/security-advisor?topic=security-advisor-activity#activity)。
+要使用您自己的套件嗎？使用其中一個 JSON 檔案作為指引，並建立符合組織需求的規則。建立檔案之後，請將它新增至 COS 實例中的 *IBM.rules/activities* 資料夾。如需規則類型及格式的相關資訊，請參閱[瞭解規則套件](/docs/services/security-advisor?topic=security-advisor-activity)。
 {: tip}
 
 

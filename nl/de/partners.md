@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -26,7 +27,7 @@ subcollection: security-advisor
 # Partner
 {: #setup-partner}
 
-IBM Business Partner-Integrationen bieten eine Möglichkeit, kritische Alerts und Untersuchungsergebnisse von Drittanbietern in das {{site.data.keyword.security-advisor_long}}-Dashboard einzubinden. Diese Partner haben mit IBM zusammengearbeitet, um das Integrationserlebnis für Sie mitzugestalten, zu vereinfachen und zu steuern.
+IBM Business Partner-Integrationen bieten eine Möglichkeit, kritische Alerts und Untersuchungsergebnisse von Drittanbietern in das {{site.data.keyword.security-advisor_long}}-Dashboard einzubinden. Diese Partner arbeiten mit IBM zusammen, um das Integrationserlebnis für Sie mitzugestalten, zu vereinfachen und zu steuern.
 {: shortdesc}
 
 ## Vorbereitende Schritte
@@ -52,7 +53,7 @@ Wenn Sie als Administrator über Administratorberechtigungen sowohl für {{site.
 ## NeuVector integrieren
 {: #setup-neuvector}
 
-Mit NeuVector können Sie Netzbedrohungen und Verstöße erkennen, um Attacken auf Ihre containerbasierten Anwendungen zu verhindern. Durch die Überwachung können Sie Exploits und Aufgliederungen (Breakouts) verhindern, indem Sie Eskalierungen von Rootberechtigungen, Portsuchen, Reverse-Shells und verdächtige Dateisystemaktivitäten in Ihren Containern und Hosts erkennen.
+Mit [NeuVector](https://neuvector.com){: external} können Sie Netzbedrohungen und Verstöße erkennen, um Attacken auf Ihre containerbasierten Anwendungen zu verhindern. Durch die Überwachung können Sie Exploits und Aufgliederungen (Breakouts) verhindern, indem Sie Eskalierungen von Rootberechtigungen, Portsuchen, Reverse-Shells und verdächtige Dateisystemaktivitäten in Ihren Containern und Hosts erkennen.
 {: shortdesc}
 
 Zum Integrieren von NeuVector mit {{site.data.keyword.security-advisor_short}} können Sie die folgenden Schritte ausführen:
@@ -75,7 +76,7 @@ Zum Integrieren von NeuVector mit {{site.data.keyword.security-advisor_short}} k
 ## Twistlock integrieren
 {: #setup-twistlock}
 
-Sie können Risiken verhindern, indem Sie die Bereitstellung von gefährdeten Images in Ihrer Umgebung unterbinden. Mit automatisierter und angepasster Richtliniendurchsetzung bietet Twistlock in jeder Phase des Anwendungslebenszyklus die volle Kontrolle.
+Sie können Risiken verhindern, indem Sie die Bereitstellung von gefährdeten Images in Ihrer Umgebung unterbinden. Mit automatisierter und angepasster Richtliniendurchsetzung bietet [Twistlock](https://www.twistlock.com){: external} in jeder Phase des Anwendungslebenszyklus die volle Kontrolle.
 {: shortdesc}
 
 Beim Konfigurieren der Partnerverbindung werden in Ihrem Dashboard zwei Karten erstellt, auf denen die Untersuchungsergebnisse von Twistlock zusammengefasst sind.

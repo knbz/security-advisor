@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -60,7 +61,7 @@ Sind Sie Partner und an der Integration Ihrer Lösung mit {{site.data.keyword.se
 ### NeuVector
 {: #integrate-neuvector}
 
-[NeuVector](https://neuvector.com/) bietet eine hoch integrierte, automatisierte Sicherheitsplattform für Kubernetes und Red Hat OpenShift, die Ihnen die Überwachung und den Schutz der Kommunikation zwischen Containernetzen ermöglicht. Insbesondere des Netzverkehrs zwischen Ost und West.
+[NeuVector](https://neuvector.com){: external} bietet eine hoch integrierte, automatisierte Sicherheitsplattform für Kubernetes und Red Hat OpenShift, die Ihnen die Überwachung und den Schutz der Kommunikation zwischen Containernetzen ermöglicht. Insbesondere des Netzverkehrs zwischen Ost und West.
 
 Mit NeuVector können Sie Netzbedrohungen und Verstöße erkennen, um Attacken auf Ihre containerbasierten Anwendungen zu verhindern. Durch die Überwachung können Sie Exploits und Aufgliederungen (Breakouts) verhindern, indem Sie Eskalierungen von Rootberechtigungen, Portsuchen, Reverse-Shells und verdächtige Dateisystemaktivitäten in Ihren Containern und Hosts erkennen.
 
@@ -70,10 +71,9 @@ Hilfe bei der Einrichtung Ihrer NeuVector-Instanz finden Sie unter [Partnerlösu
 ### Twistlock
 {: #integrate-twistlock}
 
-Twistlock ist in einzigartiger Weise in der Lage, Risiken im Verlauf des gesamten SDLC zu vermeiden, indem es die Bereitstellung von gefährdeten Images in Ihrer Umgebung verhindert. Die automatisierte und angepasste Richtliniendurchsetzung bietet volle Kontrolle in jeder Phase des Anwendungslebenszyklus. Der Twistlock Intelligence Stream verwendet über 30 vorgelagerte Projekte, kommerzielle Quellen sowie die proprietäre Forschung von Twistlock Labs als Quelle und aggregiert direkt aus ihnen Informationen zu Schwachstellen und Sicherheitslücken.
+[Twistlock](https://www.twistlock.com){: external} ist in einzigartiger Weise in der Lage, Risiken im Verlauf des gesamten SDLC zu vermeiden, indem es die Bereitstellung von gefährdeten Images in Ihrer Umgebung verhindert. Die automatisierte und angepasste Richtliniendurchsetzung bietet volle Kontrolle in jeder Phase des Anwendungslebenszyklus. Der Twistlock Intelligence Stream verwendet über 30 vorgelagerte Projekte, kommerzielle Quellen sowie die proprietäre Forschung von Twistlock Labs als Quelle und aggregiert direkt aus ihnen Informationen zu Schwachstellen und Sicherheitslücken.
 
-Der Fokus liegt auf der Verfügbarkeit der präzisesten Daten, um alle Schichten Ihres Stacks abzudecken, damit Sie eine korrekte Sichtbarkeit erhalten und die niedrigste Rate an 'falsch-positiv'-Situationen haben. Twistlock kombiniert diese Daten mit dem Wissen um Ihre tatsächlichen Bereitstellungen, z.B. welche Container gegenüber dem Internet zugänglich sind, welche mit umfangreichen Rechten ausgeführt werden und welche anderen Sicherheitsmaßnahmen getroffen wurden, so dass Sie stets im Blick haben, welche Schwachstellen in Ihrer speziellen Umgebung am kritischsten sind.
-
+Der Fokus liegt auf der Verfügbarkeit der präzisesten Daten, um alle Schichten Ihres Stacks abzudecken, damit Sie eine korrekte Sichtbarkeit erhalten und die niedrigste Rate an 'falsch-positiv'-Situationen haben.Twistlock kombiniert diese Daten mit dem Wissen um Ihre tatsächlichen Bereitstellungen, z.B. welche Container gegenüber dem Internet zugänglich sind, welche mit umfangreichen Rechten ausgeführt werden und welche anderen Sicherheitsmaßnahmen getroffen wurden, so dass Sie stets im Blick haben, welche Schwachstellen in Ihrer speziellen Umgebung am kritischsten sind.
 
 Hilfe bei der Einrichtung Ihrer Twistlock-Instanz finden Sie unter [Partnerlösungen](/docs/services/security-advisor?topic=security-advisor-setup-partner#setup-twistlock).
 </br>
@@ -101,10 +101,12 @@ Mithilfe der API für Untersuchungsergebnisse können Sie Untersuchungsergebniss
 Mit den integrierten Insights-Features können Sie potenzielle Probleme erkennen, indem Sie Ihre Cluster- und Kontoprotokolle kontinuierlich überwachen lassen. Durch die Überwachung des Datenaustauschs im Netz und der Benutzeraktivität können Sie sicherstellen, dass Ihre {{site.data.keyword.cloud_notm}}-Ressourcen weiterhin geschützt bleiben.
 {: shortdesc}
 
-**Network Insights (Betaversion)**
+### Network Insights (Betaversion)
+{: #integrate-network-insights}
 
 Mit Network Insights (Betaversion) können Sie sowohl die eingehende als auch die abgehende Netzkommunikation zwischen Ihrem Kubernetes-Cluster und externen Entitäten überwachen und analysieren. Durch den Einsatz der integrierten Funktion für Bedrohungsermittlung und Anomalieerkennung kann der Service Reconnaissance-Angriffe und potenziell beeinträchtigte Assets erkennen. Weitere Informationen finden Sie unter [Network Insights](/docs/services/security-advisor?topic=security-advisor-network).
 
-**Activity Insights (Vorschau)**
+### Activity Insights (Vorschau)
+{: #integrate-activity-insights}
 
 Mit Activity Insights (Vorschau), können Sie Ihre {{site.data.keyword.cloud_notm}} Activity Tracker-Protokolle fortlaufend überwachen, um nicht autorisierte oder verdächtige Aktivitäten zu identifizieren, die von Benutzern oder Apps unter Verwendung von Regelpaketen ausgeführt werden. Sie können die vom Service bereitgestellten Regelpakete verwenden, die auf bewährten Verfahren (Best Practice) für Sicherheit basieren, oder Sie können die Regeln an Ihre jeweiligen Bedürfnisse anpassen. Weitere Informationen finden Sie unter [Activity Insights](/docs/services/security-advisor?topic=security-advisor-activity).

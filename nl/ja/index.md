@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -24,12 +25,12 @@ subcollection: security-advisor
 
 
 # 入門チュートリアル
-{: #index}
+{: #getting-started}
 
-{{site.data.keyword.security-advisor_long}} を使用すると、単一の一元化されたダッシュボードで、{{site.data.keyword.Bluemix_notm}} のセキュリティー状況を瞬時に表示できます。
+{{site.data.keyword.security-advisor_long}} を使用すると、単一の一元化されたダッシュボードで、{{site.data.keyword.cloud_notm}} のセキュリティー状況を瞬時に表示できます。
 {:shortdesc}
 
-{{site.data.keyword.security-advisor_short}} は、デフォルトですべての {{site.data.keyword.Bluemix_notm}} アカウントについて有効になっているクラウド・サービスです。 したがって、このサービスのインスタンスをプロビジョンする必要はありません。
+デフォルトでは、{{site.data.keyword.security-advisor_short}} はすべての {{site.data.keyword.cloud_notm}} アカウントで有効になっています。 したがって、このサービスのインスタンスをプロビジョンする必要はありません。
 {: tip}
 
 このサービスは、さまざまなソースからセキュリティー情報を受け取り、対処が必要なセキュリティー・アラートや脆弱性をサービス・ダッシュボードに表示します。 ダッシュボードには、すぐに使用可能な定義済みのカードが複数あります。 これらは {{site.data.keyword.cloud_notm}} 内のセキュリティー・サービスからの検出事項ですが、同一の場所からすべてのセキュリティー・ツールにアクセスできるように、カードやカスタム・パートナー・ソリューションを追加することもできます。
@@ -49,14 +50,14 @@ subcollection: security-advisor
 <ul>
   <li>タイルを使用する場合は、以下のようにします。
     <ol>
-      <li><a href="https://cloud.ibm.com" target="_blank">{{site.data.keyword.cloud_notm}}<img src="../../icons/launch-glyph.svg" alt="外部リンク・アイコン"></a> にログインします。</li>
+      <li><a href="https://cloud.ibm.com/login" target="_blank">{{site.data.keyword.cloud_notm}}<img src="../../icons/launch-glyph.svg" alt="外部リンク・アイコン"></a> にログインします。</li>
       <li>**「カタログ」**にナビゲートし、**「セキュリティーおよび ID」**をクリックします。</li>
       <li>{{site.data.keyword.security-advisor_short}} のタイルを選択します。 ダッシュボードが開き、事前構成されている統合ツール (脆弱性アドバイザーや証明書マネージャーなど) のセキュリティー情報が表示されます。</li>
     </ol>
   </li>
   <li>メニューを使用する場合は、以下のようにします。
     <ol>
-      <li><a href="https://cloud.ibm.com" target="_blank">{{site.data.keyword.cloud_notm}}<img src="../../icons/launch-glyph.svg" alt="外部リンク・アイコン"></a> にログインします。</li>
+      <li><a href="https://cloud.ibm.com/login" target="_blank">{{site.data.keyword.cloud_notm}}<img src="../../icons/launch-glyph.svg" alt="外部リンク・アイコン"></a> にログインします。</li>
       <li>ダッシュボードで、ハンバーガー・メニューをクリックして、オプションを展開します。</li>
       <li>**「セキュリティー」**をクリックします。 セキュリティー・ダッシュボードの概要が開きます。</li>
       <li>ナビゲーションの**「始めに (Getting Started)」**をクリックすると、サービスに関する一般的な概要情報が表示されます。作動中のサービスを表示して学習したい場合は、**「ダッシュボード」**をクリックしてください。</li>
@@ -70,7 +71,7 @@ subcollection: security-advisor
 ## 次のステップ
 {: #start-next}
 
-ダッシュボードの動作を確認したので、{{site.data.keyword.security-advisor_short}} の利用方法を[さらに詳しく理解](/docs/services/security-advisor?topic=security-advisor-about)してください。 <a href="https://developer.ibm.com/" target="_blank">dW Answers <img src="../../icons/launch-glyph.svg" alt="外部リンク・アイコン"></a> でユーザー・フィードバックを送信して、このサービスの開発に役立つアイデアを提供することもできます。
+ダッシュボードの動作を確認したので、{{site.data.keyword.security-advisor_short}} の利用方法を[さらに詳しく理解](/docs/services/security-advisor?topic=security-advisor-about)してください。 [dW Answers](https://developer.ibm.com){: external} でユーザー・フィードバックを送信して、このサービスの開発に役立つアイデアを提供することもできます。
 
 
 ## 可用性

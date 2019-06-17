@@ -2,11 +2,12 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-06-05"
 
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -38,57 +39,59 @@ lastupdated: "2019-03-13"
 通过 {{site.data.keyword.registryshort_notm}}，您有权访问漏洞顾问程序，该程序会持续扫描 {{site.data.keyword.registryshort_notm}} 实例中的映像，以确定潜在的安全问题。如果发现了问题，将向您发送警报，并且您可以在 {{site.data.keyword.security-advisor_short}} 仪表板中查看综合报告。
 {:shortdesc}
 
-了解有关 [{{site.data.keyword.registryshort_notm}}](/docs/services/Registry?topic=registry-index#index) 的更多信息。
+了解有关 [{{site.data.keyword.registryshort_notm}}](/docs/services/Registry?topic=registry-getting-started) 的更多信息。
 
 
-**开始之前**
+### 开始之前
+{: #setup-before}
 
 在开始使用注册表之前，请确保您已安装以下 CLI 和插件：
-* [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)
+* [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli)
 * Container Registry 插件
 
   ```
-  ibmcloud plugin install container-registry -r Bluemix
+  ibmcloud plugin install container-registry
   ```
-  {: pre}
+  {: codeblock}
 
 
-**创建名称空间**
+### 创建名称空间
+{: #setup-create-namespace}
 
 1. 使用 CLI 登录到您的帐户。
 
   ```
   ibmcloud login --sso
   ```
-  {: pre}
+  {: codeblock}
 
 2. 登录到 {{site.data.keyword.registryshort_notm}}。
 
   ```
   ibmcloud cr login
   ```
-  {: pre}
+  {: codeblock}
 
 3. 可选：创建名称空间。您始终可以使用现有名称空间。
 
   ```
   ibmcloud cr namespace-add
   ```
-  {: pre}
+  {: codeblock}
 
 3. 对映像进行标记。
 
   ```
-  docker tag <image>:<tag> registry.ng.bluemix.net/<namespace>/<image>:<tag>
+  docker tag <image>:<tag> <region>.icr.io/<namespace>/<image>:<tag>
   ```
-  {: pre}
+  {: codeblock}
 
 5. 推送映像。
 
   ```
-  docker push registry.ng.bluemix.net/<namespace>/<image>:<tag>
+  docker push <region>.icr.io/<namespace>/<image>:<tag>
   ```
-  {: pre}
+  {: codeblock}
 
 
 将映像推送到 {{site.data.keyword.registryshort_notm}} 名称空间后，有关发现的任何漏洞的信息会显示在服务仪表板的**具有漏洞的映像**卡中。您还可以向下钻取到特定映像以了解更多信息，例如所有识别到的漏洞和配置问题的描述。
@@ -104,22 +107,24 @@ lastupdated: "2019-03-13"
 
 要触发手动更新，您可尝试将在一天后到期的证书上传到 {{site.data.keyword.cloudcerts_short}} 实例。成功导入后，您可以看到关键风险指标 (KRI) 和发现结果显示在 {{site.data.keyword.security-advisor_short}} 仪表板中。
 
-您可以通过阅读文档来了解有关 [{{site.data.keyword.cloudcerts_long_notm}}](/docs/services/certificate-manager?topic=certificate-manager-gettingstarted#gettingstarted) 的更多信息。
+您可以通过阅读文档来了解有关 [{{site.data.keyword.cloudcerts_long_notm}}](/docs/services/certificate-manager?topic=certificate-manager-getting-started) 的更多信息。
 {: tip}
 
-**创建证书**
+### 创建证书
+{: #setup-create-cert}
 
 要创建在一天后到期的自签名证书，可以在终端中运行以下 OpenSSL 命令。
 
 ```
 openssl req -x509 -newkey rsa:2048 -keyout key.pem -subj "/CN=myservice.com" -out server.pem -days 1 -nodes
 ```
-{: pre}
+{: codeblock}
 
 
-**上传证书**
+### 上传证书
+{: #setup-upload-cert}
 
-1. 在 {{site.data.keyword.Bluemix_notm}}“目录”中，搜索“{{site.data.keyword.cloudcerts_short}}”。
+1. 在 {{site.data.keyword.cloud_notm}}“目录”中，搜索“{{site.data.keyword.cloudcerts_short}}”。
 2. 为服务实例提供名称或使用预设名称。
 3. 单击**创建**。
 4. 要将组织证书导入到 {{site.data.keyword.cloudcerts_short}}，请单击**导入证书**。
