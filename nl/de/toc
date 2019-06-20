@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="security-advisor" audience="security" arm="4033739" href="/docs/services/security-advisor?topic=security-advisor-index#index" path="services/security-advisor"}
+{: .toc subcollection="security-advisor" audience="security" arm="4033739" href="/docs/services/security-advisor?topic=security-advisor-getting-started#getting-started" path="services/security-advisor"}
 IBM Cloud Security Advisor
 
     {: .navgroup id="learn"}
@@ -16,12 +16,15 @@ IBM Cloud Security Advisor
     setup.md
 
     {: .topicgroup}
-    Integrationen aktivieren
+    Integration von Drittanbietern
+        direct-connect.md
         partners.md
         custom.md
+
+    {: .topicgroup}
+    Aktivierung von Insights
         setup-network.md
         setup-activity.md
-
     iam.md
     {: .navgroup-end}
 
@@ -29,8 +32,8 @@ IBM Cloud Security Advisor
     [API für Untersuchungsergebnisse](https://cloud.ibm.com/apidocs/security-advisor)
     [Service-Dashboard](https://cloud.ibm.com/security-advisor/#/dashboard)
     [Blogs](https://www.ibm.com/blogs/bluemix/tag/security-advisor/)
+    [Grafeas-Spezifikation](https://grafeas.io/)
     at-events.md
-    sa_rellinks.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -54,7 +55,7 @@ Der Service erhält von folgenden Elementen Untersuchungsergebnisse:
 * Vorintegrierten {{site.data.keyword.cloud_notm}}-Services wie beispielsweise Certificate Manager und Vulnerability Advisor
 * Network Insights
 * Activity Insights
-* Partnern wie NeuVector und Twistlock
+* IBM Business Partnern wie NeuVector und Twistlock
 * Angepassten Integrationen, die Ihre übrigen Sicherheitstools umfassen
 
 Anhand der folgenden Abbildung können Sie erkennen, wie die einzelnen {{site.data.keyword.security-advisor_short}}-Komponenten zusammengehören.
@@ -92,7 +93,7 @@ Die beschriebenen Rollen können abhängig von der Größe Ihres Unternehmens vo
 Der Service wird ohne Vorbereitungs- oder Anpassungsaufwand mit vorintegrierten Untersuchungsergebnissen geliefert, die von der API markiert sind.
 {: shortdesc}
 
-Die API für Untersuchungsergebnisse in {{site.data.keyword.security-advisor_short}} richtet sich beim Speichern, Abfragen und Abrufen von kritischen Metadaten nach der API-Spezifikation <a href="http://grafeas.ng.bluemix.net/ui/" target="_blank">Grafeas <img src="../../icons/launch-glyph.svg" alt="Symbol für externen Link"></a> für Artefaktmetadaten. Die Untersuchungsergebnisse werden von Sicherheitsdiensten und -tools gemeldet.
+Die API für Untersuchungsergebnisse in {{site.data.keyword.security-advisor_short}} richtet sich beim Speichern, Abfragen und Abrufen von kritischen Metadaten nach der API-Spezifikation [Grafeas](https://grafeas.io/){: external} für Artefaktmetadaten. Die Untersuchungsergebnisse werden von Sicherheitsdiensten und -tools gemeldet.
 
 {{site.data.keyword.security-advisor_short}} ist standardmäßig für alle {{site.data.keyword.cloud_notm}}-Konten aktiviert. Daher müssen Sie keine Instanz des Service bereitstellen. Eine Instanz von {{site.data.keyword.security-advisor_short}} wird entweder beim erstmaligen Zugriff auf das Dashboard oder beim Melden des ersten Untersuchungsergebnisses automatisch erstellt. Der Service lässt in einem Zeitraum von 90 Tagen pro Konto 18.000 Untersuchungsergebnisse zu, d. h. ca. 200 pro Tag. Am Ende der 90 Tage werden die Untersuchungsergebnisse gelöscht. Die Grenzwerte für die Anzahl der Untersuchungsergebnisse werden überwacht; sollte das Konto vor Ablauf der 90 Tage den Grenzwert erreichen, wird die Gesamtzahl der Untersuchungsergebnisse innerhalb eines FIFO-Modells (First in, First out – die ältesten Ergebnisse werden zuerst gelöscht) auf 50 Prozent reduziert. Wenn der Service die Benachrichtigung zum Löschen des Kontos empfängt, werden alle auf dieses Konto bezogenen Untersuchungsergebnisse gelöscht. Sie können alle auf Ihr Konto bezogenen Untersuchungsergebnisse mithilfe der API abrufen und sie für eine zukünftige Verwendung oder für Prüfzwecke selbst speichern.
 
@@ -113,11 +114,11 @@ Hier finden Sie Informationen zu verschiedenen Begriffen, die bei der Arbeit mit
   <dt>Vorkommen</dt>
     <dd>In einem Vorkommen werden providerspezifische Details einer Anmerkung beschrieben. Das Vorkommen enthält die Details zur Sicherheitslücke, die Korrekturschritte und andere allgemeine Informationen.</dd>
   <dt>Karte</dt>
-    <dd>Metadaten, die zum Darstellen der Untersuchungsergebnisse im Service-Dashboard verwendet werden, sind durch eine Anmerkung des Typs 'Karte' (<code>CARD</code>) definiert. {{site.data.keyword.security-advisor_short}} unterstützt für eine Karte (<code>CARD</code>) drei Typen von KRI-Elementen: <ul><li>Numerisch</li><li>Aufgliederung</li><li>Zeitreihen</li></ul></dd>
+    <dd>Metadaten, die zum Darstellen der Untersuchungsergebnisse im Service-Dashboard verwendet werden, sind durch eine Anmerkung des Typs 'Karte' (<code>CARD</code>) definiert. {{site.data.keyword.security-advisor_short}} unterstützt für eine Karte drei Typen von KRI-Elementen: <ul><li>Numerisch</li><li>Aufgliederung</li><li>Zeitreihe</li></ul></dd>
   <dt>Provider</dt>
     <dd>Ein Provider ist das Tool oder der Service, der den Untersuchungsergebnistyp (Anmerkung) definiert und anschließend ein Vorkommen des Untersuchungsergebnisses an den Service sendet.</dd>
   <dt>Service-CRN</dt>
-    <dd>Der Service-CRN gibt den {{site.data.keyword.Bluemix_notm}}-Service an, der an dem Untersuchungsergebnis beteiligt ist. Die ID der Serviceinstanz oder die CRN der Serviceinstanz von Certificate Manager, die die Untersuchungsergebnisse gemeldet hat, wird beispielsweise in ein Untersuchungsergebnis über den Ablauf eines Zertifikats eingeschlossen.</dd>
+    <dd>Der Service-CRN gibt den {{site.data.keyword.cloud_notm}}-Service an, der an dem Untersuchungsergebnis beteiligt ist. Die ID der Serviceinstanz oder die CRN der Serviceinstanz von Certificate Manager, die die Untersuchungsergebnisse gemeldet hat, wird beispielsweise in ein Untersuchungsergebnis über den Ablauf eines Zertifikats eingeschlossen.</dd>
   <dt>Ressourcen-CRN</dt>
     <dd>Der Ressourcen-CRN gibt die Ressource an, die an dem Untersuchungsergebnis beteiligt ist. Wenn Network Analytics ein Untersuchungsergebnis berichtet, muss die CRN des Kubernetes-Clusters eingeschlossen werden, um den betroffenen Cluster oder die betroffene Ressource zu identifizieren.</dd>
 </dl>
@@ -129,4 +130,4 @@ Hier finden Sie Informationen zu verschiedenen Begriffen, die bei der Arbeit mit
 {{site.data.keyword.security-advisor_short}} ist ein hoch verfügbarer Service für mehrere Regionen.
 {: shortdesc}
 
-{{site.data.keyword.security-advisor_short}} wird zurzeit sowohl in der Region Dallas als auch in der Region London unterstützt. In jeder unterstützten Region wird der Service in mehreren <a href="https://www.ibm.com/blogs/bluemix/2018/06/improving-app-availability-multizone-clusters/" target="_blank">Verfügbarkeitszonen <img src="../../icons/launch-glyph.svg" alt="Symbol für externen Link"></a> ausgeführt. {{site.data.keyword.security-advisor_short}} verfügt über eine regionale Disaster-Recovery. Der Service verwaltet eine Backup-Datenbank, die schnell innerhalb von drei Stunden wiederhergestellt werden kann. Mit Ausnahme der letzten 24 Stunden werden sämtliche Servicedaten bereitgestellt.
+{{site.data.keyword.security-advisor_short}} wird zurzeit sowohl in der Region Dallas als auch in der Region London unterstützt. In jeder unterstützten Region wird der Service in mehreren [Verfügbarkeitszonen](https://www.ibm.com/cloud/blog/announcements/improving-app-availability-multizone-clusters){: external} ausgeführt. {{site.data.keyword.security-advisor_short}} verfügt über eine regionale Disaster-Recovery. Der Service verwaltet eine Backup-Datenbank, die schnell innerhalb von drei Stunden wiederhergestellt werden kann. Mit Ausnahme der letzten 24 Stunden werden sämtliche Servicedaten bereitgestellt.

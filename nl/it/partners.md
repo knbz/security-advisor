@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -26,7 +27,7 @@ subcollection: security-advisor
 # Partner
 {: #setup-partner}
 
-Le integrazioni Business Partner IBM sono un modo di utilizzare ricerche e avvisi critici da provider di terze parti nel dashboard {{site.data.keyword.security-advisor_long}}. Questi partner hanno collaborato con IBM per contribuire a creare, semplificare e guidare l'esperienza di integrazione al tuo posto.
+Le integrazioni dei Business Partner IBM costituiscono un modo per portare nel dashboard {{site.data.keyword.security-advisor_long}} ricerche e avvisi critici da provider di terze parti. Questi partner collaborano con IBM per contribuire a creare, semplificare e guidare l'esperienza di integrazione al tuo posto.
 {: shortdesc}
 
 ## Prima di cominciare
@@ -41,7 +42,7 @@ Prima di iniziare l'integrazione con i partner, assicurati di avere i seguenti p
 ## Procedura guidata di integrazione
 {: #wizard}
 
-In qualità di amministratore con diritti di gestione sia nell'account {{site.data.keyword.cloud_notm}} che negli account partner, puoi utilizzare la procedura guidata di integrazione per essere subito operativo. La procedura guidata ha quattro passi di base:
+In qualità di amministratore con autorizzazioni di gestione sia nell'account {{site.data.keyword.cloud_notm}} che nell'account partner, puoi utilizzare la procedura guidata di integrazione per essere subito operativo. La procedura guidata ha quattro passi di base:
 
 * Stabilire l'attendibilità e associare i tuoi account {{site.data.keyword.cloud_notm}} e partner
 * Copiare le informazioni richieste, come le credenziali e gli URL, tra gli account
@@ -52,7 +53,7 @@ In qualità di amministratore con diritti di gestione sia nell'account {{site.da
 ## Integrazione di NeuVector
 {: #setup-neuvector}
 
-Con NeuVector, puoi rilevare minacce e violazioni della rete per prevenire attacchi delle tue applicazioni basate su contenitore. Tramite il monitoraggio, puoi prevenire gli exploit e i breakout rilevando le escalation dei privilegi root, le scansioni delle porte, le shell inverse e l'attività sospetta del file system nei tuoi contenitori ed host.
+Con [NeuVector](https://neuvector.com){: external}, puoi rilevare minacce e violazioni della rete per prevenire attacchi delle tue applicazioni basate sul contenitore. Tramite il monitoraggio, puoi prevenire gli exploit e i breakout rilevando le escalation dei privilegi root, le scansioni delle porte, le shell inverse e l'attività sospetta del file system nei tuoi contenitori ed host.
 {: shortdesc}
 
 Per integrare NeuVector con {{site.data.keyword.security-advisor_short}}, puoi utilizzare la seguente procedura:
@@ -75,7 +76,7 @@ Per integrare NeuVector con {{site.data.keyword.security-advisor_short}}, puoi u
 ## Integrazione di Twistlock
 {: #setup-twistlock}
 
-Puoi evitare dei rischi arrestando lo sviluppo di immagini vulnerabili nel tuo ambiente. Con l'applicazione della politica personalizzata e automatizzata, Twistlock offre il controllo completo in ogni fase del ciclo di vita dell'applicazione.
+Puoi evitare dei rischi arrestando la distribuzione di immagini vulnerabili nel tuo ambiente. Con l'applicazione della politica personalizzata e automatizzata, [Twistlock](https://www.twistlock.com){: external} offre il controllo completo in ogni fase del ciclo di vita dell'applicazione.
 {: shortdesc}
 
 Quando configuri la connessione partner, vengono create due schede nel tuo dashboard che riepilogano le ricerche da Twistlock.
@@ -118,8 +119,8 @@ Puoi trovare ulteriori informazioni sull'azienda nella documentazione di Twistlo
 ### Verifica della connessione
 {: #twistlock-verify}
 
-1. Nel dashboard {{site.data.keyword.security-advisor_short}}, controlla se le schede Twistlock vengono visualizzate come previsto.
+1. Nel dashboard {{site.data.keyword.security-advisor_short}}, controlla se le schede Twistlock sono visualizzate come previsto.
 
-2. Nel dashboard Twistlock, aggiorna la scheda **Alerts**. Sarà visualizzata la connessione a {{site.data.keyword.security-advisor_short}}. Apri la connessione.
+2. Nel dashboard Twistlock, aggiorna la scheda **Alerts**. Viene mostrata la connessione a {{site.data.keyword.security-advisor_short}}. Apri la connessione.
 
 3. Verifica che i tipi di avviso da cui vuoi ricevere delle notifiche siano selezionati e poi fai clic su **Verify** per assicurarti che la connessione sia completa.

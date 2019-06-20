@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -22,10 +23,11 @@ subcollection: security-advisor
 {:deprecated: .deprecated}
 {:download: .download}
 
+
 # Activity Insights（预览）
 {: #activity}
 
-通过 {{site.data.keyword.security-advisor_long}}，您可以使用 {{site.data.keyword.cloud_notm}} Activity Tracker 来检测 {{site.data.keyword.Bluemix_notm}} 帐户中的可疑用户活动。
+通过 {{site.data.keyword.security-advisor_long}}，您可以使用 {{site.data.keyword.cloud_notm}} Activity Tracker 来检测 {{site.data.keyword.cloud_notm}} 帐户中的可疑用户活动。
 {: shortdesc}
 
 
@@ -75,8 +77,8 @@ Activity Tracker 可收集用于描述用户与 {{site.data.keyword.cloud_notm}}
 
 该卡引入了两个关键风险指标 (KRI)：
 
-* 身份和访问权：与 Identity and Access Management (IAM) 或 App ID 服务相关的发现结果。
-* 数据和 Kubernetes：与 Key Protect、Kubernetes Service、Cloud Object Storage 或证书管理器相关的发现结果。
+* 身份和访问权：与 Identity and Access Management (IAM) 或 {{site.data.keyword.appid_short_notm}} 服务相关的发现结果。
+* 数据和 Kubernetes：与 Key Protect、Kubernetes Service、Cloud Object Storage 或 Certificate Manager 相关的发现结果。
 
 
 ## 了解规则包
@@ -88,7 +90,7 @@ Activity Tracker 可收集用于描述用户与 {{site.data.keyword.cloud_notm}}
 该服务提供了与多个服务相关联的规则包，包括以下服务：
 
 * {{site.data.keyword.containerlong_notm}}
-* {{site.data.keyword.Bluemix_notm}} Identity and Access Management (IAM)
+* {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM)
 * {{site.data.keyword.cloudcerts_long_notm}}
 * {{site.data.keyword.appid_long_notm}}
 * {{site.data.keyword.keymanagementservicelong_notm}}
@@ -104,8 +106,8 @@ Activity Tracker 可收集用于描述用户与 {{site.data.keyword.cloud_notm}}
 示例：
 
 ```
-	{
-		"comment": "Dormant Rule: Very high risk App ID activity... ",
+{
+	"comment": "Dormant Rule: Very high risk {{site.data.keyword.appid_short_notm}}  activity... ",
 		"dormant": true,
 		"conditions": { 	… },
 		"event": { … }
@@ -144,20 +146,20 @@ Activity Tracker 可收集用于描述用户与 {{site.data.keyword.cloud_notm}}
 示例：
 
 ```
-	"conditions": {
+"conditions": {
 		"all": [{
 			"any": [{
 				"fact": "action",
 				"operator": "equal",
 				"value": "iam-groups.group.delete"
 			},
-			{
-				"fact": "action",
+		{
+			"fact": "action",
 				"operator": "equal",
 				"value": "iam-groups.member.delete"
 			}]
-		}
 	}
+}
 ```
 {: screen}
 
@@ -189,8 +191,8 @@ Activity Tracker 可收集用于描述用户与 {{site.data.keyword.cloud_notm}}
 示例：
 
 ```
-	{
-		"conditions": { 	… },
+{
+	"conditions": { 	… },
 		"event": {
 			"type": "IKS high risk API",
 			"params": {"findingType": "IKS-high-risk"}
@@ -227,7 +229,8 @@ aggregate 规则类型对特定时间范围内某个操作的发生次数进行�
 	* 如果选择小时，最大值可以为 24
 	* 如果选择分钟，最大值可以为 1440。
 
-**示例**
+#### 示例
+{: #aggregate-example}
 
 以下示例说明了在 30 分钟内对 5 次失败的尝试进行计数的规则：
 
@@ -299,7 +302,8 @@ coincident 规则类型监视操作，以了解同一操作在一段时间内发
 	* 如果选择分钟，最大值可以为 1440。
 
 
-**示例**
+#### 示例
+{: #coincident-example}
 
 以下示例说明了用于监控三个特定操作必须在一个 30 分钟时间段内发生的同时性的规则：
 
@@ -347,7 +351,8 @@ boolean 规则由布尔条件和事件组成。布尔规则经常用于监视高
 
 如果规则未定义为 `aggregate` 或 `coincident`，那么会将其作为 `boolean` 规则求值。
 
-**示例**
+#### 示例
+{: #boolean-example}
 
 以下示例说明了用于监控非白名单用户在非更改控制时段内的策略删除操作的规则：
 
@@ -396,7 +401,7 @@ boolean 规则由布尔条件和事件组成。布尔规则经常用于监视高
 ```
 {: screen}
 
-要了解有关 boolean 规则的更多信息吗？请查看 <a href="https://github.com/CacheControl/json-rules-engine/blob/master/docs/rules.md" target="_blank">CacheControl 文档 <img src="../../icons/launch-glyph.svg" alt="外部链接图标"></a>。
+要了解有关 boolean 规则的更多信息吗？请查看 [Cache-Control 文档](https://github.com/CacheControl/json-rules-engine/blob/master/docs/rules.md){: external}。
 {: tip}
 
 ## 后续步骤

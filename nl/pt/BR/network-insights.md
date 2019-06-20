@@ -2,15 +2,15 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
-keywords: centralized security, security management, alerts, security risk, insights, threat detection
+keywords: Centralized security, security management, alerts, security risk, insights, threat detection
 
 subcollection: security-advisor
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -66,10 +66,10 @@ As informações a seguir são coletadas:
 * Um conjunto de parâmetros específicos do protocolo
 * Vários registros de data e hora.
 
-**Os dados reais que são trocados não são coletados.**
+Os dados reais que são trocados não são coletados.
+{: tip}
 
 Do ponto de vista de segurança, é uma boa ideia limpar seus dados coletados quando os requisitos legais ou da empresa permitem que eles sejam excluídos. Para obter mais informações, confira [Excluindo objetos](/docs/services/cloud-object-storage/info?topic=cloud-object-storage-security#deletion).
-{: tip}
 
 
 ## Rede: Tráfego de Entrada Suspeita
@@ -79,7 +79,7 @@ O {{site.data.keyword.security-advisor_short}} informa sobre as tentativas que s
 {: shortdesc}
 
 
-Os padrões comportamentais de clientes que são classificados pelo IBM X-Force como distribuindo malware que é usado como scanners, como parte de um botnet, para a criptografia de mineração ou para serviços de anonimização são todos monitorados continuamente. Se esse tipo de cliente se aproximar de seu cluster e exibição, abordar um cluster monitorado e exibir um comportamento alarmante, o Network Insights emitirá uma descoberta.
+Os padrões comportamentais de clientes que são classificados pelo IBM X-Force como malware de distribuição que é usado como scanners, como parte de um botnet, para mineração de criptomoeda ou para serviços de anonimização são todos monitorados continuamente. Se esse tipo de cliente se aproximar de um cluster monitorado e exibir um comportamento alarmante, o Network Insights emitirá uma descoberta.
 
 
 O cartão introduz dois Indicadores-chaves de risco (KRIs):
@@ -112,9 +112,9 @@ O cartão introduz dois Indicadores-chaves de risco (KRIs):
 
 As descobertas podem incluir contêineres que:
 
-* enviam quantidades anormalmente grandes de dados para um servidor suspeito;
-* extraem uma grande quantidade de dados de um servidor suspeito;
-* executam um grande número de solicitações para um servidor suspeito.
+* Enviam quantias anormalmente grandes de dados para um servidor suspeito.
+* Extraem uma quantia grande de dados de um servidor suspeito.
+* Executam um grande número de solicitações para um servidor suspeito.
 
 
 ## Rede: Anomalias no tráfego (experimental)
@@ -132,13 +132,13 @@ O cartão introduz dois Indicadores-chaves de risco (KRIs):
 
 Uma descoberta pode incluir:  
 
-* contêineres que abordam servidores que nunca foram abordados antes;
-* contêineres que enviam ou consomem significativamente mais dados do que o normal para os peers específicos ou de peers específicos;
-* o nível de pesquisa de um determinado contêiner aumentou significativamente.
+* Contêineres que abordam servidores que nunca foram abordados anteriormente.
+* Contêineres que enviam ou consomem significativamente mais dados do que o normal para ou dos peers específicos.
+* O nível de pesquisa de um determinado contêiner aumentou significativamente.
 
- Após o modelo ser desenvolvido, os desvios do modelo aprendido são detectados e quando uma mudança alarmante é exibida, o Network Insights posta uma descoberta no painel do Security Advisor. As descobertas são resumidas no cartão 'Rede: anomalias no tráfego'. O cartão apresenta dois Principais indicadores de risco (KRIs). O KRI 'Atividade de reconhecimento ou troca de dados mais alta que o normal' conta as descobertas que estão relacionadas a interações anormais detectadas entre o cluster e os peers externos, enquanto o KRI 'Abordagem de saída para um novo servidor' conta as descobertas que estão relacionadas a novas abordagens de servidores detectados pelo cluster.  
+Após o modelo ser desenvolvido, os desvios do modelo aprendido são detectados e quando uma mudança alarmante é exibida, o Network Insights posta uma descoberta no painel do Security Advisor. As descobertas são resumidas no cartão "Rede: anomalias no tráfego". O cartão apresenta dois Principais indicadores de risco (KRIs). O KRI "Mais alto do que o normal de atividade de reconhecimento ou de troca de dados" conta as descobertas que estão relacionadas às interações anormais detectadas entre o cluster e os peers externos. O KRI de "Abordagem de saída para um novo servidor" conta descobertas que estão relacionadas a novas abordagens de servidores detectados acessados pelo cluster.  
 
 ## Próximas Etapas
 {: #network-next}
 
-Pronto para iniciar? Efetue check-out  [ Ativando o Network Insights ](/docs/services/security-advisor/setup-network.html)!
+Pronto para iniciar? Efetue check-out  [ Ativando o Network Insights ](/docs/services/security-advisor?topic=security-advisor-setup-network)!

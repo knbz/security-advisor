@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -30,23 +31,28 @@ subcollection: security-advisor
 您可以使用 {{site.data.keyword.cloudaccesstrailshort}} 服务来查看、管理和审计在 {{site.data.keyword.security-advisor_long}} 服务实例中执行的用户启动的活动。
 {: shortdesc}
 
-有关该服务如何工作的更多信息，请参阅 [{{site.data.keyword.cloudaccesstrailshort}} 文档](/docs/services/cloud-activity-tracker/reference?topic=cloud-activity-tracker-getting-started-with-cla#getting-started-with-cla)。
+
+
+
+
+
+有关该服务如何工作的更多信息，请参阅 [{{site.data.keyword.cloudaccesstrailshort}} 文档](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started#getting-started)。
+
 
 
 ## 查看事件的位置
 {: #monitor}
 
-事件在生成事件的 {{site.data.keyword.Bluemix_notm}} 区域中可用的 {{site.data.keyword.cloudaccesstrailshort}} **帐户域**中提供。
+事件在生成事件的 {{site.data.keyword.cloud_notm}} 区域中可用的 {{site.data.keyword.cloudaccesstrailshort}} **帐户域**中提供。
 
-1. 登录到 {{site.data.keyword.Bluemix_notm}} 帐户。
+1. 登录到 {{site.data.keyword.cloud_notm}} 帐户。
 2. 在目录中，在 {{site.data.keyword.security-advisor_short}} 的实例所在的帐户中供应 {{site.data.keyword.cloudaccesstrailshort}} 服务的实例。
 3. 在 {{site.data.keyword.cloudaccesstrailshort}} 仪表板的**管理**选项卡上，单击**在 Kibana 中查看**。
 4. 设置要查看其日志的时间范围。缺省值为 15 分钟。
 5. 在**可用字段**列表中，单击**类型**。单击 **Activity Tracker** 的“放大镜”图标，以将日志仅限于由该服务跟踪的日志。
 6. 可以使用其他可用字段来缩小搜索范围。
 
-要使帐户所有者以外的用户可查看日志，您必须使用高端套餐。要使其他用户可查看事件，请参阅[授予查看帐户事件的许可权](/docs/services/cloud-activity-tracker/how-to?topic=cloud-activity-tracker-grant_permissions#grant_permissions)。
-{: tip}
+
 
 ## 事件列表
 {: #events}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -22,10 +23,11 @@ subcollection: security-advisor
 {:deprecated: .deprecated}
 {:download: .download}
 
+
 # Activity Insights (anteprima)
 {: #activity}
 
-Con {{site.data.keyword.security-advisor_long}}, puoi rilevare attività utente sospetta nel tuo account {{site.data.keyword.Bluemix_notm}} utilizzando il Programma di traccia dell'attività {{site.data.keyword.cloud_notm}}.
+Con {{site.data.keyword.security-advisor_long}}, puoi rilevare attività utente sospetta nel tuo account {{site.data.keyword.cloud_notm}} utilizzando il Programma di traccia dell'attività {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
 
@@ -34,7 +36,7 @@ Con {{site.data.keyword.security-advisor_long}}, puoi rilevare attività utente 
 
 La funzione Activity Insights è un componente aggiuntivo del servizio {{site.data.keyword.security-advisor_short}}. Con la funzione abilitata e configurata, il comportamento dell'utente viene registrato e analizzato per identificare dell'attività sospetta in base a delle regole. Puoi utilizzare delle regole predefinite o puoi crearne di personalizzate che si adattano alla tua organizzazione.
 
-Controlla la seguente immagine per vedere il flusso di informazioni. 
+Controlla la seguente immagine per vedere il flusso di informazioni.
 
 ![Diagramma del flusso di Activity Insights](images/activity-insights-flow.png)
 
@@ -47,13 +49,13 @@ Controlla la seguente immagine per vedere il flusso di informazioni.
 
 </br>
 
-## Raccolta di dati 
+## Raccolta di dati
 {: #activity-data}
 
 Il Programma di traccia dell'attività raccoglie gli eventi che descrivono le interazioni dell'utente con le API {{site.data.keyword.cloud_notm}}. Puoi in seguito archiviare i log in un bucket Object Storage per ulteriori analisi.
 {: shortdesc}
 
-Il Programma di traccia dell'attività raccoglie gli eventi che descrivono le interazioni dell'utente con le API {{site.data.keyword.cloud_notm}}. 
+Il Programma di traccia dell'attività raccoglie gli eventi che descrivono le interazioni dell'utente con le API {{site.data.keyword.cloud_notm}}.
 
 Le informazioni raccolte includono:
 
@@ -75,8 +77,8 @@ La scheda Activity Insights nel dashboard del servizio riepiloga tutti i segnali
 
 La scheda introduce due KRI (Key Risk Indicator):
 
-* Identità e accesso: le ricerche correlate ai servizi Identity and Access Management (IAM) o ID Applicazione.
-* Dati e Kubernetes: le ricerche correlate a Key Protect, Kubernetes Service, Cloud Object Storage o Gestore certificati.
+* Identità e accesso: le ricerche correlate ai servizi IAM (Identity and Access Management) o {{site.data.keyword.appid_short_notm}}.
+* Dati e Kubernetes: le ricerche correlate a Key Protect, Kubernetes Service, Cloud Object Storage o Certificate Manager.
 
 
 ## Descrizione dei pacchetti di regole
@@ -88,7 +90,7 @@ Come amministratore dell'account, puoi velocemente avviare il monitoraggio dei t
 Il servizio offre dei pacchetti di regole associati a diversi servizi, inclusi:
 
 * {{site.data.keyword.containerlong_notm}}
-* {{site.data.keyword.Bluemix_notm}} Identity and Access Management (IAM)
+* {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM)
 * {{site.data.keyword.cloudcerts_long_notm}}
 * {{site.data.keyword.appid_long_notm}}
 * {{site.data.keyword.keymanagementservicelong_notm}}
@@ -104,13 +106,13 @@ Una regola è una combinazione di condizioni e un singolo evento. Puoi utilizzar
 Esempio:
 
 ```
-	{
-		"comment": "Dormant Rule: Very high risk App ID activity... ",
+{
+	"comment": "Dormant Rule: Very high risk {{site.data.keyword.appid_short_notm}}  activity... ",
 		"dormant": true,
 		"conditions": { 	… },
 		"event": { … }
-		"type": "aggregate"
-	}
+	"type": "aggregate"
+}
 ```
 {: screen}
 
@@ -144,20 +146,20 @@ Una condizione di base è un blocco di creazione composto da tre componenti. I b
 Esempio:
 
 ```
-	"conditions": {
-		"all": [{
-			"any": [{
-				"fact": "action",
+"conditions": {
+	"all": [{
+		"any": [{
+			"fact": "action",
 				"operator": "equal",
 				"value": "iam-groups.group.delete"
-			},
-			{
-				"fact": "action",
+		},
+		{
+			"fact": "action",
 				"operator": "equal",
 				"value": "iam-groups.member.delete"
-			}]
-		}
+		}]
 	}
+}
 ```
 {: screen}
 
@@ -189,13 +191,13 @@ Un evento è formato da due campi: `type` e `params.findingType`. Il primo è un
 Esempio:
 
 ```
-	{
-		"conditions": { 	… },
+{
+	"conditions": { 	… },
 		"event": {
-			"type": "IKS high risk API",
+		"type": "IKS high risk API",
 			"params": {"findingType": "IKS-high-risk"}
 		}
-	}
+}
 ```
 {: screen}
 
@@ -227,7 +229,8 @@ Un tipo di regola aggregate conta il numero di ricorrenze di un'azione in un int
 	* Quando viene selezionato hours, il valore massimo può essere 24
 	* Quando viene selezionato minutes, il valore massimo può essere 1440.
 
-**Esempio**
+#### Esempio
+{: #aggregate-example}
 
 Il seguente esempio illustra una regola che conta cinque tentativi non riusciti in un intervallo di 30 minuti:
 
@@ -299,7 +302,8 @@ Un tipo di regola coincident monitora le azioni per vedere quante volte si verif
 	* Quando viene selezionato minutes, il valore massimo può essere 1440.
 
 
-**Esempio**
+#### Esempio
+{: #coincident-example}
 
 Il seguente esempio illustra una regola che controlla una simultaneità di tre azioni specifiche che devono verificarsi in un intervallo di trenta minuti:
 
@@ -347,7 +351,8 @@ Una regola boolean è formata da una condizione booleana e da un evento. Le rego
 
 Se una regola non viene definita come `aggregate` o `coincident`, viene valutata come una regola `boolean`.
 
-**Esempio**
+#### Esempio
+{: #boolean-example}
 
 Il seguente esempio illustra una regola che controlla un'eliminazione di una politica al di fuori della finestra di controllo delle modifiche, effettuata da un utente che non è nella whitelist.
 
@@ -396,7 +401,7 @@ Il seguente esempio illustra una regola che controlla un'eliminazione di una pol
 ```
 {: screen}
 
-Vuoi saperne di più sulle regole boolean? Consulta <a href="https://github.com/CacheControl/json-rules-engine/blob/master/docs/rules.md" target="_blank">la documentazione CacheControl <img src="../../icons/launch-glyph.svg" alt="Icona link esterno"></a>.
+Vuoi saperne di più sulle regole boolean? Consulta [la documentazione di Cache-Control](https://github.com/CacheControl/json-rules-engine/blob/master/docs/rules.md){: external}.
 {: tip}
 
 ## Passi successivi

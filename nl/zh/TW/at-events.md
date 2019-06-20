@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -30,28 +31,33 @@ subcollection: security-advisor
 您可以使用 {{site.data.keyword.cloudaccesstrailshort}} 服務，檢視、管理及審核在 {{site.data.keyword.security-advisor_long}} 服務實例中進行的使用者起始活動。
 {: shortdesc}
 
-如需服務運作方式的相關資訊，請參閱 [{{site.data.keyword.cloudaccesstrailshort}} 文件](/docs/services/cloud-activity-tracker/reference?topic=cloud-activity-tracker-getting-started-with-cla#getting-started-with-cla)。
+
+
+
+
+
+如需服務運作方式的相關資訊，請參閱 [{{site.data.keyword.cloudaccesstrailshort}} 文件](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started#getting-started)。
+
 
 
 ## 檢視事件的位置
 {: #monitor}
 
-{{site.data.keyword.cloudaccesstrailshort}} **帳戶網域**中提供事件，而帳戶網域位於產生事件的 {{site.data.keyword.Bluemix_notm}} 地區。
+事件位在 {{site.data.keyword.cloudaccesstrailshort}} **帳戶網域**中，而此帳戶網域位於產生事件的 {{site.data.keyword.cloud_notm}} 地區。
 
-1. 登入 {{site.data.keyword.Bluemix_notm}} 帳戶。
+1. 登入 {{site.data.keyword.cloud_notm}} 帳戶。
 2. 從型錄中，在與 {{site.data.keyword.security-advisor_short}} 實例相同的帳戶中佈建 {{site.data.keyword.cloudaccesstrailshort}} 服務實例。
 3. 在 {{site.data.keyword.cloudaccesstrailshort}} 儀表板的**管理**標籤上，按一下**在 Kibana 中檢視**。
 4. 設定您要檢視其日誌的時間範圍。預設值為 15 分鐘。
 5. 在**可用的欄位**清單中，按一下**類型**。按一下 **Activity Tracker** 的放大鏡圖示，將日誌限制為僅服務所追蹤的日誌。
 6. 您可以使用其他可用的欄位，來縮小搜尋範圍。
 
-若要讓帳戶擁有者以外的使用者檢視日誌，您必須使用超值方案。若要讓其他使用者檢視事件，請參閱[授與許可權來查看帳戶事件](/docs/services/cloud-activity-tracker/how-to?topic=cloud-activity-tracker-grant_permissions#grant_permissions)。
-{: tip}
+
 
 ## 事件清單
 {: #events}
 
-請查看下表，以取得傳送至 {{site.data.keyword.cloudaccesstrailshort}} 的事件清單。
+請參閱下表，以取得傳送至 {{site.data.keyword.cloudaccesstrailshort}} 的事件清單。
 {: shortdesc}
 
 <table>
@@ -109,19 +115,19 @@ subcollection: security-advisor
   </tr>
   <tr>
     <td><code>security-advisor.partner-solution.read</code></td>
-    <td>檢視已新增至服務實例的夥伴解決方案。</td>
+    <td>檢視已新增至服務實例的合作夥伴解決方案。</td>
   </tr>
   <tr>
     <td><code>security-advisor.partner-solution.write</code></td>
-    <td>將夥伴解決方案新增至服務實例。</td>
+    <td>將合作夥伴解決方案新增至服務實例。</td>
   </tr>
   <tr>
     <td><code>security-advisor.partner-solution.update</code></td>
-    <td>更新服務實例中的夥伴解決方案。</td>
+    <td>更新服務實例中的合作夥伴解決方案。</td>
   </tr>
   <tr>
     <td><code>security-advisor.partner-solution.delete</code></td>
-    <td>刪除服務實例中的夥伴解決方案。</td>
+    <td>刪除服務實例中的合作夥伴解決方案。</td>
   </tr>
   <tr>
     <td><code>security-advisor.network-insights.enable</code></td>
@@ -141,6 +147,6 @@ subcollection: security-advisor
   </tr>
   <tr>
     <td><code>security-advisor.insights-cos.create</code></td>
-    <td>透過 {{site.data.keyword.security-advisor_short}} 建立 Network 及 Activity Insights 的 Cloud Object Storage 實例。</td>
+    <td>透過 {{site.data.keyword.security-advisor_short}} 建立 Network  Insights 及 Activity Insights 的 Cloud Object Storage 實例。</td>
   </tr>
 </table>

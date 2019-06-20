@@ -2,15 +2,16 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-06-06"
 
-keywords: centralized security, security management, alerts, security risk, insights, threat detection
+keywords: Centralized security, security management, alerts, security risk, insights, threat detection
 
 subcollection: security-advisor
 
 ---
 
-{:new_window: target="_blank"}
+
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -43,7 +44,7 @@ subcollection: security-advisor
 {: #xforce}
 {: faq}
 
-IBM X-Force Research는 세계적으로 가장 유명한 상용 보안 연구 팀 중 하나입니다. 이 보안 전문가들은 다양한 소스로부터 보안 문제를 모니터 및 분석하여 IBM 보안 포트폴리오의 기반으로 위협 인텔리전스 컨텐츠를 제공합니다. IBM X-Force Exchange는 사용자가 신속하게 최신 보안 위협을 연구하고 조치 가능한 인텔리전스를 집계하여 피어와 협업할 수 있도록 해주는 클라우드 기반 위협 인텔리전스 공유 플랫폼입니다. IBM X-Force Exchange는 IBM X-Force의 스케일을 활용하여 사용자 및 시스템이 생성하는 인텔리전스에서 지원됩니다.
+IBM X-Force Research는 세계적으로 가장 유명한 상용 보안 연구 팀 중 하나입니다. 이 보안 전문가들은 다양한 소스로부터 보안 문제를 모니터 및 분석하여 IBM 보안 포트폴리오의 기반으로 위협 인텔리전스 컨텐츠를 제공합니다. IBM X-Force Exchange는 사용자가 신속하게 최신 보안 위협을 연구하고 조치 가능한 인텔리전스를 집계하여 피어와 협업할 수 있도록 해주는 클라우드 기반 위협 인텔리전스 공유 플랫폼입니다. IBM X-Force Exchange는 IBM X-Force의 스케일을 활용하는 사용자 및 시스템 생성 인텔리전스에서 지원됩니다. 
 
 </br>
 

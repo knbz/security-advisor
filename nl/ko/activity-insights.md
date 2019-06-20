@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -22,10 +23,11 @@ subcollection: security-advisor
 {:deprecated: .deprecated}
 {:download: .download}
 
+
 # Activity Insights(미리보기)
 {: #activity}
 
-{{site.data.keyword.security-advisor_long}}를 사용하면 {{site.data.keyword.cloud_notm}} Activity Tracker를 사용하여 {{site.data.keyword.Bluemix_notm}} 계정에서 의심스러운 사용자 활동을 발견할 수 있습니다.
+{{site.data.keyword.security-advisor_long}}를 사용하면 {{site.data.keyword.cloud_notm}} Activity Tracker를 사용하여 {{site.data.keyword.cloud_notm}} 계정에서 의심스러운 사용자 활동을 발견할 수 있습니다.
 {: shortdesc}
 
 
@@ -53,7 +55,7 @@ Activity Insights 기능은 {{site.data.keyword.security-advisor_short}} 서비�
 Activity Tracker는 {{site.data.keyword.cloud_notm}} API에 대한 사용자 상호작용을 설명하는 이벤트를 수집합니다. 그런 다음 추가 분석을 위해 로그를 Object Storage 버킷에 저장할 수 있습니다.
 {: shortdesc}
 
-Activity Tracker는 {{site.data.keyword.cloud_notm}} API에 대한 사용자 상호작용을 설명하는 이벤트를 수집합니다. 
+Activity Tracker는 {{site.data.keyword.cloud_notm}} API에 대한 사용자 상호작용을 설명하는 이벤트를 수집합니다.
 
 수집된 정보는 다음과 같습니다.
 
@@ -75,7 +77,7 @@ Activity Tracker는 {{site.data.keyword.cloud_notm}} API에 대한 사용자 상
 
 카드에는 두 가지 주요 위험 지표(KRI)가 있습니다.
 
-* ID 및 액세스: ID 및 액세스 관리(IAM) 또는 앱 ID 서비스와 관련된 찾은 결과.
+* ID 및 액세스: IAM(Identity and Access Management) 또는 {{site.data.keyword.appid_short_notm}} 서비스와 관련된 찾은 결과.
 * 데이터 및 Kubernetes: 키 보호, Kubernetes 서비스, Cloud Object Storage 또는 Certificate Manager와 관련된 찾은 결과.
 
 
@@ -88,7 +90,7 @@ Activity Tracker는 {{site.data.keyword.cloud_notm}} API에 대한 사용자 상
 이 서비스는 다음과 같은 여러 서비스와 연관된 규칙 패키지를 제공합니다.
 
 * {{site.data.keyword.containerlong_notm}}
-* {{site.data.keyword.Bluemix_notm}} Identity and Access Management(IAM)
+* {{site.data.keyword.cloud_notm}} Identity and Access Management(IAM)
 * {{site.data.keyword.cloudcerts_long_notm}}
 * {{site.data.keyword.appid_long_notm}}
 * {{site.data.keyword.keymanagementservicelong_notm}}
@@ -99,18 +101,18 @@ Activity Tracker는 {{site.data.keyword.cloud_notm}} API에 대한 사용자 상
 ### 규칙은 무엇입니까?
 {: #ai-rule}
 
-규칙은 조건과 단일 이벤트의 조합입니다. 규칙 또는 규칙 조합을 사용하여 {{site.data.keyword.security-advisor_short}} 대시보드에 표시할 수 있는 찾은 결과를 트리거할 수 있습니다. 
+규칙은 조건과 단일 이벤트의 조합입니다. 규칙 또는 규칙 조합을 사용하여 {{site.data.keyword.security-advisor_short}} 대시보드에 표시할 수 있는 찾은 결과를 트리거할 수 있습니다.
 
 예를 들면, 다음과 같습니다.
 
 ```
-	{
-		"comment": "Dormant Rule: Very high risk App ID activity... ",
+{
+	"comment": "Dormant Rule: Very high risk {{site.data.keyword.appid_short_notm}}  activity... ",
 		"dormant": true,
 		"conditions": { 	… },
 		"event": { … }
-		"type": "aggregate"
-	}
+	"type": "aggregate"
+}
 ```
 {: screen}
 
@@ -144,20 +146,20 @@ Activity Tracker는 {{site.data.keyword.cloud_notm}} API에 대한 사용자 상
 예를 들면, 다음과 같습니다.
 
 ```
-	"conditions": {
-		"all": [{
-			"any": [{
-				"fact": "action",
+"conditions": {
+	"all": [{
+		"any": [{
+			"fact": "action",
 				"operator": "equal",
 				"value": "iam-groups.group.delete"
-			},
-			{
-				"fact": "action",
+		},
+		{
+			"fact": "action",
 				"operator": "equal",
 				"value": "iam-groups.member.delete"
-			}]
-		}
+		}]
 	}
+}
 ```
 {: screen}
 
@@ -170,8 +172,7 @@ Activity Tracker는 {{site.data.keyword.cloud_notm}} API에 대한 사용자 상
 		<td>검사 중인 Activity Tracker CADF 이벤트입니다.</td>
 	</tr>
 	<tr>
-		<td><code>operator</code>
-</td>
+		<td><code>operator</code></td>
 		<td>포함되는 옵션: <code>equal</code>, <code>notEqual</code>, <code>lessThan</code>, <code>greaterThan</code>, <code>in</code> 및 <code>notIn</code></td>
 	</tr>
 	<tr>
@@ -190,13 +191,13 @@ Activity Tracker는 {{site.data.keyword.cloud_notm}} API에 대한 사용자 상
 예를 들면, 다음과 같습니다.
 
 ```
-	{
-		"conditions": { 	… },
+{
+	"conditions": { 	… },
 		"event": {
-			"type": "IKS high risk API",
+		"type": "IKS high risk API",
 			"params": {"findingType": "IKS-high-risk"}
 		}
-	}
+}
 ```
 {: screen}
 
@@ -228,7 +229,8 @@ Activity Tracker는 {{site.data.keyword.cloud_notm}} API에 대한 사용자 상
 	* 시간을 선택하는 경우 최대값은 24임
 	* 분을 선택하는 경우 최대값은 1440임
 
-**예제**
+#### 예
+{: #aggregate-example}
 
 다음 예제는 30분 내에 5회 실패한 시도를 계산하는 규칙을 표시합니다.
 
@@ -300,7 +302,8 @@ Activity Tracker는 {{site.data.keyword.cloud_notm}} API에 대한 사용자 상
 	* 분을 선택하는 경우 최대값은 1440임
 
 
-**예제**
+#### 예
+{: #coincident-example}
 
 다음 예제는 30분 내에 발생해야 하는 세 가지 특정 조치의 동시 발생을 감시하는 규칙을 보여줍니다.
 
@@ -348,7 +351,8 @@ Activity Tracker는 {{site.data.keyword.cloud_notm}} API에 대한 사용자 상
 
 규칙이 `aggregate` 또는 `coincident`로 정의되지 않으면 `boolean` 규칙으로 평가됩니다.
 
-**예제**
+#### 예
+{: #boolean-example}
 
 다음 예제는 허용 목록에 없는 사용자에 의한 변경 제어 창 외부에서의 정책 삭제를 감시하는 규칙을 보여줍니다.
 
@@ -397,7 +401,7 @@ Activity Tracker는 {{site.data.keyword.cloud_notm}} API에 대한 사용자 상
 ```
 {: screen}
 
-부울 규칙에 대한 자세한 정보를 확인하시겠습니까? <a href="https://github.com/CacheControl/json-rules-engine/blob/master/docs/rules.md" target="_blank">CacheControl 문서 <img src="../../icons/launch-glyph.svg" alt="외부 링크 아이콘"></a>를 참조하십시오.
+부울 규칙에 대한 자세한 정보를 확인하시겠습니까? [Cache-Control 문서](https://github.com/CacheControl/json-rules-engine/blob/master/docs/rules.md){: external}를 확인하십시오.
 {: tip}
 
 ## 다음 단계

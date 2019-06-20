@@ -2,11 +2,12 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-06-05"
 
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -38,57 +39,59 @@ Aunque no tiene que hacer nada para crear la conexión entre {{site.data.keyword
 Con {{site.data.keyword.registryshort_notm}}, tiene acceso a Vulnerability Advisor, que explora de forma continuada las imágenes de su instancia de {{site.data.keyword.registryshort_notm}} en busca de problemas de seguridad potenciales. Si se encuentran problemas, se le alerta y puede ver un informe completo en el panel de control de {{site.data.keyword.security-advisor_short}}.
 {:shortdesc}
 
-Obtenga más información acerca de [{{site.data.keyword.registryshort_notm}}](/docs/services/Registry?topic=registry-index#index).
+Obtenga más información acerca de [{{site.data.keyword.registryshort_notm}}](/docs/services/Registry?topic=registry-getting-started).
 
 
-**Antes de empezar**
+### Antes de empezar
+{: #setup-before}
 
 Para poder empezar a trabajar con el registro, asegúrese de que tiene instaladas las siguientes CLI y plugins:
-* [La CLI de {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)
+* [La CLI de {{site.data.keyword.cloud_notm}})](/docs/cli?topic=cloud-cli-ibmcloud-cli)
 * El plugin Container Registry.
 
   ```
-  ibmcloud plugin install container-registry -r Bluemix
+  ibmcloud plugin install container-registry
   ```
-  {: pre}
+  {: codeblock}
 
 
-**Creación de un espacio de nombres**
+### Creación de un espacio de nombres
+{: #setup-create-namespace}
 
 1. Inicie una sesión en su cuenta mediante la CLI.
 
   ```
   ibmcloud login --sso
   ```
-  {: pre}
+  {: codeblock}
 
 2. Inicie sesión en {{site.data.keyword.registryshort_notm}}.
 
   ```
   ibmcloud cr login
   ```
-  {: pre}
+  {: codeblock}
 
 3. Opcional: cree un espacio de nombres. Siempre puede utilizar uno existente.
 
   ```
   ibmcloud cr namespace-add
   ```
-  {: pre}
+  {: codeblock}
 
 3. Etiquete una imagen.
 
   ```
-  docker tag <image>:<tag> registry.ng.bluemix.net/<namespace>/<image>:<tag>
+  docker tag <image>:<tag> <region>.icr.io/<namespace>/<image>:<tag>
   ```
-  {: pre}
+  {: codeblock}
 
 5. Envíe la imagen por push.
 
   ```
-  docker push registry.ng.bluemix.net/<namespace>/<image>:<tag>
+  docker push <region>.icr.io/<namespace>/<image>:<tag>
   ```
-  {: pre}
+  {: codeblock}
 
 
 Después de enviar por push imágenes al espacio de nombres de {{site.data.keyword.registryshort_notm}}, se muestra información sobre las vulnerabilidades encontradas en la tarjeta **Imágenes con vulnerabilidades** en el panel de control del servicio. También puede ver detalles de imágenes específicas para encontrar más información, como por ejemplo una descripción de todas las vulnerabilidades y problemas de configuración que se han identificado.
@@ -104,22 +107,24 @@ En función de la fecha de caducidad del certificado que cargue a {{site.data.ke
 
 Para desencadenar una actualización manual, puede intentar cargar un certificado que caduque en un día a su instancia de {{site.data.keyword.cloudcerts_short}}. Cuando la importación se haya realizado correctamente, puede ver que el indicador clave de riesgo (KRI) y los resultados son visibles en el panel de control de {{site.data.keyword.security-advisor_short}}.
 
-Encontrará más información acerca de [{{site.data.keyword.cloudcerts_long_notm}}](/docs/services/certificate-manager?topic=certificate-manager-gettingstarted#gettingstarted) en la documentación.
+Encontrará más información acerca de [{{site.data.keyword.cloudcerts_long_notm}}](/docs/services/certificate-manager?topic=certificate-manager-getting-started) en la documentación.
 {: tip}
 
-**Creación de un certificado**
+### Creación de un certificado
+{: #setup-create-cert}
 
 Para crear un certificado autofirmado que caduque en un día, puede ejecutar el siguiente mandato OpenSSL en el terminal.
 
 ```
 openssl req -x509 -newkey rsa:2048 -keyout key.pem -subj "/CN=myservice.com" -out server.pem -days 1 -nodes
 ```
-{: pre}
+{: codeblock}
 
 
-**Carga de un certificado**
+### Cargar un certificado
+{: #setup-upload-cert}
 
-1. En el catálogo de {{site.data.keyword.Bluemix_notm}}, busque "{{site.data.keyword.cloudcerts_short}}".
+1. En el catálogo de {{site.data.keyword.cloud_notm}}, busque "{{site.data.keyword.cloudcerts_short}}".
 2. Dé un nombre a la instancia de servicio, o utilice el nombre preestablecido.
 3. Pulse **Crear**.
 4. Para importar los certificados de la organización en {{site.data.keyword.cloudcerts_short}}, pulse **Importar certificado**.

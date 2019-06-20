@@ -2,15 +2,15 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
-keywords: centralized security, security management, alerts, security risk, insights, threat detection
+keywords: Centralized security, security management, alerts, security risk, insights, threat detection
 
 subcollection: security-advisor
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -66,10 +66,10 @@ Die folgenden Informationen werden erfasst:
 * Eine Gruppe protokollspezifischer Parameter
 * Verschiedene Zeitmarken
 
-**Die tatsächlich ausgetauschten Daten werden nicht erfasst.**
+Die tatsächlich ausgetauschten Daten werden nicht erfasst.
+{: tip}
 
 Aus dem Blickwinkel der Sicherheit ist es sinnvoll, die erfassten Daten zu bereinigen, wenn gesetzliche oder betriebliche Voraussetzungen das Löschen zulassen. Weitere Informationen finden Sie in [Objekte löschen](/docs/services/cloud-object-storage/info?topic=cloud-object-storage-security#deletion).
-{: tip}
 
 
 ## Netz: Verdächtiger eingehender Datenverkehr
@@ -136,9 +136,9 @@ Ein Ergebnis kann Folgendes einbeziehen:
 * Container, die deutlich mehr Daten als gewöhnlich an bestimmte Peers senden oder von bestimmten Peers verarbeiten.
 * Der Grad der Überprüfung eines bestimmten Containers hat beträchtlich zugenommen.
 
- Nach der Entwicklung des Modells werden Abweichungen vom erlernten Modell erkannt und wenn eine alarmierende Änderung auftritt, veröffentlicht Network Insights ein Untersuchungsergebnis im Dashboard von Security Advisor. Untersuchungsergebnisse werden auf der Karte 'Netz: Anomalien im Datenverkehr' zusammengefasst. Auf dieser Karte werden zwei Key Risk Indicators (KRIs) eingeführt. Der KRI 'Stärkere Reconnaissance- oder Datenaustauschaktivität als gewöhnlich' zählt Untersuchungsergebnisse, die sich auf anormale Interaktionen beziehen, die zwischen dem Cluster und externen Peers festgestellt wurden, während der KRI 'Abgehende Kontaktaufnahme zu neuem Server' Untersuchungsergebnisse zählt, die sich auf Kontaktaufnahmen zu neu erkannten Servern durch den Cluster beziehen.  
+Nach der Entwicklung des Modells werden Abweichungen vom erlernten Modell erkannt und wenn eine alarmierende Änderung auftritt, veröffentlicht Network Insights ein Untersuchungsergebnis im Dashboard von Security Advisor. Die Ergebnisse werden auf der Karte "Network: Anomalies in Traffic" zusammengefasst. Auf dieser Karte werden zwei Key Risk Indicators (KRIs) eingeführt. Der KRI "Stärkere Reconnaissance- oder Datenaustauschaktivität als gewöhnlich" erfasst Ergebnisse, die sich auf anormale Interaktionen beziehen, die zwischen dem Cluster und externen Peers festgestellt wurden. Der KRI "Abgehende Kontaktaufnahme zu neuem Server" erfasst Ergebnisse, die sich auf neu erkannte Server beziehen, zu denen der Cluster Kontakt aufnimmt.  
 
 ## Nächste Schritte
 {: #network-next}
 
-Bereit, loszulegen? Dann informieren Sie sich, wie Sie [Network Insights aktivieren](/docs/services/security-advisor/setup-network.html)!
+Bereit, loszulegen? Dann informieren Sie sich, wie Sie [Network Insights aktivieren](/docs/services/security-advisor?topic=security-advisor-setup-network)!

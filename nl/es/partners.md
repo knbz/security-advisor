@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -26,7 +27,7 @@ subcollection: security-advisor
 # Socios
 {: #setup-partner}
 
-Las integraciones de IBM Business Partner constituyen un modo de incorporar alertas críticas y hallazgos de proveedores de terceros en el panel de control de {{site.data.keyword.security-advisor_long}}. Estos socios han trabajado con IBM para ayudar a configurar, simplificar e implantar la experiencia de integración del usuario.
+Las integraciones de IBM Business Partner constituyen un modo de incorporar alertas críticas y hallazgos de proveedores de terceros en el panel de control de {{site.data.keyword.security-advisor_long}}. Estos socios trabajan con IBM para ayudar a crear, simplificar y guiarle en la experiencia de integración.
 {: shortdesc}
 
 ## Antes de empezar
@@ -41,7 +42,7 @@ Antes de empezar a integrar socios, asegúrese de cumplir los siguientes requisi
 ## Asistente de integración
 {: #wizard}
 
-Como administrador con derechos administrativos tanto en la cuenta de {{site.data.keyword.cloud_notm}} como en la del socio, puede utilizar el asistente de integración para ponerse en marcha rápidamente. El asistente tiene cuatro pasos básicos:
+Como administrador con permisos administrativos tanto en la cuenta de {{site.data.keyword.cloud_notm}} como en la del socio, puede utilizar el asistente de integración para ponerse en marcha rápidamente. El asistente tiene cuatro pasos básicos:
 
 * Establecer confianza y asociar las cuentas de {{site.data.keyword.cloud_notm}} y la del socio
 * Copiar la información necesaria como, por ejemplo, las credenciales y los URL entre las cuentas
@@ -52,7 +53,7 @@ Como administrador con derechos administrativos tanto en la cuenta de {{site.dat
 ## Integración de NeuVector
 {: #setup-neuvector}
 
-Con NeuVector, puede detectar amenazas y violaciones de red para evitar ataques a las aplicaciones basadas en el contenedor. Mediante la supervisión, puede evitar las vulnerabilidades y fugas detectando escaladas de privilegios root, escaneados de puertos, shells inversos y actividad sospechosa de sistema de archivos en sus contenedores y hosts.
+Con [NeuVector](https://neuvector.com){: external}, puede detectar amenazas y violaciones de red para evitar ataques a las aplicaciones basadas en el contenedor. Mediante la supervisión, puede evitar las vulnerabilidades y fugas detectando escaladas de privilegios root, escaneados de puertos, shells inversos y actividad sospechosa de sistema de archivos en sus contenedores y hosts.
 {: shortdesc}
 
 Para integrar NeuVector con {{site.data.keyword.security-advisor_short}}, siga los pasos siguientes:
@@ -75,7 +76,7 @@ Para integrar NeuVector con {{site.data.keyword.security-advisor_short}}, siga l
 ## Integración de Twistlock
 {: #setup-twistlock}
 
-Puede evitar riesgos deteniendo el despliegue de imágenes vulnerables en el entorno. Con la imposición de políticas automáticas y personalizadas, Twistlock ofrece un control completo de cada una de las fases del ciclo de vida de una aplicación.
+Puede evitar riesgos deteniendo el despliegue de imágenes vulnerables en el entorno. Con la imposición de políticas automáticas y personalizadas, [Twistlock](https://www.twistlock.com){: external} ofrece un control completo de cada una de las fases del ciclo de vida de una aplicación.
 {: shortdesc}
 
 Cuando se configura la conexión de socio, se crean dos tarjetas en el panel de control que resumen los hallazgos de Twistlock.
@@ -85,7 +86,7 @@ Cuando se configura la conexión de socio, se crean dos tarjetas en el panel de 
 * Número total de incidencias y auditorías: hallazgos relacionados con incidencias o auditorías en las cargas de trabajo nativas de la nube.
 * Número total de auditorías de cortafuegos: hallazgos relacionados con problemas con el cortafuegos.
 
-**Twistlock Vulnerabilities** incorpora un KRI:
+**Vulnerabilidades de Twistlock** introduce one KRI:
 
 * Número total de imágenes con vulnerabilidades: hallazgos relacionados con vulnerabilidades detectadas en las imágenes del contenedor.
 
@@ -120,6 +121,6 @@ Encontrará más información acerca de la compañía en la documentación de Tw
 
 1. En el panel de control de {{site.data.keyword.security-advisor_short}}, compruebe si las tarjetas Twistlock se muestran tal como se esperaba.
 
-2. En el panel de control de Twistlock, renueve el separador **Alertas**. Se mostrará la conexión de {{site.data.keyword.security-advisor_short}}. Abra la conexión.
+2. En el panel de control de Twistlock, renueve el separador **Alertas**. Se muestra la conexión de {{site.data.keyword.security-advisor_short}}. Abra la conexión.
 
 3. Compruebe que los tipos de alertas de los que desea ser notificado están marcados y pulse **Verificar** para asegurarse de que se ha completado la conexión.

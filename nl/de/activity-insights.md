@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -22,10 +23,11 @@ subcollection: security-advisor
 {:deprecated: .deprecated}
 {:download: .download}
 
+
 # Activity Insights (Vorschau)
 {: #activity}
 
-Mit {{site.data.keyword.security-advisor_long}} können Sie verdächtige Benutzeraktivitäten in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto mithilfe von {{site.data.keyword.cloud_notm}} Activity Tracker erkennen.
+Mit {{site.data.keyword.security-advisor_long}} können Sie verdächtige Benutzeraktivitäten in Ihrem {{site.data.keyword.cloud_notm}}-Konto mithilfe von {{site.data.keyword.cloud_notm}} Activity Tracker erkennen.
 {: shortdesc}
 
 
@@ -75,7 +77,7 @@ Die Activity Insights-Karte im Service-Dashboard fasst alle Meldungen unerwartet
 
 Auf dieser Karte werden zwei Key Risk Indicators (KRIs) eingeführt:
 
-* Identität und Zugriff: Ergebnisse, die sich auf IAM-Services (IAM - Identity and Access Management) oder App-ID-Services beziehen.
+* Identität und Zugriff: Ergebnisse, die sich auf IAM-Services (IAM - Identity and Access Management) oder {{site.data.keyword.appid_short_notm}}-Services beziehen.
 * Daten und Kubernetes: Ergebnisse, die sich auf Key Protect, Kubernetes Service, Cloud Object Storage oder Certificate Manager beziehen.
 
 
@@ -88,7 +90,7 @@ Als Kontoadministrator können Sie rasch mit der Überwachung Ihrer Konten begin
 Der Service bietet Regelpakete an, die mit mehreren Services verbunden sind. Dazu gehören unter anderem die folgenden:
 
 * {{site.data.keyword.containerlong_notm}}
-* {{site.data.keyword.Bluemix_notm}} Identity and Access Management (IAM)
+* {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM)
 * {{site.data.keyword.cloudcerts_long_notm}}
 * {{site.data.keyword.appid_long_notm}}
 * {{site.data.keyword.keymanagementservicelong_notm}}
@@ -104,13 +106,13 @@ Eine Regel ist die Kombination von Bedingungen und einem einzelnen Ereignis. Sie
 Beispiel:
 
 ```
-	{
-		"comment": "Dormant Rule: Very high risk App ID activity... ",
+{
+	"comment": "Dormant Rule: Very high risk {{site.data.keyword.appid_short_notm}}  activity... ",
 		"dormant": true,
 		"conditions": { 	… },
 		"event": { … }
-		"type": "aggregate"
-	}
+	"type": "aggregate"
+}
 ```
 {: screen}
 
@@ -144,20 +146,20 @@ Eine Basisbedingung ist ein Baustein, der sich aus drei Komponenten zusammensetz
 Beispiel:
 
 ```
-	"conditions": {
-		"all": [{
-			"any": [{
-				"fact": "action",
+"conditions": {
+	"all": [{
+		"any": [{
+			"fact": "action",
 				"operator": "equal",
 				"value": "iam-groups.group.delete"
-			},
-			{
-				"fact": "action",
+		},
+		{
+			"fact": "action",
 				"operator": "equal",
 				"value": "iam-groups.member.delete"
-			}]
-		}
+		}]
 	}
+}
 ```
 {: screen}
 
@@ -189,13 +191,13 @@ An Ereignis setzt sich aus den folgenden zwei Feldern zusammen: `type` und `para
 Beispiel:
 
 ```
-	{
-		"conditions": { 	… },
+{
+	"conditions": { 	… },
 		"event": {
-			"type": "IKS high risk API",
+		"type": "IKS high risk API",
 			"params": {"findingType": "IKS-high-risk"}
 		}
-	}
+}
 ```
 {: screen}
 
@@ -227,7 +229,8 @@ Beim Regeltyp 'aggregate' wird die Häufigkeit eines Aktion in einem bestimmten 
 	* Wenn Stunden ausgewählt sind, beträgt der maximal zulässige Wert 24.
 	* Wenn Minuten ausgewählt sind, beträgt der maximal zulässige Wert 1440.
 
-**Beispiel**
+#### Beispiel
+{: #aggregate-example}
 
 Das folgende Beispiel veranschaulicht eine Regel, die fünf fehlgeschlagene Versuche in einem Zeitraum von 30 Minuten verzeichnet:
 
@@ -299,7 +302,8 @@ Bei einem Regeltyp 'coincident' werden Aktionen überwacht, um festzustellen, wi
 	* Wenn Minuten ausgewählt sind, beträgt der maximal zulässige Wert 1440.
 
 
-**Beispiel**
+#### Beispiel
+{: #coincident-example}
 
 Das folgende Beispiel veranschaulicht eine Regel, die das Zusammenfallen von drei bestimmten Aktionen überwacht, die innerhalb eines Zeitraums von 30 Minuten auftreten müssen:
 
@@ -347,7 +351,8 @@ Eine Regel vom Typ 'boolean' setzt sich aus einer booleschen Bedingung und einem
 
 Wenn eine Regel nicht als `aggregate` oder `coincident` definiert ist, wird sie als Regel vom Typ `boolean` ausgewertet.
 
-**Beispiel**
+#### Beispiel
+{: #boolean-example}
 
 Das folgende Beispiel veranschaulicht eine Regel, die überwacht, ob die Richtlinie außerhalb des Änderungssteuerungsfensters von einem Benutzer gelöscht wird, der nicht auf der Whitelist steht:
 
@@ -396,7 +401,7 @@ Das folgende Beispiel veranschaulicht eine Regel, die überwacht, ob die Richtli
 ```
 {: screen}
 
-Möchten Sie mehr über boolesche Regeln erfahren? Werfen Sie einen Blick auf die <a href="https://github.com/CacheControl/json-rules-engine/blob/master/docs/rules.md" target="_blank">Dokumente von CacheControl <img src="../../icons/launch-glyph.svg" alt="Symbol für externen Link"></a>.
+Möchten Sie mehr über boolesche Regeln erfahren? Werfen Sie einen Blick auf die [Dokumente von CacheControl](https://github.com/CacheControl/json-rules-engine/blob/master/docs/rules.md){: external}.
 {: tip}
 
 ## Nächste Schritte

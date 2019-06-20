@@ -2,15 +2,15 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
-keywords: centralized security, security management, alerts, security risk, insights, threat detection
+keywords: Centralized security, security management, alerts, security risk, insights, threat detection
 
 subcollection: security-advisor
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -66,10 +66,11 @@ Network Insights 功能是 {{site.data.keyword.security-advisor_short}} 服务�
 * 一组特定于协议的参数
 * 各种时间戳记。
 
-**不会收集已交换的实际数据。**
+不会收集已交换的实际数据。
+{: tip}
 
 从安全角度来说，如果法律或公司需求允许删除收集的数据，那么最好是清除这些数据。有关更多信息，请查看[删除对象](/docs/services/cloud-object-storage/info?topic=cloud-object-storage-security#deletion)。
-{: tip}
+
 
 
 ## 网络：可疑入站流量
@@ -79,7 +80,7 @@ Network Insights 功能是 {{site.data.keyword.security-advisor_short}} 服务�
 {: shortdesc}
 
 
-对于 IBM X-Force 分类为用作扫描程序、用作僵尸网络一部分、用于挖掘加密货币或用于匿名化服务的分发恶意软件的客户机，系统将持续监视所有这些客户机的行为模式。如果该类型的客户机访问集群，表现出访问受监视集群，以及表现出令人警惕的行为，Network Insights 会发出发现结果。
+对于 IBM X-Force 分类为用作扫描程序、用作僵尸网络一部分、用于挖掘加密货币或用于匿名化服务的分发恶意软件的客户机，系统将持续监视所有这些客户机的行为模式。如果该类型的客户机访问受监视集群，并表现出令人警惕的行为，Network Insights 会发出发现结果。
 
 
 该卡引入了两个关键风险指标 (KRI)：
@@ -112,9 +113,9 @@ Network Insights 功能是 {{site.data.keyword.security-advisor_short}} 服务�
 
 发现结果可能包含具有以下行为的容器：
 
-* 将异常大量的数据发送到可疑服务器
-* 从可疑服务器抽取大量数据
-* 对可疑服务器执行大量请求
+* 将异常大量的数据发送到可疑服务器。
+* 从可疑服务器抽取大量数据。
+* 对可疑服务器执行大量请求。
 
 
 ## 网络：流量中的异常（实验）
@@ -132,13 +133,13 @@ Network Insights 功能是 {{site.data.keyword.security-advisor_short}} 服务�
 
 发现结果可能包含：  
 
-* 访问先前从未访问过的服务器的容器
-* 发往特定同级或从中使用的数据量明显超过正常水平的容器
-* 对特定项的调查水平显著增加
+* 访问先前从未访问过的服务器的容器。
+* 发往特定同级或从中使用的数据量明显超过正常水平的容器。
+* 对特定容器的调查水平显著增加。
 
- 在开发模型后，会检测与已学习模型的偏差，并且在表现出令人警惕的更改时，Network Insights 会将发现结果发布到 Security Advisor 仪表板。“网络：流量中的异常”卡中概述了发现结果。该卡引入了两个关键风险指标 (KRI)。“高于正常的侦察或数据交换活动”KRI 对与集群和外部同级之间检测到的异常交互相关的发现结果计数，而“对新服务器的出站访问”KPI 对与集群访问的新检测到的服务器相关的发现结果计数。  
+在开发模型后，会检测与已学习模型的偏差，并且在表现出令人警惕的更改时，Network Insights 会将发现结果发布到 Security Advisor 仪表板。发现结果在“网络：流量中的异常”卡中进行概述。该卡引入了两个关键风险指标 (KRI)。“高于正常的侦察或数据交换活动”KRI 对与在集群和外部同级之间检测到的异常交互相关的发现结果计数。“对新服务器的出站访问”KRI 对与集群访问的新检测到的服务器相关的发现结果计数。  
 
 ## 后续步骤
 {: #network-next}
 
-准备好开始了吗？请查看[启用 Network Insights](/docs/services/security-advisor/setup-network.html)！
+准备好开始了吗？请查看[启用 Network Insights](/docs/services/security-advisor?topic=security-advisor-setup-network)！

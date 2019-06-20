@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -30,23 +31,28 @@ subcollection: security-advisor
 Puoi visualizzare, gestire e controllare le attività avviate dall'utente effettuate nella tua istanza del servizio {{site.data.keyword.security-advisor_long}} utilizzando il servizio {{site.data.keyword.cloudaccesstrailshort}}.
 {: shortdesc}
 
-Per ulteriori informazioni su come funziona il servizio, consulta la [documentazione {{site.data.keyword.cloudaccesstrailshort}}](/docs/services/cloud-activity-tracker/reference?topic=cloud-activity-tracker-getting-started-with-cla#getting-started-with-cla).
+
+
+
+
+
+Per ulteriori informazioni su come funziona il servizio, consulta la [documentazione di {{site.data.keyword.cloudaccesstrailshort}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started#getting-started).
+
 
 
 ## Dove visualizzare gli eventi
 {: #monitor}
 
-Gli eventi sono disponibili nel **dominio dell'account** {{site.data.keyword.cloudaccesstrailshort}} disponibile nella regione {{site.data.keyword.Bluemix_notm}} in cui vengono generati gli eventi.
+Gli eventi sono disponibili nel **dominio dell'account** {{site.data.keyword.cloudaccesstrailshort}} che è disponibile nella regione {{site.data.keyword.cloud_notm}} in cui vengono generati gli eventi.
 
-1. Accedi al tuo account {{site.data.keyword.Bluemix_notm}}.
+1. Accedi al tuo account {{site.data.keyword.cloud_notm}}.
 2. Dal catalogo, esegui il provisioning di un'istanza del servizio {{site.data.keyword.cloudaccesstrailshort}} nello stesso account della tua istanza di {{site.data.keyword.security-advisor_short}}.
 3. Sulla scheda **Gestisci** del dashboard {{site.data.keyword.cloudaccesstrailshort}}, fai clic su **Visualizza in Kibana**.
 4. Imposta l'intervallo di tempo per il quale desideri visualizzare i log. Il valore predefinito è 15 minuti.
 5. Nell'elenco **Campi disponibili**, fai clic su **type**. Fai clic sull'icona della lente di ingrandimento del **Programma di traccia dell'attività** per limitare i log a quelli tracciati dal servizio.
 6. Puoi utilizzare gli altri campi disponibili per restringere la tua ricerca.
 
-Per utenti diversi dal proprietario dell'account, per visualizzare i log, devi utilizzare il piano premium. Per consentire ad altri utenti di visualizzare gli eventi, consulta [Concessione di autorizzazioni per visualizzare gli eventi di account](/docs/services/cloud-activity-tracker/how-to?topic=cloud-activity-tracker-grant_permissions#grant_permissions).
-{: tip}
+
 
 ## Elenco degli eventi
 {: #events}

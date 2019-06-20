@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -27,7 +28,7 @@ subcollection: security-advisor
 # Gerenciando o acesso de serviço
 {: #service-access}
 
-Como proprietário da conta, é possível gerenciar o acesso às instâncias do {{site.data.keyword.security-advisor_long}} usando o {{site.data.keyword.Bluemix_notm}} Identity and Access Management (IAM). Na sua conta, ao configurar políticas que criam diferentes níveis de acesso para diferentes usuários, é possível garantir que cada instância do {{site.data.keyword.security-advisor_short}} seja segura.
+Como proprietário da conta, é possível gerenciar o acesso às instâncias do {{site.data.keyword.security-advisor_long}} usando o {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). Na sua conta, ao configurar políticas que criam diferentes níveis de acesso para diferentes usuários, é possível garantir que cada instância do {{site.data.keyword.security-advisor_short}} seja segura.
 {: shortdesc}
 
 Para obter mais informações sobre o IAM, veja [Acesso IAM](/docs/iam?topic=iam-userroles).
@@ -39,7 +40,7 @@ Para obter mais informações sobre o IAM, veja [Acesso IAM](/docs/iam?topic=iam
 Todo usuário que acessar uma instância do serviço {{site.data.keyword.security-advisor_short}} na conta deverá ter uma política de acesso designada com uma função de usuário do IAM definida. A política determina quais ações um usuário pode executar dentro do contexto dessa instância de serviço específica.
 {: shortdesc}
 
-As ações são customizadas e definidas pelo serviço {{site.data.keyword.Bluemix_notm}} como operações que podem ser executadas no serviço. Em seguida, as ações são mapeadas para as funções de usuário do serviço IAM. Na tabela a
+As ações são customizadas e definidas pelo serviço {{site.data.keyword.cloud_notm}} como operações que podem ser executadas no serviço. Em seguida, as ações são mapeadas para as funções de usuário do serviço IAM. Na tabela a
 seguir, as ações e as permissões necessárias para o {{site.data.keyword.security-advisor_short}} são mapeadas.
 
 <table><caption>Quais ações cada função pode executar?</caption>
@@ -54,12 +55,12 @@ seguir, as ações e as permissões necessárias para o {{site.data.keyword.secu
   <tr>
     <td><code>security-advisor.findings.read</code></td>
     <td>Visualizar as descobertas do relatório de segurança.</td>
-    <td>Leitor</br>Gravador</br>Gerente</td>
+    <td>Leitor</br>Gravador</br>Gerenciador</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.write</code></td>
     <td>Gerar as descobertas do relatório de segurança.</td>
-    <td>Gravador</br>Gerente</td>
+    <td>Gravador</br>Gerenciador</td>
   </tr>
   <tr>
     <td><code>security-advisor.findings.delete</code></td>
@@ -69,12 +70,12 @@ seguir, as ações e as permissões necessárias para o {{site.data.keyword.secu
   <tr>
     <td><code>security-advisor.findings.update</code></td>
     <td>Editar as descobertas do relatório de segurança.</td>
-    <td>Gravador</br>Gerente</td>
+    <td>Gravador</br>Gerenciador</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.read</code></td>
     <td>Visualizar os metadados.</td>
-    <td>Leitor</br>Gravador</br>Gerente</td>
+    <td>Leitor</br>Gravador</br>Gerenciador</td>
   </tr>
   <tr>
     <td><code>security-advisor.metadata.delete</code></td>
@@ -94,7 +95,7 @@ seguir, as ações e as permissões necessárias para o {{site.data.keyword.secu
   <tr>
     <td><code>security-advisor.custom-solution.read</code></td>
     <td>Leia as soluções customizadas que você incluiu no serviço.</td>
-    <td>Leitor</br>Gravador</br>Gerente</td>
+    <td>Leitor</br>Gravador</br>Gerenciador</td>
   </tr>
   <tr>
     <td><code>security-advisor.custom-solution.write</code></td>
@@ -114,7 +115,7 @@ seguir, as ações e as permissões necessárias para o {{site.data.keyword.secu
   <tr>
     <td><code>security-advisor.partner-solution.read</code></td>
     <td>Visualize as soluções do parceiro que você incluiu em sua instância de serviço.</td>
-    <td>Leitor</br>Gravador</br>Gerente</td>
+    <td>Leitor</br>Gravador</br>Gerenciador</td>
   </tr>
   <tr>
     <td><code>security-advisor.partner-solution.write</code></td>

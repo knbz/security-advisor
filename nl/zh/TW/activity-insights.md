@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -22,10 +23,11 @@ subcollection: security-advisor
 {:deprecated: .deprecated}
 {:download: .download}
 
+
 # Activity Insights（預覽）
 {: #activity}
 
-使用 {{site.data.keyword.security-advisor_long}}，您可以使用 {{site.data.keyword.cloud_notm}} Activity Tracker 來偵測 {{site.data.keyword.Bluemix_notm}} 帳戶中的可疑使用者活動。
+使用 {{site.data.keyword.security-advisor_long}}，您可以使用 {{site.data.keyword.cloud_notm}} Activity Tracker 來偵測 {{site.data.keyword.cloud_notm}} 帳戶中的可疑使用者活動。
 {: shortdesc}
 
 
@@ -34,7 +36,7 @@ subcollection: security-advisor
 
 Activity Insights 特性是 {{site.data.keyword.security-advisor_short}} 服務的附加程式。啟用並配置此特性之後，會記載並分析使用者行為，以根據規則來識別可疑活動。您可以使用預設規則，也可以建立自訂規則以適合您的組織。
 
-請查看下列影像，以查看資訊流程。
+請參閱下列影像，以瞭解資訊流程。
 
 ![Activity Insights 流程圖](images/activity-insights-flow.png)
 
@@ -57,25 +59,25 @@ Activity Tracker 會收集可說明針對 {{site.data.keyword.cloud_notm}} API �
 
 所收集的資訊包括：
 
-* API 呼叫起始器的 IP 位址
+* API 呼叫起始者的 IP 位址
 * 已鑑別的使用者
 * 活動類型
 * 活動結果
 * 及其他項目...
 
-所收集的原始資料儲存至 Cloud Object Storage 儲存區，您可以在其中判斷其儲存時間長度。您擁有並控制所收集的資料，這表示您負責儲存、保護及刪除它。{{site.data.keyword.security-advisor_short}} 會維護發現項目 90 天。在這個期間，結果會呈現在服務儀表板的 **Activity Insights** 卡上。因此，雖然您在 90 天之後就不會再於儀表板中看到發現項目，但在儲存空間中可能仍然有原始資料。
+所收集的原始資料儲存在 Cloud Object Storage 儲存區，您可以在其中確定其儲存時間長度。您擁有並控制所收集的資料，這表示您負責儲存、保護及刪除它。{{site.data.keyword.security-advisor_short}} 會保留發現項目 90 天。在這個期間，結果會呈現在服務儀表板的 **Activity Insights** 卡片上。因此，雖然您在 90 天之後就不會再於儀表板中看到發現項目，但在儲存空間中可能仍然有原始資料。
 
-從安全觀點來看，在法律或公司需求容許刪除所收集的資料時，通常最好予以清除。如需相關資訊，請查看[刪除物件](/docs/services/cloud-object-storage/info?topic=cloud-object-storage-security#deletion)。
+從安全觀點來看，在法律或公司需求容許刪除所收集的資料時，通常最好予以清除。如需相關資訊，請參閱[刪除物件](/docs/services/cloud-object-storage/info?topic=cloud-object-storage-security#deletion)。
 {: tip}
 
 ## Activity Insights：存取
 {: #ai-access}
 
-服務儀表板中的 Activity Insights 卡會彙總使用者及服務的所有非預期或警示帳戶活動的指示。合法使用者及服務可能會因活動異常而行為錯誤，或者可能也表示您的帳戶受損。您在該卡片上看到的發現項目是根據 {{site.data.keyword.security-advisor_short}} 提供的預設規則套件來判定。
+服務儀表板中的 Activity Insights 卡片會彙總使用者及服務的所有非預期或警示帳戶活動的指示。合法使用者及服務可能會因活動異常而行為錯誤，或者可能也表示您的帳戶已遭盜用。您在該卡片上看到的發現項目是根據 {{site.data.keyword.security-advisor_short}} 提供的預設規則套件來判定。
 
 該卡片引進兩個「關鍵風險指標 (KRI)」：
 
-* 身分及存取：與 Identity and Access Management (IAM) 或 App ID 服務相關的發現項目。
+* 身分和存取權：與 Identity and Access Management (IAM) 或 {{site.data.keyword.appid_short_notm}} 服務相關的發現項目。
 * 資料及 Kubernetes：與 Key Protect、Kubernetes Service、Cloud Object Storage 或 Certificate Manager 相關的發現項目。
 
 
@@ -88,7 +90,7 @@ Activity Tracker 會收集可說明針對 {{site.data.keyword.cloud_notm}} API �
 此服務提供與數個服務相關聯的規則套件，包括：
 
 * {{site.data.keyword.containerlong_notm}}
-* {{site.data.keyword.Bluemix_notm}} Identity and Access Management (IAM)
+* {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM)
 * {{site.data.keyword.cloudcerts_long_notm}}
 * {{site.data.keyword.appid_long_notm}}
 * {{site.data.keyword.keymanagementservicelong_notm}}
@@ -99,13 +101,13 @@ Activity Tracker 會收集可說明針對 {{site.data.keyword.cloud_notm}} API �
 ### 何謂規則？
 {: #ai-rule}
 
-規則是一個條件與單一事件的組合。您可以使用規則或規則組合來觸發可在 {{site.data.keyword.security-advisor_short}} 儀表板中顯示的發現項目。
+規則是條件與單一事件的組合。您可以使用規則或規則組合來觸發可在 {{site.data.keyword.security-advisor_short}} 儀表板中顯示的發現項目。
 
 範例：
 
 ```
-	{
-		"comment": "Dormant Rule: Very high risk App ID activity... ",
+{
+	"comment": "Dormant Rule: Very high risk {{site.data.keyword.appid_short_notm}}  activity... ",
 		"dormant": true,
 		"conditions": { 	… },
 		"event": { … }
@@ -144,20 +146,20 @@ Activity Tracker 會收集可說明針對 {{site.data.keyword.cloud_notm}} API �
 範例：
 
 ```
-	"conditions": {
+"conditions": {
 		"all": [{
 			"any": [{
 				"fact": "action",
 				"operator": "equal",
 				"value": "iam-groups.group.delete"
 			},
-			{
-				"fact": "action",
+		{
+			"fact": "action",
 				"operator": "equal",
 				"value": "iam-groups.member.delete"
 			}]
-		}
 	}
+}
 ```
 {: screen}
 
@@ -189,8 +191,8 @@ Activity Tracker 會收集可說明針對 {{site.data.keyword.cloud_notm}} API �
 範例：
 
 ```
-	{
-		"conditions": { 	… },
+{
+	"conditions": { 	… },
 		"event": {
 			"type": "IKS high risk API",
 			"params": {"findingType": "IKS-high-risk"}
@@ -227,7 +229,8 @@ aggregate 規則類型會計算特定時間範圍中某個動作的出現次數�
 	* 選取小時時，最大值可以是 24
 	* 選取分鐘時，最大值可以是 1440。
 
-**範例**
+#### 範例
+{: #aggregate-example}
 
 下列範例示範在 30 分鐘內嘗試失敗五次的規則：
 
@@ -299,7 +302,8 @@ coincident 規則類型會監視動作，以查看相同動作在一段時間範
 	* 選取分鐘時，最大值可以是 1440。
 
 
-**範例**
+#### 範例
+{: #coincident-example}
 
 下列範例所示範的規則監看必須在三十分鐘期間內發生的三個特定動作的 coincident：
 
@@ -343,11 +347,12 @@ coincident 規則類型會監視動作，以查看相同動作在一段時間範
 ### 規則類型：boolean
 {: #rule-boolean}
 
-boolean 規則是由布林條件及事件所組成。boolean 規則經常用來監視高風險 API 用量、落在變更控制時間範圍之外的 API 用量，或未在白名單上的起始器的 API 用量。
+boolean 規則是由布林條件及事件所組成。boolean 規則經常用來監視高風險 API 用量、落在變更控制時間範圍之外的 API 用量，或未在白名單上的起始者的 API 用量。
 
 如果規則未定義為 `aggregate` 或 `coincident`，則會將它評估為 `boolean` 規則。
 
-**範例**
+#### 範例
+{: #boolean-example}
 
 下列範例所示範的規則監看不在白名單上的使用者如何刪除落在變更控制時間範圍之外的原則：
 
@@ -396,10 +401,10 @@ boolean 規則是由布林條件及事件所組成。boolean 規則經常用來�
 ```
 {: screen}
 
-要進一步瞭解 boolean 規則嗎？請查看 <a href="https://github.com/CacheControl/json-rules-engine/blob/master/docs/rules.md" target="_blank">CacheControl 文件 <img src="../../icons/launch-glyph.svg" alt="外部鏈結圖示"></a>。
+要進一步瞭解 boolean 規則嗎？請參閱 [Cache-Control 文件](https://github.com/CacheControl/json-rules-engine/blob/master/docs/rules.md){: external}。
 {: tip}
 
 ## 後續步驟
 {: #activity-next}
 
-準備好要開始了嗎？請查看[啟用 Activity Insights](/docs/services/security-advisor?topic=security-advisor-setup-activity)！
+準備好要開始了嗎？請參閱[啟用 Activity Insights](/docs/services/security-advisor?topic=security-advisor-setup-activity)！

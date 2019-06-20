@@ -2,11 +2,11 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-02-18"
+lastupdated: "2019-06-06"
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -33,26 +33,15 @@ lastupdated: "2019-02-18"
 
 
 
-情報を検索したりフォーラムで質問したりして役に立つ情報を得ることができます。 また、サポート・チケットを開くことができます。 フォーラムを利用して質問するときは、{{site.data.keyword.Bluemix_notm}} 開発チームの目に留まるように、質問にタグを付けてください。
+情報を検索したりフォーラムで質問したりして役に立つ情報を得ることができます。 また、サポート・チケットを開くことができます。 フォーラムを利用して質問するときは、{{site.data.keyword.cloud_notm}} 開発チームの目に留まるように、質問にタグを付けてください。
 {: shortdesc}
 
-* {{site.data.keyword.security-advisor_short}} に関する技術的質問がある場合は、<a href="http://stackoverflow.com/" target="_blank">スタック・オーバーフロー <img src="../../icons/launch-glyph.svg" alt="外部リンク・アイコン"></a> に質問を投稿してください。 必ず、`security-advisor` と `ibm-cloud` のタグを含めてください。
-* サービスや開始手順についての質問は、<a href="https://developer.ibm.com/" target="_blank">dW Answers <img src="../../icons/launch-glyph.svg" alt="外部リンク・アイコン"></a> フォーラムをご利用ください。 必ず、`security-advisor` と `ibm-cloud` のタグを含めてください。
+  * {{site.data.keyword.security-advisor_short}} に関する技術的質問がある場合は、[スタック・オーバーフロー](https://stackoverflow.com/){: external}に質問を投稿してください。必ず、`security-advisor` と `ibm-cloud` のタグを含めてください。
+
+  * サービスに関する質問や入門的な説明については、[dW Answers](https://developer.ibm.com/){: external} フォーラムをご利用ください。必ず、`security-advisor` と `ibm-cloud` のタグを含めてください。
+
 
 サポートの利用方法について詳しくは、[必要なサポートを利用するには](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)を参照してください。
-
-
-## カスタムのソリューション・オカレンスを作成できない
-{: #ts-custom-occurrence}
-
-{: tsSymptoms}
-カスタムのソリューション・オカレンスを作成してみましたが、ブラウザーに情報が表示されず、エラー・メッセージも表示されません。
-
-{: tsCauses}
-これは既知の問題です。 既に存在する名前を選択したために、オカレンスの作成に失敗しています。
-
-{: tsResolve}
-オカレンスに別の名前を選択してください。
 
 
 ## エラー: 名前空間 "security-advisor-insights" は禁止されている
@@ -70,17 +59,30 @@ Network Insights または Activity Insights のインストールを試みる�
 デフォルトのサービス・アカウント `kube-system` に、クラスターでの管理アクセス権がありません。
 
 {: tsResolve}
-Insights の標準装備オファリングの 1 つをインストールする前に、Helm をインストールする必要があります。[Kubernetes サービス統合文書](/docs/containers?topic=containers-integrations#helm)を使用して Helm をインストールできます。
+Insights の標準装備オファリングの 1 つをインストールする前に、Helm をインストールする必要があります。 [Kubernetes サービス統合文書](/docs/containers?topic=containers-helm)を使用して Helm をインストールできます。
 
 
-## 既知の問題: 一部の Network Insights 検出事項が表示されない
-{: #ts-network-analytics}
+## 既知の問題: カスタムのソリューション・オカレンスを作成できない
+{: #ts-custom-occurrence}
 
 {: tsSymptoms}
-ダッシュボードまたは API を介して Network Insights の検索をするときに、一部の検出事項タイプが表示されません。
+カスタムのソリューション・オカレンスを作成してみましたが、ブラウザーに情報が表示されず、エラー・メッセージも表示されません。
 
 {: tsCauses}
-Network Insights の検出事項タイプのいくつかは、IBM Cloud Kubernetes サービス・バージョン 1.10 以下でのみ機能します。
+使用中の名前を選択したために、オカレンスの作成に失敗しました。
 
 {: tsResolve}
-Kubernetes サービス・バージョン 1.10 以下を使用してください。
+オカレンスに別の名前を選択してください。
+
+## 既知の問題: 直接接続のイメージが更新されない
+{: #ts-known-cant-edit}
+
+{: tsSymptoms}
+直接接続のイメージをアップロードまたは編集すると、イメージがすぐには表示されません。
+
+{: tsCauses}
+これは、イメージが正しく表示されないという既知の問題です。
+
+{: tsResolve}
+更新したイメージを表示するには、ブラウザーを更新してください。直接接続のテーブルに新しいイメージが表示されます。
+

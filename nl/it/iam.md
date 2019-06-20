@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -27,7 +28,7 @@ subcollection: security-advisor
 # Gestione dell'accesso al servizio
 {: #service-access}
 
-Come proprietario di un account, puoi gestire l'accesso alle istanze di {{site.data.keyword.security-advisor_long}}, utilizzando {{site.data.keyword.Bluemix_notm}} Identity and Access Management (IAM). Configurando le politiche nel tuo account creando diversi livelli di accesso per utenti differenti, puoi garantire che ogni istanza di {{site.data.keyword.security-advisor_short}} sia sicura.
+Come proprietario di un account, puoi gestire l'accesso alle istanze di {{site.data.keyword.security-advisor_long}}, utilizzando {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). Configurando le politiche nel tuo account creando diversi livelli di accesso per utenti differenti, puoi garantire che ogni istanza di {{site.data.keyword.security-advisor_short}} sia sicura.
 {: shortdesc}
 
 Per ulteriori informazioni su IAM, consulta [Accesso IAM](/docs/iam?topic=iam-userroles).
@@ -38,7 +39,7 @@ Per ulteriori informazioni su IAM, consulta [Accesso IAM](/docs/iam?topic=iam-us
 Ad ogni utente che accede a un'istanza del servizio {{site.data.keyword.security-advisor_short}} nel tuo account deve essere assegnata una politica di accesso con un ruolo utente IAM definito. La politica determina le azioni che un utente può eseguire all'interno del contesto di quella specifica istanza del servizio.
 {: shortdesc}
 
-Le azioni sono personalizzate e definite dal servizio {{site.data.keyword.Bluemix_notm}} come operazioni consentite nel servizio. Le azioni sono poi associate ai ruoli utente del servizio IAM. Nella seguente tabella, le azioni e le autorizzazioni richieste per {{site.data.keyword.security-advisor_short}} sono associate.
+Le azioni sono personalizzate e definite dal servizio {{site.data.keyword.cloud_notm}} come operazioni consentite nel servizio. Le azioni sono poi associate ai ruoli utente del servizio IAM. Nella seguente tabella, le azioni e le autorizzazioni richieste per {{site.data.keyword.security-advisor_short}} sono associate.
 
 <table><caption>Quali ruoli possono eseguire quali azioni?</caption>
   <col width="40%">

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -22,14 +23,15 @@ subcollection: security-advisor
 {:deprecated: .deprecated}
 {:download: .download}
 
+
 # Activity Insights (presentación)
 {: #activity}
 
-Con {{site.data.keyword.security-advisor_long}}, puede detectar actividad sospechosa de usuarios en su cuenta de {{site.data.keyword.Bluemix_notm}} mediante {{site.data.keyword.cloud_notm}} Activity Tracker.
+Con {{site.data.keyword.security-advisor_long}}, puede detectar actividad sospechosa de usuarios en su cuenta de {{site.data.keyword.cloud_notm}} mediante {{site.data.keyword.cloud_notm}} Activity Tracker.
 {: shortdesc}
 
 
-## Funcionamiento
+## Cómo funciona
 {: #activity-how}
 
 La característica Activity Insights es un complemento del servicio {{site.data.keyword.security-advisor_short}}. Con la característica habilitada y configurada, el comportamiento del usuario se registra y se analiza para identificar actividades sospechosas en función de reglas. Puede utilizar reglas predeterminadas o puede crear reglas personalizadas que se ajusten a su organización.
@@ -75,7 +77,7 @@ La tarjeta de Activity Insights del panel de control del servicio resume cualqui
 
 La tarjeta incorpora dos indicadores de riesgo clave (KRI):
 
-* Identity and Access: los hallazgos relacionados con los servicios Identity and Access Management (IAM) o App ID.
+* Identidad y acceso: los hallazgos relacionados con los servicios de IAM (Identity and Access Management) o los servicios de {{site.data.keyword.appid_short_notm}}.
 * Datos y Kubernetes: los hallazgos relacionados con Key Protect, el servicio Kubernetes, Cloud Object Storage o Certificate Manager.
 
 
@@ -88,7 +90,7 @@ Como administrador de la cuenta, puede empezar a supervisar rápidamente sus cue
 El servicio ofrece paquetes de reglas que están asociados a varios servicios, que incluyen:
 
 * {{site.data.keyword.containerlong_notm}}
-* {{site.data.keyword.Bluemix_notm}} Identity and Access Management (IAM)
+* {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM)
 * {{site.data.keyword.cloudcerts_long_notm}}
 * {{site.data.keyword.appid_long_notm}}
 * {{site.data.keyword.keymanagementservicelong_notm}}
@@ -104,13 +106,13 @@ Una regla es la combinación de condiciones y un solo suceso. Puede utilizar reg
 Ejemplo:
 
 ```
-	{
-		"comment": "Dormant Rule: Very high risk App ID activity... ",
+{
+	"comment": "Dormant Rule: Very high risk {{site.data.keyword.appid_short_notm}}  activity... ",
 		"dormant": true,
 		"conditions": { 	… },
 		"event": { … }
-		"type": "aggregate"
-	}
+	"type": "aggregate"
+}
 ```
 {: screen}
 
@@ -145,20 +147,20 @@ y se pueden anidar. Un operador `all` equivale a `y`, mientras que `any` equival
 Ejemplo:
 
 ```
-	"conditions": {
-		"all": [{
-			"any": [{
-				"fact": "action",
+"conditions": {
+	"all": [{
+		"any": [{
+			"fact": "action",
 				"operator": "equal",
 				"value": "iam-groups.group.delete"
-			},
-			{
-				"fact": "action",
+		},
+		{
+			"fact": "action",
 				"operator": "equal",
 				"value": "iam-groups.member.delete"
-			}]
-		}
+		}]
 	}
+}
 ```
 {: screen}
 
@@ -190,13 +192,13 @@ Un suceso se compone de dos campos: `type` y `params.findingType`. El primero es
 Ejemplo:
 
 ```
-	{
-		"conditions": { 	… },
+{
+	"conditions": { 	… },
 		"event": {
-			"type": "IKS high risk API",
+		"type": "IKS high risk API",
 			"params": {"findingType": "IKS-high-risk"}
 		}
-	}
+}
 ```
 {: screen}
 
@@ -224,11 +226,12 @@ El tipo de regla aggregate cuenta el número de veces que aparece una acción en
 	{: screen}
 
 	Algunas aclaraciones:
-	* X = un entero positivo distinto de cero
-	* Si se seleccionan horas, el valor máximo es 24
-	* Si se seleccionan minutos, el valor máximo es 1440
+	* X = un entero positivo distinto de cero.
+	* Si se seleccionan horas, el valor máximo es 24.
+	* Si se seleccionan minutos, el valor máximo es 1440.
 
-**ejemplo**
+#### Ejemplo
+{: #aggregate-example}
 
 En el siguiente ejemplo se muestra una regla que cuenta cinco intentos fallidos en un periodo de 30 minutos:
 
@@ -295,12 +298,13 @@ El tipo de regla coincident supervisa las acciones para ver el número de veces 
 
 	Algunas aclaraciones:
 	* El valor `fact` debe ser plural: `actions`, no `action`.
-	* X = un entero positivo distinto de cero
-	* Si se seleccionan horas, el valor máximo es 24
-	* Si se seleccionan minutos, el valor máximo es 1440
+	* X = un entero positivo distinto de cero.
+	* Si se seleccionan horas, el valor máximo es 24.
+	* Si se seleccionan minutos, el valor máximo es 1440.
 
 
-**ejemplo**
+#### Ejemplo
+{: #coincident-example}
 
 En el ejemplo siguiente muestra una regla que observa si hay coincidencia en tres acciones específicas que deben producirse dentro de un periodo de treinta minutos:
 
@@ -348,7 +352,8 @@ Una regla de tipo boolean se compone de una condición booleana y de un suceso. 
 
 Si una regla no se ha definido como `aggregate` ni como `coincident`, se evalúa como una regla de tipo `boolean`.
 
-**ejemplo**
+#### Ejemplo
+{: #boolean-example}
 
 En el ejemplo siguiente se muestra una regla que observa la supresión de una política fuera de la ventana de control de cambios por parte de un usuario que no está en la lista blanca:
 
@@ -397,7 +402,7 @@ En el ejemplo siguiente se muestra una regla que observa la supresión de una po
 ```
 {: screen}
 
-¿Desea obtener más información acerca de las reglas booleanas? Consulte <a href="https://github.com/CacheControl/json-rules-engine/blob/master/docs/rules.md" target="_blank">la documentación de CacheControl <img src="../../icons/launch-glyph.svg" alt="Icono de enlace externo"></a>.
+¿Desea obtener más información acerca de las reglas booleanas? Consulte [la documentación de Cache-Control](https://github.com/CacheControl/json-rules-engine/blob/master/docs/rules.md){: external}.
 {: tip}
 
 ## Pasos siguientes

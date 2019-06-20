@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -22,10 +23,11 @@ subcollection: security-advisor
 {:deprecated: .deprecated}
 {:download: .download}
 
+
 # Activity Insights (preview)
 {: #activity}
 
-Com o {{site.data.keyword.security-advisor_long}}, é possível detectar atividade suspeita do usuário em sua conta do {{site.data.keyword.Bluemix_notm}} usando o {{site.data.keyword.cloud_notm}} Activity Tracker.
+Com o {{site.data.keyword.security-advisor_long}}, é possível detectar atividade suspeita do usuário em sua conta do {{site.data.keyword.cloud_notm}} usando o {{site.data.keyword.cloud_notm}} Activity Tracker.
 {: shortdesc}
 
 
@@ -75,7 +77,7 @@ O cartão do Activity Insights no painel de serviço resume qualquer indicação
 
 O cartão introduz dois Indicadores-chaves de risco (KRIs):
 
-* Identity and Access: descobertas que estão relacionadas aos serviços Identity and Access Management (IAM) ou ID do app.
+* Identidade e acesso: descobertas que estão relacionadas aos serviços do Identity and Access Management (IAM) ou aos serviços do {{site.data.keyword.appid_short_notm}}.
 * Dados e Kubernetes: descobertas que estão relacionadas a Key Protect, Kubernetes Service, Cloud Object Storage ou Certificate Manager.
 
 
@@ -88,7 +90,7 @@ Como um administrador de conta, é possível iniciar rapidamente o monitoramento
 O serviço oferece pacotes de regras que estão associados a vários serviços, incluindo:
 
 * {{site.data.keyword.containerlong_notm}}
-* {{site.data.keyword.Bluemix_notm}}  Identity and Access Management (IAM)
+* {{site.data.keyword.cloud_notm}}  Identity and Access Management (IAM)
 * {{site.data.keyword.cloudcerts_long_notm}}
 * {{site.data.keyword.appid_long_notm}}
 * {{site.data.keyword.keymanagementservicelong_notm}}
@@ -104,13 +106,13 @@ Uma regra é a combinação de condições e um único evento. É possível usar
 Exemplo:
 
 ```
-	{
-		"comment": "Dormant Rule: Very high risk App ID activity... ",
+{
+	"comment": "Dormant Rule: Very high risk {{site.data.keyword.appid_short_notm}}  activity... ",
 		"dormant": true,
 		"conditions": { 	… },
 		"event": { … }
-		"type": "aggregate"
-	}
+	"type": "aggregate"
+}
 ```
 {: screen}
 
@@ -144,16 +146,16 @@ Uma condição básica é um bloco de construção que é composto por três com
 Exemplo:
 
 ```
-	"condições": {
-		"all": [ {
-			"any": [ {
-				"fact": "action", 				"operator": "equal", 				"value": "iam-groups.group.delete"
-			},
-			{
-				"fact": "action", 				"operator": "equal", 				"value": "iam-groups.member.delete"
-			}]
-		}
+"condições": {
+	"all": [ {
+		"any": [ {
+			"fact": "action", 				"operator": "equal", 				"value": "iam-groups.group.delete"
+		},
+		{
+			"fact": "action", 				"operator": "equal", 				"value": "iam-groups.member.delete"
+		}]
 	}
+}
 ```
 {: screen}
 
@@ -185,13 +187,13 @@ Um evento é composto por dois campos: `type` e `params.findingType`. O primeiro
 Exemplo:
 
 ```
-	{
-		"conditions": { 	… },
+{
+	"conditions": { 	… },
 		"event": {
-			"type": "IKS high risk API",
+		"type": "IKS high risk API",
 			"params": {"findingType": "IKS-high-risk"}
 		}
-	}
+}
 ```
 {: screen}
 
@@ -220,7 +222,8 @@ Um tipo de regra agreggate conta o número de ocorrências de uma ação em um p
 	* Quando as horas são selecionadas, o valor máximo pode ser 24
 	* Quando os minutos são selecionados, o valor máximo pode ser 1440.
 
-** Exemplo **
+#### Por exemplo
+{: #aggregate-example}
 
 O exemplo a seguir demonstra uma regra que conta cinco tentativas com falha em 30 minutos:
 
@@ -284,7 +287,8 @@ Um tipo de regra coincident monitora ações para ver quantas vezes a mesma aç�
 	* Quando os minutos são selecionados, o valor máximo pode ser 1440.
 
 
-** Exemplo **
+#### Por exemplo
+{: #coincident-example}
 
 O exemplo a seguir demonstra uma regra que observa uma coincidência de três ações específicas que devem ocorrer dentro de um período de trinta minutos:
 
@@ -327,7 +331,8 @@ Uma regra booleana é composta de uma condição booleana e um evento. As regras
 
 Se uma regra não for definida como `aggregate` ou `coincident`, ela será avaliada como uma regra `boolean`.
 
-** Exemplo **
+#### Por exemplo
+{: #boolean-example}
 
 O exemplo a seguir demonstra uma regra que observa a exclusão da política fora da janela de controle de mudança por um usuário que não está na lista de desbloqueio:
 
@@ -369,7 +374,7 @@ O exemplo a seguir demonstra uma regra que observa a exclusão da política fora
 ```
 {: screen}
 
-Deseja saber mais sobre regras booleanas? Confira os <a href="https://github.com/CacheControl/json-rules-engine/blob/master/docs/rules.md" target="_blank">docs CacheControl<img src="../../icons/launch-glyph.svg" alt="Ícone de link externo"></a>.
+Deseja saber mais sobre regras booleanas? Efetue o check-out [dos documentos de Controle de cache](https://github.com/CacheControl/json-rules-engine/blob/master/docs/rules.md){: external}.
 {: tip}
 
 ## Próximas Etapas

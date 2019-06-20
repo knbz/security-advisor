@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -26,7 +27,7 @@ subcollection: security-advisor
 # パートナー
 {: #setup-partner}
 
-IBM ビジネス・パートナー統合は、サード・パーティー・プロバイダーからの重要なアラートと検出事項を {{site.data.keyword.security-advisor_long}} ダッシュボードに取り込む手段となります。それらのパートナーと IBM は連携してお客様のための統合エクスペリエンスを構築し、シンプルにして、その方向性を決めています。
+IBM ビジネス・パートナー統合によって、サード・パーティー・プロバイダーの重要なアラートと検出事項を {{site.data.keyword.security-advisor_long}} ダッシュボードに取り込むことができます。これらのパートナーと IBM はお客様のために協力して統合エクスペリエンスを構築し、シンプルにして、案内しています。
 {: shortdesc}
 
 ## 始めに
@@ -41,18 +42,18 @@ IBM ビジネス・パートナー統合は、サード・パーティー・プ�
 ## 統合ウィザード
 {: #wizard}
 
-{{site.data.keyword.cloud_notm}} とパートナーの両方のアカウントに管理権限がある管理者は、統合ウィザードを使用して素早く稼働を開始できます。このウィザードには以下の 4 つの基本手順があります。
+{{site.data.keyword.cloud_notm}} とパートナーの両方のアカウントに管理権限を持つ管理者は、統合ウィザードを使用して素早く作業を開始できます。このウィザードには以下の 4 つの基本手順があります。
 
 * 信頼を確立し、{{site.data.keyword.cloud_notm}} アカウントとパートナー・アカウントを関連付ける
 * アカウント間で資格情報や URL などの必須情報をコピーする
-* パートナーの検出事項メタデータを {{site.data.keyword.security-advisor_short}} 内にインストールする
-* パートナーからの検出事項を {{site.data.keyword.security-advisor_short}} に送付して、ペア化を検証する
+* パートナーの検出事項のメタデータを {{site.data.keyword.security-advisor_short}} 内にインストールする
+* パートナーからの検出事項を {{site.data.keyword.security-advisor_short}} に通知して、ペア化を検証する
 
 
 ## NeuVector の統合
 {: #setup-neuvector}
 
-NeuVector を使用すると、ネットワークの脅威や違反を検出し、コンテナー・ベースのアプリケーションの攻撃を防ぐことができます。 モニターにより、コンテナーやホスト内での root 権限の昇格、ポート・スキャン、リバース・シェル、不審なファイル・システム・アクティビティーを検出して、悪用や突破を防ぐことができます。
+[NeuVector](https://neuvector.com){: external} を使用すると、ネットワークの脅威や違反を検出し、コンテナー・ベースのアプリケーションの攻撃を防ぐことができます。モニターにより、コンテナーやホスト内での root 権限の昇格、ポート・スキャン、リバース・シェル、不審なファイル・システム・アクティビティーを検出して、悪用や突破を防ぐことができます。
 {: shortdesc}
 
 NeuVector を {{site.data.keyword.security-advisor_short}} に統合するには、以下の手順に従います。
@@ -75,7 +76,7 @@ NeuVector を {{site.data.keyword.security-advisor_short}} に統合するには
 ## Twistlock の統合
 {: #setup-twistlock}
 
-脆弱なイメージがご使用の環境にデプロイされないようにして、リスクを回避することができます。Twistlock は、自動化されたカスタム・ポリシーの適用によって、アプリケーション・ライフサイクルの全ステージで完全な管理を実現します。
+脆弱なイメージがご使用の環境にデプロイされないようにして、リスクを回避することができます。 [Twistlock](https://www.twistlock.com){: external} は、自動化されたカスタム・ポリシーの適用によって、アプリケーション・ライフサイクルの全ステージで完全な管理を実現します。
 {: shortdesc}
 
 パートナー接続を構成すると、Twistlock からの検出事項が要約された 2 つのカードがダッシュボードに作成されます。
@@ -98,12 +99,12 @@ NeuVector を {{site.data.keyword.security-advisor_short}} に統合するには
 
 2. **「はい、マイ・アカウントを {{site.data.keyword.security-advisor_short}} に接続します」**をクリックします。
 
-  アカウントをまだお持ちでない場合は、**「いいえ、今アカウントを作成します」>「アカウントの作成」**をクリックします。お客様の情報を入力してください。Twistlock の営業チーム担当者がお客様に連絡して、開始できるようにします。
+  アカウントをまだお持ちでない場合は、**「いいえ、今アカウントを作成します」>「アカウントの作成」**をクリックします。 お客様の情報を入力してください。Twistlock の営業チーム担当者がお客様に連絡して、開始できるようにします。
   {: note}
 
-3. 接続に名前を付けます。お客様のアカウントに固有の名前を付けてください。また、英数字、スペース、またはハイフンのみを使用してください。
+3. 接続に名前を付けます。 お客様のアカウントに固有の名前を付けてください。また、英数字、スペース、またはハイフンのみを使用してください。
 
-4. オプション: 構成 URL がまだない場合は、**「登録 URL の生成」**をクリックして Twistlock の資料に移動し、URL の作成方法を確認します。その資料にアクセスするための、お客様のライセンスに付属する Twistlock トークンがあることを確認してください。
+4. オプション: 構成 URL がまだない場合は、**「登録 URL の生成」**をクリックして Twistlock の資料に移動し、URL の作成方法を確認します。 その資料にアクセスするための、お客様のライセンスに付属する Twistlock トークンがあることを確認してください。
 
 5. Twistlock ダッシュボードで、**「管理 (Manage)」>「アラート (Alerts)」**タブとナビゲートし、**「プロファイルの追加 (Add profile)」**をクリックします。
 
@@ -118,8 +119,8 @@ NeuVector を {{site.data.keyword.security-advisor_short}} に統合するには
 ### 接続の検証
 {: #twistlock-verify}
 
-1. {{site.data.keyword.security-advisor_short}} ダッシュボードで、Twistlock カードが適切に表示されているか確認します。
+1. {{site.data.keyword.security-advisor_short}} ダッシュボードで、Twistlock カードが予期したとおりに表示されているか確認します。
 
-2. Twistlock ダッシュボードで、**「アラート (Alerts)」**タブを最新表示します。{{site.data.keyword.security-advisor_short}} 接続が表示されます。その接続を開いてください。
+2. Twistlock ダッシュボードで、**「アラート (Alerts)」**タブを最新表示します。 {{site.data.keyword.security-advisor_short}} 接続が表示されます。その接続を開いてください。
 
 3. 通知させるアラート・タイプがチェックされていることを確認してから、**「検証 (Verify)」**をクリックし、接続が完了したことを確認します。

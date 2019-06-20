@@ -2,15 +2,16 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-06-06"
 
-keywords: centralized security, security management, alerts, security risk, insights, threat detection
+keywords: Centralized security, security management, alerts, security risk, insights, threat detection
 
 subcollection: security-advisor
 
 ---
 
-{:new_window: target="_blank"}
+
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -35,7 +36,7 @@ Cette foire aux questions fournit des réponses aux questions courantes sur le s
 {: #faq-integrations}
 {: faq}
 
-Même si vous pouvez intégrer des outils de sécurité personnalisés ou {{site.data.keyword.cloud_notm}}, le service est préconfiguré pour l'utilisation d'{{site.data.keyword.cloud_notm}} Certificate Manager et Vulnerability Advisor. 
+Même si vous pouvez intégrer des outils de sécurité personnalisés ou {{site.data.keyword.cloud_notm}}, le service est préconfiguré pour l'utilisation d'{{site.data.keyword.cloud_notm}} Certificate Manager et Vulnerability Advisor.
 
 </br>
 
@@ -43,7 +44,7 @@ Même si vous pouvez intégrer des outils de sécurité personnalisés ou {{site
 {: #xforce}
 {: faq}
 
-IBM X-Force Research est l'un des groupes privés de recherche sur la sécurité parmi les plus réputés au monde. Pour surveiller et analyser les problèmes de sécurité, ces professionnels de la sécurité ont recours à de nombreuses sources et fournissent des renseignements sur les menaces qui sont le fondement du portefeuille IBM Security. IBM X-Force Exchange est une plateforme de partage de renseignements sur les menaces basée sur le cloud qui permet aux utilisateurs de s'informer rapidement sur les dernières menaces de sécurité, de collecter des renseignements en vue d'une action et de collaborer avec leurs homologues. IBM X-Force Exchange s'appuie sur des renseignements générés par des équipes humaines et des machines, optimisant la portée d'IBM X-Force.
+IBM X-Force Research est l'un des groupes privés de recherche sur la sécurité parmi les plus réputés au monde. Pour surveiller et analyser les problèmes de sécurité, ces professionnels de la sécurité ont recours à de nombreuses sources et fournissent des renseignements sur les menaces qui sont le fondement du portefeuille IBM Security. IBM X-Force Exchange est une plateforme de partage de renseignements sur les menaces basée sur le cloud qui permet aux utilisateurs de s'informer rapidement sur les dernières menaces de sécurité, de collecter des renseignements en vue d'une action et de collaborer avec leurs homologues. IBM X-Force Exchange s'appuie sur des renseignements générés par des équipes humaines et des machines, qui optimisent la portée d'IBM X-Force.
 
 </br>
 

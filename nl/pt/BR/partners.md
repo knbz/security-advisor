@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-06-05"
 
 keywords: centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -11,6 +11,7 @@ subcollection: security-advisor
 ---
 
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -26,7 +27,7 @@ subcollection: security-advisor
 # Parceiros
 {: #setup-partner}
 
-As integrações do Parceiro de Negócios IBM são uma maneira de trazer alertas críticos e descobertas de provedores de terceiros para o painel do {{site.data.keyword.security-advisor_long}}. Esses parceiros trabalharam com a IBM para ajudar a dar forma, simplificar e orientar a experiência de integração para você.
+As integrações do Parceiro de Negócios IBM são uma maneira de trazer alertas críticos e descobertas de provedores de terceiro para o painel do {{site.data.keyword.security-advisor_long}}. Esses parceiros estão trabalhando com a IBM para ajudar a criar, simplificar e orientar a experiência de integração para você.
 {: shortdesc}
 
 ## Antes de começar
@@ -41,7 +42,7 @@ Antes de iniciar a integração de parceiros, certifique-se de que você tenha o
 ## Assistente de integração
 {: #wizard}
 
-Como um administrador com direitos administrativos nas contas do {{site.data.keyword.cloud_notm}} e do Parceiro, é possível usar o assistente de integração para que funcione rapidamente. O assistente tem quatro etapas básicas:
+Como um administrador com permissões administrativas em ambas as contas do {{site.data.keyword.cloud_notm}} e do Parceiro, é possível usar o assistente de integração para funcionar e executar rapidamente. O assistente tem quatro etapas básicas:
 
 * Estabelecer confiança e associar suas contas do {{site.data.keyword.cloud_notm}} e do parceiro
 * Copiar as informações necessárias, tais como credenciais e URLs, entre as contas
@@ -52,7 +53,7 @@ Como um administrador com direitos administrativos nas contas do {{site.data.key
 ## Integrando o NeuVector
 {: #setup-neuvector}
 
-Com o NeuVector, é possível detectar ameaças e violações de rede para evitar ataques de seus aplicativos baseados em contêiner. Por meio de monitoramento, é possível evitar explosões e quebras detectando escalações de privilégios de administrador, varreduras de porta, shells reversos e atividade suspeita do sistema de arquivos em seus contêineres e hosts.
+Com o [NeuVector](https://neuvector.com){: external}, é possível detectar ameaças de rede e violações para evitar ataques de seus aplicativos baseados em contêiner. Por meio de monitoramento, é possível evitar explosões e quebras detectando escalações de privilégios de administrador, varreduras de porta, shells reversos e atividade suspeita do sistema de arquivos em seus contêineres e hosts.
 {: shortdesc}
 
 Para integrar o NeuVector ao {{site.data.keyword.security-advisor_short}}, é possível usar as etapas a seguir:
@@ -75,7 +76,7 @@ Para integrar o NeuVector ao {{site.data.keyword.security-advisor_short}}, é po
 ## Integrando o Twistlock
 {: #setup-twistlock}
 
-É possível evitar riscos parando a implementação das imagens vulneráveis em seu ambiente. Com o cumprimento de política automatizada e customizada, o Twistlock oferece controle completo em cada estágio do ciclo de vida do aplicativo.
+É possível evitar riscos parando a implementação das imagens vulneráveis em seu ambiente. Com o cumprimento de política automatizada e customizada, o [Twistlock](https://www.twistlock.com){: external} oferece controle completo em cada estágio do ciclo de vida do aplicativo.
 {: shortdesc}
 
 Quando você configura a conexão do parceiro, são criadas duas placas em seu painel que resumem as descobertas do Twistlock.
@@ -85,7 +86,7 @@ Quando você configura a conexão do parceiro, são criadas duas placas em seu p
 * Total de incidentes e auditorias: descobertas que estão relacionadas a incidentes ou auditorias em suas cargas de trabalho nativas de nuvem.
 * Total de auditorias de firewall: descobertas que estão relacionadas a problemas com seu firewall.
 
-** Vulnerabilidades do Twistlock **  introduz um KRI:
+**Vulnerabilidades do Twistlock** introduzem um KRI:
 
 * Total de imagens com novas vulnerabilidades: descobertas que estão relacionadas a vulnerabilidades localizadas em suas imagens de contêiner.
 
@@ -118,8 +119,8 @@ Quando você configura a conexão do parceiro, são criadas duas placas em seu p
 ### Verificando a Conexão
 {: #twistlock-verify}
 
-1. No painel do {{site.data.keyword.security-advisor_short}}, verifique se as placas do Twistlock estão sendo exibidas conforme o esperado.
+1. No painel do {{site.data.keyword.security-advisor_short}}, verifique se os cartões do Twistlock estão sendo exibidos conforme o esperado.
 
-2. No painel do Twistlock, atualize a guia **Alertas**. A conexão  {{site.data.keyword.security-advisor_short}}  mostrará. Abra a conexão.
+2. No painel do Twistlock, atualize a guia **Alertas**. A conexão do {{site.data.keyword.security-advisor_short}} é mostrada. Abra a conexão.
 
 3. Verifique se os tipos de alerta que você deseja que sejam notificados estão marcados e, em seguida, clique em **Verificar** para assegurar que a conexão esteja concluída.
