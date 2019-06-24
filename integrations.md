@@ -2,15 +2,14 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-05"
+lastupdated: "2019-06-24"
 
-keywords: centralized security, security management, alerts, security risk, insights, threat detection
+keywords: Centralized security, security management, alerts, security risk, insights, threat detection
 
 subcollection: security-advisor
 
 ---
 
-{:new_window: target="_blank"}
 {:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -38,7 +37,7 @@ With {{site.data.keyword.security-advisor_long}}, you can gain insight into pote
 {: shortdesc}
 
 
-Out of the box, {{site.data.keyword.security-advisor_short}} integrates with:
+Out of the box, {{site.data.keyword.security-advisor_short}} can integrate with:
 
 * Certificate Manager for notifications that are related to certificate expiry and lifecycle.
 * Vulnerability Advisor for details on image vulnerabilities and configuration issues.
