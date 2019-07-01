@@ -34,7 +34,7 @@ IBM Cloud Security Advisor
     {: .navgroup id="reference"}
     [Findings API](https://cloud.ibm.com/apidocs/security-advisor)
     [Service dashboard](https://cloud.ibm.com/security-advisor/#/dashboard)
-    [Blogs](https://www.ibm.com/blogs/bluemix/tag/security-advisor/)
+    [Blogs](https://www.ibm.com/cloud/blog)
     [Grafeas spec](https://grafeas.io/)
     at-events.md
     {: .navgroup-end}
