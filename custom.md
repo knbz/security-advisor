@@ -35,7 +35,7 @@ With {{site.data.keyword.security-advisor_short}}, you can integrate your existi
 
 Before you integrate findings from your third-party tool, be sure that you have the following prerequisites.
 
-1. Be sure that the user or service ID that you're using is assigned the **Manager** [IAM role](https://cloud.ibm.com/iam/users).
+1. Be sure that the user or service ID that you're using is assigned the **Manager** [IAM role](https://cloud.ibm.com/iam/users){: external}.
 
 2. Log in to {{site.data.keyword.cloud_notm}}.
 
@@ -408,11 +408,11 @@ Example payload:
 	"finding": {
 		"severity": "HIGH",
 		"next_steps": [{
-			"title": "Investigate which process are running in your cluster. If you suspect one of your pods was hacked, restart it, and look for image vulnerabilities",
+			"title": "Investigate which processes are running in your cluster. If you suspect one of your pods was hacked, restart it, and look for image vulnerabilities",
                         "url":"https://cloud.ibm.com/containers-kubernetes/clusters"
 		}],
-                "short_description": "One of the pods in your cluster appears to be leaking an excessive amount of data",
-                "long_description": "One of the pods in your cluster is approaching external servers and sending them data in volumes that exceed that pod’s normal behavior"
+                "short_description": "One of the pods in your cluster appears to be leaking an excessive amount of data.",
+                "long_description": "One of the pods in your cluster is approaching external servers and sending them data in volumes that exceed that pod’s normal behavior."
 	}
 }
 ```
