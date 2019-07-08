@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-13"
+lastupdated: "2019-07-08"
 
 keywords: Centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -35,7 +35,7 @@ With {{site.data.keyword.security-advisor_short}}, you can integrate your existi
 
 Before you integrate findings from your third-party tool, be sure that you have the following prerequisites.
 
-1. Be sure that the user or service ID that you're using is assigned the **Manager** [IAM role](https://cloud.ibm.com/iam#/users).
+1. Be sure that the user or service ID that you're using is assigned the **Manager** [IAM role](https://cloud.ibm.com/iam/users).
 
 2. Log in to {{site.data.keyword.cloud_notm}}.
 
