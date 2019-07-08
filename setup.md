@@ -2,11 +2,10 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-05"
+lastupdated: "2019-07-08"
 
 ---
 
-{:new_window: target="_blank"}
 {:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -46,7 +45,7 @@ Learn more about [{{site.data.keyword.registryshort_notm}}](/docs/services/Regis
 {: #setup-before}
 
 Before you can get started with registry, be sure that you have the following CLIs and plug-ins installed:
-* [The {{site.data.keyword.cloud_notm}} CLI)](/docs/cli?topic=cloud-cli-ibmcloud-cli)
+* [The {{site.data.keyword.cloud_notm}} CLI)](/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli)
 * The Container Registry plug-in.
 
   ```
