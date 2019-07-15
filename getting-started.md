@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-14"
+lastupdated: "2019-07-12"
 
 keywords: Centralized security, security management, alerts, security risk, insights, threat detection
 
@@ -26,7 +26,7 @@ subcollection: security-advisor
 # Getting started tutorial
 {: #getting-started}
 
-With {{site.data.keyword.security-advisor_long}}, you can instantly view the security posture of your {{site.data.keyword.cloud_notm}} through a single, centralized dashboard.
+With {{site.data.keyword.security-advisor_long}}, you can instantly view the security posture of your {{site.data.keyword.cloud_notm}} services through a single, centralized dashboard.
 {:shortdesc}
 
 {{site.data.keyword.security-advisor_short}} is enabled by default for all {{site.data.keyword.cloud_notm}} accounts. As such, you do not need to provision any instance of the service.
